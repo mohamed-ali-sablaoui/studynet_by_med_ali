@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet GNU Octave pour débutants : commandes, matrices, fonctions, graphes, conditions, boucles et exercices corrigés.">
+<title>StudyNet — Cours complet GNU Octave</title>
+<style>
+:root{--navy:#142b49;--blue:#087bbd;--cyan:#08a5b5;--green:#23864b;--purple:#7350b5;--orange:#e77d20;--red:#d73d4e;--ink:#20324a;--muted:#617187;--bg:#f2f6fb;--card:#fff;--line:#d9e3ef;--code:#10253d;--shadow:0 8px 24px #16365b0d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Segoe UI",sans-serif;line-height:1.7}
+header{background:linear-gradient(120deg,#102640,#17456e);color:#fff;padding:28px max(20px,calc((100% - 1280px)/2));position:relative;overflow:hidden}
+header:after{content:"∑  f(x)  A⁻¹";position:absolute;right:4%;top:10px;font-size:42px;color:#ffffff16;font-weight:bold}
+.brand{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:.3px}.brand span{color:#ff9d3d}.subtitle{color:#dceafa;margin:4px 0 15px}.hero-tags{display:flex;flex-wrap:wrap;gap:8px}.tag{background:#ffffff18;border:1px solid #ffffff30;padding:5px 11px;border-radius:30px;font-size:13px}
+.layout{max-width:1320px;margin:22px auto;padding:0 16px;display:grid;grid-template-columns:265px minmax(0,1fr);gap:20px}
+nav{align-self:start;position:sticky;top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);max-height:calc(100vh - 28px);overflow:auto}
+nav h2{font-size:17px;margin:0 0 10px;color:var(--navy)}nav a{display:block;text-decoration:none;color:#344963;padding:7px 9px;border-radius:8px;font-size:14px}nav a:hover,nav a:focus{background:#eaf5fc;color:#006ca8}nav .small{font-size:12px;color:var(--muted);margin-top:12px}
+main{min-width:0}.intro,.lesson,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.intro{background:linear-gradient(130deg,#fff,#eaf6ff);border-color:#b8dcf5}.intro h1{font-size:clamp(24px,3vw,34px);line-height:1.25;color:var(--navy);margin:0 0 10px}
+h2{color:var(--navy);font-size:25px;margin:0 0 14px;line-height:1.3}h3{color:#086da6;margin:22px 0 8px;font-size:19px}h4{margin:14px 0 6px;color:#334b68}
+p{margin:8px 0 12px}.muted{color:var(--muted)}.callout{padding:12px 14px;border-left:4px solid var(--blue);background:#edf7ff;border-radius:8px;margin:12px 0}.warning{border-left-color:var(--orange);background:#fff6e9}.success{border-left-color:var(--green);background:#effaf2}
+code{font-family:Consolas,"Courier New",monospace;background:#edf2f8;padding:2px 5px;border-radius:4px;color:#9a3152}pre{background:var(--code);color:#e7f2ff;padding:16px;border-radius:10px;overflow:auto;line-height:1.55;font-size:14px;margin:10px 0}pre code{background:transparent;color:inherit;padding:0}.result{background:#f0f8f2;border:1px solid #d1ead7;border-radius:8px;padding:10px 13px;white-space:pre-wrap;font-family:Consolas,monospace;color:#235b38;overflow:auto}
+table{border-collapse:collapse;width:100%;margin:10px 0 16px;font-size:14px}th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}th{background:#edf4fb;color:#1a4268}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mini{border:1px solid var(--line);border-radius:10px;padding:13px;background:#fcfdff}.mini h3{margin-top:0}.lesson{border-top:5px solid var(--blue)}.lesson.green{border-top-color:var(--green)}.lesson.purple{border-top-color:var(--purple)}.lesson.orange{border-top-color:var(--orange)}.lesson.red{border-top-color:var(--red)}.lesson.cyan{border-top-color:var(--cyan)}
+button{border:0;border-radius:8px;background:#087bbd;color:white;padding:10px 15px;font-weight:700;cursor:pointer}button:hover{filter:brightness(.93)}button.secondary{background:#e8f1f9;color:#17466c}.exercise{border:1px solid var(--line);border-radius:10px;padding:15px;margin:12px 0;background:#fbfdff}.exercise label{display:block;margin:7px 0;cursor:pointer}.answer{display:none;margin-top:10px;padding:10px;background:#edf8f0;border-radius:8px}.answer.show{display:block}
+footer{text-align:center;background:var(--navy);color:#eaf3ff;padding:24px;margin-top:30px;font-size:14px}.topline{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}.search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;margin:8px 0 12px;font-size:14px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}nav{position:relative;top:auto;max-height:none}nav .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.grid2{grid-template-columns:1fr}}
+@media print{body{background:white;font-size:11pt}.layout{display:block;max-width:none;margin:0;padding:0}nav,button,.search{display:none!important}.intro,.lesson,.panel{box-shadow:none;break-inside:avoid;border:1px solid #bbb}header{padding:20px}a{color:inherit}footer{background:white;color:#333}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Study<span>Net</span> · GNU Octave</div>
+  <p class="subtitle">Cours approfondi de TP Mathématiques — apprendre GNU Octave de zéro, avec méthodes, exemples détaillés et exercices corrigés</p>
+  <div class="hero-tags"><span class="tag">Cours détaillé en français</span><span class="tag">Exemples expliqués étape par étape</span><span class="tag">Exercices corrigés</span><span class="tag">Notes de clarification en tunisien</span></div>
+</header>
+<div class="layout">
+<nav>
+  <h2>📚 Sommaire du cours</h2>
+  <input id="search" class="search" type="search" placeholder="Rechercher dans le cours…" aria-label="Rechercher dans le cours">
+  <div class="links">
+    <a href="#start">1. Découvrir Octave</a><a href="#basics">2. Commandes de base</a>
+    <a href="#variables">3. Variables & calculs</a><a href="#syntax">Syntaxe et types</a><a href="#vectors">4. Vecteurs</a>
+    <a href="#matrices">5. Matrices</a><a href="#matrixops">6. Opérations matricielles</a>
+    <a href="#logic">7. Comparaisons</a><a href="#conditions">8. Conditions</a>
+    <a href="#loops">9. Boucles</a><a href="#functions">10. Fonctions mathématiques</a>
+    <a href="#patterns">Modèles classiques de TP</a><a href="#graphs">11. Graphiques</a><a href="#equations">12. Équations & systèmes</a>
+    <a href="#scripts">13. Scripts et fichiers .m</a><a href="#errors">14. Erreurs fréquentes</a>
+    <a href="#method">15. Méthode pour le contrôle</a><a href="#quiz">16. Exercices corrigés</a>
+  </div>
+  <p class="small">Astuce : utilise la recherche pour retrouver un mot. Tu peux aussi imprimer le cours ou l’enregistrer en PDF depuis le navigateur.</p>
+  <button class="secondary" onclick="window.print()">🖨️ Imprimer / PDF</button>
+</nav>
+<main>
+<section class="intro searchable" id="start">
+<h1>Cours approfondi de GNU Octave</h1>
+<p><strong>GNU Octave</strong> est un logiciel libre de calcul numérique, particulièrement utile en mathématiques. Il permet d’effectuer des calculs, de manipuler des vecteurs et des matrices, d’écrire des algorithmes, de résoudre des systèmes linéaires et de représenter graphiquement des fonctions.</p>
+<div class="callout"><strong>À retenir :</strong> Octave est une calculatrice puissante, mais aussi un environnement de programmation : vous fournissez des données, effectuez des calculs, puis affichez les résultats ou tracez des courbes.</div>
+<h3>Première étape : où écrire le code ?</h3>
+<ul><li><strong>Command Window :</strong> Saisissez une commande et appuyez sur Entrée pour afficher immédiatement le résultat.</li><li><strong>Editor :</strong> Écrivez plusieurs commandes dans un fichier et enregistrez-le avec une extension se terminant par <code>.m</code>.</li><li><strong>Current Folder :</strong> Le dossier de travail dans lequel Octave recherche vos fichiers.</li></ul>
+<div class="callout warning"><strong>Règle importante :</strong> Essayez les exemples vous-même. Lire ne suffit pas : saisissez la commande, observez le résultat et modifiez les valeurs pour comprendre.</div>
+</section>
+
+<section class="lesson searchable" id="basics">
+<h2>1. Les commandes de base — commandes de base</h2>
+<table><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr>
+<tr><td><code>clc</code></td><td>Efface la fenêtre de commande sans supprimer les variables.</td><td><code>clc</code></td></tr>
+<tr><td><code>clear</code></td><td>Supprime les variables de la mémoire.</td><td><code>clear</code></td></tr>
+<tr><td><code>who</code></td><td>Affiche les noms des variables.</td><td><code>who</code></td></tr>
+<tr><td><code>whos</code></td><td>Affiche le nom, le type, la taille et d’autres informations.</td><td><code>whos</code></td></tr>
+<tr><td><code>help sum</code></td><td>Affiche l’aide concernant la commande <code>sum</code>.</td><td><code>help plot</code></td></tr>
+<tr><td><code>disp(x)</code></td><td>Affiche un texte ou une valeur.</td><td><code>disp(2+3)</code></td></tr>
+<tr><td><code>input(...)</code></td><td>Demande une valeur à l’utilisateur.</td><td><code>x=input("Donner x : ");</code></td></tr></table>
+<h3>Exemple complet</h3><pre><code>clc;
+clear;
+a = 10;
+b = 5;
+s = a + b;
+disp(s);</code></pre>
+<div class="result">15</div>
+<p><strong>Explication :</strong> <code>a</code> et<code>b</code> sont des variables ; <code>s</code> stocke leur somme ; <code>disp</code> affiche la somme.</p>
+<h3>À quoi sert le point-virgule « ; » ?</h3>
+<pre><code>x = 10
+y = 20;</code></pre>
+<p>La première commande affiche la valeur <code>x</code>tandis que la seconde stocke <code>y</code> sans l’afficher. Le calcul est effectué dans les deux cas.</p>
+</section>
+
+<section class="lesson green searchable" id="variables">
+<h2>2. Variables et calculs — variables et calculs</h2>
+<p>Une variable est un nom associé à une valeur que l’on pourra réutiliser. Dans Octave, <code>=</code> signifie affecter une valeur à une variable ; ce n’est pas un test d’égalité.</p>
+<pre><code>a = 12;
+b = 4;
+somme = a + b;
+difference = a - b;
+produit = a * b;
+quotient = a / b;
+puissance = a^2;</code></pre>
+<table><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>+</code></td><td>addition</td><td><code>2+3</code></td><td>5</td></tr>
+<tr><td><code>-</code></td><td>soustraction</td><td><code>8-3</code></td><td>5</td></tr>
+<tr><td><code>*</code></td><td>Multiplication</td><td><code>4*3</code></td><td>12</td></tr>
+<tr><td><code>/</code></td><td>Division</td><td><code>10/2</code></td><td>5</td></tr>
+<tr><td><code>^</code></td><td>Puissance</td><td><code>2^3</code></td><td>8</td></tr>
+<tr><td><code>()</code></td><td>Définir la priorité des opérations</td><td><code>(2+3)*4</code></td><td>20</td></tr></table>
+<h3>Saisir une valeur auprès de l’utilisateur</h3><pre><code>x = input("Donner x : ");
+y = x^2 + 2*x + 1;
+disp(y);</code></pre>
+<p>Si l’utilisateur saisit <code>2</code>le résultat est <code>9</code>car \(2^2+2×2+1=9\).</p>
+<div class="callout warning">Les noms des variables distinguent les majuscules et les minuscules : <code>Note</code> et<code>note</code> ce sont deux noms différents. Choisissez des noms explicites et n’utilisez pas d’espaces.</div>
+</section>
+
+
+<section class="lesson green searchable" id="syntax">
+<h2>3 bis. Syntaxe, types de données et méthode de travail</h2>
+<h3>3 bis.1 Comment Octave exécute les instructions</h3>
+<p>Octave lit les instructions dans l’ordre, de haut en bas. Chaque instruction peut créer une variable, calculer une expression, afficher une valeur ou modifier une matrice.</p>
+<pre><code>a = 4;
+b = 3;
+c = a + b;
+disp(c);</code></pre>
+<p>La première ligne mémorise 4 dans <code>a</code>, la deuxième mémorise 3 dans <code>b</code>, la troisième calcule leur somme dans <code>c</code> et la dernière affiche 7.</p>
+<h3>3 bis.2 Les types numériques et logiques</h3>
+<pre><code>x = 12;             % nombre réel
+z = 3 + 2i;          % nombre complexe
+texte = "Bonjour";   % chaîne de caractères
+ok = (x > 10);       % valeur logique : vrai</code></pre>
+<p>Octave accepte les nombres réels et complexes. Une comparaison produit une valeur logique : vrai (<code>1</code>) ou faux (<code>0</code>). Les chaînes de caractères servent à afficher des messages.</p>
+<h3>3 bis.3 Priorité des opérations</h3>
+<p>Les parenthèses sont prioritaires, puis les puissances, puis les multiplications/divisions, puis les additions/soustractions. Utilise des parenthèses lorsque l’expression risque d’être ambiguë.</p>
+<pre><code>r1 = 2 + 3 * 4;      % 14
+r2 = (2 + 3) * 4;    % 20
+r3 = 2^3 + 1;        % 9</code></pre>
+<h3>3 bis.4 Constantes utiles</h3>
+<table><tr><th>Constante / commande</th><th>Rôle</th></tr>
+<tr><td><code>pi</code></td><td>Valeur approchée de π.</td></tr>
+<tr><td><code>Inf</code></td><td>Infini, par exemple le résultat d’une division non nulle par zéro selon l’opération.</td></tr>
+<tr><td><code>NaN</code></td><td>Valeur « Not a Number », utilisée pour certains résultats indéfinis.</td></tr>
+<tr><td><code>i</code> ou <code>j</code></td><td>Unité imaginaire, sauf si le nom a été réutilisé comme variable.</td></tr></table>
+<div class="callout warning">Évite d’utiliser <code>i</code> ou <code>j</code> comme unité imaginaire après leur avoir donné une autre valeur. Pour un nombre complexe, tu peux écrire explicitement <code>1i</code>.</div>
+</section>
+
+<section class="lesson purple searchable" id="vectors">
+<h2>3. Les vecteurs — vecteurs</h2>
+<h3>Créer un vecteur</h3><pre><code>A = [1 2 3 4]
+B = [1; 2; 3; 4]
+C = 1:5
+D = 0:2:10
+E = linspace(0, 1, 5)</code></pre>
+<ul><li><code>[1 2 3]</code>: vecteur ligne.</li><li><code>[1; 2; 3]</code>: vecteur colonne ; le point-virgule sépare les lignes.</li><li><code>1:5</code>: valeurs de 1 à 5 avec un pas de 1.</li><li><code>0:2:10</code>: début, pas, fin.</li><li><code>linspace(a,b,n)</code>: crée n points régulièrement espacés entre a et b.</li></ul>
+<h3>Accéder aux éléments</h3><pre><code>A = [10 20 30 40];
+A(1)       % premier élément = 10
+A(3)       % troisième élément = 30
+A(2:4)     % éléments de 2 à 4
+A(end)     % dernier élément = 40
+A(2) = 99; % modifier le deuxième élément</code></pre>
+<div class="callout warning">L’indexation dans Octave commence à 1 et non à 0. Par conséquent, <code>A(0)</code> est incorrect.</div>
+<h3>Opérations sur les vecteurs</h3><pre><code>A = [2 4 6];
+B = [1 3 5];
+A + B       % [3 7 11]
+A .* B      % [2 12 30]
+A .^ 2      % [4 16 36]
+sum(A)      % 12
+mean(A)     % 4
+max(A)      % 6
+min(A)      % 2</code></pre>
+</section>
+
+<section class="lesson searchable" id="matrices">
+<h2>4. Les matrices — matrices</h2>
+<p>Une matrice est un tableau de nombres organisé en lignes et en colonnes. Si elle contient 2 lignes et 3 colonnes, sa taille est <code>2 × 3</code>.</p>
+<pre><code>A = [1 2 3; 4 5 6; 7 8 9]</code></pre>
+<div class="result">A =
+   1   2   3
+   4   5   6
+   7   8   9</div>
+<p>L’espace sépare les colonnes et<code>;</code> le point-virgule sépare les lignes.</p>
+<h3>Matrices prédéfinies</h3><table><tr><th>Commande</th><th>Résultat / utilisation</th></tr>
+<tr><td><code>zeros(2,3)</code></td><td>Matrice de zéros : deux lignes et trois colonnes.</td></tr>
+<tr><td><code>ones(3,2)</code></td><td>Matrice de uns : trois lignes et deux colonnes.</td></tr>
+<tr><td><code>eye(3)</code></td><td>Matrice identité 3 × 3.</td></tr>
+<tr><td><code>rand(2,2)</code></td><td>Matrice de nombres aléatoires entre 0 et 1.</td></tr></table>
+<h3>Accéder aux lignes et aux colonnes</h3><pre><code>A = [10 20 30; 40 50 60; 70 80 90];
+A(2,3)  % 60: deuxième ligne, troisième colonne
+A(1,:)  % première ligne entière
+A(:,2)  % deuxième colonne entière
+A(3,1) = 99; % modifier l’élément</code></pre>
+<p><code>A(i,j)</code>: <code>i</code> Le numéro de ligne et<code>j</code> le numéro de colonne. Les deux-points <code>:</code> signifient « tous » dans la dimension concernée.</p>
+<h3>Informations sur une matrice</h3><pre><code>A = [2 4 6; 1 3 5];
+size(A)      % [2 3]
+length(A)    % 3 : dimension la plus grande
+numel(A)     % 6: Nombre d’éléments
+sum(A)       % somme de chaque colonne: [3 7 11]
+sum(A(:))    % somme de tous les éléments: 21
+max(A(:))    % élément maximal: 6
+min(A(:))    % élément minimal: 1</code></pre>
+</section>
+
+<section class="lesson cyan searchable" id="matrixops">
+<h2>5. Opérations sur les matrices — opérations sur les matrices</h2>
+<pre><code>A = [1 2; 3 4];
+B = [5 6; 7 8];
+A + B   % addition
+A - B   % soustraction
+A * B   % multiplication matricielle
+A'      % transpose: transposition : échange les lignes et les colonnes
+det(A)  % déterminant
+inv(A)  % inverse, s’il existe</code></pre>
+<h3>Différence entre * et .* (très important)</h3>
+<table><tr><th>Symbole</th><th>Que fait-il ?</th><th>Exemple</th></tr>
+<tr><td><code>A * B</code></td><td>Multiplication matricielle ; le nombre de colonnes de A doit être égal au nombre de lignes de B.</td><td>Multiplication matricielle classique.</td></tr>
+<tr><td><code>A .* B</code></td><td>Multiplie chaque élément par l’élément correspondant ; les dimensions doivent être compatibles.</td><td><code>[1 2].*[3 4]</code> → <code>[3 8]</code></td></tr>
+<tr><td><code>A ./ B</code></td><td>Division élément par élément.</td><td><code>[4 8]./[2 4]</code> → <code>[2 2]</code></td></tr>
+<tr><td><code>A .^ 2</code></td><td>Élève chaque élément au carré séparément.</td><td><code>[2 3].^2</code> → <code>[4 9]</code></td></tr></table>
+<div class="callout warning">Lorsqu’un point précède l’opérateur (<code>.*</code>, <code>./</code> et <code>.^</code>), l’opération s’effectue généralement élément par élément. En revanche, <code>*</code> et<code>^</code> correspondent aux opérations matricielles de l’algèbre linéaire.</div>
+<h3>Résoudre un système d’équations linéaires</h3>
+<p>Exemple de système : \(2x+y=5\) et \(x+3y=6\).</p><pre><code>A = [2 1; 1 3];
+b = [5; 6];
+X = A\\b</code></pre>
+<div class="result">X =
+   1.8000
+   1.4000</div>
+<p>Cela signifie que <code>x = 1.8</code> et<code>y = 1.4</code>. Pour résoudre <code>A*X=b</code>, la commande <code>A\\b</code> est généralement préférable au calcul de <code>inv(A)*b</code>.</p>
+</section>
+
+<section class="lesson orange searchable" id="logic">
+<h2>6. Comparaisons — comparaisons et logique</h2>
+<table><tr><th>Symbole</th><th>Signification</th><th>Exemple</th></tr>
+<tr><td><code>==</code></td><td>égal à</td><td><code>x == 5</code></td></tr>
+<tr><td><code>~=</code></td><td>différent de</td><td><code>x ~= 0</code></td></tr>
+<tr><td><code>&gt;</code> / <code>&lt;</code></td><td>supérieur / inférieur</td><td><code>x > 0</code></td></tr>
+<tr><td><code>>=</code> / <code><=</code></td><td>supérieur ou égal / inférieur ou égal</td><td><code>note >= 10</code></td></tr>
+<tr><td><code>&&</code></td><td>ET logique : les deux conditions sont vraies</td><td><code>x>0 && x<10</code></td></tr>
+<tr><td><code>||</code></td><td>OU logique : une seule condition vraie suffit</td><td><code>x<0 || x>10</code></td></tr>
+<tr><td><code>~</code></td><td>NON logique</td><td><code>~(x==0)</code></td></tr></table>
+<div class="callout"><strong>Différence essentielle :</strong> <code>x = 5</code> affecte la valeur 5 à la variable. En revanche, <code>x == 5</code> vérifie si x est égal à 5.</div>
+</section>
+
+<section class="lesson orange searchable" id="conditions">
+<h2>7. Conditions — if / elseif / else</h2>
+<p>Les conditions permettent au programme de choisir quoi faire selon une valeur ou une situation.</p><pre><code>x = input("Donner un nombre : ");
+
+if x > 0
+    disp("Positif");
+elseif x < 0
+    disp("Negatif");
+else
+    disp("Zero");
+end</code></pre>
+<ul><li><code>if</code>: si la condition est vraie.</li><li><code>elseif</code>: teste une autre condition si la première est fausse.</li><li><code>else</code>: si aucune condition précédente n’est vraie.</li><li><code>end</code>: termine la structure conditionnelle.</li></ul>
+<h3>Exemple : pair ou impair</h3><pre><code>n = input("Donner un entier : ");
+if mod(n,2) == 0
+    disp("Pair");
+else
+    disp("Impair");
+end</code></pre>
+<p><code>mod(n,2)</code> Le reste de la division de n par 2 est calculé. Si ce reste est nul, le nombre est pair.</p>
+</section>
+
+<section class="lesson red searchable" id="loops">
+<h2>8. Boucles — boucles for et while</h2>
+<h3>for: Nombre d’itérations connu</h3><pre><code>for i = 1:5
+    disp(i);
+end</code></pre><div class="result">1
+2
+3
+4
+5</div>
+<p>La variable <code>i</code> prend successivement les valeurs 1, 2, 3, 4 et 5. À chaque itération, les instructions de la boucle sont exécutées.</p>
+<h3>Exemple : somme de 1 à 10</h3><pre><code>s = 0;
+for i = 1:10
+    s = s + i;
+end
+disp(s);</code></pre><div class="result">55</div>
+<p>On commence par <code>s=0</code>et, à chaque itération, on ajoute la valeur de <code>i</code> à la somme.</p>
+<h3>while: Répéter tant que la condition est vraie</h3><pre><code>i = 1;
+while i <= 5
+    disp(i);
+    i = i + 1;
+end</code></pre>
+<div class="callout warning">Dans <code>while</code>, n’oubliez pas de modifier la variable utilisée dans la condition. Si celle-ci reste toujours vraie, le programme peut tourner indéfiniment.</div>
+<h3>Comment choisir ?</h3><p><code>for</code> Lorsque le nombre d’itérations est connu, par exemple de 1 à 10. <code>while</code> Lorsque vous voulez répéter les instructions tant qu’une condition est vérifiée.</p>
+</section>
+
+<section class="lesson purple searchable" id="functions">
+<h2>9. Fonctions mathématiques — fonctions mathématiques prédéfinies</h2>
+<table><tr><th>Commande</th><th>Signification</th><th>Exemple</th></tr>
+<tr><td><code>sqrt(x)</code></td><td>Racine carrée</td><td><code>sqrt(25)</code> → 5</td></tr>
+<tr><td><code>abs(x)</code></td><td>Valeur absolue</td><td><code>abs(-7)</code> → 7</td></tr>
+<tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>Fonctions trigonométriques en radians</td><td><code>sin(pi/2)</code> → 1</td></tr>
+<tr><td><code>sind(x)</code>, <code>cosd(x)</code></td><td>Fonctions trigonométriques en degrés</td><td><code>sind(90)</code> → 1</td></tr>
+<tr><td><code>log(x)</code></td><td>Logarithme népérien ln(x)</td><td><code>log(exp(1))</code> → 1</td></tr>
+<tr><td><code>exp(x)</code></td><td>\(e^x\)</td><td><code>exp(0)</code> → 1</td></tr>
+<tr><td><code>factorial(n)</code></td><td>Factorielle de n</td><td><code>factorial(5)</code> → 120</td></tr>
+<tr><td><code>round(x)</code></td><td>Arrondi à l’entier le plus proche</td><td><code>round(3.7)</code> → 4</td></tr>
+<tr><td><code>floor(x)</code></td><td>Arrondi à l’entier inférieur</td><td><code>floor(3.7)</code> → 3</td></tr>
+<tr><td><code>ceil(x)</code></td><td>Arrondi à l’entier supérieur</td><td><code>ceil(3.2)</code> → 4</td></tr></table>
+<p>La constante π s’écrit <code>pi</code>. Attention : <code>sin(pi/2)</code> utilise les radians, tandis que <code>sind(90)</code> utilise les degrés.</p>
+<h3>Créer votre propre fonction</h3><p>Créez un fichier nommé <code>carre.m</code> et écrivez :</p><pre><code>function y = carre(x)
+    y = x.^2;
+end</code></pre><p>Enregistrez le fichier, puis saisissez <code>carre(5)</code> dans la fenêtre de commande : le résultat est 25. Le nom du fichier doit correspondre au nom de la fonction principale.</p>
+</section>
+
+
+<section class="lesson searchable" id="patterns">
+<h2>10 bis. Modèles classiques de TP Math</h2>
+<h3>Calculer la somme et la moyenne d’un vecteur</h3>
+<pre><code>notes = [12 15 9 14 10];
+s = sum(notes);
+m = mean(notes);
+disp(s);
+disp(m);</code></pre>
+<p>La somme vaut 60 et la moyenne vaut 12. Si les notes sont stockées dans un vecteur, les fonctions intégrées évitent une boucle lorsque celle-ci n’est pas demandée.</p>
+<h3>Compter les valeurs qui vérifient une condition</h3>
+<pre><code>A = [3 12 8 15 9 17];
+nombre = sum(A >= 10);</code></pre>
+<p>La comparaison <code>A >= 10</code> crée un vecteur logique. La somme des valeurs logiques compte les éléments qui satisfont la condition : ici, 3 valeurs.</p>
+<h3>Créer une table de valeurs d’une fonction</h3>
+<pre><code>x = -2:1:2;
+y = x.^2;
+tableau = [x; y]</code></pre>
+<p>La première ligne contient les valeurs de x et la deuxième leurs images par la fonction carrée. Pour afficher les deux lignes sous forme de colonnes, utilise <code>[x(:), y(:)]</code>.</p>
+<h3>Calculer une factorielle avec une boucle</h3>
+<pre><code>n = 5;
+p = 1;
+for k = 1:n
+    p = p * k;
+end
+disp(p);</code></pre>
+<p>Le résultat est 120. On initialise le produit à 1, puis on le multiplie par chaque entier de 1 à n. Pour n = 0, la factorielle vaut 1 : il faut traiter ce cas correctement.</p>
+</section>
+<section class="lesson cyan searchable" id="graphs">
+<h2>10. Graphiques — tracer des fonctions</h2>
+<p>Pour tracer \(f(x)=x^2\), créez les valeurs de x, calculez y, puis utilisez plot.</p><pre><code>x = -5:0.1:5;
+y = x.^2;
+plot(x,y);
+grid on;
+title("f(x) = x^2");
+xlabel("x");
+ylabel("f(x)");</code></pre>
+<ul><li><code>x = -5:0.1:5</code>: valeurs de -5 à 5 avec un pas de 0,1.</li><li><code>y = x.^2</code>: calcule le carré de chaque élément.</li><li><code>plot(x,y)</code>: trace la courbe.</li><li><code>grid on</code>: affiche la grille.</li><li><code>title</code>: titre du graphique.</li><li><code>xlabel</code> et<code>ylabel</code>: noms des axes.</li></ul>
+<h3>Tracer deux fonctions sur la même figure</h3><pre><code>x = -5:0.1:5;
+f = x.^2;
+g = 2*x;
+plot(x,f,"b",x,g,"r");
+grid on;
+legend("f(x)=x^2","g(x)=2x");</code></pre>
+<p><code>"b"</code> en bleu et<code>"r"</code> en rouge. <code>legend</code> Une légende permet d’identifier chaque courbe.</p>
+<div class="callout warning">Lorsque la fonction est calculée sur un vecteur, utilisez généralement les opérateurs élément par élément comme <code>x.^2</code> et<code>sin(x)</code>. Choisissez un pas assez petit, par exemple 0,1, pour obtenir une courbe plus précise.</div>
+</section>
+
+<section class="lesson searchable" id="equations">
+<h2>11. Équations et systèmes — équations et systèmes</h2>
+<h3>Équation du second degré</h3><p>Équation : \(ax^2+bx+c=0\). On calcule \(\Delta=b^2-4ac\).</p>
+<ul><li>Si \(\Delta>0\): deux solutions réelles.</li><li>Si \(\Delta=0\): une solution réelle double.</li><li>Si \(\Delta<0\): aucune solution réelle.</li></ul>
+<pre><code>a = input("Donner a : ");
+b = input("Donner b : ");
+c = input("Donner c : ");
+
+if a == 0
+    disp("Pas une equation du second degre");
+else
+    delta = b^2 - 4*a*c;
+    if delta > 0
+        x1 = (-b + sqrt(delta))/(2*a);
+        x2 = (-b - sqrt(delta))/(2*a);
+        disp(x1);
+        disp(x2);
+    elseif delta == 0
+        x = -b/(2*a);
+        disp(x);
+    else
+        disp("Pas de solution reelle");
+    end
+end</code></pre>
+<div class="callout">Essayez <code>a=1</code> et<code>b=-3</code> et<code>c=2</code>; vous obtenez les solutions 2 et 1.</div>
+<h3>Résoudre un système linéaire</h3><p>Exemple : \(2x+y=5\) et \(x+3y=6\).</p><pre><code>A = [2 1; 1 3];
+b = [5; 6];
+X = A\\b;</code></pre><p>Résultat : <code>X = [1.8; 1.4]</code>soit <code>x=1.8</code> et<code>y=1.4</code>.</p>
+<h3>Dérivée et intégrale numériques</h3><pre><code>f = @(x) x.^2;
+x = 2;
+h = 0.0001;
+derivee = (f(x+h)-f(x-h))/(2*h);
+
+I = quad(f,0,1);</code></pre><p>La dérivée numérique est approximativement égale à 4 et l’intégrale de 0 à 1 est approximativement égale à \(1/3\). Le calcul symbolique nécessite généralement le package <code>symbolic</code>, tandis que cet exemple repose sur un calcul numérique approché.</p>
+</section>
+
+<section class="lesson red searchable" id="scripts">
+<h2>12. Scripts et fichiers .m — script complet</h2>
+<p>Un script est un fichier contenant une suite d’instructions exécutées dans l’ordre.</p>
+<ol><li>Ouvrez l’éditeur d’Octave.</li><li>Saisissez les commandes.</li><li>Enregistrez le fichier sous un nom tel que <code>exercice1.m</code>.</li><li>Exécutez-le avec le bouton Run ou saisissez <code>exercice1</code> dans la fenêtre de commande si le fichier se trouve dans le dossier courant.</li></ol>
+<h3>Exemple : calculer une moyenne et prendre une décision</h3><pre><code>clc;
+clear;
+
+note1 = input("Donner la premiere note : ");
+note2 = input("Donner la deuxieme note : ");
+
+moyenne = (note1 + note2)/2;
+disp("La moyenne est : ");
+disp(moyenne);
+
+if moyenne >= 10
+    disp("Admis");
+else
+    disp("Non admis");
+end</code></pre>
+<p>Ce programme lit deux nombres, calcule leur moyenne, l’affiche, puis vérifie si elle est supérieure ou égale à 10.</p>
+<h3>Les commentaires</h3><pre><code>% Ceci est un commentaire
+x = 5; % valeur de x</code></pre><p>Tout texte placé après le symbole <code>%</code> sur la même ligne n’est pas exécuté ; il sert à expliquer le code.</p>
+</section>
+
+<section class="lesson orange searchable" id="errors">
+<h2>13. Erreurs fréquentes — erreurs fréquentes</h2>
+<table><tr><th>Erreur</th><th>Cause possible</th><th>Solution</th></tr>
+<tr><td><code>undefined variable</code></td><td>La variable a été utilisée avant d’être définie, ou son nom est mal orthographié.</td><td>Définissez la variable et vérifiez son orthographe.</td></tr>
+<tr><td><code>nonconformant arguments</code></td><td>Les dimensions des matrices ne sont pas compatibles avec l’opération.</td><td>Vérifiez <code>size(A)</code> et<code>size(B)</code>.</td></tr>
+<tr><td>Erreur avec <code>A(0)</code></td><td>L’indexation commence à 1.</td><td>Utilisez le premier élément <code>A(1)</code>.</td></tr>
+<tr><td>Erreur avec <code>x^2</code></td><td>x est peut-être un vecteur et vous souhaitez élever chaque élément au carré.</td><td>Utilisez <code>x.^2</code>.</td></tr>
+<tr><td>Fonction inconnue</td><td>Le nom ou l’emplacement du fichier est incorrect.</td><td>Vérifiez le nom de <code>.m</code> et le dossier courant.</td></tr>
+<tr><td>Boucle infinie</td><td>La condition <code>while</code> ne change pas.</td><td>Modifiez la variable de contrôle dans la boucle.</td></tr>
+<tr><td>Le résultat ne s’affiche pas</td><td>Vous avez placé <code>;</code> à la fin de la ligne.</td><td>Retirez-le si vous souhaitez afficher le résultat.</td></tr></table>
+<h3>Comment repérer une erreur ?</h3><ol><li>Lisez le message d’erreur, notamment le nom du fichier et le numéro de ligne.</li><li>Vérifiez les parenthèses <code>()</code> et<code>[]</code> et la présence de <code>end</code>.</li><li>Vérifiez les noms des variables.</li><li>Testez chaque partie séparément avant d’exécuter tout le programme.</li><li>Utilisez <code>help nom_commande</code> pour obtenir de l’aide.</li></ol>
+</section>
+
+<section class="lesson green searchable" id="method">
+<h2>14. Méthode pour résoudre un exercice de TP ou de devoir surveillé</h2>
+<ol><li><strong>Comprendre la consigne :</strong> Quelles sont les données ? Quel résultat faut-il calculer ?</li><li><strong>Identifier le type de données :</strong> nombre, variable, vecteur, matrice ou fonction.</li><li><strong>Décrire l’algorithme en mots :</strong> lire les données ← calculer ← tester la condition si nécessaire ← afficher le résultat.</li><li><strong>Choisir les commandes adaptées :</strong> <code>input</code> pour la saisie, les opérateurs pour les calculs, <code>if</code> pour les décisions, <code>for</code> pour les répétitions, <code>plot</code> pour les graphiques.</li><li><strong>Tester un petit exemple :</strong> Choisissez des nombres dont vous connaissez le résultat à la main.</li><li><strong>Vérifier les cas particuliers :</strong> division par zéro, dimensions incompatibles d’une matrice ou coefficient a nul dans une équation du second degré.</li><li><strong>Interpréter le résultat :</strong> Ne vous contentez pas du code ; vérifiez que le résultat répond à la question.</li></ol>
+<div class="callout success"><strong>Conseil pour réussir :</strong> Comprenez pourquoi chaque commande est utilisée au lieu de mémoriser le code. Le même principe peut apparaître avec d’autres valeurs dans un devoir surveillé.</div>
+</section>
+
+<section class="panel searchable" id="quiz">
+<h2>15. Exercices — Testez vos connaissances</h2>
+<p>Choisissez une réponse pour chaque question, puis cliquez sur « Corriger ». La correction s’affiche directement dans la page.</p>
+<div class="exercise" data-answer="b"><strong>1. Quelle commande renvoie le nombre total d’éléments d’une matrice ?</strong>
+<label><input type="radio" name="q1" value="a"> <code>length(A)</code> Dans tous les cas</label>
+<label><input type="radio" name="q1" value="b"> <code>numel(A)</code></label>
+<label><input type="radio" name="q1" value="c"> <code>clc</code></label><div class="answer">Bonne réponse : <code>numel(A)</code> compte tous les éléments.</div></div>
+<div class="exercise" data-answer="c"><strong>2. Si <code>A=[1 2; 3 4]</code>, quelle est la valeur de <code>A(2,2)</code> ?</strong>
+<label><input type="radio" name="q2" value="a"> 2</label><label><input type="radio" name="q2" value="b"> 3</label><label><input type="radio" name="q2" value="c"> 4</label><div class="answer">Bonne réponse : 4, deuxième ligne et deuxième colonne.</div></div>
+<div class="exercise" data-answer="a"><strong>3. Comment élever au carré chaque élément du vecteur x ?</strong>
+<label><input type="radio" name="q3" value="a"> <code>x.^2</code></label><label><input type="radio" name="q3" value="b"> <code>x.^2</code></label><label><input type="radio" name="q3" value="c"> <code>x==2</code></label><div class="answer">Bonne réponse : <code>x.^2</code> pour élever chaque élément au carré.</div></div>
+<div class="exercise" data-answer="b"><strong>4. Quel symbole compare deux valeurs ?</strong>
+<label><input type="radio" name="q4" value="a"> <code>=</code></label><label><input type="radio" name="q4" value="b"> <code>==</code></label><label><input type="radio" name="q4" value="c"> <code>;</code></label><div class="answer">Bonne réponse : <code>==</code> pour comparer, et<code>=</code> pour affecter une valeur.</div></div>
+<div class="exercise" data-answer="c"><strong>5. Quelle commande trace y en fonction de x ?</strong>
+<label><input type="radio" name="q5" value="a"> <code>disp(x,y)</code></label><label><input type="radio" name="q5" value="b"> <code>sum(x,y)</code></label><label><input type="radio" name="q5" value="c"> <code>plot(x,y)</code></label><div class="answer">Bonne réponse : <code>plot(x,y)</code>.</div></div>
+<div class="exercise" data-answer="a"><strong>6. Quand choisir for ?</strong>
+<label><input type="radio" name="q6" value="a"> Lorsque le nombre d’itérations est généralement connu</label><label><input type="radio" name="q6" value="b"> Pour effacer l’écran</label><label><input type="radio" name="q6" value="c"> Uniquement pour calculer le déterminant</label><div class="answer">Bonne réponse : <code>for</code> convient lorsque le nombre d’itérations est connu.</div></div>
+<button id="grade">Correction des réponses</button> <button class="secondary" id="reset">Recommencer le quiz</button>
+<p id="score" aria-live="polite"></p>
+<h3>Défi pratique</h3><p>Écrivez un programme qui crée <code>A=[2 4 6 8]</code>calcule la somme et l’élément maximal, puis trace la fonction \(y=x^2\) sur l’intervalle de -3 à 3. Essayez avant de relire les leçons 4, 9 et 10.</p>
+<details><summary><strong>Afficher la solution du défi</strong></summary><pre><code>clc;
+clear;
+A = [2 4 6 8];
+S = sum(A);
+M = max(A);
+disp(S);
+disp(M);
+
+x = -3:0.1:3;
+y = x.^2;
+plot(x,y);
+grid on;
+title("y = x^2");
+xlabel("x");
+ylabel("y");</code></pre><p>La somme vaut 20 et l’élément maximal vaut 8. Le programme trace ensuite la courbe de la fonction.</p></details>
+</section>
+
+<section class="panel searchable">
+<h2>16. Fiche de révision — fiche de révision rapide</h2>
+<table><tr><th>Si l’objectif est…</th><th>Pensez à…</th></tr>
+<tr><td>Afficher un résultat</td><td><code>disp</code></td></tr>
+<tr><td>Lire une valeur saisie par l’utilisateur</td><td><code>input</code></td></tr>
+<tr><td>Créer une matrice</td><td><code>[...]</code>, <code>zeros</code>, <code>ones</code>, <code>eye</code></td></tr>
+<tr><td>Nombre d’éléments</td><td><code>numel(A)</code></td></tr>
+<tr><td>Somme de tous les éléments</td><td><code>sum(A(:))</code></td></tr>
+<tr><td>Multiplication élément par élément</td><td><code>.*</code></td></tr>
+<tr><td>Tester une condition</td><td><code>if</code>, <code>elseif</code>, <code>else</code></td></tr>
+<tr><td>Répétition avec un nombre d’itérations connu</td><td><code>for</code></td></tr>
+<tr><td>Répétition contrôlée par une condition</td><td><code>while</code></td></tr>
+<tr><td>Tracer une fonction</td><td><code>plot(x,y)</code></td></tr>
+<tr><td>Résoudre un système AX = b</td><td><code>A\\b</code></td></tr>
+<tr><td>Obtenir de l’aide sur une commande</td><td><code>help nom_commande</code></td></tr></table>
+<div class="callout success"><strong>Dernier conseil :</strong> Pour chaque leçon, recopiez les exemples, modifiez les valeurs, puis résolvez un exercice seul. Si vous disposez d’une fiche de TP de votre enseignant, comparez-la à ce cours, car les notions complémentaires peuvent varier selon le programme et le niveau.</div>
+</section>
+</main>
+</div>
+<footer>StudyNet · GNU Octave · Mathématiques · Apprendre pas à pas</footer>
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+ const q=search.value.trim().toLocaleLowerCase();
+ document.querySelectorAll('.searchable').forEach(section=>{
+   section.style.display=(!q||section.innerText.toLocaleLowerCase().includes(q))?'':'none';
+ });
+});
+document.getElementById('grade').addEventListener('click',()=>{
+ let score=0,total=6;
+ document.querySelectorAll('.exercise').forEach((ex,i)=>{
+   const picked=ex.querySelector('input:checked');
+   const correct=picked&&picked.value===ex.dataset.answer;
+   if(correct)score++;
+   ex.querySelector('.answer').classList.add('show');
+   ex.querySelector('.answer').style.borderLeft=correct?'4px solid #23864b':'4px solid #e77d20';
+ });
+ document.getElementById('score').textContent=`Score : ${score} / ${total} — ${score===total?'Bravo !':'Vérifiez vos réponses et réessayez.'}`;
+});
+document.getElementById('reset').addEventListener('click',()=>{
+ document.querySelectorAll('.exercise input').forEach(i=>i.checked=false);
+ document.querySelectorAll('.answer').forEach(a=>{a.classList.remove('show');a.style.borderLeft=''});
+ document.getElementById('score').textContent='';
+});
+</script>
+</body>
+</html>
