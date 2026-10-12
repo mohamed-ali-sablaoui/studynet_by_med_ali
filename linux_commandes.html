@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>study net cour systeme d'exploitation</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--text:#182230;--muted:#526174;--accent:#1769aa;--soft:#e8f3ff;--code:#101923;--line:#dbe3ec;--green:#147d52}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,#102a43,#1769aa);color:white;padding:42px 20px}header .wrap{max-width:1100px;margin:auto}header h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0 0 12px}header p{max-width:780px;color:#e8f3ff;margin:0}
+.layout{max-width:1100px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:255px minmax(0,1fr);gap:22px}
+nav,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 5px 18px #18324a0a}
+nav{padding:18px;align-self:start;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}nav strong{display:block;margin-bottom:8px}nav a{display:block;padding:6px 8px;color:var(--accent);text-decoration:none;border-radius:7px;font-size:.94rem}nav a:hover{background:var(--soft)}
+main{min-width:0}.card{padding:24px;margin-bottom:18px;scroll-margin-top:16px}.card h2{margin-top:0;color:#124f80;font-size:1.55rem}.card h3{margin-top:26px;margin-bottom:8px}.lead{color:var(--muted)}.tip,.warn,.tn{padding:12px 15px;border-radius:9px;margin:14px 0}.tip{background:#e9f8ef;border-left:4px solid var(--green)}.warn{background:#fff4df;border-left:4px solid #d98a00}.tn{background:var(--soft);border-left:4px solid var(--accent)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf1f5;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:var(--code);color:#e6edf3;padding:16px;border-radius:10px;overflow:auto;line-height:1.6}pre code{background:none;color:inherit;padding:0}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:520px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f0f5fa}ul,ol{padding-left:24px}.tag{display:inline-block;background:var(--soft);color:#124f80;padding:3px 9px;border-radius:99px;font-size:.82rem;font-weight:600}.quiz-q{border-top:1px solid var(--line);padding:15px 0}.quiz-q label{display:block;padding:4px 0;cursor:pointer}.feedback{font-weight:650;margin-top:8px}.btn{border:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;font-weight:650;cursor:pointer}.btn:hover{filter:brightness(.92)}.secondary{background:#e7edf4;color:#182230}footer{text-align:center;color:var(--muted);padding:24px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}nav{position:static;max-height:none}nav .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.card{padding:18px}}
+@media print{body{background:white}nav,.btn{display:none}.layout{display:block;max-width:none}.card{box-shadow:none;break-inside:avoid}.card a{color:inherit}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="tag">Cours débutant • Linux / Ubuntu</span>
+<h1>Commandes fondamentales et exploitation du système</h1>
+<p>Un cours détaillé entièrement en français, avec définitions, explications étape par étape, exemples pratiques, tableaux récapitulatifs et exercices corrigés. Compatible avec Ubuntu installé directement ou dans VirtualBox.</p>
+</div></header>
+<div class="layout">
+<nav aria-label="Sommaire"><strong>Sommaire du cours</strong><div class="links">
+<a href="#intro">1. Introduction</a><a href="#terminal">2. Terminal</a><a href="#base">3. Commandes de base</a><a href="#navigation">4. Répertoires</a><a href="#fichiers">5. Fichiers et dossiers</a><a href="#lecture">6. Lire et rechercher</a><a href="#systeme">7. Informations système</a><a href="#processus">8. Processus</a><a href="#permissions">9. Permissions</a><a href="#paquets">10. Logiciels</a><a href="#reseau">11. Réseau</a><a href="#aide">12. Aide</a><a href="#pratique">13. TP guidé</a><a href="#securite">14. Sécurité</a><a href="#resume">15. Résumé</a><a href="#quiz">16. Quiz</a>
+</div></nav>
+<main>
+<section class="card" id="intro"><h2>1. Introduction au système Linux</h2>
+<p><strong>Comment utiliser ce cours :</strong> lisez d’abord la définition de chaque commande, observez l’exemple, puis exécutez-le dans un dossier d’essai. Modifiez un seul élément à la fois et vérifiez le résultat avec <code>ls</code> ou <code>pwd</code>. Les commandes de suppression et d’administration doivent être utilisées avec prudence.</p>
+<p><strong>Linux</strong> est le noyau d’un système d’exploitation. Ubuntu, Debian et Fedora sont des distributions Linux : elles réunissent le noyau, des outils système, des applications et un environnement de travail.</p>
+<p>Un <strong>système d’exploitation</strong> gère le matériel, la mémoire, les fichiers, les programmes et les utilisateurs. On peut utiliser Linux avec une interface graphique ou avec un terminal.</p>
+<h3>Vocabulaire essentiel</h3><ul><li><strong>Terminal :</strong> application dans laquelle on saisit des commandes.</li><li><strong>Shell :</strong> programme qui interprète les commandes, par exemple Bash.</li><li><strong>Commande :</strong> instruction donnée au système.</li><li><strong>Répertoire :</strong> autre nom d’un dossier.</li><li><strong>Utilisateur administrateur :</strong> compte autorisé à effectuer des opérations système.</li></ul>
+<div class="tip"><strong>À retenir :</strong> le terminal permet de contrôler le système en saisissant des commandes, sans devoir passer systématiquement par l’interface graphique.</div>
+</section>
+<section class="card" id="terminal"><h2>2. Ouvrir et comprendre le terminal</h2>
+<p>Dans Ubuntu, ouvre l’application <strong>Terminal</strong>. Selon la configuration, le raccourci <code>Ctrl + Alt + T</code> fonctionne.</p>
+<p>Exemple d’invite :</p><pre><code>utilisateur@ordinateur:~$</code></pre>
+<ul><li><code>utilisateur</code> : nom du compte.</li><li><code>ordinateur</code> : nom de la machine.</li><li><code>~</code> : répertoire personnel de l’utilisateur.</li><li><code>$</code> : invite d’un utilisateur normal. Le symbole <code>#</code> est souvent associé à une session administrateur.</li></ul>
+<p>Une commande peut avoir cette forme :</p><pre><code>commande [options] [arguments]</code></pre>
+<p>Exemple : <code>ls -l /home</code>. <code>ls</code> est la commande, <code>-l</code> une option, et <code>/home</code> l’argument indiquant où regarder.</p>
+<div class="tip"><strong>Conseil :</strong> écris la commande exactement, puis appuie sur Entrée. Linux distingue généralement les majuscules et les minuscules : <code>Fichier.txt</code> et <code>fichier.txt</code> sont deux noms différents.</div>
+</section>
+<section class="card" id="base"><h2>3. Commandes fondamentales</h2>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Fonction</th><th>Exemple / remarque</th></tr></thead><tbody>
+<tr><td><code>pwd</code></td><td>Affiche le chemin du répertoire courant.</td><td><code>pwd</code></td></tr>
+<tr><td><code>ls</code></td><td>Liste les fichiers et dossiers.</td><td><code>ls -la</code> inclut les éléments cachés.</td></tr>
+<tr><td><code>clear</code></td><td>Nettoie l’affichage du terminal.</td><td>Ne supprime aucun fichier.</td></tr>
+<tr><td><code>date</code></td><td>Affiche la date et l’heure.</td><td><code>date</code></td></tr>
+<tr><td><code>whoami</code></td><td>Affiche le nom de l’utilisateur actif.</td><td><code>whoami</code></td></tr>
+<tr><td><code>hostname</code></td><td>Affiche le nom de la machine.</td><td><code>hostname</code></td></tr>
+<tr><td><code>uname -a</code></td><td>Affiche des informations sur le noyau et le système.</td><td>Les détails varient selon le système.</td></tr>
+<tr><td><code>history</code></td><td>Affiche l’historique des commandes du shell.</td><td>Flèche ↑ pour rappeler une commande.</td></tr>
+<tr><td><code>echo</code></td><td>Affiche du texte ou la valeur d’une variable.</td><td><code>echo "Bonjour"</code></td></tr>
+<tr><td><code>cal</code></td><td>Affiche un calendrier si l’outil est installé.</td><td>Peut ne pas être installé par défaut.</td></tr>
+</tbody></table></div>
+<div class="tip"><strong>À retenir :</strong> mémorisez surtout <code>pwd</code> pour connaître le répertoire courant, <code>ls</code> pour afficher son contenu et <code>clear</code> pour nettoyer l’écran du terminal. <code>clear</code> ne supprime aucun fichier.</div>
+</section>
+<section class="card" id="navigation"><h2>4. Se déplacer dans l’arborescence</h2>
+<p>Linux organise les fichiers dans une arborescence qui commence à la racine <code>/</code>. Le répertoire personnel d’un utilisateur est généralement situé dans <code>/home/nom</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>Commande / symbole</th><th>Signification</th></tr></thead><tbody>
+<tr><td><code>cd dossier</code></td><td>Entrer dans un dossier.</td></tr><tr><td><code>cd ..</code></td><td>Remonter au dossier parent.</td></tr><tr><td><code>cd ~</code></td><td>Aller au répertoire personnel.</td></tr><tr><td><code>cd /</code></td><td>Aller à la racine.</td></tr><tr><td><code>cd -</code></td><td>Revenir au répertoire précédent.</td></tr><tr><td><code>.</code></td><td>Désigne le répertoire courant.</td></tr><tr><td><code>..</code></td><td>Désigne le répertoire parent.</td></tr><tr><td><code>/home/user</code></td><td>Chemin absolu, qui commence par <code>/</code>.</td></tr><tr><td><code>Documents/cours.txt</code></td><td>Exemple de chemin relatif, calculé depuis le dossier courant.</td></tr>
+</tbody></table></div>
+<h3>Exemple guidé</h3><pre><code>pwd
+ls
+cd Documents
+pwd
+cd ..
+pwd
+cd ~</code></pre>
+<p>La commande <code>cd Documents</code> ne fonctionne que si le dossier <code>Documents</code> existe dans le dossier courant. Utilise <code>ls</code> pour vérifier.</p>
+<div class="tip"><strong>À retenir :</strong> <code>cd</code> change le répertoire de travail. <code>cd ..</code> permet de remonter au répertoire parent et <code>cd ~</code> de revenir au répertoire personnel.</div>
+</section>
+<section class="card" id="fichiers"><h2>5. Créer, copier, déplacer et supprimer</h2>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Utilité</th><th>Exemple</th></tr></thead><tbody>
+<tr><td><code>mkdir</code></td><td>Créer un dossier.</td><td><code>mkdir TP</code></td></tr>
+<tr><td><code>mkdir -p</code></td><td>Créer une suite de dossiers parents si nécessaire.</td><td><code>mkdir -p TP/linux/seance1</code></td></tr>
+<tr><td><code>touch</code></td><td>Créer un fichier vide s’il n’existe pas, ou actualiser sa date.</td><td><code>touch notes.txt</code></td></tr>
+<tr><td><code>cp</code></td><td>Copier un fichier.</td><td><code>cp notes.txt copie.txt</code></td></tr>
+<tr><td><code>cp -r</code></td><td>Copier un dossier et son contenu.</td><td><code>cp -r TP TP_copie</code></td></tr>
+<tr><td><code>mv</code></td><td>Déplacer ou renommer.</td><td><code>mv ancien.txt nouveau.txt</code></td></tr>
+<tr><td><code>rm</code></td><td>Supprimer un fichier.</td><td><code>rm copie.txt</code></td></tr>
+<tr><td><code>rmdir</code></td><td>Supprimer un dossier vide.</td><td><code>rmdir dossier_vide</code></td></tr>
+<tr><td><code>rm -r</code></td><td>Supprimer un dossier et son contenu.</td><td>À utiliser avec une grande prudence.</td></tr>
+</tbody></table></div>
+<div class="warn"><strong>Attention :</strong> <code>rm</code> supprime généralement sans passer par une corbeille. Vérifie toujours le chemin avec <code>pwd</code> et le nom avec <code>ls</code>. Évite <code>rm -rf</code> si tu ne comprends pas exactement la cible.</div>
+<h3>Exemple pratique</h3><pre><code>mkdir TP_Linux
+cd TP_Linux
+touch cours.txt
+cp cours.txt sauvegarde.txt
+mv sauvegarde.txt copie_cours.txt
+ls -l
+cd ..
+</code></pre>
+<p>Résultat attendu : dans <code>TP_Linux</code>, tu trouveras <code>cours.txt</code> et <code>copie_cours.txt</code>.</p>
+<h3>Les espaces dans les noms</h3><p>Pour créer un dossier dont le nom contient des espaces, utilise des guillemets :</p><pre><code>mkdir "Mon cours Linux"
+cd "Mon cours Linux"</code></pre>
+</section>
+<section class="card" id="lecture"><h2>6. Lire et rechercher dans les fichiers</h2>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Fonction</th></tr></thead><tbody>
+<tr><td><code>cat fichier.txt</code></td><td>Affiche le contenu complet d’un fichier texte.</td></tr>
+<tr><td><code>less fichier.txt</code></td><td>Parcourt un fichier page par page ; appuie sur <code>q</code> pour quitter.</td></tr>
+<tr><td><code>head fichier.txt</code></td><td>Affiche les 10 premières lignes par défaut.</td></tr>
+<tr><td><code>head -n 5 fichier.txt</code></td><td>Affiche les 5 premières lignes.</td></tr>
+<tr><td><code>tail fichier.txt</code></td><td>Affiche les 10 dernières lignes par défaut.</td></tr>
+<tr><td><code>wc -l fichier.txt</code></td><td>Compte les lignes.</td></tr>
+<tr><td><code>grep "mot" fichier.txt</code></td><td>Recherche les lignes contenant un motif.</td></tr>
+<tr><td><code>find . -name "*.txt"</code></td><td>Recherche les fichiers .txt à partir du dossier courant.</td></tr>
+</tbody></table></div>
+<h3>Écrire dans un fichier : redirections</h3>
+<ul><li><code>echo "Bonjour" &gt; salut.txt</code> : crée le fichier ou remplace son contenu.</li><li><code>echo "Deuxième ligne" &gt;&gt; salut.txt</code> : ajoute le texte à la fin.</li><li><code>cat salut.txt</code> : vérifie le résultat.</li></ul>
+<div class="warn">Le symbole <code>&gt;</code> écrase le contenu existant. Utilise <code>&gt;&gt;</code> si tu veux ajouter une ligne sans effacer les anciennes.</div>
+<h3>Exemple avec grep</h3><pre><code>echo "Linux est un système" > texte.txt
+echo "J'apprends les commandes Linux" >> texte.txt
+grep "Linux" texte.txt</code></pre>
+</section>
+<section class="card" id="systeme"><h2>7. Exploitation et informations du système</h2>
+<p>Ces commandes aident à surveiller les ressources et à connaître la configuration de l’ordinateur.</p>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Ce qu’elle indique</th></tr></thead><tbody>
+<tr><td><code>uname -a</code></td><td>Informations sur le noyau et l’architecture.</td></tr>
+<tr><td><code>cat /etc/os-release</code></td><td>Nom et version de la distribution.</td></tr>
+<tr><td><code>uptime</code></td><td>Durée depuis le démarrage et charge moyenne.</td></tr>
+<tr><td><code>free -h</code></td><td>Utilisation de la mémoire RAM et de la mémoire d’échange.</td></tr>
+<tr><td><code>df -h</code></td><td>Espace utilisé et disponible sur les systèmes de fichiers montés.</td></tr>
+<tr><td><code>du -sh dossier</code></td><td>Taille totale approximative d’un dossier.</td></tr>
+<tr><td><code>lsblk</code></td><td>Liste les périphériques de stockage en blocs.</td></tr>
+<tr><td><code>lscpu</code></td><td>Informations sur le processeur.</td></tr>
+<tr><td><code>who</code></td><td>Affiche les utilisateurs connectés selon la session.</td></tr>
+</tbody></table></div>
+<p>L’option <code>-h</code> signifie généralement « human-readable » : les tailles sont présentées dans des unités faciles à lire, comme K, M ou G.</p>
+<div class="tip"><strong>À retenir :</strong> utilisez <code>free -h</code> pour consulter la mémoire, <code>df -h</code> pour vérifier l’espace des systèmes de fichiers et <code>du -sh dossier</code> pour estimer la taille d’un dossier.</div>
+</section>
+<section class="card" id="processus"><h2>8. Gestion des processus</h2>
+<p>Un <strong>processus</strong> est un programme en cours d’exécution. Chaque processus possède généralement un identifiant appelé PID.</p>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Fonction</th></tr></thead><tbody>
+<tr><td><code>ps</code></td><td>Affiche des processus liés à la session courante.</td></tr>
+<tr><td><code>ps aux</code></td><td>Affiche une liste détaillée de nombreux processus.</td></tr>
+<tr><td><code>top</code></td><td>Surveille en direct les processus et les ressources ; touche <code>q</code> pour quitter.</td></tr>
+<tr><td><code>sleep 30</code></td><td>Lance un processus qui attend 30 secondes.</td></tr>
+<tr><td><code>jobs</code></td><td>Affiche les tâches lancées en arrière-plan depuis le shell actuel.</td></tr>
+<tr><td><code>kill PID</code></td><td>Envoie un signal au processus indiqué.</td></tr>
+</tbody></table></div>
+<p>Pour tester sans risque, lance <code>sleep 30</code>. Dans un autre terminal, cherche son PID avec <code>ps aux | grep sleep</code>. Le symbole <code>|</code> (pipe) transmet la sortie d’une commande à la suivante.</p>
+<div class="warn">N’arrête pas un processus système au hasard. Si tu utilises <code>kill</code>, vérifie le PID et assure-toi qu’il s’agit bien du processus que tu souhaites arrêter.</div>
+</section>
+<section class="card" id="permissions"><h2>9. Utilisateurs, droits et permissions</h2>
+<p>Linux utilise des permissions pour contrôler qui peut lire, modifier ou exécuter un fichier. Les trois catégories principales sont :</p>
+<ul><li><strong>u (user)</strong> : propriétaire du fichier.</li><li><strong>g (group)</strong> : groupe associé au fichier.</li><li><strong>o (others)</strong> : les autres utilisateurs.</li></ul>
+<p>Les permissions courantes :</p><ul><li><code>r</code> = read (lecture), valeur numérique 4.</li><li><code>w</code> = write (écriture), valeur numérique 2.</li><li><code>x</code> = execute (exécution), valeur numérique 1.</li></ul>
+<p>Exemple d’affichage : <code>-rwxr-xr--</code>. Le premier caractère indique le type ; les trois caractères suivants correspondent au propriétaire, puis au groupe, puis aux autres.</p>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Explication</th></tr></thead><tbody>
+<tr><td><code>ls -l</code></td><td>Afficher les permissions et le propriétaire.</td></tr>
+<tr><td><code>chmod 755 script.sh</code></td><td>Propriétaire : lecture, écriture, exécution ; groupe et autres : lecture et exécution.</td></tr>
+<tr><td><code>chmod u+x script.sh</code></td><td>Ajouter le droit d’exécution au propriétaire.</td></tr>
+<tr><td><code>chown utilisateur fichier</code></td><td>Changer le propriétaire, si les droits nécessaires sont disponibles.</td></tr>
+<tr><td><code>id</code></td><td>Afficher l’identité numérique et les groupes de l’utilisateur.</td></tr>
+</tbody></table></div>
+<p>Calcul de <code>755</code> : propriétaire <code>7 = 4+2+1</code> (rwx), groupe <code>5 = 4+1</code> (r-x), autres <code>5 = 4+1</code> (r-x).</p>
+</section>
+<section class="card" id="paquets"><h2>10. Installer et mettre à jour les logiciels sur Ubuntu</h2>
+<p>Ubuntu utilise le gestionnaire de paquets APT. Une connexion Internet peut être nécessaire pour télécharger les mises à jour ou les logiciels.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+sudo apt install nom_du_paquet
+sudo apt remove nom_du_paquet</code></pre>
+<ul><li><code>sudo</code> demande des privilèges élevés pour exécuter la commande.</li><li><code>apt update</code> actualise la liste des paquets disponibles ; il n’installe pas à lui seul toutes les mises à jour.</li><li><code>apt upgrade</code> installe les mises à jour disponibles pour les paquets installés.</li><li><code>apt install</code> installe un paquet.</li><li><code>apt remove</code> désinstalle un paquet.</li></ul>
+<div class="warn">Lis ce que le terminal propose avant de confirmer une opération avec <code>Y</code>. N’exécute pas une commande avec <code>sudo</code> si tu ne comprends pas son effet. Le mot de passe saisi dans le terminal ne s’affiche généralement pas, même sous forme d’astérisques : c’est normal.</div>
+</section>
+<section class="card" id="reseau"><h2>11. Commandes réseau</h2>
+<div class="table-wrap"><table><thead><tr><th>Commande</th><th>Fonction</th><th>À savoir</th></tr></thead><tbody>
+<tr><td><code>ip addr</code></td><td>Affiche les interfaces et adresses IP.</td><td>Utile pour vérifier si une interface possède une adresse.</td></tr>
+<tr><td><code>ip route</code></td><td>Affiche les routes réseau.</td><td>Permet notamment de voir la route par défaut.</td></tr>
+<tr><td><code>ping -c 4 8.8.8.8</code></td><td>Teste l’accessibilité d’une adresse IP.</td><td>Envoie quatre requêtes.</td></tr>
+<tr><td><code>ping -c 4 google.com</code></td><td>Teste la connectivité et la résolution du nom.</td><td>Un échec peut venir du réseau ou du DNS.</td></tr>
+<tr><td><code>hostname -I</code></td><td>Affiche les adresses IP associées à la machine.</td><td>La sortie dépend de la configuration.</td></tr>
+<tr><td><code>curl -I https://example.com</code></td><td>Teste une requête HTTP et affiche les en-têtes.</td><td>Suppose que curl est installé.</td></tr>
+</tbody></table></div>
+<p><strong>Comprendre les résultats de ping :</strong></p><ul><li>Si l’adresse IP répond mais pas le nom de domaine, la résolution DNS peut être en cause.</li><li>Si les deux échouent, vérifie d’abord la connexion, l’adresse IP, la route et les règles réseau.</li><li>Certains réseaux bloquent les requêtes ping : un échec ne prouve pas toujours que tout Internet est indisponible.</li></ul>
+</section>
+<section class="card" id="aide"><h2>12. Obtenir de l’aide</h2>
+<ul><li><code>commande --help</code> : affiche souvent une aide rapide.</li><li><code>man commande</code> : ouvre le manuel détaillé. Appuie sur <code>q</code> pour quitter.</li><li><code>apropos mot</code> : cherche dans les descriptions des pages de manuel, si la base est disponible.</li><li><code>which python3</code> : indique le chemin du programme trouvé dans le PATH.</li><li><code>type cd</code> : indique comment le shell interprète une commande.</li></ul>
+<p>Exemples :</p><pre><code>ls --help
+man cp
+which python3
+type cd</code></pre>
+<p>Pour les commandes intégrées au shell, comme <code>cd</code>, la commande <code>help cd</code> peut être plus utile que <code>man cd</code>.</p>
+</section>
+<section class="card" id="pratique"><h2>13. Travaux pratiques guidés</h2><p><span class="tag">Durée indicative : 15–25 min</span></p>
+<h3>Objectif</h3><p>Créer une arborescence, écrire un fichier, le copier, chercher un mot et consulter les informations système.</p>
+<h3>Étape A — Préparer les dossiers</h3><pre><code>cd ~
+mkdir -p TP_Linux/seance1
+cd TP_Linux/seance1
+pwd
+ls -la</code></pre>
+<p><strong>Explication :</strong> <code>mkdir -p</code> crée les dossiers intermédiaires nécessaires ; <code>pwd</code> confirme le chemin courant.</p>
+<h3>Étape B — Créer et remplir un fichier</h3><pre><code>echo "Je decouvre Linux" > notes.txt
+echo "J'apprends les commandes fondamentales" >> notes.txt
+cat notes.txt
+wc -l notes.txt</code></pre>
+<p>Le résultat de <code>wc -l</code> devrait indiquer 2 lignes.</p>
+<h3>Étape C — Copier et rechercher</h3><pre><code>cp notes.txt notes_backup.txt
+grep "Linux" notes.txt
+find . -name "*.txt"
+ls -l</code></pre>
+<h3>Étape D — Observer le système</h3><pre><code>whoami
+uname -a
+free -h
+df -h
+ip addr</code></pre>
+<h3>Étape E — Nettoyage optionnel</h3><p>Si tu veux supprimer uniquement le TP que tu viens de créer, reviens au dossier personnel, vérifie le nom, puis supprime-le :</p><pre><code>cd ~
+ls
+# Vérifie que TP_Linux est bien le dossier créé pour cet exercice
+rm -r TP_Linux</code></pre>
+<div class="warn">L’étape E est facultative. Ne lance pas <code>rm -r</code> si tu n’es pas certain du chemin et du contenu : la suppression peut être définitive.</div>
+</section>
+<section class="card" id="securite"><h2>14. Bonnes pratiques de sécurité</h2>
+<ol><li>Vérifie ton emplacement avec <code>pwd</code> avant de déplacer ou supprimer des éléments.</li><li>Utilise <code>ls</code> pour vérifier les noms de fichiers et de dossiers.</li><li>Comprends une commande avant d’ajouter <code>sudo</code>.</li><li>Évite les commandes de suppression récursive sur des chemins inconnus.</li><li>Ne copie pas aveuglément des commandes provenant d’un site ou d’un message.</li><li>Fais une sauvegarde des fichiers importants avant toute opération risquée.</li><li>Si une commande affiche « Permission denied », vérifie le chemin et les droits au lieu de forcer immédiatement l’opération.</li></ol>
+</section>
+<section class="card" id="resume"><h2>15. Fiche de révision rapide</h2>
+<div class="table-wrap"><table><thead><tr><th>Besoin</th><th>Commande à retenir</th></tr></thead><tbody>
+<tr><td>Connaître le dossier courant</td><td><code>pwd</code></td></tr><tr><td>Lister les éléments</td><td><code>ls -la</code></td></tr><tr><td>Changer de dossier</td><td><code>cd nom</code></td></tr><tr><td>Créer un dossier / fichier</td><td><code>mkdir nom</code> / <code>touch nom.txt</code></td></tr><tr><td>Copier / déplacer</td><td><code>cp source destination</code> / <code>mv source destination</code></td></tr><tr><td>Lire un fichier</td><td><code>cat fichier.txt</code></td></tr><tr><td>Rechercher un nom</td><td><code>find . -name "nom"</code></td></tr><tr><td>Rechercher du texte</td><td><code>grep "mot" fichier.txt</code></td></tr><tr><td>RAM / disque</td><td><code>free -h</code> / <code>df -h</code></td></tr><tr><td>Voir les processus</td><td><code>ps aux</code> ou <code>top</code></td></tr><tr><td>Voir les permissions</td><td><code>ls -l</code></td></tr><tr><td>Voir la configuration IP</td><td><code>ip addr</code></td></tr><tr><td>Aide</td><td><code>man commande</code> ou <code>commande --help</code></td></tr>
+</tbody></table></div>
+</section>
+<section class="card" id="quiz"><h2>16. Quiz d’auto-évaluation</h2><p>Choisis une réponse pour chaque question, puis clique sur « Corriger le quiz ».</p>
+<form id="quizForm">
+<div class="quiz-q"><strong>1. Quelle commande affiche le répertoire courant ?</strong><label><input type="radio" name="q1" value="a"> <code>ls</code></label><label><input type="radio" name="q1" value="b"> <code>pwd</code></label><label><input type="radio" name="q1" value="c"> <code>clear</code></label><div class="feedback" id="f1"></div></div>
+<div class="quiz-q"><strong>2. Quelle commande crée un dossier ?</strong><label><input type="radio" name="q2" value="a"> <code>touch</code></label><label><input type="radio" name="q2" value="b"> <code>mkdir</code></label><label><input type="radio" name="q2" value="c"> <code>cat</code></label><div class="feedback" id="f2"></div></div>
+<div class="quiz-q"><strong>3. Quelle commande affiche l’utilisation de la RAM ?</strong><label><input type="radio" name="q3" value="a"> <code>free -h</code></label><label><input type="radio" name="q3" value="b"> <code>date</code></label><label><input type="radio" name="q3" value="c"> <code>pwd</code></label><div class="feedback" id="f3"></div></div>
+<div class="quiz-q"><strong>4. Que fait <code>cd ..</code> ?</strong><label><input type="radio" name="q4" value="a"> Supprime le dossier</label><label><input type="radio" name="q4" value="b"> Affiche le contenu</label><label><input type="radio" name="q4" value="c"> Remonte au dossier parent</label><div class="feedback" id="f4"></div></div>
+<div class="quiz-q"><strong>5. Quel symbole ajoute du texte à la fin d’un fichier ?</strong><label><input type="radio" name="q5" value="a"> <code>&gt;</code></label><label><input type="radio" name="q5" value="b"> <code>&gt;&gt;</code></label><label><input type="radio" name="q5" value="c"> <code>|</code></label><div class="feedback" id="f5"></div></div>
+<div class="quiz-q"><strong>6. Quelle commande affiche les permissions d’un fichier ?</strong><label><input type="radio" name="q6" value="a"> <code>ls -l</code></label><label><input type="radio" name="q6" value="b"> <code>date</code></label><label><input type="radio" name="q6" value="c"> <code>ping</code></label><div class="feedback" id="f6"></div></div>
+<button class="btn" type="button" onclick="corriger()">Corriger le quiz</button> <button class="btn secondary" type="reset" onclick="resetQuiz()">Recommencer</button>
+<p id="score" aria-live="polite"></p>
+</form>
+<script>
+function corriger(){
+ const rep={q1:"b",q2:"b",q3:"a",q4:"c",q5:"b",q6:"a"};
+ let score=0;
+ Object.keys(rep).forEach((q,i)=>{
+  const choisi=document.querySelector('input[name="'+q+'"]:checked');
+  const f=document.getElementById("f"+(i+1));
+  if(choisi&&choisi.value===rep[q]){score++;f.textContent="Correct !";f.style.color="#147d52";}
+  else{f.textContent="Réponse correcte : "+({q1:"pwd",q2:"mkdir",q3:"free -h",q4:"cd ..",q5:">>",q6:"ls -l"}[q]);f.style.color="#b42318";}
+ });
+ document.getElementById("score").textContent="Résultat : "+score+" / 6";
+}
+function resetQuiz(){setTimeout(()=>{document.querySelectorAll(".feedback").forEach(e=>e.textContent="");document.getElementById("score").textContent="";},0);}
+</script>
+</section>
+</main>
+</div>
+<footer>Cours pédagogique pour débuter avec Linux • Pour conserver ce cours en PDF, utilisez Imprimer puis Enregistrer au format PDF dans votre navigateur.</footer>
+</body>
+</html>

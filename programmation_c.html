@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyNet  Cours  de programmation C</title>
+<style>
+:root{--navy:#142744;--navy2:#1b365d;--blue:#3975e8;--blue2:#eaf1ff;--ink:#202d42;--muted:#69788e;--line:#e1e8f1;--bg:#f5f7fb;--white:#fff;--green:#16866a;--code:#111d30;--shadow:0 14px 38px #162c4d12}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.container{width:min(1240px,calc(100% - 34px));margin:auto}
+header{height:76px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-size:1.25rem;font-weight:850;color:var(--navy)}.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#4b8aff,#244fb7);box-shadow:0 7px 18px #2864e82e;font-size:1.4rem}.brand small{display:block;font-size:.68rem;font-weight:500;color:var(--muted)}.navlinks{display:flex;gap:22px;color:#566780;font-size:.92rem}.navlinks a:hover{color:var(--blue)}.btn{border:0;border-radius:11px;padding:10px 15px;font-weight:750;cursor:pointer;display:inline-flex;gap:8px;align-items:center;justify-content:center}.primary{background:var(--blue);color:white}.outline{background:white;border:1px solid var(--line);color:var(--navy)}.menu{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.hero{background:linear-gradient(120deg,#132744,#1c4376 65%,#3975e8);color:white;padding:48px 0 42px;position:relative;overflow:hidden}.hero:after{content:"C";position:absolute;right:7%;top:-105px;font-size:24rem;font-weight:900;color:#ffffff08;line-height:1}.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr .6fr;gap:35px;align-items:center}.eyebrow{display:inline-block;border:1px solid #ffffff38;background:#ffffff12;border-radius:50px;padding:5px 12px;font-size:.8rem;color:#dce8ff}.hero h1{font-size:clamp(2rem,4vw,3.3rem);line-height:1.13;letter-spacing:-1.2px;margin:15px 0}.hero h1 span{color:#9dc7ff}.hero p{max-width:720px;color:#d9e5f7;margin:0 0 22px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.hero .outline{background:#ffffff13;color:#fff;border-color:#ffffff40}.hero-card{background:#ffffff13;border:1px solid #ffffff35;border-radius:20px;padding:23px;backdrop-filter:blur(6px)}.hero-card strong{display:block;font-size:1.1rem;margin-bottom:10px}.hero-card ul{margin:0;padding-left:20px;color:#e2ebfb;font-size:.9rem}.hero-card li{margin:5px 0}.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.hero-tags span{background:#ffffff17;border:1px solid #ffffff26;padding:4px 9px;border-radius:8px;font-size:.78rem}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start;padding:28px 0 55px}.sidebar{position:sticky;top:94px;background:white;border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--shadow);max-height:calc(100vh - 110px);overflow:auto}.side-title{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;font-weight:850;color:var(--muted);margin:0 0 10px}.side-search{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 11px;margin-bottom:14px;outline:none}.side-search:focus{border-color:#8ab1ff;box-shadow:0 0 0 3px #3975e814}.toc{display:grid;gap:4px}.toc a{font-size:.88rem;padding:7px 9px;border-radius:8px;color:#52627a}.toc a:hover,.toc a.active{background:var(--blue2);color:#2459c5;font-weight:750}.sidebar-note{margin-top:17px;background:#f4f7fc;border-radius:11px;padding:12px;font-size:.8rem;color:var(--muted)}main{min-width:0}.welcome{padding:25px 27px;background:#fff;border:1px solid var(--line);border-radius:17px;margin-bottom:18px;box-shadow:var(--shadow)}.welcome h2{margin:0 0 6px;color:var(--navy);font-size:1.55rem}.welcome p{margin:0;color:var(--muted)}.notice{border-left:4px solid var(--blue);background:#eef4ff;padding:13px 16px;border-radius:0 10px 10px 0;margin-top:17px;font-size:.91rem}.lesson{background:#fff;border:1px solid var(--line);border-radius:17px;padding:27px;margin-bottom:18px;box-shadow:var(--shadow);scroll-margin-top:92px}.lesson-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:17px}.lesson-num{flex:0 0 42px;height:42px;border-radius:13px;background:var(--blue2);color:#2e65cf;display:grid;place-items:center;font-weight:900}.lesson h2{font-size:1.45rem;line-height:1.3;margin:1px 0 5px;color:var(--navy)}.lesson .subtitle{color:var(--muted);font-size:.9rem;margin:0}.lesson h3{font-size:1.08rem;color:var(--navy);margin:23px 0 8px}.lesson h4{font-size:.97rem;margin:15px 0 6px}.lesson p{margin:9px 0}.lesson ul,.lesson ol{padding-left:24px}.lesson li{margin:5px 0}.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.concept{border:1px solid var(--line);background:#fbfcff;border-radius:12px;padding:14px}.concept strong{color:var(--navy)}.table-wrap{overflow-x:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:10px 12px;text-align:left;border:1px solid var(--line);vertical-align:top}th{background:#f1f5fc;color:var(--navy)}code{font-family:Consolas,"Courier New",monospace}.inline-code{background:#edf2fa;border-radius:5px;padding:2px 5px;color:#234d9b}.codebox{margin:13px 0 17px;border-radius:13px;overflow:hidden;background:var(--code);color:#edf3ff}.codehead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 14px;background:#1b2a42;border-bottom:1px solid #ffffff16;font-size:.82rem;color:#c8d6eb}.copy{border:1px solid #ffffff35;background:#ffffff0d;color:#fff;border-radius:7px;padding:5px 9px;cursor:pointer;font-size:.78rem}.codebox pre{margin:0;padding:17px;overflow:auto;line-height:1.65;font-size:.87rem;tab-size:4}.codebox .comment{color:#91a6c7}.dual{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:13px 0}.dual-panel{border:1px solid var(--line);border-radius:13px;overflow:hidden;min-width:0}.dual-title{padding:10px 13px;font-size:.82rem;font-weight:850;background:#f1f5fc;color:var(--navy);display:flex;justify-content:space-between}.dual-panel pre{white-space:pre;overflow:auto;margin:0;padding:14px;font-size:.82rem;line-height:1.6;background:#fff}.algorithm{background:#fbfcff}.explain{border:1px solid #d9e8ff;background:#f4f8ff;padding:13px 15px;border-radius:11px;margin:12px 0;font-size:.92rem}.warning{border:1px solid #f0dfb5;background:#fff9eb;padding:13px 15px;border-radius:11px;margin:12px 0;font-size:.91rem}.exercise{border:1px solid var(--line);border-radius:12px;padding:15px;margin:12px 0}.exercise summary{cursor:pointer;font-weight:800;color:var(--navy)}.exercise details{margin-top:10px}.exercise details summary{color:#2b62cb;font-size:.9rem}.checklist{display:grid;gap:8px}.checklist label{display:flex;gap:9px;align-items:flex-start;background:#f7f9fd;border:1px solid var(--line);padding:10px 12px;border-radius:9px}.lesson-end{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}.lesson-end a{font-size:.88rem;color:#2c62c9;font-weight:750}.progress-bar{height:6px;border-radius:8px;background:#e7edf6;overflow:hidden;margin-top:8px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#3975e8,#63b2ff);transition:width .2s}footer{background:#10213c;color:#d5e0f1;padding:25px 0}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.86rem}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#142744;color:white;border-radius:10px;padding:11px 16px;transition:.2s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}.hidden{display:none!important}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none}.toc{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr}.hero-card{max-width:600px}.navlinks{gap:12px}}@media(max-width:650px){header{height:67px}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;padding:17px 22px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column}.navlinks.open{display:flex}.menu{display:block}.nav .outline{display:none}.hero{padding:36px 0}.hero h1{font-size:2.2rem}.layout{padding-top:17px}.lesson,.welcome{padding:19px}.concept-grid,.dual{grid-template-columns:1fr}.toc{grid-template-columns:1fr 1fr}.lesson h2{font-size:1.28rem}.container{width:calc(100% - 24px)}}
+</style>
+</head>
+<body>
+<header><div class="container nav"><a class="brand" href="index.html"><span class="logo">✦</span><span>StudyNet<small>Apprendre mieux, réussir ensemble</small></span></a><nav class="navlinks" id="navlinks"><a href="index.html">Accueil</a><a href="#cours">Cours complet</a><a href="#exercices">Exercices</a><a href="#revision">Révision</a></nav><div style="display:flex;gap:9px;align-items:center"><a class="btn outline" href="index.html">← Accueil</a><button class="menu" id="menuBtn" aria-label="Ouvrir le menu">☰</button></div></div></header>
+<section class="hero"><div class="container hero-inner"><div><span class="eyebrow">Bibliothèque StudyNet · Informatique</span><h1>Programmation <span>C</span><br>Le cours complet, pas à pas</h1><p>Un cours structuré pour apprendre à analyser un problème, écrire son algorithme, traduire la solution en langage C et comprendre chaque instruction. Chaque chapitre contient les notions essentielles, la syntaxe, un exemple et son équivalent algorithmique.</p><div class="hero-actions"><a class="btn primary" href="#cours">Commencer le cours ↓</a><a class="btn outline" href="#exercices">Aller aux exercices</a></div><div class="hero-tags"><span>Variables</span><span>Conditions</span><span>Boucles</span><span>Tableaux</span><span>Chaînes</span><span>Fonctions</span></div></div><div class="hero-card"><strong>Parcours d’apprentissage</strong><ul><li>Comprendre avant de mémoriser</li><li>Algorithme et code C côte à côte</li><li>Exemples commentés ligne par ligne</li><li>Erreurs fréquentes et exercices</li></ul><div style="margin-top:17px;font-size:.82rem;color:#d7e5fb">Progression de lecture <span id="progressText">0%</span><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div></div></div></section>
+<div class="container layout" id="cours"><aside class="sidebar"><p class="side-title">Sommaire du cours</p><input class="side-search" id="tocSearch" type="search" placeholder="Rechercher un chapitre…" aria-label="Rechercher un chapitre"><nav class="toc" id="toc"><a href="#intro">0. Introduction</a><a href="#variables">1. Variables et types</a><a href="#entrees">2. Entrées / sorties</a><a href="#operateurs">3. Opérateurs</a><a href="#conditions">4. Si / Sinon</a><a href="#selon">5. Selon / Switch</a><a href="#boucles">6. Boucles</a><a href="#tableaux">7. Tableaux</a><a href="#chaines">8. Chaînes de caractères</a><a href="#fonctions">9. Fonctions</a><a href="#pointeurs">10. Pointeurs</a><a href="#fichiers">11. Fichiers</a><a href="#exercices">12. Exercices corrigés</a><a href="#revision">13. Fiche de révision</a></nav><div class="sidebar-note"><strong>Conseil :</strong> lis la notion, étudie les deux codes, puis essaie de refaire l'exemple sans regarder la correction.</div></aside>
+<main>
+<div class="welcome"><h2>Comment utiliser ce cours ?</h2><p>En algorithmique, on décrit les étapes d'une solution sans dépendre d'un langage. En C, on écrit ces étapes avec une syntaxe précise que le compilateur peut traduire.</p><div class="notice"><strong>Important :</strong> les algorithmes ci-dessous utilisent une notation pédagogique en français : <code class="inline-code">Lire</code>, <code class="inline-code">Écrire</code>, <code class="inline-code">Si</code>, <code class="inline-code">Pour</code>, etc. Selon l'enseignant, les mots exacts peuvent varier, mais la logique reste la même.</div></div>
+<section class="lesson" id="intro"><div class="lesson-head"><div class="lesson-num">00</div><div><h2>Introduction à la programmation</h2><p class="subtitle">Comprendre le problème, l'algorithme et le programme.</p></div></div><h3>1. Qu'est-ce qu'un algorithme ?</h3><p>Un <strong>algorithme</strong> est une suite finie d'étapes logiques qui permet de résoudre un problème. Il reçoit éventuellement des données, effectue des traitements, puis produit un résultat.</p><div class="concept-grid"><div class="concept"><strong>Entrées</strong><br>Les données fournies au programme : par exemple deux nombres <code>a</code> et <code>b</code>.</div><div class="concept"><strong>Traitement</strong><br>Les opérations appliquées aux données : par exemple calculer <code>s = a + b</code>.</div><div class="concept"><strong>Sorties</strong><br>Les résultats affichés ou enregistrés : par exemple la somme <code>s</code>.</div><div class="concept"><strong>Programme C</strong><br>La traduction de l'algorithme dans le langage C, avec sa syntaxe.</div></div><h3>2. Exemple : calculer la somme de deux entiers</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Algorithme Somme
+Variables
+  a, b, s : entier
+Début
+  Lire(a, b)
+  s ← a + b
+  Écrire(s)
+Fin</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int a, b, s;
+    scanf("%d %d", &a, &b);
+    s = a + b;
+    printf("Somme = %d\\n", s);
+    return 0;
+}</pre></div></div><p><strong>Explication :</strong> on réserve trois variables entières. On lit deux valeurs, on additionne ces valeurs, puis on affiche la somme. En C, chaque instruction se termine généralement par un point-virgule <code>;</code>.</p><div class="lesson-end"><span></span><a href="#variables">Chapitre suivant : variables →</a></div></section>
+<section class="lesson" id="variables"><div class="lesson-head"><div class="lesson-num">01</div><div><h2>Variables, constantes et types</h2><p class="subtitle">Déclarer, initialiser, modifier et choisir le type d'une donnée.</p></div></div><h3>1. Définition d'une variable</h3><p>Une <strong>variable</strong> est une zone mémoire identifiée par un nom. Elle possède un type qui détermine les valeurs qu'elle peut représenter. Sa valeur peut changer pendant l'exécution.</p><div class="codebox"><div class="codehead"><span>Déclaration en C</span><button class="copy">Copier</button></div><pre><code>int age;             // déclaration
+age = 20;            // affectation
+float moyenne = 14.5f; // déclaration + initialisation
+char lettre = 'A';   // un seul caractère</code></pre></div><p><strong>Déclarer</strong> signifie annoncer l'existence d'une variable. <strong>Initialiser</strong> signifie lui donner sa première valeur. Une variable locale non initialisée ne doit pas être utilisée avant d'avoir reçu une valeur.</p><h3>2. Les types les plus utilisés</h3><div class="table-wrap"><table><thead><tr><th>Type C</th><th>Utilisation</th><th>Exemple</th><th>Format courant</th></tr></thead><tbody><tr><td><code>int</code></td><td>Entier</td><td><code>int n = 12;</code></td><td><code>%d</code></td></tr><tr><td><code>float</code></td><td>Réel en précision simple</td><td><code>float x = 3.5f;</code></td><td><code>%f</code></td></tr><tr><td><code>double</code></td><td>Réel en précision plus élevée</td><td><code>double pi = 3.14159;</code></td><td><code>%f</code> avec <code>printf</code></td></tr><tr><td><code>char</code></td><td>Un caractère</td><td><code>char c = 'Z';</code></td><td><code>%c</code></td></tr><tr><td><code>_Bool</code> / <code>bool</code></td><td>Valeur logique (0 ou 1)</td><td><code>#include &lt;stdbool.h&gt;</code><br><code>bool ok = true;</code></td><td><code>%d</code> pour afficher sa valeur numérique</td></tr></tbody></table></div><h3>3. Règles de nommage</h3><ul><li>Un nom peut contenir des lettres, des chiffres et le caractère <code>_</code>.</li><li>Il ne doit pas commencer par un chiffre : <code>note1</code> est correct, <code>1note</code> ne l'est pas.</li><li>Les espaces et les accents sont à éviter dans les identifiants.</li><li>Le C distingue les majuscules des minuscules : <code>age</code> et <code>Age</code> sont deux noms différents.</li><li>Un mot réservé comme <code>int</code> ou <code>while</code> ne peut pas servir de nom.</li></ul><h3>4. Constantes</h3><p>Une constante représente une valeur qu'on ne souhaite pas modifier pendant le programme. En C, on peut utiliser <code>const</code>.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Constante
+  TVA = 0.19
+Variables
+  prixHT, prixTTC : réel
+Début
+  Lire(prixHT)
+  prixTTC ← prixHT * (1 + TVA)
+  Écrire(prixTTC)
+Fin</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    const float TVA = 0.19f;
+    float prixHT, prixTTC;
+    scanf("%f", &prixHT);
+    prixTTC = prixHT * (1 + TVA);
+    printf("Prix TTC = %.2f\\n", prixTTC);
+    return 0;
+}</pre></div></div><div class="explain"><strong>À retenir :</strong> <code>%.2f</code> affiche un réel avec deux chiffres après la virgule. Dans une expression, <code>*</code> signifie la multiplication.</div><div class="lesson-end"><a href="#intro">← Introduction</a><a href="#entrees">Entrées / sorties →</a></div></section>
+<section class="lesson" id="entrees"><div class="lesson-head"><div class="lesson-num">02</div><div><h2>Entrées et sorties : Lire, Écrire, scanf, printf</h2><p class="subtitle">Communiquer avec l'utilisateur.</p></div></div><h3>1. Afficher avec printf</h3><p>La fonction <code>printf()</code>, déclarée dans <code>stdio.h</code>, affiche du texte et des valeurs. Les marqueurs de format indiquent le type de la valeur à afficher.</p><div class="codebox"><div class="codehead"><span>Affichage</span><button class="copy">Copier</button></div><pre><code>printf("Bonjour !\\n");
+printf("Age : %d\\n", age);
+printf("Moyenne : %.2f\\n", moyenne);
+printf("Lettre : %c\\n", lettre);</code></pre></div><p><code>\n</code> provoque un retour à la ligne. Le texte entre guillemets est affiché tel quel, sauf les séquences spéciales comme <code>\n</code> et les marqueurs comme <code>%d</code>.</p><h3>2. Lire avec scanf</h3><p>La fonction <code>scanf()</code> lit des données saisies au clavier. Pour une variable simple, on passe généralement son adresse à l'aide de <code>&amp;</code>.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Variables
+  age : entier
+  nom : chaîne
+Début
+  Écrire("Votre âge ?")
+  Lire(age)
+  Écrire("Âge = ", age)
+Fin</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int age;
+    printf("Votre age ? ");
+    if (scanf("%d", &age) == 1) {
+        printf("Age = %d\\n", age);
+    }
+    return 0;
+}</pre></div></div><h3>3. Formats usuels</h3><div class="table-wrap"><table><tr><th>Format</th><th>Type usuel</th><th>Exemple</th></tr><tr><td><code>%d</code></td><td><code>int</code></td><td><code>scanf("%d", &amp;n)</code></td></tr><tr><td><code>%f</code></td><td><code>float</code> dans scanf/printf</td><td><code>scanf("%f", &amp;x)</code></td></tr><tr><td><code>%lf</code></td><td><code>double</code> dans scanf</td><td><code>scanf("%lf", &amp;y)</code></td></tr><tr><td><code>%c</code></td><td><code>char</code></td><td><code>scanf(" %c", &amp;c)</code></td></tr><tr><td><code>%s</code></td><td>Tableau de caractères jusqu'à un espace</td><td><code>scanf("%29s", nom)</code></td></tr></table></div><div class="warning"><strong>Attention :</strong> pour lire un caractère après un nombre, écris souvent <code>scanf(" %c", &amp;c)</code> : l'espace avant <code>%c</code> permet d'ignorer les espaces et retours à la ligne restés dans l'entrée. Pour lire une phrase avec des espaces, préfère <code>fgets()</code>.</div><div class="lesson-end"><a href="#variables">← Variables</a><a href="#operateurs">Opérateurs →</a></div></section>
+<section class="lesson" id="operateurs"><div class="lesson-head"><div class="lesson-num">03</div><div><h2>Opérateurs et expressions</h2><p class="subtitle">Effectuer des calculs et comparer des valeurs.</p></div></div><h3>1. Opérateurs arithmétiques</h3><div class="table-wrap"><table><tr><th>Opérateur</th><th>Sens</th><th>Exemple</th><th>Résultat</th></tr><tr><td><code>+</code></td><td>Addition</td><td><code>7 + 2</code></td><td>9</td></tr><tr><td><code>-</code></td><td>Soustraction</td><td><code>7 - 2</code></td><td>5</td></tr><tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 2</code></td><td>14</td></tr><tr><td><code>/</code></td><td>Division</td><td><code>7 / 2</code> (entiers)</td><td>3</td></tr><tr><td><code>%</code></td><td>Reste de division entière</td><td><code>7 % 2</code></td><td>1</td></tr></table></div><p>Si les deux opérandes de <code>/</code> sont des entiers, le résultat est une division entière : <code>7 / 2</code> vaut <code>3</code>. Pour obtenir <code>3.5</code>, au moins un opérande doit être réel, par exemple <code>7.0 / 2</code>.</p><h3>2. Comparaison et logique</h3><div class="table-wrap"><table><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr><tr><td><code>==</code></td><td>égal à</td><td><code>a == b</code></td></tr><tr><td><code>!=</code></td><td>différent de</td><td><code>a != b</code></td></tr><tr><td><code>&gt; &lt; &gt;= &lt;=</code></td><td>comparaisons</td><td><code>note &gt;= 10</code></td></tr><tr><td><code>&amp;&amp;</code></td><td>ET logique</td><td><code>age &gt;= 18 &amp;&amp; age &lt; 65</code></td></tr><tr><td><code>||</code></td><td>OU logique</td><td><code>choix == 1 || choix == 2</code></td></tr><tr><td><code>!</code></td><td>NON logique</td><td><code>!(x &gt; 0)</code></td></tr></table></div><h3>3. Affectation</h3><p><code>x = 5;</code> affecte la valeur 5 à <code>x</code>. Ce n'est pas la même chose que <code>x == 5</code>, qui vérifie si <code>x</code> vaut 5. Les formes <code>x += 2</code>, <code>x -= 1</code>, <code>x++</code> et <code>x--</code> permettent de modifier une variable.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(a, b)
+somme ← a + b
+produit ← a * b
+Si b ≠ 0 Alors
+  quotient ← a / b
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>scanf("%d%d", &a, &b);
+somme = a + b;
+produit = a * b;
+if (b != 0) {
+    quotient = (float)a / b;
+}</pre></div></div><div class="warning"><strong>Erreur fréquente :</strong> ne jamais écrire <code>if (x = 5)</code> pour comparer. Il faut écrire <code>if (x == 5)</code>.</div><div class="lesson-end"><a href="#entrees">← Entrées / sorties</a><a href="#conditions">Conditions Si / Sinon →</a></div></section>
+<section class="lesson" id="conditions"><div class="lesson-head"><div class="lesson-num">04</div><div><h2>Conditions : Si, Sinon Si, Sinon</h2><p class="subtitle">Exécuter des instructions selon une condition.</p></div></div><h3>1. Condition simple</h3><p>Une condition est une expression logique qui est vraie ou fausse. La structure conditionnelle permet de choisir les instructions à exécuter selon le résultat.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(note)
+Si note >= 10 Alors
+  Écrire("Admis")
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>scanf("%f", &note);
+if (note >= 10) {
+    printf("Admis\\n");
+}</pre></div></div><h3>2. Si / Sinon</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(n)
+Si n mod 2 = 0 Alors
+  Écrire("Pair")
+Sinon
+  Écrire("Impair")
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int n;
+scanf("%d", &n);
+if (n % 2 == 0) {
+    printf("Pair\\n");
+} else {
+    printf("Impair\\n");
+}</pre></div></div><p>L'opérateur <code>%</code> calcule le reste. Si le reste de la division par 2 est zéro, le nombre est pair ; sinon, il est impair.</p><h3>3. Plusieurs cas avec Sinon Si</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(note)
+Si note < 0 OU note > 20 Alors
+  Écrire("Note invalide")
+Sinon Si note >= 16 Alors
+  Écrire("Très bien")
+Sinon Si note >= 14 Alors
+  Écrire("Bien")
+Sinon Si note >= 10 Alors
+  Écrire("Admis")
+Sinon
+  Écrire("Refusé")
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>if (note < 0 || note > 20) {
+    printf("Note invalide");
+} else if (note >= 16) {
+    printf("Tres bien");
+} else if (note >= 14) {
+    printf("Bien");
+} else if (note >= 10) {
+    printf("Admis");
+} else {
+    printf("Refuse");
+}</pre></div></div><div class="explain"><strong>Pourquoi cet ordre ?</strong> On vérifie d'abord les notes les plus élevées. Dès qu'une condition est vraie, son bloc s'exécute et les autres branches sont ignorées. Il faut aussi traiter les valeurs invalides.</div><h3>4. Conditions imbriquées</h3><p>Une condition imbriquée est une condition placée à l'intérieur d'une autre. Elle est utile lorsque le deuxième test ne doit être effectué que si le premier est satisfait.</p><div class="codebox"><div class="codehead"><span>Exemple : accès autorisé</span><button class="copy">Copier</button></div><pre><code>if (age >= 18) {
+    if (aCarte == 1) {
+        printf("Acces autorise\\n");
+    } else {
+        printf("Carte necessaire\\n");
+    }
+} else {
+    printf("Age insuffisant\\n");
+}</code></pre></div><div class="lesson-end"><a href="#operateurs">← Opérateurs</a><a href="#selon">Selon / Switch →</a></div></section>
+<section class="lesson" id="selon"><div class="lesson-head"><div class="lesson-num">05</div><div><h2>Selon en algorithmique et switch en C</h2><p class="subtitle">Choisir entre plusieurs valeurs discrètes.</p></div></div><p>La structure <strong>Selon</strong> est pratique quand une variable peut prendre plusieurs valeurs distinctes, comme un numéro de mois ou un choix de menu. En C, on utilise <code>switch</code>.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(choix)
+Selon choix Faire
+  1 : Écrire("Ajouter")
+  2 : Écrire("Modifier")
+  3 : Écrire("Supprimer")
+  4 : Écrire("Quitter")
+  Sinon : Écrire("Choix invalide")
+FinSelon</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>switch (choix) {
+  case 1:
+    printf("Ajouter");
+    break;
+  case 2:
+    printf("Modifier");
+    break;
+  case 3:
+    printf("Supprimer");
+    break;
+  case 4:
+    printf("Quitter");
+    break;
+  default:
+    printf("Choix invalide");
+}</pre></div></div><h3>Rôle de break et default</h3><ul><li><code>case</code> correspond à une valeur possible.</li><li><code>break</code> sort du <code>switch</code>. Sans lui, l'exécution peut continuer dans le cas suivant.</li><li><code>default</code> s'exécute si aucune valeur ne correspond.</li></ul><div class="warning"><strong>Limite :</strong> en C, les étiquettes <code>case</code> doivent utiliser des constantes entières ou des valeurs compatibles, pas des chaînes de caractères. Pour tester des intervalles comme « note entre 10 et 12 », une structure <code>if / else if</code> est généralement plus adaptée.</div><h3>Exemple : mois en lettres</h3><div class="codebox"><div class="codehead"><span>mois.c</span><button class="copy">Copier</button></div><pre><code>int mois;
+scanf("%d", &mois);
+switch (mois) {
+    case 1: printf("Janvier"); break;
+    case 2: printf("Fevrier"); break;
+    case 3: printf("Mars"); break;
+    case 4: printf("Avril"); break;
+    case 5: printf("Mai"); break;
+    case 6: printf("Juin"); break;
+    case 7: printf("Juillet"); break;
+    case 8: printf("Aout"); break;
+    case 9: printf("Septembre"); break;
+    case 10: printf("Octobre"); break;
+    case 11: printf("Novembre"); break;
+    case 12: printf("Decembre"); break;
+    default: printf("Numero invalide");
+}</code></pre></div><div class="lesson-end"><a href="#conditions">← Si / Sinon</a><a href="#boucles">Boucles →</a></div></section>
+<section class="lesson" id="boucles"><div class="lesson-head"><div class="lesson-num">06</div><div><h2>Structures répétitives : Pour, Tant que, Répéter</h2><p class="subtitle">Répéter des instructions sans recopier le même code.</p></div></div><h3>1. Boucle Pour / for</h3><p>On utilise <code>for</code> quand le nombre de répétitions est connu ou contrôlé par un compteur. La boucle comprend une initialisation, une condition et une mise à jour.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>somme ← 0
+Pour i de 1 à 5 Faire
+  somme ← somme + i
+FinPour
+Écrire(somme)</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int somme = 0;
+for (int i = 1; i <= 5; i++) {
+    somme = somme + i;
+}
+printf("Somme = %d", somme);</pre></div></div><p>Le compteur <code>i</code> prend les valeurs 1, 2, 3, 4 et 5. La somme finale vaut 15. L'expression <code>i++</code> augmente le compteur de 1.</p><h3>2. Boucle Tant que / while</h3><p>La condition est testée <strong>avant</strong> chaque tour. Si elle est fausse dès le départ, le bloc peut ne jamais s'exécuter.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(n)
+Tant que n < 0 Faire
+  Écrire("Recommencez")
+  Lire(n)
+FinTantQue</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int n;
+scanf("%d", &n);
+while (n < 0) {
+    printf("Recommencez : ");
+    scanf("%d", &n);
+}</pre></div></div><h3>3. Répéter ... Jusqu'à / do ... while</h3><p>Cette structure exécute le bloc au moins une fois, puis teste la condition. En C, <code>do...while</code> continue tant que la condition est vraie, alors que le pseudo-code « Répéter jusqu'à condition » s'arrête lorsque la condition devient vraie : il faut donc inverser la condition lors de la traduction.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Répéter
+  Lire(code)
+Jusqu'à code = 1234</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int code;
+do {
+    printf("Code : ");
+    scanf("%d", &code);
+} while (code != 1234);</pre></div></div><h3>4. Calculer une factorielle</h3><p>La factorielle de <code>N</code>, notée <code>N!</code>, est le produit des entiers de 1 à N. Par convention, <code>0! = 1</code>. Cet exemple montre l'accumulation dans une boucle.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(N)
+fact ← 1
+Pour i de 1 à N Faire
+  fact ← fact * i
+FinPour
+Écrire(fact)</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int n;
+long long fact = 1;
+scanf("%d", &n);
+if (n < 0 || n > 20) {
+    printf("Valeur invalide");
+} else {
+    for (int i = 1; i <= n; i++)
+        fact *= i;
+    printf("%d! = %lld", n, fact);
+}</pre></div></div><div class="warning"><strong>Attention aux boucles infinies :</strong> assure-toi que la condition finira par devenir fausse. Dans un <code>while (i &lt; 10)</code>, si <code>i</code> n'augmente jamais, la boucle ne se termine pas.</div><h3>5. Quelle boucle choisir ?</h3><div class="table-wrap"><table><tr><th>Structure</th><th>À utiliser quand…</th><th>Test</th></tr><tr><td><code>for</code></td><td>Le nombre de tours est connu ou un compteur est naturel.</td><td>Avant le tour</td></tr><tr><td><code>while</code></td><td>On répète tant qu'une condition est vraie.</td><td>Avant le tour</td></tr><tr><td><code>do...while</code></td><td>Le bloc doit s'exécuter au moins une fois.</td><td>Après le tour</td></tr></table></div><div class="lesson-end"><a href="#selon">← Selon / Switch</a><a href="#tableaux">Tableaux →</a></div></section>
+<section class="lesson" id="tableaux"><div class="lesson-head"><div class="lesson-num">07</div><div><h2>Tableaux à une et deux dimensions</h2><p class="subtitle">Stocker plusieurs valeurs du même type dans une seule structure.</p></div></div><h3>1. Définition et indices</h3><p>Un <strong>tableau</strong> contient un nombre fixe d'éléments de même type. En C, les indices commencent à <strong>0</strong>. Pour un tableau de 5 éléments, les indices valides sont 0, 1, 2, 3 et 4.</p><div class="codebox"><div class="codehead"><span>Déclarer et remplir</span><button class="copy">Copier</button></div><pre><code>int notes[5] = {12, 15, 9, 17, 14};
+printf("Premiere note = %d", notes[0]);
+notes[2] = 10; // modifier le troisième élément</code></pre></div><h3>2. Saisir et afficher un tableau</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Variables
+  T : tableau[0..4] d'entiers
+  i : entier
+Pour i de 0 à 4 Faire
+  Lire(T[i])
+FinPour
+Pour i de 0 à 4 Faire
+  Écrire(T[i])
+FinPour</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int T[5];
+for (int i = 0; i < 5; i++) {
+    printf("T[%d] = ", i);
+    scanf("%d", &T[i]);
+}
+for (int i = 0; i < 5; i++) {
+    printf("%d ", T[i]);
+}</pre></div></div><h3>3. Somme et moyenne</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>somme ← 0
+Pour i de 0 à 4 Faire
+  somme ← somme + T[i]
+FinPour
+moyenne ← somme / 5.0
+Écrire(somme, moyenne)</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int somme = 0;
+for (int i = 0; i < 5; i++) {
+    somme += T[i];
+}
+double moyenne = somme / 5.0;
+printf("Somme=%d, moyenne=%.2f",
+       somme, moyenne);</pre></div></div><h3>4. Maximum et minimum</h3><p>On initialise le maximum avec le premier élément, puis on compare les éléments suivants. Évite d'initialiser le maximum à zéro : si toutes les valeurs sont négatives, le résultat serait incorrect.</p><div class="codebox"><div class="codehead"><span>Recherche du maximum</span><button class="copy">Copier</button></div><pre><code>int T[5] = {4, -2, 15, 7, 9};
+int max = T[0];
+for (int i = 1; i < 5; i++) {
+    if (T[i] > max) {
+        max = T[i];
+    }
+}
+printf("Maximum = %d", max);</code></pre></div><h3>5. Tableau à deux dimensions (matrice)</h3><p>Une matrice est un tableau de lignes et de colonnes. Pour accéder à un élément, on utilise deux indices : <code>M[i][j]</code>.</p><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Pour i de 0 à 1 Faire
+  Pour j de 0 à 2 Faire
+    Lire(M[i][j])
+  FinPour
+FinPour</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>int M[2][3];
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        scanf("%d", &M[i][j]);
+    }
+}</pre></div></div><div class="warning"><strong>Erreur classique :</strong> si le tableau a 5 éléments, n'accède pas à <code>T[5]</code>. Cet indice dépasse la dernière position valide, qui est <code>T[4]</code>. Le C ne vérifie pas automatiquement les limites des tableaux.</div><div class="lesson-end"><a href="#boucles">← Boucles</a><a href="#chaines">Chaînes de caractères →</a></div></section>
+<section class="lesson" id="chaines"><div class="lesson-head"><div class="lesson-num">08</div><div><h2>Chaînes de caractères</h2><p class="subtitle">Stocker et manipuler des mots et des phrases en C.</p></div></div><h3>1. Une chaîne en C</h3><p>Le C ne possède pas un type chaîne natif comme certains langages. Une chaîne est généralement un tableau de caractères terminé par le caractère spécial <code>'\0'</code>, appelé caractère nul. Il marque la fin de la chaîne.</p><div class="codebox"><div class="codehead"><span>Déclaration</span><button class="copy">Copier</button></div><pre><code>char prenom[20] = "Sami";
+// En mémoire : 'S' 'a' 'm' 'i' '\0' ...
+printf("Bonjour %s", prenom);</code></pre></div><p>Le tableau doit avoir suffisamment de place pour les caractères et le caractère final <code>\0</code>. Par exemple, le texte <code>"Sami"</code> nécessite 5 cases.</p><h3>2. Lire une chaîne</h3><p><code>scanf("%s", nom)</code> s'arrête au premier espace. Pour lire une ligne contenant des espaces, utilise <code>fgets()</code>.</p><div class="codebox"><div class="codehead"><span>Lecture sûre d'une ligne</span><button class="copy">Copier</button></div><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(void) {
+    char nom[80];
+    printf("Votre nom complet : ");
+    if (fgets(nom, sizeof nom, stdin) != NULL) {
+        nom[strcspn(nom, "\\n")] = '\0';
+        printf("Bonjour %s !\\n", nom);
+    }
+    return 0;
+}</code></pre></div><p><code>sizeof nom</code> indique la capacité du tableau. <code>strcspn(nom, "\n")</code> trouve la position du retour à la ligne s'il est présent, puis on le remplace par <code>\0</code>.</p><h3>3. Fonctions de string.h</h3><div class="table-wrap"><table><tr><th>Fonction</th><th>Rôle</th><th>Exemple</th></tr><tr><td><code>strlen(s)</code></td><td>Longueur sans compter <code>\0</code></td><td><code>strlen("Salut")</code> vaut 5</td></tr><tr><td><code>strcmp(a,b)</code></td><td>Comparer deux chaînes</td><td>Renvoie 0 si elles sont égales</td></tr><tr><td><code>strcpy(dest,src)</code></td><td>Copier une chaîne</td><td>La destination doit être assez grande</td></tr><tr><td><code>strcat(dest,src)</code></td><td>Ajouter une chaîne à la fin</td><td>La destination doit avoir assez de place</td></tr></table></div><p>Ces fonctions nécessitent <code>#include &lt;string.h&gt;</code>. On ne compare pas deux chaînes avec <code>==</code> : on utilise généralement <code>strcmp()</code>.</p><h3>4. Exemple : compter les voyelles</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(texte)
+nb ← 0
+Pour i de 0 à longueur(texte)-1 Faire
+  c ← minuscule(texte[i])
+  Si c est une voyelle Alors
+    nb ← nb + 1
+  FinSi
+FinPour
+Écrire(nb)</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(void) {
+    char texte[200];
+    int nb = 0;
+    fgets(texte, sizeof texte, stdin);
+    for (int i = 0; texte[i] != '\0'; i++) {
+        char c = (char)tolower((unsigned char)texte[i]);
+        if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='y')
+            nb++;
+    }
+    printf("Voyelles = %d", nb);
+    return 0;
+}</pre></div></div><div class="warning"><strong>Note :</strong> cet exemple compte les voyelles latines non accentuées. La gestion complète des caractères accentués dépend de l'encodage et nécessite un traitement supplémentaire.</div><div class="lesson-end"><a href="#tableaux">← Tableaux</a><a href="#fonctions">Fonctions →</a></div></section>
+<section class="lesson" id="fonctions"><div class="lesson-head"><div class="lesson-num">09</div><div><h2>Fonctions et procédures</h2><p class="subtitle">Découper un programme en blocs réutilisables.</p></div></div><p>Une <strong>fonction</strong> reçoit éventuellement des paramètres, effectue un traitement et peut renvoyer une valeur. En algorithmique, certains cours distinguent fonction (renvoie une valeur) et procédure (effectue une action sans valeur de retour).</p><h3>1. Fonction qui calcule le carré</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Fonction Carre(x : réel) : réel
+Début
+  Retourner x * x
+Fin
+
+Début principal
+  Lire(n)
+  Écrire(Carre(n))
+Fin</pre></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>double carre(double x) {
+    return x * x;
+}
+
+int main(void) {
+    double n;
+    scanf("%lf", &n);
+    printf("%.2f", carre(n));
+    return 0;
+}</pre></div></div><h3>2. Les parties d'une fonction</h3><ul><li><strong>Type de retour :</strong> ici <code>double</code>, car la fonction renvoie un réel.</li><li><strong>Nom :</strong> <code>carre</code>, qui décrit son rôle.</li><li><strong>Paramètre :</strong> <code>x</code>, la valeur reçue par la fonction.</li><li><strong>return :</strong> renvoie le résultat à l'endroit où la fonction est appelée.</li></ul><h3>3. Procédure sans valeur retournée</h3><div class="codebox"><div class="codehead"><span>Afficher un message</span><button class="copy">Copier</button></div><pre><code>void afficherBienvenue(void) {
+    printf("Bienvenue sur StudyNet !\\n");
+}
+
+int main(void) {
+    afficherBienvenue();
+    return 0;
+}</code></pre></div><p><code>void</code> signifie ici que la fonction ne renvoie pas de valeur. Le mot entre parenthèses <code>(void)</code> indique qu'elle ne reçoit aucun paramètre.</p><h3>4. Prototype et ordre</h3><p>En C, une fonction doit être déclarée ou définie avant son utilisation. On peut écrire un prototype au début du fichier, puis la définition plus bas :</p><div class="codebox"><div class="codehead"><span>Prototype</span><button class="copy">Copier</button></div><pre><code>int maximum(int a, int b);  // prototype
+
+int main(void) {
+    printf("%d", maximum(7, 4));
+    return 0;
+}
+
+int maximum(int a, int b) {
+    if (a > b) return a;
+    return b;
+}</code></pre></div><div class="lesson-end"><a href="#chaines">← Chaînes</a><a href="#pointeurs">Pointeurs →</a></div></section>
+<section class="lesson" id="pointeurs"><div class="lesson-head"><div class="lesson-num">10</div><div><h2>Introduction aux pointeurs</h2><p class="subtitle">Comprendre les adresses mémoire et le passage par adresse.</p></div></div><p>Un pointeur est une variable qui contient l'adresse mémoire d'un autre objet. L'opérateur <code>&amp;</code> donne l'adresse d'une variable ; l'opérateur <code>*</code>, lorsqu'il est utilisé sur un pointeur valide, permet d'accéder à la valeur située à cette adresse.</p><div class="codebox"><div class="codehead"><span>Pointeur simple</span><button class="copy">Copier</button></div><pre><code>int x = 10;
+int *p = &x;  // p contient l'adresse de x
+printf("%d", *p); // affiche 10
+*p = 25;      // modifie x via le pointeur
+printf("%d", x);  // affiche 25</code></pre></div><h3>Modifier deux variables dans une fonction</h3><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Procédure Echanger(a, b)
+  temporaire ← a
+  a ← b
+  b ← temporaire
+FinProcédure</pre><p style="padding:0 13px 13px;margin:0;color:var(--muted);font-size:.83rem">L'algorithme modifie directement les deux paramètres selon la notation choisie.</p></div><div class="dual-panel"><div class="dual-title">Langage C</div><pre>void echanger(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main(void) {
+    int x = 2, y = 9;
+    echanger(&x, &y);
+    printf("%d %d", x, y); // 9 2
+    return 0;
+}</pre></div></div><div class="warning"><strong>Prudence :</strong> ne déréférence pas un pointeur non initialisé ou nul. Un pointeur incorrect peut provoquer un comportement indéfini ou faire planter le programme.</div><div class="lesson-end"><a href="#fonctions">← Fonctions</a><a href="#fichiers">Fichiers →</a></div></section>
+<section class="lesson" id="fichiers"><div class="lesson-head"><div class="lesson-num">11</div><div><h2>Fichiers : lire et écrire</h2><p class="subtitle">Conserver des données après la fin du programme.</p></div></div><p>Les fonctions de gestion de fichiers sont déclarées dans <code>stdio.h</code>. Le type <code>FILE *</code> représente un flux de fichier. Il faut vérifier que l'ouverture a réussi et fermer le fichier après utilisation.</p><div class="table-wrap"><table><tr><th>Mode</th><th>Signification</th></tr><tr><td><code>"r"</code></td><td>Lire un fichier existant</td></tr><tr><td><code>"w"</code></td><td>Écrire ; crée ou remplace le contenu existant</td></tr><tr><td><code>"a"</code></td><td>Ajouter à la fin du fichier</td></tr></table></div><div class="codebox"><div class="codehead"><span>Écrire dans un fichier texte</span><button class="copy">Copier</button></div><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    FILE *f = fopen("resultat.txt", "w");
+    if (f == NULL) {
+        perror("Impossible d'ouvrir le fichier");
+        return 1;
+    }
+    fprintf(f, "Premiere ligne\\n");
+    fprintf(f, "Score = %d\\n", 18);
+    fclose(f);
+    return 0;
+}</code></pre></div><p><code>fopen</code> ouvre le fichier, <code>fprintf</code> écrit dedans, <code>fclose</code> le ferme. Le fichier est créé dans le répertoire de travail du programme, selon la configuration de l'environnement.</p><div class="lesson-end"><a href="#pointeurs">← Pointeurs</a><a href="#exercices">Exercices corrigés →</a></div></section>
+<section class="lesson" id="exercices"><div class="lesson-head"><div class="lesson-num">12</div><div><h2>Exercices d'entraînement corrigés</h2><p class="subtitle">Essaie de résoudre chaque énoncé avant d'afficher la solution.</p></div></div><div class="exercise"><h3>Exercice 1 — Pair ou impair</h3><p>Lire un entier et afficher s'il est pair ou impair.</p><details><summary>Afficher la correction et l'explication</summary><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(n)
+Si n mod 2 = 0 Alors
+  Écrire("Pair")
+Sinon
+  Écrire("Impair")
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">C</div><pre>int n;
+scanf("%d", &n);
+if (n % 2 == 0)
+    printf("Pair");
+else
+    printf("Impair");</pre></div></div><p>Le reste <code>n % 2</code> est nul pour un entier pair.</p></details></div><div class="exercise"><h3>Exercice 2 — Somme des entiers de 1 à N</h3><p>Lire un entier positif N et calculer 1 + 2 + ... + N.</p><details><summary>Afficher la correction et l'explication</summary><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(N)
+somme ← 0
+Pour i de 1 à N Faire
+  somme ← somme + i
+FinPour
+Écrire(somme)</pre></div><div class="dual-panel"><div class="dual-title">C</div><pre>int n, somme = 0;
+scanf("%d", &n);
+for (int i = 1; i <= n; i++)
+    somme += i;
+printf("Somme = %d", somme);</pre></div></div><p>La variable <code>somme</code> est initialisée à zéro, puis chaque valeur de <code>i</code> est ajoutée.</p></details></div><div class="exercise"><h3>Exercice 3 — Factorielle</h3><p>Lire N et calculer N! en vérifiant que N est entre 0 et 20.</p><details><summary>Afficher la correction et l'explication</summary><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(N)
+Si N < 0 OU N > 20 Alors
+  Écrire("Valeur invalide")
+Sinon
+  fact ← 1
+  Pour i de 1 à N Faire
+    fact ← fact * i
+  FinPour
+  Écrire(fact)
+FinSi</pre></div><div class="dual-panel"><div class="dual-title">C</div><pre>int n;
+long long fact = 1;
+scanf("%d", &n);
+if (n < 0 || n > 20) {
+    printf("Valeur invalide");
+} else {
+    for (int i = 1; i <= n; i++)
+        fact *= i;
+    printf("%lld", fact);
+}</pre></div></div><p>On utilise <code>long long</code> car les factorielles grandissent très vite. La limite 20 évite le dépassement de capacité de ce type sur les plateformes courantes.</p></details></div><div class="exercise"><h3>Exercice 4 — Moyenne de cinq notes</h3><p>Saisir cinq notes, calculer et afficher leur moyenne.</p><details><summary>Afficher la correction et l'explication</summary><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>somme ← 0
+Pour i de 0 à 4 Faire
+  Lire(T[i])
+  somme ← somme + T[i]
+FinPour
+moyenne ← somme / 5
+Écrire(moyenne)</pre></div><div class="dual-panel"><div class="dual-title">C</div><pre>float T[5], somme = 0;
+for (int i = 0; i < 5; i++) {
+    scanf("%f", &T[i]);
+    somme += T[i];
+}
+printf("Moyenne = %.2f", somme / 5.0f);</pre></div></div><p>On divise par 5.0 pour obtenir un résultat réel et afficher les décimales.</p></details></div><div class="exercise"><h3>Exercice 5 — Compter les caractères</h3><p>Lire une ligne et afficher le nombre de caractères, sans compter le retour à la ligne final.</p><details><summary>Afficher la correction et l'explication</summary><div class="dual"><div class="dual-panel algorithm"><div class="dual-title">Algorithme</div><pre>Lire(texte)
+longueur ← 0
+Tant que texte[longueur] ≠ fin_chaine Faire
+  longueur ← longueur + 1
+FinTantQue
+Écrire(longueur)</pre></div><div class="dual-panel"><div class="dual-title">C</div><pre>#include &lt;string.h&gt;
+char texte[200];
+fgets(texte, sizeof texte, stdin);
+texte[strcspn(texte, "\\n")] = '\0';
+printf("Longueur = %zu", strlen(texte));</pre></div></div><p><code>strlen</code> compte les caractères jusqu'au caractère nul final. Ici, on retire d'abord le retour à la ligne ajouté éventuellement par <code>fgets</code>.</p></details></div><div class="lesson-end"><a href="#fichiers">← Fichiers</a><a href="#revision">Fiche de révision →</a></div></section>
+<section class="lesson" id="revision"><div class="lesson-head"><div class="lesson-num">13</div><div><h2>Fiche de révision et auto-évaluation</h2><p class="subtitle">Les éléments essentiels à savoir avant un TP ou un examen.</p></div></div><div class="checklist" id="checklist"><label><input type="checkbox"> Je sais déclarer une variable et choisir son type.</label><label><input type="checkbox"> Je sais lire avec <code>scanf</code> et afficher avec <code>printf</code>.</label><label><input type="checkbox"> Je distingue <code>=</code> (affectation) et <code>==</code> (comparaison).</label><label><input type="checkbox"> Je sais traduire Si/Sinon en <code>if/else</code>.</label><label><input type="checkbox"> Je sais traduire Selon en <code>switch/case</code> avec <code>break</code>.</label><label><input type="checkbox"> Je sais choisir entre <code>for</code>, <code>while</code> et <code>do...while</code>.</label><label><input type="checkbox"> Je respecte les indices valides d'un tableau, de 0 à taille-1.</label><label><input type="checkbox"> Je sais lire et comparer des chaînes avec les fonctions adaptées.</label><label><input type="checkbox"> Je sais écrire une fonction avec paramètres et valeur de retour.</label><label><input type="checkbox"> Je vérifie les entrées et les erreurs possibles dans mes programmes.</label></div><div class="notice"><strong>Méthode pour un exercice :</strong> 1) identifier les entrées et sorties ; 2) écrire l'algorithme ; 3) choisir les variables ; 4) traduire en C ; 5) tester avec un cas normal, un cas limite et une entrée invalide si nécessaire.</div><h3>Structure minimale d'un programme C</h3><div class="codebox"><div class="codehead"><span>Modèle à retenir</span><button class="copy">Copier</button></div><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    // Déclaration des variables
+
+    // Lecture des données
+
+    // Traitement
+
+    // Affichage du résultat
+
+    return 0;
+}</code></pre></div><div class="lesson-end"><a href="#intro">↑ Recommencer le cours</a><a href="index.html">Retour à StudyNet →</a></div></section>
+</main></div>
+<footer><div class="container footer-inner"><span>© 2026 StudyNet — Créé avec passion par Mohamed Ali.</span><span>Cours de Programmation C · Version pédagogique</span></div></footer><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const toast=document.getElementById('toast');let toastTimer;function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),1800)}
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.closest('.codebox').querySelector('code');try{await navigator.clipboard.writeText(code.innerText);showToast('Code copié !')}catch(e){showToast('Sélectionnez le code puis copiez-le avec Ctrl+C')} }));
+const tocSearch=document.getElementById('tocSearch');tocSearch.addEventListener('input',()=>{const q=tocSearch.value.toLocaleLowerCase('fr');document.querySelectorAll('#toc a').forEach(a=>a.classList.toggle('hidden',!a.textContent.toLocaleLowerCase('fr').includes(q)))});
+const menuBtn=document.getElementById('menuBtn'),navlinks=document.getElementById('navlinks');menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+const lessons=[...document.querySelectorAll('.lesson')];const links=[...document.querySelectorAll('#toc a')];const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+entry.target.id));const index=lessons.indexOf(entry.target)+1;document.getElementById('progressFill').style.width=(index/lessons.length*100)+'%';document.getElementById('progressText').textContent=Math.round(index/lessons.length*100)+'%';}})},{rootMargin:'-18% 0px -68% 0px'});lessons.forEach(s=>observer.observe(s));
+</script></body></html>

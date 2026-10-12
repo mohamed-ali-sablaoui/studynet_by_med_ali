@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours Arduino Uno en français avec codes expliqués, montages, résultats attendus et quiz.">
+<title>StudyNet — Cours Arduino Uno</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#637089;--line:#dfe6f0;--blue:#2563eb;--soft:#eaf1ff;--code:#101827;--green:#0f766e}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,Segoe UI,sans-serif}.top{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.topin{max-width:1250px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px}.logo{font-weight:900;white-space:nowrap}.logo b{color:var(--blue)}#search{flex:1;min-width:120px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f8fafc;font:inherit}.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:8px 12px;cursor:pointer}.progress{height:3px;background:#e6edf7}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#14b8a6)}.layout{max-width:1250px;margin:25px auto;padding:0 20px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px}.side{position:sticky;top:80px;align-self:start;max-height:calc(100vh - 95px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}.side h3{margin:0 0 10px}.side a{display:block;padding:6px 8px;text-decoration:none;color:var(--muted);font-size:.9rem;border-radius:8px}.side a:hover{background:var(--soft);color:var(--blue)}main{min-width:0}.hero{padding:32px;border-radius:22px;background:linear-gradient(130deg,#102347,#1d4ed8 70%,#0f766e);color:white;margin-bottom:20px}.eyebrow{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;opacity:.8}.hero h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;margin:12px 0}.hero p{color:#e5edff;max-width:780px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #ffffff55;background:#ffffff18;border-radius:99px;padding:5px 10px;font-size:.82rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.stat,.panel,.lesson{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 8px 24px #17203308}.stat strong{display:block;font-size:1.35rem}.stat span,.small{color:var(--muted);font-size:.9rem}.panel,.lesson{margin-bottom:20px}.lesson{scroll-margin-top:80px}.lesson h2,.panel h2{margin-top:0;line-height:1.25}.lesson h2{font-size:1.5rem}.lesson h3{margin-top:22px;font-size:1.1rem}.tag{display:inline-block;padding:2px 8px;border-radius:7px;background:var(--soft);color:#1d4ed8;font-size:.76rem;font-weight:800}.note,.warning,.result{padding:12px 15px;border-radius:11px;margin:13px 0}.note{background:#edf4ff;border-left:4px solid var(--blue)}.warning{background:#fff5dd;border-left:4px solid #d99a00}.result{background:#effcf7;border:1px solid #b7eadc}.result strong{color:var(--green)}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.94rem}td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f5f8fc}.codebox{margin:12px 0;background:var(--code);color:#e7eefb;border-radius:13px;overflow:hidden}.codehead{display:flex;align-items:center;justify-content:space-between;background:#182337;color:#b7c4da;padding:8px 12px;font-size:.8rem}.copy{border:1px solid #50617a;background:#293950;color:white;padding:4px 9px;border-radius:7px;cursor:pointer}pre{margin:0;padding:16px;overflow:auto;font: .9rem/1.6 ui-monospace,Consolas,monospace;tab-size:2}code.inline{background:#edf1f7;color:#173b7a;border-radius:5px;padding:2px 5px}.explain{border:1px solid var(--line);border-radius:11px;margin:12px 0;overflow:hidden}.explain summary{cursor:pointer;padding:11px 13px;background:#f7f9fc;font-weight:750}.inside{padding:0 14px 12px}.diagram{background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:14px;white-space:pre-wrap;font-family:ui-monospace,monospace;line-height:1.55}.quiz{border:1px dashed #a8b9d5;padding:14px;border-radius:12px;margin:12px 0}.quiz label{display:block;padding:4px}.feedback{font-weight:750;margin-top:8px}.hidden{display:none!important}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.footer{text-align:center;color:var(--muted);padding:25px}.up{position:fixed;right:18px;bottom:18px;border:0;border-radius:50%;width:44px;height:44px;background:var(--blue);color:white;font-size:1.2rem;cursor:pointer}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:relative;top:auto;max-height:none}.side nav{columns:2}.topin{flex-wrap:wrap}#search{order:3;flex-basis:100%}.stats{grid-template-columns:1fr 1fr}}@media(max-width:560px){.layout{padding:0 12px;margin:14px auto}.hero{padding:22px}.stats,.two{grid-template-columns:1fr}.side nav{columns:1}.lesson,.panel{padding:15px}}@media print{.top,.side,.copy,.up,#search{display:none!important}.layout{display:block;margin:0;max-width:none}.hero{background:white;color:#111;border:1px solid #aaa}.hero p{color:#222}.lesson,.panel{box-shadow:none;break-inside:avoid}.codebox{print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="logo">Study<b>Net</b> / Arduino</div><input id="search" type="search" placeholder="Rechercher dans le cours : LED, bouton, PWM…" aria-label="Rechercher dans le cours"><button class="copy" onclick="window.print()" style="color:#172033;background:#f1f5f9;border-color:#dfe6f0">Imprimer / PDF</button></div><div class="progress"><span id="progressbar"></span></div></header>
+<div class="layout">
+<aside class="side"><h3>Sommaire du cours</h3><nav>
+<a href="#intro">0. Bien commencer</a><a href="#uno">1. Carte Arduino Uno</a><a href="#electricite">2. Électricité et sécurité</a><a href="#ide">3. Arduino IDE</a><a href="#structure">4. Structure du code</a><a href="#pins">5. Les broches</a><a href="#led">6. LED clignotante</a><a href="#bouton">7. Bouton poussoir</a><a href="#pullup">8. INPUT_PULLUP</a><a href="#analogique">9. Potentiomètre</a><a href="#pwm">10. PWM et luminosité</a><a href="#ldr">11. Capteur de lumière</a><a href="#buzzer">12. Buzzer</a><a href="#servo">13. Servomoteur</a><a href="#ultrason">14. Capteur HC-SR04</a><a href="#serial">15. Moniteur série</a><a href="#dht">16. Capteur DHT11</a><a href="#projet">17. Projet final</a><a href="#erreurs">18. Dépannage</a><a href="#glossaire">19. Glossaire</a><a href="#quiz">20. Quiz final</a>
+</nav></aside>
+<main>
+<section class="hero" id="intro"><div class="eyebrow">Cours progressif • Débutant à intermédiaire</div><h1>Maîtriser Arduino Uno, pas à pas</h1><p>Un cours pédagogique en français pour comprendre les composants, réaliser des branchements sûrs, programmer la carte et prévoir le résultat de chaque expérience. Chaque exemple contient le code, l'explication des instructions et le résultat attendu.</p><div class="chips"><span class="chip">Aucune expérience requise</span><span class="chip">Codes expliqués</span><span class="chip">Montages pratiques</span><span class="chip">Quiz interactif</span></div></section>
+<div class="stats"><div class="stat"><strong>21 sections</strong><span>Des bases au projet complet</span></div><div class="stat"><strong>Code + résultat</strong><span>Explication de chaque exemple</span></div><div class="stat"><strong>Recherche intégrée</strong><span>Retrouve rapidement une notion</span></div></div>
+<section class="panel"><h2>Comment suivre le cours ?</h2><ol><li>Lis l'objectif et identifie les composants nécessaires.</li><li>Débranche l'USB avant de modifier un câblage.</li><li>Reproduis le montage, puis copie le code dans Arduino IDE.</li><li>Sélectionne la carte Arduino Uno et le bon port série.</li><li>Lis l'explication ligne par ligne, téléverse le code et compare avec le résultat attendu.</li></ol><div class="warning"><strong>À savoir :</strong> tu peux étudier et compiler le code sans matériel, mais pour observer les composants, il faut une carte Arduino ou un simulateur compatible.</div></section>
+
+<section class="lesson" id="uno"><span class="tag">Leçon 1</span><h2>Découvrir la carte Arduino Uno</h2><p>Arduino Uno est une carte électronique programmable. Elle reçoit des informations de capteurs ou de boutons, traite ces informations grâce à son microcontrôleur, puis commande des composants comme des LED, un buzzer ou un servomoteur.</p>
+<div class="tablewrap"><table><tr><th>Élément</th><th>Rôle</th><th>Exemple</th></tr><tr><td>Microcontrôleur ATmega328P</td><td>Exécute le programme.</td><td>Décider d'allumer une LED.</td></tr><tr><td>Broches numériques D0 à D13</td><td>Lire un état logique ou commander une sortie.</td><td>Bouton sur D2, LED sur D8.</td></tr><tr><td>Entrées analogiques A0 à A5</td><td>Mesurer une tension analogique.</td><td>Potentiomètre sur A0.</td></tr><tr><td>Broches PWM marquées ~</td><td>Produire un signal PWM pour varier la puissance moyenne.</td><td>Faire varier la luminosité d'une LED.</td></tr><tr><td>5V, 3.3V, GND</td><td>Alimentation et référence électrique.</td><td>Alimenter un capteur compatible.</td></tr><tr><td>Port USB</td><td>Envoyer le programme et communiquer avec l'ordinateur.</td><td>Téléverser le sketch.</td></tr><tr><td>Bouton RESET</td><td>Redémarrer le programme.</td><td>Recommencer depuis le début.</td></tr></table></div><div class="note"><strong>À retenir :</strong> GND est la masse, la référence électrique de 0 V. Les éléments d'un circuit doivent partager la même référence GND lorsque le montage l'exige.</div></section>
+
+<section class="lesson" id="electricite"><span class="tag">Leçon 2</span><h2>Électricité et sécurité</h2><p>Un circuit doit former une boucle électrique. Une LED est polarisée : la patte longue est généralement l'anode (+) et la patte courte la cathode (−). Une résistance en série limite le courant qui traverse la LED.</p><div class="diagram">D8 ── résistance 220 à 330 Ω ── anode LED (+)
+                                  cathode LED (−) ── GND</div><div class="two"><div><h3>Tension (V)</h3><p>Différence électrique entre deux points. Exemple : 5 V.</p></div><div><h3>Résistance (Ω)</h3><p>Elle limite le courant. Pour les exercices avec une LED, une résistance de 220 Ω ou 330 Ω est courante.</p></div></div><div class="warning"><strong>Règles importantes :</strong><ul><li>Ne relie jamais directement 5V à GND : cela crée un court-circuit.</li><li>Ne branche jamais le secteur électrique sur les broches Arduino.</li><li>N'alimente pas directement un moteur depuis une broche Arduino.</li><li>Respecte les tensions et courants acceptés par chaque composant.</li><li>Débranche l'USB avant de modifier le câblage.</li></ul></div></section>
+
+<section class="lesson" id="ide"><span class="tag">Leçon 3</span><h2>Utiliser Arduino IDE</h2><ol><li>Installe Arduino IDE depuis le site officiel Arduino.</li><li>Branche la carte avec un câble USB qui transporte les données.</li><li>Sélectionne <strong>Arduino Uno</strong> dans le menu de choix de carte.</li><li>Sélectionne le port série associé à la carte, par exemple COM3 sous Windows. Le numéro peut varier.</li><li>Clique sur <strong>Vérifier</strong> pour compiler le programme.</li><li>Clique sur <strong>Téléverser</strong> pour envoyer le programme à la carte.</li></ol><div class="note"><strong>Vérifier et téléverser sont différents :</strong> « Vérifier » contrôle et compile le code ; « Téléverser » envoie le programme compilé à la carte.</div><p>Si aucun port n'apparaît, vérifie le câble, essaie un autre port USB et consulte le Gestionnaire de périphériques. Certains câbles ne servent qu'à recharger.</p></section>
+
+<section class="lesson" id="structure"><span class="tag">Leçon 4</span><h2>Structure d'un programme Arduino</h2><p>Un programme Arduino est souvent appelé un <em>sketch</em>. Il contient deux fonctions essentielles : <code class="inline">setup()</code> et <code class="inline">loop()</code>.</p>
+<div class="codebox"><div class="codehead"><span>Code 1 — Squelette minimal</span><button class="copy" data-copy>Copier le code</button></div><pre><code>void setup() {
+  // Instructions exécutées une seule fois au démarrage
+}
+
+void loop() {
+  // Instructions répétées en continu
+}</code></pre></div><details class="explain" open><summary>Explication de chaque ligne</summary><div class="inside"><ul><li><code class="inline">void</code> indique que la fonction ne renvoie pas de valeur.</li><li><code class="inline">setup()</code> s'exécute une seule fois après le démarrage ou un reset.</li><li>Les accolades <code class="inline">{ }</code> encadrent les instructions d'une fonction.</li><li><code class="inline">//</code> démarre un commentaire. Le compilateur ignore le texte du commentaire.</li><li><code class="inline">loop()</code> recommence continuellement après la fin de <code class="inline">setup()</code>.</li><li>Le point-virgule <code class="inline">;</code> termine la plupart des instructions, mais pas la déclaration d'une fonction.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> aucun composant n'est commandé et aucun message n'est affiché. Ce code constitue seulement la base d'un programme.</div></section>
+
+<section class="lesson" id="pins"><span class="tag">Leçon 5</span><h2>Les instructions essentielles et les broches</h2><div class="tablewrap"><table><tr><th>Instruction</th><th>Utilité</th><th>Valeurs / remarques</th></tr><tr><td><code class="inline">pinMode(pin, mode)</code></td><td>Configurer une broche.</td><td><code class="inline">INPUT</code>, <code class="inline">OUTPUT</code>, <code class="inline">INPUT_PULLUP</code>.</td></tr><tr><td><code class="inline">digitalWrite(pin, valeur)</code></td><td>Écrire sur une sortie numérique.</td><td><code class="inline">HIGH</code> ou <code class="inline">LOW</code>.</td></tr><tr><td><code class="inline">digitalRead(pin)</code></td><td>Lire une entrée numérique.</td><td>Renvoie <code class="inline">HIGH</code> ou <code class="inline">LOW</code>.</td></tr><tr><td><code class="inline">analogRead(A0)</code></td><td>Lire une entrée analogique.</td><td>Sur Uno classique : 0 à 1023.</td></tr><tr><td><code class="inline">analogWrite(pin, valeur)</code></td><td>Produire une sortie PWM.</td><td>Sur Uno classique : 0 à 255, sur les broches PWM.</td></tr><tr><td><code class="inline">delay(ms)</code></td><td>Mettre le programme en pause.</td><td>1000 ms = 1 seconde.</td></tr><tr><td><code class="inline">Serial.begin(9600)</code></td><td>Démarrer la communication série.</td><td>La vitesse doit correspondre au Moniteur série.</td></tr></table></div><p>Sur l'Arduino Uno classique, les broches PWM sont D3, D5, D6, D9, D10 et D11, marquées par le symbole ~. <code class="inline">analogWrite()</code> produit un signal PWM, et non une véritable tension analogique variable.</p></section>
+
+<section class="lesson" id="led"><span class="tag">Leçon 6 • Première pratique</span><h2>Faire clignoter une LED</h2><p><strong>Matériel :</strong> Uno, LED, résistance de 220 à 330 Ω, fils et breadboard. Branchement : D8 → résistance → anode de la LED ; cathode → GND. Une LED intégrée est également disponible sur de nombreuses cartes à D13.</p>
+<div class="codebox"><div class="codehead"><span>Code 2 — LED clignotante</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int led = 8;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);
+  delay(1000);
+  digitalWrite(led, LOW);
+  delay(1000);
+}</code></pre></div><details class="explain" open><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">const int led = 8;</code> crée une constante entière appelée <code class="inline">led</code> qui représente la broche 8. <code class="inline">const</code> signifie que sa valeur ne changera pas.</li><li><code class="inline">void setup()</code> commence la fonction d'initialisation.</li><li><code class="inline">pinMode(led, OUTPUT);</code> configure D8 comme sortie afin de commander la LED.</li><li><code class="inline">void loop()</code> démarre la partie répétée en continu.</li><li><code class="inline">digitalWrite(led, HIGH);</code> place la sortie à l'état haut : la LED s'allume dans ce montage.</li><li><code class="inline">delay(1000);</code> attend 1000 millisecondes, soit une seconde.</li><li><code class="inline">digitalWrite(led, LOW);</code> place la sortie à l'état bas : la LED s'éteint.</li><li>Le dernier <code class="inline">delay(1000)</code> garde la LED éteinte pendant une seconde. Ensuite, <code class="inline">loop()</code> recommence.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> la LED s'allume pendant environ une seconde, s'éteint pendant une seconde, puis répète ce cycle. La période totale est d'environ deux secondes.</div>
+<div class="quiz"><strong>Question :</strong> pour attendre une demi-seconde, que faut-il changer ?<label><input type="radio" name="qled" value="a"> Remplacer les deux valeurs 1000 par 500.</label><label><input type="radio" name="qled" value="b"> Remplacer HIGH par 500.</label><label><input type="radio" name="qled" value="c"> Supprimer pinMode.</label><button class="btn" onclick="checkRadio('qled','a','f-led')">Vérifier</button><div class="feedback" id="f-led"></div></div></section>
+
+<section class="lesson" id="bouton"><span class="tag">Leçon 7</span><h2>Commander une LED avec un bouton poussoir</h2><p>Dans cette version, le bouton est relié à 5V lorsqu'on appuie. D2 est aussi reliée à GND par une résistance de rappel de 10 kΩ. Cette résistance évite que l'entrée reste dans un état indéfini lorsque le bouton est relâché.</p><div class="diagram">5V ─── bouton ─── D2
+                  │
+                10 kΩ
+                  │
+                 GND
+
+D8 ── résistance 220–330 Ω ── LED ── GND</div>
+<div class="codebox"><div class="codehead"><span>Code 3 — Bouton avec résistance externe</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int led = 8;
+const int bouton = 2;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(bouton, INPUT);
+}
+
+void loop() {
+  int etatBouton = digitalRead(bouton);
+  digitalWrite(led, etatBouton);
+}</code></pre></div><details class="explain" open><summary>Explication ligne par ligne</summary><div class="inside"><ul><li>Les deux constantes donnent les numéros de broches de la LED et du bouton.</li><li><code class="inline">pinMode(led, OUTPUT)</code> permet à la carte de commander la LED.</li><li><code class="inline">pinMode(bouton, INPUT)</code> configure D2 comme entrée. Le circuit de résistance externe fixe son état au repos.</li><li><code class="inline">int etatBouton = digitalRead(bouton);</code> lit D2 et enregistre le résultat dans une variable entière.</li><li><code class="inline">digitalWrite(led, etatBouton);</code> copie l'état logique lu vers la LED.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> bouton appuyé → D2 est HIGH → LED allumée. Bouton relâché → D2 est LOW grâce à la résistance → LED éteinte.</div></section>
+
+<section class="lesson" id="pullup"><span class="tag">Leçon 8</span><h2>Utiliser INPUT_PULLUP</h2><p><code class="inline">INPUT_PULLUP</code> active une résistance de rappel interne. Le branchement est plus simple : une borne du bouton va à D2 et l'autre à GND. La logique est inversée : bouton relâché = HIGH, bouton appuyé = LOW.</p><div class="diagram">D2 ─── bouton poussoir ─── GND
+La résistance de rappel est activée à l'intérieur de l'Arduino.</div>
+<div class="codebox"><div class="codehead"><span>Code 4 — LED allumée pendant l'appui</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int led = 8;
+const int bouton = 2;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(bouton, INPUT_PULLUP);
+}
+
+void loop() {
+  int etatBouton = digitalRead(bouton);
+
+  if (etatBouton == LOW) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+}</code></pre></div><details class="explain" open><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">INPUT_PULLUP</code> active la résistance interne et maintient l'entrée à HIGH au repos.</li><li><code class="inline">digitalRead(bouton)</code> renvoie HIGH lorsque le bouton est relâché et LOW lorsqu'il est appuyé.</li><li><code class="inline">if (etatBouton == LOW)</code> teste si la valeur est LOW. Le symbole <code class="inline">==</code> compare deux valeurs ; il ne réalise pas une affectation.</li><li>Si la condition est vraie, la commande <code class="inline">digitalWrite(led, HIGH)</code> allume la LED.</li><li><code class="inline">else</code> signifie « sinon ». Dans ce cas, la LED s'éteint.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> la LED s'allume uniquement pendant l'appui sur le bouton. Le bouton doit être relié à GND, pas à 5V, dans ce montage INPUT_PULLUP.</div></section>
+
+<section class="lesson" id="analogique"><span class="tag">Leçon 9</span><h2>Lire un potentiomètre</h2><p>Le potentiomètre est une résistance réglable à trois bornes. Relie une borne extérieure à 5V, l'autre à GND et la borne centrale (curseur) à A0.</p><div class="diagram">5V ───── borne extérieure
+             POTENTIOMÈTRE
+A0  ───── borne centrale (curseur)
+GND ───── autre borne extérieure</div>
+<div class="codebox"><div class="codehead"><span>Code 5 — Lire une valeur analogique</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int potentiometre = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valeur = analogRead(potentiometre);
+  Serial.println(valeur);
+  delay(200);
+}</code></pre></div><details class="explain" open><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">potentiometre = A0</code> indique que le curseur est connecté à l'entrée analogique A0.</li><li><code class="inline">Serial.begin(9600)</code> démarre la communication avec l'ordinateur à 9600 bauds.</li><li><code class="inline">analogRead(potentiometre)</code> mesure la tension sur A0 et renvoie habituellement une valeur entre 0 et 1023 sur un Uno classique.</li><li><code class="inline">int valeur</code> stocke le résultat dans une variable entière appelée <code class="inline">valeur</code>.</li><li><code class="inline">Serial.println(valeur)</code> affiche le résultat puis passe à la ligne suivante.</li><li><code class="inline">delay(200)</code> attend 200 millisecondes avant la prochaine lecture.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> ouvre le Moniteur série et règle sa vitesse sur 9600 bauds. En tournant le potentiomètre, tu verras des valeurs proches de 0 à une extrémité et proches de 1023 à l'autre.</div></section>
+
+<section class="lesson" id="pwm"><span class="tag">Leçon 10</span><h2>Faire varier la luminosité avec PWM</h2><p>Le PWM allume et éteint une sortie très rapidement. La proportion de temps pendant laquelle le signal est actif change la puissance moyenne envoyée à la LED. Utilise une broche PWM comme D9 et une résistance en série.</p>
+<div class="codebox"><div class="codehead"><span>Code 6 — Variation progressive</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int led = 9;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  for (int luminosite = 0; luminosite <= 255; luminosite++) {
+    analogWrite(led, luminosite);
+    delay(10);
+  }
+
+  for (int luminosite = 255; luminosite >= 0; luminosite--) {
+    analogWrite(led, luminosite);
+    delay(10);
+  }
+}</code></pre></div><details class="explain" open><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">led = 9</code> choisit D9, une broche PWM de l'Uno classique.</li><li><code class="inline">for (int luminosite = 0; luminosite &lt;= 255; luminosite++)</code> crée une boucle : elle commence à 0, continue jusqu'à 255 et ajoute 1 à chaque tour.</li><li><code class="inline">analogWrite(led, luminosite)</code> applique la valeur PWM. 0 correspond à une sortie inactive et 255 à la valeur maximale.</li><li><code class="inline">delay(10)</code> attend 10 ms à chaque étape afin de rendre le changement visible.</li><li>La deuxième boucle commence à 255 et diminue jusqu'à 0 grâce à <code class="inline">luminosite--</code>.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> la LED augmente progressivement de luminosité, atteint son maximum, puis diminue jusqu'à s'éteindre. Le cycle recommence.</div></section>
+
+<section class="lesson" id="ldr"><span class="tag">Leçon 11</span><h2>Détecter la lumière avec une LDR</h2><p>Une LDR est une résistance sensible à la lumière. Avec une résistance fixe de 10 kΩ, elle forme un diviseur de tension. Le point central se branche sur A0. Selon le sens du montage, la mesure peut augmenter ou diminuer avec la lumière.</p><div class="diagram">5V ─── LDR ───┬─── A0
+              │
+             10 kΩ
+              │
+             GND</div>
+<div class="codebox"><div class="codehead"><span>Code 7 — Allumer la LED dans l'obscurité</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int capteurLumiere = A0;
+const int led = 8;
+const int seuil = 500;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lumiere = analogRead(capteurLumiere);
+  Serial.println(lumiere);
+
+  if (lumiere < seuil) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+
+  delay(200);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li>Les constantes définissent l'entrée A0, la LED sur D8 et un seuil de départ égal à 500.</li><li><code class="inline">analogRead(capteurLumiere)</code> lit la valeur mesurée par le diviseur de tension.</li><li><code class="inline">Serial.println(lumiere)</code> affiche la mesure afin de comprendre comment elle varie.</li><li><code class="inline">if (lumiere &lt; seuil)</code> teste si la mesure est inférieure à 500.</li><li>Si le test est vrai, la LED s'allume ; sinon, elle s'éteint.</li><li><code class="inline">delay(200)</code> attend 200 ms avant de recommencer.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> si la valeur diminue dans l'obscurité, la LED s'allume lorsque la mesure passe sous 500. Ce seuil est à ajuster après observation des valeurs. Si la valeur augmente dans le noir avec ton montage, inverse la condition.</div></section>
+
+<section class="lesson" id="buzzer"><span class="tag">Leçon 12</span><h2>Produire un son avec un buzzer</h2><p>Un buzzer passif compatible peut produire différentes notes grâce à <code class="inline">tone()</code>. Vérifie le type de buzzer et son courant : un composant qui consomme trop doit être commandé par un circuit pilote.</p>
+<div class="codebox"><div class="codehead"><span>Code 8 — Deux notes et une pause</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int buzzer = 8;
+
+void setup() {
+}
+
+void loop() {
+  tone(buzzer, 1000);
+  delay(500);
+  tone(buzzer, 1500);
+  delay(500);
+  noTone(buzzer);
+  delay(500);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">buzzer = 8</code> sélectionne la broche de commande.</li><li><code class="inline">tone(buzzer, 1000)</code> génère un son d'environ 1000 Hz.</li><li><code class="inline">delay(500)</code> laisse la note durer une demi-seconde.</li><li><code class="inline">tone(buzzer, 1500)</code> change la fréquence : le son devient plus aigu.</li><li><code class="inline">noTone(buzzer)</code> arrête le son sur cette broche.</li><li>La dernière pause crée un silence avant la répétition du cycle.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> le buzzer produit une note, puis une note plus aiguë, puis un silence. La séquence recommence.</div></section>
+
+<section class="lesson" id="servo"><span class="tag">Leçon 13</span><h2>Contrôler un servomoteur</h2><p>Un servo de position possède généralement trois fils : alimentation, GND et signal. Les couleurs varient selon le modèle. Un servo peut demander plus de courant que la carte ne peut fournir : utilise si nécessaire une alimentation adaptée et relie les masses GND ensemble.</p><p>Le code suivant utilise la bibliothèque <code class="inline">Servo</code>, disponible dans l'environnement Arduino standard.</p>
+<div class="codebox"><div class="codehead"><span>Code 9 — Positionner le servo</span><button class="copy" data-copy>Copier le code</button></div><pre><code>#include &lt;Servo.h&gt;
+
+Servo monServo;
+
+void setup() {
+  monServo.attach(9);
+}
+
+void loop() {
+  monServo.write(0);
+  delay(1000);
+  monServo.write(90);
+  delay(1000);
+  monServo.write(180);
+  delay(1000);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">#include &lt;Servo.h&gt;</code> importe les fonctions de commande des servomoteurs.</li><li><code class="inline">Servo monServo;</code> crée un objet appelé <code class="inline">monServo</code>.</li><li><code class="inline">monServo.attach(9)</code> associe le signal du servo à D9.</li><li><code class="inline">monServo.write(0)</code> demande la position 0°.</li><li><code class="inline">monServo.write(90)</code> demande la position 90°.</li><li><code class="inline">monServo.write(180)</code> demande la position 180°.</li><li>Chaque délai d'une seconde laisse le temps d'atteindre la position demandée.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> le servo se déplace successivement vers 0°, 90° puis 180°. L'angle réellement disponible dépend du modèle.</div></section>
+
+<section class="lesson" id="ultrason"><span class="tag">Leçon 14</span><h2>Mesurer une distance avec HC-SR04</h2><p>Le capteur HC-SR04 envoie une impulsion ultrasonore et mesure le temps de retour de l'écho. Branche VCC à 5V, GND à GND, TRIG à D9 et ECHO à D10. Cette connexion ECHO convient à l'Uno classique 5 V ; une carte 3,3 V peut nécessiter une adaptation de niveau.</p>
+<div class="codebox"><div class="codehead"><span>Code 10 — Distance en centimètres</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int trig = 9;
+const int echo = 10;
+
+void setup() {
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+
+  long duree = pulseIn(echo, HIGH, 30000);
+
+  if (duree == 0) {
+    Serial.println("Aucun echo detecte");
+  } else {
+    float distance = duree * 0.0343 / 2;
+    Serial.print("Distance : ");
+    Serial.print(distance);
+    Serial.println(" cm");
+  }
+
+  delay(300);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">trig</code> est la sortie qui déclenche la mesure ; <code class="inline">echo</code> est l'entrée qui reçoit l'écho.</li><li><code class="inline">pinMode()</code> configure TRIG en sortie et ECHO en entrée.</li><li>Le signal TRIG reste LOW 2 microsecondes, puis HIGH 10 microsecondes, avant de revenir à LOW.</li><li><code class="inline">pulseIn(echo, HIGH, 30000)</code> mesure la durée de l'impulsion reçue, avec un délai maximal de 30 000 microsecondes.</li><li>Si <code class="inline">duree == 0</code>, aucun écho n'a été détecté dans le délai imparti.</li><li><code class="inline">duree * 0.0343</code> estime le trajet aller-retour en centimètres, car le son parcourt environ 0,0343 cm par microseconde.</li><li>On divise par 2, car le son fait l'aller jusqu'à l'objet puis le retour vers le capteur.</li><li><code class="inline">Serial.print()</code> affiche sans retour à la ligne ; <code class="inline">Serial.println()</code> termine la ligne.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> le Moniteur série affiche par exemple « Distance : 24.6 cm ». Cette valeur est illustrative ; la mesure réelle dépend de la distance et de la surface de l'objet.</div></section>
+
+<section class="lesson" id="serial"><span class="tag">Leçon 15</span><h2>Utiliser le Moniteur série</h2><p>Le Moniteur série affiche des informations envoyées par la carte à l'ordinateur. La vitesse choisie dans le Moniteur doit être identique à celle indiquée dans <code class="inline">Serial.begin()</code>.</p>
+<div class="codebox"><div class="codehead"><span>Code 11 — Afficher un compteur</span><button class="copy" data-copy>Copier le code</button></div><pre><code>int compteur = 0;
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Demarrage du programme");
+}
+
+void loop() {
+  Serial.print("Compteur = ");
+  Serial.println(compteur);
+  compteur++;
+  delay(1000);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">int compteur = 0;</code> crée une variable entière qui commence à zéro.</li><li><code class="inline">Serial.begin(9600)</code> ouvre la communication série à 9600 bauds.</li><li><code class="inline">Serial.println("Demarrage du programme")</code> affiche un message une seule fois au démarrage.</li><li><code class="inline">Serial.print("Compteur = ")</code> affiche le texte sans passer à la ligne.</li><li><code class="inline">Serial.println(compteur)</code> affiche la valeur et passe à la ligne suivante.</li><li><code class="inline">compteur++</code> ajoute 1 à la variable.</li><li><code class="inline">delay(1000)</code> attend une seconde.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong><pre>Demarrage du programme
+Compteur = 0
+Compteur = 1
+Compteur = 2
+Compteur = 3
+...</pre>Une nouvelle valeur apparaît environ chaque seconde.</div></section>
+
+<section class="lesson" id="dht"><span class="tag">Leçon 16</span><h2>Lire la température et l'humidité avec DHT11</h2><p>Le DHT11 mesure la température et l'humidité relative. Le câblage dépend du module : certains modèles ont trois broches et d'autres quatre. Suis les étiquettes du module. Installe la bibliothèque <em>DHT sensor library</em> d'Adafruit et sa dépendance <em>Adafruit Unified Sensor</em> si Arduino IDE la demande.</p>
+<div class="codebox"><div class="codehead"><span>Code 12 — Mesures du DHT11</span><button class="copy" data-copy>Copier le code</button></div><pre><code>#include &lt;DHT.h&gt;
+
+#define BROCHE_DHT 2
+#define TYPE_DHT DHT11
+
+DHT dht(BROCHE_DHT, TYPE_DHT);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float humidite = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidite) || isnan(temperature)) {
+    Serial.println("Erreur de lecture du DHT11");
+    delay(2000);
+    return;
+  }
+
+  Serial.print("Temperature : ");
+  Serial.print(temperature);
+  Serial.println(" °C");
+  Serial.print("Humidite : ");
+  Serial.print(humidite);
+  Serial.println(" %");
+
+  delay(2000);
+}</code></pre></div><details class="explain"><summary>Explication ligne par ligne</summary><div class="inside"><ul><li><code class="inline">#include &lt;DHT.h&gt;</code> importe le code de la bibliothèque du capteur.</li><li><code class="inline">#define BROCHE_DHT 2</code> définit la broche de données D2.</li><li><code class="inline">#define TYPE_DHT DHT11</code> indique le modèle de capteur utilisé.</li><li><code class="inline">DHT dht(BROCHE_DHT, TYPE_DHT)</code> crée l'objet qui communique avec le capteur.</li><li><code class="inline">dht.begin()</code> initialise le capteur.</li><li><code class="inline">readHumidity()</code> lit l'humidité relative ; <code class="inline">readTemperature()</code> lit la température en degrés Celsius.</li><li><code class="inline">isnan()</code> vérifie si la valeur n'est pas un nombre valide. En cas d'erreur, un message est affiché.</li><li><code class="inline">return</code> termine cette exécution de la fonction <code class="inline">loop()</code>. Elle sera appelée de nouveau ensuite.</li><li>Le délai de 2000 ms laisse suffisamment de temps entre les lectures du DHT11.</li></ul></div></details><div class="result"><strong>Résultat attendu :</strong> le Moniteur série affiche par exemple « Temperature : 24.0 °C » et « Humidite : 48.0 % ». Ces valeurs sont illustratives : les mesures réelles dépendent de l'environnement.</div></section>
+
+<section class="lesson" id="projet"><span class="tag">Leçon 17 • Projet final</span><h2>Projet : lampe automatique</h2><p><strong>Objectif :</strong> utiliser une LDR sur A0 pour commander une LED sur D8. La LED s'allume lorsque la mesure de lumière passe sous un seuil défini. Utilise un diviseur de tension pour la LDR et une résistance en série avec la LED.</p>
+<div class="codebox"><div class="codehead"><span>Code 13 — Programme complet</span><button class="copy" data-copy>Copier le code</button></div><pre><code>const int capteurLumiere = A0;
+const int led = 8;
+const int seuil = 500;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int mesure = analogRead(capteurLumiere);
+
+  Serial.print("Mesure de lumiere : ");
+  Serial.println(mesure);
+
+  if (mesure < seuil) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+
+  delay(250);
+}</code></pre></div><h3>Explication du programme</h3><ol><li>Les constantes indiquent l'entrée du capteur, la sortie de la LED et le seuil de comparaison.</li><li><code class="inline">pinMode(led, OUTPUT)</code> prépare D8 à commander la LED.</li><li><code class="inline">Serial.begin(9600)</code> active la communication avec le Moniteur série.</li><li><code class="inline">analogRead(capteurLumiere)</code> lit la mesure de lumière et la stocke dans <code class="inline">mesure</code>.</li><li>Les deux commandes série affichent la valeur mesurée.</li><li><code class="inline">if (mesure &lt; seuil)</code> compare la mesure au seuil de 500.</li><li>Si la mesure est inférieure au seuil, la LED s'allume ; sinon, elle s'éteint.</li><li><code class="inline">delay(250)</code> attend un quart de seconde avant la lecture suivante.</li></ol><div class="result"><strong>Résultat attendu :</strong> la LED change d'état lorsque la mesure passe d'un côté à l'autre du seuil. Ajuste la valeur 500 après avoir observé les valeurs dans le Moniteur série. Si ton montage mesure une valeur plus élevée dans le noir, inverse la condition.</div><h3>Défis pour aller plus loin</h3><ul><li>Ajouter un potentiomètre pour régler le seuil.</li><li>Ajouter un buzzer pour signaler l'obscurité.</li><li>Afficher « Jour » ou « Nuit » dans le Moniteur série.</li><li>Utiliser deux seuils différents pour éviter les changements rapides autour d'une seule valeur.</li></ul></section>
+
+<section class="lesson" id="erreurs"><span class="tag">Leçon 18</span><h2>Erreurs fréquentes et solutions</h2><div class="tablewrap"><table><tr><th>Erreur / problème</th><th>Cause possible</th><th>Solution</th></tr><tr><td><code class="inline">Missing FQBN</code></td><td>La carte n'est pas sélectionnée.</td><td>Sélectionne Arduino Uno dans le menu de carte.</td></tr><tr><td><code class="inline">no upload port provided</code></td><td>Aucun port série n'est sélectionné.</td><td>Branche la carte et choisis le bon port.</td></tr><tr><td>Impossible d'ouvrir COM3</td><td>Port absent, occupé, câble ou pilote en cause.</td><td>Vérifie le Gestionnaire de périphériques, ferme les Moniteurs série concurrents et essaie un câble de données.</td></tr><tr><td>LED toujours éteinte</td><td>Polarité, pin, GND ou téléversement incorrect.</td><td>Vérifie le montage, la résistance, le numéro de broche et le code envoyé.</td></tr><tr><td>Bouton instable</td><td>Entrée flottante ou câblage incorrect.</td><td>Utilise une résistance de rappel ou INPUT_PULLUP avec une logique inversée.</td></tr><tr><td>Texte série illisible</td><td>Débit différent de celui du programme.</td><td>Choisis le même débit, par exemple 9600 bauds.</td></tr><tr><td><code class="inline">Servo.h</code> introuvable</td><td>Bibliothèque manquante ou IDE mal configuré.</td><td>Vérifie l'installation Arduino IDE et la bibliothèque Servo.</td></tr><tr><td><code class="inline">DHT.h</code> introuvable</td><td>Bibliothèque du capteur absente.</td><td>Installe la bibliothèque DHT et ses dépendances depuis le gestionnaire de bibliothèques.</td></tr></table></div><div class="note"><strong>Méthode de dépannage :</strong> lis la première erreur, vérifie les noms de variables, les parenthèses et les points-virgules, puis compile de nouveau. Les erreurs suivantes peuvent découler de la première.</div></section>
+
+<section class="lesson" id="glossaire"><span class="tag">Leçon 19</span><h2>Glossaire essentiel</h2><div class="tablewrap"><table><tr><th>Terme</th><th>Définition simple</th></tr><tr><td>Sketch</td><td>Programme Arduino.</td></tr><tr><td>Compiler</td><td>Vérifier et traduire le code avant son exécution sur la carte.</td></tr><tr><td>Téléverser</td><td>Envoyer le programme compilé vers la carte.</td></tr><tr><td>Broche / pin</td><td>Point de connexion électrique sur la carte.</td></tr><tr><td>Entrée</td><td>Broche qui reçoit une information d'un bouton ou d'un capteur.</td></tr><tr><td>Sortie</td><td>Broche utilisée pour commander un composant.</td></tr><tr><td>HIGH / LOW</td><td>États logiques haut et bas. Leur sens dépend du montage.</td></tr><tr><td>Capteur</td><td>Composant qui mesure une grandeur physique.</td></tr><tr><td>Actionneur</td><td>Composant qui agit : LED, buzzer, moteur, servo…</td></tr><tr><td>Débogage</td><td>Recherche et correction des erreurs.</td></tr><tr><td>PWM</td><td>Signal rapide permettant de régler la puissance moyenne d'une charge compatible.</td></tr><tr><td>Bibliothèque</td><td>Code réutilisable qui facilite la commande d'un composant.</td></tr><tr><td>Variable</td><td>Emplacement nommé qui conserve une valeur pendant l'exécution du programme.</td></tr><tr><td>Condition</td><td>Test qui permet au programme de choisir entre plusieurs actions.</td></tr></table></div></section>
+
+<section class="lesson" id="quiz"><span class="tag">Leçon 20</span><h2>Quiz final</h2><p>Choisis une réponse à chaque question, puis clique sur « Corriger le quiz ».</p><form id="finalquiz">
+<div class="quiz"><strong>1. Quelle fonction est exécutée une seule fois au démarrage ?</strong><label><input type="radio" name="q1" value="a"> loop()</label><label><input type="radio" name="q1" value="b"> setup()</label><label><input type="radio" name="q1" value="c"> delay()</label></div>
+<div class="quiz"><strong>2. Quelle instruction lit un bouton numérique ?</strong><label><input type="radio" name="q2" value="a"> digitalWrite()</label><label><input type="radio" name="q2" value="b"> analogWrite()</label><label><input type="radio" name="q2" value="c"> digitalRead()</label></div>
+<div class="quiz"><strong>3. Avec INPUT_PULLUP, quel état est lu quand le bouton relié à GND est appuyé ?</strong><label><input type="radio" name="q3" value="a"> LOW</label><label><input type="radio" name="q3" value="b"> HIGH</label><label><input type="radio" name="q3" value="c"> 1023</label></div>
+<div class="quiz"><strong>4. Quelle plage renvoie analogRead() sur un Uno classique ?</strong><label><input type="radio" name="q4" value="a"> 0 à 10</label><label><input type="radio" name="q4" value="b"> 0 à 255</label><label><input type="radio" name="q4" value="c"> 0 à 1023</label></div>
+<div class="quiz"><strong>5. Pourquoi met-on une résistance en série avec une LED ?</strong><label><input type="radio" name="q5" value="a"> Pour augmenter la tension à 12 V</label><label><input type="radio" name="q5" value="b"> Pour limiter le courant</label><label><input type="radio" name="q5" value="c"> Pour remplacer GND</label></div>
+<button class="btn" type="submit">Corriger le quiz</button><div id="quizresult" class="feedback" aria-live="polite"></div></form><div class="result"><strong>Conseil :</strong> pour progresser, modifie un seul élément du code à la fois. Prévois le résultat avant le test, puis explique ce que tu observes.</div></section>
+<footer class="footer">StudyNet • Cours Arduino Uno • Ressource pédagogique en français<br><span class="small">Vérifie toujours les caractéristiques électriques de la carte et des composants utilisés.</span></footer>
+</main></div>
+<button class="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+<script>
+document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{
+ const code=button.closest('.codebox').querySelector('pre code').innerText;
+ try{await navigator.clipboard.writeText(code)}catch(error){const area=document.createElement('textarea');area.value=code;document.body.appendChild(area);area.select();document.execCommand('copy');area.remove()}
+ button.textContent='Copié !';setTimeout(()=>button.textContent='Copier le code',1300);
+}));
+document.getElementById('search').addEventListener('input',event=>{
+ const query=event.target.value.trim().toLocaleLowerCase('fr');
+ document.querySelectorAll('main .lesson,main .panel').forEach(section=>section.classList.toggle('hidden',query!==''&&!section.innerText.toLocaleLowerCase('fr').includes(query)));
+});
+function checkRadio(name,answer,target){const choice=document.querySelector('input[name="'+name+'"]:checked');const output=document.getElementById(target);if(!choice){output.textContent='Choisis une réponse avant de vérifier.';output.style.color='#b45309';return}const ok=choice.value===answer;output.textContent=ok?'Bonne réponse ! Tu as compris le principe.':'Pas encore. Relis l’explication puis essaie encore.';output.style.color=ok?'#15803d':'#b91c1c'}
+document.getElementById('finalquiz').addEventListener('submit',event=>{event.preventDefault();const answers={q1:'b',q2:'c',q3:'a',q4:'c',q5:'b'};let score=0,answered=0;for(const key in answers){const selected=document.querySelector('input[name="'+key+'"]:checked');if(selected){answered++;if(selected.value===answers[key])score++}}const output=document.getElementById('quizresult');if(answered<5){output.textContent='Réponds aux 5 questions. Réponses données : '+answered+'/5.';output.style.color='#b45309'}else{output.textContent='Résultat : '+score+'/5. '+(score===5?'Excellent, toutes les réponses sont correctes !':score>=3?'Bon travail : relis les leçons correspondant aux erreurs.':'Revois les bases puis réessaie.');output.style.color=score>=4?'#15803d':'#b45309'}});
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('progressbar').style.width=(max>0?window.scrollY/max*100:0)+'%'});
+</script>
+</body>
+</html>
+

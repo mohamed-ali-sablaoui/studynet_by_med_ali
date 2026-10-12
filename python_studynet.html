@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StudyNet — Cours  de Python</title>
+<style>
+:root{--bg:#f3f6fc;--ink:#172033;--muted:#5c6b82;--blue:#2459d3;--line:#dbe3ef;--code:#101827;--green:#ecfdf3;--orange:#fff7ed}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,Arial,sans-serif}.hero{background:linear-gradient(120deg,#10234e,#1d4ed8 65%,#0891b2);color:#fff;padding:35px max(18px,calc((100% - 1250px)/2))}.hero h1{font-size:clamp(30px,4vw,46px);margin:8px 0}.hero p{max-width:900px}.pill{display:inline-block;border:1px solid #ffffff66;border-radius:99px;padding:3px 10px;margin:3px;font-size:13px}.layout{max-width:1280px;margin:22px auto;padding:0 16px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px}.nav,.card{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 10px 30px #182b4d0d}.nav{padding:14px;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto}.nav b{display:block;margin:5px 8px 9px}.nav a{display:block;padding:6px 9px;color:#46546b;text-decoration:none;border-radius:8px;font-size:14px}.nav a:hover{background:#eaf1ff;color:#1745b5}.card{padding:clamp(16px,2.4vw,26px);margin-bottom:18px;min-width:0}h2{font-size:clamp(23px,2.5vw,30px);margin:0 0 12px;line-height:1.3}h3{font-size:20px;margin:22px 0 8px}h4{margin:12px 0 6px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.box{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}.code{background:var(--code);color:#e5eefb;padding:14px;border-radius:10px;overflow:auto;white-space:pre;font:14px/1.7 ui-monospace,Consolas,monospace}.result{background:var(--green);border:1px solid #bbf7d0;border-radius:10px;padding:12px;white-space:pre-wrap;font:14px/1.7 ui-monospace,Consolas,monospace}.algo{background:var(--orange);border:1px solid #fed7aa;border-radius:10px;padding:12px;white-space:pre-wrap;font:14px/1.7 ui-monospace,Consolas,monospace}.callout{background:#eff6ff;border-left:4px solid var(--blue);padding:12px 14px;border-radius:8px;margin:12px 0}.warn{background:#fff7ed;border-left-color:#f59e0b}.lesson{border:1px solid var(--line);border-radius:12px;margin:12px 0;overflow:hidden}.lesson summary{padding:14px 16px;cursor:pointer;font-weight:800;background:#fbfcff}.lesson summary:hover{background:#f0f5ff}.body{padding:0 16px 16px}.btn{border:0;border-radius:9px;padding:9px 13px;background:var(--blue);color:white;font-weight:700;cursor:pointer;margin:4px 4px 8px 0}.btn.secondary{background:#e9eef8;color:#23324b}.editor textarea{width:100%;min-height:280px;background:var(--code);color:#e5eefb;border:1px solid #2e3b50;border-radius:11px;padding:15px;font:14px/1.7 ui-monospace,Consolas,monospace;resize:vertical}.status{font-size:13px;color:var(--muted)}table{border-collapse:collapse;width:100%;min-width:500px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f1f5fb}.tablewrap{overflow:auto}.exercise{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}details summary{cursor:pointer;font-weight:750}.footer{text-align:center;padding:25px;color:var(--muted)}code{font-family:ui-monospace,Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:4px}.tag{font-size:12px;background:#eaf1ff;color:#1745b5;padding:3px 8px;border-radius:99px}@media(max-width:900px){.layout{grid-template-columns:1fr}.nav{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.nav b{grid-column:1/-1}.grid{grid-template-columns:1fr}}@media(max-width:500px){.layout{padding:0 9px}.card{padding:15px}}
+</style></head><body>
+<header class="hero"><span class="pill">StudyNet · Informatique</span><span class="pill">Débutant → intermédiaire</span><h1>🐍 Python — Cours détaillé et progressif</h1><p>Un cours en français pour apprendre Python depuis zéro : explications, exemples commentés, résultats attendus, traduction en algorithme, pièges fréquents et exercices corrigés. Lis chaque leçon dans l’ordre et teste les exemples.</p><p><strong>Objectif :</strong> comprendre la logique du programme, pas seulement mémoriser les commandes.</p></header>
+<div class="layout"><nav class="nav"><b>📚 Sommaire du cours</b><a href="#start">0. Avant de commencer</a><a href="#variables">1. Variables et types</a><a href="#operators">2. Opérateurs</a><a href="#io">3. Entrées et sorties</a><a href="#conditions">4. Conditions</a><a href="#loops">5. Boucles</a><a href="#strings">6. Chaînes de caractères</a><a href="#lists">7. Listes et collections</a><a href="#functions">8. Fonctions</a><a href="#modules">9. Modules</a><a href="#errors">10. Erreurs et exceptions</a><a href="#files">11. Fichiers</a><a href="#comprehension">12. Compréhensions</a><a href="#oop">13. Classes et objets</a><a href="#algo">14. Python ↔ Algorithme</a><a href="#editor">Laboratoire Python</a><a href="#exercises">Exercices corrigés</a><a href="#glossary">Glossaire</a></nav><main>
+<section class="card" id="start"><h2>0. Avant de commencer : qu’est-ce que Python ?</h2><p><strong>Python</strong> est un langage de programmation. On écrit des instructions dans un fichier, puis l’interpréteur Python les exécute. Il est utilisé pour l’automatisation, les sites web, l’analyse de données, l’intelligence artificielle et l’apprentissage de la programmation.</p><div class="grid"><div class="box"><h3>Le code</h3><pre class="code">print("Bonjour !")
+print("Je découvre Python.")</pre></div><div class="box"><h3>Résultat affiché</h3><pre class="result">Bonjour !
+Je découvre Python.</pre></div></div><h3>Comment lire ce cours ?</h3><ol><li>Lis l’explication pour comprendre l’idée.</li><li>Observe chaque ligne du code.</li><li>Compare le résultat attendu avec ce que tu obtiens.</li><li>Regarde l’algorithme : il décrit la logique sans dépendre d’un langage particulier.</li><li>Modifie le code et prédis le nouveau résultat avant de l’exécuter.</li></ol><div class="callout"><strong>À retenir :</strong> Python utilise l’indentation (les espaces au début des lignes) pour délimiter les blocs après <code>if</code>, <code>for</code>, <code>while</code>, <code>def</code>, etc. En général, utilise 4 espaces.</div><h3>Premier algorithme et son équivalent Python</h3><div class="grid"><div><h4>Algorithme</h4><pre class="algo">Algorithme Bonjour
+Début
+    Écrire("Bonjour !")
+Fin</pre></div><div><h4>Python</h4><pre class="code">print("Bonjour !")</pre><h4>Résultat</h4><pre class="result">Bonjour !</pre></div></div></section>
+<section class="card" id="variables"><h2>1. Variables et types de données</h2><p>Une <strong>variable</strong> est un nom associé à une valeur. Imagine une boîte étiquetée : le nom est l’étiquette et la valeur est ce qu’on y range. En Python, on crée une variable avec le signe <code>=</code>, appelé opérateur d’affectation.</p><div class="grid"><div><h3>Exemple commenté</h3><pre class="code">nom = "Sami"       # str : texte
+age = 19           # int : entier
+moyenne = 14.5     # float : nombre décimal
+est_admis = True   # bool : vrai ou faux
+print(nom)
+print(age)
+print(moyenne)
+print(est_admis)</pre></div><div><h3>Résultat</h3><pre class="result">Sami
+19
+14.5
+True</pre><p class="muted">Les commentaires commencent par <code>#</code>. Python ignore le texte placé après ce symbole sur la même ligne.</p></div></div><h3>Les types les plus utilisés</h3><div class="tablewrap"><table><thead><tr><th>Type</th><th>Contenu</th><th>Exemple</th><th>Remarque</th></tr></thead><tbody><tr><td><code>int</code></td><td>Nombre entier</td><td><code>n = 12</code></td><td>Pas de partie décimale.</td></tr><tr><td><code>float</code></td><td>Nombre décimal</td><td><code>prix = 3.75</code></td><td>Le séparateur décimal est le point.</td></tr><tr><td><code>str</code></td><td>Texte</td><td><code>ville = "Sbiba"</code></td><td>Entre guillemets simples ou doubles.</td></tr><tr><td><code>bool</code></td><td>Valeur logique</td><td><code>actif = True</code></td><td>Les valeurs sont <code>True</code> et <code>False</code> avec une majuscule.</td></tr><tr><td><code>NoneType</code></td><td>Absence de valeur</td><td><code>resultat = None</code></td><td><code>None</code> signifie qu’aucune valeur n’est définie.</td></tr></tbody></table></div><h3>Vérifier le type avec type()</h3><pre class="code">x = 8
+print(type(x))
+print(type("8"))</pre><pre class="result">&lt;class 'int'&gt;
+&lt;class 'str'&gt;</pre><p>Le nombre <code>8</code> et le texte <code>"8"</code> ne sont pas la même chose. Le premier permet des calculs directement ; le second est une chaîne de caractères.</p><h3>Convertir une valeur</h3><pre class="code">texte = "25"
+nombre = int(texte)
+prix = float("4.50")
+print(nombre + 5)
+print(prix)</pre><pre class="result">30
+4.5</pre><div class="callout warn"><strong>Erreur fréquente :</strong> <code>int("bonjour")</code> provoque une erreur, car le texte ne représente pas un entier valide.</div><h3>Équivalent en algorithme</h3><pre class="algo">Algorithme Variables
+Variables
+    nom : chaîne
+    age : entier
+Début
+    nom ← "Sami"
+    age ← 19
+    Écrire(nom)
+    Écrire(age)
+Fin</pre><p>En Python, on n’est pas obligé de déclarer le type avant l’affectation : il est déterminé à partir de la valeur.</p></section>
+<section class="card" id="operators"><h2>2. Opérateurs</h2><p>Les opérateurs servent à calculer, comparer des valeurs et combiner des conditions.</p><h3>Opérateurs arithmétiques</h3><div class="tablewrap"><table><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr><tr><td><code>+</code></td><td>Addition</td><td><code>7 + 2</code></td><td>9</td></tr><tr><td><code>-</code></td><td>Soustraction</td><td><code>7 - 2</code></td><td>5</td></tr><tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 2</code></td><td>14</td></tr><tr><td><code>/</code></td><td>Division réelle</td><td><code>7 / 2</code></td><td>3.5</td></tr><tr><td><code>//</code></td><td>Division entière</td><td><code>7 // 2</code></td><td>3</td></tr><tr><td><code>%</code></td><td>Reste de la division</td><td><code>7 % 2</code></td><td>1</td></tr><tr><td><code>**</code></td><td>Puissance</td><td><code>2 ** 3</code></td><td>8</td></tr></table></div><h3>Comparaisons et logique</h3><pre class="code">a = 10
+b = 4
+print(a > b)                 # supérieur
+print(a == b)                # égalité
+print(a != b)                # différent
+print(a > 5 and b < 5)       # les deux conditions sont vraies
+print(a < 5 or b < 5)        # au moins une condition est vraie
+print(not (a == b))          # inverse le résultat logique</pre><pre class="result">True
+False
+True
+True
+True
+True</pre><p><strong>Attention :</strong> <code>=</code> affecte une valeur, tandis que <code>==</code> compare deux valeurs.</p><h3>Algorithme correspondant</h3><pre class="algo">a ← 10
+b ← 4
+Écrire(a > b)
+Si (a > 5 ET b < 5) Alors
+    Écrire("Les deux conditions sont vraies")
+FinSi</pre></section>
+<section class="card" id="io"><h2>3. Entrées et sorties : print() et input()</h2><p><code>print()</code> affiche une information. <code>input()</code> demande une saisie à l’utilisateur et renvoie toujours du texte (<code>str</code>). Si la saisie doit servir dans un calcul, il faut la convertir.</p><div class="grid"><div><h3>Exemple : calculer l’âge l’année prochaine</h3><pre class="code">nom = input("Votre nom : ")
+age = int(input("Votre âge : "))
+print("Bonjour", nom)
+print("L'année prochaine, vous aurez", age + 1, "ans.")</pre></div><div><h3>Exemple de session</h3><pre class="result">Votre nom : Lina
+Votre âge : 18
+Bonjour Lina
+L'année prochaine, vous aurez 19 ans.</pre></div></div><h3>f-string : afficher proprement</h3><pre class="code">nom = "Lina"
+age = 18
+print(f"Je m'appelle {nom} et j'ai {age} ans.")</pre><pre class="result">Je m'appelle Lina et j'ai 18 ans.</pre><p>Le préfixe <code>f</code> permet d’insérer une variable entre accolades <code>{ }</code> dans une chaîne.</p><h3>Exemple : moyenne de trois notes</h3><pre class="code">n1 = float(input("Note 1 : "))
+n2 = float(input("Note 2 : "))
+n3 = float(input("Note 3 : "))
+moyenne = (n1 + n2 + n3) / 3
+print(f"Moyenne = {moyenne:.2f}")</pre><pre class="result">Note 1 : 12
+Note 2 : 15
+Note 3 : 13
+Moyenne = 13.33</pre><p><code>:.2f</code> affiche deux chiffres après le point décimal.</p><h3>Algorithme</h3><pre class="algo">Algorithme Moyenne
+Variables n1, n2, n3, moyenne : réel
+Début
+    Lire(n1, n2, n3)
+    moyenne ← (n1 + n2 + n3) / 3
+    Écrire("Moyenne = ", moyenne)
+Fin</pre></section>
+<section class="card" id="conditions"><h2>4. Conditions : if, elif, else</h2><p>Une condition permet au programme de choisir quelles instructions exécuter. Python vérifie la condition après <code>if</code>. Si elle est fausse, il peut tester <code>elif</code>, puis utiliser <code>else</code> si aucune condition précédente n’est vraie.</p><pre class="code">note = 14
+if note >= 16:
+    print("Très bien")
+elif note >= 10:
+    print("Admis")
+else:
+    print("Non admis")</pre><pre class="result">Admis</pre><p>Avec <code>note = 14</code>, le premier test est faux (14 n’est pas supérieur ou égal à 16). Le deuxième est vrai (14 est supérieur ou égal à 10), donc Python affiche « Admis » et ne teste pas les autres branches.</p><h3>Exemple : pair ou impair</h3><pre class="code">n = 17
+if n % 2 == 0:
+    print("Pair")
+else:
+    print("Impair")</pre><pre class="result">Impair</pre><p>Un entier est pair si le reste de sa division par 2 est égal à zéro. L’opérateur <code>%</code> donne ce reste.</p><h3>Algorithme équivalent</h3><pre class="algo">Algorithme PairImpair
+Variables n : entier
+Début
+    Lire(n)
+    Si n MOD 2 = 0 Alors
+        Écrire("Pair")
+    Sinon
+        Écrire("Impair")
+    FinSi
+Fin</pre><div class="callout"><strong>À retenir :</strong> les deux-points <code>:</code> sont obligatoires après <code>if</code>, <code>elif</code> et <code>else</code>. Les instructions du bloc doivent être indentées.</div></section>
+<section class="card" id="loops"><h2>5. Boucles : répéter des instructions</h2><h3>A. La boucle for</h3><p><code>for</code> répète un bloc pour chaque élément d’une séquence. Avec <code>range()</code>, on peut produire une suite d’entiers. La borne finale de <code>range(debut, fin)</code> n’est pas incluse.</p><pre class="code">for i in range(1, 6):
+    print(i)</pre><pre class="result">1
+2
+3
+4
+5</pre><p><code>range(1, 6)</code> commence à 1 et s’arrête juste avant 6. Pour afficher 0 à 4, on peut écrire <code>range(5)</code>.</p><h3>B. La boucle while</h3><p><code>while</code> répète les instructions tant que sa condition est vraie. Il faut faire évoluer une variable afin que la condition devienne éventuellement fausse, sinon on risque une boucle infinie.</p><pre class="code">i = 1
+while i <= 3:
+    print("Tour", i)
+    i = i + 1</pre><pre class="result">Tour 1
+Tour 2
+Tour 3</pre><h3>C. Calculer une somme</h3><pre class="code">n = 5
+somme = 0
+for i in range(1, n + 1):
+    somme = somme + i
+print(somme)</pre><pre class="result">15</pre><p>Le programme calcule 1 + 2 + 3 + 4 + 5. Au départ, <code>somme</code> vaut 0. À chaque tour, on ajoute la valeur courante de <code>i</code>.</p><h3>D. break et continue</h3><pre class="code">for n in range(1, 6):
+    if n == 3:
+        continue
+    print(n)</pre><pre class="result">1
+2
+4
+5</pre><p><code>continue</code> saute le reste du tour actuel. <code>break</code>, lui, arrête complètement la boucle.</p><h3>Algorithme correspondant à la somme</h3><pre class="algo">Algorithme Somme
+Variables i, n, somme : entier
+Début
+    Lire(n)
+    somme ← 0
+    Pour i de 1 à n Faire
+        somme ← somme + i
+    FinPour
+    Écrire(somme)
+Fin</pre><div class="callout warn"><strong>Piège :</strong> <code>range(1, n)</code> n’inclut pas <code>n</code>. Pour aller de 1 à n inclus, écris <code>range(1, n + 1)</code>.</div></section>
+<section class="card" id="strings"><h2>6. Chaînes de caractères (str)</h2><p>Une chaîne représente du texte. Les caractères sont indexés à partir de 0 : le premier caractère est à l’indice 0, le deuxième à l’indice 1. Les indices négatifs comptent depuis la fin.</p><pre class="code">mot = "Python"
+print(mot[0])
+print(mot[-1])
+print(len(mot))
+print(mot[1:4])</pre><pre class="result">P
+n
+6
+yth</pre><p><code>mot[1:4]</code> prend l’indice 1 et s’arrête avant l’indice 4. Le résultat est donc <code>yth</code>.</p><h3>Méthodes utiles</h3><pre class="code">phrase = "  Bonjour Python  "
+print(phrase.strip())
+print(phrase.lower())
+print(phrase.upper())
+print("a,b,c".split(","))
+print("-".join(["2026", "10", "12"]))</pre><pre class="result">Bonjour Python
+  bonjour python  
+  BONJOUR PYTHON  
+['a', 'b', 'c']
+2026-10-12</pre><p><code>strip()</code> retire les espaces aux extrémités ; <code>lower()</code> met en minuscules ; <code>upper()</code> met en majuscules ; <code>split()</code> découpe une chaîne ; <code>join()</code> assemble plusieurs chaînes.</p><h3>Parcourir les caractères</h3><pre class="code">for lettre in "BAC":
+    print(lettre)</pre><pre class="result">B
+A
+C</pre><h3>Algorithme</h3><pre class="algo">mot ← "Python"
+Écrire(mot[0])   // premier caractère, selon la notation utilisée
+Écrire(Longueur(mot))</pre><p>Les notations d’indices peuvent changer selon le langage d’algorithme ou le cours : en Python, l’indexation commence à 0.</p></section>
+<section class="card" id="lists"><h2>7. Listes et autres collections</h2><h3>A. Les listes (list)</h3><p>Une liste conserve plusieurs valeurs dans un ordre précis. Elle est modifiable : on peut ajouter, retirer ou remplacer des éléments.</p><pre class="code">notes = [12, 15, 9]
+print(notes[0])
+notes.append(17)
+notes[1] = 16
+print(notes)
+print(len(notes))
+print(sum(notes))</pre><pre class="result">12
+[12, 16, 9, 17]
+4
+54</pre><p><code>append()</code> ajoute un élément à la fin ; <code>len()</code> compte les éléments ; <code>sum()</code> calcule leur somme pour une liste de nombres.</p><h3>Parcourir une liste et calculer la moyenne</h3><pre class="code">notes = [12, 15, 9]
+somme = 0
+for note in notes:
+    somme += note
+moyenne = somme / len(notes)
+print(moyenne)</pre><pre class="result">12.0</pre><p><code>somme += note</code> est une écriture courte de <code>somme = somme + note</code>.</p><h3>B. Tuple, dictionnaire et set</h3><div class="tablewrap"><table><tr><th>Collection</th><th>Usage</th><th>Exemple</th></tr><tr><td><code>tuple</code></td><td>Suite ordonnée généralement non modifiable</td><td><code>coord = (10, 20)</code></td></tr><tr><td><code>dict</code></td><td>Associe une clé à une valeur</td><td><code>eleve = {"nom": "Ali", "note": 15}</code></td></tr><tr><td><code>set</code></td><td>Ensemble sans doublons</td><td><code>couleurs = {"bleu", "rouge"}</code></td></tr></table></div><pre class="code">eleve = {"nom": "Ali", "note": 15}
+print(eleve["nom"])
+eleve["note"] = 16
+print(eleve)
+
+nombres = {1, 2, 2, 3}
+print(nombres)</pre><pre class="result">Ali
+{'nom': 'Ali', 'note': 16}
+{1, 2, 3}</pre><p>Un dictionnaire s’accède avec une clé, par exemple <code>eleve["nom"]</code>. Un ensemble (<code>set</code>) supprime les doublons ; l’ordre d’affichage n’est pas garanti.</p><h3>Algorithme : trouver le maximum d’une liste</h3><pre class="algo">max ← notes[0]
+Pour chaque valeur dans notes Faire
+    Si valeur > max Alors
+        max ← valeur
+    FinSi
+FinPour
+Écrire(max)</pre><p>On suppose ici que la liste contient au moins un élément. Pour une liste vide, il faut prévoir un traitement spécial.</p></section>
+<section class="card" id="functions"><h2>8. Fonctions</h2><p>Une fonction est un bloc nommé qui réalise une tâche. Elle évite de répéter le même code et permet de découper un programme en petites parties faciles à tester.</p><pre class="code">def saluer(nom):
+    print(f"Bonjour {nom} !")
+
+saluer("Meriem")
+saluer("Sami")</pre><pre class="result">Bonjour Meriem !
+Bonjour Sami !</pre><p><code>def</code> définit la fonction ; <code>nom</code> est un paramètre ; l’appel <code>saluer("Meriem")</code> transmet un argument à la fonction.</p><h3>return : renvoyer un résultat</h3><pre class="code">def carre(n):
+    return n * n
+
+resultat = carre(4)
+print(resultat)</pre><pre class="result">16</pre><p><code>return</code> renvoie une valeur à l’endroit où la fonction a été appelée. Contrairement à <code>print()</code>, il ne sert pas directement à afficher.</p><h3>Plusieurs paramètres et valeur par défaut</h3><pre class="code">def moyenne(a, b, c=0):
+    return (a + b + c) / 3
+
+print(moyenne(12, 15, 18))
+print(moyenne(12, 15))</pre><pre class="result">15.0
+9.0</pre><p>Attention : cet exemple applique toujours une division par 3. Si le troisième nombre est facultatif, il faut adapter la formule ou utiliser une autre fonction. L’exemple sert à montrer la valeur par défaut, pas à calculer une moyenne de deux notes correctement.</p><h3>Version plus robuste pour la moyenne</h3><pre class="code">def moyenne(notes):
+    if len(notes) == 0:
+        return None
+    return sum(notes) / len(notes)
+
+print(moyenne([12, 15]))
+print(moyenne([]))</pre><pre class="result">13.5
+None</pre><h3>Algorithme équivalent</h3><pre class="algo">Fonction Carre(n : entier) : entier
+Début
+    Retourner n * n
+FinFonction
+
+DébutProgramme
+    Écrire(Carre(4))
+Fin</pre></section>
+<section class="card" id="modules"><h2>9. Modules et bibliothèques</h2><p>Un module est un fichier ou un ensemble de fonctions déjà écrites. On peut les importer pour éviter de réinventer des outils courants.</p><h3>Module math</h3><pre class="code">import math
+print(math.sqrt(25))
+print(math.ceil(3.2))
+print(math.floor(3.8))
+print(math.pi)</pre><pre class="result">5.0
+4
+3
+3.141592653589793</pre><p><code>sqrt()</code> calcule la racine carrée ; <code>ceil()</code> arrondit vers le haut ; <code>floor()</code> arrondit vers le bas. Le module <code>random</code> permet de tirer des valeurs aléatoires.</p><pre class="code">import random
+print(random.randint(1, 6))  # un entier de 1 à 6 inclus</pre><pre class="result">Exemple possible : 4</pre><p>La valeur peut changer à chaque exécution : le résultat ci-dessus est seulement un exemple.</p></section>
+<section class="card" id="errors"><h2>10. Erreurs et exceptions</h2><p>Une erreur de syntaxe signifie que le code ne respecte pas les règles du langage. Une erreur d’exécution survient pendant le programme, par exemple lors d’une division par zéro. <code>try/except</code> permet de gérer certaines erreurs prévues.</p><pre class="code">try:
+    a = float(input("Numérateur : "))
+    b = float(input("Dénominateur : "))
+    resultat = a / b
+except ValueError:
+    print("Veuillez saisir des nombres valides.")
+except ZeroDivisionError:
+    print("Impossible de diviser par zéro.")
+else:
+    print("Résultat :", resultat)</pre><p class="muted">Le résultat dépend des valeurs saisies. Si le dénominateur vaut 0, le message « Impossible de diviser par zéro. » s’affiche.</p><h3>Lire un message d’erreur</h3><ul><li><code>SyntaxError</code> : la syntaxe est incorrecte.</li><li><code>NameError</code> : le nom d’une variable ou fonction est inconnu, souvent à cause d’une faute de frappe.</li><li><code>TypeError</code> : une opération n’est pas adaptée au type de valeur.</li><li><code>ValueError</code> : le type est acceptable mais la valeur ne l’est pas, par exemple <code>int("abc")</code>.</li><li><code>ZeroDivisionError</code> : division par zéro.</li></ul><div class="callout"><strong>Conseil :</strong> lis d’abord la dernière ligne du message d’erreur, puis repère le numéro de ligne et examine les lignes proches.</div></section>
+<section class="card" id="files"><h2>11. Lire et écrire dans des fichiers</h2><p>Python peut conserver des données dans un fichier texte. L’instruction <code>with open(...)</code> ferme automatiquement le fichier après le bloc, même si une erreur survient.</p><h3>Écrire un fichier</h3><pre class="code">with open("notes.txt", "w", encoding="utf-8") as fichier:
+    fichier.write("Bonjour Python\n")
+    fichier.write("Deuxième ligne\n")</pre><p>Le mode <code>"w"</code> crée le fichier ou remplace son contenu. Le caractère <code>\n</code> passe à la ligne.</p><h3>Lire un fichier</h3><pre class="code">with open("notes.txt", "r", encoding="utf-8") as fichier:
+    contenu = fichier.read()
+print(contenu)</pre><pre class="result">Bonjour Python
+Deuxième ligne</pre><p>Le mode <code>"r"</code> lit un fichier existant. Le mode <code>"a"</code> ajoute du contenu à la fin. Dans un environnement en ligne, les fichiers peuvent être isolés de ton PC.</p></section>
+<section class="card" id="comprehension"><h2>12. Compréhensions de listes</h2><p>Une compréhension permet de créer une liste à partir d’une séquence en une expression compacte. Il faut d’abord comprendre la boucle classique, puis apprendre cette écriture.</p><div class="grid"><div><h3>Avec une boucle classique</h3><pre class="code">carres = []
+for n in range(1, 5):
+    carres.append(n * n)
+print(carres)</pre></div><div><h3>Avec une compréhension</h3><pre class="code">carres = [n * n for n in range(1, 5)]
+print(carres)</pre></div></div><pre class="result">[1, 4, 9, 16]</pre><p>On peut aussi filtrer les éléments :</p><pre class="code">pairs = [n for n in range(1, 11) if n % 2 == 0]
+print(pairs)</pre><pre class="result">[2, 4, 6, 8, 10]</pre><p>La structure est généralement <code>[expression for élément in séquence if condition]</code>. La partie <code>if</code> est facultative.</p></section>
+<section class="card" id="oop"><h2>13. Introduction aux classes et aux objets</h2><p>La programmation orientée objet organise le programme autour d’objets. Une <strong>classe</strong> décrit un modèle ; un <strong>objet</strong> est une instance de ce modèle. Les attributs représentent ses données et les méthodes ses comportements.</p><pre class="code">class Etudiant:
+    def __init__(self, nom, note):
+        self.nom = nom
+        self.note = note
+
+    def afficher(self):
+        print(f"{self.nom} a obtenu {self.note}/20")
+
+e1 = Etudiant("Ali", 16)
+e1.afficher()</pre><pre class="result">Ali a obtenu 16/20</pre><ul><li><code>class Etudiant</code> définit une classe.</li><li><code>__init__</code> initialise l’objet au moment de sa création.</li><li><code>self</code> représente l’objet courant.</li><li><code>self.nom</code> et <code>self.note</code> sont des attributs.</li><li><code>afficher()</code> est une méthode.</li></ul><p>Ce chapitre est une introduction : commence par maîtriser variables, conditions, boucles, listes et fonctions avant d’approfondir les classes.</p></section>
+<section class="card" id="algo"><h2>14. Python ↔ Algorithme : tableau de correspondance</h2><p>L’algorithme décrit les étapes d’une solution. Python est un langage qui permet de traduire ces étapes en instructions exécutables. Les mots exacts utilisés en algorithmique peuvent varier selon le professeur ou le pseudo-code du cours.</p><div class="tablewrap"><table><tr><th>Idée</th><th>Algorithme / pseudo-code</th><th>Python</th></tr><tr><td>Afficher</td><td><code>Écrire("Salut")</code></td><td><code>print("Salut")</code></td></tr><tr><td>Lire une valeur</td><td><code>Lire(x)</code></td><td><code>x = input()</code></td></tr><tr><td>Affecter</td><td><code>x ← 5</code></td><td><code>x = 5</code></td></tr><tr><td>Si</td><td><code>Si condition Alors</code></td><td><code>if condition:</code></td></tr><tr><td>Sinon</td><td><code>Sinon</code></td><td><code>else:</code></td></tr><tr><td>Sinon si</td><td><code>SinonSi condition</code></td><td><code>elif condition:</code></td></tr><tr><td>ET / OU / NON</td><td><code>ET / OU / NON</code></td><td><code>and / or / not</code></td></tr><tr><td>Reste de division</td><td><code>MOD</code></td><td><code>%</code></td></tr><tr><td>Pour</td><td><code>Pour i de 1 à n</code></td><td><code>for i in range(1, n + 1):</code></td></tr><tr><td>Tant que</td><td><code>TantQue condition</code></td><td><code>while condition:</code></td></tr><tr><td>Fonction</td><td><code>Fonction f(x)</code></td><td><code>def f(x):</code></td></tr><tr><td>Retourner</td><td><code>Retourner résultat</code></td><td><code>return resultat</code></td></tr></table></div><h3>Exemple complet : maximum de deux nombres</h3><div class="grid"><div><h4>Algorithme</h4><pre class="algo">Algorithme Maximum
+Variables a, b : réel
+Début
+    Lire(a, b)
+    Si a > b Alors
+        Écrire(a)
+    Sinon
+        Écrire(b)
+    FinSi
+Fin</pre></div><div><h4>Python</h4><pre class="code">a = 8
+b = 12
+if a > b:
+    print(a)
+else:
+    print(b)</pre><h4>Résultat</h4><pre class="result">12</pre></div></div><p>Les deux versions appliquent la même logique. La différence concerne la syntaxe : mots-clés, ponctuation et indentation.</p></section>
+<section class="card" id="editor"><h2>🧪 Laboratoire Python interactif</h2><p>Modifie le code ci-dessous puis clique sur <strong>Exécuter</strong>. L’exécution utilise Pyodide dans le navigateur et nécessite une connexion Internet au premier chargement. La fonction <code>input()</code> interactive n’est pas prise en charge dans ce petit éditeur ; utilise des valeurs écrites directement dans le code.</p><div class="editor"><textarea id="code" spellcheck="false"># Essaie de modifier les valeurs !
+notes = [12, 15, 9, 17]
+moyenne = sum(notes) / len(notes)
+print("Notes :", notes)
+print(f"Moyenne : {moyenne:.2f}")
+
+for note in notes:
+    if note >= 10:
+        print(note, "est une note suffisante")
+    else:
+        print(note, "est une note insuffisante")</textarea></div><button class="btn" id="run">▶ Exécuter le code</button><button class="btn secondary" id="reset">Réinitialiser</button><button class="btn secondary" id="copy">Copier le code</button><p class="status" id="status">Le moteur Python n’est pas encore chargé.</p><h3>Console / Résultat</h3><pre class="result" id="output">Le résultat apparaîtra ici.</pre><p class="muted">Si l’exécution ne démarre pas, vérifie la connexion Internet et recharge la page. Tu peux aussi copier le code dans Thonny ou IDLE installé sur ton ordinateur.</p></section>
+<section class="card" id="exercises"><h2>15. Exercices corrigés</h2><p>Essaie chaque exercice avant d’ouvrir la correction. Lis aussi l’explication : elle t’aide à comprendre pourquoi le code fonctionne.</p>
+<div class="exercise"><h3>Exercice 1 — Pair ou impair</h3><p>Écrire un programme qui affiche si un entier est pair ou impair.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">n = 24
+if n % 2 == 0:
+    print("Pair")
+else:
+    print("Impair")</pre><pre class="result">Pair</pre><p>On calcule le reste de la division par 2. Si ce reste vaut 0, le nombre est pair.</p><pre class="algo">Lire(n)
+Si n MOD 2 = 0 Alors
+    Écrire("Pair")
+Sinon
+    Écrire("Impair")
+FinSi</pre></details></div>
+<div class="exercise"><h3>Exercice 2 — Maximum de trois nombres</h3><p>Afficher le plus grand de trois nombres.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">a, b, c = 7, 12, 9
+maximum = a
+if b > maximum:
+    maximum = b
+if c > maximum:
+    maximum = c
+print(maximum)</pre><pre class="result">12</pre><p>On suppose d’abord que <code>a</code> est le maximum. On compare ensuite <code>b</code> puis <code>c</code> avec le maximum courant et on le remplace si nécessaire.</p><pre class="algo">max ← a
+Si b > max Alors max ← b
+Si c > max Alors max ← c
+Écrire(max)</pre></details></div>
+<div class="exercise"><h3>Exercice 3 — Somme de 1 à n</h3><p>Calculer la somme de tous les entiers de 1 jusqu’à n inclus.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">n = 5
+somme = 0
+for i in range(1, n + 1):
+    somme += i
+print(somme)</pre><pre class="result">15</pre><p>La variable <code>somme</code> accumule chaque entier : 0 → 1 → 3 → 6 → 10 → 15.</p></details></div>
+<div class="exercise"><h3>Exercice 4 — Factorielle</h3><p>La factorielle de n, notée n!, est le produit des entiers de 1 à n. Par convention, 0! = 1.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">n = 5
+factorielle = 1
+for i in range(1, n + 1):
+    factorielle *= i
+print(factorielle)</pre><pre class="result">120</pre><p>Le calcul donne 1 × 2 × 3 × 4 × 5 = 120. On initialise à 1 car c’est l’élément neutre de la multiplication.</p></details></div>
+<div class="exercise"><h3>Exercice 5 — Compter les notes suffisantes</h3><p>Compter combien de notes d’une liste sont supérieures ou égales à 10.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">notes = [8, 12, 15, 9, 10, 7]
+compteur = 0
+for note in notes:
+    if note >= 10:
+        compteur += 1
+print(compteur)</pre><pre class="result">3</pre><p>Le compteur commence à zéro. Chaque fois qu’une note satisfait la condition, on ajoute 1.</p></details></div>
+<div class="exercise"><h3>Exercice 6 — Inverser un mot</h3><p>Afficher une chaîne à l’envers.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">mot = "Python"
+print(mot[::-1])</pre><pre class="result">nohtyP</pre><p>La tranche <code>[::-1]</code> parcourt la chaîne avec un pas de -1, donc de la fin vers le début.</p></details></div>
+<div class="exercise"><h3>Exercice 7 — Fonction de conversion</h3><p>Écrire une fonction qui convertit des kilomètres en mètres.</p><details><summary>Afficher la correction et l’explication</summary><pre class="code">def en_metres(km):
+    return km * 1000
+
+print(en_metres(2.5))</pre><pre class="result">2500.0</pre><p>Un kilomètre vaut 1000 mètres. La fonction reçoit la valeur en kilomètres et renvoie la conversion.</p></details></div>
+</section>
+<section class="card" id="glossary"><h2>16. Glossaire essentiel</h2><div class="tablewrap"><table><tr><th>Terme</th><th>Définition simple</th></tr><tr><td>Instruction</td><td>Commande que Python doit exécuter.</td></tr><tr><td>Variable</td><td>Nom associé à une valeur.</td></tr><tr><td>Type</td><td>Catégorie d’une donnée : entier, texte, booléen, etc.</td></tr><tr><td>Condition</td><td>Expression vraie ou fausse qui permet de choisir une action.</td></tr><tr><td>Boucle</td><td>Mécanisme qui répète un bloc d’instructions.</td></tr><tr><td>Itération</td><td>Un passage dans une boucle.</td></tr><tr><td>Fonction</td><td>Bloc réutilisable qui effectue une tâche.</td></tr><tr><td>Paramètre</td><td>Nom indiqué dans la définition d’une fonction.</td></tr><tr><td>Argument</td><td>Valeur fournie lors de l’appel d’une fonction.</td></tr><tr><td>Retour</td><td>Valeur transmise par une fonction avec <code>return</code>.</td></tr><tr><td>Indentation</td><td>Espaces au début d’une ligne qui définissent un bloc.</td></tr><tr><td>Débogage</td><td>Recherche et correction des erreurs d’un programme.</td></tr><tr><td>Algorithme</td><td>Suite d’étapes logiques pour résoudre un problème.</td></tr></table></div><h3>Conseils pour progresser</h3><ol><li>Écris toi-même les exemples au lieu de seulement les lire.</li><li>Prédit le résultat avant d’exécuter le programme.</li><li>Change une valeur à la fois pour observer l’effet.</li><li>Quand un code ne fonctionne pas, lis le message d’erreur et vérifie l’indentation, les parenthèses, les guillemets et les noms de variables.</li><li>Entraîne-toi à écrire l’algorithme avant le code Python : cela aide à séparer la logique de la syntaxe.</li></ol></section>
+</main></div><footer class="footer">StudyNet · Cours Python détaillé · Comprendre, coder, pratiquer.</footer>
+<script>
+const original=document.getElementById('code').value;let pyodide=null;const statusEl=document.getElementById('status'),output=document.getElementById('output');
+async function initPython(){if(pyodide)return pyodide;statusEl.textContent='Chargement du moteur Python…';if(!window.loadPyodide){statusEl.textContent='Impossible de charger le moteur. Vérifie Internet puis recharge la page.';throw new Error('Pyodide indisponible');}pyodide=await loadPyodide();statusEl.textContent='Python est prêt. Tu peux exécuter ton code.';return pyodide;}
+document.getElementById('run').addEventListener('click',async()=>{output.textContent='';try{const py=await initPython();let code=document.getElementById('code').value;py.setStdout({batched:(s)=>{output.textContent+=s+'\n';}});py.setStderr({batched:(s)=>{output.textContent+='Erreur : '+s+'\n';}});await py.runPythonAsync(code);if(!output.textContent)output.textContent='Exécution terminée sans affichage.';statusEl.textContent='Exécution terminée.';}catch(e){output.textContent+='\n'+e;statusEl.textContent='Vérifie ton code et réessaie.';}});
+document.getElementById('reset').addEventListener('click',()=>{document.getElementById('code').value=original;output.textContent='Le résultat apparaîtra ici.';statusEl.textContent=pyodide?'Python est prêt.':'Le moteur Python n’est pas encore chargé.';});
+document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('code').value);statusEl.textContent='Code copié.';}catch(e){statusEl.textContent='Copie automatique indisponible : sélectionne le code et copie-le manuellement.';}});
+</script><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script></body></html>

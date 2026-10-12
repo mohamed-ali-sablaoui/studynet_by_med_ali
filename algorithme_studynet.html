@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>StudyNet — Cours d’algorithmique détaillé</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#182338;--muted:#63718a;--line:#dce4ef;--blue:#2859d6;--cyan:#e9f3ff;--green:#e8f8ef;--orange:#fff3df;--code:#111827;--shadow:0 8px 28px #172b4d0d}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.72 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}header{background:linear-gradient(120deg,#132d68,#2859d6 65%,#3288d9);color:white;padding:30px max(22px,calc((100% - 1200px)/2)) 28px}header .brand{font-weight:800;letter-spacing:.08em;font-size:.82rem;opacity:.85}header h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;margin:12px 0}header p{max-width:850px;margin:10px 0;color:#e6efff}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pills span{border:1px solid #ffffff55;background:#ffffff16;padding:5px 10px;border-radius:99px;font-size:.85rem}.layout{max-width:1320px;margin:auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;padding:24px}.side{position:sticky;top:14px;align-self:start;max-height:calc(100vh - 28px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.side h3{margin:4px 0 10px;font-size:.95rem}.side a{display:block;text-decoration:none;color:#40506a;padding:7px 9px;border-radius:8px;font-size:.91rem}.side a:hover{background:var(--cyan);color:var(--blue)}.search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin-bottom:12px}.content{min-width:0}.hero-note,.chapter,.exercise,.glossary{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:var(--shadow)}.hero-note{border-left:5px solid var(--blue)}h2{font-size:1.65rem;line-height:1.25;margin:0 0 14px}h3{font-size:1.18rem;margin:24px 0 8px}h4{margin:14px 0 6px}.muted{color:var(--muted)}.tag{display:inline-block;background:var(--cyan);color:#2149a8;border-radius:6px;padding:2px 8px;font-size:.78rem;font-weight:700;margin-bottom:8px}.tip,.warning,.success{padding:12px 15px;border-radius:10px;margin:14px 0}.tip{background:var(--cyan);border-left:4px solid #5c8ded}.warning{background:var(--orange);border-left:4px solid #e4a13a}.success{background:var(--green);border-left:4px solid #31a76b}.example{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0;background:#fbfcff}.example-head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 13px;background:#edf2f9;font-weight:700;font-size:.9rem}.example pre{margin:0;padding:16px;overflow:auto;background:var(--code);color:#e6edf8;font:14px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.example .result{padding:12px 15px;background:#f4fbf6;border-top:1px solid #d7eee0;white-space:pre-wrap;font-family:ui-monospace,monospace;color:#175c35}.copy{border:1px solid #c8d4e5;background:white;color:#263c60;border-radius:7px;padding:5px 9px;cursor:pointer}.copy:hover{background:#e5edfa}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:#edf2f9}code{font-family:ui-monospace,Consolas,monospace;background:#eef2f7;padding:2px 5px;border-radius:5px}ul,ol{padding-left:25px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fbfcff}.mini h3{margin-top:0}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.compare>div{min-width:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}.compare strong{display:block;padding:8px 10px;background:#edf2f9}.compare pre{margin:0;padding:12px;overflow:auto;font-size:.82rem;line-height:1.55}.progressbar{height:7px;background:#e0e7f1;border-radius:9px;overflow:hidden}.progressbar div{height:100%;width:0;background:#2e68dd;transition:width .2s}.checkrow{display:flex;gap:10px;align-items:flex-start;padding:7px 0}.checkrow input{margin-top:7px;transform:scale(1.1)}.quiz button,.action{border:0;border-radius:9px;padding:10px 14px;background:var(--blue);color:white;cursor:pointer;font:inherit;font-weight:700}.quiz button.secondary{background:#e9eef7;color:#263b5c}.quiz label{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:7px 0;cursor:pointer}.feedback{font-weight:700;margin-top:10px}.editor textarea{width:100%;min-height:240px;font:14px/1.6 ui-monospace,Consolas,monospace;padding:14px;border-radius:10px;border:1px solid #34435a;background:#111827;color:#e7edf7}.editor .out{white-space:pre-wrap;background:#f4fbf6;border:1px solid #d7eee0;border-radius:10px;padding:14px;min-height:50px;margin-top:10px}.footer{text-align:center;color:var(--muted);padding:24px}.hidden{display:none!important}.chapter{scroll-margin-top:20px}.chapter:target{outline:2px solid #8bb0ff}.small{font-size:.9rem}@media(max-width:900px){.layout{grid-template-columns:1fr;padding:14px}.side{position:relative;top:0;max-height:none}.side nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.compare{grid-template-columns:1fr}.chapter,.hero-note,.exercise,.glossary{padding:18px}header{padding:24px 18px}}@media print{.side,.copy,.search,.editor,.quiz button{display:none!important}.layout{display:block;padding:0}.chapter,.hero-note{box-shadow:none;break-inside:avoid}body{background:white}}
+</style></head>
+<body>
+<header><div class="brand">STUDYNET · APPRENDRE PAS À PAS</div><h1>Le cours complet d’algorithmique</h1><p>Du tout débutant à la résolution de problèmes : comprendre une consigne, construire une solution logique, écrire un algorithme, puis le traduire en langage C ou Python.</p><div class="pills"><span>Explications simples</span><span>Algorithmes + traces</span><span>Équivalents C et Python</span><span>Exercices corrigés</span><span>Fiche de révision</span></div></header>
+<div class="layout"><aside class="side"><input class="search" id="search" placeholder="Rechercher un mot ou une notion…"/><h3>Sommaire du cours</h3><div class="progressbar"><div id="progress"></div></div><p class="muted small" id="progressText">0 chapitre consulté</p><nav id="nav">
+<a href="#ch1">1. Découvrir l’algorithmique</a><a href="#ch2">2. Résoudre un problème</a><a href="#ch3">3. Variables et types</a><a href="#ch4">4. Entrées et sorties</a><a href="#ch5">5. Opérateurs</a><a href="#ch6">6. Conditions</a><a href="#ch7">7. Boucle Pour</a><a href="#ch8">8. Boucle TantQue</a><a href="#ch9">9. Tableaux</a><a href="#ch10">10. Chaînes de caractères</a><a href="#ch11">11. Fonctions et procédures</a><a href="#ch12">12. Recherche et maximum</a><a href="#ch13">13. Tri et complexité</a><a href="#ch14">14. Enregistrements et énumérations</a><a href="#ch15">15. Tracer un algorithme</a><a href="#ch16">16. Traduire en C et Python</a><a href="#lab">Laboratoire guidé</a><a href="#exos">Exercices corrigés</a><a href="#quiz">Quiz</a><a href="#glossaire">Glossaire</a><a href="#revision">Fiche de révision</a></nav></aside>
+<main class="content">
+<section class="hero-note searchable"><h2>Comment utiliser ce cours ?</h2><p>Lis chaque chapitre dans l’ordre. Pour chaque exemple, essaie d’abord de prévoir le résultat avant de le regarder. Ensuite, modifie une valeur, refais le calcul à la main et explique pourquoi le résultat change.</p><div class="grid2"><div class="mini"><h3>La méthode en 5 étapes</h3><ol><li>Comprendre la consigne.</li><li>Identifier les données disponibles.</li><li>Déterminer le résultat attendu.</li><li>Écrire les étapes en pseudo-code.</li><li>Tester avec plusieurs valeurs.</li></ol></div><div class="mini"><h3>Une idée essentielle</h3><p>Un algorithme est une suite d’étapes précises, ordonnées et finies qui résout un problème. Il ne dépend pas d’un langage particulier.</p><p class="muted small">Un même algorithme peut être programmé en C, Python ou dans un autre langage.</p></div></div></section><section class="chapter searchable"><h2>Convention d’écriture utilisée dans ce cours</h2><p>Tous les algorithmes suivent maintenant la même structure : le nom de l’algorithme, Début, les variables déclarées avec leur type, les traitements, puis Fin. Dans cette méthode, les déclarations des variables sont placées juste après Début, comme demandé.</p><pre>Algorithme Nom_Programme
+Début
+    nom_variable : Type
+    traitement
+Fin</pre></section>
+<section class="chapter searchable" id="ch1"><span class="tag">CHAPITRE 1</span><h2>Découvrir l’algorithmique</h2><h3>1.1 Qu’est-ce qu’un algorithme ?</h3><p>Un <strong>algorithme</strong> est une série d’instructions logiques, précises et organisées qui permet de passer de données de départ à un résultat. Il doit être suffisamment clair pour qu’une personne ou un ordinateur puisse suivre les étapes sans deviner ce qu’il faut faire.</p><div class="tip"><strong>Exemple de la vie quotidienne :</strong> préparer un thé : chauffer l’eau, mettre le thé dans une tasse, verser l’eau, attendre quelques minutes. L’ordre est important : verser l’eau avant de la chauffer ne donne pas le même processus.</div><h3>1.2 Les qualités d’un bon algorithme</h3><ul><li><strong>Précis :</strong> chaque instruction a un sens clair.</li><li><strong>Ordonné :</strong> les instructions sont dans le bon ordre.</li><li><strong>Fini :</strong> l’algorithme termine après un nombre fini d’étapes.</li><li><strong>Correct :</strong> il fournit le résultat attendu pour les entrées prévues.</li><li><strong>Compréhensible :</strong> ses noms et ses étapes sont faciles à suivre.</li></ul><h3>1.3 Algorithme, programme et langage</h3><table><tr><th>Terme</th><th>Signification</th><th>Exemple</th></tr><tr><td>Problème</td><td>Ce qu’on veut résoudre.</td><td>Calculer la somme de deux nombres.</td></tr><tr><td>Algorithme</td><td>La méthode de résolution.</td><td>Lire A et B, calculer S ← A + B, afficher S.</td></tr><tr><td>Programme</td><td>L’algorithme écrit dans un langage exécutable.</td><td>Code en C ou Python.</td></tr><tr><td>Exécution</td><td>Le programme fonctionne avec des valeurs précises.</td><td>A=4, B=7 donne S=11.</td></tr></table><h3>1.4 Premier algorithme</h3><div class="example"><div class="example-head"><span>Algorithme : somme de deux nombres</span><button class="copy">Copier</button></div><pre>Algorithme Somme
+Début
+    A, B, S : Réel
+    Écrire("Donner A : ")
+    Lire(A)
+    Écrire("Donner B : ")
+    Lire(B)
+    S ← A + B
+    Écrire("La somme est : ", S)
+Fin</pre><div class="result">Exemple d’exécution si A = 4 et B = 7 :
+Donner A : 4
+Donner B : 7
+La somme est : 11</div></div><p><strong>À retenir :</strong> l’algorithme décrit la logique. Le symbole <code>←</code> signifie « recevoir / prendre la valeur de ce qui est à droite ».</p></section>
+<section class="chapter searchable" id="ch2"><span class="tag">CHAPITRE 2</span><h2>Analyser et résoudre un problème</h2><h3>2.1 Lire la consigne correctement</h3><p>Avant d’écrire une seule instruction, cherche trois éléments :</p><div class="grid2"><div class="mini"><h3>Les entrées</h3><p>Les informations fournies à l’algorithme : nombre, texte, tableau, choix de l’utilisateur…</p></div><div class="mini"><h3>Le traitement et la sortie</h3><p>Le traitement transforme les entrées. La sortie est le résultat à afficher ou à retourner.</p></div></div><h3>2.2 Exemple : calculer la moyenne de trois notes</h3><table><tr><th>Élément</th><th>Réponse</th></tr><tr><td>Entrées</td><td>N1, N2, N3</td></tr><tr><td>Traitement</td><td>M ← (N1 + N2 + N3) / 3</td></tr><tr><td>Sortie</td><td>Afficher M</td></tr><tr><td>Test</td><td>10, 14, 12 → moyenne 12</td></tr></table><div class="example"><div class="example-head"><span>Solution</span><button class="copy">Copier</button></div><pre>Algorithme Moyenne3Notes
+Début
+    N1, N2, N3, M : Réel
+    Lire(N1, N2, N3)
+    M ← (N1 + N2 + N3) / 3
+    Écrire("Moyenne = ", M)
+Fin</pre><div class="result">Avec 10, 14 et 12 : Moyenne = 12</div></div><h3>2.3 Les tests de validation</h3><p>Ne teste pas seulement un cas. Pour une moyenne, teste des valeurs normales, des notes égales à zéro et des valeurs limites prévues par la consigne. Si les notes doivent être entre 0 et 20, il faut aussi décider quoi faire si l’utilisateur saisit 25.</p><div class="warning"><strong>Erreur fréquente :</strong> commencer directement à coder sans avoir identifié les entrées, les sorties et les règles. Cela produit souvent des oublis dans les conditions.</div></section>
+<section class="chapter searchable" id="ch3"><span class="tag">CHAPITRE 3</span><h2>Variables, constantes et types</h2><h3>3.1 Une variable, c’est quoi ?</h3><p>Une variable est un nom associé à une valeur qui peut changer pendant l’exécution. Imagine une boîte étiquetée : <code>age</code>. Elle contient d’abord 19, puis peut recevoir 20.</p><div class="example"><div class="example-head"><span>Affectation</span><button class="copy">Copier</button></div><pre>Algorithme IncrementerAge
+Début
+    age : Entier
+    age ← 19
+    age ← age + 1
+    Écrire(age)
+Fin</pre><div class="result">Résultat : 20</div></div><p>La deuxième ligne se lit ainsi : « calculer l’ancienne valeur de age plus 1, puis ranger le résultat dans age ». Ce n’est pas une égalité mathématique classique.</p><h3>3.2 Les types de données</h3><table><tr><th>Type algorithmique</th><th>À quoi sert-il ?</th><th>Exemples</th></tr><tr><td>Entier</td><td>Nombre sans partie décimale.</td><td>-3, 0, 42</td></tr><tr><td>Réel</td><td>Nombre pouvant avoir une partie décimale.</td><td>3,5 ; -0,25 ; 12,0</td></tr><tr><td>Booléen</td><td>Valeur logique.</td><td>Vrai, Faux</td></tr><tr><td>Caractère</td><td>Un seul symbole.</td><td>'A', '7', '?'</td></tr><tr><td>Chaîne</td><td>Suite de caractères.</td><td>"Bonjour"</td></tr><tr><td>Tableau</td><td>Collection ordonnée d’éléments.</td><td>[12, 8, 15]</td></tr></table><h3>3.3 Déclarer les variables</h3><p>Dans le pseudo-code de ce cours, on annonce les variables avant le bloc <code>Début</code>. Le type permet de comprendre quelles valeurs sont prévues.</p><div class="example"><div class="example-head"><span>Déclaration</span><button class="copy">Copier</button></div><pre>Algorithme DeclarationVariables
+Début
+    nom : Chaîne
+    age : Entier
+    moyenne : Réel
+    admis : Booléen
+    // Les variables sont déclarées avant leur utilisation.
+Fin</pre><div class="result">nom peut contenir "Sami" ; age peut contenir 18 ; moyenne peut contenir 13,75 ; admis peut contenir Vrai ou Faux.</div></div><h3>3.4 Les constantes</h3><p>Une constante représente une valeur qui ne doit pas changer dans le problème. Elle rend le programme plus lisible et évite de répéter un nombre magique.</p><div class="example"><div class="example-head"><span>Exemple</span><button class="copy">Copier</button></div><pre>Algorithme CalculPrixTTC
+Début
+    TVA, prixHT, prixTTC : Réel
+    TVA ← 0.19
+    prixHT ← 100
+    prixTTC ← prixHT * (1 + TVA)
+    Écrire(prixTTC)
+Fin</pre><div class="result">Résultat : 119</div></div><div class="tip"><strong>Noms conseillés :</strong> <code>note1</code>, <code>prix_total</code>, <code>nombreEtudiants</code>. Choisis un nom parlant, commence par une lettre et évite les espaces et les accents dans les identifiants.</div></section>
+<section class="chapter searchable" id="ch4"><span class="tag">CHAPITRE 4</span><h2>Entrées et sorties : Lire et Écrire</h2><p><code>Lire</code> récupère une donnée fournie par l’utilisateur. <code>Écrire</code> affiche un message ou une valeur. Elles permettent à l’algorithme de communiquer avec l’extérieur.</p><div class="example"><div class="example-head"><span>Demander un prénom</span><button class="copy">Copier</button></div><pre>Algorithme Salutation
+Début
+    prenom : Chaîne
+    Écrire("Quel est ton prénom ?")
+    Lire(prenom)
+    Écrire("Bonjour ", prenom, " !")
+Fin</pre><div class="result">Saisie : Lina
+Affichage : Bonjour Lina !</div></div><h3>Lire plusieurs valeurs</h3><div class="example"><div class="example-head"><span>Calcul d’un rectangle</span><button class="copy">Copier</button></div><pre>Algorithme AireRectangle
+Début
+    longueur, largeur, aire : Réel
+    Écrire("Longueur et largeur : ")
+    Lire(longueur, largeur)
+    aire ← longueur * largeur
+    Écrire("Aire = ", aire)
+Fin</pre><div class="result">Saisie : 5 et 3
+Aire = 15</div></div><p>Il faut utiliser les données après leur lecture. Une variable lue doit avoir une valeur valide avant d’être utilisée dans un calcul.</p></section>
+<section class="chapter searchable" id="ch5"><span class="tag">CHAPITRE 5</span><h2>Les opérateurs</h2><h3>5.1 Opérateurs arithmétiques</h3><table><tr><th>Opérateur</th><th>Sens</th><th>Exemple</th><th>Résultat</th></tr><tr><td><code>+</code></td><td>Addition</td><td>7 + 2</td><td>9</td></tr><tr><td><code>-</code></td><td>Soustraction</td><td>7 - 2</td><td>5</td></tr><tr><td><code>*</code></td><td>Multiplication</td><td>7 * 2</td><td>14</td></tr><tr><td><code>/</code></td><td>Division réelle</td><td>7 / 2</td><td>3,5</td></tr><tr><td><code>DIV</code></td><td>Quotient entier</td><td>7 DIV 2</td><td>3</td></tr><tr><td><code>MOD</code></td><td>Reste de division entière</td><td>7 MOD 2</td><td>1</td></tr><tr><td><code>^</code> ou puissance selon la notation du cours</td><td>Puissance</td><td>2^3</td><td>8</td></tr></table><div class="tip"><strong>Astuce :</strong> <code>N MOD 2 = 0</code> signifie que N est pair. Le reste d’une division par 2 vaut zéro pour un nombre pair.</div><h3>5.2 Comparaisons</h3><table><tr><th>Opérateur</th><th>Question</th><th>Exemple</th></tr><tr><td><code>=</code></td><td>Est égal à ?</td><td>age = 18</td></tr><tr><td><code>≠</code></td><td>Est différent de ?</td><td>x ≠ 0</td></tr><tr><td><code>&lt;</code>, <code>&gt;</code></td><td>Plus petit / plus grand ?</td><td>note &gt; 10</td></tr><tr><td><code>≤</code>, <code>≥</code></td><td>Inférieur ou égal / supérieur ou égal ?</td><td>age ≥ 18</td></tr></table><h3>5.3 Opérateurs logiques</h3><ul><li><strong>ET :</strong> toutes les conditions doivent être vraies.</li><li><strong>OU :</strong> au moins une condition doit être vraie.</li><li><strong>NON :</strong> inverse une valeur logique.</li></ul><div class="example"><div class="example-head"><span>Accès autorisé si l’âge est suffisant et si la carte est valide</span><button class="copy">Copier</button></div><pre>Algorithme VerifierAutorisation
+Début
+    age : Entier
+    carteValide, autorise : Booléen
+    autorise ← (age &gt;= 18) ET (carteValide = Vrai)
+    Écrire(autorise)
+Fin</pre><div class="result">age = 20 et carteValide = Vrai → autorise = Vrai
+age = 20 et carteValide = Faux → autorise = Faux</div></div><h3>5.4 Priorité des opérations</h3><p>En général, les parenthèses sont évaluées d’abord, puis les multiplications/divisions, puis les additions/soustractions. Utilise des parenthèses quand tu veux éviter toute ambiguïté.</p><div class="example"><div class="example-head"><span>Comparer deux calculs</span><button class="copy">Copier</button></div><pre>Algorithme PrioriteOperateurs
+Début
+    A, B : Entier
+    A ← 2 + 3 * 4
+    B ← (2 + 3) * 4
+    Écrire(A, B)
+Fin</pre><div class="result">A = 14 car 3 * 4 est calculé d’abord.
+B = 20 car les parenthèses imposent de calculer 2 + 3 d’abord.</div></div></section>
+<section class="chapter searchable" id="ch6"><span class="tag">CHAPITRE 6</span><h2>Les conditions : Si, SinonSi, Sinon</h2><p>Une condition permet à l’algorithme de choisir une action selon une situation. La condition est une expression qui vaut <strong>Vrai</strong> ou <strong>Faux</strong>.</p><h3>6.1 Si simple</h3><div class="example"><div class="example-head"><span>Afficher un message si la note est suffisante</span><button class="copy">Copier</button></div><pre>Algorithme VerifierAdmission
+Début
+    note : Réel
+    Lire(note)
+    Si note &gt;= 10 Alors
+        Écrire("Admis")
+    FinSi
+Fin</pre><div class="result">note = 14 → Admis
+note = 7 → aucun message n’est affiché par ce bloc.</div></div><h3>6.2 Si…Sinon</h3><div class="example"><div class="example-head"><span>Nombre positif ou non positif</span><button class="copy">Copier</button></div><pre>Algorithme PositifOuNon
+Début
+    N : Réel
+    Lire(N)
+    Si N &gt; 0 Alors
+        Écrire("Positif")
+    Sinon
+        Écrire("Nul ou négatif")
+    FinSi
+Fin</pre><div class="result">N = 5 → Positif
+N = 0 → Nul ou négatif
+N = -2 → Nul ou négatif</div></div><h3>6.3 Plusieurs cas</h3><div class="example"><div class="example-head"><span>Mention selon la note sur 20</span><button class="copy">Copier</button></div><pre>Algorithme MentionNote
+Début
+    note : Réel
+    Lire(note)
+    Si note &lt; 0 OU note &gt; 20 Alors
+        Écrire("Note invalide")
+    SinonSi note &lt; 10 Alors
+        Écrire("Insuffisant")
+    SinonSi note &lt; 12 Alors
+        Écrire("Passable")
+    SinonSi note &lt; 14 Alors
+        Écrire("Assez bien")
+    SinonSi note &lt; 16 Alors
+        Écrire("Bien")
+    Sinon
+        Écrire("Très bien")
+    FinSi
+Fin</pre><div class="result">note = 13 → Assez bien
+note = 18 → Très bien
+note = 25 → Note invalide</div></div><div class="warning"><strong>Attention à l’ordre :</strong> dans une chaîne de conditions, le premier cas vrai est exécuté. Vérifie les limites : <code>note &lt; 10</code> n’inclut pas 10, alors que <code>note &lt;= 10</code> l’inclut.</div><h3>6.4 Conditions imbriquées</h3><p>Une condition peut se trouver à l’intérieur d’une autre. Mais si une condition composée avec <code>ET</code> ou <code>OU</code> suffit, elle est souvent plus facile à lire.</p><div class="example"><div class="example-head"><span>Vérifier l’intervalle [0, 20]</span><button class="copy">Copier</button></div><pre>Algorithme ValiderNote
+Début
+    note : Réel
+    Lire(note)
+    Si note &gt;= 0 ET note &lt;= 20 Alors
+        Écrire("Note valide")
+    Sinon
+        Écrire("Note invalide")
+    FinSi
+Fin</pre><div class="result">note = 20 → Note valide
+note = -1 → Note invalide</div></div></section>
+<section class="chapter searchable" id="ch7"><span class="tag">CHAPITRE 7</span><h2>La boucle Pour</h2><p>La boucle <code>Pour</code> est adaptée quand on connaît le nombre de répétitions ou quand on parcourt une suite de valeurs. Le compteur prend successivement les valeurs indiquées.</p><h3>7.1 Compter de 1 à 5</h3><div class="example"><div class="example-head"><span>Affichage de 1 à 5</span><button class="copy">Copier</button></div><pre>Algorithme AfficherDeUnACinq
+Début
+    i : Entier
+    Pour i de 1 à 5 Faire
+        Écrire(i)
+    FinPour
+Fin</pre><div class="result">1
+2
+3
+4
+5</div></div><p>Le compteur <code>i</code> vaut 1 au premier tour, puis 2, puis 3, puis 4, puis 5. La boucle s’arrête après la dernière valeur.</p><h3>7.2 Calculer une somme</h3><div class="example"><div class="example-head"><span>Somme des entiers de 1 à N</span><button class="copy">Copier</button></div><pre>Algorithme SommeDeUnAN
+Début
+    N, i, somme : Entier
+    Lire(N)
+    somme ← 0
+    Pour i de 1 à N Faire
+        somme ← somme + i
+    FinPour
+    Écrire(somme)
+Fin</pre><div class="result">N = 4 : somme évolue 0 → 1 → 3 → 6 → 10
+Résultat final : 10</div></div><h3>7.3 Table de multiplication</h3><div class="example"><div class="example-head"><span>Table de 7</span><button class="copy">Copier</button></div><pre>Algorithme TableDeSept
+Début
+    i : Entier
+    Pour i de 1 à 10 Faire
+        Écrire(7, " x ", i, " = ", 7 * i)
+    FinPour
+Fin</pre><div class="result">7 x 1 = 7
+7 x 2 = 14
+...
+7 x 10 = 70</div></div><h3>7.4 Compteur et accumulateur</h3><div class="grid2"><div class="mini"><h3>Compteur</h3><p>Compte combien de fois une situation se produit. Exemple : <code>nb ← nb + 1</code>.</p></div><div class="mini"><h3>Accumulateur</h3><p>Accumule une valeur, souvent une somme. Exemple : <code>somme ← somme + valeur</code>.</p></div></div><div class="warning">Avant la boucle, initialise toujours le compteur ou l’accumulateur. Sinon, il peut contenir une valeur incorrecte ou inconnue.</div></section>
+<section class="chapter searchable" id="ch8"><span class="tag">CHAPITRE 8</span><h2>La boucle TantQue</h2><p>La boucle <code>TantQue</code> répète un bloc tant qu’une condition est vraie. Elle convient lorsque le nombre de tours dépend des données saisies ou d’un événement.</p><div class="example"><div class="example-head"><span>Demander un nombre positif</span><button class="copy">Copier</button></div><pre>Algorithme SaisirNombrePositif
+Début
+    N : Réel
+    Écrire("Donner un nombre positif")
+    Lire(N)
+    TantQue N &lt;= 0 Faire
+        Écrire("Erreur. Recommencer : ")
+        Lire(N)
+    FinTantQue
+    Écrire("Merci")
+Fin</pre><div class="result">Si l’utilisateur saisit -3, puis 0, puis 8 :
+Erreur. Recommencer
+Erreur. Recommencer
+Merci</div></div><h3>8.1 Le risque de boucle infinie</h3><p>Une boucle peut ne jamais terminer si sa condition reste toujours vraie. Il faut généralement qu’une instruction à l’intérieur de la boucle modifie la situation qui contrôle la condition.</p><div class="example"><div class="example-head"><span>Exemple qui termine</span><button class="copy">Copier</button></div><pre>Algorithme CompterJusquaTrois
+Début
+    i : Entier
+    i ← 1
+    TantQue i &lt;= 3 Faire
+        Écrire(i)
+        i ← i + 1
+    FinTantQue
+Fin</pre><div class="result">1
+2
+3</div></div><div class="warning"><strong>Erreur :</strong> oublier <code>i ← i + 1</code> ici ferait rester <code>i</code> à 1. La condition <code>i &lt;= 3</code> serait toujours vraie.</div><h3>8.2 Pour ou TantQue ?</h3><table><tr><th>Pour</th><th>TantQue</th></tr><tr><td>Nombre de tours connu ou suite de valeurs.</td><td>Nombre de tours inconnu à l’avance.</td></tr><tr><td>Ex. afficher les nombres de 1 à 10.</td><td>Ex. répéter la saisie jusqu’à obtenir un nombre positif.</td></tr></table></section>
+<section class="chapter searchable" id="ch9"><span class="tag">CHAPITRE 9</span><h2>Les tableaux</h2><p>Un tableau stocke plusieurs valeurs sous un seul nom. Chaque élément est repéré par un indice. Dans ce cours, on utilise souvent les indices de 0 à N−1 pour rester proche du C et de Python. Respecte toutefois la convention donnée dans ton cours scolaire.</p><div class="example"><div class="example-head"><span>Tableau de 5 notes</span><button class="copy">Copier</button></div><pre>Algorithme AccederAuxElements
+Début
+    notes : Tableau[5] de Réel
+    notes ← [12, 15, 8, 17, 10]
+    Écrire(notes[0])
+    Écrire(notes[3])
+Fin</pre><div class="result">notes[0] = 12
+notes[3] = 17</div></div><h3>9.1 Parcourir un tableau</h3><div class="example"><div class="example-head"><span>Afficher toutes les valeurs</span><button class="copy">Copier</button></div><pre>Algorithme AfficherTableau
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    Lire(N)
+    Pour i de 0 à N - 1 Faire
+        Écrire(T[i])
+    FinPour
+Fin</pre><div class="result">Pour T = [4, 9, 2], les valeurs affichées sont 4, 9, 2.</div></div><h3>9.2 Calculer la somme et la moyenne</h3><div class="example"><div class="example-head"><span>Somme d’un tableau</span><button class="copy">Copier</button></div><pre>Algorithme SommeEtMoyenneTableau
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    somme, moyenne : Réel
+    somme ← 0
+    Pour i de 0 à N - 1 Faire
+        somme ← somme + T[i]
+    FinPour
+    moyenne ← somme / N
+    Écrire(somme, moyenne)
+Fin</pre><div class="result">T = [10, 12, 14] → somme = 36 ; moyenne = 12.</div></div><h3>9.3 Compter les éléments qui vérifient une condition</h3><div class="example"><div class="example-head"><span>Compter les notes supérieures ou égales à 10</span><button class="copy">Copier</button></div><pre>Algorithme CompterNotesSuffisantes
+Début
+    T : Tableau de Réel
+    N, i, nb : Entier
+    nb ← 0
+    Pour i de 0 à N - 1 Faire
+        Si T[i] &gt;= 10 Alors
+            nb ← nb + 1
+        FinSi
+    FinPour
+    Écrire(nb)
+Fin</pre><div class="result">T = [7, 10, 15, 9, 12] → nb = 3.</div></div><h3>9.4 Tableau : précautions</h3><ul><li>La taille <code>N</code> doit être cohérente avec le nombre d’éléments.</li><li>Avec des indices commençant à 0, le dernier indice est <code>N - 1</code>.</li><li>Ne lis jamais <code>T[N]</code> dans un tableau de taille N avec indices 0 à N−1.</li><li>Si N = 0, on ne peut pas calculer la moyenne en divisant par N.</li></ul></section>
+<section class="chapter searchable" id="ch10"><span class="tag">CHAPITRE 10</span><h2>Les chaînes de caractères</h2><p>Une chaîne est un texte composé de caractères. Selon le langage et la notation du cours, on peut accéder aux caractères par un indice, compter leur nombre et parcourir la chaîne.</p><div class="example"><div class="example-head"><span>Parcourir un mot</span><button class="copy">Copier</button></div><pre>Algorithme AfficherCaracteres
+Début
+    mot : Chaîne
+    i : Entier
+    mot ← "SALUT"
+    Pour i de 0 à Longueur(mot) - 1 Faire
+        Écrire(mot[i])
+    FinPour
+Fin</pre><div class="result">S
+A
+L
+U
+T</div></div><h3>Compter les voyelles</h3><div class="example"><div class="example-head"><span>Algorithme de comptage</span><button class="copy">Copier</button></div><pre>Algorithme CompterVoyelles
+Début
+    mot : Chaîne
+    nbVoyelles, i : Entier
+    c : Caractère
+    Lire(mot)
+    nbVoyelles ← 0
+    Pour i de 0 à Longueur(mot) - 1 Faire
+        c ← Minuscule(mot[i])
+        Si c = "a" OU c = "e" OU c = "i" OU c = "o" OU c = "u" OU c = "y" Alors
+            nbVoyelles ← nbVoyelles + 1
+        FinSi
+    FinPour
+    Écrire(nbVoyelles)
+Fin</pre><div class="result">mot = "Bonjour" → 3 voyelles (o, o, u).</div></div><p class="muted small">Selon la consigne, il peut être nécessaire de traiter aussi les lettres accentuées comme é, è, à et ù.</p></section>
+<section class="chapter searchable" id="ch11"><span class="tag">CHAPITRE 11</span><h2>Fonctions et procédures</h2><p>Une fonction ou une procédure permet de regrouper des instructions utiles, de leur donner un nom et de les réutiliser. Cela évite les répétitions et facilite les tests.</p><h3>11.1 Fonction</h3><p>Une fonction calcule généralement une valeur et la renvoie avec <code>Retourner</code>.</p><div class="example"><div class="example-head"><span>Fonction carré</span><button class="copy">Copier</button></div><pre>Algorithme UtiliserFonctionCarre
+Début
+    Fonction Carre(x : Réel) : Réel
+        Retourner(x * x)
+    FinFonction
+    resultat : Réel
+    resultat ← Carre(5)
+    Écrire(resultat)
+Fin</pre><div class="result">Carre(5) retourne 25, donc resultat = 25.</div></div><h3>11.2 Procédure</h3><p>Une procédure réalise une action. Elle peut afficher un message, modifier une structure ou effectuer un traitement, sans nécessairement retourner une valeur.</p><div class="example"><div class="example-head"><span>Procédure de salutation</span><button class="copy">Copier</button></div><pre>Algorithme UtiliserProcedureSalutation
+Début
+    Procédure DireBonjour(nom : Chaîne)
+        Écrire("Bonjour ", nom)
+    FinProcédure
+    DireBonjour("Amine")
+Fin</pre><div class="result">Bonjour Amine</div></div><h3>11.3 Paramètres et variables locales</h3><ul><li><strong>Paramètre :</strong> donnée reçue par la fonction, par exemple <code>x</code>.</li><li><strong>Valeur retournée :</strong> résultat envoyé à l’instruction appelante.</li><li><strong>Variable locale :</strong> variable utilisée seulement dans le bloc où elle est déclarée.</li></ul><div class="tip">Une fonction doit avoir un rôle clair. Par exemple, <code>EstPair(n)</code> répond à une question logique, tandis que <code>AfficherMenu()</code> sert plutôt à afficher.</div></section>
+<section class="chapter searchable" id="ch12"><span class="tag">CHAPITRE 12</span><h2>Recherche, minimum et maximum</h2><h3>12.1 Trouver le maximum</h3><p>On initialise le maximum avec le premier élément, puis on compare chaque élément suivant. Si un élément est plus grand, il devient le nouveau maximum.</p><div class="example"><div class="example-head"><span>Maximum d’un tableau non vide</span><button class="copy">Copier</button></div><pre>Algorithme MaximumTableau
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    max : Réel
+    max ← T[0]
+    Pour i de 1 à N - 1 Faire
+        Si T[i] &gt; max Alors
+            max ← T[i]
+        FinSi
+    FinPour
+    Écrire(max)
+Fin</pre><div class="result">T = [6, 3, 14, 9] → max = 14</div></div><h3>12.2 Trouver le minimum</h3><p>La logique est identique, mais on remplace la comparaison <code>&gt;</code> par <code>&lt;</code>.</p><div class="example"><div class="example-head"><span>Minimum</span><button class="copy">Copier</button></div><pre>Algorithme MinimumTableau
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    min : Réel
+    min ← T[0]
+    Pour i de 1 à N - 1 Faire
+        Si T[i] &lt; min Alors
+            min ← T[i]
+        FinSi
+    FinPour
+    Écrire(min)
+Fin</pre><div class="result">T = [6, 3, 14, 9] → min = 3</div></div><h3>12.3 Recherche séquentielle</h3><p>On parcourt le tableau du début à la fin jusqu’à trouver la valeur cherchée ou atteindre la fin.</p><div class="example"><div class="example-head"><span>Rechercher une valeur</span><button class="copy">Copier</button></div><pre>Algorithme RechercheSequentielle
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    valeurCherchee : Réel
+    trouve : Booléen
+    trouve ← Faux
+    i ← 0
+    TantQue i &lt; N ET trouve = Faux Faire
+        Si T[i] = valeurCherchee Alors
+            trouve ← Vrai
+        Sinon
+            i ← i + 1
+        FinSi
+    FinTantQue
+    Si trouve Alors
+        Écrire("Trouvé à l'indice ", i)
+    Sinon
+        Écrire("Absent")
+    FinSi
+Fin</pre><div class="result">T = [4, 8, 12, 3], valeurCherchee = 12 → trouvé à l’indice 2.</div></div><div class="warning">Le tableau doit être non vide pour l’algorithme du maximum/minimum présenté ici. Pour la recherche, vérifie que tu n’accèdes pas à T[i] lorsque i = N.</div></section>
+<section class="chapter searchable" id="ch13"><span class="tag">CHAPITRE 13</span><h2>Tri et idée de complexité</h2><h3>13.1 Pourquoi trier ?</h3><p>Trier consiste à mettre des valeurs dans un ordre donné, par exemple croissant ou décroissant. Cela facilite l’affichage et certaines recherches.</p><h3>13.2 Tri par sélection — idée</h3><p>À chaque position, on cherche le plus petit élément de la partie non triée puis on l’échange avec l’élément à cette position. C’est facile à comprendre, même si ce n’est pas le tri le plus rapide pour de grandes données.</p><div class="example"><div class="example-head"><span>Pseudo-code du tri par sélection</span><button class="copy">Copier</button></div><pre>Algorithme TriSelection
+Début
+    T : Tableau de Réel
+    N, i, j, indiceMin : Entier
+    Pour i de 0 à N - 2 Faire
+        indiceMin ← i
+        Pour j de i + 1 à N - 1 Faire
+            Si T[j] &lt; T[indiceMin] Alors
+                indiceMin ← j
+            FinSi
+        FinPour
+        échanger T[i] et T[indiceMin]
+    FinPour
+Fin</pre><div class="result">Départ : [5, 2, 4, 1]
+Après tri croissant : [1, 2, 4, 5]</div></div><h3>13.3 Complexité, première idée</h3><p>La complexité décrit comment le travail ou la mémoire nécessaires évoluent quand la taille des données augmente.</p><table><tr><th>Notation</th><th>Idée générale</th><th>Exemple courant</th></tr><tr><td>O(1)</td><td>Temps constant.</td><td>Lire un élément à un indice connu.</td></tr><tr><td>O(N)</td><td>Travail proportionnel au nombre d’éléments.</td><td>Parcourir un tableau une fois.</td></tr><tr><td>O(N²)</td><td>Deux parcours imbriqués sur les données.</td><td>Tri par sélection.</td></tr><tr><td>O(log N)</td><td>Le problème est réduit par facteur à chaque étape.</td><td>Recherche dichotomique dans un tableau trié.</td></tr></table><p>À ce stade, retiens surtout l’intuition : si on double N, une méthode O(N) demande environ deux fois plus de travail, tandis qu’une méthode O(N²) peut en demander environ quatre fois plus.</p></section>
+<section class="chapter searchable" id="ch14"><span class="tag">CHAPITRE 14</span><h2>Enregistrements et énumérations</h2><h3>14.1 Enregistrement (structure)</h3><p>Un enregistrement regroupe plusieurs informations de types différents qui décrivent un même objet. En C, on retrouve l’idée avec <code>struct</code>.</p><div class="example"><div class="example-head"><span>Un étudiant</span><button class="copy">Copier</button></div><pre>Algorithme ManipulerEtudiant
+Début
+    Type Etudiant = Enregistrement
+        nom : Chaîne
+        age : Entier
+        moyenne : Réel
+    FinEnregistrement
+    etu : Etudiant
+    etu.nom ← "Sarra"
+    etu.age ← 19
+    etu.moyenne ← 14.5
+    Écrire(etu.nom, etu.moyenne)
+Fin</pre><div class="result">Sarra 14.5</div></div><h3>14.2 Énumération</h3><p>Une énumération définit un ensemble limité de valeurs nommées. Elle est utile quand une variable ne peut prendre qu’un choix parmi plusieurs états prévus.</p><div class="example"><div class="example-head"><span>Jours de la semaine</span><button class="copy">Copier</button></div><pre>Algorithme UtiliserEnumerationJour
+Début
+    Type Jour = (Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche)
+    jour : Jour
+    jour ← Mercredi
+    Si jour = Mercredi Alors
+        Écrire("Milieu de semaine")
+    FinSi
+Fin</pre><div class="result">Milieu de semaine</div></div><p>Ces concepts deviennent particulièrement utiles dans des programmes plus grands et lors de l’apprentissage de <code>struct</code> et <code>enum</code> en C.</p></section>
+<section class="chapter searchable" id="ch15"><span class="tag">CHAPITRE 15</span><h2>Tracer un algorithme à la main</h2><p>Une <strong>table de trace</strong> permet de suivre la valeur des variables après chaque instruction. Elle aide à comprendre les boucles et à repérer les erreurs.</p><div class="example"><div class="example-head"><span>Tracer la somme de 1 à 4</span><button class="copy">Copier</button></div><pre>Algorithme SommeDesQuatrePremiers
+Début
+    i, somme : Entier
+    somme ← 0
+    Pour i de 1 à 4 Faire
+        somme ← somme + i
+    FinPour
+    Écrire(somme)
+Fin</pre><div class="result">Étape | i | somme avant | somme après
+Départ | — | — | 0
+Tour 1 | 1 | 0 | 1
+Tour 2 | 2 | 1 | 3
+Tour 3 | 3 | 3 | 6
+Tour 4 | 4 | 6 | 10
+Résultat final : 10</div></div><h3>Comment construire ta table de trace ?</h3><ol><li>Écris les noms des variables en colonnes.</li><li>Inscris leurs valeurs initiales avant la première instruction.</li><li>Exécute une instruction à la fois.</li><li>À chaque tour de boucle, note les nouvelles valeurs.</li><li>Compare le résultat final avec ce que tu avais prévu.</li></ol><div class="tip">Quand tu bloques, ne relis pas tout le programme à la fois : suis-le ligne par ligne avec un petit exemple simple.</div></section>
+<section class="chapter searchable" id="ch16"><span class="tag">CHAPITRE 16</span><h2>Traduire un algorithme en C et Python</h2><p>Le pseudo-code sert à décrire la logique sans dépendre d’un langage. Voici comment les instructions les plus fréquentes se traduisent.</p><table><tr><th>Idée</th><th>Algorithmique</th><th>C</th><th>Python</th></tr><tr><td>Afficher</td><td><code>Écrire(x)</code></td><td><code>printf("%d", x);</code> pour un entier</td><td><code>print(x)</code></td></tr><tr><td>Lire un entier</td><td><code>Lire(x)</code></td><td><code>scanf("%d", &amp;x);</code></td><td><code>x = int(input())</code></td></tr><tr><td>Affecter</td><td><code>x ← 5</code></td><td><code>x = 5;</code></td><td><code>x = 5</code></td></tr><tr><td>Condition</td><td><code>Si x &gt; 0 Alors</code></td><td><code>if (x &gt; 0) {</code></td><td><code>if x &gt; 0:</code></td></tr><tr><td>Sinon</td><td><code>Sinon</code></td><td><code>} else {</code></td><td><code>else:</code></td></tr><tr><td>Boucle Pour</td><td><code>Pour i de 0 à N-1</code></td><td><code>for (i=0; i&lt;N; i++)</code></td><td><code>for i in range(N):</code></td></tr><tr><td>Boucle TantQue</td><td><code>TantQue cond Faire</code></td><td><code>while (cond) {</code></td><td><code>while cond:</code></td></tr><tr><td>Égalité</td><td><code>x = y</code></td><td><code>x == y</code></td><td><code>x == y</code></td></tr><tr><td>Différence</td><td><code>x ≠ y</code></td><td><code>x != y</code></td><td><code>x != y</code></td></tr><tr><td>ET logique</td><td><code>ET</code></td><td><code>&amp;&amp;</code></td><td><code>and</code></td></tr><tr><td>OU logique</td><td><code>OU</code></td><td><code>||</code></td><td><code>or</code></td></tr></table><h3>Exemple complet : pair ou impair</h3><div class="example"><div class="example-head"><span>Algorithme</span><button class="copy">Copier</button></div><pre>Algorithme PairOuImpair
+Début
+    N : Entier
+    Lire(N)
+    Si N MOD 2 = 0 Alors
+        Écrire("Pair")
+    Sinon
+        Écrire("Impair")
+    FinSi
+Fin</pre><div class="result">N = 12 → Pair ; N = 7 → Impair</div></div><div class="compare"><div><strong>En C</strong><pre>if (n % 2 == 0) {
+    printf("Pair");
+} else {
+    printf("Impair");
+}</pre></div><div><strong>En Python</strong><pre>if n % 2 == 0:
+    print("Pair")
+else:
+    print("Impair")</pre></div><div><strong>À comprendre</strong><pre>MOD ou % = reste
+Si le reste de la
+division par 2 vaut 0,
+le nombre est pair.</pre></div></div><div class="warning"><strong>Important :</strong> les règles de syntaxe changent d’un langage à l’autre. En C, on écrit souvent <code>==</code> pour comparer et <code>=</code> pour affecter. En Python aussi, <code>==</code> compare et <code>=</code> affecte. En pseudo-code scolaire, suis exactement la notation demandée par ton professeur.</div></section>
+<section class="chapter searchable" id="lab"><span class="tag">LABORATOIRE</span><h2>Construire un algorithme pas à pas</h2><p>Ce petit laboratoire te guide dans un problème classique : calculer le prix total après une remise. Complète les étapes, puis compare avec la solution.</p><div class="mini"><h3>Énoncé</h3><p>Lire le prix unitaire et la quantité. Calculer le sous-total. Si le sous-total est supérieur ou égal à 100, appliquer une remise de 10 %. Afficher le montant à payer.</p></div><h3>Réflexion avant le code</h3><div class="checkrow"><input class="progress-check" type="checkbox"/><label>J’ai identifié les entrées : prix unitaire et quantité.</label></div><div class="checkrow"><input class="progress-check" type="checkbox"/><label>J’ai identifié le traitement : sous-total = prix × quantité.</label></div><div class="checkrow"><input class="progress-check" type="checkbox"/><label>J’ai repéré la condition : sous-total ≥ 100.</label></div><div class="checkrow"><input class="progress-check" type="checkbox"/><label>J’ai prévu d’afficher le montant final.</label></div><div class="example"><div class="example-head"><span>Solution complète</span><button class="copy">Copier</button></div><pre>Algorithme PrixAvecRemise
+Début
+    prix, sousTotal, total : Réel
+    quantite : Entier
+    Lire(prix, quantite)
+    sousTotal ← prix * quantite
+    Si sousTotal &gt;= 100 Alors
+        total ← sousTotal * 0.90
+    Sinon
+        total ← sousTotal
+    FinSi
+    Écrire("À payer : ", total)
+Fin</pre><div class="result">prix = 25 ; quantite = 4
+sousTotal = 25 × 4 = 100
+Remise = 10
+À payer = 90</div></div><h3>Simulateur du calcul</h3><div class="grid2"><div><label for="prix">Prix unitaire</label><input class="search" id="prix" min="0" step="0.01" type="number" value="25"/></div><div><label for="qte">Quantité</label><input class="search" id="qte" min="0" step="1" type="number" value="4"/></div></div><button class="action" id="calc">Calculer le montant</button><div aria-live="polite" class="success" id="calcOut">Montant à payer : 90,00</div></section>
+<section class="chapter searchable" id="exos"><span class="tag">ENTRAÎNEMENT</span><h2>Exercices corrigés</h2><details open=""><summary><strong>Exercice 1 — Périmètre d’un rectangle</strong></summary><p>Lire la longueur L et la largeur l, puis afficher le périmètre.</p><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme PerimetreRectangle
+Début
+    L, l, P : Réel
+    Lire(L, l)
+    P ← 2 * (L + l)
+    Écrire(P)
+Fin</pre><div class="result">L = 5 et l = 3 → P = 16</div></div><p><strong>Explication :</strong> on additionne les deux dimensions, puis on multiplie la somme par 2.</p></details><details><summary><strong>Exercice 2 — Le plus grand de deux nombres</strong></summary><p>Lire A et B, puis afficher le plus grand. Prévoir aussi le cas où ils sont égaux.</p><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme MaximumDeuxNombres
+Début
+    A, B : Réel
+    Lire(A, B)
+    Si A &gt; B Alors
+        Écrire(A)
+    SinonSi B &gt; A Alors
+        Écrire(B)
+    Sinon
+        Écrire("Les deux nombres sont égaux")
+    FinSi
+Fin</pre><div class="result">A = 9, B = 4 → 9
+A = 6, B = 6 → Les deux nombres sont égaux</div></div></details><details><summary><strong>Exercice 3 — Factorielle</strong></summary><p>La factorielle de N, notée N!, est le produit des entiers de 1 à N. Par convention, 0! = 1.</p><div class="example"><div class="example-head"><span>Correction (N entier positif ou nul)</span><button class="copy">Copier</button></div><pre>Algorithme Factorielle
+Début
+    N, i, fact : Entier
+    Lire(N)
+    fact ← 1
+    Pour i de 1 à N Faire
+        fact ← fact * i
+    FinPour
+    Écrire(fact)
+Fin</pre><div class="result">N = 4 → 1 × 2 × 3 × 4 = 24
+N = 0 → la boucle ne tourne pas, fact reste 1.</div></div><p><strong>À vérifier :</strong> si N est négatif, la factorielle n’est pas définie dans cet exercice. Il faut donc vérifier l’entrée si la consigne le demande.</p></details><details><summary><strong>Exercice 4 — Somme des nombres pairs de 1 à N</strong></summary><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme SommeNombresPairs
+Début
+    N, i, somme : Entier
+    Lire(N)
+    somme ← 0
+    Pour i de 1 à N Faire
+        Si i MOD 2 = 0 Alors
+            somme ← somme + i
+        FinSi
+    FinPour
+    Écrire(somme)
+Fin</pre><div class="result">N = 6 → 2 + 4 + 6 = 12</div></div></details><details><summary><strong>Exercice 5 — Compter les notes admises</strong></summary><p>Un tableau contient N notes. Compter celles qui sont supérieures ou égales à 10.</p><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme CompterAdmis
+Début
+    notes : Tableau de Réel
+    N, i, nbAdmis : Entier
+    nbAdmis ← 0
+    Pour i de 0 à N - 1 Faire
+        Si notes[i] &gt;= 10 Alors
+            nbAdmis ← nbAdmis + 1
+        FinSi
+    FinPour
+    Écrire(nbAdmis)
+Fin</pre><div class="result">notes = [8, 10, 15, 6, 12] → 3 admis.</div></div></details><details><summary><strong>Exercice 6 — Inverser une chaîne (idée)</strong></summary><p>Afficher les caractères d’un mot en partant du dernier jusqu’au premier.</p><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme InverserAffichageMot
+Début
+    mot : Chaîne
+    i : Entier
+    Lire(mot)
+    Pour i de Longueur(mot) - 1 à 0 en décroissant Faire
+        Écrire(mot[i])
+    FinPour
+Fin</pre><div class="result">mot = CHAT → T A H C</div></div><p class="muted small">La notation d’une boucle décroissante varie selon le pseudo-code utilisé par l’établissement.</p></details><details><summary><strong>Exercice 7 — Vérifier une saisie</strong></summary><p>Demander une note jusqu’à ce qu’elle soit comprise entre 0 et 20.</p><div class="example"><div class="example-head"><span>Correction</span><button class="copy">Copier</button></div><pre>Algorithme ValiderNoteSaisie
+Début
+    note : Réel
+    Lire(note)
+    TantQue note &lt; 0 OU note &gt; 20 Faire
+        Écrire("Note invalide, recommencer")
+        Lire(note)
+    FinTantQue
+    Écrire("Note acceptée")
+Fin</pre><div class="result">Saisies : 25, -1, 14 → après les deux erreurs : Note acceptée.</div></div></details></section>
+<section class="chapter searchable quiz" id="quiz"><span class="tag">AUTO-ÉVALUATION</span><h2>Quiz : vérifie ta compréhension</h2><p>Choisis une réponse pour chaque question, puis clique sur « Corriger le quiz ».</p><div class="q" data-answer="b"><p><strong>1. À quoi sert une variable ?</strong></p><label><input name="q1" type="radio" value="a"/> À terminer automatiquement le programme</label><label><input name="q1" type="radio" value="b"/> À associer un nom à une valeur</label><label><input name="q1" type="radio" value="c"/> À afficher uniquement du texte</label></div><div class="q" data-answer="c"><p><strong>2. Que vaut 17 MOD 2 ?</strong></p><label><input name="q2" type="radio" value="a"/> 8</label><label><input name="q2" type="radio" value="b"/> 2</label><label><input name="q2" type="radio" value="c"/> 1</label></div><div class="q" data-answer="a"><p><strong>3. Quelle boucle convient pour répéter jusqu’à ce que l’utilisateur saisisse 0 ?</strong></p><label><input name="q3" type="radio" value="a"/> TantQue</label><label><input name="q3" type="radio" value="b"/> Une affectation</label><label><input name="q3" type="radio" value="c"/> Une déclaration</label></div><div class="q" data-answer="b"><p><strong>4. Avec un tableau de N éléments indexé à partir de 0, quel est le dernier indice ?</strong></p><label><input name="q4" type="radio" value="a"/> N</label><label><input name="q4" type="radio" value="b"/> N - 1</label><label><input name="q4" type="radio" value="c"/> 1</label></div><div class="q" data-answer="c"><p><strong>5. Pourquoi initialiser somme à 0 avant une accumulation ?</strong></p><label><input name="q5" type="radio" value="a"/> Pour que la boucle soit infinie</label><label><input name="q5" type="radio" value="b"/> Pour modifier le type du tableau</label><label><input name="q5" type="radio" value="c"/> Pour partir d’une valeur de départ connue</label></div><button id="grade">Corriger le quiz</button> <button class="secondary" id="resetQuiz">Recommencer</button><div aria-live="polite" class="feedback" id="quizResult"></div></section>
+<section class="glossary searchable" id="glossaire"><span class="tag">VOCABULAIRE</span><h2>Glossaire essentiel</h2><table><tr><th>Mot</th><th>Définition simple</th></tr><tr><td>Algorithme</td><td>Suite ordonnée d’instructions pour résoudre un problème.</td></tr><tr><td>Variable</td><td>Nom associé à une valeur qui peut changer.</td></tr><tr><td>Constante</td><td>Valeur prévue pour rester fixe.</td></tr><tr><td>Affectation</td><td>Action de ranger une valeur dans une variable.</td></tr><tr><td>Condition</td><td>Expression évaluée à Vrai ou Faux.</td></tr><tr><td>Itération</td><td>Un tour de boucle.</td></tr><tr><td>Compteur</td><td>Variable qui compte des événements ou des tours.</td></tr><tr><td>Accumulateur</td><td>Variable qui rassemble progressivement un résultat, par exemple une somme.</td></tr><tr><td>Indice</td><td>Position d’un élément dans un tableau ou une chaîne.</td></tr><tr><td>Paramètre</td><td>Information transmise à une fonction ou une procédure.</td></tr><tr><td>Retourner</td><td>Envoyer le résultat d’une fonction à l’endroit où elle a été appelée.</td></tr><tr><td>Trace</td><td>Suivi des valeurs des variables pendant l’exécution.</td></tr><tr><td>Bug</td><td>Erreur dans un programme ou un algorithme.</td></tr><tr><td>Complexité</td><td>Estimation du travail ou de la mémoire nécessaires selon la taille des données.</td></tr></table></section>
+<section class="chapter searchable" id="revision"><span class="tag">À MÉMORISER</span><h2>Fiche de révision rapide</h2><div class="grid2"><div class="mini"><h3>Structure générale</h3><pre>Algorithme Nom_Programme
+Début
+    nom_variable : Type
+    traitement
+Fin</pre></div><div class="mini"><h3>Condition</h3><pre>Algorithme ExempleCondition
+Début
+    condition : Booléen
+    Si condition Alors
+        actions
+    Sinon
+        autres_actions
+    FinSi
+Fin</pre></div><div class="mini"><h3>Boucle Pour</h3><pre>Algorithme ExempleBouclePour
+Début
+    i, debut, fin : Entier
+    Pour i de debut à fin Faire
+        actions
+    FinPour
+Fin</pre></div><div class="mini"><h3>Boucle TantQue</h3><pre>Algorithme ExempleBoucleTantQue
+Début
+    condition : Booléen
+    TantQue condition Faire
+        actions
+        modifier_la_condition
+    FinTantQue
+Fin</pre></div><div class="mini"><h3>Somme d’un tableau</h3><pre>Algorithme SommeTableau
+Début
+    T : Tableau de Réel
+    N, i, somme : Entier
+    somme ← 0
+    Pour i de 0 à N - 1 Faire
+        somme ← somme + T[i]
+    FinPour
+    Écrire(somme)
+Fin</pre></div><div class="mini"><h3>Maximum d’un tableau</h3><pre>Algorithme MaximumTableau
+Début
+    T : Tableau de Réel
+    N, i : Entier
+    max : Réel
+    max ← T[0]
+    Pour i de 1 à N - 1 Faire
+        Si T[i] &gt; max Alors
+            max ← T[i]
+        FinSi
+    FinPour
+    Écrire(max)
+Fin</pre></div></div><h3>Les 7 réflexes avant de rendre un exercice</h3><ol><li>Ai-je bien compris ce qu’il faut afficher ?</li><li>Ai-je listé toutes les entrées et les variables nécessaires ?</li><li>Ai-je choisi les bons types de données ?</li><li>Ai-je initialisé les compteurs et accumulateurs ?</li><li>Mes conditions couvrent-elles les cas limites ?</li><li>Mes boucles progressent-elles et terminent-elles ?</li><li>Ai-je testé un cas normal et un cas limite ?</li></ol><div class="success"><strong>Conseil final :</strong> pour progresser, écris d’abord l’algorithme sur papier. Quand il est clair et testé, traduis-le en C ou en Python. Les langages changent, mais la logique reste la même.</div><button class="action" onclick="window.print()">Imprimer / enregistrer en PDF</button></section>
+</main></div><div class="footer">StudyNet · Cours d’algorithmique · Apprendre, pratiquer, comprendre.</div>
+<script>
+// Recherche dans les chapitres et navigation
+const search=document.getElementById('search');const chapters=[...document.querySelectorAll('.searchable')];search.addEventListener('input',()=>{const q=search.value.trim().toLocaleLowerCase('fr');chapters.forEach(c=>{c.classList.toggle('hidden',q && !c.innerText.toLocaleLowerCase('fr').includes(q));});});
+// Boutons copier pour les exemples
+for(const b of document.querySelectorAll('.copy')){b.addEventListener('click',async()=>{const pre=b.closest('.example').querySelector('pre');try{await navigator.clipboard.writeText(pre.innerText);b.textContent='Copié !';setTimeout(()=>b.textContent='Copier',1200)}catch(e){const r=document.createRange();r.selectNodeContents(pre);const s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Sélectionné';}})}
+// Progression locale basée sur les cases cochées et chapitres consultés
+const checks=[...document.querySelectorAll('.progress-check')];function updateProgress(){const n=checks.filter(c=>c.checked).length;document.getElementById('progress').style.width=(n/checks.length*100)+'%';document.getElementById('progressText').textContent=n+' étape(s) de préparation cochée(s) sur '+checks.length;}checks.forEach(c=>c.addEventListener('change',updateProgress));
+// Simulateur du calcul de remise
+ document.getElementById('calc').addEventListener('click',()=>{const prix=Number(document.getElementById('prix').value),qte=Number(document.getElementById('qte').value),out=document.getElementById('calcOut');if(!Number.isFinite(prix)||!Number.isFinite(qte)||prix<0||qte<0||!Number.isInteger(qte)){out.textContent='Saisis un prix positif ou nul et une quantité entière positive ou nulle.';return}const sub=prix*qte,total=sub>=100?sub*.9:sub;out.textContent='Sous-total : '+sub.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' | Remise : '+(sub>=100?'10 %':'0 %')+' | Montant à payer : '+total.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2});});
+// Quiz
+ document.getElementById('grade').addEventListener('click',()=>{let score=0,total=0;document.querySelectorAll('.q').forEach(q=>{total++;const selected=q.querySelector('input:checked');if(selected&&selected.value===q.dataset.answer)score++;});const r=document.getElementById('quizResult');r.textContent='Résultat : '+score+' / '+total+'. '+(score===total?'Excellent ! Toutes les réponses sont correctes.':score>=3?'Bon travail. Relis les questions manquées puis réessaie.':'Relis les chapitres concernés, puis recommence tranquillement.');});document.getElementById('resetQuiz').addEventListener('click',()=>{document.querySelectorAll('.q input').forEach(i=>i.checked=false);document.getElementById('quizResult').textContent='';});
+</script></body></html>
