@@ -1,0 +1,3809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Formation universitaire complète en algorithmique : cours détaillé, méthodes de résolution, structures de données, complexité, exercices et quiz académique.">
+<title>Algorithmique | StudyNet</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+        <div class="logo">Study<span>Net</span>.</div>
+        <div class="nav-links">
+            <a href="#cours">COURS</a>
+            <a href="#exercices">EXERCICES</a>
+            <a href="#quiz">QUIZ</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="eyebrow">Formation universitaire · Informatique</div>
+        <h1>Mastering<br><span>Algorithmique.</span></h1>
+        <p>
+            Une formation approfondie pour apprendre à analyser un problème,
+            concevoir des algorithmes corrects, choisir les bonnes structures
+            de données, démontrer la validité d'une solution et évaluer son
+            efficacité. Tous les exemples sont écrits en pseudo-code algorithmique,
+            indépendamment de tout langage de programmation.
+        </p>
+        <div class="hero-stats">
+            <div class="stat"><strong>24</strong><small>Modules de formation</small></div>
+            <div class="stat"><strong>35</strong><small>Exercices académiques</small></div>
+            <div class="stat"><strong>200</strong><small>Questions de quiz</small></div>
+            <div class="stat"><strong>3</strong><small>Parties principales</small></div>
+        </div>
+    </div>
+</section>
+
+<div class="container layout">
+
+<aside class="sidebar">
+    <h3>PROGRAMME DE FORMATION</h3>
+    <a href="#cours">01 — Cours complet</a>
+    <a href="#m1">Introduction à l'algorithmique</a>
+    <a href="#m2">Méthodologie de résolution</a>
+    <a href="#m3">Pseudo-code et représentation</a>
+    <a href="#m4">Variables et types</a>
+    <a href="#m5">Entrées et sorties</a>
+    <a href="#m6">Opérateurs et expressions</a>
+    <a href="#m7">Conditions</a>
+    <a href="#m8">Boucles</a>
+    <a href="#m9">Tableaux unidimensionnels</a>
+    <a href="#m10">Matrices</a>
+    <a href="#m11">Chaînes de caractères</a>
+    <a href="#m12">Procédures et fonctions</a>
+    <a href="#m13">Récursivité</a>
+    <a href="#m14">Algorithmes numériques</a>
+    <a href="#m15">Recherche</a>
+    <a href="#m16">Tri</a>
+    <a href="#m17">Enregistrements et structures</a>
+    <a href="#m18">Piles et files</a>
+    <a href="#m19">Listes chaînées</a>
+    <a href="#m20">Ensembles et dictionnaires</a>
+    <a href="#m21">Graphes et arbres</a>
+    <a href="#m22">Preuve et correction</a>
+    <a href="#m23">Complexité algorithmique</a>
+    <a href="#m24">Paradigmes de conception</a>
+    <a href="#exercices">02 — Exercices</a>
+    <a href="#quiz">03 — Quiz académique</a>
+</aside>
+
+<main>
+
+<section id="cours">
+    <div class="section-label">Partie 01 / Formation</div>
+    <h2 class="section-title">Cours complet d'algorithmique</h2>
+    <p class="intro">
+        L'algorithmique est une discipline fondamentale de l'informatique.
+        Elle ne consiste pas simplement à apprendre des instructions :
+        elle apprend à raisonner, décomposer un problème, construire une
+        solution rigoureuse et choisir une méthode efficace.
+        Le cours commence par les bases et progresse vers des notions
+        universitaires plus avancées.
+    </p>
+
+    <div class="note">
+        <strong>Convention du cours :</strong>
+        Les algorithmes sont écrits en pseudo-code français.
+        Les mots-clés utilisés sont notamment
+        <code>Algorithme</code>, <code>Variables</code>,
+        <code>Début</code>, <code>Fin</code>, <code>Lire</code>,
+        <code>Écrire</code>, <code>Si</code>, <code>Pour</code>,
+        <code>TantQue</code>, <code>Répéter</code>,
+        <code>Fonction</code> et <code>Procédure</code>.
+        Il s'agit d'une notation pédagogique, pas d'un langage exécutable.
+    </div>
+
+    <div class="note">
+        <strong>Comment étudier :</strong>
+        Pour chaque chapitre, lis la définition, comprends les exemples,
+        réalise une trace manuelle des variables, puis essaie de reconstruire
+        l'algorithme sans regarder le cours. La maîtrise vient de la pratique
+        et de la justification des solutions.
+    </div>
+
+    <article class="module" id="m1">
+        <div class="module-number">MODULE 01</div>
+        <h3>Introduction à l'algorithmique</h3>
+
+        <h4>1. Qu'est-ce que l'algorithmique ?</h4>
+        <p>
+            L'algorithmique est l'étude des méthodes permettant de résoudre
+            des problèmes au moyen d'une suite finie d'opérations précises.
+            Elle s'intéresse à la conception, à la correction et à l'efficacité
+            des algorithmes.
+        </p>
+
+        <h4>2. Qu'est-ce qu'un algorithme ?</h4>
+        <p>
+            Un algorithme est une séquence finie et ordonnée d'instructions
+            non ambiguës qui transforme des données d'entrée en résultats
+            conformément à un objectif défini.
+        </p>
+        <p>Exemple : calculer la somme de deux nombres.</p>
+        <pre><code>Algorithme SommeDeuxNombres
+Variables
+    a, b, somme : Réel
+Début
+    Lire(a, b)
+    somme ← a + b
+    Écrire("Somme = ", somme)
+Fin</code></pre>
+
+        <h4>3. Différence entre problème, algorithme et programme</h4>
+        <table>
+            <tr><th>Notion</th><th>Définition</th><th>Exemple</th></tr>
+            <tr><td>Problème</td><td>Question à résoudre.</td><td>Calculer la moyenne de notes.</td></tr>
+            <tr><td>Algorithme</td><td>Méthode indépendante du langage.</td><td>Sommer les notes puis diviser par leur nombre.</td></tr>
+            <tr><td>Programme</td><td>Implémentation de l'algorithme dans un langage.</td><td>Application écrite en C, Java ou autre.</td></tr>
+        </table>
+
+        <h4>4. Les caractéristiques d'un bon algorithme</h4>
+        <ul>
+            <li><strong>Précision :</strong> chaque instruction possède une signification claire.</li>
+            <li><strong>Finitude :</strong> l'exécution termine après un nombre fini d'étapes.</li>
+            <li><strong>Entrées :</strong> les données nécessaires sont identifiées.</li>
+            <li><strong>Sorties :</strong> le résultat attendu est défini.</li>
+            <li><strong>Effectivité :</strong> chaque opération peut être exécutée concrètement.</li>
+            <li><strong>Correction :</strong> le résultat respecte la spécification du problème.</li>
+            <li><strong>Efficacité :</strong> le temps et la mémoire utilisés sont raisonnables.</li>
+            <li><strong>Généralité :</strong> la solution traite toute entrée autorisée, pas uniquement un exemple.</li>
+        </ul>
+
+        <h4>5. Les trois phases fondamentales</h4>
+        <div class="formula">Entrées → Traitement → Sorties</div>
+        <p>Exemple : calcul de l'aire d'un rectangle.</p>
+        <ul>
+            <li>Entrées : longueur et largeur.</li>
+            <li>Traitement : multiplication des deux valeurs.</li>
+            <li>Sortie : aire calculée.</li>
+        </ul>
+        <pre><code>Algorithme AireRectangle
+Variables
+    longueur, largeur, aire : Réel
+Début
+    Lire(longueur, largeur)
+    aire ← longueur * largeur
+    Écrire(aire)
+Fin</code></pre>
+
+        <h4>6. Algorithme déterministe et non déterministe</h4>
+        <p>
+            Un algorithme déterministe suit un comportement entièrement
+            déterminé par son entrée. Pour une même entrée et les mêmes
+            conditions, il produit le même résultat.
+        </p>
+        <p>
+            Un algorithme probabiliste utilise des choix aléatoires.
+            Son comportement ou son temps d'exécution peut varier d'une
+            exécution à l'autre.
+        </p>
+
+        <h4>7. Algorithme et langage de programmation</h4>
+        <p>
+            Un algorithme n'est pas lié à Python, C, Java ou un autre langage.
+            Le pseudo-code permet de décrire la logique sans dépendre
+            de la syntaxe d'un langage particulier.
+        </p>
+    </article>
+
+    <article class="module" id="m2">
+        <div class="module-number">MODULE 02</div>
+        <h3>Méthodologie de résolution d'un problème</h3>
+
+        <h4>1. Comprendre l'énoncé</h4>
+        <p>Avant d'écrire un algorithme, il faut identifier précisément :</p>
+        <ul>
+            <li>Ce que le problème demande de calculer ou de décider.</li>
+            <li>Les données fournies et leur nature.</li>
+            <li>Les contraintes et les limites des données.</li>
+            <li>Le format du résultat attendu.</li>
+            <li>Les cas particuliers et les situations impossibles.</li>
+        </ul>
+
+        <h4>2. Identifier les entrées, traitements et sorties</h4>
+        <p>Exemple : déterminer le plus grand de trois nombres.</p>
+        <table>
+            <tr><th>Élément</th><th>Contenu</th></tr>
+            <tr><td>Entrées</td><td>a, b, c : trois nombres réels.</td></tr>
+            <tr><td>Traitement</td><td>Comparer les trois valeurs.</td></tr>
+            <tr><td>Sortie</td><td>La valeur maximale.</td></tr>
+        </table>
+
+        <h4>3. Décomposer le problème</h4>
+        <p>
+            Un problème complexe doit être divisé en sous-problèmes plus simples.
+            Cette technique s'appelle la décomposition.
+        </p>
+        <p>Exemple : traitement d'une classe d'étudiants.</p>
+        <ol>
+            <li>Lire le nombre d'étudiants.</li>
+            <li>Lire les notes de chaque étudiant.</li>
+            <li>Calculer chaque moyenne.</li>
+            <li>Déterminer les étudiants admis.</li>
+            <li>Calculer la moyenne générale.</li>
+            <li>Afficher le bilan.</li>
+        </ol>
+
+        <h4>4. Construire un exemple manuel</h4>
+        <p>
+            Avant de généraliser, choisir une petite entrée et effectuer
+            le traitement à la main. Cela permet de vérifier la logique.
+        </p>
+        <p>Pour les nombres 8, 13 et 5, le maximum attendu est 13.</p>
+
+        <h4>5. Construire une table de trace</h4>
+        <p>
+            Une table de trace permet de suivre l'évolution des variables
+            instruction par instruction.
+        </p>
+        <pre><code>Algorithme ExempleTrace
+Variables
+    i, somme : Entier
+Début
+    somme ← 0
+    Pour i de 1 à 4 Faire
+        somme ← somme + i
+    FinPour
+    Écrire(somme)
+Fin</code></pre>
+        <table>
+            <tr><th>Itération</th><th>i</th><th>Ancienne somme</th><th>Nouvelle somme</th></tr>
+            <tr><td>Initialisation</td><td>—</td><td>—</td><td>0</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>2</td><td>2</td><td>1</td><td>3</td></tr>
+            <tr><td>3</td><td>3</td><td>3</td><td>6</td></tr>
+            <tr><td>4</td><td>4</td><td>6</td><td>10</td></tr>
+        </table>
+
+        <h4>6. Concevoir plusieurs solutions</h4>
+        <p>
+            Un même problème peut être résolu par plusieurs algorithmes.
+            Il faut comparer leur simplicité, leur correction, leur temps
+            d'exécution et leur consommation mémoire.
+        </p>
+
+        <h4>7. Vérifier les cas limites</h4>
+        <p>Pour un algorithme calculant le maximum d'un tableau, tester :</p>
+        <ul>
+            <li>Un tableau contenant un seul élément.</li>
+            <li>Un tableau de nombres positifs.</li>
+            <li>Un tableau de nombres négatifs.</li>
+            <li>Un tableau contenant plusieurs valeurs égales.</li>
+            <li>Un tableau déjà trié.</li>
+            <li>Un tableau vide, si cette entrée est autorisée ou doit être refusée.</li>
+        </ul>
+
+        <h4>8. La méthode générale à retenir</h4>
+        <div class="success">
+            1. Lire l'énoncé.<br>
+            2. Définir les entrées et sorties.<br>
+            3. Identifier les contraintes.<br>
+            4. Décomposer le problème.<br>
+            5. Choisir les variables et structures nécessaires.<br>
+            6. Écrire le pseudo-code.<br>
+            7. Faire une trace manuelle.<br>
+            8. Vérifier la correction et les cas limites.<br>
+            9. Analyser la complexité.
+        </div>
+    </article>
+
+    <article class="module" id="m3">
+        <div class="module-number">MODULE 03</div>
+        <h3>Pseudo-code et représentation des algorithmes</h3>
+
+        <h4>1. Pourquoi utiliser le pseudo-code ?</h4>
+        <p>
+            Le pseudo-code est une représentation structurée d'un algorithme.
+            Il facilite la compréhension, la communication et la vérification
+            de la logique avant toute traduction dans un langage.
+        </p>
+
+        <h4>2. Structure générale</h4>
+        <pre><code>Algorithme NomAlgorithme
+Constantes
+    ...
+Types
+    ...
+Variables
+    ...
+Début
+    Instructions
+Fin</code></pre>
+
+        <h4>3. Les conventions d'écriture</h4>
+        <table>
+            <tr><th>Instruction</th><th>Rôle</th></tr>
+            <tr><td>Lire(x)</td><td>Recevoir une donnée.</td></tr>
+            <tr><td>Écrire(x)</td><td>Afficher une donnée.</td></tr>
+            <tr><td>x ← expression</td><td>Affecter une valeur.</td></tr>
+            <tr><td>Si ... Alors</td><td>Effectuer un choix.</td></tr>
+            <tr><td>Pour ... Faire</td><td>Répéter un nombre déterminé de fois.</td></tr>
+            <tr><td>TantQue ... Faire</td><td>Répéter tant qu'une condition est vraie.</td></tr>
+            <tr><td>Répéter ... Jusqu'à</td><td>Répéter jusqu'à ce qu'une condition soit vraie.</td></tr>
+            <tr><td>FinSi</td><td>Terminer une condition.</td></tr>
+            <tr><td>FinPour</td><td>Terminer une boucle Pour.</td></tr>
+            <tr><td>FinTantQue</td><td>Terminer une boucle TantQue.</td></tr>
+        </table>
+
+        <h4>4. Affectation et comparaison</h4>
+        <p>
+            L'affectation <code>←</code> donne une valeur à une variable.
+            Le symbole <code>=</code> ou <code>==</code> peut être utilisé
+            comme comparaison selon la convention choisie.
+        </p>
+        <pre><code>x ← 5
+x ← x + 3
+
+Si x = 8 Alors
+    Écrire("La valeur est 8")
+FinSi</code></pre>
+
+        <h4>5. Organigramme</h4>
+        <p>
+            Un organigramme représente graphiquement les étapes d'un algorithme.
+            Les symboles les plus courants sont :
+        </p>
+        <ul>
+            <li>Ovale : début ou fin.</li>
+            <li>Rectangle : opération ou traitement.</li>
+            <li>Parallélogramme : entrée ou sortie.</li>
+            <li>Losange : condition ou décision.</li>
+            <li>Flèches : sens d'exécution.</li>
+        </ul>
+
+        <h4>6. Exemple : vérifier si un nombre est positif</h4>
+        <pre><code>Algorithme SigneNombre
+Variables
+    n : Réel
+Début
+    Lire(n)
+    Si n > 0 Alors
+        Écrire("Positif")
+    SinonSi n < 0 Alors
+        Écrire("Négatif")
+    Sinon
+        Écrire("Nul")
+    FinSi
+Fin</code></pre>
+
+        <h4>7. Instructions séquentielles</h4>
+        <p>
+            Une séquence est un ensemble d'instructions exécutées dans l'ordre,
+            de la première à la dernière.
+        </p>
+        <pre><code>a ← 4
+b ← 7
+c ← a + b
+Écrire(c)</code></pre>
+
+        <h4>8. Instructions composées</h4>
+        <p>
+            Une instruction composée regroupe plusieurs instructions
+            dans un même bloc. Les conditions, les boucles et les sous-programmes
+            sont des structures composées.
+        </p>
+    </article>
+
+    <article class="module" id="m4">
+        <div class="module-number">MODULE 04</div>
+        <h3>Variables, constantes et types de données</h3>
+
+        <h4>1. Qu'est-ce qu'une variable ?</h4>
+        <p>
+            Une variable est un espace logique identifié par un nom et destiné
+            à contenir une valeur qui peut changer au cours de l'exécution.
+            Chaque variable possède un type et une valeur courante.
+        </p>
+
+        <h4>2. Déclaration des variables</h4>
+        <pre><code>Algorithme VariablesExemple
+Variables
+    age : Entier
+    moyenne : Réel
+    nom : Chaîne
+    admis : Booléen
+Début
+    age ← 20
+    moyenne ← 14.5
+    nom ← "Ali"
+    admis ← Vrai
+Fin</code></pre>
+
+        <h4>3. Les types fondamentaux</h4>
+        <table>
+            <tr><th>Type</th><th>Signification</th><th>Exemples</th></tr>
+            <tr><td>Entier</td><td>Nombre sans partie décimale.</td><td>-8, 0, 25</td></tr>
+            <tr><td>Réel</td><td>Nombre pouvant être décimal.</td><td>3.14, -2.5</td></tr>
+            <tr><td>Booléen</td><td>Valeur logique.</td><td>Vrai, Faux</td></tr>
+            <tr><td>Caractère</td><td>Un seul caractère.</td><td>'A', '7'</td></tr>
+            <tr><td>Chaîne</td><td>Suite de caractères.</td><td>"Bonjour"</td></tr>
+        </table>
+
+        <h4>4. Les constantes</h4>
+        <p>
+            Une constante est une donnée dont la valeur ne doit pas changer
+            pendant l'exécution de l'algorithme.
+        </p>
+        <pre><code>Algorithme Cercle
+Constantes
+    PI = 3.141592653589793
+Variables
+    rayon, aire : Réel
+Début
+    Lire(rayon)
+    aire ← PI * rayon * rayon
+    Écrire(aire)
+Fin</code></pre>
+
+        <h4>5. Règles de nommage</h4>
+        <ul>
+            <li>Choisir des noms explicites.</li>
+            <li>Ne pas utiliser le même nom pour plusieurs variables distinctes.</li>
+            <li>Éviter les noms trop courts sans signification.</li>
+            <li>Respecter les conventions de l'établissement.</li>
+        </ul>
+
+        <h4>6. Affectation</h4>
+        <p>
+            L'affectation évalue d'abord l'expression située à droite,
+            puis place son résultat dans la variable située à gauche.
+        </p>
+        <pre><code>x ← 10
+x ← x + 5
+x ← x * 2
+Écrire(x)    // Résultat : 30</code></pre>
+
+        <h4>7. Échange de deux variables</h4>
+        <pre><code>Algorithme Echange
+Variables
+    a, b, temporaire : Entier
+Début
+    Lire(a, b)
+    temporaire ← a
+    a ← b
+    b ← temporaire
+    Écrire(a, b)
+Fin</code></pre>
+        <p>
+            La variable temporaire conserve l'ancienne valeur de a pendant
+            que les deux variables sont échangées.
+        </p>
+
+        <h4>8. Conversion de types</h4>
+        <p>
+            Une conversion transforme une valeur d'un type vers un autre.
+            Une conversion peut être explicite ou implicite selon le langage
+            utilisé pour l'implémentation.
+        </p>
+        <p>
+            Exemple conceptuel : convertir le texte "25" en entier 25.
+            Il faut distinguer la valeur numérique de sa représentation textuelle.
+        </p>
+
+        <h4>9. Débordement et précision</h4>
+        <p>
+            Dans certains environnements, un entier possède un domaine de valeurs
+            limité. Une opération qui dépasse ce domaine peut provoquer un
+            débordement. Les nombres réels représentés en virgule flottante
+            peuvent aussi introduire de petites erreurs d'arrondi.
+        </p>
+        <div class="warning">
+            Ne suppose jamais qu'un calcul décimal en machine est toujours
+            parfaitement exact. Pour des montants financiers, il faut choisir
+            une représentation adaptée et des règles d'arrondi explicites.
+        </div>
+    </article>
+
+    <article class="module" id="m5">
+        <div class="module-number">MODULE 05</div>
+        <h3>Entrées, sorties et validation des données</h3>
+
+        <h4>1. Lecture des données</h4>
+        <p>
+            L'instruction <code>Lire</code> permet de recevoir une ou plusieurs
+            valeurs depuis une source d'entrée.
+        </p>
+        <pre><code>Algorithme Lecture
+Variables
+    nom : Chaîne
+    age : Entier
+Début
+    Écrire("Donner votre nom : ")
+    Lire(nom)
+    Écrire("Donner votre âge : ")
+    Lire(age)
+Fin</code></pre>
+
+        <h4>2. Affichage des résultats</h4>
+        <pre><code>Écrire("Bonjour ", nom)
+Écrire("Votre âge est ", age)</code></pre>
+
+        <h4>3. Lire plusieurs valeurs</h4>
+        <pre><code>Variables
+    a, b, c : Réel
+Début
+    Lire(a, b, c)
+    Écrire("Total = ", a + b + c)
+Fin</code></pre>
+
+        <h4>4. Validation d'une donnée</h4>
+        <p>
+            Valider une donnée signifie vérifier qu'elle respecte les contraintes
+            avant de l'utiliser.
+        </p>
+        <pre><code>Algorithme SaisieNote
+Variables
+    note : Réel
+Début
+    Répéter
+        Écrire("Donner une note entre 0 et 20 : ")
+        Lire(note)
+    Jusqu'à note >= 0 ET note <= 20
+
+    Écrire("Note acceptée : ", note)
+Fin</code></pre>
+
+        <h4>5. Contrôler les valeurs particulières</h4>
+        <pre><code>Algorithme DivisionSure
+Variables
+    a, b, resultat : Réel
+Début
+    Lire(a, b)
+
+    Si b = 0 Alors
+        Écrire("Division impossible")
+    Sinon
+        resultat ← a / b
+        Écrire(resultat)
+    FinSi
+Fin</code></pre>
+
+        <h4>6. Les contraintes d'entrée</h4>
+        <p>Une spécification peut imposer :</p>
+        <ul>
+            <li>Une borne minimale et maximale.</li>
+            <li>Un nombre exact de valeurs.</li>
+            <li>Une valeur obligatoirement positive.</li>
+            <li>Un tableau non vide.</li>
+            <li>Une chaîne de longueur limitée.</li>
+            <li>Des données triées ou sans doublons.</li>
+        </ul>
+
+        <h4>7. Préconditions et postconditions</h4>
+        <p>
+            Une précondition décrit ce qui doit être vrai avant l'exécution.
+            Une postcondition décrit ce qui doit être vrai après une exécution
+            correcte.
+        </p>
+        <p>Pour une division :</p>
+        <ul>
+            <li>Précondition : le diviseur est différent de zéro.</li>
+            <li>Postcondition : le résultat est le quotient des deux nombres.</li>
+        </ul>
+    </article>
+
+    <article class="module" id="m6">
+        <div class="module-number">MODULE 06</div>
+        <h3>Opérateurs et expressions</h3>
+
+        <h4>1. Opérateurs arithmétiques</h4>
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>+</td><td>Addition</td><td>7 + 3 = 10</td></tr>
+            <tr><td>-</td><td>Soustraction</td><td>7 - 3 = 4</td></tr>
+            <tr><td>*</td><td>Multiplication</td><td>7 * 3 = 21</td></tr>
+            <tr><td>/</td><td>Division réelle</td><td>7 / 2 = 3.5</td></tr>
+            <tr><td>DIV</td><td>Quotient entier</td><td>17 DIV 5 = 3</td></tr>
+            <tr><td>MOD</td><td>Reste de division</td><td>17 MOD 5 = 2</td></tr>
+            <tr><td>^</td><td>Puissance, selon convention</td><td>2 ^ 3 = 8</td></tr>
+        </table>
+
+        <h4>2. Division entière et modulo</h4>
+        <p>Pour un diviseur b non nul, la division euclidienne vérifie :</p>
+        <div class="formula">a = b × q + r</div>
+        <p>
+            q est le quotient entier et r le reste.
+            Pour a positif et b positif, on a 0 ≤ r &lt; b.
+        </p>
+        <pre><code>Algorithme QuotientReste
+Variables
+    a, b, q, r : Entier
+Début
+    Lire(a, b)
+    Si b > 0 ET a >= 0 Alors
+        q ← a DIV b
+        r ← a MOD b
+        Écrire(q, r)
+    Sinon
+        Écrire("Entrées non valides")
+    FinSi
+Fin</code></pre>
+
+        <h4>3. Opérateurs relationnels</h4>
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th></tr>
+            <tr><td>=</td><td>Égal à</td></tr>
+            <tr><td>≠</td><td>Différent de</td></tr>
+            <tr><td>&lt;</td><td>Strictement inférieur</td></tr>
+            <tr><td>&gt;</td><td>Strictement supérieur</td></tr>
+            <tr><td>≤</td><td>Inférieur ou égal</td></tr>
+            <tr><td>≥</td><td>Supérieur ou égal</td></tr>
+        </table>
+
+        <h4>4. Opérateurs logiques</h4>
+        <table>
+            <tr><th>A</th><th>B</th><th>A ET B</th><th>A OU B</th></tr>
+            <tr><td>Faux</td><td>Faux</td><td>Faux</td><td>Faux</td></tr>
+            <tr><td>Faux</td><td>Vrai</td><td>Faux</td><td>Vrai</td></tr>
+            <tr><td>Vrai</td><td>Faux</td><td>Faux</td><td>Vrai</td></tr>
+            <tr><td>Vrai</td><td>Vrai</td><td>Vrai</td><td>Vrai</td></tr>
+        </table>
+        <table>
+            <tr><th>A</th><th>NON A</th></tr>
+            <tr><td>Faux</td><td>Vrai</td></tr>
+            <tr><td>Vrai</td><td>Faux</td></tr>
+        </table>
+
+        <h4>5. Priorité des opérateurs</h4>
+        <p>Une priorité courante est :</p>
+        <ol>
+            <li>Parenthèses.</li>
+            <li>Puissances.</li>
+            <li>Multiplication, division, DIV et MOD.</li>
+            <li>Addition et soustraction.</li>
+            <li>Comparaisons.</li>
+            <li>NON.</li>
+            <li>ET.</li>
+            <li>OU.</li>
+        </ol>
+        <p>
+            Les conventions exactes peuvent varier selon les notations.
+            Utiliser des parenthèses évite les ambiguïtés.
+        </p>
+        <pre><code>resultat ← (a + b) * c
+condition ← (age >= 18) ET (note >= 10)</code></pre>
+
+        <h4>6. Lois de De Morgan</h4>
+        <div class="formula">NON (A ET B) = (NON A) OU (NON B)</div>
+        <div class="formula">NON (A OU B) = (NON A) ET (NON B)</div>
+        <p>
+            Ces équivalences permettent de transformer des conditions
+            et de simplifier des expressions logiques.
+        </p>
+
+        <h4>7. Exemple de condition complexe</h4>
+        <pre><code>Si (age >= 18) ET (permis = Vrai) ET (suspension = Faux) Alors
+    Écrire("Conduite autorisée")
+Sinon
+    Écrire("Conduite non autorisée")
+FinSi</code></pre>
+    </article>
+
+    <article class="module" id="m7">
+        <div class="module-number">MODULE 07</div>
+        <h3>Structures conditionnelles</h3>
+
+        <h4>1. Condition simple : Si</h4>
+        <pre><code>Algorithme Positif
+Variables
+    n : Réel
+Début
+    Lire(n)
+    Si n > 0 Alors
+        Écrire("Positif")
+    FinSi
+Fin</code></pre>
+
+        <h4>2. Condition alternative : Si / Sinon</h4>
+        <pre><code>Algorithme PairImpair
+Variables
+    n : Entier
+Début
+    Lire(n)
+    Si n MOD 2 = 0 Alors
+        Écrire("Pair")
+    Sinon
+        Écrire("Impair")
+    FinSi
+Fin</code></pre>
+
+        <h4>3. Conditions multiples</h4>
+        <pre><code>Algorithme Mention
+Variables
+    note : Réel
+Début
+    Lire(note)
+
+    Si note < 0 OU note > 20 Alors
+        Écrire("Note invalide")
+    SinonSi note >= 16 Alors
+        Écrire("Très bien")
+    SinonSi note >= 14 Alors
+        Écrire("Bien")
+    SinonSi note >= 12 Alors
+        Écrire("Assez bien")
+    SinonSi note >= 10 Alors
+        Écrire("Passable")
+    Sinon
+        Écrire("Insuffisant")
+    FinSi
+Fin</code></pre>
+
+        <h4>4. Conditions imbriquées</h4>
+        <p>
+            Une condition imbriquée est une condition placée à l'intérieur
+            d'une autre condition.
+        </p>
+        <pre><code>Si age >= 18 Alors
+    Si permis = Vrai Alors
+        Écrire("Autorisé")
+    Sinon
+        Écrire("Permis obligatoire")
+    FinSi
+Sinon
+    Écrire("Âge insuffisant")
+FinSi</code></pre>
+
+        <h4>5. Conditions composées</h4>
+        <pre><code>Si (note >= 10) ET (absence <= 5) Alors
+    Écrire("Validation")
+FinSi
+
+Si (jour = 6) OU (jour = 7) Alors
+    Écrire("Week-end")
+FinSi</code></pre>
+
+        <h4>6. Alternative selon plusieurs valeurs : Selon</h4>
+        <pre><code>Algorithme JourSemaine
+Variables
+    jour : Entier
+Début
+    Lire(jour)
+
+    Selon jour Faire
+        Cas 1 : Écrire("Lundi")
+        Cas 2 : Écrire("Mardi")
+        Cas 3 : Écrire("Mercredi")
+        Cas 4 : Écrire("Jeudi")
+        Cas 5 : Écrire("Vendredi")
+        Cas 6 : Écrire("Samedi")
+        Cas 7 : Écrire("Dimanche")
+        Sinon : Écrire("Jour invalide")
+    FinSelon
+Fin</code></pre>
+
+        <h4>7. Erreurs fréquentes</h4>
+        <ul>
+            <li>Oublier une condition particulière.</li>
+            <li>Inverser les bornes d'un intervalle.</li>
+            <li>Écrire deux conditions qui se chevauchent mal.</li>
+            <li>Oublier le cas où aucune condition n'est satisfaite.</li>
+            <li>Confondre ET et OU.</li>
+        </ul>
+        <div class="warning">
+            Pour une note valide entre 0 et 20, il faut écrire
+            <code>note &gt;= 0 ET note &lt;= 20</code>.
+            Utiliser OU dans cette expression accepterait presque toutes les valeurs.
+        </div>
+    </article>
+
+    <article class="module" id="m8">
+        <div class="module-number">MODULE 08</div>
+        <h3>Structures répétitives : les boucles</h3>
+
+        <h4>1. Pourquoi utiliser une boucle ?</h4>
+        <p>
+            Une boucle permet de répéter un bloc d'instructions sans recopier
+            manuellement les mêmes opérations.
+        </p>
+
+        <h4>2. La boucle Pour</h4>
+        <p>
+            Elle est adaptée lorsque le nombre de répétitions est connu
+            ou déterminé à l'avance.
+        </p>
+        <pre><code>Algorithme Afficher1a5
+Variables
+    i : Entier
+Début
+    Pour i de 1 à 5 Faire
+        Écrire(i)
+    FinPour
+Fin</code></pre>
+
+        <h4>3. Sens de parcours et pas</h4>
+        <pre><code>// De 2 à 10 avec un pas de 2
+Pour i de 2 à 10 Pas 2 Faire
+    Écrire(i)
+FinPour
+
+// De 10 à 1 en ordre décroissant
+Pour i de 10 à 1 Pas -1 Faire
+    Écrire(i)
+FinPour</code></pre>
+
+        <h4>4. La boucle TantQue</h4>
+        <p>
+            Elle répète les instructions tant qu'une condition reste vraie.
+            La condition est vérifiée avant chaque itération.
+        </p>
+        <pre><code>Algorithme Compter
+Variables
+    i : Entier
+Début
+    i ← 1
+    TantQue i <= 5 Faire
+        Écrire(i)
+        i ← i + 1
+    FinTantQue
+Fin</code></pre>
+
+        <h4>5. La boucle Répéter ... Jusqu'à</h4>
+        <p>
+            La condition est vérifiée après l'exécution du bloc.
+            Le bloc est donc exécuté au moins une fois.
+        </p>
+        <pre><code>Algorithme SaisiePositive
+Variables
+    n : Réel
+Début
+    Répéter
+        Lire(n)
+    Jusqu'à n > 0
+    Écrire(n)
+Fin</code></pre>
+
+        <h4>6. Comparaison des trois boucles</h4>
+        <table>
+            <tr><th>Boucle</th><th>Moment du test</th><th>Utilisation</th></tr>
+            <tr><td>Pour</td><td>Avant chaque itération.</td><td>Nombre de répétitions connu.</td></tr>
+            <tr><td>TantQue</td><td>Avant chaque itération.</td><td>Répéter selon une condition.</td></tr>
+            <tr><td>Répéter</td><td>Après le bloc.</td><td>Au moins une exécution nécessaire.</td></tr>
+        </table>
+
+        <h4>7. Compteur et accumulateur</h4>
+        <p>
+            Un compteur sert à compter des événements.
+            Un accumulateur conserve un résultat qui évolue à chaque itération.
+        </p>
+        <pre><code>Algorithme SommeNombres
+Variables
+    i, somme : Entier
+Début
+    somme ← 0
+
+    Pour i de 1 à 10 Faire
+        somme ← somme + i
+    FinPour
+
+    Écrire(somme)
+Fin</code></pre>
+
+        <h4>8. Calcul d'une moyenne avec une boucle</h4>
+        <pre><code>Algorithme MoyenneNotes
+Variables
+    n, i : Entier
+    note, somme, moyenne : Réel
+Début
+    Lire(n)
+
+    Si n <= 0 Alors
+        Écrire("Nombre invalide")
+    Sinon
+        somme ← 0
+
+        Pour i de 1 à n Faire
+            Lire(note)
+            somme ← somme + note
+        FinPour
+
+        moyenne ← somme / n
+        Écrire(moyenne)
+    FinSi
+Fin</code></pre>
+
+        <h4>9. Boucles imbriquées</h4>
+        <p>
+            Une boucle imbriquée est une boucle placée dans une autre boucle.
+            Elle est utilisée pour les tableaux à deux dimensions, les matrices,
+            les combinaisons et certains algorithmes de tri.
+        </p>
+        <pre><code>Algorithme RectangleEtoiles
+Variables
+    i, j : Entier
+Début
+    Pour i de 1 à 3 Faire
+        Pour j de 1 à 5 Faire
+            Écrire("*", SansRetourLigne)
+        FinPour
+        Écrire("")
+    FinPour
+Fin</code></pre>
+
+        <h4>10. Boucle avec sentinelle</h4>
+        <p>
+            Une sentinelle est une valeur spéciale qui indique la fin de la saisie.
+        </p>
+        <pre><code>Algorithme SommeSentinelle
+Variables
+    n, somme : Entier
+Début
+    somme ← 0
+    Lire(n)
+
+    TantQue n <> -1 Faire
+        somme ← somme + n
+        Lire(n)
+    FinTantQue
+
+    Écrire(somme)
+Fin</code></pre>
+
+        <h4>11. Boucle infinie</h4>
+        <p>
+            Une boucle devient infinie lorsque sa condition reste toujours vraie
+            ou lorsque les variables qui contrôlent la condition n'évoluent pas
+            correctement.
+        </p>
+        <pre><code>// Erreur : i ne change jamais
+i ← 1
+TantQue i <= 5 Faire
+    Écrire(i)
+FinTantQue</code></pre>
+        <div class="warning">
+            Toujours vérifier que la condition d'arrêt pourra devenir vraie.
+            Identifier la variable de contrôle et son évolution.
+        </div>
+
+        <h4>12. Instructions de sortie et de saut</h4>
+        <p>
+            Selon les conventions, <code>Sortir</code> permet de quitter une boucle
+            et <code>Continuer</code> permet de passer directement à l'itération suivante.
+            Ces instructions doivent être utilisées avec prudence pour préserver
+            la lisibilité.
+        </p>
+    </article>
+
+    <article class="module" id="m9">
+        <div class="module-number">MODULE 09</div>
+        <h3>Tableaux unidimensionnels</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Un tableau est une structure de données qui regroupe plusieurs éléments
+            de même type sous un même nom. Chaque élément est accessible à l'aide
+            d'un indice.
+        </p>
+
+        <h4>2. Déclaration et initialisation</h4>
+        <pre><code>Variables
+    T : Tableau[1..5] d'Entiers
+Début
+    T[1] ← 12
+    T[2] ← 8
+    T[3] ← 15
+    T[4] ← 6
+    T[5] ← 20
+Fin</code></pre>
+
+        <h4>3. Indices et taille</h4>
+        <p>
+            Dans ce cours, les tableaux sont indexés à partir de 1 pour suivre
+            une convention pédagogique courante. D'autres langages utilisent
+            des indices commençant à 0.
+        </p>
+        <p>
+            Pour un tableau de n éléments indexé à partir de 1,
+            le premier indice est 1 et le dernier est n.
+        </p>
+
+        <h4>4. Parcourir un tableau</h4>
+        <pre><code>Pour i de 1 à n Faire
+    Écrire(T[i])
+FinPour</code></pre>
+
+        <h4>5. Saisir un tableau</h4>
+        <pre><code>Algorithme SaisieTableau
+Variables
+    T : Tableau[1..100] d'Entiers
+    n, i : Entier
+Début
+    Lire(n)
+
+    Si n < 1 OU n > 100 Alors
+        Écrire("Taille invalide")
+    Sinon
+        Pour i de 1 à n Faire
+            Lire(T[i])
+        FinPour
+    FinSi
+Fin</code></pre>
+
+        <h4>6. Somme et moyenne des éléments</h4>
+        <pre><code>Algorithme SommeMoyenne
+Variables
+    T : Tableau[1..100] de Réels
+    n, i : Entier
+    somme, moyenne : Réel
+Début
+    Lire(n)
+    somme ← 0
+
+    Pour i de 1 à n Faire
+        Lire(T[i])
+        somme ← somme + T[i]
+    FinPour
+
+    moyenne ← somme / n
+    Écrire(somme, moyenne)
+Fin</code></pre>
+
+        <h4>7. Maximum et minimum</h4>
+        <p>
+            On initialise le maximum et le minimum avec le premier élément,
+            puis on compare les autres éléments.
+        </p>
+        <pre><code>Algorithme MaximumTableau
+Variables
+    T : Tableau[1..100] d'Entiers
+    n, i, maximum : Entier
+Début
+    Lire(n)
+
+    Pour i de 1 à n Faire
+        Lire(T[i])
+    FinPour
+
+    maximum ← T[1]
+
+    Pour i de 2 à n Faire
+        Si T[i] > maximum Alors
+            maximum ← T[i]
+        FinSi
+    FinPour
+
+    Écrire(maximum)
+Fin</code></pre>
+        <div class="warning">
+            Cette méthode suppose que le tableau contient au moins un élément.
+            Il faut traiter séparément le cas n = 0 si le problème l'autorise.
+        </div>
+
+        <h4>8. Recherche d'une valeur</h4>
+        <pre><code>Algorithme RechercheSequentielle
+Variables
+    T : Tableau[1..100] d'Entiers
+    n, i, x, position : Entier
+Début
+    Lire(n)
+
+    Pour i de 1 à n Faire
+        Lire(T[i])
+    FinPour
+
+    Lire(x)
+    position ← 0
+    i ← 1
+
+    TantQue i <= n ET position = 0 Faire
+        Si T[i] = x Alors
+            position ← i
+        Sinon
+            i ← i + 1
+        FinSi
+    FinTantQue
+
+    Si position = 0 Alors
+        Écrire("Absent")
+    Sinon
+        Écrire("Position : ", position)
+    FinSi
+Fin</code></pre>
+
+        <h4>9. Compter les occurrences</h4>
+        <pre><code>compteur ← 0
+
+Pour i de 1 à n Faire
+    Si T[i] = x Alors
+        compteur ← compteur + 1
+    FinSi
+FinPour
+
+Écrire(compteur)</code></pre>
+
+        <h4>10. Inverser un tableau</h4>
+        <pre><code>Pour i de 1 à n DIV 2 Faire
+    temp ← T[i]
+    T[i] ← T[n - i + 1]
+    T[n - i + 1] ← temp
+FinPour</code></pre>
+
+        <h4>11. Décalage des éléments</h4>
+        <p>
+            Pour décaler un tableau d'une position vers la droite, on parcourt
+            les éléments de la fin vers le début afin de ne pas écraser
+            les valeurs encore nécessaires.
+        </p>
+        <pre><code>dernier ← T[n]
+
+Pour i de n à 2 Pas -1 Faire
+    T[i] ← T[i - 1]
+FinPour
+
+T[1] ← dernier</code></pre>
+
+        <h4>12. Suppression logique d'un élément</h4>
+        <p>
+            Dans un tableau de taille fixe, supprimer un élément consiste souvent
+            à décaler les éléments suivants vers la gauche et à diminuer
+            le nombre logique d'éléments.
+        </p>
+        <pre><code>Pour i de position à n - 1 Faire
+    T[i] ← T[i + 1]
+FinPour
+
+n ← n - 1</code></pre>
+
+        <h4>13. Insertion dans un tableau</h4>
+        <pre><code>Pour i de n à position Pas -1 Faire
+    T[i + 1] ← T[i]
+FinPour
+
+T[position] ← valeur
+n ← n + 1</code></pre>
+        <p>
+            Il faut vérifier que la position est valide et que le tableau
+            dispose d'une capacité suffisante.
+        </p>
+    </article>
+
+    <article class="module" id="m10">
+        <div class="module-number">MODULE 10</div>
+        <h3>Tableaux bidimensionnels et matrices</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Une matrice est un tableau organisé en lignes et en colonnes.
+            Un élément est identifié par deux indices : le numéro de ligne
+            et le numéro de colonne.
+        </p>
+
+        <h4>2. Déclaration</h4>
+        <pre><code>Variables
+    M : Tableau[1..3, 1..4] d'Entiers</code></pre>
+        <p>
+            Cette matrice contient trois lignes et quatre colonnes,
+            soit douze éléments.
+        </p>
+
+        <h4>3. Parcours d'une matrice</h4>
+        <pre><code>Pour i de 1 à nombreLignes Faire
+    Pour j de 1 à nombreColonnes Faire
+        Écrire(M[i,j])
+    FinPour
+FinPour</code></pre>
+
+        <h4>4. Saisie d'une matrice</h4>
+        <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à m Faire
+        Lire(M[i,j])
+    FinPour
+FinPour</code></pre>
+
+        <h4>5. Somme des éléments</h4>
+        <pre><code>somme ← 0
+
+Pour i de 1 à n Faire
+    Pour j de 1 à m Faire
+        somme ← somme + M[i,j]
+    FinPour
+FinPour
+
+Écrire(somme)</code></pre>
+
+        <h4>6. Somme d'une ligne et d'une colonne</h4>
+        <pre><code>// Somme de la ligne k
+sommeLigne ← 0
+Pour j de 1 à m Faire
+    sommeLigne ← sommeLigne + M[k,j]
+FinPour
+
+// Somme de la colonne k
+sommeColonne ← 0
+Pour i de 1 à n Faire
+    sommeColonne ← sommeColonne + M[i,k]
+FinPour</code></pre>
+
+        <h4>7. Diagonales d'une matrice carrée</h4>
+        <p>
+            Pour une matrice carrée d'ordre n, la diagonale principale
+            contient les éléments M[i,i]. La diagonale secondaire contient
+            les éléments M[i,n-i+1].
+        </p>
+        <pre><code>sommePrincipale ← 0
+sommeSecondaire ← 0
+
+Pour i de 1 à n Faire
+    sommePrincipale ← sommePrincipale + M[i,i]
+    sommeSecondaire ← sommeSecondaire + M[i,n-i+1]
+FinPour</code></pre>
+
+        <h4>8. Matrice transposée</h4>
+        <p>
+            La transposée échange les lignes et les colonnes :
+            l'élément de position (i,j) devient celui de position (j,i).
+        </p>
+        <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à m Faire
+        T[j,i] ← M[i,j]
+    FinPour
+FinPour</code></pre>
+
+        <h4>9. Matrice identité</h4>
+        <p>
+            Une matrice identité est une matrice carrée dont les éléments
+            diagonaux valent 1 et les autres éléments valent 0.
+        </p>
+        <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à n Faire
+        Si i = j Alors
+            M[i,j] ← 1
+        Sinon
+            M[i,j] ← 0
+        FinSi
+    FinPour
+FinPour</code></pre>
+
+        <h4>10. Multiplication de deux matrices</h4>
+        <p>
+            Si A est de dimension n × m et B de dimension m × p,
+            leur produit C est de dimension n × p.
+        </p>
+        <div class="formula">C[i,j] = Σ A[i,k] × B[k,j]</div>
+        <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à p Faire
+        C[i,j] ← 0
+        Pour k de 1 à m Faire
+            C[i,j] ← C[i,j] + A[i,k] * B[k,j]
+        FinPour
+    FinPour
+FinPour</code></pre>
+        <p>
+            La complexité de cette méthode classique est O(n × m × p).
+            Pour deux matrices carrées d'ordre n, elle est O(n³).
+        </p>
+    </article>
+
+    <article class="module" id="m11">
+        <div class="module-number">MODULE 11</div>
+        <h3>Chaînes de caractères</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Une chaîne de caractères est une séquence ordonnée de caractères.
+            Elle peut représenter un nom, un texte, une adresse ou un message.
+        </p>
+
+        <h4>2. Longueur d'une chaîne</h4>
+        <p>
+            La longueur correspond au nombre de caractères selon la convention
+            de représentation adoptée.
+        </p>
+        <pre><code>longueur ← Longueur(texte)</code></pre>
+
+        <h4>3. Accéder aux caractères</h4>
+        <pre><code>Pour i de 1 à Longueur(texte) Faire
+    Écrire(texte[i])
+FinPour</code></pre>
+
+        <h4>4. Concaténation</h4>
+        <p>
+            La concaténation consiste à joindre deux chaînes.
+        </p>
+        <pre><code>nomComplet ← nom + " " + prenom</code></pre>
+
+        <h4>5. Recherche d'un caractère</h4>
+        <pre><code>position ← 0
+i ← 1
+
+TantQue i <= Longueur(texte) ET position = 0 Faire
+    Si texte[i] = caractere Alors
+        position ← i
+    Sinon
+        i ← i + 1
+    FinSi
+FinTantQue</code></pre>
+
+        <h4>6. Compter les voyelles</h4>
+        <pre><code>compteur ← 0
+
+Pour i de 1 à Longueur(texte) Faire
+    c ← Minuscule(texte[i])
+
+    Si c = 'a' OU c = 'e' OU c = 'i' OU
+       c = 'o' OU c = 'u' OU c = 'y' Alors
+        compteur ← compteur + 1
+    FinSi
+FinPour</code></pre>
+
+        <h4>7. Inverser une chaîne</h4>
+        <pre><code>inverse ← ""
+
+Pour i de Longueur(texte) à 1 Pas -1 Faire
+    inverse ← inverse + texte[i]
+FinPour</code></pre>
+
+        <h4>8. Palindrome</h4>
+        <p>
+            Un palindrome est une chaîne qui se lit de la même manière
+            de gauche à droite et de droite à gauche, selon une normalisation
+            définie (espaces, accents et majuscules éventuellement ignorés).
+        </p>
+        <pre><code>gauche ← 1
+droite ← Longueur(texte)
+estPalindrome ← Vrai
+
+TantQue gauche < droite ET estPalindrome Faire
+    Si texte[gauche] <> texte[droite] Alors
+        estPalindrome ← Faux
+    Sinon
+        gauche ← gauche + 1
+        droite ← droite - 1
+    FinSi
+FinTantQue
+
+Écrire(estPalindrome)</code></pre>
+
+        <h4>9. Comparaison de chaînes</h4>
+        <p>
+            La comparaison lexicographique examine les caractères dans l'ordre
+            jusqu'à trouver une différence ou atteindre la fin d'une chaîne.
+            L'ordre dépend de la convention de codage et de comparaison.
+        </p>
+
+        <h4>10. Découpage et validation</h4>
+        <p>
+            Des opérations courantes consistent à découper un texte en mots,
+            supprimer les espaces superflus, vérifier un préfixe, un suffixe
+            ou rechercher un motif.
+        </p>
+        <div class="warning">
+            Les caractères accentués et certains symboles Unicode peuvent
+            être représentés par plusieurs unités internes. Pour des traitements
+            linguistiques avancés, il faut préciser la notion de caractère utilisée.
+        </div>
+    </article>
+
+    <article class="module" id="m12">
+        <div class="module-number">MODULE 12</div>
+        <h3>Procédures et fonctions</h3>
+
+        <h4>1. Pourquoi décomposer un algorithme ?</h4>
+        <p>
+            Les sous-programmes permettent de diviser une solution en parties
+            indépendantes, réutilisables et plus faciles à tester.
+        </p>
+
+        <h4>2. Procédure</h4>
+        <p>
+            Une procédure réalise une tâche. Elle peut recevoir des paramètres
+            et modifier des données selon la convention utilisée, mais elle
+            ne retourne pas nécessairement une valeur comme résultat.
+        </p>
+        <pre><code>Procédure AfficherSomme(a, b : Réel)
+Début
+    Écrire(a + b)
+FinProcédure
+
+Algorithme Principal
+Début
+    AfficherSomme(5, 8)
+Fin</code></pre>
+
+        <h4>3. Fonction</h4>
+        <p>
+            Une fonction calcule et retourne une valeur.
+        </p>
+        <pre><code>Fonction Carre(x : Réel) : Réel
+Début
+    Retourner x * x
+FinFonction
+
+Algorithme Principal
+Variables
+    resultat : Réel
+Début
+    resultat ← Carre(5)
+    Écrire(resultat)
+Fin</code></pre>
+
+        <h4>4. Paramètres formels et arguments</h4>
+        <p>
+            Les paramètres formels sont déclarés dans la définition du sous-programme.
+            Les arguments sont les valeurs réellement transmises lors de l'appel.
+        </p>
+        <pre><code>Fonction Maximum(a, b : Entier) : Entier
+Début
+    Si a > b Alors
+        Retourner a
+    Sinon
+        Retourner b
+    FinSi
+FinFonction
+
+// 12 et 7 sont les arguments
+m ← Maximum(12, 7)</code></pre>
+
+        <h4>5. Passage par valeur et par référence</h4>
+        <p>
+            Le passage par valeur transmet une copie logique de la valeur.
+            Les modifications locales ne changent pas directement la variable
+            de l'appelant.
+        </p>
+        <p>
+            Le passage par référence permet au sous-programme d'accéder
+            à la variable d'origine et éventuellement de la modifier.
+            Les conventions dépendent du langage et du modèle choisi.
+        </p>
+
+        <h4>6. Variables locales et globales</h4>
+        <ul>
+            <li>Une variable locale est déclarée dans un sous-programme et n'est accessible que dans sa portée.</li>
+            <li>Une variable globale est accessible dans plusieurs parties selon les règles de portée.</li>
+        </ul>
+        <p>
+            Il est généralement préférable de limiter les variables globales
+            afin de réduire les dépendances et les effets de bord.
+        </p>
+
+        <h4>7. Modularité</h4>
+        <pre><code>Fonction LireNoteValide() : Réel
+Variables
+    note : Réel
+Début
+    Répéter
+        Lire(note)
+    Jusqu'à note >= 0 ET note <= 20
+    Retourner note
+FinFonction
+
+Fonction Moyenne(a, b, c : Réel) : Réel
+Début
+    Retourner (a + b + c) / 3
+FinFonction</code></pre>
+
+        <h4>8. Contrat d'un sous-programme</h4>
+        <p>Un contrat peut préciser :</p>
+        <ul>
+            <li>Le rôle du sous-programme.</li>
+            <li>Les types et significations des paramètres.</li>
+            <li>Les préconditions nécessaires.</li>
+            <li>La valeur retournée ou les effets produits.</li>
+            <li>Les postconditions garanties.</li>
+        </ul>
+
+        <h4>9. Récapitulatif</h4>
+        <table>
+            <tr><th>Élément</th><th>Procédure</th><th>Fonction</th></tr>
+            <tr><td>Objectif</td><td>Réaliser une action.</td><td>Calculer une valeur.</td></tr>
+            <tr><td>Retour</td><td>Pas obligatoire.</td><td>Valeur retournée.</td></tr>
+            <tr><td>Appel</td><td>Instruction autonome.</td><td>Peut apparaître dans une expression.</td></tr>
+        </table>
+    </article>
+
+    <article class="module" id="m13">
+        <div class="module-number">MODULE 13</div>
+        <h3>Récursivité</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Un algorithme récursif résout un problème en faisant appel
+            à une version du même algorithme sur une entrée plus petite
+            ou plus simple.
+        </p>
+
+        <h4>2. Les deux éléments obligatoires</h4>
+        <ul>
+            <li><strong>Cas de base :</strong> cas simple résolu directement, sans nouvel appel récursif.</li>
+            <li><strong>Cas récursif :</strong> décomposition du problème et appel sur une entrée plus petite.</li>
+        </ul>
+
+        <h4>3. Factorielle récursive</h4>
+        <p>Pour n entier naturel :</p>
+        <div class="formula">n! = n × (n - 1)! et 0! = 1</div>
+        <pre><code>Fonction Factorielle(n : Entier) : Entier
+Début
+    Si n = 0 Alors
+        Retourner 1
+    Sinon
+        Retourner n * Factorielle(n - 1)
+    FinSi
+FinFonction</code></pre>
+
+        <h4>4. Déroulement de factorielle(4)</h4>
+        <pre><code>Factorielle(4)
+= 4 * Factorielle(3)
+= 4 * 3 * Factorielle(2)
+= 4 * 3 * 2 * Factorielle(1)
+= 4 * 3 * 2 * 1 * Factorielle(0)
+= 4 * 3 * 2 * 1 * 1
+= 24</code></pre>
+
+        <h4>5. Fibonacci récursif</h4>
+        <div class="formula">F(0) = 0 ; F(1) = 1 ; F(n) = F(n-1) + F(n-2)</div>
+        <pre><code>Fonction Fibonacci(n : Entier) : Entier
+Début
+    Si n = 0 Alors
+        Retourner 0
+    SinonSi n = 1 Alors
+        Retourner 1
+    Sinon
+        Retourner Fibonacci(n-1) + Fibonacci(n-2)
+    FinSi
+FinFonction</code></pre>
+        <div class="warning">
+            Cette version recalculera de nombreuses valeurs.
+            Sa complexité temporelle est exponentielle.
+            Une solution avec mémorisation ou programmation dynamique
+            est beaucoup plus efficace.
+        </div>
+
+        <h4>6. Récursivité et pile d'appels</h4>
+        <p>
+            Chaque appel récursif conserve un contexte d'exécution :
+            paramètres, variables locales et adresse de reprise.
+            Ces contextes sont généralement stockés dans une pile d'appels.
+        </p>
+
+        <h4>7. Récursivité terminale</h4>
+        <p>
+            Une fonction est récursive terminale lorsque l'appel récursif
+            constitue la dernière opération significative du calcul.
+            Certains environnements optimisent cette forme, mais cette
+            optimisation n'est pas garantie partout.
+        </p>
+
+        <h4>8. Exemple : somme des chiffres</h4>
+        <pre><code>Fonction SommeChiffres(n : Entier) : Entier
+Début
+    Si n < 10 Alors
+        Retourner n
+    Sinon
+        Retourner (n MOD 10) + SommeChiffres(n DIV 10)
+    FinSi
+FinFonction</code></pre>
+
+        <h4>9. Récursivité ou itération ?</h4>
+        <table>
+            <tr><th>Récursivité</th><th>Itération</th></tr>
+            <tr><td>Exprime naturellement certains problèmes.</td><td>Utilise des boucles.</td></tr>
+            <tr><td>Peut utiliser une pile d'appels.</td><td>Souvent moins de mémoire auxiliaire.</td></tr>
+            <tr><td>Risque de profondeur excessive.</td><td>Risque de boucle non terminante.</td></tr>
+        </table>
+    </article>
+
+    <article class="module" id="m14">
+        <div class="module-number">MODULE 14</div>
+        <h3>Algorithmes numériques fondamentaux</h3>
+
+        <h4>1. Tester la parité</h4>
+        <pre><code>Si n MOD 2 = 0 Alors
+    Écrire("Pair")
+Sinon
+    Écrire("Impair")
+FinSi</code></pre>
+
+        <h4>2. Tester si un nombre est positif, négatif ou nul</h4>
+        <pre><code>Si n > 0 Alors
+    Écrire("Positif")
+SinonSi n < 0 Alors
+    Écrire("Négatif")
+Sinon
+    Écrire("Nul")
+FinSi</code></pre>
+
+        <h4>3. Calculer une puissance entière positive</h4>
+        <pre><code>resultat ← 1
+
+Pour i de 1 à exposant Faire
+    resultat ← resultat * base
+FinPour</code></pre>
+        <p>Pour un exposant nul, le résultat est 1, y compris pour une base non nulle.</p>
+
+        <h4>4. Calculer une factorielle</h4>
+        <pre><code>factorielle ← 1
+
+Pour i de 1 à n Faire
+    factorielle ← factorielle * i
+FinPour</code></pre>
+        <p>La définition usuelle est réservée aux entiers naturels.</p>
+
+        <h4>5. Tester si un nombre est premier</h4>
+        <p>
+            Un nombre premier est un entier strictement supérieur à 1
+            qui possède exactement deux diviseurs positifs : 1 et lui-même.
+        </p>
+        <pre><code>Algorithme NombrePremier
+Variables
+    n, i : Entier
+    premier : Booléen
+Début
+    Lire(n)
+    premier ← Vrai
+
+    Si n < 2 Alors
+        premier ← Faux
+    Sinon
+        i ← 2
+
+        TantQue i * i <= n ET premier Faire
+            Si n MOD i = 0 Alors
+                premier ← Faux
+            Sinon
+                i ← i + 1
+            FinSi
+        FinTantQue
+    FinSi
+
+    Écrire(premier)
+Fin</code></pre>
+        <p>
+            Il suffit de tester les diviseurs jusqu'à la racine carrée de n :
+            si n = a × b, au moins l'un des deux facteurs est inférieur
+            ou égal à √n.
+        </p>
+
+        <h4>6. Afficher les diviseurs</h4>
+        <pre><code>Pour i de 1 à n Faire
+    Si n MOD i = 0 Alors
+        Écrire(i)
+    FinSi
+FinPour</code></pre>
+
+        <h4>7. Calculer le PGCD : algorithme d'Euclide</h4>
+        <p>
+            Le plus grand commun diviseur de deux entiers positifs peut être
+            calculé à l'aide de la relation PGCD(a,b) = PGCD(b, a MOD b).
+        </p>
+        <pre><code>Algorithme PGCD
+Variables
+    a, b, r : Entier
+Début
+    Lire(a, b)
+
+    TantQue b <> 0 Faire
+        r ← a MOD b
+        a ← b
+        b ← r
+    FinTantQue
+
+    Écrire(a)
+Fin</code></pre>
+
+        <h4>8. Calculer le PPCM</h4>
+        <p>Pour deux entiers positifs non nuls :</p>
+        <div class="formula">PPCM(a,b) = (a × b) / PGCD(a,b)</div>
+
+        <h4>9. Inverser les chiffres d'un entier</h4>
+        <pre><code>inverse ← 0
+
+TantQue n > 0 Faire
+    chiffre ← n MOD 10
+    inverse ← inverse * 10 + chiffre
+    n ← n DIV 10
+FinTantQue
+
+Écrire(inverse)</code></pre>
+
+        <h4>10. Compter les chiffres</h4>
+        <pre><code>compteur ← 0
+
+Si n = 0 Alors
+    compteur ← 1
+Sinon
+    TantQue n > 0 Faire
+        compteur ← compteur + 1
+        n ← n DIV 10
+    FinTantQue
+FinSi</code></pre>
+
+        <h4>11. Somme des chiffres</h4>
+        <pre><code>somme ← 0
+
+TantQue n > 0 Faire
+    somme ← somme + (n MOD 10)
+    n ← n DIV 10
+FinTantQue</code></pre>
+
+        <h4>12. Tester un nombre palindrome</h4>
+        <p>
+            On peut inverser les chiffres puis comparer le nombre initial
+            avec son inverse, en traitant correctement les signes et les zéros.
+        </p>
+
+        <h4>13. Suite de Fibonacci par itération</h4>
+        <pre><code>a ← 0
+b ← 1
+
+Pour i de 1 à n Faire
+    Écrire(a)
+    temp ← a + b
+    a ← b
+    b ← temp
+FinPour</code></pre>
+
+        <h4>14. Méthode de Newton pour la racine carrée</h4>
+        <p>
+            Pour calculer une approximation de √a avec a positif,
+            on peut utiliser l'itération :
+        </p>
+        <div class="formula">x suivant = (x + a / x) / 2</div>
+        <p>
+            On arrête lorsque la différence entre deux approximations
+            devient inférieure à une tolérance définie.
+        </p>
+    </article>
+
+    <article class="module" id="m15">
+        <div class="module-number">MODULE 15</div>
+        <h3>Algorithmes de recherche</h3>
+
+        <h4>1. Recherche séquentielle</h4>
+        <p>
+            La recherche séquentielle parcourt les éléments un par un
+            jusqu'à trouver la valeur recherchée ou atteindre la fin.
+            Elle fonctionne même si les données ne sont pas triées.
+        </p>
+        <pre><code>Fonction RechercheSequentielle(T, n, x : Entier) : Entier
+Variables
+    i : Entier
+Début
+    Pour i de 1 à n Faire
+        Si T[i] = x Alors
+            Retourner i
+        FinSi
+    FinPour
+
+    Retourner 0
+FinFonction</code></pre>
+        <p>Complexité :</p>
+        <ul>
+            <li>Meilleur cas : O(1).</li>
+            <li>Pire cas : O(n).</li>
+            <li>Cas moyen : O(n), sous des hypothèses usuelles.</li>
+        </ul>
+
+        <h4>2. Recherche dichotomique</h4>
+        <p>
+            La recherche dichotomique fonctionne uniquement sur un tableau
+            trié selon l'ordre utilisé. À chaque étape, elle élimine environ
+            la moitié de la zone de recherche.
+        </p>
+        <pre><code>Fonction RechercheDichotomique(T, n, x : Entier) : Entier
+Variables
+    gauche, droite, milieu : Entier
+Début
+    gauche ← 1
+    droite ← n
+
+    TantQue gauche <= droite Faire
+        milieu ← (gauche + droite) DIV 2
+
+        Si T[milieu] = x Alors
+            Retourner milieu
+        SinonSi T[milieu] < x Alors
+            gauche ← milieu + 1
+        Sinon
+            droite ← milieu - 1
+        FinSi
+    FinTantQue
+
+    Retourner 0
+FinFonction</code></pre>
+
+        <h4>3. Exemple de recherche dichotomique</h4>
+        <p>Tableau : [2, 5, 8, 12, 16, 23, 38, 56], valeur recherchée : 23.</p>
+        <table>
+            <tr><th>Étape</th><th>Gauche</th><th>Droite</th><th>Milieu</th><th>Valeur</th><th>Action</th></tr>
+            <tr><td>1</td><td>1</td><td>8</td><td>4</td><td>12</td><td>Rechercher à droite.</td></tr>
+            <tr><td>2</td><td>5</td><td>8</td><td>6</td><td>23</td><td>Valeur trouvée.</td></tr>
+        </table>
+
+        <h4>4. Complexité</h4>
+        <table>
+            <tr><th>Recherche</th><th>Précondition</th><th>Complexité temporelle</th></tr>
+            <tr><td>Séquentielle</td><td>Aucune condition de tri.</td><td>O(n)</td></tr>
+            <tr><td>Dichotomique</td><td>Tableau trié.</td><td>O(log n)</td></tr>
+        </table>
+
+        <h4>5. Recherche du premier et du dernier indice</h4>
+        <p>
+            Si une valeur apparaît plusieurs fois, la recherche séquentielle
+            simple retourne généralement la première occurrence rencontrée.
+            Pour obtenir la dernière occurrence, on peut parcourir le tableau
+            jusqu'à la fin en mémorisant chaque position correspondante.
+        </p>
+        <pre><code>position ← 0
+
+Pour i de 1 à n Faire
+    Si T[i] = x Alors
+        position ← i
+    FinSi
+FinPour
+
+Écrire(position)</code></pre>
+
+        <h4>6. Recherche dans un tableau trié avec doublons</h4>
+        <p>
+            Des variantes de la recherche dichotomique permettent de rechercher
+            la première ou la dernière occurrence en continuant la recherche
+            après avoir trouvé une correspondance.
+        </p>
+    </article>
+
+    <article class="module" id="m16">
+        <div class="module-number">MODULE 16</div>
+        <h3>Algorithmes de tri</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Le tri consiste à réorganiser les éléments selon un ordre :
+            croissant, décroissant ou un critère défini.
+        </p>
+
+        <h4>2. Tri par sélection</h4>
+        <p>
+            À chaque étape, on recherche le plus petit élément de la partie
+            non triée puis on l'échange avec le premier élément de cette partie.
+        </p>
+        <pre><code>Algorithme TriSelection
+Variables
+    i, j, indiceMin, temp : Entier
+Début
+    Pour i de 1 à n - 1 Faire
+        indiceMin ← i
+
+        Pour j de i + 1 à n Faire
+            Si T[j] < T[indiceMin] Alors
+                indiceMin ← j
+            FinSi
+        FinPour
+
+        temp ← T[i]
+        T[i] ← T[indiceMin]
+        T[indiceMin] ← temp
+    FinPour
+Fin</code></pre>
+        <p>Complexité temporelle : O(n²). Espace auxiliaire : O(1).</p>
+
+        <h4>3. Tri à bulles</h4>
+        <p>
+            Le tri à bulles compare les éléments voisins et les échange
+            lorsqu'ils sont dans le mauvais ordre.
+        </p>
+        <pre><code>Algorithme TriBulles
+Variables
+    i, j, temp : Entier
+Début
+    Pour i de 1 à n - 1 Faire
+        Pour j de 1 à n - i Faire
+            Si T[j] > T[j + 1] Alors
+                temp ← T[j]
+                T[j] ← T[j + 1]
+                T[j + 1] ← temp
+            FinSi
+        FinPour
+    FinPour
+Fin</code></pre>
+        <p>Complexité usuelle : O(n²).</p>
+
+        <h4>4. Tri à bulles optimisé</h4>
+        <pre><code>i ← 1
+echange ← Vrai
+
+TantQue i < n ET echange = Vrai Faire
+    echange ← Faux
+
+    Pour j de 1 à n - i Faire
+        Si T[j] > T[j + 1] Alors
+            temp ← T[j]
+            T[j] ← T[j + 1]
+            T[j + 1] ← temp
+            echange ← Vrai
+        FinSi
+    FinPour
+
+    i ← i + 1
+FinTantQue</code></pre>
+        <p>Meilleur cas optimisé : O(n), pire cas : O(n²).</p>
+
+        <h4>5. Tri par insertion</h4>
+        <p>
+            Le tri par insertion construit progressivement une partie triée.
+            Chaque nouvel élément est inséré à sa position correcte.
+        </p>
+        <pre><code>Algorithme TriInsertion
+Variables
+    i, j, cle : Entier
+Début
+    Pour i de 2 à n Faire
+        cle ← T[i]
+        j ← i - 1
+
+        TantQue j >= 1 ET T[j] > cle Faire
+            T[j + 1] ← T[j]
+            j ← j - 1
+        FinTantQue
+
+        T[j + 1] ← cle
+    FinPour
+Fin</code></pre>
+        <p>
+            Meilleur cas : O(n). Pire cas : O(n²).
+            Le tri par insertion est intéressant pour les petits tableaux
+            ou les données presque triées.
+        </p>
+
+        <h4>6. Tri fusion</h4>
+        <p>
+            Le tri fusion utilise la stratégie diviser pour régner :
+            diviser le tableau en deux parties, trier chaque partie,
+            puis fusionner les deux parties triées.
+        </p>
+        <pre><code>Procédure TriFusion(T, debut, fin)
+Variables
+    milieu : Entier
+Début
+    Si debut < fin Alors
+        milieu ← (debut + fin) DIV 2
+
+        TriFusion(T, debut, milieu)
+        TriFusion(T, milieu + 1, fin)
+
+        Fusionner(T, debut, milieu, fin)
+    FinSi
+FinProcédure</code></pre>
+        <p>
+            La fusion parcourt les deux sous-tableaux triés et copie à chaque
+            étape le plus petit élément disponible dans le tableau résultat.
+        </p>
+        <p>Complexité temporelle : O(n log n). Espace auxiliaire : O(n) dans l'implémentation classique.</p>
+
+        <h4>7. Tri rapide (QuickSort)</h4>
+        <p>
+            Le tri rapide choisit un pivot, partitionne les éléments en deux
+            groupes selon leur comparaison avec le pivot, puis trie
+            récursivement les deux groupes.
+        </p>
+        <pre><code>Procédure TriRapide(T, debut, fin)
+Début
+    Si debut < fin Alors
+        p ← Partitionner(T, debut, fin)
+        TriRapide(T, debut, p - 1)
+        TriRapide(T, p + 1, fin)
+    FinSi
+FinProcédure</code></pre>
+        <p>
+            Complexité moyenne : O(n log n).
+            Pire cas : O(n²) pour un mauvais choix répété de pivot.
+        </p>
+
+        <h4>8. Comparaison des tris</h4>
+        <table>
+            <tr><th>Algorithme</th><th>Meilleur cas</th><th>Cas moyen</th><th>Pire cas</th></tr>
+            <tr><td>Sélection</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>Insertion</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>À bulles optimisé</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td></tr>
+            <tr><td>Fusion</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td></tr>
+            <tr><td>Rapide</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td></tr>
+        </table>
+
+        <h4>9. Stabilité d'un tri</h4>
+        <p>
+            Un tri est stable lorsqu'il conserve l'ordre relatif des éléments
+            ayant la même clé. Cette propriété est importante lorsque les
+            données possèdent plusieurs critères de classement.
+        </p>
+
+        <h4>10. Tri en place</h4>
+        <p>
+            Un tri en place utilise une quantité supplémentaire de mémoire
+            constante ou très limitée, en réorganisant directement les éléments
+            dans la structure d'origine.
+        </p>
+    </article>
+
+    <article class="module" id="m17">
+        <div class="module-number">MODULE 17</div>
+        <h3>Enregistrements et structures de données composées</h3>
+
+        <h4>1. Pourquoi créer un type composé ?</h4>
+        <p>
+            Un type composé permet de regrouper plusieurs informations liées
+            à une même entité. Par exemple, un étudiant possède un identifiant,
+            un nom, un âge et une moyenne.
+        </p>
+
+        <h4>2. Définir un enregistrement</h4>
+        <pre><code>Type Etudiant = Enregistrement
+    matricule : Entier
+    nom : Chaîne
+    age : Entier
+    moyenne : Réel
+FinEnregistrement</code></pre>
+
+        <h4>3. Déclarer et utiliser un enregistrement</h4>
+        <pre><code>Variables
+    e : Etudiant
+Début
+    e.matricule ← 2026
+    e.nom ← "Ali"
+    e.age ← 20
+    e.moyenne ← 15.5
+
+    Écrire(e.nom, e.moyenne)
+Fin</code></pre>
+
+        <h4>4. Tableau d'enregistrements</h4>
+        <pre><code>Variables
+    classe : Tableau[1..30] d'Etudiants
+
+Pour i de 1 à 30 Faire
+    Lire(classe[i].matricule)
+    Lire(classe[i].nom)
+    Lire(classe[i].moyenne)
+FinPour</code></pre>
+
+        <h4>5. Recherche d'un étudiant</h4>
+        <pre><code>position ← 0
+
+Pour i de 1 à n Faire
+    Si classe[i].matricule = identifiant Alors
+        position ← i
+    FinSi
+FinPour</code></pre>
+
+        <h4>6. Trier des enregistrements</h4>
+        <p>
+            Il est possible de trier une liste d'enregistrements selon
+            un champ : moyenne, nom, date ou identifiant.
+            Il faut définir clairement le critère de comparaison.
+        </p>
+
+        <h4>7. Types énumérés</h4>
+        <p>
+            Un type énuméré définit un ensemble fini de valeurs nommées,
+            comme les jours de la semaine ou les états d'une commande.
+        </p>
+        <pre><code>Type Etat = (EnAttente, Validee, Refusee, Annulee)</code></pre>
+    </article>
+
+    <article class="module" id="m18">
+        <div class="module-number">MODULE 18</div>
+        <h3>Piles et files</h3>
+
+        <h4>1. Pile (Stack)</h4>
+        <p>
+            Une pile suit le principe LIFO : Last In, First Out.
+            Le dernier élément ajouté est le premier retiré.
+        </p>
+        <p>Opérations fondamentales :</p>
+        <ul>
+            <li><strong>Empiler :</strong> ajouter un élément au sommet.</li>
+            <li><strong>Dépiler :</strong> retirer l'élément du sommet.</li>
+            <li><strong>Sommet :</strong> consulter le dernier élément ajouté.</li>
+            <li><strong>EstVide :</strong> vérifier si la pile ne contient aucun élément.</li>
+        </ul>
+        <pre><code>Empiler(P, 10)
+Empiler(P, 20)
+Empiler(P, 30)
+
+x ← Depiler(P)    // x = 30
+y ← Sommet(P)     // y = 20</code></pre>
+
+        <h4>2. Applications des piles</h4>
+        <ul>
+            <li>Gestion des appels de fonctions.</li>
+            <li>Annulation et rétablissement d'actions.</li>
+            <li>Vérification des parenthèses.</li>
+            <li>Évaluation d'expressions arithmétiques.</li>
+            <li>Parcours en profondeur des graphes.</li>
+        </ul>
+
+        <h4>3. Vérifier l'équilibre des parenthèses</h4>
+        <p>
+            On empile les symboles ouvrants. Lorsqu'un symbole fermant apparaît,
+            on vérifie qu'il correspond au dernier symbole ouvrant.
+        </p>
+        <pre><code>Créer une pile vide P
+valide ← Vrai
+
+Pour chaque caractère c du texte Faire
+    Si c est un symbole ouvrant Alors
+        Empiler(P, c)
+    SinonSi c est un symbole fermant Alors
+        Si P est vide Alors
+            valide ← Faux
+        Sinon
+            ouvrant ← Depiler(P)
+            Si ouvrant ne correspond pas à c Alors
+                valide ← Faux
+            FinSi
+        FinSi
+    FinSi
+FinPour
+
+Si P n'est pas vide Alors
+    valide ← Faux
+FinSi</code></pre>
+
+        <h4>4. File (Queue)</h4>
+        <p>
+            Une file suit le principe FIFO : First In, First Out.
+            Le premier élément ajouté est le premier retiré.
+        </p>
+        <ul>
+            <li><strong>Enfiler :</strong> ajouter à la fin.</li>
+            <li><strong>Défiler :</strong> retirer au début.</li>
+            <li><strong>Premier :</strong> consulter le premier élément.</li>
+        </ul>
+
+        <h4>5. Applications des files</h4>
+        <ul>
+            <li>Gestion des tâches en attente.</li>
+            <li>Files d'impression.</li>
+            <li>Traitement des requêtes.</li>
+            <li>Parcours en largeur d'un graphe.</li>
+            <li>Simulation de files d'attente.</li>
+        </ul>
+
+        <h4>6. File circulaire</h4>
+        <p>
+            Une file circulaire réutilise les cases libérées au début du tableau.
+            Les indices avancent de manière cyclique, généralement avec
+            une opération modulo la capacité.
+        </p>
+
+        <h4>7. Complexités des opérations</h4>
+        <table>
+            <tr><th>Opération</th><th>Pile</th><th>File bien implémentée</th></tr>
+            <tr><td>Ajout</td><td>O(1)</td><td>O(1)</td></tr>
+            <tr><td>Retrait</td><td>O(1)</td><td>O(1)</td></tr>
+            <tr><td>Consulter un élément de tête</td><td>O(1)</td><td>O(1)</td></tr>
+        </table>
+    </article>
+
+    <article class="module" id="m19">
+        <div class="module-number">MODULE 19</div>
+        <h3>Listes chaînées</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Une liste chaînée est une structure composée de cellules appelées
+            nœuds. Chaque nœud contient une donnée et une référence vers
+            un autre nœud.
+        </p>
+
+        <h4>2. Liste simplement chaînée</h4>
+        <p>
+            Chaque nœud contient une valeur et un lien vers le nœud suivant.
+            Le dernier nœud pointe vers une valeur nulle.
+        </p>
+        <pre><code>Type Noeud = Enregistrement
+    valeur : Entier
+    suivant : Adresse(Noeud)
+FinEnregistrement</code></pre>
+
+        <h4>3. Parcourir une liste</h4>
+        <pre><code>courant ← tete
+
+TantQue courant <> NIL Faire
+    Écrire(courant.valeur)
+    courant ← courant.suivant
+FinTantQue</code></pre>
+
+        <h4>4. Insertion en tête</h4>
+        <pre><code>nouveau ← CreerNoeud(valeur)
+nouveau.suivant ← tete
+tete ← nouveau</code></pre>
+
+        <h4>5. Suppression en tête</h4>
+        <pre><code>Si tete <> NIL Alors
+    ancien ← tete
+    tete ← tete.suivant
+    Liberer(ancien)
+FinSi</code></pre>
+
+        <h4>6. Liste doublement chaînée</h4>
+        <p>
+            Chaque nœud possède deux liens : un vers le suivant et un vers
+            le précédent. Cela permet de parcourir la structure dans les deux sens.
+        </p>
+
+        <h4>7. Liste circulaire</h4>
+        <p>
+            Dans une liste circulaire, le dernier nœud pointe vers le premier.
+            Il faut définir une condition d'arrêt afin d'éviter un parcours infini.
+        </p>
+
+        <h4>8. Tableau ou liste chaînée ?</h4>
+        <table>
+            <tr><th>Tableau</th><th>Liste chaînée</th></tr>
+            <tr><td>Accès par indice généralement O(1).</td><td>Accès à un élément par position O(n).</td></tr>
+            <tr><td>Insertion au milieu généralement O(n).</td><td>Insertion O(1) si la position du lien est connue.</td></tr>
+            <tr><td>Mémoire contiguë dans les représentations classiques.</td><td>Chaque nœud contient des liens supplémentaires.</td></tr>
+        </table>
+    </article>
+
+    <article class="module" id="m20">
+        <div class="module-number">MODULE 20</div>
+        <h3>Ensembles, dictionnaires et tables de hachage</h3>
+
+        <h4>1. Ensembles</h4>
+        <p>
+            Un ensemble est une collection de valeurs distinctes.
+            Il ne conserve pas nécessairement un ordre de parcours particulier.
+        </p>
+        <p>Opérations fondamentales :</p>
+        <ul>
+            <li>Union : A ∪ B.</li>
+            <li>Intersection : A ∩ B.</li>
+            <li>Différence : A \ B.</li>
+            <li>Inclusion : A ⊆ B.</li>
+        </ul>
+
+        <h4>2. Dictionnaires et associations clé-valeur</h4>
+        <p>
+            Un dictionnaire associe une clé à une valeur.
+            Les clés doivent être uniques dans une même structure.
+        </p>
+        <pre><code>Etudiants = {
+    "Ali" : 15,
+    "Sara" : 18,
+    "Amine" : 12
+}</code></pre>
+
+        <h4>3. Compter les fréquences</h4>
+        <p>
+            Une table de fréquences associe chaque valeur à son nombre
+            d'apparitions. Elle permet d'éviter de parcourir plusieurs fois
+            les mêmes données.
+        </p>
+        <pre><code>Pour chaque valeur x du tableau Faire
+    Si x existe comme clé dans Frequences Alors
+        Frequences[x] ← Frequences[x] + 1
+    Sinon
+        Frequences[x] ← 1
+    FinSi
+FinPour</code></pre>
+
+        <h4>4. Hachage</h4>
+        <p>
+            Une fonction de hachage transforme une clé en une valeur utilisée
+            pour déterminer une position dans une table.
+        </p>
+        <p>
+            Une collision se produit lorsque deux clés différentes conduisent
+            à la même position. Les tables de hachage doivent prévoir une méthode
+            de résolution des collisions.
+        </p>
+
+        <h4>5. Méthodes de résolution des collisions</h4>
+        <ul>
+            <li><strong>Chaînage :</strong> chaque position conserve une collection d'éléments.</li>
+            <li><strong>Adressage ouvert :</strong> en cas de collision, rechercher une autre case selon une stratégie définie.</li>
+        </ul>
+
+        <h4>6. Complexité moyenne</h4>
+        <p>
+            Les recherches, insertions et suppressions dans une table de hachage
+            sont généralement O(1) en moyenne sous des hypothèses adaptées.
+            Le pire cas peut être O(n).
+        </p>
+    </article>
+
+    <article class="module" id="m21">
+        <div class="module-number">MODULE 21</div>
+        <h3>Arbres et graphes</h3>
+
+        <h4>1. Arbre</h4>
+        <p>
+            Un arbre est une structure hiérarchique composée de nœuds reliés
+            par des arêtes. Il possède une racine et des relations parent-enfant.
+        </p>
+        <ul>
+            <li>Racine : nœud de départ.</li>
+            <li>Feuille : nœud sans enfant.</li>
+            <li>Parent : nœud directement supérieur.</li>
+            <li>Enfant : nœud directement inférieur.</li>
+            <li>Profondeur : nombre d'arêtes depuis la racine.</li>
+            <li>Hauteur : longueur du plus long chemin descendant jusqu'à une feuille.</li>
+        </ul>
+
+        <h4>2. Arbre binaire</h4>
+        <p>
+            Un arbre binaire est un arbre dans lequel chaque nœud possède
+            au maximum deux enfants : gauche et droit.
+        </p>
+
+        <h4>3. Arbre binaire de recherche</h4>
+        <p>
+            Dans un arbre binaire de recherche, les valeurs du sous-arbre gauche
+            respectent une règle d'ordre par rapport au nœud, et celles du
+            sous-arbre droit respectent la règle opposée.
+        </p>
+        <p>
+            La recherche peut être O(log n) si l'arbre est équilibré,
+            mais O(n) dans le pire cas si l'arbre est dégénéré.
+        </p>
+
+        <h4>4. Parcours d'un arbre binaire</h4>
+        <table>
+            <tr><th>Parcours</th><th>Ordre</th></tr>
+            <tr><td>Préfixe</td><td>Racine, gauche, droite.</td></tr>
+            <tr><td>Infixe</td><td>Gauche, racine, droite.</td></tr>
+            <tr><td>Postfixe</td><td>Gauche, droite, racine.</td></tr>
+            <tr><td>En largeur</td><td>Niveau par niveau.</td></tr>
+        </table>
+
+        <h4>5. Graphe</h4>
+        <p>
+            Un graphe est un ensemble de sommets reliés par des arêtes.
+            Il permet de modéliser des réseaux, des routes, des relations
+            ou des dépendances.
+        </p>
+        <table>
+            <tr><th>Notion</th><th>Signification</th></tr>
+            <tr><td>Sommet</td><td>Entité du réseau.</td></tr>
+            <tr><td>Arête</td><td>Lien entre deux sommets.</td></tr>
+            <tr><td>Orienté</td><td>Les liens possèdent un sens.</td></tr>
+            <tr><td>Non orienté</td><td>Les liens sont bidirectionnels.</td></tr>
+            <tr><td>Pondéré</td><td>Les liens possèdent un coût ou un poids.</td></tr>
+            <tr><td>Degré</td><td>Nombre de liens incidents à un sommet, selon le type de graphe.</td></tr>
+        </table>
+
+        <h4>6. Représentation par matrice d'adjacence</h4>
+        <p>
+            Une matrice d'adjacence indique si deux sommets sont reliés.
+            Pour un graphe non pondéré, une case peut contenir 1 si une arête
+            existe et 0 sinon.
+        </p>
+
+        <h4>7. Représentation par listes d'adjacence</h4>
+        <p>
+            Chaque sommet conserve la liste de ses voisins.
+            Cette représentation est souvent adaptée aux graphes peu denses.
+        </p>
+
+        <h4>8. Parcours en largeur (BFS)</h4>
+        <p>
+            BFS utilise une file pour explorer les sommets par distance
+            croissante en nombre d'arêtes depuis le sommet de départ.
+        </p>
+        <pre><code>Créer une file Q
+Marquer depart comme visité
+Enfiler(Q, depart)
+
+TantQue Q n'est pas vide Faire
+    u ← Defiler(Q)
+    Traiter(u)
+
+    Pour chaque voisin v de u Faire
+        Si v n'est pas visité Alors
+            Marquer v comme visité
+            Enfiler(Q, v)
+        FinSi
+    FinPour
+FinTantQue</code></pre>
+
+        <h4>9. Parcours en profondeur (DFS)</h4>
+        <p>
+            DFS explore un chemin aussi loin que possible avant de revenir
+            en arrière. Il peut être réalisé par récursivité ou à l'aide
+            d'une pile.
+        </p>
+        <pre><code>Procédure DFS(u)
+Début
+    Marquer u comme visité
+    Traiter(u)
+
+    Pour chaque voisin v de u Faire
+        Si v n'est pas visité Alors
+            DFS(v)
+        FinSi
+    FinPour
+FinProcédure</code></pre>
+
+        <h4>10. Plus courts chemins</h4>
+        <ul>
+            <li>BFS : plus court chemin en nombre d'arêtes dans un graphe non pondéré.</li>
+            <li>Dijkstra : plus courts chemins avec des poids non négatifs.</li>
+            <li>Bellman-Ford : accepte des poids négatifs et peut détecter certains cycles négatifs accessibles.</li>
+            <li>Floyd-Warshall : calcule les plus courts chemins entre toutes les paires de sommets.</li>
+        </ul>
+        <div class="warning">
+            Dijkstra ne doit pas être appliqué directement à un graphe comportant
+            des poids négatifs arbitraires.
+        </div>
+    </article>
+
+    <article class="module" id="m22">
+        <div class="module-number">MODULE 22</div>
+        <h3>Correction, invariants et preuves</h3>
+
+        <h4>1. Pourquoi démontrer la correction ?</h4>
+        <p>
+            Un algorithme peut produire le bon résultat sur quelques exemples
+            tout en échouant sur d'autres entrées. Une preuve de correction
+            permet de justifier que la solution respecte la spécification
+            pour toutes les entrées autorisées.
+        </p>
+
+        <h4>2. Correction partielle et terminaison</h4>
+        <ul>
+            <li><strong>Correction partielle :</strong> si l'algorithme termine, le résultat satisfait la postcondition.</li>
+            <li><strong>Terminaison :</strong> l'algorithme finit effectivement après un nombre fini d'étapes.</li>
+            <li><strong>Correction totale :</strong> correction partielle et terminaison réunies.</li>
+        </ul>
+
+        <h4>3. Précondition et postcondition</h4>
+        <p>
+            On peut décrire un algorithme avec une assertion avant son exécution
+            et une assertion après son exécution.
+        </p>
+        <div class="formula">{P} Algorithme {Q}</div>
+        <p>
+            P est la précondition et Q la postcondition.
+            Cette notation est appelée triplet de Hoare.
+        </p>
+
+        <h4>4. Invariant de boucle</h4>
+        <p>
+            Un invariant est une propriété qui reste vraie avant et après
+            chaque itération d'une boucle.
+        </p>
+        <p>Pour une somme de 1 à n, un invariant possible est :</p>
+        <div class="formula">Après i itérations : somme = 1 + 2 + ... + i</div>
+
+        <h4>5. Les trois étapes de preuve d'un invariant</h4>
+        <ol>
+            <li><strong>Initialisation :</strong> l'invariant est vrai avant la première itération.</li>
+            <li><strong>Conservation :</strong> si l'invariant est vrai avant une itération, il reste vrai après celle-ci.</li>
+            <li><strong>Terminaison :</strong> à la sortie de la boucle, l'invariant permet de conclure la postcondition.</li>
+        </ol>
+
+        <h4>6. Preuve de terminaison</h4>
+        <p>
+            On utilise souvent une fonction de terminaison, appelée variante,
+            qui prend des valeurs dans un ensemble bien fondé et diminue
+            strictement à chaque itération.
+        </p>
+        <p>Exemple : dans un algorithme de recherche dichotomique, la taille de l'intervalle diminue à chaque étape.</p>
+
+        <h4>7. Preuve par récurrence</h4>
+        <p>Une preuve par récurrence comporte :</p>
+        <ol>
+            <li>Initialisation : vérifier la propriété pour le premier cas.</li>
+            <li>Hérédité : supposer la propriété vraie au rang n et montrer qu'elle l'est au rang n+1.</li>
+            <li>Conclusion : la propriété est vraie pour tous les rangs concernés.</li>
+        </ol>
+
+        <h4>8. Exemple : somme des premiers entiers</h4>
+        <div class="formula">1 + 2 + ... + n = n(n + 1) / 2</div>
+        <p>
+            Cette formule peut être démontrée par récurrence.
+            Elle permet aussi de vérifier un algorithme qui calcule cette somme.
+        </p>
+
+        <h4>9. Tests et preuve</h4>
+        <p>
+            Les tests permettent de détecter des erreurs sur des cas sélectionnés.
+            Ils ne remplacent pas une preuve mathématique de correction.
+            Les deux approches sont complémentaires.
+        </p>
+    </article>
+
+    <article class="module" id="m23">
+        <div class="module-number">MODULE 23</div>
+        <h3>Complexité algorithmique</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            La complexité mesure les ressources nécessaires à un algorithme
+            en fonction de la taille de son entrée. On étudie principalement
+            le temps d'exécution et l'espace mémoire supplémentaire.
+        </p>
+
+        <h4>2. Taille de l'entrée</h4>
+        <p>
+            La taille n dépend du problème : nombre d'éléments d'un tableau,
+            nombre de caractères d'un texte, nombre de sommets d'un graphe,
+            nombre de bits d'un entier, etc.
+        </p>
+
+        <h4>3. Complexité temporelle</h4>
+        <p>
+            Elle décrit l'évolution du nombre d'opérations élémentaires
+            en fonction de la taille de l'entrée.
+        </p>
+
+        <h4>4. Complexité spatiale</h4>
+        <p>
+            Elle mesure la mémoire utilisée. Il faut distinguer la mémoire
+            nécessaire pour stocker l'entrée de la mémoire auxiliaire
+            supplémentaire utilisée par l'algorithme.
+        </p>
+
+        <h4>5. Notation Big-O</h4>
+        <p>
+            O(g(n)) décrit une borne asymptotique supérieure, à un facteur
+            constant près, pour les valeurs suffisamment grandes de n.
+            Elle est souvent utilisée pour exprimer le pire cas.
+        </p>
+
+        <h4>6. Notation Omega et Theta</h4>
+        <ul>
+            <li><strong>Ω(g(n)) :</strong> borne asymptotique inférieure.</li>
+            <li><strong>Θ(g(n)) :</strong> borne asymptotique à la fois supérieure et inférieure.</li>
+        </ul>
+
+        <h4>7. Les principales classes de complexité</h4>
+        <table>
+            <tr><th>Complexité</th><th>Nom</th><th>Exemple courant</th></tr>
+            <tr><td>O(1)</td><td>Constante</td><td>Accès à un élément par indice.</td></tr>
+            <tr><td>O(log n)</td><td>Logarithmique</td><td>Recherche dichotomique.</td></tr>
+            <tr><td>O(n)</td><td>Linéaire</td><td>Parcours d'un tableau.</td></tr>
+            <tr><td>O(n log n)</td><td>Quasi linéaire</td><td>Tri fusion.</td></tr>
+            <tr><td>O(n²)</td><td>Quadratique</td><td>Deux boucles imbriquées sur n.</td></tr>
+            <tr><td>O(n³)</td><td>Cubique</td><td>Trois boucles imbriquées sur n.</td></tr>
+            <tr><td>O(2ⁿ)</td><td>Exponentielle</td><td>Énumération de nombreux sous-ensembles.</td></tr>
+            <tr><td>O(n!)</td><td>Factorielle</td><td>Énumération de toutes les permutations.</td></tr>
+        </table>
+
+        <h4>8. Ordre de croissance</h4>
+        <p>Pour n suffisamment grand, l'ordre usuel est :</p>
+        <div class="formula">1 &lt; log n &lt; n &lt; n log n &lt; n² &lt; n³ &lt; 2ⁿ &lt; n!</div>
+
+        <h4>9. Complexité d'une instruction</h4>
+        <p>
+            Une affectation, une comparaison ou une opération arithmétique
+            simple est souvent considérée O(1) dans un modèle de calcul
+            élémentaire à taille de mot fixe.
+        </p>
+
+        <h4>10. Complexité d'une boucle simple</h4>
+        <pre><code>Pour i de 1 à n Faire
+    opération constante
+FinPour</code></pre>
+        <p>Le bloc est exécuté n fois : complexité O(n).</p>
+
+        <h4>11. Boucles imbriquées</h4>
+        <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à n Faire
+        opération constante
+    FinPour
+FinPour</code></pre>
+        <p>Le bloc intérieur est exécuté n × n fois : O(n²).</p>
+
+        <h4>12. Boucles successives</h4>
+        <pre><code>Pour i de 1 à n Faire
+    opération A
+FinPour
+
+Pour j de 1 à n Faire
+    opération B
+FinPour</code></pre>
+        <p>
+            Le nombre d'opérations est proportionnel à 2n.
+            En notation asymptotique, O(2n) = O(n).
+        </p>
+
+        <h4>13. Boucle logarithmique</h4>
+        <pre><code>i ← 1
+TantQue i < n Faire
+    i ← i * 2
+FinTantQue</code></pre>
+        <p>
+            Après k itérations, i = 2ᵏ.
+            La boucle s'arrête lorsque 2ᵏ atteint n :
+            k est proportionnel à log₂(n). Complexité O(log n).
+        </p>
+
+        <h4>14. Meilleur, moyen et pire cas</h4>
+        <ul>
+            <li><strong>Meilleur cas :</strong> entrée la plus favorable.</li>
+            <li><strong>Cas moyen :</strong> coût moyen selon une distribution d'entrées définie.</li>
+            <li><strong>Pire cas :</strong> entrée la plus défavorable pour une taille donnée.</li>
+        </ul>
+
+        <h4>15. Analyse de la recherche séquentielle</h4>
+        <p>
+            Si la valeur recherchée est au début, une seule comparaison suffit.
+            Si elle est absente ou située à la fin, n comparaisons peuvent être
+            nécessaires.
+        </p>
+
+        <h4>16. Analyse de la recherche dichotomique</h4>
+        <p>
+            À chaque étape, la taille de l'intervalle est divisée par deux.
+            Après k étapes, elle est approximativement n / 2ᵏ.
+            On obtient une complexité O(log n).
+        </p>
+
+        <h4>17. Analyse de la récursivité</h4>
+        <p>
+            Une relation de récurrence décrit le coût d'un algorithme récursif.
+            Par exemple, le tri fusion vérifie :
+        </p>
+        <div class="formula">T(n) = 2T(n/2) + O(n)</div>
+        <p>Sa solution est T(n) = O(n log n).</p>
+
+        <h4>18. Théorème maître</h4>
+        <p>
+            Pour une récurrence de la forme T(n) = aT(n/b) + f(n),
+            avec a ≥ 1 et b &gt; 1, le théorème maître permet de comparer
+            f(n) à n puissance log base b de a.
+        </p>
+        <ul>
+            <li>Si f(n) est polynomialement plus petite, le coût est Θ(n<sup>log<sub>b</sub>a</sup>).</li>
+            <li>Si les deux termes sont du même ordre, un facteur logarithmique apparaît.</li>
+            <li>Si f(n) est polynomialement plus grande et satisfait une condition de régularité, f(n) domine.</li>
+        </ul>
+        <div class="warning">
+            Le théorème maître ne s'applique pas à toutes les récurrences.
+            Il faut vérifier sa forme et ses hypothèses avant de l'utiliser.
+        </div>
+
+        <h4>19. Complexité amortie</h4>
+        <p>
+            L'analyse amortie étudie le coût moyen par opération sur une séquence
+            d'opérations, sans supposer une distribution probabiliste.
+            Elle est utile lorsque certaines opérations sont coûteuses mais rares.
+        </p>
+
+        <h4>20. Optimiser un algorithme</h4>
+        <ul>
+            <li>Éviter les calculs répétés.</li>
+            <li>Choisir une structure adaptée.</li>
+            <li>Réduire les parcours inutiles.</li>
+            <li>Utiliser une recherche plus efficace lorsque les conditions le permettent.</li>
+            <li>Échanger du temps contre de la mémoire lorsque c'est pertinent.</li>
+            <li>Mesurer avant d'optimiser une implémentation réelle.</li>
+        </ul>
+    </article>
+
+    <article class="module" id="m24">
+        <div class="module-number">MODULE 24</div>
+        <h3>Paradigmes et stratégies de conception algorithmique</h3>
+
+        <h4>1. Force brute</h4>
+        <p>
+            La force brute consiste à examiner systématiquement les possibilités
+            jusqu'à trouver une solution. Elle est simple à concevoir mais peut
+            être coûteuse lorsque le nombre de possibilités est très grand.
+        </p>
+
+        <h4>2. Diviser pour régner</h4>
+        <p>
+            Cette stratégie consiste à diviser un problème en sous-problèmes,
+            résoudre chacun d'eux, puis combiner les résultats.
+        </p>
+        <ol>
+            <li>Diviser.</li>
+            <li>Résoudre récursivement.</li>
+            <li>Combiner.</li>
+        </ol>
+        <p>Exemples : tri fusion, recherche dichotomique, certains algorithmes sur les matrices.</p>
+
+        <h4>3. Algorithmes gloutons</h4>
+        <p>
+            Un algorithme glouton fait à chaque étape un choix localement
+            optimal selon une règle. Il ne garantit pas toujours une solution
+            globalement optimale.
+        </p>
+        <p>
+            Pour démontrer sa validité, il faut justifier que les choix locaux
+            peuvent conduire à une solution optimale.
+        </p>
+        <p>Exemples : algorithme de Kruskal, algorithme de Prim, Dijkstra avec poids non négatifs.</p>
+
+        <h4>4. Programmation dynamique</h4>
+        <p>
+            La programmation dynamique résout des sous-problèmes qui se
+            chevauchent et mémorise leurs résultats afin d'éviter les calculs
+            répétés.
+        </p>
+        <p>Deux approches :</p>
+        <ul>
+            <li><strong>Top-down :</strong> récursivité avec mémorisation.</li>
+            <li><strong>Bottom-up :</strong> calcul des sous-problèmes dans un ordre défini.</li>
+        </ul>
+
+        <h4>5. Exemple : Fibonacci par programmation dynamique</h4>
+        <pre><code>Algorithme FibonacciDynamique
+Variables
+    F : Tableau[0..n] d'Entiers
+    i : Entier
+Début
+    F[0] ← 0
+
+    Si n >= 1 Alors
+        F[1] ← 1
+    FinSi
+
+    Pour i de 2 à n Faire
+        F[i] ← F[i-1] + F[i-2]
+    FinPour
+
+    Écrire(F[n])
+Fin</code></pre>
+        <p>Temps : O(n). Mémoire : O(n). Une variante ne conservant que deux valeurs utilise O(1) mémoire auxiliaire.</p>
+
+        <h4>6. Backtracking (retour sur trace)</h4>
+        <p>
+            Le backtracking construit une solution progressivement.
+            Lorsqu'un choix conduit à une situation impossible, l'algorithme
+            revient en arrière pour essayer une autre possibilité.
+        </p>
+        <p>Exemples : Sudoku, labyrinthe, problème des N reines, génération de permutations.</p>
+
+        <h4>7. Branch and Bound</h4>
+        <p>
+            Cette méthode explore des solutions candidates et utilise des bornes
+            pour éliminer des branches qui ne peuvent pas améliorer la meilleure
+            solution connue. Elle est souvent utilisée pour des problèmes
+            d'optimisation combinatoire.
+        </p>
+
+        <h4>8. Deux pointeurs</h4>
+        <p>
+            La technique des deux pointeurs utilise deux positions qui évoluent
+            dans une séquence. Elle permet notamment de traiter certains
+            problèmes de recherche de paires ou de parcours en O(n).
+        </p>
+
+        <h4>9. Fenêtre glissante</h4>
+        <p>
+            Une fenêtre glissante maintient une partie contiguë d'une séquence.
+            Elle est utile pour les sommes, moyennes, sous-chaînes et
+            sous-tableaux répondant à certaines contraintes.
+        </p>
+
+        <h4>10. Préfixes cumulés</h4>
+        <p>
+            Un tableau de sommes préfixes permet de calculer rapidement
+            la somme d'un intervalle.
+        </p>
+        <div class="formula">Préfixe[i] = T[1] + T[2] + ... + T[i]</div>
+        <div class="formula">Somme(l,r) = Préfixe[r] - Préfixe[l-1]</div>
+
+        <h4>11. Réduction d'un problème</h4>
+        <p>
+            Réduire un problème à un autre consiste à transformer une instance
+            du premier problème en une instance du second, tout en préservant
+            la réponse. Cette technique est centrale dans l'étude théorique
+            de la difficulté des problèmes.
+        </p>
+
+        <h4>12. Classes P et NP : introduction</h4>
+        <ul>
+            <li><strong>P :</strong> problèmes de décision résolubles en temps polynomial par une machine déterministe.</li>
+            <li><strong>NP :</strong> problèmes de décision dont une solution candidate peut être vérifiée en temps polynomial.</li>
+            <li><strong>NP-complet :</strong> problèmes appartenant à NP et auxquels tous les problèmes de NP peuvent être réduits en temps polynomial.</li>
+            <li><strong>NP-difficile :</strong> problèmes au moins aussi difficiles que les problèmes de NP selon les réductions considérées.</li>
+        </ul>
+        <div class="warning">
+            La question P = NP est un problème ouvert majeur en informatique
+            théorique. Il ne faut pas présenter une conjecture comme un résultat démontré.
+        </div>
+
+        <h4>13. Comment choisir une stratégie ?</h4>
+        <table>
+            <tr><th>Situation</th><th>Stratégie possible</th></tr>
+            <tr><td>Petit espace de recherche.</td><td>Force brute.</td></tr>
+            <tr><td>Sous-problèmes indépendants.</td><td>Diviser pour régner.</td></tr>
+            <tr><td>Choix locaux démontrés optimaux.</td><td>Glouton.</td></tr>
+            <tr><td>Sous-problèmes qui se chevauchent.</td><td>Programmation dynamique.</td></tr>
+            <tr><td>Construction avec contraintes.</td><td>Backtracking.</td></tr>
+            <tr><td>Optimisation avec bornes.</td><td>Branch and Bound.</td></tr>
+        </table>
+    </article>
+
+    <div class="module">
+        <div class="module-number">SYNTHÈSE</div>
+        <h3>Les connaissances à maîtriser</h3>
+        <p>À la fin de cette formation, tu dois être capable de :</p>
+        <ul>
+            <li>Analyser un énoncé et formaliser les entrées, sorties et contraintes.</li>
+            <li>Écrire un algorithme complet en pseudo-code.</li>
+            <li>Utiliser les variables, constantes, types et opérateurs.</li>
+            <li>Construire des conditions simples, composées et imbriquées.</li>
+            <li>Choisir entre les différentes structures répétitives.</li>
+            <li>Manipuler des tableaux, matrices et chaînes de caractères.</li>
+            <li>Concevoir et utiliser des procédures et fonctions.</li>
+            <li>Comprendre et construire des algorithmes récursifs.</li>
+            <li>Résoudre des problèmes numériques classiques.</li>
+            <li>Effectuer des recherches et des tris.</li>
+            <li>Comprendre les piles, files, listes, arbres et graphes.</li>
+            <li>Justifier la correction d'un algorithme.</li>
+            <li>Calculer et comparer des complexités.</li>
+            <li>Choisir une stratégie de conception adaptée à un problème.</li>
+        </ul>
+    </div>
+
+    <div class="module">
+        <div class="module-number">RESSOURCES COMPLÉMENTAIRES</div>
+        <h3>Références universitaires pour approfondir</h3>
+        <p>
+            Les ressources suivantes permettent d'aller plus loin sur la conception,
+            l'analyse et les structures de données. Elles complètent le cours
+            et proposent des contenus de niveau universitaire.
+        </p>
+        <ul>
+            <li><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" rel="noopener">MIT OpenCourseWare — Introduction to Algorithms</a> : algorithmes, structures de données, tri, graphes, programmation dynamique et complexité.</li>
+            <li><a href="https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2005/" target="_blank" rel="noopener">MIT OpenCourseWare — Introduction to Algorithms (niveau avancé)</a> : analyse asymptotique, récursivité, algorithmes gloutons, graphes et optimisation.</li>
+            <li><a href="https://opendsa.org/" target="_blank" rel="noopener">OpenDSA</a> : manuel interactif sur les structures de données et l'analyse algorithmique.</li>
+            <li><a href="https://visualgo.net/" target="_blank" rel="noopener">VisuAlgo</a> : visualisations de nombreux algorithmes et structures de données.</li>
+        </ul>
+        <div class="note">
+            Le pseudo-code de cette page est une convention pédagogique.
+            Les notations peuvent varier d'un établissement à l'autre.
+            Pour les examens, respecte en priorité la notation enseignée
+            par ton professeur.
+        </div>
+    </div>
+</section>
+
+<section id="exercices">
+    <div class="part-heading">
+        <div class="section-label">Partie 02 / Entraînement</div>
+        <h2>Exercices académiques</h2>
+        <p>
+            Exercices progressifs et problèmes de synthèse.
+            Essaie de rédiger l'algorithme avant d'afficher la correction.
+        </p>
+    </div>
+
+    <div class="note">
+        <strong>Conseil :</strong>
+        Pour chaque exercice, rédige les entrées, les sorties, les contraintes,
+        les variables, le pseudo-code et au moins trois tests.
+        Les exercices avancés demandent aussi une analyse de complexité.
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 01 — Calcul conditionnel</strong><span class="level">FACILE</span></div>
+        <div class="exercise-body">
+            <p>Lire trois nombres réels et afficher le plus grand sans utiliser de fonction prédéfinie de maximum. Traiter également les égalités.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>On initialise le maximum avec le premier nombre, puis on compare les deux autres.</p>
+                <pre><code>Lire(a, b, c)
+maximum ← a
+
+Si b > maximum Alors
+    maximum ← b
+FinSi
+
+Si c > maximum Alors
+    maximum ← c
+FinSi
+
+Écrire(maximum)</code></pre>
+                <p>Complexité : O(1). Tester notamment (4, 9, 2), (7, 7, 7) et (-5, -2, -9).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 02 — Nombre parfait</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Un entier positif est parfait s'il est égal à la somme de ses diviseurs positifs stricts. Écrire un algorithme qui vérifie cette propriété.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Lire(n)
+somme ← 0
+
+Pour i de 1 à n DIV 2 Faire
+    Si n MOD i = 0 Alors
+        somme ← somme + i
+    FinSi
+FinPour
+
+Si n > 1 ET somme = n Alors
+    Écrire("Parfait")
+Sinon
+    Écrire("Non parfait")
+FinSi</code></pre>
+                <p>Complexité : O(n). Exemple : 6 = 1 + 2 + 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 03 — Deuxième plus grande valeur distincte</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Étant donné un tableau d'entiers, déterminer la deuxième plus grande valeur distincte sans trier le tableau. Signaler si elle n'existe pas.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>trouveMax ← Faux
+trouveDeuxieme ← Faux
+
+Pour i de 1 à n Faire
+    Si trouveMax = Faux OU T[i] > max1 Alors
+        Si trouveMax = Vrai Alors
+            max2 ← max1
+            trouveDeuxieme ← Vrai
+        FinSi
+        max1 ← T[i]
+        trouveMax ← Vrai
+    SinonSi T[i] < max1 Alors
+        Si trouveDeuxieme = Faux OU T[i] > max2 Alors
+            max2 ← T[i]
+            trouveDeuxieme ← Vrai
+        FinSi
+    FinSi
+FinPour
+
+Si trouveDeuxieme Alors
+    Écrire(max2)
+Sinon
+    Écrire("Valeur distincte inexistante")
+FinSi</code></pre>
+                <p>Complexité : O(n) en temps et O(1) en mémoire auxiliaire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 04 — Fréquence des éléments</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Pour chaque valeur distincte d'un tableau, afficher le nombre de ses occurrences sans afficher deux fois la même valeur.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Pour i de 1 à n Faire
+    dejaVu ← Faux
+
+    Pour j de 1 à i - 1 Faire
+        Si T[j] = T[i] Alors
+            dejaVu ← Vrai
+        FinSi
+    FinPour
+
+    Si dejaVu = Faux Alors
+        compteur ← 0
+
+        Pour j de 1 à n Faire
+            Si T[j] = T[i] Alors
+                compteur ← compteur + 1
+            FinSi
+        FinPour
+
+        Écrire(T[i], compteur)
+    FinSi
+FinPour</code></pre>
+                <p>Complexité : O(n²). Une table de hachage permet généralement d'obtenir un traitement moyen en O(n).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 05 — Fusion de deux tableaux triés</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Deux tableaux A et B sont triés par ordre croissant. Construire un tableau C contenant tous leurs éléments dans l'ordre croissant, sans effectuer un nouveau tri complet.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>i ← 1
+j ← 1
+k ← 1
+
+TantQue i <= n ET j <= m Faire
+    Si A[i] <= B[j] Alors
+        C[k] ← A[i]
+        i ← i + 1
+    Sinon
+        C[k] ← B[j]
+        j ← j + 1
+    FinSi
+    k ← k + 1
+FinTantQue
+
+TantQue i <= n Faire
+    C[k] ← A[i]
+    i ← i + 1
+    k ← k + 1
+FinTantQue
+
+TantQue j <= m Faire
+    C[k] ← B[j]
+    j ← j + 1
+    k ← k + 1
+FinTantQue</code></pre>
+                <p>Complexité : O(n + m).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 06 — Rotation circulaire</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Effectuer une rotation à droite d'un tableau de k positions. Proposer une méthode efficace même lorsque k est supérieur à n.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>k ← k MOD n
+
+Inverser(T, 1, n)
+Inverser(T, 1, k)
+Inverser(T, k + 1, n)</code></pre>
+                <p>La procédure Inverser échange les éléments aux deux extrémités jusqu'à atteindre le milieu. Complexité : O(n) en temps et O(1) en mémoire auxiliaire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 07 — Vérification d'un tableau trié</strong><span class="level">FACILE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer si un tableau est trié par ordre croissant au sens large, c'est-à-dire si T[i] ≤ T[i+1] pour chaque position valide.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>trie ← Vrai
+i ← 1
+
+TantQue i < n ET trie Faire
+    Si T[i] > T[i + 1] Alors
+        trie ← Faux
+    Sinon
+        i ← i + 1
+    FinSi
+FinTantQue
+
+Écrire(trie)</code></pre>
+                <p>Complexité : O(n) au pire, O(1) au meilleur cas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 08 — Recherche de paire</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Dans un tableau trié, déterminer s'il existe deux éléments distincts dont la somme est égale à une valeur S. Proposer une solution en O(n).</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>gauche ← 1
+droite ← n
+trouve ← Faux
+
+TantQue gauche < droite ET trouve = Faux Faire
+    somme ← T[gauche] + T[droite]
+
+    Si somme = S Alors
+        trouve ← Vrai
+    SinonSi somme < S Alors
+        gauche ← gauche + 1
+    Sinon
+        droite ← droite - 1
+    FinSi
+FinTantQue
+
+Écrire(trouve)</code></pre>
+                <p>Complexité : O(n) en temps et O(1) en mémoire auxiliaire. Le tableau doit être trié.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 09 — Somme maximale d'un sous-tableau contigu</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer la somme maximale d'un sous-tableau contigu non vide. Les éléments peuvent être négatifs.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Algorithme de Kadane :</p>
+                <pre><code>courant ← T[1]
+maximum ← T[1]
+
+Pour i de 2 à n Faire
+    courant ← Maximum(T[i], courant + T[i])
+
+    Si courant > maximum Alors
+        maximum ← courant
+    FinSi
+FinPour
+
+Écrire(maximum)</code></pre>
+                <p>Complexité : O(n) en temps et O(1) en mémoire auxiliaire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 10 — Recherche dichotomique récursive</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Écrire une fonction récursive qui recherche une valeur dans un tableau trié et retourne son indice ou 0 si elle est absente.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Fonction RechercheRec(T, gauche, droite, x) : Entier
+Début
+    Si gauche > droite Alors
+        Retourner 0
+    FinSi
+
+    milieu ← (gauche + droite) DIV 2
+
+    Si T[milieu] = x Alors
+        Retourner milieu
+    SinonSi T[milieu] < x Alors
+        Retourner RechercheRec(T, milieu + 1, droite, x)
+    Sinon
+        Retourner RechercheRec(T, gauche, milieu - 1, x)
+    FinSi
+FinFonction</code></pre>
+                <p>Complexité : O(log n) en temps et O(log n) en mémoire de pile.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 11 — Multiplication de matrices</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Écrire un algorithme qui multiplie une matrice A de dimension 2 × 3 par une matrice B de dimension 3 × 2. Préciser la dimension du résultat.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Pour i de 1 à 2 Faire
+    Pour j de 1 à 2 Faire
+        C[i,j] ← 0
+
+        Pour k de 1 à 3 Faire
+            C[i,j] ← C[i,j] + A[i,k] * B[k,j]
+        FinPour
+    FinPour
+FinPour</code></pre>
+                <p>Le résultat est une matrice 2 × 2. Complexité de ce cas : O(2 × 2 × 3).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 12 — Matrice symétrique</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Écrire un algorithme qui vérifie si une matrice carrée est symétrique, c'est-à-dire si M[i,j] = M[j,i].</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>symetrique ← Vrai
+i ← 1
+
+TantQue i <= n ET symetrique Faire
+    j ← i + 1
+
+    TantQue j <= n ET symetrique Faire
+        Si M[i,j] <> M[j,i] Alors
+            symetrique ← Faux
+        FinSi
+        j ← j + 1
+    FinTantQue
+
+    i ← i + 1
+FinTantQue
+
+Écrire(symetrique)</code></pre>
+                <p>Complexité : O(n²). On ne compare que les éléments au-dessus de la diagonale principale.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 13 — Vérification d'un palindrome</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Écrire un algorithme qui vérifie si une chaîne est un palindrome sans construire une seconde chaîne inversée.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>gauche ← 1
+droite ← Longueur(texte)
+palindrome ← Vrai
+
+TantQue gauche < droite ET palindrome Faire
+    Si texte[gauche] <> texte[droite] Alors
+        palindrome ← Faux
+    Sinon
+        gauche ← gauche + 1
+        droite ← droite - 1
+    FinSi
+FinTantQue
+
+Écrire(palindrome)</code></pre>
+                <p>Complexité : O(n) en temps et O(1) en mémoire supplémentaire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 14 — PGCD et PPCM</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Lire deux entiers strictement positifs et calculer leur PGCD puis leur PPCM en réutilisant une fonction.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Fonction PGCD(a, b : Entier) : Entier
+Variables
+    r : Entier
+Début
+    TantQue b <> 0 Faire
+        r ← a MOD b
+        a ← b
+        b ← r
+    FinTantQue
+    Retourner a
+FinFonction
+
+Lire(a, b)
+g ← PGCD(a, b)
+p ← (a DIV g) * b
+
+Écrire(g, p)</code></pre>
+                <p>Complexité du PGCD : O(log(min(a,b))). Le calcul du PPCM évite de multiplier avant la division afin de limiter le risque de débordement.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 15 — Tri par insertion</strong><span class="level">MOYEN</span></div>
+        <div class="exercise-body">
+            <p>Écrire le tri par insertion et expliquer pourquoi il fonctionne correctement même lorsque les valeurs sont répétées.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Pour i de 2 à n Faire
+    cle ← T[i]
+    j ← i - 1
+
+    TantQue j >= 1 ET T[j] > cle Faire
+        T[j + 1] ← T[j]
+        j ← j - 1
+    FinTantQue
+
+    T[j + 1] ← cle
+FinPour</code></pre>
+                <p>Les éléments strictement supérieurs sont décalés. Les éléments égaux ne sont pas déplacés l'un devant l'autre : le tri est stable. Pire cas : O(n²).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 16 — Parenthèses équilibrées</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Vérifier qu'une expression composée de parenthèses, crochets et accolades est correctement équilibrée et imbriquée.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Créer une pile vide P
+valide ← Vrai
+
+Pour chaque caractère c Faire
+    Si c = '(' OU c = '[' OU c = '{' Alors
+        Empiler(P, c)
+    SinonSi c = ')' OU c = ']' OU c = '}' Alors
+        Si P est vide Alors
+            valide ← Faux
+        Sinon
+            ouvrant ← Depiler(P)
+
+            Si (ouvrant = '(' ET c <> ')') OU
+               (ouvrant = '[' ET c <> ']') OU
+               (ouvrant = '{' ET c <> '}') Alors
+                valide ← Faux
+            FinSi
+        FinSi
+    FinSi
+FinPour
+
+Si P n'est pas vide Alors
+    valide ← Faux
+FinSi
+
+Écrire(valide)</code></pre>
+                <p>Complexité : O(n) en temps et O(n) en mémoire dans le pire cas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 17 — Parcours en largeur d'un graphe</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Écrire un parcours BFS à partir d'un sommet de départ, en évitant de visiter plusieurs fois le même sommet.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Créer une file Q vide
+Pour chaque sommet u Faire
+    visite[u] ← Faux
+FinPour
+
+visite[s] ← Vrai
+Enfiler(Q, s)
+
+TantQue Q n'est pas vide Faire
+    u ← Defiler(Q)
+    Écrire(u)
+
+    Pour chaque voisin v de u Faire
+        Si visite[v] = Faux Alors
+            visite[v] ← Vrai
+            Enfiler(Q, v)
+        FinSi
+    FinPour
+FinTantQue</code></pre>
+                <p>Avec une liste d'adjacence, la complexité est O(V + E), où V est le nombre de sommets et E le nombre d'arêtes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 18 — Plus court chemin non pondéré</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>À partir d'un graphe non pondéré, calculer la distance minimale en nombre d'arêtes entre un sommet source et tous les autres sommets.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Pour chaque sommet v Faire
+    distance[v] ← INFINI
+FinPour
+
+distance[source] ← 0
+Créer une file Q
+Enfiler(Q, source)
+
+TantQue Q n'est pas vide Faire
+    u ← Defiler(Q)
+
+    Pour chaque voisin v de u Faire
+        Si distance[v] = INFINI Alors
+            distance[v] ← distance[u] + 1
+            precedent[v] ← u
+            Enfiler(Q, v)
+        FinSi
+    FinPour
+FinTantQue</code></pre>
+                <p>BFS calcule ces distances minimales dans un graphe non pondéré. Complexité : O(V + E).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 19 — Programmation dynamique : rendu de monnaie</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Étant donné des pièces de valeurs positives et un montant S, calculer le nombre minimal de pièces nécessaires. Si le montant est impossible à former, signaler l'impossibilité.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>dp[0] ← 0
+
+Pour s de 1 à S Faire
+    dp[s] ← INFINI
+FinPour
+
+Pour s de 1 à S Faire
+    Pour chaque pièce c Faire
+        Si c <= s ET dp[s-c] <> INFINI Alors
+            dp[s] ← Minimum(dp[s], dp[s-c] + 1)
+        FinSi
+    FinPour
+FinPour
+
+Si dp[S] = INFINI Alors
+    Écrire("Impossible")
+Sinon
+    Écrire(dp[S])
+FinSi</code></pre>
+                <p>Complexité : O(S × nombre de pièces). Cette méthode suppose des valeurs entières positives et un montant raisonnablement petit.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 20 — Sous-séquence de somme donnée</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer s'il existe un sous-ensemble d'éléments d'un tableau d'entiers positifs dont la somme est égale à S.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>dp[0] ← Vrai
+
+Pour s de 1 à S Faire
+    dp[s] ← Faux
+FinPour
+
+Pour i de 1 à n Faire
+    Pour s de S à T[i] Pas -1 Faire
+        Si dp[s - T[i]] = Vrai Alors
+            dp[s] ← Vrai
+        FinSi
+    FinPour
+FinPour
+
+Écrire(dp[S])</code></pre>
+                <p>Complexité : O(nS) en temps et O(S) en mémoire. Il s'agit d'une complexité pseudo-polynomiale.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 21 — Nombre de chemins dans une grille</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Calculer le nombre de chemins permettant d'aller du coin supérieur gauche au coin inférieur droit d'une grille, en ne se déplaçant que vers la droite ou vers le bas.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Pour i de 1 à n Faire
+    dp[i,1] ← 1
+FinPour
+
+Pour j de 1 à m Faire
+    dp[1,j] ← 1
+FinPour
+
+Pour i de 2 à n Faire
+    Pour j de 2 à m Faire
+        dp[i,j] ← dp[i-1,j] + dp[i,j-1]
+    FinPour
+FinPour
+
+Écrire(dp[n,m])</code></pre>
+                <p>Complexité : O(nm) en temps et O(nm) en mémoire. Pour une grille avec obstacles, les cases bloquées doivent être initialisées à zéro.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 22 — Sous-chaîne sans répétition</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer la longueur de la plus longue sous-chaîne contiguë ne contenant aucun caractère répété. Décrire une solution avec fenêtre glissante et table de dernières positions.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>gauche ← 1
+maximum ← 0
+
+Pour droite de 1 à Longueur(texte) Faire
+    c ← texte[droite]
+
+    Si dernierePosition[c] >= gauche Alors
+        gauche ← dernierePosition[c] + 1
+    FinSi
+
+    dernierePosition[c] ← droite
+    maximum ← Maximum(maximum, droite - gauche + 1)
+FinPour
+
+Écrire(maximum)</code></pre>
+                <p>Complexité moyenne O(n) avec une structure d'association efficace. La table des positions doit être initialisée correctement.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 23 — Détection de cycle dans un graphe orienté</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Proposer une méthode utilisant DFS pour détecter un cycle dans un graphe orienté.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>// Trois états : non visité, en cours, terminé
+
+Fonction DetecterCycle(u)
+    etat[u] ← EN_COURS
+
+    Pour chaque voisin v de u Faire
+        Si etat[v] = EN_COURS Alors
+            Retourner Vrai
+        FinSi
+
+        Si etat[v] = NON_VISITE Alors
+            Si DetecterCycle(v) = Vrai Alors
+                Retourner Vrai
+            FinSi
+        FinSi
+    FinPour
+
+    etat[u] ← TERMINE
+    Retourner Faux
+FinFonction</code></pre>
+                <p>Il faut lancer la recherche depuis chaque sommet encore non visité. Complexité : O(V + E).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 24 — Tri topologique</strong><span class="level">DIFFICILE</span></div>
+        <div class="exercise-body">
+            <p>Dans un graphe orienté acyclique, produire un ordre des sommets tel que chaque sommet précède ses successeurs selon les contraintes de dépendance.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Une solution utilise les degrés entrants et une file :</p>
+                <pre><code>Calculer le degré entrant de chaque sommet
+Créer une file Q
+
+Pour chaque sommet u Faire
+    Si degreEntrant[u] = 0 Alors
+        Enfiler(Q, u)
+    FinSi
+FinPour
+
+compteur ← 0
+
+TantQue Q n'est pas vide Faire
+    u ← Defiler(Q)
+    Écrire(u)
+    compteur ← compteur + 1
+
+    Pour chaque voisin v de u Faire
+        degreEntrant[v] ← degreEntrant[v] - 1
+
+        Si degreEntrant[v] = 0 Alors
+            Enfiler(Q, v)
+        FinSi
+    FinPour
+FinTantQue
+
+Si compteur < nombreSommets Alors
+    Écrire("Le graphe contient un cycle")
+FinSi</code></pre>
+                <p>Complexité : O(V + E).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 25 — Analyse de complexité</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer la complexité temporelle de l'algorithme suivant et justifier la réponse :</p>
+            <pre><code>i ← 1
+TantQue i <= n Faire
+    Pour j de 1 à n Faire
+        opération constante
+    FinPour
+    i ← i * 2
+FinTantQue</code></pre>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>La boucle extérieure effectue Θ(log n) itérations car i double à chaque passage. La boucle intérieure effectue n opérations à chaque itération extérieure.</p>
+                <div class="formula">T(n) = Θ(n log n)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 26 — Analyse d'une somme double</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Déterminer le nombre exact d'exécutions de l'instruction intérieure et sa complexité :</p>
+            <pre><code>Pour i de 1 à n Faire
+    Pour j de 1 à i Faire
+        opération constante
+    FinPour
+FinPour</code></pre>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Le nombre total d'exécutions est :</p>
+                <div class="formula">1 + 2 + ... + n = n(n + 1) / 2</div>
+                <p>Donc la complexité est Θ(n²).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 27 — Invariant de boucle</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Donner un invariant et démontrer la correction de l'algorithme qui calcule la somme des n premiers entiers positifs.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Algorithme :</p>
+                <pre><code>somme ← 0
+
+Pour i de 1 à n Faire
+    somme ← somme + i
+FinPour</code></pre>
+                <p><strong>Invariant :</strong> après i itérations, somme = i(i+1)/2.</p>
+                <p><strong>Initialisation :</strong> avant la première itération, somme = 0, ce qui correspond à la somme vide.</p>
+                <p><strong>Conservation :</strong> si somme = i(i+1)/2, alors après l'ajout de i+1, la nouvelle somme vaut (i+1)(i+2)/2.</p>
+                <p><strong>Conclusion :</strong> après n itérations, somme = n(n+1)/2.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 28 — Comparaison de deux algorithmes</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Un algorithme A réalise 100n opérations. Un algorithme B réalise n² opérations. À partir de quelle taille n l'algorithme A effectue-t-il strictement moins d'opérations que B ?</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>On cherche 100n &lt; n². Pour n positif, on divise par n : 100 &lt; n. Donc A réalise strictement moins d'opérations lorsque n &gt; 100.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 29 — Optimisation d'un comptage</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Un algorithme compare chaque élément d'un tableau à tous les autres pour détecter les doublons. Proposer une solution moyenne plus efficace avec une structure de hachage et analyser les coûts.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <pre><code>Créer un ensemble vide V
+doublon ← Faux
+
+Pour i de 1 à n Faire
+    Si T[i] appartient à V Alors
+        doublon ← Vrai
+    Sinon
+        Ajouter T[i] à V
+    FinSi
+FinPour
+
+Écrire(doublon)</code></pre>
+                <p>Complexité moyenne : O(n) en temps et O(n) en mémoire. Le pire cas dépend de l'implémentation de la structure de hachage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 30 — Comparer force brute et programmation dynamique</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Pour le problème du rendu de monnaie, expliquer pourquoi une solution récursive naïve peut recalculer les mêmes sous-problèmes et comment la programmation dynamique réduit ce travail.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Une solution récursive naïve examine plusieurs combinaisons et peut recalculer plusieurs fois le même montant restant. La programmation dynamique conserve le meilleur résultat déjà calculé pour chaque montant.</p>
+                <p>Pour un montant S et c types de pièces, la méthode présentée dans le cours utilise O(S × c) opérations et O(S) mémoire, au lieu d'une exploration exponentielle potentielle.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 31 — Preuve de recherche dichotomique</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Définir un invariant pour la recherche dichotomique et expliquer pourquoi la valeur recherchée ne peut pas être éliminée si elle est présente dans le tableau trié.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p><strong>Invariant :</strong> si x appartient au tableau, alors une occurrence de x se trouve dans l'intervalle [gauche, droite].</p>
+                <p>Si T[milieu] &lt; x, toutes les positions jusqu'à milieu sont inférieures ou égales à T[milieu] et ne peuvent contenir x. On conserve donc la moitié droite. Le raisonnement est symétrique lorsque T[milieu] &gt; x.</p>
+                <p>Quand l'intervalle devient vide, x est absent. La taille de l'intervalle diminue géométriquement, ce qui assure la terminaison.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 32 — Complexité d'un algorithme récursif</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Résoudre la récurrence T(n) = 2T(n/2) + n, avec T(1) = 1, en utilisant un arbre de récursion ou le théorème maître.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>À chaque niveau, le coût total de la division et du traitement est proportionnel à n. La profondeur de l'arbre est log₂(n).</p>
+                <div class="formula">T(n) = Θ(n log n)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 33 — Ordonnancement de tâches</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>On dispose de tâches avec des dépendances : une tâche ne peut commencer qu'après la fin de certaines autres tâches. Modéliser le problème par un graphe et déterminer si un ordre d'exécution valide existe.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Construire un graphe orienté où une arête u → v signifie que u doit être exécutée avant v. Effectuer un tri topologique. Si tous les sommets sont traités, un ordre valide existe. Sinon, le graphe contient un cycle et les dépendances sont incompatibles.</p>
+                <p>Complexité : O(V + E).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 34 — Algorithme glouton et preuve</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>Pour sélectionner le maximum d'activités compatibles, chaque activité étant définie par une heure de début et une heure de fin, proposer une stratégie gloutonne et expliquer le critère de choix.</p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Trier les activités par heure de fin croissante. Sélectionner la première activité, puis choisir chaque activité dont l'heure de début est supérieure ou égale à l'heure de fin de la dernière activité sélectionnée.</p>
+                <p>Le choix d'une activité terminant le plus tôt laisse le plus de temps possible pour les activités suivantes. La preuve complète repose sur un argument d'échange. Complexité : O(n log n) avec le tri, puis O(n) pour le parcours.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="exercise-head"><strong>Exercice 35 — Problème de synthèse</strong><span class="level">UNIVERSITAIRE</span></div>
+        <div class="exercise-body">
+            <p>
+                On dispose d'un tableau de n entiers. Concevoir une solution qui :
+                vérifie les données, supprime les doublons, trie les valeurs
+                distinctes, recherche une valeur x et indique sa position.
+                Donner une analyse de complexité et discuter le choix des structures.
+            </p>
+            <button class="solution-btn" onclick="toggleSolution(this)">Afficher la solution</button>
+            <div class="solution">
+                <p>Une approche consiste à insérer les éléments dans un ensemble pour éliminer les doublons, puis à construire un tableau à partir des valeurs distinctes et à le trier.</p>
+                <pre><code>Créer un ensemble V vide
+
+Pour i de 1 à n Faire
+    Ajouter T[i] à V
+FinPour
+
+Construire U à partir de V
+Trier(U)
+position ← RechercheDichotomique(U, x)
+
+Si position = 0 Alors
+    Écrire("Absent")
+Sinon
+    Écrire(position)
+FinSi</code></pre>
+                <p>Avec un ensemble de hachage, l'élimination des doublons est O(n) en moyenne. Le tri de k valeurs distinctes coûte O(k log k). La recherche dichotomique coûte O(log k). Le coût global moyen est donc O(n + k log k), avec O(k) mémoire, sous les hypothèses usuelles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+</div>
+
+<section class="quiz-section" id="quiz">
+    <div class="quiz-container">
+        <div class="section-label">Partie 03 / Évaluation</div>
+        <h2 class="section-title" style="color:white">Quiz académique d'algorithmique</h2>
+        <p style="color:#d0ceca">
+            Une banque de 200 questions générées à partir de situations
+            algorithmiques variées. Chaque évaluation sélectionne aléatoirement
+            entre 20 et 40 questions sans répétition.
+        </p>
+
+        <div class="quiz-box" id="quizConfig">
+            <h3 style="font-size:22px;margin-bottom:10px">Préparer votre évaluation</h3>
+            <p style="color:#777;margin-bottom:22px">
+                Choisissez le nombre de questions. Chaque réponse doit être
+                validée avant de passer à la suivante.
+            </p>
+            <div class="quiz-config">
+                <div>
+                    <label for="questionCount">Nombre de questions</label>
+                    <select id="questionCount">
+                        <option value="20">20 questions</option>
+                        <option value="25">25 questions</option>
+                        <option value="30" selected>30 questions</option>
+                        <option value="35">35 questions</option>
+                        <option value="40">40 questions</option>
+                    </select>
+                </div>
+                <button class="primary-btn" onclick="startQuiz()">Commencer l'évaluation</button>
+            </div>
+            <p style="font-size:12px;color:#888;margin-top:20px">
+                Niveau : universitaire · Questions : 200 · Choix multiples · Correction détaillée
+            </p>
+        </div>
+
+        <div class="quiz-box" id="quizArea" style="display:none">
+            <div class="quiz-top">
+                <strong id="questionNumber">Question 1 / 30</strong>
+                <span id="quizCategory" style="color:var(--orange);font-size:12px;font-weight:bold"></span>
+            </div>
+            <div class="quiz-progress"><div id="quizProgressBar" style="width:0%"></div></div>
+            <div class="question" id="questionText"></div>
+            <div id="optionsArea"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="quiz-actions">
+                <span id="answeredStatus" style="font-size:12px;color:#777"></span>
+                <button class="primary-btn" id="verifyBtn" onclick="verifyAnswer()">Vérifier</button>
+                <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" style="display:none">Question suivante</button>
+            </div>
+        </div>
+
+        <div class="quiz-box" id="quizResult" style="display:none">
+            <h3 style="text-align:center">Résultat de l'évaluation</h3>
+            <div class="result-score" id="scoreDisplay">0/30</div>
+            <div class="result-summary" id="resultSummary"></div>
+            <div id="wrongAnswers"></div>
+            <div style="text-align:center;margin-top:25px">
+                <button class="primary-btn" onclick="restartQuiz()">Recommencer une évaluation</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer><div class="wrap footer"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

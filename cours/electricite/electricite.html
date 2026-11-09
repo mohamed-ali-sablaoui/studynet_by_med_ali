@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet Arduino Uno, exercices pratiques, projets guidés et quiz interactif.">
+<title>Électricité & Arduino Uno | StudyNet</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">Study<span>Net</span></a>
+    <nav class="navlinks" aria-label="Navigation principale">
+      <a href="#cours">Cours</a><a href="#exercices">Exercices & projets</a><a href="#quiz">Quiz</a>
+      <a class="back" href="../index.html">← Accueil</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Électricité · Électronique · Programmation embarquée</span>
+    <h1>Arduino Uno :<br><span>de zéro à vos projets.</span></h1>
+    <p>Un parcours progressif pour comprendre la carte Arduino Uno, réaliser des branchements sûrs, programmer des composants électroniques et construire des projets autonomes.</p>
+    <div class="hero-stats">
+      <div class="stat"><strong>01</strong><small>Carte principale : Uno</small></div>
+      <div class="stat"><strong>03</strong><small>Parties d’apprentissage</small></div>
+      <div class="stat"><strong>20–40</strong><small>Questions par quiz</small></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#cours">Commencer le cours ↓</a>
+      <a class="btn btn-light" href="#exercices">Voir les projets</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cours">
+<div class="wrap">
+  <div class="section-head">
+    <span class="kicker">Partie 01 · Apprendre</span>
+    <h2>Cours complet : Arduino Uno</h2>
+    <p>Lis les notions dans l’ordre, observe les schémas et teste chaque programme sur une vraie carte lorsque le matériel est disponible.</p>
+  </div>
+  <div class="subnav">
+    <a href="#arduino">01 · Présentation</a><a href="#materiel">02 · Matériel</a><a href="#branchement">03 · Branchement</a>
+    <a href="#programmation">04 · Programmation</a><a href="#entrees-sorties">05 · Entrées / sorties</a>
+    <a href="#communication">06 · Communication</a><a href="#bonnes-pratiques">07 · Sécurité</a>
+  </div>
+
+  <div class="notice"><strong>Objectif :</strong> à la fin du cours, tu dois savoir choisir une broche, lire une fiche technique, câbler un montage simple, écrire et téléverser un programme, tester les résultats et corriger les erreurs courantes.</div>
+
+  <article class="lesson-block" id="arduino">
+    <h3>1. Qu’est-ce qu’Arduino Uno ?</h3>
+    <p>Arduino Uno est une carte électronique programmable. Elle contient un microcontrôleur qui exécute le programme enregistré dans sa mémoire. Elle peut lire des informations provenant de capteurs (bouton, lumière, température…) puis commander des composants (LED, buzzer, moteur…) selon les instructions du programme.</p>
+    <div class="grid-3">
+      <div class="card"><span class="tag">ENTRÉE</span><h3>Mesurer / détecter</h3><p>Un bouton, un potentiomètre ou un capteur fournit une information à la carte.</p></div>
+      <div class="card"><span class="tag">TRAITEMENT</span><h3>Décider</h3><p>Le microcontrôleur lit les valeurs et applique la logique du programme.</p></div>
+      <div class="card"><span class="tag">SORTIE</span><h3>Agir</h3><p>Une LED s’allume, un buzzer sonne ou un moteur reçoit une commande adaptée.</p></div>
+    </div>
+    <h3 style="margin-top:22px">Les éléments principaux de la carte</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 760 370" role="img" aria-label="Schéma simplifié des éléments d'une carte Arduino Uno">
+        <rect x="105" y="45" width="550" height="280" rx="25" fill="#168c69" stroke="#12664e" stroke-width="5"/>
+        <rect x="285" y="130" width="190" height="105" rx="8" fill="#20242b" stroke="#111" stroke-width="4"/>
+        <text x="380" y="174" fill="white" text-anchor="middle" font-size="17" font-weight="bold">ATmega328P</text>
+        <text x="380" y="198" fill="#ddd" text-anchor="middle" font-size="12">Microcontrôleur</text>
+        <rect x="125" y="125" width="75" height="90" rx="7" fill="#d5d5d5" stroke="#555" stroke-width="3"/>
+        <text x="162" y="162" text-anchor="middle" font-size="12" fill="#222">USB</text><text x="162" y="179" text-anchor="middle" font-size="10" fill="#222">Type B</text>
+        <rect x="555" y="120" width="65" height="100" rx="8" fill="#d9d9d9" stroke="#555" stroke-width="3"/>
+        <text x="587" y="165" text-anchor="middle" font-size="11" fill="#222">Jack</text><text x="587" y="181" text-anchor="middle" font-size="10" fill="#222">DC</text>
+        <rect x="295" y="65" width="170" height="30" rx="5" fill="#222"/>
+        <text x="380" y="85" fill="white" text-anchor="middle" font-size="13">Broches numériques</text>
+        <rect x="295" y="270" width="170" height="30" rx="5" fill="#222"/>
+        <text x="380" y="290" fill="white" text-anchor="middle" font-size="13">Broches analogiques</text>
+        <circle cx="235" cy="265" r="15" fill="#e8b93d" stroke="#8c6a0c" stroke-width="3"/>
+        <text x="235" y="269" text-anchor="middle" font-size="9" fill="#222">LED</text>
+        <path d="M105 95 L35 35" stroke="#222" stroke-width="2"/><text x="8" y="25" font-size="14" fill="#222">USB</text>
+        <path d="M585 120 L690 70" stroke="#222" stroke-width="2"/><text x="665" y="57" font-size="14" fill="#222">Alimentation</text>
+        <path d="M465 80 L570 25" stroke="#222" stroke-width="2"/><text x="530" y="18" font-size="14" fill="#222">Numériques</text>
+        <path d="M465 285 L570 345" stroke="#222" stroke-width="2"/><text x="565" y="362" font-size="14" fill="#222">Analogiques</text>
+      </svg>
+      <p class="muted" style="font-size:12px;text-align:center">Illustration pédagogique simplifiée, non destinée au câblage réel.</p>
+    </div>
+    <div class="grid-2" style="margin-top:18px">
+      <div class="card"><h3>Microcontrôleur</h3><p>L’ATmega328P exécute le programme. Il gère les entrées, les sorties, les temporisations et les communications.</p></div>
+      <div class="card"><h3>Port USB</h3><p>Il sert généralement à téléverser le programme depuis l’ordinateur et à alimenter la carte pendant les essais.</p></div>
+      <div class="card"><h3>Régulateur et alimentation</h3><p>Ils permettent d’alimenter la carte dans les limites prévues. Respecte toujours les caractéristiques officielles de la carte.</p></div>
+      <div class="card"><h3>Bouton RESET</h3><p>Il redémarre le programme depuis le début. Il n’efface pas le programme téléversé.</p></div>
+    </div>
+  </article>
+
+  <article class="lesson-block" id="materiel">
+    <h3>2. Les broches et caractéristiques importantes</h3>
+    <p>Sur l’Arduino Uno R3 classique, les broches numériques sont numérotées de 0 à 13 et les entrées analogiques de A0 à A5. La logique de la carte fonctionne en 5 V. Une broche n’est pas une alimentation puissante : elle sert à transmettre un signal et possède une limite de courant.</p>
+    <div class="pin-grid">
+      <div class="pin"><strong>D0 et D1</strong>Communication série RX/TX. Évite de les utiliser pour d’autres composants lorsque tu utilises le port série.</div>
+      <div class="pin"><strong>D2 à D13</strong>Entrées/sorties numériques. D3, D5, D6, D9, D10 et D11 fournissent le PWM sur Uno R3.</div>
+      <div class="pin"><strong>A0 à A5</strong>Entrées analogiques pour mesurer une tension dans la plage autorisée.</div>
+      <div class="pin"><strong>5V / 3.3V</strong>Sorties d’alimentation régulées : ce ne sont pas des broches de signal.</div>
+      <div class="pin"><strong>GND</strong>Masse électrique. Les modules reliés doivent généralement partager une masse commune.</div>
+      <div class="pin"><strong>VIN</strong>Entrée d’alimentation externe prévue selon les caractéristiques de la carte.</div>
+      <div class="pin"><strong>AREF</strong>Référence analogique externe, à utiliser seulement si le montage et le code le prévoient.</div>
+      <div class="pin"><strong>SDA / SCL</strong>Lignes I²C (également disponibles sur A4 / A5 sur Uno R3).</div>
+    </div>
+    <table>
+      <thead><tr><th>Élément</th><th>Rôle</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td>LED</td><td>Émettre de la lumière</td><td>Indicateur d’état</td></tr>
+        <tr><td>Résistance</td><td>Limiter le courant</td><td>Résistance en série avec une LED</td></tr>
+        <tr><td>Bouton poussoir</td><td>Détecter une action</td><td>Démarrer / arrêter</td></tr>
+        <tr><td>Potentiomètre</td><td>Fournir une tension variable</td><td>Régler une luminosité</td></tr>
+        <tr><td>Capteur</td><td>Mesurer une grandeur</td><td>Lumière, température, distance</td></tr>
+        <tr><td>Transistor / driver</td><td>Commander une charge</td><td>Moteur ou relais adapté</td></tr>
+        <tr><td>Écran</td><td>Afficher des informations</td><td>LCD I²C ou OLED</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article class="lesson-block" id="branchement">
+    <h3>3. Préparer le matériel et réaliser un branchement</h3>
+    <p>Pour commencer, prépare une carte Uno, un câble USB de données, une breadboard, des fils Dupont, des LED, des résistances, des boutons et quelques capteurs. La breadboard permet de relier les composants sans soudure.</p>
+    <div class="grid-2">
+      <div class="card"><h3>Comment fonctionne une breadboard ?</h3><ul><li>Les groupes de cinq trous d’une même rangée sont reliés entre eux dans la zone centrale.</li><li>La fente centrale sépare les deux côtés.</li><li>Les rails latéraux servent souvent à distribuer le 5 V et le GND.</li><li>Selon le modèle, les rails peuvent être coupés au milieu : vérifie la continuité.</li></ul></div>
+      <div class="card"><h3>Méthode de câblage</h3><ol class="content-list"><li>Débranche l’alimentation.</li><li>Identifie chaque broche dans le schéma du composant.</li><li>Place les composants sans court-circuit.</li><li>Relie les masses communes.</li><li>Vérifie le câblage avant d’alimenter.</li><li>Teste d’abord un montage simple.</li></ol></div>
+    </div>
+    <h3 style="margin-top:20px">Exemple : connecter une LED à D8</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 700 180" role="img" aria-label="Connexion en série de D8, résistance, LED et GND">
+        <rect x="20" y="55" width="100" height="65" rx="9" fill="#222"/><text x="70" y="82" text-anchor="middle" fill="white" font-size="15">Arduino</text><text x="70" y="102" text-anchor="middle" fill="#ffad63" font-size="13">D8</text>
+        <path d="M120 88 H205" stroke="#d9670b" stroke-width="4"/>
+        <rect x="205" y="72" width="90" height="32" rx="4" fill="#d8b26d" stroke="#704b20" stroke-width="2"/><path d="M218 74 L230 102 M240 74 L252 102 M262 74 L274 102" stroke="#704b20" stroke-width="3"/><text x="250" y="55" text-anchor="middle" fill="#333" font-size="13">220–330 Ω</text>
+        <path d="M295 88 H360" stroke="#d9670b" stroke-width="4"/>
+        <path d="M360 63 L405 88 L360 113 Z" fill="#e94b4b" stroke="#9b2525" stroke-width="2"/><path d="M405 63 V113" stroke="#9b2525" stroke-width="4"/><text x="383" y="42" text-anchor="middle" fill="#333" font-size="13">LED</text>
+        <path d="M405 88 H590" stroke="#333" stroke-width="4"/><path d="M590 88 V130 M570 130 H610 M577 139 H603 M584 148 H596" stroke="#333" stroke-width="3"/><text x="590" y="25" text-anchor="middle" fill="#333" font-size="13">GND</text>
+      </svg>
+    </div>
+    <p>Relie D8 à une résistance, puis à l’anode de la LED (patte longue). Relie la cathode (patte courte) au GND. La résistance est indispensable pour limiter le courant. Une valeur de 220 Ω à 330 Ω convient souvent pour un montage pédagogique avec une LED ordinaire, sous réserve de ses caractéristiques.</p>
+    <div class="callout"><strong>Attention :</strong> ne branche jamais une LED directement entre une sortie et GND sans résistance. Ne relie jamais directement 5 V à GND : cela crée un court-circuit.</div>
+  </article>
+
+  <article class="lesson-block" id="programmation">
+    <h3>4. Installer l’environnement et téléverser un programme</h3>
+    <ol class="content-list">
+      <li>Installe Arduino IDE depuis le site officiel : <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener"><strong>arduino.cc/en/software</strong></a>.</li>
+      <li>Branche l’Arduino avec un câble USB qui transporte les données.</li>
+      <li>Dans Arduino IDE, choisis <strong>Tools / Outils → Board / Type de carte → Arduino Uno</strong>.</li>
+      <li>Choisis le port série correspondant dans <strong>Tools / Outils → Port</strong>.</li>
+      <li>Écris le programme, clique sur Verify pour compiler, puis Upload pour téléverser.</li>
+      <li>Si la carte n’apparaît pas, vérifie le câble, le port USB et le pilote USB-série de ta carte.</li>
+    </ol>
+
+    <h3>Structure d’un programme Arduino</h3>
+<pre><code>void setup() {
+  // Exécutée une seule fois au démarrage
+}
+
+void loop() {
+  // Répétée tant que la carte est alimentée
+}</code></pre>
+    <p><code>setup()</code> sert à initialiser les broches et les communications. <code>loop()</code> contient les actions répétées. Les instructions se terminent généralement par un point-virgule <code>;</code>. Les blocs sont délimités par <code>{ }</code>.</p>
+
+    <h3>Premier programme : faire clignoter la LED intégrée</h3>
+<pre><code>void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}</code></pre>
+    <p><code>pinMode()</code> définit le rôle d’une broche. <code>digitalWrite()</code> place une sortie à HIGH ou LOW. <code>delay(1000)</code> attend 1000 millisecondes, soit une seconde. Sur Uno, la LED intégrée est généralement reliée à D13.</p>
+
+    <h3>4.1 Variables et types de données</h3>
+    <p>Une variable est une zone de mémoire qui porte un nom et stocke une information. On l'utilise pour mémoriser une mesure de capteur, un état de bouton, une vitesse de moteur ou un compteur.</p>
+<pre><code>int led = 8;                  // Nombre entier
+float temperature = 24.5;    // Nombre décimal
+bool alarme = false;          // Vrai ou faux
+char lettre = 'A';            // Un caractère
+const int bouton = 2;         // Constante : ne change pas</code></pre>
+    <table>
+      <thead><tr><th>Type</th><th>Contenu</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td><code>int</code></td><td>Nombre entier</td><td><code>int vitesse = 150;</code></td></tr>
+        <tr><td><code>long</code></td><td>Entier de plus grande capacité</td><td><code>long temps = 30000;</code></td></tr>
+        <tr><td><code>float</code></td><td>Nombre décimal</td><td><code>float distance = 12.5;</code></td></tr>
+        <tr><td><code>bool</code></td><td>true ou false</td><td><code>bool actif = true;</code></td></tr>
+        <tr><td><code>char</code></td><td>Un caractère</td><td><code>char lettre = 'B';</code></td></tr>
+        <tr><td><code>const</code></td><td>Valeur qui ne doit pas être modifiée</td><td><code>const int led = 8;</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>4.2 Les conditions : if, else if et else</h3>
+    <p>Une condition permet au programme de prendre une décision. Le programme teste une expression : si elle est vraie, il exécute un bloc ; sinon, il peut exécuter un autre bloc.</p>
+<pre><code>int temperature = 32;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (temperature > 30) {
+    Serial.println("Temperature elevee");
+  } else {
+    Serial.println("Temperature normale");
+  }
+
+  delay(2000);
+}</code></pre>
+    <p>Ici, la température vaut 32. L'expression <code>temperature > 30</code> est vraie : le programme affiche donc « Temperature elevee ».</p>
+
+    <p>Pour gérer plusieurs situations, on utilise <code>else if</code> :</p>
+<pre><code>int valeur = 650;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (valeur < 300) {
+    Serial.println("Faible");
+  } else if (valeur < 700) {
+    Serial.println("Moyenne");
+  } else {
+    Serial.println("Elevee");
+  }
+
+  delay(1000);
+}</code></pre>
+    <p>Avec une valeur de 650, la première condition est fausse et la deuxième est vraie : le résultat est « Moyenne ». Le bloc <code>else</code> est exécuté uniquement si toutes les conditions précédentes sont fausses.</p>
+
+    <h3>4.3 Les opérateurs de comparaison et logiques</h3>
+    <table>
+      <thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td><code>==</code></td><td>Égal à</td><td><code>valeur == 10</code></td></tr>
+        <tr><td><code>!=</code></td><td>Différent de</td><td><code>valeur != 0</code></td></tr>
+        <tr><td><code>&gt;</code></td><td>Supérieur à</td><td><code>temperature > 30</code></td></tr>
+        <tr><td><code>&lt;</code></td><td>Inférieur à</td><td><code>distance < 20</code></td></tr>
+        <tr><td><code>&gt;=</code></td><td>Supérieur ou égal</td><td><code>vitesse >= 100</code></td></tr>
+        <tr><td><code>&lt;=</code></td><td>Inférieur ou égal</td><td><code>luminosite <= 300</code></td></tr>
+        <tr><td><code>&amp;&amp;</code></td><td>ET : les deux conditions doivent être vraies</td><td><code>temp > 20 && temp < 30</code></td></tr>
+        <tr><td><code>||</code></td><td>OU : au moins une condition est vraie</td><td><code>bouton || mouvement</code></td></tr>
+        <tr><td><code>!</code></td><td>NON : inverse le résultat logique</td><td><code>!alarme</code></td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Attention à la différence :</strong> <code>=</code> affecte une valeur, alors que <code>==</code> compare deux valeurs. Par exemple, <code>x = 5;</code> stocke 5 dans x, tandis que <code>x == 5</code> vérifie si x vaut 5.</div>
+
+    <h3>4.4 La boucle for</h3>
+    <p>La boucle <code>for</code> est pratique lorsque l'on connaît le nombre de répétitions. Elle contient trois parties : initialisation, condition et mise à jour.</p>
+<pre><code>for (int i = 0; i < 5; i++) {
+  Serial.println(i);
+}</code></pre>
+    <p>Résultat affiché : 0, 1, 2, 3, 4. La boucle commence avec <code>i = 0</code>, continue tant que <code>i < 5</code>, puis augmente i de 1 à chaque tour avec <code>i++</code>.</p>
+    <p>Exemple : faire clignoter une LED cinq fois :</p>
+<pre><code>const int led = 8;
+
+void setup() {
+  pinMode(led, OUTPUT);
+
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(led, HIGH);
+    delay(500);
+    digitalWrite(led, LOW);
+    delay(500);
+  }
+}
+
+void loop() {
+  // Rien à répéter ici
+}</code></pre>
+
+    <h3>4.5 La boucle while</h3>
+    <p>La boucle <code>while</code> répète un bloc tant que sa condition reste vraie. Elle est utile lorsqu'on ne connaît pas à l'avance le nombre de répétitions.</p>
+<pre><code>int compteur = 0;
+
+void setup() {
+  Serial.begin(9600);
+
+  while (compteur < 5) {
+    Serial.println(compteur);
+    compteur++;
+  }
+}
+
+void loop() {
+}</code></pre>
+    <p>La boucle affiche 0 à 4. Il est important de modifier la variable utilisée dans la condition. Sinon, si la condition reste toujours vraie, le programme peut rester bloqué dans une boucle infinie.</p>
+
+    <h3>4.6 La boucle do...while</h3>
+    <p>La boucle <code>do...while</code> exécute son bloc au moins une fois, puis vérifie la condition.</p>
+<pre><code>int compteur = 0;
+
+void setup() {
+  Serial.begin(9600);
+
+  do {
+    Serial.println(compteur);
+    compteur++;
+  } while (compteur < 3);
+}
+
+void loop() {
+}</code></pre>
+    <p>Résultat : 0, 1, 2. Même si la condition était fausse dès le départ, le bloc <code>do</code> serait exécuté une première fois.</p>
+
+    <h3>4.7 Combiner boucles et conditions</h3>
+    <p>Dans un projet réel, on combine souvent une boucle et une condition. Exemple : allumer une LED cinq fois seulement si une température dépasse 30 °C.</p>
+<pre><code>const int led = 8;
+float temperature = 35.0;
+
+void setup() {
+  pinMode(led, OUTPUT);
+
+  if (temperature > 30) {
+    for (int i = 0; i < 5; i++) {
+      digitalWrite(led, HIGH);
+      delay(300);
+      digitalWrite(led, LOW);
+      delay(300);
+    }
+  }
+}
+
+void loop() {
+}</code></pre>
+
+    <h3>4.8 Les fonctions</h3>
+    <p>Une fonction regroupe des instructions qui réalisent une tâche précise. Elle évite de répéter le même code à plusieurs endroits et rend le programme plus facile à comprendre.</p>
+<pre><code>int additionner(int a, int b) {
+  return a + b;
+}
+
+void afficherMessage() {
+  Serial.println("Bonjour Arduino");
+}
+
+void setup() {
+  Serial.begin(9600);
+
+  int resultat = additionner(4, 6);
+  Serial.println(resultat);
+
+  afficherMessage();
+}
+
+void loop() {
+}</code></pre>
+    <p>La fonction <code>additionner()</code> reçoit deux paramètres et retourne leur somme avec <code>return</code>. La fonction <code>afficherMessage()</code> est de type <code>void</code> : elle ne retourne aucune valeur.</p>
+
+    <h3>4.9 delay() et millis()</h3>
+    <p><code>delay()</code> bloque l'exécution du programme pendant une durée donnée. Pendant cette attente, le programme ne revient pas immédiatement lire les boutons ou les capteurs. Pour des systèmes qui doivent rester réactifs, on peut utiliser <code>millis()</code>, qui retourne le nombre de millisecondes écoulées depuis le démarrage.</p>
+<pre><code>const int led = 8;
+unsigned long ancienTemps = 0;
+const unsigned long intervalle = 1000;
+bool etatLed = false;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  unsigned long maintenant = millis();
+
+  if (maintenant - ancienTemps >= intervalle) {
+    ancienTemps = maintenant;
+    etatLed = !etatLed;
+    digitalWrite(led, etatLed);
+  }
+
+  // Le programme peut faire d'autres tâches ici.
+}</code></pre>
+    <p>Cette LED change d'état toutes les secondes sans bloquer la boucle principale avec un long <code>delay()</code>. Cette technique est utile lorsqu'il faut surveiller plusieurs capteurs et boutons en même temps.</p>
+  </article>
+
+  <article class="lesson-block" id="entrees-sorties">
+    <h3>5. Entrées et sorties : les notions indispensables</h3>
+
+    <h3>5.1 Entrée numérique : bouton poussoir</h3>
+    <p>Un bouton fournit deux états logiques. Avec <code>INPUT_PULLUP</code>, la résistance interne de tirage maintient l’entrée à HIGH au repos ; quand le bouton relie la broche à GND, elle passe à LOW. La logique est donc inversée.</p>
+<pre><code>const int bouton = 2;
+const int led = 8;
+
+void setup() {
+  pinMode(bouton, INPUT_PULLUP);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  bool appuye = (digitalRead(bouton) == LOW);
+  digitalWrite(led, appuye ? HIGH : LOW);
+}</code></pre>
+    <div class="callout"><strong>À retenir :</strong> avec <code>INPUT_PULLUP</code>, bouton relâché = HIGH et bouton appuyé = LOW. Le bouton doit être câblé entre la broche choisie et GND.</div>
+
+    <h3>5.2 Entrée analogique : potentiomètre</h3>
+    <p>Une entrée analogique convertit une tension en une valeur numérique. Sur Uno R3, <code>analogRead()</code> retourne normalement une valeur de 0 à 1023 avec la référence par défaut. Un potentiomètre se branche avec ses deux extrémités sur 5 V et GND, et son curseur sur A0.</p>
+<pre><code>const int potentiometre = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valeur = analogRead(potentiometre);
+  Serial.println(valeur);
+  delay(200);
+}</code></pre>
+
+    <h3>5.3 Sortie PWM : régler une luminosité</h3>
+    <p>Le PWM (modulation de largeur d’impulsion) permet de simuler une sortie analogique pour certains usages, par exemple régler la luminosité d’une LED. Sur Uno R3, les broches PWM sont 3, 5, 6, 9, 10 et 11. <code>analogWrite()</code> utilise généralement une valeur de 0 à 255.</p>
+<pre><code>const int led = 9;
+const int potentiometre = A0;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  int mesure = analogRead(potentiometre);
+  int luminosite = map(mesure, 0, 1023, 0, 255);
+  analogWrite(led, luminosite);
+}</code></pre>
+
+    <h3>5.4 Les LED : types, branchement et commande</h3>
+    <p>Une LED (diode électroluminescente) transforme l'énergie électrique en lumière. Elle est polarisée : le courant doit circuler dans le bon sens. Sur une LED classique, la patte longue correspond généralement à l'anode (+) et la patte courte à la cathode (-). Le côté plat du boîtier indique souvent la cathode.</p>
+    <table>
+      <thead><tr><th>Type de LED</th><th>Caractéristique</th><th>Utilisation</th></tr></thead>
+      <tbody>
+        <tr><td>LED classique</td><td>Une seule couleur, deux pattes</td><td>Voyant d'état</td></tr>
+        <tr><td>LED RGB</td><td>Rouge, vert et bleu dans le même composant</td><td>Créer différentes couleurs</td></tr>
+        <tr><td>LED intégrée</td><td>Déjà montée sur la carte</td><td>Tests rapides avec LED_BUILTIN</td></tr>
+        <tr><td>Ruban LED adressable</td><td>LED commandées individuellement selon le modèle</td><td>Éclairage et animations</td></tr>
+      </tbody>
+    </table>
+    <p>Une résistance en série limite le courant. La valeur doit être choisie selon la tension d'alimentation, la tension directe de la LED et le courant souhaité. Une estimation simple est :</p>
+    <p><strong>R = (V alimentation − V LED) / I LED</strong></p>
+    <p>Exemple : alimentation 5 V, LED rouge de tension directe approximative 2 V, courant choisi 10 mA (0,01 A) :</p>
+    <p><strong>R = (5 − 2) / 0,01 = 300 Ω</strong></p>
+    <p>Une résistance normalisée proche de 330 Ω peut convenir dans cet exemple. Il faut toujours vérifier les caractéristiques de la LED et les limites de la broche.</p>
+
+    <h3>LED RGB : commander trois couleurs</h3>
+    <p>Une LED RGB contient trois LED : rouge, vert et bleu. En réglant l'intensité de chaque couleur avec le PWM, on peut mélanger les couleurs. Il existe des modèles à anode commune et à cathode commune : le câblage et la logique de commande diffèrent.</p>
+<pre><code>const int rouge = 9;
+const int vert = 10;
+const int bleu = 11;
+
+void setup() {
+  pinMode(rouge, OUTPUT);
+  pinMode(vert, OUTPUT);
+  pinMode(bleu, OUTPUT);
+}
+
+void loop() {
+  // Rouge
+  analogWrite(rouge, 255);
+  analogWrite(vert, 0);
+  analogWrite(bleu, 0);
+  delay(1000);
+
+  // Vert
+  analogWrite(rouge, 0);
+  analogWrite(vert, 255);
+  analogWrite(bleu, 0);
+  delay(1000);
+
+  // Bleu
+  analogWrite(rouge, 0);
+  analogWrite(vert, 0);
+  analogWrite(bleu, 255);
+  delay(1000);
+
+  // Blanc : les trois couleurs sont activées
+  analogWrite(rouge, 255);
+  analogWrite(vert, 255);
+  analogWrite(bleu, 255);
+  delay(1000);
+}</code></pre>
+    <p>Ce code suppose une LED RGB à cathode commune. Pour une LED à anode commune, la logique est inversée : une valeur PWM faible peut correspondre à une luminosité élevée. Utilise une résistance adaptée sur chaque canal.</p>
+
+    <h3>5.5 Les capteurs : comprendre leur fonctionnement</h3>
+    <p>Un capteur transforme une grandeur physique (lumière, température, distance, mouvement...) en un signal que l'Arduino peut lire. Avant de le connecter, identifie sa tension d'alimentation, son brochage, son type de sortie et ses limites électriques.</p>
+    <table>
+      <thead><tr><th>Capteur</th><th>Grandeur mesurée</th><th>Signal / connexion</th><th>Exemple d'utilisation</th></tr></thead>
+      <tbody>
+        <tr><td>LDR</td><td>Luminosité</td><td>Analogique avec diviseur de tension</td><td>Éclairage automatique</td></tr>
+        <tr><td>LM35</td><td>Température</td><td>Tension analogique</td><td>Thermomètre</td></tr>
+        <tr><td>DHT11 / DHT22</td><td>Température et humidité</td><td>Signal numérique et bibliothèque</td><td>Station météo</td></tr>
+        <tr><td>HC-SR04</td><td>Distance</td><td>TRIG et ECHO</td><td>Détection d'obstacle</td></tr>
+        <tr><td>PIR</td><td>Mouvement infrarouge</td><td>Sortie numérique</td><td>Détecteur de présence</td></tr>
+        <tr><td>Potentiomètre</td><td>Position / réglage</td><td>Analogique</td><td>Commande manuelle</td></tr>
+        <tr><td>RFID</td><td>Identification par radio</td><td>Souvent SPI</td><td>Contrôle d'accès expérimental</td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.6 Capteur LDR : mesurer la lumière</h3>
+    <p>Une LDR est une résistance photosensible. Sa résistance diminue généralement lorsque la lumière augmente. Pour la lire avec Arduino, on l'associe à une résistance fixe afin de former un diviseur de tension. Le point central est connecté à une entrée analogique, par exemple A0.</p>
+<pre><code>const int ldr = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lumiere = analogRead(ldr);
+
+  Serial.print("Valeur de luminosite : ");
+  Serial.println(lumiere);
+
+  if (lumiere < 300) {
+    Serial.println("Il fait sombre");
+  } else if (lumiere < 700) {
+    Serial.println("Luminosite moyenne");
+  } else {
+    Serial.println("Forte luminosite");
+  }
+
+  delay(500);
+}</code></pre>
+    <p>Les seuils 300 et 700 sont des exemples : ils doivent être ajustés en observant les valeurs réelles de ton montage. Le sens de variation peut être inversé selon la position de la LDR et de la résistance dans le diviseur.</p>
+
+    <h3>5.7 Capteur LM35 : mesurer la température</h3>
+    <p>Le LM35 est un capteur analogique dont la sortie varie avec la température. Pour un LM35 classique, la sensibilité est d'environ 10 mV par degré Celsius. La formule simplifiée est donc : <strong>Température (°C) = tension de sortie (V) × 100</strong>.</p>
+<pre><code>const int capteur = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valeur = analogRead(capteur);
+
+  float tension = valeur * (5.0 / 1023.0);
+  float temperature = tension * 100.0;
+
+  Serial.print("Temperature : ");
+  Serial.print(temperature);
+  Serial.println(" C");
+
+  if (temperature > 30) {
+    Serial.println("Attention : temperature elevee");
+  }
+
+  delay(1000);
+}</code></pre>
+    <p>Cette conversion suppose une référence ADC de 5 V et un LM35 classique. La précision réelle dépend de la référence de tension, du capteur et du montage. Vérifie le brochage du modèle avant de l'alimenter.</p>
+
+    <h3>5.8 Capteurs DHT11 et DHT22</h3>
+    <p>Les capteurs DHT11 et DHT22 fournissent une température et une humidité relative. Ils utilisent un protocole numérique spécifique. Une bibliothèque adaptée simplifie leur lecture. Le DHT22 offre généralement une plage et une précision différentes du DHT11 ; consulte la fiche technique pour choisir le bon modèle.</p>
+<pre><code>#include &lt;DHT.h&gt;
+
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float humidite = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidite) || isnan(temperature)) {
+    Serial.println("Erreur de lecture du capteur");
+  } else {
+    Serial.print("Temperature : ");
+    Serial.print(temperature);
+    Serial.println(" C");
+
+    Serial.print("Humidite : ");
+    Serial.print(humidite);
+    Serial.println(" %");
+  }
+
+  delay(2000);
+}</code></pre>
+    <p>Installe une bibliothèque DHT compatible depuis le gestionnaire de bibliothèques Arduino. Le type défini dans <code>DHTTYPE</code> doit correspondre au capteur réellement utilisé. Respecte l'intervalle minimal entre deux mesures indiqué dans sa documentation.</p>
+
+    <h3>5.9 Capteur ultrason HC-SR04 : mesurer une distance</h3>
+    <p>Le HC-SR04 envoie une impulsion ultrasonore et mesure le temps nécessaire au retour de l'écho. La broche TRIG déclenche la mesure et la broche ECHO fournit une impulsion dont la durée est liée au temps de trajet.</p>
+    <p>La formule approximative est : <strong>distance en cm = durée en µs × 0,0343 / 2</strong>. On divise par deux parce que l'onde parcourt la distance aller puis retour.</p>
+<pre><code>const int trig = 7;
+const int echo = 6;
+
+void setup() {
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+
+  long duree = pulseIn(echo, HIGH, 30000);
+
+  if (duree == 0) {
+    Serial.println("Aucun echo detecte");
+  } else {
+    float distance = duree * 0.0343 / 2.0;
+
+    Serial.print("Distance : ");
+    Serial.print(distance);
+    Serial.println(" cm");
+  }
+
+  delay(100);
+}</code></pre>
+    <p>Le délai maximal de <code>pulseIn()</code> évite une attente trop longue. La portée dépend du capteur et des conditions de mesure. Vérifie aussi la compatibilité des niveaux logiques ECHO avec ta carte ou ton module.</p>
+
+    <h3>5.10 Capteur PIR : détecter un mouvement</h3>
+    <p>Un capteur PIR détecte les variations du rayonnement infrarouge dans son champ de vision. Il fournit généralement un signal numérique : HIGH lorsqu'un mouvement est détecté et LOW lorsqu'il ne l'est pas, selon la configuration du module.</p>
+<pre><code>const int pir = 2;
+const int led = 8;
+
+void setup() {
+  pinMode(pir, INPUT);
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int mouvement = digitalRead(pir);
+
+  if (mouvement == HIGH) {
+    digitalWrite(led, HIGH);
+    Serial.println("Mouvement detecte");
+  } else {
+    digitalWrite(led, LOW);
+    Serial.println("Aucun mouvement");
+  }
+
+  delay(200);
+}</code></pre>
+    <p>Certains modules PIR ont un temps de stabilisation au démarrage et des réglages de sensibilité ou de durée. Attends la fin de cette phase avant de tirer des conclusions sur les mesures.</p>
+
+    <h3>5.11 Commander un buzzer</h3>
+    <p>Un buzzer actif peut produire un son lorsqu'il est alimenté correctement. Un buzzer passif a besoin d'un signal de fréquence, que l'on peut générer avec <code>tone()</code>. Vérifie le courant et les caractéristiques du composant avant de le connecter directement à une sortie.</p>
+<pre><code>const int buzzer = 8;
+
+void setup() {
+}
+
+void loop() {
+  tone(buzzer, 1000); // Son de 1000 Hz
+  delay(500);
+
+  noTone(buzzer);
+  delay(500);
+}</code></pre>
+
+    <h3>5.12 Les moteurs : comprendre les différences</h3>
+    <p>Un moteur transforme l'énergie électrique en mouvement. Tous les moteurs ne se commandent pas de la même manière : le choix du circuit de commande dépend du type de moteur, de sa tension, de son courant et de l'application.</p>
+    <table>
+      <thead><tr><th>Type de moteur</th><th>Fonctionnement</th><th>Commande habituelle</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td>Moteur DC</td><td>Rotation continue ; vitesse variable</td><td>Driver ou pont en H, PWM</td><td>Robot roulant</td></tr>
+        <tr><td>Servomoteur</td><td>Position angulaire commandée</td><td>Signal de commande et bibliothèque Servo</td><td>Bras robotique</td></tr>
+        <tr><td>Moteur pas à pas</td><td>Rotation en pas contrôlés</td><td>Driver adapté, impulsions de commande</td><td>Machine CNC simple</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Moteur DC : vitesse et sens de rotation</h3>
+    <p>Un moteur à courant continu possède généralement deux bornes. Inverser la polarité inverse son sens de rotation. Pour le piloter depuis Arduino, on utilise un driver ou un pont en H. Les entrées IN1 et IN2 déterminent le sens, tandis que l'entrée ENA peut recevoir un signal PWM pour régler la vitesse, selon le driver utilisé.</p>
+    <table>
+      <thead><tr><th>IN1</th><th>IN2</th><th>Résultat habituel</th></tr></thead>
+      <tbody>
+        <tr><td>HIGH</td><td>LOW</td><td>Sens 1</td></tr>
+        <tr><td>LOW</td><td>HIGH</td><td>Sens 2</td></tr>
+        <tr><td>LOW</td><td>LOW</td><td>Arrêt ou roue libre selon le driver</td></tr>
+        <tr><td>HIGH</td><td>HIGH</td><td>Freinage ou état particulier selon le driver</td></tr>
+      </tbody>
+    </table>
+    <p>Exemple générique pour un driver possédant IN1, IN2 et ENA :</p>
+<pre><code>const int IN1 = 8;
+const int IN2 = 9;
+const int ENA = 5;
+
+void setup() {
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENA, OUTPUT);
+}
+
+void loop() {
+  // Sens 1 à vitesse moyenne
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, 150);
+  delay(2000);
+
+  // Arrêt
+  analogWrite(ENA, 0);
+  delay(1000);
+
+  // Sens 2
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENA, 200);
+  delay(2000);
+
+  // Arrêt
+  analogWrite(ENA, 0);
+  delay(1000);
+}</code></pre>
+
+    <h3>Servomoteur : contrôler une position</h3>
+    <p>Un servomoteur classique permet de commander une position angulaire, souvent dans une plage proche de 0° à 180° selon le modèle. Il possède généralement trois fils : alimentation, GND et signal. La bibliothèque <code>Servo.h</code> facilite son pilotage.</p>
+<pre><code>#include &lt;Servo.h&gt;
+
+Servo monServo;
+
+void setup() {
+  monServo.attach(9);
+}
+
+void loop() {
+  monServo.write(0);
+  delay(1000);
+
+  monServo.write(90);
+  delay(1000);
+
+  monServo.write(180);
+  delay(1000);
+}</code></pre>
+    <p>La broche 9 est utilisée ici comme signal de commande. Le servomoteur peut nécessiter une alimentation externe adaptée à son courant. Si une alimentation externe est utilisée, relie les masses conformément au schéma du montage. Ne suppose pas que la sortie 5 V de l'Arduino peut alimenter n'importe quel servo.</p>
+
+    <h3>Moteur pas à pas : principe</h3>
+    <p>Un moteur pas à pas tourne par petits déplacements appelés pas. Un driver spécialisé reçoit les signaux de commande et alimente les bobines du moteur. Des modules comme A4988 ou DRV8825 sont courants, mais ils exigent un réglage de courant, un câblage et une alimentation conformes à leur documentation.</p>
+    <p>La bibliothèque <code>Stepper</code> peut commander certains moteurs pas à pas avec un câblage et un étage de puissance adaptés. Ne connecte pas directement les bobines d'un moteur pas à pas aux broches Arduino.</p>
+<pre><code>#include &lt;Stepper.h&gt;
+
+// Exemple pédagogique : nombre de pas à adapter au moteur et au montage.
+const int pasParTour = 200;
+
+Stepper moteur(pasParTour, 8, 10, 9, 11);
+
+void setup() {
+  moteur.setSpeed(30); // Tours par minute
+}
+
+void loop() {
+  moteur.step(pasParTour);   // Un tour dans un sens
+  delay(500);
+
+  moteur.step(-pasParTour);  // Un tour dans l'autre sens
+  delay(500);
+}</code></pre>
+    <div class="callout"><strong>Sécurité des moteurs :</strong> ne branche jamais un moteur directement sur une broche Arduino. Utilise un driver adapté au courant de démarrage et au courant nominal du moteur, une alimentation moteur appropriée et les protections prévues par le fabricant. Une masse commune est généralement nécessaire pour les signaux de commande. Les moteurs peuvent provoquer des perturbations électriques : respecte le schéma du driver et ses recommandations de protection.</div>
+  </article>
+
+  <article class="lesson-block" id="communication">
+    <h3>6. Communication avec d’autres appareils</h3>
+    <div class="grid-3">
+      <div class="card"><span class="tag">UART / SÉRIE</span><h3>Serial</h3><p>Communication point à point via TX/RX. Sert au moniteur série, aux modules GPS ou Bluetooth série. Attention aux niveaux logiques du module.</p></div>
+      <div class="card"><span class="tag">I²C</span><h3>SDA / SCL</h3><p>Bus à deux lignes pour plusieurs composants adressables, comme certains écrans et capteurs. Sur Uno R3 : SDA=A4 et SCL=A5.</p></div>
+      <div class="card"><span class="tag">SPI</span><h3>MOSI / MISO / SCK</h3><p>Bus synchrone rapide utilisé par des cartes SD, modules radio et lecteurs RFID. Une ligne CS/SS sélectionne généralement le périphérique.</p></div>
+    </div>
+    <h3 style="margin-top:22px">Lire les messages dans le moniteur série</h3>
+<pre><code>void setup() {
+  Serial.begin(9600);
+  Serial.println("Arduino pret !");
+}
+
+void loop() {
+  int valeur = analogRead(A0);
+  Serial.print("Mesure : ");
+  Serial.println(valeur);
+  delay(500);
+}</code></pre>
+    <p>Ouvre le moniteur série et sélectionne le même débit (ici 9600 bauds). Pour recevoir des données, on peut utiliser <code>Serial.available()</code> puis <code>Serial.read()</code>.</p>
+    <h3>Bibliothèques</h3>
+    <p>Une bibliothèque fournit du code déjà écrit pour piloter un composant. Elle s’ajoute souvent avec <code>#include</code>, puis s’installe via le gestionnaire de bibliothèques de l’IDE. Vérifie toujours la compatibilité, les branchements et les exemples du fabricant.</p>
+<pre><code>#include &lt;Wire.h&gt;   // bibliothèque I2C intégrée à l'environnement Arduino
+
+void setup() {
+  Wire.begin();
+}
+
+void loop() {
+  // Communication I2C selon le composant connecté
+}</code></pre>
+  </article>
+
+  <article class="lesson-block" id="bonnes-pratiques">
+    <h3>7. Alimentation, sécurité et dépannage</h3>
+    <div class="grid-2">
+      <div class="card"><h3>Règles de sécurité</h3><ul><li>Travaille uniquement en basse tension pour les exercices de débutant.</li><li>Débranche avant de modifier les fils.</li><li>Ne dépasse jamais les limites de tension et de courant de la carte et des composants.</li><li>N’alimente pas un moteur directement depuis une broche Arduino.</li><li>Vérifie la polarité des LED, condensateurs et alimentations.</li><li>N’interviens jamais sur le secteur 230 V sans formation et matériel adaptés.</li></ul></div>
+      <div class="card"><h3>Erreurs fréquentes</h3><ul><li>Port COM incorrect ou carte non reconnue.</li><li>Câble USB réservé à la charge, sans données.</li><li>Type de carte incorrect dans l’IDE.</li><li>Oubli de <code>pinMode()</code>.</li><li>Absence de GND commun entre modules.</li><li>Broche différente entre le code et le câblage.</li><li>Erreur de syntaxe : point-virgule ou accolade manquante.</li></ul></div>
+    </div>
+    <h3 style="margin-top:22px">Une méthode efficace pour réussir un projet</h3>
+    <ol class="content-list"><li>Décris précisément ce que le système doit faire.</li><li>Liste les entrées, les sorties et les contraintes électriques.</li><li>Consulte la documentation de chaque composant.</li><li>Dessine le câblage avant de brancher.</li><li>Teste chaque composant séparément.</li><li>Écris le programme par petites étapes.</li><li>Affiche les mesures dans le moniteur série.</li><li>Teste les cas normaux et les cas limites.</li><li>Documente les broches, les connexions et le fonctionnement.</li></ol>
+  </article>
+</div>
+</section>
+
+<section class="section" id="exercices" style="background:#eeece7">
+<div class="wrap">
+  <div class="section-head">
+    <span class="kicker">Partie 02 · Pratiquer</span>
+    <h2>Exercices et projets</h2>
+    <p>Commence par les exercices courts, puis réalise les projets. Chaque fiche contient un objectif, le matériel, les étapes et une solution consultable après ta tentative.</p>
+  </div>
+  <div class="notice"><strong>Conseil :</strong> essaie d’abord de résoudre le problème sans ouvrir la solution. Compare ensuite ton câblage et ton code, puis explique pourquoi la solution fonctionne.</div>
+  <div class="project-grid" id="projectList"></div>
+</div>
+</section>
+
+<section class="section" id="quiz">
+<div class="wrap">
+  <div class="section-head">
+    <span class="kicker">Partie 03 · Évaluer</span>
+    <h2>Quiz Arduino interactif</h2>
+    <p>Une banque enrichie de questions sur les composants, les capteurs, les moteurs, les conditions, les boucles et les projets. Choisis entre 20 et 40 questions. Après chaque réponse, le quiz indique si elle est correcte et donne une explication.</p>
+  </div>
+  <div class="quiz-banner">
+    <div><h3>Prêt à tester tes connaissances ?</h3><p>Questions à choix multiples et lecture de code. À la fin, tu obtiens ta note, les réponses incorrectes et les explications pour progresser.</p></div>
+    <button class="quiz-launch" id="openQuiz">Commencer le quiz ↗</button>
+  </div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap footer"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+<div class="modal" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+ <div class="quiz-window">
+  <div class="quiz-head"><h2 id="quizTitle">Quiz Arduino Uno</h2><button class="close" id="closeQuiz" aria-label="Fermer">×</button></div>
+  <div class="quiz-body">
+   <div class="setup" id="quizSetup">
+    <h3>Configure ton quiz</h3>
+    <p class="muted">Le système sélectionne des questions différentes au hasard parmi la banque disponible.</p>
+    <label for="questionCount">Nombre de questions</label>
+    <select id="questionCount">
+      <option value="20">20 questions</option><option value="25">25 questions</option><option value="30" selected>30 questions</option><option value="35">35 questions</option><option value="40">40 questions</option>
+    </select>
+    <label for="quizLevel">Niveau</label>
+    <select id="quizLevel"><option value="all">Tous les niveaux</option><option value="Débutant">Débutant</option><option value="Intermédiaire">Intermédiaire</option><option value="Avancé">Avancé</option></select>
+    <button class="btn btn-primary" id="startQuiz" style="width:100%;margin-top:22px">Démarrer le quiz</button>
+   </div>
+   <div id="quizPlay" class="hidden">
+    <div class="quiz-meta"><span id="questionCounter">Question 1 / 30</span><span id="scoreLive">Score : 0</span></div>
+    <div class="quiz-progress"><span id="progressBar"></span></div>
+    <div class="tag" id="questionCategory">Programmation</div>
+    <div class="question" id="questionText"></div>
+    <div id="codeArea" class="hidden"></div>
+    <div class="answers" id="answerList"></div>
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+    <div class="quiz-controls">
+      <button class="verify" id="verifyAnswer">Vérifier</button>
+      <button class="next" id="nextQuestion" disabled>Suivant →</button>
+    </div>
+   </div>
+   <div id="quizResult" class="hidden"></div>
+  </div>
+ </div>
+</div>
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

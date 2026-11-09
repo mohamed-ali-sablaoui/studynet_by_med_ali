@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudyNet : une plateforme éducative pour apprendre, réviser et progresser.">
+
+    <title>StudyNet | Plateforme éducative</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- EN-TÊTE -->
+    <header class="header">
+        <div class="container nav-container">
+
+            
+    <nav class="nav">
+        <div class="logo" href="../index.html">Study<span>Net</span></div>
+    <nav class="navlinks" aria-label="Navigation principale">
+     
+    </nav>
+
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navigation" id="navigation">
+                <a href="#accueil" class="nav-link active">Accueil</a>
+                <a href="#matieres" class="nav-link">Matières</a>
+                <a href="#apropos" class="nav-link">À propos</a>
+            </nav>
+
+            <a href="#matieres" class="nav-button">
+                Commencer à apprendre ↗
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- SECTION PRINCIPALE -->
+        <section class="hero" id="accueil">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        <span class="status-dot"></span>
+                        PLATEFORME ÉDUCATIVE
+                    </span>
+
+                    <h1>
+                        Apprends aujourd'hui.
+                        <span>Construis ton avenir.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Bienvenue sur StudyNet, ton espace d'apprentissage
+                        pour découvrir, comprendre et maîtriser les
+                        différentes matières de l'informatique et des
+                        mathématiques.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#matieres" class="primary-button">
+                            Découvrir les matières
+                            <span>→</span>
+                        </a>
+
+                        <a href="#apropos" class="secondary-button">
+                            En savoir plus
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+                            <strong>09</strong>
+                            <span>Matières</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat">
+                            <strong>100%</strong>
+                            <span>Accessible</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat">
+                            <strong>∞</strong>
+                            <span>Possibilités</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ILLUSTRATION -->
+                <div class="hero-visual">
+
+                    <div class="visual-card main-visual-card">
+
+                        <div class="visual-top">
+                            <span class="visual-indicator"></span>
+                            <span>STUDYNET / ESPACE D'APPRENTISSAGE</span>
+                        </div>
+
+                        <div class="visual-symbol">&lt;/&gt;</div>
+
+                        <div class="visual-title">
+                            <span>APPRENDRE</span>
+                            <strong>SANS LIMITES.</strong>
+                        </div>
+
+                        <div class="visual-bottom">
+                            <span>APPRENDRE</span>
+                            <span>CRÉER</span>
+                            <span>PROGRESSER</span>
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card floating-top">
+                        <span class="floating-icon">⌘</span>
+                        <div>
+                            <strong>Informatique</strong>
+                            <small>Développe tes compétences</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-bottom">
+                        <span class="floating-icon">∑</span>
+                        <div>
+                            <strong>Mathématiques</strong>
+                            <small>Comprendre et pratiquer</small>
+                        </div>
+                    </div>
+
+                    <div class="decorative-circle"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION DES MATIÈRES -->
+        <section class="subjects-section" id="matieres">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">TON ESPACE D'ÉTUDE</span>
+
+                        <h2>
+                            Explore tes <span>matières.</span>
+                        </h2>
+
+                        <p>
+                            Tous tes domaines d'apprentissage réunis
+                            dans un seul espace.
+                        </p>
+                    </div>
+
+                    <div class="subjects-count">
+                        <strong>09</strong>
+                        <span>MATIÈRES DISPONIBLES</span>
+                    </div>
+
+                </div>
+
+
+                <!-- BARRE DE RECHERCHE -->
+                
+
+
+                <p class="results-info" id="resultsInfo">
+                    9 matières disponibles
+                </p>
+
+
+                <!-- CARTES DES MATIÈRES -->
+                <div class="subjects-grid" id="subjectsGrid">
+
+
+                    <!-- 01 ÉLECTRICITÉ -->
+                    <a href="cours/electricite/electricite.html"
+                        class="subject-card"
+                        data-search="electricite circuits electronique physique">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-orange">ϟ</div>
+                            <span class="subject-number">01</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">SCIENCES APPLIQUÉES</span>
+
+                            <h3>Électricité</h3>
+
+                            <p>
+                                Découvre les circuits électriques,
+                                les composants et les principes fondamentaux
+                                de l'électricité.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 02 MATHÉMATIQUES -->
+                    <a href="cours/math/mathematiques.html"
+                        class="subject-card"
+                        data-search="mathematiques algebra analyse fonctions equations">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-purple">∑</div>
+                            <span class="subject-number">02</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">SCIENCES</span>
+
+                            <h3>Mathématiques</h3>
+
+                            <p>
+                                Maîtrise l'algèbre, l'analyse,
+                                les fonctions, les équations et les
+                                méthodes de résolution.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 03 ALGORITHMIQUE -->
+                    <a href="cours//algorithme/algorithmique.html"
+                        class="subject-card"
+                        data-search="algorithmique algorithme logique programmation structures">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-green">{ }</div>
+                            <span class="subject-number">03</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">PROGRAMMATION</span>
+
+                            <h3>Algorithmique</h3>
+
+                            <p>
+                                Apprends à analyser les problèmes,
+                                construire des algorithmes et développer
+                                ta logique.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 04 SYSTÈMES D'EXPLOITATION -->
+                    <a href="cours/systeme d'exploitation/systemes-exploitation.html"
+                        class="subject-card"
+                        data-search="systemes exploitation linux windows os">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-blue">⌘</div>
+                            <span class="subject-number">04</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">SYSTÈMES INFORMATIQUES</span>
+
+                            <h3>Systèmes d'exploitation</h3>
+
+                            <p>
+                                Explore Linux, Windows, les processus,
+                                les fichiers et la gestion des ressources.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 05 PYTHON -->
+                    <a href="cours//language python/python.html"
+                        class="subject-card"
+                        data-search="python programmation langage code">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-yellow">Py</div>
+                            <span class="subject-number">05</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">PROGRAMMATION</span>
+
+                            <h3>Python</h3>
+
+                            <p>
+                                Apprends Python avec des cours,
+                                des exemples pratiques et des exercices
+                                progressifs.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 06 FONDAMENTAUX -->
+                    <a href="cours//Fondamentaux/fondamentaux-informatique.html"
+                        class="subject-card"
+                        data-search="fondamentaux informatique ordinateur numerique materiel logiciel">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-red">▦</div>
+                            <span class="subject-number">06</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">INFORMATIQUE</span>
+
+                            <h3>Fondamentaux de l'informatique</h3>
+
+                            <p>
+                                Comprends le fonctionnement de l'ordinateur,
+                                ses composants et les bases du numérique.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 07 TP MATHÉMATIQUES -->
+                    <a href="cours//tp math/tp-mathematiques.html"
+                        class="subject-card"
+                        data-search="tp mathematiques octave matlab travaux pratiques">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-pink">ƒ(x)</div>
+                            <span class="subject-number">07</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">TRAVAUX PRATIQUES</span>
+
+                            <h3>TP Mathématiques</h3>
+
+                            <p>
+                                Applique tes connaissances mathématiques
+                                avec des travaux pratiques et des outils
+                                comme Octave.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 08 LANGAGES WEB -->
+                    <a href="cours//web/langages-web.html"
+                        class="subject-card"
+                        data-search="langages web html css javascript react developpement">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-cyan">&lt;/&gt;</div>
+                            <span class="subject-number">08</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">DÉVELOPPEMENT WEB</span>
+
+                            <h3>Langages Web</h3>
+
+                            <p>
+                                Découvre HTML, CSS et JavaScript
+                                pour créer des sites web modernes
+                                et interactifs.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 09 LANGAGE C -->
+                    <a href="cours//language c/langage-c.html"
+                        class="subject-card"
+                        data-search="langage c programmation pointeurs memoire">
+
+                        <div class="card-top">
+                            <div class="subject-icon icon-dark">C</div>
+                            <span class="subject-number">09</span>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-category">PROGRAMMATION</span>
+
+                            <h3>Langage C</h3>
+
+                            <p>
+                                Maîtrise les variables, les fonctions,
+                                les tableaux, les pointeurs et la gestion
+                                de la mémoire.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>Découvrir la matière</span>
+                            <span class="arrow">↗</span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <!-- AUCUN RÉSULTAT -->
+                <div class="empty-state" id="emptyState" hidden>
+
+                    <span>⌕</span>
+
+                    <h3>Aucune matière trouvée</h3>
+
+                    <p>
+                        Essaie avec un autre mot-clé.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- À PROPOS -->
+        <section class="about-section" id="apropos">
+
+            <div class="container about-container">
+
+                <div class="about-decoration">
+                    <span class="about-symbol">S.</span>
+                </div>
+
+                <div class="about-content">
+
+                    <span class="section-label">À PROPOS DE STUDYNET</span>
+
+                    <h2>
+                        Un seul espace.
+                        <span>Plusieurs possibilités.</span>
+                    </h2>
+
+                    <p>
+                        StudyNet est une plateforme éducative conçue
+                        pour faciliter l'apprentissage et accompagner
+                        les étudiants dans leur parcours universitaire.
+                    </p>
+
+                    <p>
+                        Retrouve tes cours, exercices, corrections
+                        et ressources pédagogiques dans un espace
+                        simple et accessible.
+                    </p>
+
+                    <a href="#matieres" class="primary-button">
+                        Explorer les matières →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <a href="#accueil" class="logo footer-logo">
+                <span class="logo-icon">S</span>
+                <span>Study<span class="logo-highlight">Net</span></span>
+            </a>
+
+            <h4>
+                <u> Réalisé par le développeur Mohamed Ali Sablaoui.</u>
+            </h4>
+
+            <span class="copyright">
+                © <span id="currentYear"></span> StudyNet.
+                Tous droits réservés.
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet de dérivabilité, exercices corrigés et quiz interactif pour StudyNet.">
+<title>Dérivabilité | StudyNet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="../../index.html">Study<span>Net</span></a>
+    <div class="nav-right">
+      <a class="back-link" href="../mathematiques.html">← Retour aux mathématiques</a>
+      <a href="../../index.html">Accueil</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Mathématiques · Analyse</div>
+    <h1>La <span>dérivabilité</span></h1>
+    <p>Comprendre le nombre dérivé, calculer les dérivées, étudier les tangentes et les variations, puis s'entraîner avec des exercices corrigés et un quiz aléatoire.</p>
+    <div class="hero-meta"><span class="pill">Cours structuré</span><span class="pill">Méthodes et tableaux</span><span class="pill">Exercices corrigés</span><span class="pill">Quiz de 200+ questions possibles</span></div>
+  </div>
+</section>
+
+<nav class="quick-nav" aria-label="Navigation du chapitre">
+  <a href="#cours" class="active">01 · Cours</a>
+  <a href="#exercices">02 · Exercices</a>
+  <a href="#quiz">03 · Quiz</a>
+</nav>
+
+<main>
+<section id="cours">
+  <div class="section-head">
+    <div><div class="section-kicker">Partie 01</div><h2>Le cours complet</h2></div>
+    <p>Les définitions, les règles de calcul et les méthodes à connaître, avec des exemples et des représentations graphiques.</p>
+  </div>
+
+  <article class="card">
+    <h3>1. Comprendre l'idée de dérivée</h3>
+    <p class="lead">La dérivée mesure la variation instantanée d'une fonction. Géométriquement, elle donne la pente de la tangente à la courbe en un point.</p>
+    <div class="two-col">
+      <div>
+        <h4>Le taux d'accroissement</h4>
+        <p>Pour deux points d'abscisses <span class="math">a</span> et <span class="math">a+h</span>, le taux d'accroissement est :</p>
+        <div class="formula">T(a,h) = [f(a+h) − f(a)] / h, &nbsp; h ≠ 0</div>
+        <p>Il représente la pente de la droite sécante passant par les deux points de la courbe.</p>
+        <h4>Le nombre dérivé</h4>
+        <p>Si le taux d'accroissement admet une limite finie lorsque <span class="math">h → 0</span>, alors <span class="math">f</span> est dérivable en <span class="math">a</span> et :</p>
+        <div class="formula">f′(a) = lim<sub>h→0</sub> [f(a+h) − f(a)] / h</div>
+      </div>
+      <figure class="graph">
+        <svg viewBox="0 0 440 245" role="img" aria-label="Courbe et tangente en un point">
+          <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="#e8892a"/></marker></defs>
+          <path d="M38 205H414 M65 220V22" stroke="#aaa69e" stroke-width="1.5"/>
+          <path d="M65 184 Q140 30 220 93 T390 30" fill="none" stroke="#202020" stroke-width="3"/>
+          <path d="M100 170 L340 47" stroke="#e8892a" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <path d="M218 95 L218 205 M38 95H218" stroke="#aaa69e" stroke-dasharray="4 4"/>
+          <circle cx="218" cy="95" r="5" fill="#e8892a"/>
+          <text x="225" y="88" font-size="13" fill="#171717">A(a ; f(a))</text>
+          <text x="285" y="35" font-size="12" fill="#c66b17">Tangente</text>
+          <text x="402" y="220" font-size="13">x</text><text x="48" y="20" font-size="13">y</text>
+        </svg>
+        <figcaption>La pente de la tangente en A est égale à f′(a).</figcaption>
+      </figure>
+    </div>
+    <div class="note"><strong>À retenir :</strong> f′(a) est un nombre réel. Il peut être positif, négatif ou nul. Il indique la pente de la tangente au point d'abscisse a.</div>
+  </article>
+
+  <article class="card">
+    <h3>2. Dérivabilité en un point</h3>
+    <p>Une fonction <span class="math">f</span> définie au voisinage de <span class="math">a</span> est dérivable en <span class="math">a</span> lorsque la limite suivante existe et est finie :</p>
+    <div class="formula">lim<sub>x→a</sub> [f(x) − f(a)] / (x − a) = L ∈ ℝ</div>
+    <p>Dans ce cas, <span class="math">f′(a)=L</span>.</p>
+    <h4>Méthode pour démontrer la dérivabilité</h4>
+    <ol class="steps">
+      <li>Vérifier que <span class="math">f(a)</span> existe.</li>
+      <li>Écrire le taux d'accroissement <span class="math">[f(x)-f(a)]/(x-a)</span>, pour <span class="math">x≠a</span>.</li>
+      <li>Simplifier l'expression si possible (factorisation, identité remarquable, rationalisation…).</li>
+      <li>Calculer la limite lorsque <span class="math">x→a</span>.</li>
+      <li>Si la limite est un réel fini, conclure que <span class="math">f</span> est dérivable en <span class="math">a</span> et donner <span class="math">f′(a)</span>.</li>
+    </ol>
+    <div class="mini-card">
+      <strong>Exemple détaillé : f(x)=x² en a=3</strong>
+      <p><span class="math">f(3)=9</span>, puis :</p>
+      <div class="formula">[f(x)−f(3)]/(x−3) = (x²−9)/(x−3) = x+3</div>
+      <p>Donc <span class="math">lim<sub>x→3</sub>(x+3)=6</span>. La fonction est dérivable en 3 et <strong>f′(3)=6</strong>.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>3. Dérivabilité sur un intervalle</h3>
+    <p>Une fonction est dérivable sur un intervalle I si elle est dérivable en chaque point intérieur de I. Aux extrémités incluses, on étudie la dérivée à droite ou à gauche selon le domaine.</p>
+    <div class="two-col">
+      <div class="mini-card"><strong>Sur un intervalle ouvert ]a,b[</strong><p>On vérifie la dérivabilité pour tout <span class="math">x∈]a,b[</span>.</p></div>
+      <div class="mini-card"><strong>Sur un intervalle fermé [a,b]</strong><p>On vérifie la dérivabilité sur ]a,b[, puis les dérivées unilatérales aux extrémités si elles sont demandées.</p></div>
+    </div>
+    <div class="note"><strong>Attention :</strong> connaître une formule de dérivée ne suffit pas si la fonction n'est pas définie sur l'intervalle étudié. Il faut aussi respecter les domaines de définition.</div>
+  </article>
+
+  <article class="card">
+    <h3>4. Lien entre continuité et dérivabilité</h3>
+    <div class="formula">f dérivable en a ⇒ f continue en a</div>
+    <p>Si une fonction est dérivable en un point, elle est forcément continue en ce point. La réciproque est fausse : une fonction peut être continue sans être dérivable.</p>
+    <div class="two-col">
+      <div class="mini-card">
+        <strong>Exemple dérivable</strong>
+        <p><span class="math">f(x)=x²</span> est continue et dérivable en tout réel.</p>
+        <svg viewBox="0 0 250 125" role="img" aria-label="Parabole lisse"><path d="M10 105H240 M125 115V8" stroke="#aaa"/><path d="M25 18 Q125 220 225 18" fill="none" stroke="#222" stroke-width="2.5"/></svg>
+      </div>
+      <div class="mini-card">
+        <strong>Continue mais non dérivable</strong>
+        <p><span class="math">f(x)=|x|</span> est continue en 0, mais possède un angle en 0.</p>
+        <svg viewBox="0 0 250 125" role="img" aria-label="Courbe valeur absolue avec un angle"><path d="M10 105H240 M125 115V8" stroke="#aaa"/><path d="M35 105 L125 15 L215 105" fill="none" stroke="#222" stroke-width="2.5"/><circle cx="125" cy="15" r="4" fill="#e8892a"/></svg>
+      </div>
+    </div>
+    <div class="note warning"><strong>Contre-exemple essentiel :</strong> pour <span class="math">f(x)=|x|</span>, le taux d'accroissement en 0 vaut −1 à gauche et +1 à droite. Les deux limites sont différentes : f n'est donc pas dérivable en 0.</div>
+  </article>
+
+  <article class="card">
+    <h3>5. Les règles de dérivation</h3>
+    <p>Dans le tableau, <span class="math">u</span> et <span class="math">v</span> sont des fonctions dérivables et <span class="math">k</span> est une constante.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Fonction</th><th>Dérivée</th><th>Condition</th></tr></thead>
+      <tbody>
+        <tr><td>k</td><td>0</td><td>Constante</td></tr>
+        <tr><td>x</td><td>1</td><td>Sur ℝ</td></tr>
+        <tr><td>xⁿ</td><td>n xⁿ⁻¹</td><td>n entier naturel ; extension aux puissances réelles sur leur domaine</td></tr>
+        <tr><td>1/x</td><td>−1/x²</td><td>x ≠ 0</td></tr>
+        <tr><td>√x</td><td>1/(2√x)</td><td>x &gt; 0</td></tr>
+        <tr><td>u + v</td><td>u′ + v′</td><td>Sur le domaine commun</td></tr>
+        <tr><td>k u</td><td>k u′</td><td>k constante</td></tr>
+        <tr><td>u v</td><td>u′v + uv′</td><td>Produit</td></tr>
+        <tr><td>u/v</td><td>(u′v − uv′)/v²</td><td>v ≠ 0</td></tr>
+        <tr><td>uⁿ</td><td>n u′uⁿ⁻¹</td><td>Puissance composée, selon le domaine</td></tr>
+        <tr><td>√u</td><td>u′/(2√u)</td><td>u &gt; 0</td></tr>
+        <tr><td>1/u</td><td>−u′/u²</td><td>u ≠ 0</td></tr>
+        <tr><td>eˣ</td><td>eˣ</td><td>Sur ℝ</td></tr>
+        <tr><td>ln x</td><td>1/x</td><td>x &gt; 0</td></tr>
+        <tr><td>sin x</td><td>cos x</td><td>Sur ℝ</td></tr>
+        <tr><td>cos x</td><td>−sin x</td><td>Sur ℝ</td></tr>
+        <tr><td>tan x</td><td>1/cos²x</td><td>cos x ≠ 0</td></tr>
+      </tbody>
+    </table></div>
+    <h4>Formules de composition à mémoriser</h4>
+    <div class="two-col">
+      <div class="mini-card"><strong>Fonction puissance</strong><div class="formula">(uⁿ)′ = n·u′·uⁿ⁻¹</div><p>Exemple : <span class="math">(3x+1)⁴′ = 12(3x+1)³</span>.</p></div>
+      <div class="mini-card"><strong>Fonction logarithme</strong><div class="formula">(ln u)′ = u′/u</div><p>Exemple : <span class="math">(ln(2x+5))′ = 2/(2x+5)</span>.</p></div>
+      <div class="mini-card"><strong>Fonction exponentielle</strong><div class="formula">(eᵘ)′ = u′eᵘ</div><p>Exemple : <span class="math">(e<sup>3x</sup>)′ = 3e<sup>3x</sup></span>.</p></div>
+      <div class="mini-card"><strong>Fonctions trigonométriques</strong><div class="formula">(sin u)′=u′cos u<br>(cos u)′=−u′sin u</div><p>Exemple : <span class="math">(sin(5x))′=5cos(5x)</span>.</p></div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>6. Comment dériver une expression : méthode pratique</h3>
+    <ol class="steps">
+      <li>Identifier la structure : somme, produit, quotient ou fonction composée.</li>
+      <li>Repérer les fonctions intérieures : par exemple, dans <span class="math">(2x+1)⁵</span>, la fonction intérieure est <span class="math">u=2x+1</span>.</li>
+      <li>Choisir la formule correspondante dans le tableau.</li>
+      <li>Calculer les dérivées des fonctions simples.</li>
+      <li>Simplifier seulement à la fin et vérifier les valeurs interdites.</li>
+    </ol>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Expression</th><th>Identification</th><th>Dérivée</th></tr></thead>
+      <tbody>
+        <tr><td>f(x)=4x³−2x+7</td><td>Somme de puissances</td><td>f′(x)=12x²−2</td></tr>
+        <tr><td>g(x)=(x²+1)(3x−2)</td><td>Produit</td><td>g′(x)=2x(3x−2)+3(x²+1)</td></tr>
+        <tr><td>h(x)=(x²+1)/(x−1)</td><td>Quotient</td><td>h′(x)=[2x(x−1)−(x²+1)]/(x−1)²</td></tr>
+        <tr><td>p(x)=√(5x+1)</td><td>Racine composée</td><td>p′(x)=5/[2√(5x+1)]</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="card">
+    <h3>7. Tangente à une courbe</h3>
+    <p>La tangente à la courbe de <span class="math">f</span> au point d'abscisse <span class="math">a</span> passe par <span class="math">A(a,f(a))</span> et possède pour coefficient directeur <span class="math">f′(a)</span>.</p>
+    <div class="formula">T : y = f′(a)(x − a) + f(a)</div>
+    <div class="two-col">
+      <div>
+        <strong>Exemple : f(x)=x², a=2</strong>
+        <p><span class="math">f(2)=4</span> et <span class="math">f′(2)=4</span>.</p>
+        <p>Donc :</p><div class="formula">y=4(x−2)+4 = 4x−4</div>
+      </div>
+      <figure class="graph">
+        <svg viewBox="0 0 380 220" role="img" aria-label="Parabole et tangente"><path d="M25 185H355 M190 200V15" stroke="#aaa"/><path d="M55 28 Q190 300 325 28" fill="none" stroke="#222" stroke-width="2.5"/><path d="M65 190 L300 0" stroke="#e8892a" stroke-width="2.5"/><circle cx="245" cy="75" r="4.5" fill="#e8892a"/><text x="252" y="70" font-size="12">A</text></svg>
+        <figcaption>La tangente approche localement la courbe au point A.</figcaption>
+      </figure>
+    </div>
+    <h4>Position de la tangente</h4>
+    <ul>
+      <li>Si <span class="math">f′(a)&gt;0</span>, la tangente est montante.</li>
+      <li>Si <span class="math">f′(a)&lt;0</span>, elle est descendante.</li>
+      <li>Si <span class="math">f′(a)=0</span>, elle est horizontale (parallèle à l'axe des abscisses).</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>8. Dérivée et sens de variation</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Signe de f′ sur I</th><th>Comportement de f</th></tr></thead>
+      <tbody><tr><td>f′(x) &gt; 0</td><td>f est strictement croissante sur I.</td></tr><tr><td>f′(x) &lt; 0</td><td>f est strictement décroissante sur I.</td></tr><tr><td>f′(x) = 0 pour tout x de I</td><td>f est constante sur I.</td></tr></tbody>
+    </table></div>
+    <p>Pour étudier les variations, on calcule la dérivée, on factorise si possible, on résout <span class="math">f′(x)=0</span>, puis on construit le tableau de signes et le tableau de variations.</p>
+    <div class="mini-card">
+      <strong>Exemple : f(x)=x²−4x+1</strong>
+      <p><span class="math">f′(x)=2x−4=2(x−2)</span>. Ainsi, f′ est négative si x&lt;2, nulle en 2 et positive si x&gt;2.</p>
+      <div class="table-wrap"><table><tr><th>x</th><td>−∞</td><td>2</td><td>+∞</td></tr><tr><th>Signe de f′</th><td>−</td><td>0</td><td>+</td></tr><tr><th>Variation de f</th><td colspan="1">↘</td><td>−3 (minimum)</td><td>↗</td></tr></table></div>
+    </div>
+    <div class="note"><strong>Extremum local :</strong> si f′ change de signe de + vers −, f admet un maximum local. Si f′ change de − vers +, f admet un minimum local. f′(a)=0 seul ne garantit pas un extremum.</div>
+  </article>
+
+  <article class="card">
+    <h3>9. Points particuliers : angle, pointe et tangente verticale</h3>
+    <div class="two-col">
+      <div class="mini-card"><strong>Angle (ex. |x| en 0)</strong><p>Les dérivées à gauche et à droite sont finies mais différentes. Pas de dérivabilité.</p><svg viewBox="0 0 220 105"><path d="M8 90H212 M110 100V5" stroke="#aaa"/><path d="M25 90L110 12L195 90" fill="none" stroke="#222" stroke-width="2.5"/></svg></div>
+      <div class="mini-card"><strong>Tangente verticale</strong><p>Le taux d'accroissement peut tendre vers +∞ ou −∞ : il n'existe pas de dérivée réelle finie.</p><svg viewBox="0 0 220 105"><path d="M8 90H212 M110 100V5" stroke="#aaa"/><path d="M85 92 Q108 52 110 12 Q112 52 135 92" fill="none" stroke="#222" stroke-width="2.5"/></svg></div>
+    </div>
+    <p>Une dérivée infinie n'est pas un nombre dérivé réel. On peut parfois parler de tangente verticale, mais la fonction n'est pas dérivable au sens usuel en ce point.</p>
+  </article>
+
+  <article class="card">
+    <h3>10. Dérivée seconde, convexité et points d'inflexion</h3>
+    <p>Lorsque f′ est dérivable, sa dérivée est notée <span class="math">f″</span> et s'appelle la dérivée seconde.</p>
+    <div class="table-wrap"><table><tr><th>Signe de f″</th><th>Conclusion</th></tr><tr><td>f″(x) &gt; 0</td><td>f est convexe (courbe tournée vers le haut).</td></tr><tr><td>f″(x) &lt; 0</td><td>f est concave (courbe tournée vers le bas).</td></tr></table></div>
+    <p>Un point où la convexité change est un point d'inflexion. Il faut vérifier le changement de signe de f″, et pas seulement résoudre f″=0.</p>
+    <div class="two-col">
+      <figure class="graph"><svg viewBox="0 0 220 125"><path d="M8 108H212 M110 118V8" stroke="#aaa"/><path d="M35 20 Q110 180 185 20" fill="none" stroke="#222" stroke-width="2.5"/></svg><figcaption>Courbe convexe : f″ positive.</figcaption></figure>
+      <figure class="graph"><svg viewBox="0 0 220 125"><path d="M8 108H212 M110 118V8" stroke="#aaa"/><path d="M35 105 Q110 -55 185 105" fill="none" stroke="#222" stroke-width="2.5"/></svg><figcaption>Courbe concave : f″ négative.</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>11. Théorèmes importants</h3>
+    <h4>Théorème de Rolle</h4>
+    <p>Si f est continue sur [a,b], dérivable sur ]a,b[ et si f(a)=f(b), alors il existe au moins un réel c dans ]a,b[ tel que <span class="math">f′(c)=0</span>.</p>
+    <h4>Théorème des accroissements finis (TAF)</h4>
+    <p>Si f est continue sur [a,b] et dérivable sur ]a,b[, alors il existe c∈]a,b[ tel que :</p>
+    <div class="formula">f′(c) = [f(b)−f(a)]/(b−a)</div>
+    <p>Géométriquement, une tangente à la courbe est parallèle à la sécante reliant les extrémités.</p>
+    <div class="note">Dans une démonstration, écrire clairement les hypothèses (continuité, dérivabilité, égalité des valeurs) avant d'appliquer le théorème.</div>
+  </article>
+
+  <article class="card">
+    <h3>12. Asymptotes et comportement graphique : quel est le rôle de la dérivée ?</h3>
+    <p>Les asymptotes se déterminent principalement avec les limites, et non avec la dérivée seule. La dérivée complète l'étude en donnant les variations et la forme de la courbe.</p>
+    <div class="table-wrap"><table>
+      <tr><th>Objet</th><th>Condition / équation</th><th>Ce que donne la dérivée</th></tr>
+      <tr><td>Asymptote verticale x=a</td><td>Au moins une limite latérale de f(x) en a vaut ±∞.</td><td>Étudie les variations de chaque côté, si f est dérivable.</td></tr>
+      <tr><td>Asymptote horizontale y=L</td><td>lim f(x)=L quand x→+∞ ou −∞.</td><td>Indique si la courbe approche cette valeur en montant ou descendant.</td></tr>
+      <tr><td>Asymptote oblique y=mx+p</td><td>lim [f(x)−(mx+p)]=0 à l'infini.</td><td>Permet d'étudier les variations et les écarts locaux, mais ne suffit pas à prouver l'asymptote.</td></tr>
+      <tr><td>Tangente en a</td><td>y=f′(a)(x−a)+f(a).</td><td>La dérivée donne sa pente.</td></tr>
+    </table></div>
+    <div class="note warning">Ne pas confondre une tangente (comportement local en un point) et une asymptote (comportement à proximité d'une valeur interdite ou à l'infini).</div>
+  </article>
+
+  <article class="card">
+    <h3>13. Erreurs fréquentes à éviter</h3>
+    <ul>
+      <li>Oublier la dérivée de la fonction intérieure : <span class="math">(u⁵)′ ≠ 5u⁴</span>, mais <span class="math">5u′u⁴</span>.</li>
+      <li>Inverser l'ordre dans la formule du quotient : <span class="math">(u/v)′=(u′v−uv′)/v²</span>.</li>
+      <li>Conclure qu'une fonction est dérivable parce qu'elle est continue : c'est faux.</li>
+      <li>Oublier les valeurs interdites d'un quotient, d'un logarithme ou d'une racine.</li>
+      <li>Conclure à un extremum avec la seule égalité f′(a)=0 sans étudier le signe de f′.</li>
+      <li>Confondre f′(a), nombre dérivé, et f′, fonction dérivée.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>14. Fiche de révision : les formules essentielles</h3>
+    <div class="three-col">
+      <div class="mini-card"><strong>Somme</strong><div class="formula">(u+v)′=u′+v′</div></div>
+      <div class="mini-card"><strong>Produit</strong><div class="formula">(uv)′=u′v+uv′</div></div>
+      <div class="mini-card"><strong>Quotient</strong><div class="formula">(u/v)′=(u′v−uv′)/v²</div></div>
+      <div class="mini-card"><strong>Puissance</strong><div class="formula">(uⁿ)′=nu′uⁿ⁻¹</div></div>
+      <div class="mini-card"><strong>Exponentielle</strong><div class="formula">(eᵘ)′=u′eᵘ</div></div>
+      <div class="mini-card"><strong>Logarithme</strong><div class="formula">(ln u)′=u′/u</div></div>
+    </div>
+    <div class="note success"><strong>Réflexe de contrôle :</strong> domaine de définition → formule adaptée → calcul de f′ → factorisation → signe de f′ → variations → tangente si demandée.</div>
+  </article>
+</section>
+
+<section id="exercices">
+  <div class="section-head">
+    <div><div class="section-kicker">Partie 02</div><h2>Exercices et problèmes</h2></div>
+    <p>Des sujets progressifs, présentés comme des devoirs. Essaie chaque question avant d'afficher son corrigé détaillé.</p>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 1 · Calculs directs de dérivées</h3><span class="tag">Facile</span></div>
+    <div class="exercise-body"><p>On considère les fonctions suivantes. Calculer leur dérivée et préciser le domaine où la formule est valable.</p>
+      <ol><li><span class="math">f(x)=5x⁴−3x²+7x−9</span></li><li><span class="math">g(x)=√x + 2/x</span></li><li><span class="math">h(x)=3eˣ−2ln x</span></li><li><span class="math">p(x)=sin x + 4cos x</span></li></ol>
+      <button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><ol><li><span class="math">f′(x)=20x³−6x+7</span>, sur ℝ.</li><li><span class="math">g′(x)=1/(2√x)−2/x²</span>, pour x&gt;0.</li><li><span class="math">h′(x)=3eˣ−2/x</span>, pour x&gt;0.</li><li><span class="math">p′(x)=cos x−4sin x</span>, sur ℝ.</li></ol><p>On dérive chaque terme séparément, en respectant le domaine des racines et des logarithmes.</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 2 · Produit et quotient</h3><span class="tag">Facile</span></div>
+    <div class="exercise-body"><p>Calculer et simplifier les dérivées :</p><ol><li><span class="math">f(x)=(x²+2)(3x−1)</span></li><li><span class="math">g(x)=(2x+1)/(x−2)</span></li><li><span class="math">h(x)=x²eˣ</span></li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><ol><li><span class="math">f′=2x(3x−1)+3(x²+2)=9x²−2x+6</span>.</li><li><span class="math">g′=[2(x−2)−(2x+1)]/(x−2)²=−5/(x−2)²</span>, x≠2.</li><li><span class="math">h′=2xeˣ+x²eˣ=eˣ(x²+2x)</span>.</li></ol></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 3 · Fonctions composées</h3><span class="tag">Moyen</span></div>
+    <div class="exercise-body"><p>Déterminer la dérivée de chaque fonction et son domaine de dérivabilité :</p><ol><li><span class="math">f(x)=(4x−3)⁵</span></li><li><span class="math">g(x)=√(x²+1)</span></li><li><span class="math">h(x)=ln(3x²+2)</span></li><li><span class="math">p(x)=e<sup>−2x+1</sup></span></li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><ol><li><span class="math">f′=20(4x−3)⁴</span>.</li><li><span class="math">g′=2x/[2√(x²+1)]=x/√(x²+1)</span>, sur ℝ.</li><li><span class="math">h′=6x/(3x²+2)</span>, sur ℝ car 3x²+2&gt;0.</li><li><span class="math">p′=−2e<sup>−2x+1</sup></span>, sur ℝ.</li></ol><p>Pour une composée, on multiplie toujours par la dérivée de l'expression intérieure.</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 4 · Dérivabilité en un point</h3><span class="tag">Moyen</span></div>
+    <div class="exercise-body"><p>Soit <span class="math">f(x)=x²−4x+1</span>.</p><ol><li>Calculer le taux d'accroissement entre 2 et x.</li><li>Calculer sa limite lorsque x tend vers 2.</li><li>Conclure et donner le nombre dérivé en 2.</li><li>Déterminer l'équation de la tangente en x=2.</li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><p><span class="math">f(2)=−3</span>.</p><p><span class="math">[f(x)−f(2)]/(x−2)=[x²−4x+4]/(x−2)=(x−2)²/(x−2)=x−2</span>, pour x≠2.</p><p>La limite vaut 0 : f est dérivable en 2 et <span class="math">f′(2)=0</span>. La tangente est <span class="math">y=0(x−2)−3</span>, donc <strong>y=−3</strong>.</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 5 · Continuité et non-dérivabilité</h3><span class="tag">Moyen</span></div>
+    <div class="exercise-body"><p>On définit <span class="math">f(x)=|x−1|</span>.</p><ol><li>Écrire f sans valeur absolue sur les intervalles x&lt;1 et x≥1.</li><li>Étudier la continuité en 1.</li><li>Calculer les dérivées à gauche et à droite en 1.</li><li>La fonction est-elle dérivable en 1 ? Justifier.</li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><p>Si x&lt;1, f(x)=1−x ; si x≥1, f(x)=x−1. Les deux limites en 1 valent 0=f(1), donc f est continue en 1. À gauche, la pente vaut −1 ; à droite, elle vaut +1. Les dérivées unilatérales sont différentes : f n'est pas dérivable en 1 (point anguleux).</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 6 · Étude complète d'une fonction</h3><span class="tag">Devoir</span></div>
+    <div class="exercise-body"><p>Soit <span class="math">f(x)=x²−6x+5</span>.</p><ol><li>Déterminer le domaine de définition.</li><li>Calculer f′(x) et résoudre f′(x)=0.</li><li>Étudier le signe de f′.</li><li>Construire le tableau de variations.</li><li>Déterminer l'équation de la tangente au point d'abscisse 1.</li><li>Donner le minimum de f.</li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><p>f est définie et dérivable sur ℝ. <span class="math">f′(x)=2x−6=2(x−3)</span>. Donc f′&lt;0 si x&lt;3, f′(3)=0 et f′&gt;0 si x&gt;3. f décroît sur ]−∞,3] puis croît sur [3,+∞[. <span class="math">f(3)=−4</span> : minimum −4 atteint en x=3.</p><p>En 1 : f(1)=0 et f′(1)=−4. Tangente : <span class="math">y=−4(x−1)=−4x+4</span>.</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 7 · Quotient et asymptote</h3><span class="tag">Devoir</span></div>
+    <div class="exercise-body"><p>On considère <span class="math">f(x)=(x²+1)/x</span>, définie sur ℝ\\{0}.</p><ol><li>Calculer f′(x) et factoriser si possible.</li><li>Étudier le signe de f′.</li><li>Donner les variations sur ]−∞,0[ et ]0,+∞[.</li><li>Déterminer les asymptotes éventuelles à l'aide des limites.</li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><p><span class="math">f(x)=x+1/x</span>, donc <span class="math">f′(x)=1−1/x²=(x−1)(x+1)/x²</span>. Le dénominateur est positif. f′ est positive si |x|&gt;1 et négative si 0&lt;|x|&lt;1.</p><p>Variations : croissante sur ]−∞,−1], décroissante sur [−1,0[, décroissante sur ]0,1], puis croissante sur [1,+∞[. Les limites en 0 sont −∞ à gauche et +∞ à droite : x=0 est une asymptote verticale. Comme f(x)−x=1/x→0 à ±∞, y=x est une asymptote oblique.</p></div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 8 · Théorème des accroissements finis</h3><span class="tag">Devoir</span></div>
+    <div class="exercise-body"><p>Soit <span class="math">f(x)=x²</span> sur [1,3].</p><ol><li>Vérifier les hypothèses du TAF.</li><li>Calculer [f(3)−f(1)]/(3−1).</li><li>Déterminer c∈]1,3[ tel que f′(c) soit égal à ce quotient.</li><li>Interpréter géométriquement le résultat.</li></ol><button class="btn btn-dark solution-toggle" aria-expanded="false">Afficher la solution</button></div>
+    <div class="solution"><strong>Correction</strong><p>f est un polynôme, donc continue sur [1,3] et dérivable sur ]1,3[. Le quotient vaut (9−1)/2=4. Comme f′(x)=2x, on résout 2c=4, d'où c=2, qui appartient bien à ]1,3[. La tangente au point d'abscisse 2 est parallèle à la sécante entre les points d'abscisses 1 et 3.</p></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-head">
+    <div><div class="section-kicker">Partie 03</div><h2>Quiz interactif</h2></div>
+    <p>Choisis le nombre de questions. Le système tire au hasard dans une banque de plus de 200 questions générées à partir des notions du cours.</p>
+  </div>
+  <div class="quiz-panel">
+    <div class="quiz-intro"><div><h3 style="font-size:1.45rem;margin:0">Teste tes connaissances</h3><p>Une seule bonne réponse par question. Après vérification, tu verras immédiatement si ta réponse est juste et une explication. À la fin, tu obtiendras ta note et la correction de tes erreurs.</p></div><div class="stat">Banque : <b id="bankCount">—</b> questions</div></div>
+    <div class="quiz-config" id="quizConfig">
+      <label for="questionCount">Nombre de questions :</label>
+      <select id="questionCount"><option>20</option><option>25</option><option selected>30</option><option>35</option><option>40</option></select>
+      <button class="btn btn-orange" id="startQuiz">Commencer le quiz</button>
+    </div>
+    <div id="quizArea" hidden>
+      <div class="quiz-stats"><div class="stat">Question : <b id="questionNumber">1/30</b></div><div class="stat">Bonnes réponses : <b id="scoreLive">0</b></div><div class="stat">Répondues : <b id="answeredLive">0</b></div></div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div class="quiz-question">
+        <h3 id="questionText"></h3>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        <div class="quiz-actions"><span id="questionHint" style="color:#777;font-size:.85rem">Choisis une proposition.</span><button class="btn btn-dark" id="verifyBtn" disabled>Vérifier</button></div>
+      </div>
+    </div>
+    <div class="result" id="result" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6f5f2">
+<title>TP Math — Cours complet GNU Octave</title>
+
+
+
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+
+<header class="topbar">
+        <a class="logo" href="../index.html">Study<span>Net</span></a>
+
+
+    <div class="top-actions">
+        <button onclick="window.print()">Imprimer le cours</button>
+        <button onclick="location.href='#quiz'">Évaluation</button>
+    </div>
+</header>
+ 
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">Présentation</div>
+    <a class="nav-link active" href="#accueil"><span class="nav-number">00</span> Accueil</a>
+
+    <div class="sidebar-title">Partie 1 · Cours</div>
+    <a class="nav-link" href="#introduction"><span class="nav-number">01</span> Introduction à Octave</a>
+    <a class="nav-link" href="#demarrage"><span class="nav-number">02</span> Prise en main</a>
+    <a class="nav-link" href="#variables"><span class="nav-number">03</span> Variables et calculs</a>
+    <a class="nav-link" href="#vecteurs"><span class="nav-number">04</span> Vecteurs</a>
+    <a class="nav-link" href="#matrices"><span class="nav-number">05</span> Matrices</a>
+    <a class="nav-link" href="#operations"><span class="nav-number">06</span> Opérations matricielles</a>
+    <a class="nav-link" href="#fonctions"><span class="nav-number">07</span> Fonctions mathématiques</a>
+    <a class="nav-link" href="#conditions"><span class="nav-number">08</span> Conditions et boucles</a>
+    <a class="nav-link" href="#fonctions-personnelles"><span class="nav-number">09</span> Créer ses fonctions</a>
+    <a class="nav-link" href="#polynomes"><span class="nav-number">10</span> Polynômes et équations</a>
+    <a class="nav-link" href="#systemes"><span class="nav-number">11</span> Systèmes linéaires</a>
+    <a class="nav-link" href="#courbes"><span class="nav-number">12</span> Tracer des courbes</a>
+    <a class="nav-link" href="#graphiques"><span class="nav-number">13</span> Graphiques avancés</a>
+    <a class="nav-link" href="#statistiques"><span class="nav-number">14</span> Statistiques</a>
+    <a class="nav-link" href="#fichiers"><span class="nav-number">15</span> Fichiers et scripts</a>
+    <a class="nav-link" href="#erreurs"><span class="nav-number">16</span> Erreurs fréquentes</a>
+    <a class="nav-link" href="#resume"><span class="nav-number">17</span> Fiche récapitulative</a>
+
+    <div class="sidebar-title">Partie 2 · Exercices</div>
+    <a class="nav-link" href="#exercices"><span class="nav-number">18</span> Exercices et problèmes</a>
+
+    <div class="sidebar-title">Partie 3 · Évaluation</div>
+    <a class="nav-link" href="#quiz"><span class="nav-number">19</span> Quiz interactif</a>
+
+    <div class="sidebar-note">
+        <strong>Conseil de travail</strong>
+        Lis le cours, observe les commandes, reproduis les exemples dans Octave puis réalise les exercices sans regarder les solutions.
+    </div>
+
+</aside>
+
+<main class="main">
+<div class="page-width">
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+    <span class="hero-label">SUPPORT COMPLET · TRAVAUX PRATIQUES</span>
+    <h1>Travaux Pratiques de Mathématiques avec GNU Octave</h1>
+    <p>
+        Apprendre à manipuler les matrices, effectuer des calculs mathématiques,
+        travailler avec les fonctions et représenter graphiquement les résultats.
+        Un support progressif avec des exemples, des exercices corrigés et une évaluation interactive.
+    </p>
+
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <strong>17</strong>
+            <span>Chapitres de cours</span>
+        </div>
+        <div class="hero-stat">
+            <strong>20</strong>
+            <span>Exercices et problèmes</span>
+        </div>
+        <div class="hero-stat">
+            <strong>200</strong>
+            <span>Questions disponibles</span>
+        </div>
+        <div class="hero-stat">
+            <strong>3</strong>
+            <span>Grandes parties</span>
+        </div>
+    </div>
+</section>
+
+<div class="section-card">
+    <div class="section-heading">
+        <div class="section-number">01</div>
+        <div>
+            <h2>Objectifs de ce TP</h2>
+            <p>Les compétences à maîtriser à la fin de cette formation.</p>
+        </div>
+    </div>
+
+    <div class="command-grid">
+        <div class="command-item">
+            <span class="tag">MATRICES</span>
+            <code>matrix, zeros, ones, eye</code>
+            <p>Créer, modifier, extraire et manipuler les matrices.</p>
+        </div>
+        <div class="command-item">
+            <span class="tag">CALCULS</span>
+            <code>+, -, *, /, ^, .*, ./</code>
+            <p>Effectuer les opérations mathématiques et matricielles.</p>
+        </div>
+        <div class="command-item">
+            <span class="tag">FONCTIONS</span>
+            <code>sin, cos, sqrt, exp, log</code>
+            <p>Calculer les valeurs de différentes fonctions mathématiques.</p>
+        </div>
+        <div class="command-item">
+            <span class="tag">COURBES</span>
+            <code>plot, fplot, grid, legend</code>
+            <p>Construire, personnaliser et analyser les représentations graphiques.</p>
+        </div>
+    </div>
+
+    <div class="info">
+        <strong>Important :</strong> ce support présente les notions générales de GNU Octave utiles aux TP de mathématiques. Les PDF spécifiques de votre TP Math n'ont pas été retrouvés parmi les documents accessibles ici ; les consignes particulières de votre enseignant devront donc être ajoutées si elles diffèrent de ce programme général.
+    </div>
+</div>
+
+<!-- PARTIE 1 -->
+
+<section class="section-card" id="introduction">
+    <div class="section-heading">
+        <div class="section-number">01</div>
+        <div>
+            <h2>Introduction à GNU Octave</h2>
+            <p>Découvrir le logiciel et son utilisation en mathématiques.</p>
+        </div>
+    </div>
+
+    <h3>1.1 Qu'est-ce que GNU Octave ?</h3>
+    <p>
+        <strong>GNU Octave</strong> est un logiciel libre et gratuit destiné
+        principalement au calcul numérique. Il permet de résoudre des problèmes
+        mathématiques en utilisant des commandes et des instructions.
+    </p>
+
+    <p>Avec Octave, on peut notamment :</p>
+    <ul>
+        <li>Effectuer des calculs numériques.</li>
+        <li>Créer et manipuler des vecteurs et des matrices.</li>
+        <li>Calculer des déterminants et des inverses.</li>
+        <li>Résoudre des systèmes d'équations.</li>
+        <li>Calculer les valeurs de fonctions mathématiques.</li>
+        <li>Tracer les courbes représentatives des fonctions.</li>
+        <li>Effectuer des calculs statistiques.</li>
+    </ul>
+
+    <h3>1.2 L'interface d'Octave</h3>
+    <p>On rencontre généralement plusieurs zones dans l'interface :</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Zone</th><th>Rôle</th></tr>
+            <tr><td>Command Window</td><td>Écrire et exécuter directement les commandes.</td></tr>
+            <tr><td>Editor</td><td>Écrire et modifier des programmes dans des fichiers .m.</td></tr>
+            <tr><td>Workspace</td><td>Afficher les variables actuellement enregistrées.</td></tr>
+            <tr><td>Command History</td><td>Consulter les commandes précédemment exécutées.</td></tr>
+            <tr><td>Figure Window</td><td>Afficher les graphiques et les courbes.</td></tr>
+            <tr><td>Current Directory</td><td>Afficher le répertoire de travail actuel.</td></tr>
+        </table>
+    </div>
+
+    <h3>1.3 Comment fonctionne Octave ?</h3>
+    <p>
+        Octave lit une instruction, effectue le calcul demandé puis affiche
+        le résultat dans la fenêtre de commandes.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>PREMIER CALCUL</span><button class="copy-btn">Copier</button></div>
+        <pre><code>2 + 3</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> ans = 5</div>
+    </div>
+
+    <p>
+        La variable spéciale <code>ans</code> contient le dernier résultat
+        calculé lorsqu'on ne l'a pas affecté à une variable.
+    </p>
+</section>
+
+<section class="section-card" id="demarrage">
+    <div class="section-heading">
+        <div class="section-number">02</div>
+        <div>
+            <h2>Prise en main et commandes fondamentales</h2>
+            <p>Les premières commandes à connaître.</p>
+        </div>
+    </div>
+
+    <h3>2.1 Nettoyer l'environnement</h3>
+
+    <div class="command-grid">
+        <div class="command-item">
+            <code>clc</code>
+            <p>Efface le contenu affiché dans la fenêtre de commandes.</p>
+        </div>
+        <div class="command-item">
+            <code>clear</code>
+            <p>Supprime les variables de l'espace de travail.</p>
+        </div>
+        <div class="command-item">
+            <code>close all</code>
+            <p>Ferme toutes les fenêtres graphiques.</p>
+        </div>
+        <div class="command-item">
+            <code>who</code>
+            <p>Affiche les noms des variables existantes.</p>
+        </div>
+        <div class="command-item">
+            <code>whos</code>
+            <p>Affiche les variables avec leurs dimensions et leurs tailles.</p>
+        </div>
+        <div class="command-item">
+            <code>format long</code>
+            <p>Affiche davantage de chiffres après la virgule.</p>
+        </div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE COMPLET</span><button class="copy-btn">Copier</button></div>
+        <pre><code>clc;
+clear;
+close all;
+
+a = 10;
+b = 5;
+
+c = a + b;
+
+who
+whos</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            La variable a vaut 10, b vaut 5 et c vaut 15.
+        </div>
+    </div>
+
+    <h3>2.2 Obtenir de l'aide</h3>
+
+    <div class="command-grid">
+        <div class="command-item">
+            <code>help plot</code>
+            <p>Affiche l'aide de la commande plot.</p>
+        </div>
+        <div class="command-item">
+            <code>doc plot</code>
+            <p>Ouvre la documentation détaillée de plot.</p>
+        </div>
+        <div class="command-item">
+            <code>help inv</code>
+            <p>Explique la commande inv.</p>
+        </div>
+        <div class="command-item">
+            <code>lookfor matrix</code>
+            <p>Recherche les fonctions liées aux matrices.</p>
+        </div>
+    </div>
+
+    <h3>2.3 Les règles de syntaxe</h3>
+    <ul>
+        <li>Les commandes sont généralement séparées par des retours à la ligne.</li>
+        <li>Le point-virgule <code>;</code> empêche l'affichage automatique du résultat.</li>
+        <li>Le symbole <code>%</code> permet d'écrire un commentaire.</li>
+        <li>Les indices des matrices commencent à <strong>1</strong>.</li>
+        <li>Octave distingue les majuscules et les minuscules.</li>
+    </ul>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>% Ceci est un commentaire
+
+a = 5;
+b = 8
+
+c = a + b;</code></pre>
+        <div class="code-output">
+            <strong>Résultat affiché :</strong>
+            b = 8. La variable c vaut 13, mais son résultat n'est pas affiché.
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="variables">
+    <div class="section-heading">
+        <div class="section-number">03</div>
+        <div>
+            <h2>Variables et opérations mathématiques</h2>
+            <p>Stocker des nombres et effectuer des calculs.</p>
+        </div>
+    </div>
+
+    <h3>3.1 Déclarer une variable</h3>
+    <p>Une variable permet de stocker une valeur.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>a = 12;
+b = 4;
+
+somme = a + b;
+difference = a - b;
+produit = a * b;
+quotient = a / b;
+puissance = a ^ 2;</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            somme = 16 ; difference = 8 ; produit = 48 ; quotient = 3 ; puissance = 144.
+        </div>
+    </div>
+
+    <h3>3.2 Les opérateurs fondamentaux</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr>
+            <tr><td>+</td><td>Addition</td><td>5 + 3</td><td>8</td></tr>
+            <tr><td>-</td><td>Soustraction</td><td>5 - 3</td><td>2</td></tr>
+            <tr><td>*</td><td>Multiplication</td><td>5 * 3</td><td>15</td></tr>
+            <tr><td>/</td><td>Division</td><td>6 / 2</td><td>3</td></tr>
+            <tr><td>^</td><td>Puissance</td><td>2 ^ 3</td><td>8</td></tr>
+            <tr><td>\</td><td>Division à gauche</td><td>6 \ 2</td><td>1/3</td></tr>
+        </table>
+    </div>
+
+    <h3>3.3 Les constantes mathématiques</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>pi</code><p>Valeur approchée de π.</p></div>
+        <div class="command-item"><code>Inf</code><p>Représente l'infini positif.</p></div>
+        <div class="command-item"><code>NaN</code><p>Not a Number : valeur non numérique.</p></div>
+        <div class="command-item"><code>i</code><p>Unité imaginaire, sauf si cette variable a été redéfinie.</p></div>
+    </div>
+
+    <h3>3.4 Les fonctions de saisie et d'affichage</h3>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>a = input('Donner un nombre : ');
+
+carre = a^2;
+
+disp(carre)</code></pre>
+        <div class="code-output">
+            <strong>Exemple de résultat :</strong>
+            Si on saisit 5, le programme affiche 25.
+        </div>
+    </div>
+
+    <p>
+        <code>input()</code> demande une valeur à l'utilisateur.
+        <code>disp()</code> affiche un résultat.
+        <code>printf()</code> permet un affichage formaté.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>PRINTF</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = 3.14159;
+
+printf('La valeur de x est %.2f\n', x);</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            La valeur de x est 3.14
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="vecteurs">
+    <div class="section-heading">
+        <div class="section-number">04</div>
+        <div>
+            <h2>Les vecteurs</h2>
+            <p>Créer et manipuler des ensembles de valeurs.</p>
+        </div>
+    </div>
+
+    <h3>4.1 Définition</h3>
+    <p>
+        Un vecteur est une structure qui contient plusieurs éléments.
+        Il peut être horizontal (ligne) ou vertical (colonne).
+    </p>
+
+    <div class="formula">
+        V = [2 &nbsp; 4 &nbsp; 6 &nbsp; 8]
+    </div>
+
+    <h3>4.2 Créer un vecteur ligne</h3>
+    <div class="codebox">
+        <div class="code-header"><span>VECTEUR LIGNE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>V = [2 4 6 8];</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> V = [2 4 6 8]</div>
+    </div>
+
+    <h3>4.3 Créer un vecteur colonne</h3>
+    <p>On utilise le point-virgule pour passer à la ligne suivante.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>VECTEUR COLONNE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>V = [2; 4; 6; 8];</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> Un vecteur de 4 lignes et 1 colonne.</div>
+    </div>
+
+    <h3>4.4 L'opérateur deux-points :</h3>
+    <p>La commande <code>:</code> permet de générer rapidement une suite de nombres.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>GÉNÉRATION DES VECTEURS</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = 1:5;
+
+B = 2:2:10;
+
+C = 10:-2:2;</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>A = [1 2 3 4 5]
+            <br>B = [2 4 6 8 10]
+            <br>C = [10 8 6 4 2]
+        </div>
+    </div>
+
+    <div class="formula">début : pas : fin</div>
+
+    <p>
+        Le pas est égal à 1 lorsqu'il n'est pas précisé.
+        Le pas peut être négatif pour générer une suite décroissante.
+    </p>
+
+    <h3>4.5 La commande linspace</h3>
+    <p>
+        <code>linspace(a,b,n)</code> génère n valeurs régulièrement espacées
+        entre a et b, avec les deux extrémités incluses lorsque n est supérieur ou égal à 2.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>LINSPACE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = linspace(0,10,5);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> x = [0 2.5 5 7.5 10]</div>
+    </div>
+
+    <h3>4.6 Accéder aux éléments</h3>
+    <div class="codebox">
+        <div class="code-header"><span>INDEXATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>V = [10 20 30 40 50];
+
+a = V(1);
+b = V(3);
+c = V(end);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>a = 10
+            <br>b = 30
+            <br>c = 50
+        </div>
+    </div>
+
+    <h3>4.7 Modifier un élément</h3>
+    <div class="codebox">
+        <div class="code-header"><span>MODIFICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>V = [10 20 30];
+
+V(2) = 100;</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> V = [10 100 30]</div>
+    </div>
+
+    <h3>4.8 Fonctions utiles sur les vecteurs</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>length(V)</code><p>Nombre d'éléments du vecteur.</p></div>
+        <div class="command-item"><code>sum(V)</code><p>Somme des éléments.</p></div>
+        <div class="command-item"><code>prod(V)</code><p>Produit des éléments.</p></div>
+        <div class="command-item"><code>max(V)</code><p>Plus grande valeur.</p></div>
+        <div class="command-item"><code>min(V)</code><p>Plus petite valeur.</p></div>
+        <div class="command-item"><code>sort(V)</code><p>Trie les éléments.</p></div>
+        <div class="command-item"><code>mean(V)</code><p>Calcule la moyenne.</p></div>
+        <div class="command-item"><code>fliplr(V)</code><p>Inverse l'ordre d'un vecteur ligne.</p></div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>V = [2 4 6 8];
+
+s = sum(V);
+m = mean(V);
+mx = max(V);
+mn = min(V);
+n = length(V);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            s = 20 ; m = 5 ; mx = 8 ; mn = 2 ; n = 4.
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="matrices">
+    <div class="section-heading">
+        <div class="section-number">05</div>
+        <div>
+            <h2>Les matrices</h2>
+            <p>Création, dimensions, extraction et modification.</p>
+        </div>
+    </div>
+
+    <h3>5.1 Définition d'une matrice</h3>
+    <p>
+        Une matrice est un tableau de nombres organisés en lignes et en colonnes.
+    </p>
+
+    <div class="formula">
+        A = <br>
+        [ 1 &nbsp; 2 &nbsp; 3 ]<br>
+        [ 4 &nbsp; 5 &nbsp; 6 ]<br>
+        [ 7 &nbsp; 8 &nbsp; 9 ]
+    </div>
+
+    <p>
+        Cette matrice possède 3 lignes et 3 colonnes.
+        On dit qu'elle est de dimension 3 × 3.
+    </p>
+
+    <h3>5.2 Créer une matrice</h3>
+    <p>
+        On utilise les crochets <code>[]</code>.
+        Les espaces séparent les colonnes et les points-virgules séparent les lignes.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>CRÉATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6;
+     7 8 9];</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>1  2  3
+            <br>4  5  6
+            <br>7  8  9
+        </div>
+    </div>
+
+    <h3>5.3 Les matrices particulières</h3>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Description</th><th>Exemple</th></tr>
+            <tr><td>zeros(m,n)</td><td>Matrice remplie de zéros.</td><td>zeros(2,3)</td></tr>
+            <tr><td>ones(m,n)</td><td>Matrice remplie de uns.</td><td>ones(2,3)</td></tr>
+            <tr><td>eye(n)</td><td>Matrice identité.</td><td>eye(3)</td></tr>
+            <tr><td>rand(m,n)</td><td>Matrice de nombres aléatoires uniformes.</td><td>rand(2,3)</td></tr>
+            <tr><td>diag(V)</td><td>Matrice diagonale à partir d'un vecteur.</td><td>diag([1 2 3])</td></tr>
+            <tr><td>magic(n)</td><td>Carré magique d'ordre n.</td><td>magic(3)</td></tr>
+        </table>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = zeros(2,3);
+
+B = ones(3,2);
+
+I = eye(3);
+
+D = diag([2 4 6]);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>A : 2 lignes et 3 colonnes de zéros.
+            <br>B : 3 lignes et 2 colonnes de uns.
+            <br>I : matrice identité d'ordre 3.
+            <br>D : matrice diagonale avec 2, 4 et 6 sur la diagonale.
+        </div>
+    </div>
+
+    <h3>5.4 Connaître les dimensions</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>size(A)</code><p>Donne les dimensions de la matrice.</p></div>
+        <div class="command-item"><code>size(A,1)</code><p>Donne le nombre de lignes.</p></div>
+        <div class="command-item"><code>size(A,2)</code><p>Donne le nombre de colonnes.</p></div>
+        <div class="command-item"><code>numel(A)</code><p>Donne le nombre total d'éléments.</p></div>
+        <div class="command-item"><code>length(A)</code><p>Donne la plus grande dimension.</p></div>
+        <div class="command-item"><code>ndims(A)</code><p>Donne le nombre de dimensions.</p></div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6];
+
+d = size(A);
+l = size(A,1);
+c = size(A,2);
+n = numel(A);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>d = [2 3]
+            <br>l = 2
+            <br>c = 3
+            <br>n = 6
+        </div>
+    </div>
+
+    <h3>5.5 Accéder aux éléments d'une matrice</h3>
+    <p>La syntaxe est :</p>
+    <div class="formula">A(numéro_de_ligne, numéro_de_colonne)</div>
+
+    <div class="codebox">
+        <div class="code-header"><span>INDEXATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [10 20 30;
+     40 50 60;
+     70 80 90];
+
+a = A(1,2);
+b = A(2,3);
+c = A(3,1);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>a = 20
+            <br>b = 60
+            <br>c = 70
+        </div>
+    </div>
+
+    <h3>5.6 Extraire une ligne</h3>
+    <div class="codebox">
+        <div class="code-header"><span>EXTRACTION D'UNE LIGNE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6;
+     7 8 9];
+
+L = A(2,:);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> L = [4 5 6]</div>
+    </div>
+
+    <p>Le symbole <code>:</code> signifie ici toutes les colonnes.</p>
+
+    <h3>5.7 Extraire une colonne</h3>
+    <div class="codebox">
+        <div class="code-header"><span>EXTRACTION D'UNE COLONNE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>C = A(:,2);</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>C =
+            <br>2
+            <br>5
+            <br>8
+        </div>
+    </div>
+
+    <p>
+        Le premier <code>:</code> signifie toutes les lignes.
+    </p>
+
+    <h3>5.8 Extraire une sous-matrice</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SOUS-MATRICE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6;
+     7 8 9];
+
+B = A(1:2,2:3);</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>2  3
+            <br>5  6
+        </div>
+    </div>
+
+    <h3>5.9 Modifier les éléments</h3>
+    <div class="codebox">
+        <div class="code-header"><span>MODIFICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+A(1,2) = 100;
+
+A(2,:) = [8 9];
+
+A(:,1) = [5; 6];</code></pre>
+        <div class="code-output">
+            <strong>Résultat final :</strong>
+            <br>5  100
+            <br>6  9
+        </div>
+    </div>
+
+    <h3>5.10 Ajouter une ligne ou une colonne</h3>
+    <div class="codebox">
+        <div class="code-header"><span>AJOUT</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+% Ajouter une ligne
+A(3,:) = [5 6];
+
+% Ajouter une colonne
+A(:,3) = [7; 8; 9];</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>1  2  7
+            <br>3  4  8
+            <br>5  6  9
+        </div>
+    </div>
+
+    <h3>5.11 Supprimer une ligne ou une colonne</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SUPPRESSION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6;
+     7 8 9];
+
+% Supprimer la deuxième ligne
+A(2,:) = [];
+
+% Supprimer la troisième colonne
+A(:,3) = [];</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>1  2
+            <br>7  8
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="operations">
+    <div class="section-heading">
+        <div class="section-number">06</div>
+        <div>
+            <h2>Opérations sur les matrices</h2>
+            <p>Comprendre la différence entre calcul matriciel et calcul élément par élément.</p>
+        </div>
+    </div>
+
+    <h3>6.1 Addition de matrices</h3>
+    <p>
+        Pour additionner deux matrices, elles doivent avoir les mêmes dimensions.
+        On additionne les éléments qui occupent les mêmes positions.
+    </p>
+
+    <div class="formula">
+        A + B = [a₁₁+b₁₁ &nbsp; a₁₂+b₁₂]
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>ADDITION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+B = [5 6; 7 8];
+
+C = A + B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>6  8
+            <br>10 12
+        </div>
+    </div>
+
+    <h3>6.2 Soustraction</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SOUSTRACTION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [5 8; 9 7];
+B = [2 3; 4 1];
+
+C = A - B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>3  5
+            <br>5  6
+        </div>
+    </div>
+
+    <h3>6.3 Multiplication matricielle : *</h3>
+    <p>
+        La multiplication matricielle respecte les règles de l'algèbre linéaire.
+        Si A est de dimension m × n et B de dimension n × p,
+        alors A × B est de dimension m × p.
+    </p>
+
+    <div class="warning">
+        Attention : le nombre de colonnes de la première matrice doit être égal
+        au nombre de lignes de la deuxième matrice.
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>MULTIPLICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2;
+     3 4];
+
+B = [5 6;
+     7 8];
+
+C = A * B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>19  22
+            <br>43  50
+        </div>
+    </div>
+
+    <h3>6.4 Multiplication élément par élément : .*</h3>
+    <p>
+        L'opérateur <code>.*</code> multiplie chaque élément d'une matrice
+        par l'élément correspondant de l'autre matrice.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>MULTIPLICATION ÉLÉMENTAIRE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+B = [5 6; 7 8];
+
+C = A .* B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>5  12
+            <br>21 32
+        </div>
+    </div>
+
+    <h3>6.5 Division matricielle et élémentaire</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Signification</th></tr>
+            <tr><td>A / B</td><td>Division matricielle à droite.</td></tr>
+            <tr><td>A \ B</td><td>Division matricielle à gauche.</td></tr>
+            <tr><td>A ./ B</td><td>Division élément par élément.</td></tr>
+            <tr><td>A .\ B</td><td>Division élémentaire inversée : B ./ A.</td></tr>
+        </table>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>DIVISION ÉLÉMENTAIRE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [10 20; 30 40];
+B = [2 4; 5 8];
+
+C = A ./ B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>5  5
+            <br>6  5
+        </div>
+    </div>
+
+    <h3>6.6 Puissance matricielle : ^ et .^</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PUISSANCES</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+B = A ^ 2;
+
+C = A .^ 2;</code></pre>
+        <div class="code-output">
+            <strong>B = A² :</strong>
+            <br>7  10
+            <br>15 22
+            <br><br>
+            <strong>C = A.^2 :</strong>
+            <br>1  4
+            <br>9  16
+        </div>
+    </div>
+
+    <h3>6.7 Tableau récapitulatif essentiel</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Opérateur</th><th>Type de calcul</th><th>Explication</th></tr>
+            <tr><td>+</td><td>Matriciel</td><td>Addition élément par élément.</td></tr>
+            <tr><td>-</td><td>Matriciel</td><td>Soustraction élément par élément.</td></tr>
+            <tr><td>*</td><td>Matriciel</td><td>Multiplication matricielle.</td></tr>
+            <tr><td>.*</td><td>Élémentaire</td><td>Multiplication des éléments correspondants.</td></tr>
+            <tr><td>/</td><td>Matriciel</td><td>Division matricielle à droite.</td></tr>
+            <tr><td>./</td><td>Élémentaire</td><td>Division des éléments correspondants.</td></tr>
+            <tr><td>^</td><td>Matriciel</td><td>Puissance d'une matrice carrée.</td></tr>
+            <tr><td>.^</td><td>Élémentaire</td><td>Puissance appliquée à chaque élément.</td></tr>
+            <tr><td>'</td><td>Transposition</td><td>Transpose et conjugue les éléments complexes.</td></tr>
+            <tr><td>.'</td><td>Transposition</td><td>Transpose sans conjugaison.</td></tr>
+        </table>
+    </div>
+
+    <h3>6.8 Transposée d'une matrice</h3>
+    <p>La transposée échange les lignes et les colonnes.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>TRANSPOSE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     4 5 6];
+
+B = A';</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>1  4
+            <br>2  5
+            <br>3  6
+        </div>
+    </div>
+
+    <h3>6.9 Déterminant</h3>
+    <p>
+        Le déterminant est une valeur numérique associée à une matrice carrée.
+        Il permet notamment de savoir si une matrice est inversible.
+    </p>
+
+    <div class="formula">
+        Pour A = [a b ; c d] : det(A) = ad - bc
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>DÉTERMINANT</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+d = det(A);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> d = -2</div>
+    </div>
+
+    <h3>6.10 Inverse d'une matrice</h3>
+    <p>
+        Une matrice carrée possède une inverse si son déterminant est non nul.
+        L'inverse de A est notée A⁻¹.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>INVERSE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+B = inv(A);
+
+% Vérification
+C = A * B;</code></pre>
+        <div class="code-output">
+            <strong>B = inv(A) :</strong>
+            <br>-2 &nbsp; 1
+            <br>1.5 -0.5
+            <br><br>
+            <strong>C = A*B :</strong> approximativement la matrice identité.
+        </div>
+    </div>
+
+    <h3>6.11 Le rang d'une matrice</h3>
+    <p>Le rang correspond au nombre maximal de lignes ou colonnes linéairement indépendantes.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>RANG</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3;
+     2 4 6;
+     1 0 1];
+
+r = rank(A);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> r = 2</div>
+    </div>
+
+    <h3>6.12 Trace et valeurs propres</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>trace(A)</code><p>Somme des éléments diagonaux.</p></div>
+        <div class="command-item"><code>eig(A)</code><p>Calcule les valeurs propres.</p></div>
+        <div class="command-item"><code>norm(A)</code><p>Calcule une norme de la matrice.</p></div>
+        <div class="command-item"><code>rref(A)</code><p>Forme échelonnée réduite, selon la disponibilité de la fonction dans la version utilisée.</p></div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [2 0; 0 3];
+
+t = trace(A);
+
+v = eig(A);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>trace(A) = 5
+            <br>eig(A) = [2 ; 3] (ordre d'affichage pouvant varier).
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="fonctions">
+    <div class="section-heading">
+        <div class="section-number">07</div>
+        <div>
+            <h2>Les fonctions mathématiques</h2>
+            <p>Utiliser les fonctions intégrées dans Octave.</p>
+        </div>
+    </div>
+
+    <h3>7.1 Fonctions de puissance et racines</h3>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>sqrt(x)</td><td>Racine carrée</td><td>sqrt(25) = 5</td></tr>
+            <tr><td>nthroot(x,n)</td><td>Racine n-ième réelle</td><td>nthroot(8,3) = 2</td></tr>
+            <tr><td>abs(x)</td><td>Valeur absolue</td><td>abs(-5) = 5</td></tr>
+            <tr><td>sign(x)</td><td>Signe du nombre</td><td>sign(-8) = -1</td></tr>
+        </table>
+    </div>
+
+    <h3>7.2 Fonctions exponentielles et logarithmes</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>exp(x)</td><td>Exponentielle eˣ</td><td>exp(1) ≈ 2.718</td></tr>
+            <tr><td>log(x)</td><td>Logarithme naturel ln(x)</td><td>log(exp(1)) = 1</td></tr>
+            <tr><td>log10(x)</td><td>Logarithme décimal</td><td>log10(100) = 2</td></tr>
+            <tr><td>log2(x)</td><td>Logarithme en base 2</td><td>log2(8) = 3</td></tr>
+        </table>
+    </div>
+
+    <h3>7.3 Fonctions trigonométriques</h3>
+    <div class="warning">
+        Attention : les fonctions sin, cos et tan utilisent les radians.
+        Pour travailler en degrés, on peut utiliser sind, cosd et tand.
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Fonction</th><th>Exemple</th></tr>
+            <tr><td>sin(x)</td><td>Sinus</td><td>sin(pi/2) = 1</td></tr>
+            <tr><td>cos(x)</td><td>Cosinus</td><td>cos(0) = 1</td></tr>
+            <tr><td>tan(x)</td><td>Tangente</td><td>tan(pi/4) ≈ 1</td></tr>
+            <tr><td>asin(x)</td><td>Arcsinus</td><td>asin(1) = pi/2</td></tr>
+            <tr><td>acos(x)</td><td>Arccosinus</td><td>acos(1) = 0</td></tr>
+            <tr><td>atan(x)</td><td>Arctangente</td><td>atan(1) = pi/4</td></tr>
+            <tr><td>sind(x)</td><td>Sinus en degrés</td><td>sind(90) = 1</td></tr>
+            <tr><td>cosd(x)</td><td>Cosinus en degrés</td><td>cosd(60) = 0.5</td></tr>
+            <tr><td>tand(x)</td><td>Tangente en degrés</td><td>tand(45) = 1</td></tr>
+        </table>
+    </div>
+
+    <h3>7.4 Fonctions d'arrondi</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>round(x)</code><p>Arrondit à l'entier le plus proche.</p></div>
+        <div class="command-item"><code>floor(x)</code><p>Arrondi vers moins l'infini.</p></div>
+        <div class="command-item"><code>ceil(x)</code><p>Arrondi vers plus l'infini.</p></div>
+        <div class="command-item"><code>fix(x)</code><p>Supprime la partie décimale vers zéro.</p></div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLES</span><button class="copy-btn">Copier</button></div>
+        <pre><code>a = round(4.7);
+b = floor(4.7);
+c = ceil(4.2);
+d = fix(-4.8);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>a = 5
+            <br>b = 4
+            <br>c = 5
+            <br>d = -4
+        </div>
+    </div>
+
+    <h3>7.5 Appliquer une fonction à un vecteur</h3>
+    <p>
+        Octave peut appliquer plusieurs fonctions élément par élément
+        lorsqu'on leur fournit un vecteur.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>EXEMPLE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = [0 pi/6 pi/4 pi/3 pi/2];
+
+y = sin(x);
+
+z = cos(x);</code></pre>
+        <div class="code-output">
+            <strong>Résultats :</strong>
+            <br>sin(x) ≈ [0 0.5 0.7071 0.8660 1]
+            <br>cos(x) ≈ [1 0.8660 0.7071 0.5 0]
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="conditions">
+    <div class="section-heading">
+        <div class="section-number">08</div>
+        <div>
+            <h2>Conditions et boucles</h2>
+            <p>Automatiser les calculs avec des instructions.</p>
+        </div>
+    </div>
+
+    <h3>8.1 Les opérateurs de comparaison</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th></tr>
+            <tr><td>==</td><td>Égal à</td></tr>
+            <tr><td>~=</td><td>Différent de</td></tr>
+            <tr><td>&gt;</td><td>Supérieur à</td></tr>
+            <tr><td>&lt;</td><td>Inférieur à</td></tr>
+            <tr><td>&gt;=</td><td>Supérieur ou égal à</td></tr>
+            <tr><td>&lt;=</td><td>Inférieur ou égal à</td></tr>
+        </table>
+    </div>
+
+    <h3>8.2 Les opérateurs logiques</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>&</code><p>ET logique élément par élément.</p></div>
+        <div class="command-item"><code>|</code><p>OU logique élément par élément.</p></div>
+        <div class="command-item"><code>~</code><p>NON logique.</p></div>
+        <div class="command-item"><code>&&</code><p>ET logique avec évaluation conditionnelle.</p></div>
+        <div class="command-item"><code>||</code><p>OU logique avec évaluation conditionnelle.</p></div>
+    </div>
+
+    <h3>8.3 Condition if / else</h3>
+    <div class="codebox">
+        <div class="code-header"><span>CONDITION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = 10;
+
+if x > 0
+    disp('Positif');
+elseif x < 0
+    disp('Negatif');
+else
+    disp('Nul');
+endif</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> Positif</div>
+    </div>
+
+    <h3>8.4 Boucle for</h3>
+    <p>La boucle for permet de répéter une opération un nombre déterminé de fois.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>BOUCLE FOR</span><button class="copy-btn">Copier</button></div>
+        <pre><code>for i = 1:5
+    disp(i);
+endfor</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>1
+            <br>2
+            <br>3
+            <br>4
+            <br>5
+        </div>
+    </div>
+
+    <h3>8.5 Boucle while</h3>
+    <div class="codebox">
+        <div class="code-header"><span>BOUCLE WHILE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>i = 1;
+
+while i <= 5
+    disp(i);
+    i = i + 1;
+endwhile</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> Affiche les nombres de 1 à 5.</div>
+    </div>
+
+    <h3>8.6 Exemple : calculer la somme</h3>
+    <div class="codebox">
+        <div class="code-header"><span>APPLICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>s = 0;
+
+for i = 1:10
+    s = s + i;
+endfor
+
+disp(s);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> 55</div>
+    </div>
+</section>
+
+<section class="section-card" id="fonctions-personnelles">
+    <div class="section-heading">
+        <div class="section-number">09</div>
+        <div>
+            <h2>Créer ses propres fonctions</h2>
+            <p>Définir une fonction réutilisable dans Octave.</p>
+        </div>
+    </div>
+
+    <h3>9.1 Qu'est-ce qu'une fonction ?</h3>
+    <p>
+        Une fonction est un bloc d'instructions qui reçoit éventuellement
+        des paramètres, effectue un traitement et renvoie un ou plusieurs résultats.
+    </p>
+
+    <h3>9.2 Structure d'une fonction</h3>
+    <div class="formula">
+        function resultat = nom_fonction(parametre)<br>
+        &nbsp;&nbsp;instructions<br>
+        endfunction
+    </div>
+
+    <h3>9.3 Exemple : fonction carré</h3>
+    <div class="codebox">
+        <div class="code-header"><span>carre.m</span><button class="copy-btn">Copier</button></div>
+        <pre><code>function y = carre(x)
+    y = x^2;
+endfunction</code></pre>
+    </div>
+
+    <p>On enregistre ce code dans un fichier nommé <code>carre.m</code>.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>UTILISATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>resultat = carre(5);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> resultat = 25</div>
+    </div>
+
+    <h3>9.4 Fonction avec plusieurs paramètres</h3>
+    <div class="codebox">
+        <div class="code-header"><span>somme.m</span><button class="copy-btn">Copier</button></div>
+        <pre><code>function s = somme(a,b)
+    s = a + b;
+endfunction</code></pre>
+    </div>
+
+    <h3>9.5 Fonction avec plusieurs résultats</h3>
+    <div class="codebox">
+        <div class="code-header"><span>calcul.m</span><button class="copy-btn">Copier</button></div>
+        <pre><code>function [s,p] = calcul(a,b)
+    s = a + b;
+    p = a * b;
+endfunction</code></pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>UTILISATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>[s,p] = calcul(4,5);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> s = 9 ; p = 20</div>
+    </div>
+
+    <div class="warning">
+        Le nom du fichier doit normalement correspondre au nom de la fonction
+        principale. Le fichier doit également être accessible depuis le chemin
+        de recherche d'Octave.
+    </div>
+</section>
+
+<section class="section-card" id="polynomes">
+    <div class="section-heading">
+        <div class="section-number">10</div>
+        <div>
+            <h2>Polynômes et équations</h2>
+            <p>Représenter, évaluer et calculer les racines d'un polynôme.</p>
+        </div>
+    </div>
+
+    <h3>10.1 Représentation d'un polynôme</h3>
+    <p>Un polynôme est représenté par un vecteur contenant ses coefficients dans l'ordre décroissant des puissances.</p>
+
+    <div class="formula">
+        P(x) = 2x³ - 3x² + 4x - 5
+        <br>
+        p = [2 -3 4 -5]
+    </div>
+
+    <h3>10.2 Créer un polynôme</h3>
+    <div class="codebox">
+        <div class="code-header"><span>POLYNÔME</span><button class="copy-btn">Copier</button></div>
+        <pre><code>p = [2 -3 4 -5];</code></pre>
+    </div>
+
+    <h3>10.3 Calculer une valeur</h3>
+    <p><code>polyval(p,x)</code> calcule la valeur du polynôme pour x.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>POLYVAL</span><button class="copy-btn">Copier</button></div>
+        <pre><code>p = [1 -3 2];
+
+y = polyval(p,2);</code></pre>
+        <div class="code-output">
+            <strong>Calcul :</strong>
+            <br>P(x) = x² - 3x + 2
+            <br>P(2) = 4 - 6 + 2 = 0
+        </div>
+    </div>
+
+    <h3>10.4 Calculer les racines</h3>
+    <p><code>roots(p)</code> calcule les racines du polynôme.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>ROOTS</span><button class="copy-btn">Copier</button></div>
+        <pre><code>p = [1 -3 2];
+
+r = roots(p);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> r = [2 ; 1] (ordre pouvant varier).</div>
+    </div>
+
+    <h3>10.5 Multiplier deux polynômes</h3>
+    <div class="codebox">
+        <div class="code-header"><span>CONV</span><button class="copy-btn">Copier</button></div>
+        <pre><code>p = [1 2];
+q = [1 3];
+
+r = conv(p,q);</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong> r = [1 5 6]
+            <br>
+            Cela correspond à (x+2)(x+3) = x²+5x+6.
+        </div>
+    </div>
+
+    <h3>10.6 Dérivée d'un polynôme</h3>
+    <div class="codebox">
+        <div class="code-header"><span>POLYDER</span><button class="copy-btn">Copier</button></div>
+        <pre><code>p = [3 2 -5];
+
+dp = polyder(p);</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong> dp = [6 2]
+            <br>
+            Si P(x)=3x²+2x-5, alors P'(x)=6x+2.
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="systemes">
+    <div class="section-heading">
+        <div class="section-number">11</div>
+        <div>
+            <h2>Résolution des systèmes linéaires</h2>
+            <p>Utiliser Octave pour résoudre des équations simultanées.</p>
+        </div>
+    </div>
+
+    <h3>11.1 Forme matricielle</h3>
+    <p>Un système linéaire peut être représenté sous la forme :</p>
+
+    <div class="formula">AX = B</div>
+
+    <p>Avec :</p>
+    <ul>
+        <li>A : matrice des coefficients.</li>
+        <li>X : vecteur des inconnues.</li>
+        <li>B : vecteur des seconds membres.</li>
+    </ul>
+
+    <h3>11.2 Exemple de système</h3>
+    <div class="formula">
+        2x + y = 5<br>
+        x - y = 1
+    </div>
+
+    <p>On transforme ce système en matrices :</p>
+    <div class="formula">
+        A = [2 1 ; 1 -1]
+        <br>
+        X = [x ; y]
+        <br>
+        B = [5 ; 1]
+    </div>
+
+    <h3>11.3 Résoudre avec l'opérateur \</h3>
+    <div class="codebox">
+        <div class="code-header"><span>RÉSOLUTION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [2 1;
+     1 -1];
+
+B = [5; 1];
+
+X = A \ B;</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            <br>x = 2
+            <br>y = 1
+        </div>
+    </div>
+
+    <div class="success">
+        Conseil : pour résoudre un système AX=B, privilégie généralement
+        <code>A\B</code> plutôt que <code>inv(A)*B</code>.
+    </div>
+
+    <h3>11.4 Vérifier la solution</h3>
+    <div class="codebox">
+        <div class="code-header"><span>VÉRIFICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>verification = A * X;
+
+disp(verification);</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> [5 ; 1], identique à B.</div>
+    </div>
+</section>
+
+<section class="section-card" id="courbes">
+    <div class="section-heading">
+        <div class="section-number">12</div>
+        <div>
+            <h2>Tracer les courbes des fonctions</h2>
+            <p>La représentation graphique avec plot et les commandes associées.</p>
+        </div>
+    </div>
+
+    <h3>12.1 Principe d'une représentation graphique</h3>
+    <p>
+        Pour tracer une fonction f(x), on doit construire un ensemble de valeurs
+        de x, calculer les valeurs correspondantes de y=f(x), puis représenter
+        les points dans un repère.
+    </p>
+
+    <div class="formula">
+        y = f(x)
+    </div>
+
+    <p>La méthode générale est :</p>
+    <ol>
+        <li>Créer un vecteur de valeurs de x.</li>
+        <li>Calculer les valeurs de y.</li>
+        <li>Utiliser la commande plot(x,y).</li>
+        <li>Ajouter les titres, les axes et la grille.</li>
+    </ol>
+
+    <h3>12.2 La commande plot</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PREMIÈRE COURBE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+
+y = x.^2;
+
+plot(x,y);</code></pre>
+        <div class="code-output">
+            <strong>Interprétation :</strong>
+            La courbe représente la fonction f(x)=x² sur l'intervalle [-5,5].
+        </div>
+    </div>
+
+    <div class="warning">
+        Attention à <code>.^</code> : le vecteur x contient plusieurs valeurs.
+        Chaque valeur doit être élevée au carré indépendamment.
+        On utilise donc x.^2 et non x^2.
+    </div>
+
+    <h3>12.3 Personnaliser la courbe</h3>
+
+    <div class="command-grid">
+        <div class="command-item"><code>title('Titre')</code><p>Donne un titre au graphique.</p></div>
+        <div class="command-item"><code>xlabel('x')</code><p>Nom de l'axe horizontal.</p></div>
+        <div class="command-item"><code>ylabel('y')</code><p>Nom de l'axe vertical.</p></div>
+        <div class="command-item"><code>grid on</code><p>Active la grille.</p></div>
+        <div class="command-item"><code>grid off</code><p>Désactive la grille.</p></div>
+        <div class="command-item"><code>legend('f')</code><p>Affiche la légende.</p></div>
+        <div class="command-item"><code>axis equal</code><p>Utilise la même échelle sur les deux axes.</p></div>
+        <div class="command-item"><code>axis([a b c d])</code><p>Définit les limites des axes.</p></div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>COURBE PERSONNALISÉE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+y = x.^2;
+
+plot(x,y,'r','linewidth',2);
+
+title('Courbe de f(x) = x^2');
+xlabel('Axe X');
+ylabel('Axe Y');
+
+grid on;
+legend('f(x) = x^2');</code></pre>
+    </div>
+
+    <h3>12.4 Les couleurs et les styles</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Code</th><th>Couleur</th><th>Code</th><th>Style</th></tr>
+            <tr><td>'r'</td><td>Rouge</td><td>'-'</td><td>Ligne continue</td></tr>
+            <tr><td>'b'</td><td>Bleu</td><td>'--'</td><td>Pointillés longs</td></tr>
+            <tr><td>'g'</td><td>Vert</td><td>':'</td><td>Pointillés</td></tr>
+            <tr><td>'k'</td><td>Noir</td><td>'-.'</td><td>Mixte</td></tr>
+            <tr><td>'m'</td><td>Magenta</td><td>'o'</td><td>Marqueur cercle</td></tr>
+            <tr><td>'c'</td><td>Cyan</td><td>'+'</td><td>Marqueur plus</td></tr>
+        </table>
+    </div>
+
+    <h3>12.5 Tracer plusieurs fonctions</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PLUSIEURS COURBES</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -2*pi:0.01:2*pi;
+
+y1 = sin(x);
+y2 = cos(x);
+
+plot(x,y1,'r',x,y2,'b');
+
+grid on;
+legend('sin(x)','cos(x)');
+
+title('Sinus et cosinus');</code></pre>
+    </div>
+
+    <h3>12.6 Utiliser hold on et hold off</h3>
+    <p>
+        <code>hold on</code> permet de conserver le graphique existant
+        pour ajouter d'autres courbes.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>HOLD</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+
+plot(x,x.^2,'r');
+
+hold on;
+
+plot(x,x,'b');
+
+plot(x,-x,'g');
+
+hold off;
+
+grid on;
+legend('x^2','x','-x');</code></pre>
+    </div>
+
+    <h3>12.7 Tracer les fonctions trigonométriques</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SINUS ET COSINUS</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -2*pi:0.01:2*pi;
+
+y1 = sin(x);
+y2 = cos(x);
+
+plot(x,y1,'r',x,y2,'b');
+
+grid on;
+
+xlabel('x en radians');
+ylabel('Valeur');
+
+legend('sin(x)','cos(x)');</code></pre>
+    </div>
+
+    <h3>12.8 Tracer la fonction tangente</h3>
+    <p>
+        La fonction tangente n'est pas définie lorsque
+        cos(x)=0. Il faut donc éviter de relier artificiellement
+        les branches de la courbe au niveau des asymptotes.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>TANGENTE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x1 = -pi/2+0.01:0.01:pi/2-0.01;
+
+y1 = tan(x1);
+
+plot(x1,y1,'r');
+
+grid on;
+ylim([-5 5]);
+
+title('Fonction tangente');</code></pre>
+    </div>
+
+    <h3>12.9 Utiliser fplot</h3>
+    <p>
+        <code>fplot</code> permet de tracer une expression ou une fonction
+        sur un intervalle sans construire manuellement un vecteur de points.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>FPLOT</span><button class="copy-btn">Copier</button></div>
+        <pre><code>fplot(@(x) x.^2-3*x+2,[-5 5]);
+
+grid on;
+
+title('f(x) = x^2 - 3x + 2');</code></pre>
+    </div>
+
+    <h3>12.10 Découper une fenêtre en plusieurs graphiques</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SUBPLOT</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+
+subplot(2,2,1);
+plot(x,x.^2);
+title('x^2');
+grid on;
+
+subplot(2,2,2);
+plot(x,x.^3);
+title('x^3');
+grid on;
+
+subplot(2,2,3);
+plot(x,sin(x));
+title('sin(x)');
+grid on;
+
+subplot(2,2,4);
+plot(x,cos(x));
+title('cos(x)');
+grid on;</code></pre>
+        <div class="info">
+            <strong>Comprendre subplot(2,2,1) :</strong>
+            <br>2 : nombre de lignes.
+            <br>2 : nombre de colonnes.
+            <br>1 : position du graphique.
+        </div>
+    </div>
+
+    <h3>12.11 Visualisation illustrative des courbes</h3>
+    <div class="chart-container">
+        <canvas id="demoChart" aria-label="Courbes du sinus et du cosinus"></canvas>
+        <div class="chart-caption">Illustration pédagogique : sinus et cosinus sur [-2π, 2π].</div>
+    </div>
+    <p class="info">
+        Ce graphique est une illustration dans la page web. Pour obtenir le même
+        résultat dans votre TP, exécutez les commandes Octave présentées ci-dessus.
+    </p>
+</section>
+
+<section class="section-card" id="graphiques">
+    <div class="section-heading">
+        <div class="section-number">13</div>
+        <div>
+            <h2>Graphiques avancés</h2>
+            <p>Découvrir d'autres types de représentations.</p>
+        </div>
+    </div>
+
+    <h3>13.1 Graphique en barres</h3>
+    <div class="codebox">
+        <div class="code-header"><span>BAR</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = [1 2 3 4];
+y = [10 20 15 30];
+
+bar(x,y);
+
+grid on;
+title('Graphique en barres');</code></pre>
+    </div>
+
+    <h3>13.2 Graphique circulaire</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PIE</span><button class="copy-btn">Copier</button></div>
+        <pre><code>valeurs = [30 20 25 25];
+
+pie(valeurs);
+
+title('Répartition des valeurs');</code></pre>
+    </div>
+
+    <h3>13.3 Graphique logarithmique</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>semilogx(x,y)</code><p>Axe horizontal logarithmique.</p></div>
+        <div class="command-item"><code>semilogy(x,y)</code><p>Axe vertical logarithmique.</p></div>
+        <div class="command-item"><code>loglog(x,y)</code><p>Deux axes logarithmiques.</p></div>
+    </div>
+
+    <h3>13.4 Représentation en trois dimensions</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PLOT3</span><button class="copy-btn">Copier</button></div>
+        <pre><code>t = 0:0.01:10*pi;
+
+x = cos(t);
+y = sin(t);
+z = t;
+
+plot3(x,y,z);
+
+grid on;
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+
+title('Courbe en 3D');</code></pre>
+    </div>
+
+    <h3>13.5 Surface 3D avec surf</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SURF</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.2:5;
+y = -5:0.2:5;
+
+[X,Y] = meshgrid(x,y);
+
+Z = X.^2 + Y.^2;
+
+surf(X,Y,Z);
+
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+
+title('Surface Z = X^2 + Y^2');</code></pre>
+    </div>
+
+    <h3>13.6 Courbes de niveau</h3>
+    <div class="codebox">
+        <div class="code-header"><span>CONTOUR</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+y = -5:0.1:5;
+
+[X,Y] = meshgrid(x,y);
+
+Z = X.^2 + Y.^2;
+
+contour(X,Y,Z,15);
+
+colorbar;
+grid on;</code></pre>
+    </div>
+
+    <h3>13.7 Enregistrer un graphique</h3>
+    <div class="codebox">
+        <div class="code-header"><span>PRINT</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = -5:0.1:5;
+
+plot(x,x.^2);
+
+grid on;
+
+print('courbe.png','-dpng');</code></pre>
+        <div class="code-output">
+            <strong>Résultat :</strong>
+            Un fichier courbe.png est créé dans le répertoire courant.
+        </div>
+    </div>
+</section>
+
+<section class="section-card" id="statistiques">
+    <div class="section-heading">
+        <div class="section-number">14</div>
+        <div>
+            <h2>Fonctions statistiques</h2>
+            <p>Calculer et analyser des séries de valeurs.</p>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Description</th></tr>
+            <tr><td>mean(x)</td><td>Moyenne.</td></tr>
+            <tr><td>median(x)</td><td>Médiane.</td></tr>
+            <tr><td>mode(x)</td><td>Mode statistique.</td></tr>
+            <tr><td>std(x)</td><td>Écart-type d'échantillon par défaut.</td></tr>
+            <tr><td>var(x)</td><td>Variance d'échantillon par défaut.</td></tr>
+            <tr><td>max(x)</td><td>Maximum.</td></tr>
+            <tr><td>min(x)</td><td>Minimum.</td></tr>
+            <tr><td>sum(x)</td><td>Somme.</td></tr>
+            <tr><td>sort(x)</td><td>Tri des données.</td></tr>
+        </table>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>APPLICATION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>notes = [12 15 10 18 14 16];
+
+moyenne = mean(notes);
+
+mediane = median(notes);
+
+minimum = min(notes);
+
+maximum = max(notes);
+
+ecart = std(notes);</code></pre>
+    </div>
+
+    <h3>Histogramme</h3>
+    <div class="codebox">
+        <div class="code-header"><span>HISTOGRAMME</span><button class="copy-btn">Copier</button></div>
+        <pre><code>x = randn(1000,1);
+
+hist(x,20);
+
+title('Distribution des valeurs');
+
+grid on;</code></pre>
+    </div>
+</section>
+
+<section class="section-card" id="fichiers">
+    <div class="section-heading">
+        <div class="section-number">15</div>
+        <div>
+            <h2>Scripts, fichiers et organisation du travail</h2>
+            <p>Enregistrer et exécuter les programmes.</p>
+        </div>
+    </div>
+
+    <h3>15.1 Qu'est-ce qu'un script ?</h3>
+    <p>
+        Un script est un fichier qui contient une succession de commandes Octave.
+        Il permet d'enregistrer un travail et de l'exécuter plusieurs fois.
+    </p>
+
+    <h3>15.2 Créer un script</h3>
+    <ol>
+        <li>Ouvrir l'éditeur d'Octave.</li>
+        <li>Écrire les commandes.</li>
+        <li>Enregistrer le fichier avec l'extension .m.</li>
+        <li>Exécuter le script depuis l'éditeur ou la fenêtre de commandes.</li>
+    </ol>
+
+    <h3>15.3 Exemple de script complet</h3>
+    <div class="codebox">
+        <div class="code-header"><span>mon_tp.m</span><button class="copy-btn">Copier</button></div>
+        <pre><code>clc;
+clear;
+close all;
+
+% Definition des matrices
+A = [1 2; 3 4];
+B = [5 6; 7 8];
+
+% Addition
+C = A + B;
+
+% Determinant
+d = det(A);
+
+% Inverse
+I = inv(A);
+
+% Affichage
+disp('Matrice C :');
+disp(C);
+
+disp('Determinant :');
+disp(d);
+
+% Representation graphique
+x = -5:0.1:5;
+y = x.^2;
+
+figure;
+plot(x,y,'r','linewidth',2);
+grid on;
+title('Fonction carre');</code></pre>
+    </div>
+
+    <h3>15.4 Gérer les répertoires</h3>
+    <div class="command-grid">
+        <div class="command-item"><code>pwd</code><p>Affiche le répertoire courant.</p></div>
+        <div class="command-item"><code>cd('chemin')</code><p>Change de répertoire.</p></div>
+        <div class="command-item"><code>dir</code><p>Liste les fichiers.</p></div>
+        <div class="command-item"><code>ls</code><p>Affiche le contenu du répertoire.</p></div>
+    </div>
+
+    <h3>15.5 Sauvegarder et charger les variables</h3>
+    <div class="codebox">
+        <div class="code-header"><span>SAVE ET LOAD</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2; 3 4];
+
+x = [10 20 30];
+
+save('donnees.mat','A','x');
+
+clear;
+
+load('donnees.mat');</code></pre>
+    </div>
+</section>
+
+<section class="section-card" id="erreurs">
+    <div class="section-heading">
+        <div class="section-number">16</div>
+        <div>
+            <h2>Erreurs fréquentes et solutions</h2>
+            <p>Identifier les problèmes avant de corriger un programme.</p>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Erreur</th><th>Cause possible</th><th>Solution</th></tr>
+            <tr>
+                <td>Dimensions mismatch</td>
+                <td>Dimensions incompatibles.</td>
+                <td>Vérifier size(A) et size(B).</td>
+            </tr>
+            <tr>
+                <td>Index exceeds dimensions</td>
+                <td>Indice inexistant.</td>
+                <td>Vérifier les indices.</td>
+            </tr>
+            <tr>
+                <td>Undefined function</td>
+                <td>Fonction ou fichier introuvable.</td>
+                <td>Vérifier le nom et le chemin.</td>
+            </tr>
+            <tr>
+                <td>Parse error</td>
+                <td>Erreur de syntaxe.</td>
+                <td>Vérifier les parenthèses et les mots-clés.</td>
+            </tr>
+            <tr>
+                <td>Singular matrix</td>
+                <td>Matrice non inversible.</td>
+                <td>Vérifier le déterminant et le rang.</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Exemple : erreur de dimensions</h3>
+    <div class="codebox">
+        <div class="code-header"><span>ERREUR</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3];
+B = [4 5];
+
+C = A + B;</code></pre>
+        <div class="code-output">
+            <strong>Problème :</strong>
+            A possède 3 éléments et B en possède 2.
+            Leur addition directe n'est pas possible.
+        </div>
+    </div>
+
+    <h3>Version corrigée</h3>
+    <div class="codebox">
+        <div class="code-header"><span>CORRECTION</span><button class="copy-btn">Copier</button></div>
+        <pre><code>A = [1 2 3];
+B = [4 5 6];
+
+C = A + B;</code></pre>
+        <div class="code-output"><strong>Résultat :</strong> C = [5 7 9]</div>
+    </div>
+</section>
+
+<section class="section-card" id="resume">
+    <div class="section-heading">
+        <div class="section-number">17</div>
+        <div>
+            <h2>Fiche récapitulative des commandes</h2>
+            <p>Les commandes importantes à mémoriser pour les TP.</p>
+        </div>
+    </div>
+
+    <h3>Création et manipulation</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Utilisation</th></tr>
+            <tr><td>zeros(m,n)</td><td>Matrice de zéros.</td></tr>
+            <tr><td>ones(m,n)</td><td>Matrice de uns.</td></tr>
+            <tr><td>eye(n)</td><td>Matrice identité.</td></tr>
+            <tr><td>rand(m,n)</td><td>Matrice aléatoire.</td></tr>
+            <tr><td>diag(A)</td><td>Diagonale d'une matrice.</td></tr>
+            <tr><td>size(A)</td><td>Dimensions.</td></tr>
+            <tr><td>numel(A)</td><td>Nombre d'éléments.</td></tr>
+            <tr><td>A'</td><td>Transposée conjuguée.</td></tr>
+        </table>
+    </div>
+
+    <h3>Algèbre linéaire</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Utilisation</th></tr>
+            <tr><td>det(A)</td><td>Déterminant.</td></tr>
+            <tr><td>inv(A)</td><td>Inverse.</td></tr>
+            <tr><td>rank(A)</td><td>Rang.</td></tr>
+            <tr><td>trace(A)</td><td>Trace.</td></tr>
+            <tr><td>eig(A)</td><td>Valeurs propres.</td></tr>
+            <tr><td>A\B</td><td>Résolution d'un système AX=B.</td></tr>
+        </table>
+    </div>
+
+    <h3>Mathématiques</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Utilisation</th></tr>
+            <tr><td>sqrt(x)</td><td>Racine carrée.</td></tr>
+            <tr><td>abs(x)</td><td>Valeur absolue.</td></tr>
+            <tr><td>exp(x)</td><td>Exponentielle.</td></tr>
+            <tr><td>log(x)</td><td>Logarithme naturel.</td></tr>
+            <tr><td>sin(x), cos(x), tan(x)</td><td>Trigonométrie en radians.</td></tr>
+            <tr><td>polyval(p,x)</td><td>Évaluation d'un polynôme.</td></tr>
+            <tr><td>roots(p)</td><td>Racines d'un polynôme.</td></tr>
+        </table>
+    </div>
+
+    <h3>Graphiques</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Commande</th><th>Utilisation</th></tr>
+            <tr><td>plot(x,y)</td><td>Courbe 2D.</td></tr>
+            <tr><td>fplot(f,[a b])</td><td>Tracer une fonction sur un intervalle.</td></tr>
+            <tr><td>hold on</td><td>Ajouter des courbes.</td></tr>
+            <tr><td>subplot(m,n,p)</td><td>Plusieurs graphiques.</td></tr>
+            <tr><td>grid on</td><td>Afficher la grille.</td></tr>
+            <tr><td>legend()</td><td>Ajouter une légende.</td></tr>
+            <tr><td>plot3()</td><td>Courbe en 3D.</td></tr>
+            <tr><td>surf()</td><td>Surface en 3D.</td></tr>
+            <tr><td>contour()</td><td>Courbes de niveau.</td></tr>
+        </table>
+    </div>
+
+    <div class="success">
+        La meilleure méthode pour maîtriser Octave est de connaître la fonction
+        de chaque commande, de comprendre ses paramètres et de savoir interpréter
+        le résultat obtenu.
+    </div>
+</section>
+
+<!-- PARTIE 2 -->
+
+<section class="section-card" id="exercices">
+    <div class="section-heading">
+        <div class="section-number">18</div>
+        <div>
+            <h2>Exercices et problèmes pratiques</h2>
+            <p>20 travaux progressifs inspirés des formats de devoirs et de TP.</p>
+        </div>
+    </div>
+
+    <div class="info">
+        Essaie de résoudre chaque exercice dans Octave avant d'afficher sa correction.
+        Les exercices couvrent les principales notions du cours.
+    </div>
+
+    <div id="exerciseContainer"></div>
+</section>
+
+<!-- PARTIE 3 -->
+
+<section id="quiz" class="quiz-window">
+    <div class="quiz-header">
+        <span class="hero-label">ÉVALUATION INTERACTIVE</span>
+        <h2>Quiz GNU Octave — TP Math</h2>
+        <p>Une banque de 200 questions générées à partir de 20 thèmes. Chaque tentative sélectionne des questions aléatoires.</p>
+    </div>
+
+    <div class="quiz-setup" id="quizSetup">
+        <h3 style="margin-top:0">Préparer votre évaluation</h3>
+
+        <label for="questionCount">Nombre de questions</label>
+        <select id="questionCount">
+            <option value="20">20 questions</option>
+            <option value="25">25 questions</option>
+            <option value="30" selected>30 questions</option>
+            <option value="35">35 questions</option>
+            <option value="40">40 questions</option>
+        </select>
+
+        <label for="quizLevel">Niveau de difficulté</label>
+        <select id="quizLevel">
+            <option value="all">Tous les niveaux</option>
+            <option value="easy">Facile</option>
+            <option value="medium">Moyen</option>
+            <option value="hard">Difficile</option>
+        </select>
+
+        <div class="info">
+            Chaque question comporte quatre propositions.
+            Après vérification, la correction et une explication apparaissent.
+            À la fin, une note sur 20 et un bilan détaillé sont affichés.
+        </div>
+
+        <button class="btn btn-primary" onclick="startQuiz()">Commencer le quiz →</button>
+    </div>
+
+    <div class="quiz-area" id="quizArea">
+        <div class="quiz-meta">
+            <span id="questionNumber">Question 1 / 30</span>
+            <span id="scoreLive">Score : 0</span>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="question" id="questionText"></div>
+
+        <div class="answers" id="answers"></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <div class="quiz-controls">
+            <button class="btn btn-secondary" onclick="quitQuiz()">Quitter</button>
+            <button class="btn btn-primary" id="verifyButton" onclick="verifyAnswer()">Vérifier</button>
+            <button class="btn btn-primary" id="nextButton" onclick="nextQuestion()" style="display:none">Next →</button>
+        </div>
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+        <h2>Résultat de l'évaluation</h2>
+        <div class="result-score" id="finalScore">0/20</div>
+        <p id="resultMessage"></p>
+        <div id="resultStats"></div>
+
+        <h3>Correction des questions incorrectes</h3>
+        <div id="mistakes"></div>
+
+        <button class="btn btn-primary" onclick="restartQuiz()">Recommencer une évaluation</button>
+    </div>
+</section>
+
+<!-- SOURCES -->
+
+<section class="section-card">
+    <div class="section-heading">
+        <div class="section-number">+</div>
+        <div>
+            <h2>Documentation et ressources officielles</h2>
+            <p>Pour approfondir les commandes et vérifier leur syntaxe.</p>
+        </div>
+    </div>
+
+    <div class="command-item">
+        <strong>GNU Octave — Manuel officiel</strong>
+        <p>Documentation complète du logiciel, des matrices, des fonctions et des graphiques.</p>
+        <a class="orange" href="https://docs.octave.org/latest/" target="_blank" rel="noopener">Consulter le manuel officiel ↗</a>
+    </div>
+
+    <div class="command-item" style="margin-top:12px">
+        <strong>GNU Octave — Index des fonctions</strong>
+        <p>Recherche des commandes disponibles et de leurs descriptions.</p>
+        <a class="orange" href="https://docs.octave.org/latest/Function-Index.html" target="_blank" rel="noopener">Consulter l'index ↗</a>
+    </div>
+
+    <div class="command-item" style="margin-top:12px">
+        <strong>GNU Octave — Tracé des graphiques</strong>
+        <p>Documentation consacrée aux représentations graphiques en 2D et 3D.</p>
+        <a class="orange" href="https://docs.octave.org/latest/Plotting.html" target="_blank" rel="noopener">Consulter la documentation ↗</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <a class="logo" href="../index.html">Study<span>Net</span></a>
+        <h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4>
+        <p>© 2026 StudyNet. Tous droits réservés.</p>
+    </div>
+</footer>
+
+
+</div>
+</main>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">↑</button>
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

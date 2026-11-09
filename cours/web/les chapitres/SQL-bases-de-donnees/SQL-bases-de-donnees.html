@@ -1,0 +1,2872 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cours complet sur les bases de données et SQL, projets progressifs et quiz interactif.">
+    <title>Bases de données & SQL | Study Net</title>
+  <link rel="stylesheet" href="style.css">
+
+    
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+        <a href="#" class="logo">STUDY<span>NET</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+            ☰
+        </button>
+
+        <nav class="top-links" id="topLinks">
+            <a href="#introduction">Introduction</a>
+            <a href="#cours">Cours</a>
+            <a href="#projets">Projets</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Informatique · Bases de données</span>
+
+            <h1>
+                Bases de données
+                <span>& SQL</span>
+            </h1>
+
+            <p>
+                Apprenez à comprendre, concevoir, créer et gérer des bases de données.
+                Découvrez le langage SQL, les relations entre les tables,
+                les requêtes avancées et les bonnes pratiques.
+            </p>
+
+            <div class="hero-tags">
+                <span>Cours complet</span>
+                <span>Exemples SQL expliqués</span>
+                <span>Projets progressifs</span>
+                <span>Quiz interactif</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION : LA NAVIGATION DU COURS N'APPARAÎT PAS AVANT CETTE SECTION -->
+
+    <section class="introduction" id="introduction">
+        <div class="intro-card">
+            <div class="section-kicker">Avant de commencer</div>
+
+            <h2>Introduction générale</h2>
+
+            <p>
+                Aujourd'hui, presque toutes les applications informatiques utilisent
+                des bases de données : les réseaux sociaux, les sites de commerce,
+                les applications bancaires, les plateformes universitaires et les
+                systèmes de gestion des entreprises.
+            </p>
+
+            <p>
+                Une base de données permet de conserver des informations de manière
+                organisée afin de pouvoir les consulter, les modifier, les supprimer
+                et les analyser facilement.
+            </p>
+
+            <p>
+                Dans ce cours, nous allons apprendre progressivement à construire
+                une base de données depuis les premières notions jusqu'aux requêtes
+                SQL plus avancées.
+            </p>
+
+            <div class="intro-grid">
+                <div class="intro-item">
+                    <strong>01 · Comprendre</strong>
+                    <small>Découvrir les bases de données et leurs composants.</small>
+                </div>
+
+                <div class="intro-item">
+                    <strong>02 · Construire</strong>
+                    <small>Créer des tables, des relations et des contraintes.</small>
+                </div>
+
+                <div class="intro-item">
+                    <strong>03 · Maîtriser SQL</strong>
+                    <small>Manipuler et exploiter les informations.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURS : SIDEBAR VISIBLE UNIQUEMENT APRÈS L'INTRODUCTION -->
+
+    <main class="course-layout" id="cours">
+
+        <aside class="sidebar">
+            <h3>Sommaire du cours</h3>
+
+            <div class="nav-label">Les fondamentaux</div>
+            <a href="#chapitre1">1. Introduction aux BD</a>
+            <a href="#chapitre2">2. SGBD</a>
+            <a href="#chapitre3">3. Modélisation</a>
+            <a href="#chapitre4">4. Modèle relationnel</a>
+
+            <div class="nav-label">Conception</div>
+            <a href="#chapitre5">5. Clés et contraintes</a>
+            <a href="#chapitre6">6. Normalisation</a>
+            <a href="#chapitre7">7. Relations</a>
+
+            <div class="nav-label">Langage SQL</div>
+            <a href="#chapitre8">8. Introduction SQL</a>
+            <a href="#chapitre9">9. CREATE DATABASE</a>
+            <a href="#chapitre10">10. CREATE TABLE</a>
+            <a href="#chapitre11">11. INSERT</a>
+            <a href="#chapitre12">12. SELECT</a>
+            <a href="#chapitre13">13. WHERE</a>
+            <a href="#chapitre14">14. ORDER BY</a>
+            <a href="#chapitre15">15. UPDATE et DELETE</a>
+            <a href="#chapitre16">16. Fonctions SQL</a>
+            <a href="#chapitre17">17. GROUP BY</a>
+            <a href="#chapitre18">18. Jointures</a>
+            <a href="#chapitre19">19. Sous-requêtes</a>
+            <a href="#chapitre20">20. Vues et index</a>
+            <a href="#chapitre21">21. Transactions</a>
+            <a href="#chapitre22">22. Sécurité et bonnes pratiques</a>
+            <a href="#chapitre23">23. Exercices pratiques</a>
+        </aside>
+
+        <div class="course-content">
+
+            <!-- CHAPITRE 1 -->
+
+            <section class="chapter" id="chapitre1">
+                <span class="chapter-number">CHAPITRE 01</span>
+                <h2>Introduction aux bases de données</h2>
+
+                <h3>1.1 Qu'est-ce qu'une donnée ?</h3>
+
+                <p>
+                    Une donnée est une information brute qui peut être enregistrée
+                    et utilisée par un système informatique.
+                </p>
+
+                <p>Exemples :</p>
+
+                <ul>
+                    <li>Mohamed : nom d'une personne.</li>
+                    <li>20 : âge d'une personne.</li>
+                    <li>mohamed@example.com : adresse électronique.</li>
+                    <li>150 : prix d'un produit.</li>
+                    <li>2026-11-08 : date.</li>
+                </ul>
+
+                <h3>1.2 Qu'est-ce qu'une base de données ?</h3>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    Une base de données est un ensemble structuré de données
+                    enregistrées de manière organisée afin de faciliter leur
+                    consultation, leur modification et leur gestion.
+                </div>
+
+                <p>
+                    Prenons l'exemple d'un établissement universitaire.
+                    Il doit conserver les informations des étudiants,
+                    des enseignants, des matières et des notes.
+                </p>
+
+                <p>
+                    Sans base de données, ces informations pourraient être
+                    dispersées dans plusieurs fichiers. Cela rendrait leur
+                    gestion difficile.
+                </p>
+
+                <h3>1.3 Pourquoi utiliser une base de données ?</h3>
+
+                <ul>
+                    <li><strong>Stockage :</strong> conserver les informations.</li>
+                    <li><strong>Organisation :</strong> classer les données.</li>
+                    <li><strong>Recherche :</strong> retrouver rapidement une information.</li>
+                    <li><strong>Modification :</strong> mettre à jour les informations.</li>
+                    <li><strong>Sécurité :</strong> contrôler les accès.</li>
+                    <li><strong>Cohérence :</strong> éviter les données contradictoires.</li>
+                    <li><strong>Partage :</strong> permettre à plusieurs utilisateurs de travailler sur les mêmes données.</li>
+                </ul>
+
+                <h3>1.4 Exemple concret</h3>
+
+                <p>
+                    Imaginons une table qui contient les étudiants d'un établissement.
+                </p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Âge</th>
+                                <th>Classe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Ali</td><td>Mohamed</td><td>20</td><td>TI1</td></tr>
+                            <tr><td>2</td><td>Ben Salah</td><td>Amira</td><td>19</td><td>TI1</td></tr>
+                            <tr><td>3</td><td>Trabelsi</td><td>Youssef</td><td>21</td><td>TI2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box">
+                    Chaque ligne représente un étudiant. Chaque colonne représente
+                    une information concernant cet étudiant.
+                </div>
+
+                <h3>1.5 Différence entre données et informations</h3>
+
+                <div class="two-columns">
+                    <div class="mini-card">
+                        <h4>Donnée</h4>
+                        <p>Une valeur isolée : 20, Mohamed, TI1.</p>
+                    </div>
+                    <div class="mini-card">
+                        <h4>Information</h4>
+                        <p>Mohamed est un étudiant âgé de 20 ans inscrit en TI1.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 2 -->
+
+            <section class="chapter" id="chapitre2">
+                <span class="chapter-number">CHAPITRE 02</span>
+                <h2>Les systèmes de gestion de bases de données (SGBD)</h2>
+
+                <h3>2.1 Qu'est-ce qu'un SGBD ?</h3>
+
+                <div class="definition">
+                    Un SGBD (Système de Gestion de Bases de Données) est un logiciel
+                    qui permet de créer, organiser, consulter, modifier et sécuriser
+                    une base de données.
+                </div>
+
+                <p>
+                    La base de données contient les données. Le SGBD est le logiciel
+                    qui permet de gérer ces données.
+                </p>
+
+                <h3>2.2 Exemples de SGBD</h3>
+
+                <div class="two-columns">
+                    <div class="mini-card">
+                        <h4>MySQL</h4>
+                        <p>SGBD relationnel très utilisé dans les applications web.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>PostgreSQL</h4>
+                        <p>SGBD relationnel puissant avec de nombreuses fonctionnalités.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>SQLite</h4>
+                        <p>SGBD léger qui stocke la base dans un fichier.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>Microsoft SQL Server</h4>
+                        <p>SGBD relationnel développé par Microsoft.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>Oracle Database</h4>
+                        <p>SGBD utilisé notamment dans les grandes organisations.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>MongoDB</h4>
+                        <p>Base de données orientée documents, de type NoSQL.</p>
+                    </div>
+                </div>
+
+                <h3>2.3 Les principales fonctions d'un SGBD</h3>
+
+                <ul>
+                    <li>Créer et supprimer des bases de données.</li>
+                    <li>Créer et modifier des tables.</li>
+                    <li>Enregistrer et rechercher des données.</li>
+                    <li>Gérer les utilisateurs et les permissions.</li>
+                    <li>Gérer les accès simultanés.</li>
+                    <li>Assurer la sauvegarde et la restauration.</li>
+                    <li>Maintenir l'intégrité des données.</li>
+                </ul>
+
+                <h3>2.4 SGBD relationnel et NoSQL</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Relationnel</th>
+                                <th>NoSQL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Données organisées en tables.</td>
+                                <td>Différents modèles de stockage.</td>
+                            </tr>
+                            <tr>
+                                <td>Relations entre les tables.</td>
+                                <td>Documents, clés-valeurs, graphes, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>SQL généralement utilisé.</td>
+                                <td>Langages et interfaces variables.</td>
+                            </tr>
+                            <tr>
+                                <td>Exemple : MySQL.</td>
+                                <td>Exemple : MongoDB.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 3 -->
+
+            <section class="chapter" id="chapitre3">
+                <span class="chapter-number">CHAPITRE 03</span>
+                <h2>La modélisation d'une base de données</h2>
+
+                <h3>3.1 Pourquoi modéliser ?</h3>
+
+                <p>
+                    Avant de créer une base de données, il faut réfléchir à sa
+                    structure. La modélisation consiste à représenter les données
+                    et les relations nécessaires au fonctionnement d'un système.
+                </p>
+
+                <p>
+                    Une bonne modélisation permet d'éviter les répétitions,
+                    les incohérences et les difficultés de modification.
+                </p>
+
+                <h3>3.2 Les trois niveaux de modélisation</h3>
+
+                <div class="mini-card">
+                    <h4>Modèle conceptuel (MCD)</h4>
+                    <p>
+                        Il décrit les données et les relations entre elles,
+                        sans dépendre d'un SGBD particulier.
+                    </p>
+                </div>
+
+                <div class="mini-card">
+                    <h4>Modèle logique (MLD)</h4>
+                    <p>
+                        Il transforme les entités et les associations en
+                        structures logiques, généralement des tables.
+                    </p>
+                </div>
+
+                <div class="mini-card">
+                    <h4>Modèle physique (MPD)</h4>
+                    <p>
+                        Il décrit l'implémentation réelle dans un SGBD :
+                        types SQL, contraintes, index et autres éléments techniques.
+                    </p>
+                </div>
+
+                <h3>3.3 Les entités</h3>
+
+                <div class="definition">
+                    Une entité représente un objet ou un élément du monde réel
+                    dont on souhaite conserver des informations.
+                </div>
+
+                <p>Exemples :</p>
+                <ul>
+                    <li>Étudiant</li>
+                    <li>Enseignant</li>
+                    <li>Produit</li>
+                    <li>Commande</li>
+                    <li>Client</li>
+                </ul>
+
+                <h3>3.4 Les attributs</h3>
+
+                <p>
+                    Un attribut représente une caractéristique d'une entité.
+                    Par exemple, l'entité Étudiant peut posséder les attributs
+                    suivants :
+                </p>
+
+                <ul>
+                    <li>id_etudiant</li>
+                    <li>nom</li>
+                    <li>prenom</li>
+                    <li>email</li>
+                    <li>date_naissance</li>
+                </ul>
+
+                <h3>3.5 Les associations</h3>
+
+                <p>
+                    Une association représente un lien entre plusieurs entités.
+                </p>
+
+                <div class="definition">
+                    Exemple : un étudiant s'inscrit à plusieurs cours.
+                    Un cours peut accueillir plusieurs étudiants.
+                    Il existe donc une association entre Étudiant et Cours.
+                </div>
+
+                <h3>3.6 Exemple de modélisation</h3>
+
+                <p>Pour une petite bibliothèque, on identifie :</p>
+
+                <ul>
+                    <li>Adherent : personne qui emprunte des livres.</li>
+                    <li>Livre : ouvrage disponible dans la bibliothèque.</li>
+                    <li>Emprunt : opération qui relie un adhérent à un livre.</li>
+                </ul>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>Modèle conceptuel simplifié</span>
+                        <span class="code-dots"><i></i><i></i><i></i></span>
+                    </div>
+                    <pre>ADHERENT
+---------
+id_adherent
+nom
+prenom
+email
+
+LIVRE
+-----
+id_livre
+titre
+auteur
+
+EMPRUNT
+-------
+id_emprunt
+date_emprunt
+date_retour
+id_adherent
+id_livre</pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La table EMPRUNT permet d'enregistrer quel adhérent a emprunté
+                    quel livre et à quelle date. Elle relie les deux autres entités.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 4 -->
+
+            <section class="chapter" id="chapitre4">
+                <span class="chapter-number">CHAPITRE 04</span>
+                <h2>Le modèle relationnel</h2>
+
+                <h3>4.1 Définition</h3>
+
+                <p>
+                    Le modèle relationnel organise les données dans des relations,
+                    généralement représentées sous forme de tables.
+                </p>
+
+                <h3>4.2 Vocabulaire essentiel</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Terme</th>
+                                <th>Signification</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Relation</td><td>Table</td><td>ETUDIANT</td></tr>
+                            <tr><td>Attribut</td><td>Colonne</td><td>nom</td></tr>
+                            <tr><td>Tuple</td><td>Ligne</td><td>Un étudiant</td></tr>
+                            <tr><td>Domaine</td><td>Ensemble des valeurs possibles</td><td>Âges positifs</td></tr>
+                            <tr><td>Clé</td><td>Attribut identifiant</td><td>id_etudiant</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4.3 Exemple de table relationnelle</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id_etudiant</th>
+                                <th>nom</th>
+                                <th>prenom</th>
+                                <th>age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Ali</td><td>Mohamed</td><td>20</td></tr>
+                            <tr><td>2</td><td>Ben Salah</td><td>Amira</td><td>19</td></tr>
+                            <tr><td>3</td><td>Trabelsi</td><td>Youssef</td><td>21</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4.4 Règles importantes</h3>
+
+                <ul>
+                    <li>Chaque colonne possède un nom.</li>
+                    <li>Chaque colonne possède un domaine de valeurs.</li>
+                    <li>Une clé primaire permet d'identifier chaque ligne.</li>
+                    <li>Une table ne doit pas contenir plusieurs lignes impossibles à distinguer.</li>
+                    <li>Les relations entre tables sont établies grâce aux clés.</li>
+                </ul>
+            </section>
+
+            <!-- CHAPITRE 5 -->
+
+            <section class="chapter" id="chapitre5">
+                <span class="chapter-number">CHAPITRE 05</span>
+                <h2>Les clés et les contraintes d'intégrité</h2>
+
+                <h3>5.1 Clé primaire (PRIMARY KEY)</h3>
+
+                <div class="definition">
+                    Une clé primaire est un attribut, ou un ensemble d'attributs,
+                    qui identifie de manière unique chaque ligne d'une table.
+                </div>
+
+                <p>Une clé primaire doit être unique et ne peut pas être NULL.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · PRIMARY KEY</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Etudiant (
+    id_etudiant INT PRIMARY KEY,
+    nom VARCHAR(50),
+    prenom VARCHAR(50)
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    <code>id_etudiant</code> identifie chaque étudiant.
+                    Deux étudiants ne peuvent pas avoir la même valeur de clé primaire.
+                </div>
+
+                <h3>5.2 Clé étrangère (FOREIGN KEY)</h3>
+
+                <p>
+                    Une clé étrangère est un attribut qui fait référence à une
+                    clé primaire ou à une clé candidate unique d'une autre table.
+                    Elle permet d'établir une relation entre les tables.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · FOREIGN KEY</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Classe (
+    id_classe INT PRIMARY KEY,
+    nom_classe VARCHAR(30)
+);
+
+CREATE TABLE Etudiant (
+    id_etudiant INT PRIMARY KEY,
+    nom VARCHAR(50),
+    id_classe INT,
+    FOREIGN KEY (id_classe)
+        REFERENCES Classe(id_classe)
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La colonne <code>id_classe</code> de la table Etudiant
+                    référence la colonne <code>id_classe</code> de Classe.
+                    Un étudiant ne peut donc pas référencer une classe inexistante.
+                </div>
+
+                <h3>5.3 Les contraintes SQL</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Contrainte</th>
+                                <th>Rôle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>PRIMARY KEY</td><td>Identifie chaque ligne.</td></tr>
+                            <tr><td>FOREIGN KEY</td><td>Garantit une référence valide.</td></tr>
+                            <tr><td>NOT NULL</td><td>Interdit une valeur NULL.</td></tr>
+                            <tr><td>UNIQUE</td><td>Interdit les doublons.</td></tr>
+                            <tr><td>CHECK</td><td>Impose une condition.</td></tr>
+                            <tr><td>DEFAULT</td><td>Définit une valeur par défaut.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>5.4 NOT NULL et UNIQUE</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · NOT NULL et UNIQUE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Utilisateur (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Le nom est obligatoire grâce à NOT NULL.
+                    L'adresse email doit être différente pour chaque utilisateur
+                    grâce à UNIQUE.
+                </div>
+
+                <h3>5.5 CHECK et DEFAULT</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CHECK et DEFAULT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Produit (
+    id INT PRIMARY KEY,
+    nom VARCHAR(80) NOT NULL,
+    prix DECIMAL(10,2) CHECK (prix >= 0),
+    stock INT DEFAULT 0
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Le prix ne peut pas être négatif. Si aucune valeur de stock
+                    n'est fournie lors de l'insertion, sa valeur sera 0.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 6 -->
+
+            <section class="chapter" id="chapitre6">
+                <span class="chapter-number">CHAPITRE 06</span>
+                <h2>La normalisation</h2>
+
+                <h3>6.1 Pourquoi normaliser une base de données ?</h3>
+
+                <p>
+                    La normalisation consiste à organiser les tables afin de réduire
+                    les répétitions inutiles et d'éviter certaines anomalies.
+                </p>
+
+                <div class="definition">
+                    Objectif : améliorer la cohérence des données et faciliter
+                    leur maintenance.
+                </div>
+
+                <h3>6.2 Les anomalies</h3>
+
+                <ul>
+                    <li><strong>Anomalie d'insertion :</strong> difficulté à ajouter une information.</li>
+                    <li><strong>Anomalie de modification :</strong> obligation de modifier plusieurs lignes.</li>
+                    <li><strong>Anomalie de suppression :</strong> suppression involontaire d'une information utile.</li>
+                </ul>
+
+                <h3>6.3 Première forme normale (1FN)</h3>
+
+                <p>
+                    Une table respecte la première forme normale si chaque cellule
+                    contient une valeur atomique, c'est-à-dire une seule valeur
+                    pour l'attribut considéré.
+                </p>
+
+                <div class="warning-box">
+                    Une cellule ne doit pas contenir une liste de plusieurs valeurs
+                    qui devraient être représentées séparément.
+                </div>
+
+                <h3>6.4 Deuxième forme normale (2FN)</h3>
+
+                <p>
+                    Une table est en deuxième forme normale si elle respecte la 1FN
+                    et si chaque attribut non-clé dépend de toute la clé primaire,
+                    et non d'une partie seulement d'une clé composée.
+                </p>
+
+                <h3>6.5 Troisième forme normale (3FN)</h3>
+
+                <p>
+                    Une table est en troisième forme normale si elle respecte la 2FN
+                    et ne présente pas de dépendance transitive entre attributs
+                    non-clés.
+                </p>
+
+                <h3>6.6 Exemple de séparation</h3>
+
+                <p>
+                    Au lieu de répéter les informations d'une classe dans chaque
+                    ligne d'étudiant, on crée une table Classe séparée.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>Structure normalisée</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Classe (
+    id_classe INT PRIMARY KEY,
+    nom_classe VARCHAR(30)
+);
+
+CREATE TABLE Etudiant (
+    id_etudiant INT PRIMARY KEY,
+    nom VARCHAR(50),
+    id_classe INT,
+    FOREIGN KEY (id_classe)
+        REFERENCES Classe(id_classe)
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Les informations de la classe sont enregistrées une seule fois
+                    dans Classe. Les étudiants utilisent son identifiant pour
+                    indiquer leur classe.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 7 -->
+
+            <section class="chapter" id="chapitre7">
+                <span class="chapter-number">CHAPITRE 07</span>
+                <h2>Les relations entre les tables</h2>
+
+                <h3>7.1 Relation un-à-un (1:1)</h3>
+
+                <p>
+                    Une ligne de la première table est associée à une seule ligne
+                    de la deuxième table, et inversement.
+                </p>
+
+                <p>Exemple : une personne possède un seul passeport actif dans un système simplifié.</p>
+
+                <h3>7.2 Relation un-à-plusieurs (1:N)</h3>
+
+                <p>
+                    Une ligne de la première table peut être associée à plusieurs
+                    lignes de la deuxième table.
+                </p>
+
+                <p>Exemple : une classe contient plusieurs étudiants.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Relation 1:N</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Classe (
+    id INT PRIMARY KEY,
+    nom VARCHAR(30)
+);
+
+CREATE TABLE Etudiant (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    classe_id INT,
+    FOREIGN KEY (classe_id) REFERENCES Classe(id)
+);</code></pre>
+                </div>
+
+                <h3>7.3 Relation plusieurs-à-plusieurs (N:N)</h3>
+
+                <p>
+                    Plusieurs lignes de la première table peuvent être associées
+                    à plusieurs lignes de la deuxième table.
+                </p>
+
+                <p>
+                    Exemple : un étudiant suit plusieurs matières et une matière
+                    est suivie par plusieurs étudiants.
+                </p>
+
+                <div class="definition">
+                    Pour représenter une relation N:N dans un modèle relationnel,
+                    on utilise généralement une table intermédiaire.
+                </div>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Table intermédiaire</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Etudiant (
+    id_etudiant INT PRIMARY KEY,
+    nom VARCHAR(50)
+);
+
+CREATE TABLE Matiere (
+    id_matiere INT PRIMARY KEY,
+    nom_matiere VARCHAR(50)
+);
+
+CREATE TABLE Inscription (
+    etudiant_id INT,
+    matiere_id INT,
+    date_inscription DATE,
+    PRIMARY KEY (etudiant_id, matiere_id),
+    FOREIGN KEY (etudiant_id)
+        REFERENCES Etudiant(id_etudiant),
+    FOREIGN KEY (matiere_id)
+        REFERENCES Matiere(id_matiere)
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La table Inscription associe un étudiant à une matière.
+                    Sa clé primaire est composée de deux colonnes.
+                    Cette structure permet d'éviter qu'un même étudiant soit
+                    inscrit plusieurs fois à la même matière dans cet exemple.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 8 -->
+
+            <section class="chapter" id="chapitre8">
+                <span class="chapter-number">CHAPITRE 08</span>
+                <h2>Introduction au langage SQL</h2>
+
+                <h3>8.1 Qu'est-ce que SQL ?</h3>
+
+                <div class="definition">
+                    SQL signifie Structured Query Language.
+                    C'est un langage utilisé pour communiquer avec les
+                    systèmes de gestion de bases de données relationnelles.
+                </div>
+
+                <p>SQL permet notamment de :</p>
+
+                <ul>
+                    <li>Créer une base de données.</li>
+                    <li>Créer des tables.</li>
+                    <li>Insérer des données.</li>
+                    <li>Lire et rechercher des données.</li>
+                    <li>Modifier des données.</li>
+                    <li>Supprimer des données.</li>
+                    <li>Gérer les droits et les transactions.</li>
+                </ul>
+
+                <h3>8.2 Les grandes familles de commandes SQL</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Famille</th>
+                                <th>Signification</th>
+                                <th>Commandes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>DDL</td><td>Définition des structures</td><td>CREATE, ALTER, DROP</td></tr>
+                            <tr><td>DML</td><td>Manipulation des données</td><td>INSERT, UPDATE, DELETE</td></tr>
+                            <tr><td>DQL</td><td>Interrogation des données</td><td>SELECT</td></tr>
+                            <tr><td>DCL</td><td>Contrôle des droits</td><td>GRANT, REVOKE</td></tr>
+                            <tr><td>TCL</td><td>Gestion des transactions</td><td>COMMIT, ROLLBACK</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>8.3 Syntaxe générale</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Exemple général</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT colonne
+FROM nom_table
+WHERE condition;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    SELECT indique les colonnes à afficher.
+                    FROM indique la table à consulter.
+                    WHERE permet de filtrer les lignes selon une condition.
+                    Le point-virgule termine généralement l'instruction.
+                </div>
+
+                <div class="info-box">
+                    SQL est normalisé, mais certains détails de syntaxe et certaines
+                    fonctionnalités varient selon MySQL, PostgreSQL, SQLite et
+                    les autres SGBD.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 9 -->
+
+            <section class="chapter" id="chapitre9">
+                <span class="chapter-number">CHAPITRE 09</span>
+                <h2>Créer et supprimer une base de données</h2>
+
+                <h3>9.1 CREATE DATABASE</h3>
+
+                <p>
+                    La commande CREATE DATABASE permet de créer une nouvelle
+                    base de données.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CREATE DATABASE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE DATABASE universite;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Cette instruction demande au SGBD de créer une base de données
+                    nommée universite.
+                </div>
+
+                <h3>9.2 Utiliser une base de données</h3>
+
+                <p>
+                    Avec MySQL, la commande USE permet de sélectionner la base
+                    de données sur laquelle on souhaite travailler.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · USE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>USE universite;</code></pre>
+                </div>
+
+                <h3>9.3 Supprimer une base de données</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DROP DATABASE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>DROP DATABASE universite;</code></pre>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Attention :</strong>
+                    DROP DATABASE supprime la base de données et son contenu.
+                    Cette opération est destructive. Il faut vérifier le nom
+                    de la base et disposer d'une sauvegarde si nécessaire.
+                </div>
+
+                <h3>9.4 Éviter une erreur si la base existe déjà</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · IF NOT EXISTS</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE DATABASE IF NOT EXISTS universite;</code></pre>
+                </div>
+
+                <p>
+                    Cette forme est prise en charge par plusieurs SGBD,
+                    notamment MySQL et PostgreSQL, avec des particularités
+                    selon le système utilisé.
+                </p>
+            </section>
+
+            <!-- CHAPITRE 10 -->
+
+            <section class="chapter" id="chapitre10">
+                <span class="chapter-number">CHAPITRE 10</span>
+                <h2>Créer et modifier les tables</h2>
+
+                <h3>10.1 CREATE TABLE</h3>
+
+                <p>
+                    Une table permet de stocker des données organisées en lignes
+                    et en colonnes.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CREATE TABLE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Etudiant (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    age INT,
+    email VARCHAR(100)
+);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication ligne par ligne :</strong>
+                    <ul>
+                        <li><code>CREATE TABLE Etudiant</code> crée une table nommée Etudiant.</li>
+                        <li><code>id INT</code> crée une colonne entière.</li>
+                        <li><code>PRIMARY KEY</code> définit la clé primaire.</li>
+                        <li><code>VARCHAR(50)</code> autorise une chaîne de caractères de longueur maximale 50.</li>
+                        <li><code>age INT</code> stocke un nombre entier.</li>
+                        <li>La parenthèse fermante termine la définition de la table.</li>
+                    </ul>
+                </div>
+
+                <h3>10.2 Les principaux types de données</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Utilisation</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>INT</td><td>Nombre entier</td><td>25</td></tr>
+                            <tr><td>BIGINT</td><td>Grand entier</td><td>9000000000</td></tr>
+                            <tr><td>DECIMAL(10,2)</td><td>Nombre décimal exact</td><td>125.50</td></tr>
+                            <tr><td>FLOAT</td><td>Nombre approché</td><td>12.5</td></tr>
+                            <tr><td>VARCHAR(100)</td><td>Texte de longueur variable</td><td>Mohamed</td></tr>
+                            <tr><td>CHAR(2)</td><td>Texte de longueur fixe</td><td>TN</td></tr>
+                            <tr><td>TEXT</td><td>Texte long</td><td>Description</td></tr>
+                            <tr><td>DATE</td><td>Date</td><td>2026-11-08</td></tr>
+                            <tr><td>TIME</td><td>Heure</td><td>14:30:00</td></tr>
+                            <tr><td>DATETIME</td><td>Date et heure</td><td>2026-11-08 14:30:00</td></tr>
+                            <tr><td>BOOLEAN</td><td>Valeur logique</td><td>TRUE / FALSE</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>10.3 ALTER TABLE</h3>
+
+                <p>
+                    ALTER TABLE permet de modifier la structure d'une table existante.
+                </p>
+
+                <h4>Ajouter une colonne</h4>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · ADD COLUMN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>ALTER TABLE Etudiant
+ADD telephone VARCHAR(20);</code></pre>
+                </div>
+
+                <h4>Supprimer une colonne</h4>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DROP COLUMN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>ALTER TABLE Etudiant
+DROP COLUMN telephone;</code></pre>
+                </div>
+
+                <h3>10.4 Supprimer une table</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DROP TABLE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>DROP TABLE Etudiant;</code></pre>
+                </div>
+
+                <div class="warning-box">
+                    DROP TABLE supprime la structure de la table ainsi que
+                    les données qu'elle contient. Ne pas confondre avec DELETE,
+                    qui supprime des lignes.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 11 -->
+
+            <section class="chapter" id="chapitre11">
+                <span class="chapter-number">CHAPITRE 11</span>
+                <h2>Insérer des données avec INSERT INTO</h2>
+
+                <h3>11.1 Insérer une seule ligne</h3>
+
+                <p>
+                    INSERT INTO permet d'ajouter de nouvelles lignes dans une table.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · INSERT INTO</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Etudiant
+(id, nom, prenom, age)
+VALUES
+(1, 'Ali', 'Mohamed', 20);</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    INSERT INTO indique la table et les colonnes concernées.
+                    VALUES fournit les valeurs dans le même ordre.
+                    Les textes sont placés entre apostrophes.
+                </div>
+
+                <h3>11.2 Insérer plusieurs lignes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · INSERT multiple</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Etudiant
+(id, nom, prenom, age)
+VALUES
+(1, 'Ali', 'Mohamed', 20),
+(2, 'Ben Salah', 'Amira', 19),
+(3, 'Trabelsi', 'Youssef', 21);</code></pre>
+                </div>
+
+                <h3>11.3 Insérer sans préciser toutes les colonnes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Valeur par défaut</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Produit
+(id, nom)
+VALUES
+(1, 'Clavier');</code></pre>
+                </div>
+
+                <p>
+                    Les colonnes non indiquées reçoivent leur valeur DEFAULT,
+                    ou NULL si cela est autorisé et qu'aucune valeur par défaut
+                    n'est définie.
+                </p>
+
+                <h3>11.4 Insérer une date</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DATE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Commande
+(id, date_commande)
+VALUES
+(1, '2026-11-08');</code></pre>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 12 -->
+
+            <section class="chapter" id="chapitre12">
+                <span class="chapter-number">CHAPITRE 12</span>
+                <h2>Consulter les données avec SELECT</h2>
+
+                <h3>12.1 SELECT *</h3>
+
+                <p>
+                    SELECT permet de récupérer des informations depuis une ou
+                    plusieurs tables.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · SELECT *</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    L'étoile signifie toutes les colonnes.
+                    Cette requête affiche toutes les lignes et toutes les colonnes
+                    de la table Etudiant.
+                </div>
+
+                <h3>12.2 Sélectionner certaines colonnes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Colonnes précises</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT nom, prenom
+FROM Etudiant;</code></pre>
+                </div>
+
+                <p>
+                    Cette requête affiche uniquement le nom et le prénom des étudiants.
+                </p>
+
+                <h3>12.3 DISTINCT</h3>
+
+                <p>
+                    DISTINCT permet d'éliminer les doublons dans le résultat.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DISTINCT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT DISTINCT ville
+FROM Client;</code></pre>
+                </div>
+
+                <p>
+                    La requête affiche chaque ville une seule fois, même si plusieurs
+                    clients habitent dans la même ville.
+                </p>
+
+                <h3>12.4 LIMIT</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · LIMIT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+LIMIT 5;</code></pre>
+                </div>
+
+                <p>
+                    LIMIT 5 limite le résultat à cinq lignes dans les SGBD
+                    qui utilisent cette syntaxe, notamment MySQL et PostgreSQL.
+                </p>
+            </section>
+
+            <!-- CHAPITRE 13 -->
+
+            <section class="chapter" id="chapitre13">
+                <span class="chapter-number">CHAPITRE 13</span>
+                <h2>Filtrer les données avec WHERE</h2>
+
+                <h3>13.1 Le rôle de WHERE</h3>
+
+                <p>
+                    WHERE permet de sélectionner uniquement les lignes qui
+                    respectent une condition.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · WHERE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE age >= 20;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La requête affiche uniquement les étudiants dont l'âge
+                    est supérieur ou égal à 20.
+                </div>
+
+                <h3>13.2 Les opérateurs de comparaison</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Opérateur</th><th>Signification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>=</td><td>Égal à</td></tr>
+                            <tr><td>!= ou &lt;&gt;</td><td>Différent de</td></tr>
+                            <tr><td>&gt;</td><td>Supérieur à</td></tr>
+                            <tr><td>&lt;</td><td>Inférieur à</td></tr>
+                            <tr><td>&gt;=</td><td>Supérieur ou égal à</td></tr>
+                            <tr><td>&lt;=</td><td>Inférieur ou égal à</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>13.3 AND</h3>
+
+                <p>
+                    AND permet de combiner plusieurs conditions.
+                    Toutes les conditions doivent être vraies.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · AND</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE age >= 18 AND age <= 25;</code></pre>
+                </div>
+
+                <h3>13.4 OR</h3>
+
+                <p>
+                    OR permet de sélectionner les lignes qui respectent au moins
+                    une des conditions.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · OR</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE ville = 'Mahdia'
+OR ville = 'Sousse';</code></pre>
+                </div>
+
+                <h3>13.5 NOT</h3>
+
+                <p>NOT inverse le résultat logique d'une condition.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · NOT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE NOT ville = 'Mahdia';</code></pre>
+                </div>
+
+                <h3>13.6 BETWEEN</h3>
+
+                <p>
+                    BETWEEN vérifie si une valeur appartient à un intervalle
+                    inclusif.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · BETWEEN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Produit
+WHERE prix BETWEEN 10 AND 100;</code></pre>
+                </div>
+
+                <h3>13.7 IN</h3>
+
+                <p>
+                    IN permet de vérifier si une valeur appartient à une liste.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · IN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE ville IN ('Mahdia', 'Sousse', 'Tunis');</code></pre>
+                </div>
+
+                <h3>13.8 LIKE</h3>
+
+                <p>
+                    LIKE permet de rechercher un texte selon un modèle.
+                </p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Symbole</th><th>Signification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>%</td><td>Remplace zéro ou plusieurs caractères.</td></tr>
+                            <tr><td>_</td><td>Remplace exactement un caractère.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · LIKE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>-- Les noms qui commencent par A
+SELECT *
+FROM Etudiant
+WHERE nom LIKE 'A%';
+
+-- Les noms qui se terminent par i
+SELECT *
+FROM Etudiant
+WHERE nom LIKE '%i';
+
+-- Les noms qui contiennent ali
+SELECT *
+FROM Etudiant
+WHERE nom LIKE '%ali%';</code></pre>
+                </div>
+
+                <h3>13.9 IS NULL</h3>
+
+                <p>
+                    NULL représente une valeur absente ou inconnue.
+                    On ne teste pas NULL avec = ou !=.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · IS NULL</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE telephone IS NULL;</code></pre>
+                </div>
+
+                <p>Pour rechercher les valeurs présentes :</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · IS NOT NULL</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+WHERE telephone IS NOT NULL;</code></pre>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 14 -->
+
+            <section class="chapter" id="chapitre14">
+                <span class="chapter-number">CHAPITRE 14</span>
+                <h2>Trier les résultats avec ORDER BY</h2>
+
+                <h3>14.1 Trier par ordre croissant</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · ASC</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+ORDER BY nom ASC;</code></pre>
+                </div>
+
+                <p>
+                    ASC signifie ascendant : les résultats sont triés par ordre
+                    croissant. Pour les textes, l'ordre dépend des règles de
+                    comparaison et de collation du SGBD.
+                </p>
+
+                <h3>14.2 Trier par ordre décroissant</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DESC</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Produit
+ORDER BY prix DESC;</code></pre>
+                </div>
+
+                <p>
+                    DESC signifie descendant. Les prix les plus élevés apparaissent
+                    en premier.
+                </p>
+
+                <h3>14.3 Trier selon plusieurs colonnes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Tri multiple</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant
+ORDER BY ville ASC, nom ASC;</code></pre>
+                </div>
+
+                <p>
+                    Le résultat est d'abord trié par ville, puis par nom à l'intérieur
+                    des groupes de même ville.
+                </p>
+            </section>
+
+            <!-- CHAPITRE 15 -->
+
+            <section class="chapter" id="chapitre15">
+                <span class="chapter-number">CHAPITRE 15</span>
+                <h2>Modifier et supprimer les données</h2>
+
+                <h3>15.1 UPDATE</h3>
+
+                <p>
+                    UPDATE permet de modifier les valeurs d'une ou plusieurs lignes.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · UPDATE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>UPDATE Etudiant
+SET age = 21
+WHERE id = 1;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    UPDATE indique la table à modifier.
+                    SET indique la nouvelle valeur.
+                    WHERE identifie la ligne concernée.
+                </div>
+
+                <div class="warning-box">
+                    Sans WHERE, UPDATE peut modifier toutes les lignes de la table.
+                    Vérifiez toujours la condition avant d'exécuter la requête.
+                </div>
+
+                <h3>15.2 Modifier plusieurs colonnes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Plusieurs modifications</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>UPDATE Etudiant
+SET age = 22,
+    ville = 'Mahdia'
+WHERE id = 2;</code></pre>
+                </div>
+
+                <h3>15.3 DELETE</h3>
+
+                <p>
+                    DELETE permet de supprimer des lignes dans une table.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DELETE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>DELETE FROM Etudiant
+WHERE id = 3;</code></pre>
+                </div>
+
+                <div class="warning-box">
+                    Sans WHERE, DELETE supprime toutes les lignes de la table.
+                    La structure de la table reste présente.
+                </div>
+
+                <h3>15.4 DELETE, DROP et TRUNCATE</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Commande</th><th>Effet</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>DELETE</td><td>Supprime des lignes.</td></tr>
+                            <tr><td>TRUNCATE</td><td>Vide généralement toutes les lignes.</td></tr>
+                            <tr><td>DROP</td><td>Supprime la table elle-même.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 16 -->
+
+            <section class="chapter" id="chapitre16">
+                <span class="chapter-number">CHAPITRE 16</span>
+                <h2>Les fonctions SQL</h2>
+
+                <h3>16.1 COUNT()</h3>
+
+                <p>
+                    COUNT permet de compter les lignes ou les valeurs non NULL
+                    d'une colonne.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · COUNT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT COUNT(*) AS nombre_etudiants
+FROM Etudiant;</code></pre>
+                </div>
+
+                <h3>16.2 SUM()</h3>
+
+                <p>SUM calcule la somme des valeurs numériques non NULL.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · SUM</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT SUM(prix) AS total
+FROM Produit;</code></pre>
+                </div>
+
+                <h3>16.3 AVG()</h3>
+
+                <p>AVG calcule la moyenne des valeurs numériques non NULL.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · AVG</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT AVG(note) AS moyenne
+FROM Note;</code></pre>
+                </div>
+
+                <h3>16.4 MIN() et MAX()</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · MIN et MAX</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    MIN(prix) AS prix_minimum,
+    MAX(prix) AS prix_maximum
+FROM Produit;</code></pre>
+                </div>
+
+                <h3>16.5 Fonctions sur les chaînes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Fonctions texte</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT UPPER(nom)
+FROM Etudiant;
+
+SELECT LOWER(nom)
+FROM Etudiant;
+
+SELECT LENGTH(nom)
+FROM Etudiant;</code></pre>
+                </div>
+
+                <p>
+                    UPPER transforme le texte en majuscules, LOWER en minuscules.
+                    LENGTH calcule la longueur selon les règles du SGBD et le type
+                    de données utilisé.
+                </p>
+
+                <h3>16.6 Alias avec AS</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · AS</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    nom AS nom_etudiant,
+    age AS age_etudiant
+FROM Etudiant;</code></pre>
+                </div>
+
+                <p>
+                    AS permet de donner un nom plus clair à une colonne dans le résultat.
+                </p>
+            </section>
+
+            <!-- CHAPITRE 17 -->
+
+            <section class="chapter" id="chapitre17">
+                <span class="chapter-number">CHAPITRE 17</span>
+                <h2>GROUP BY et HAVING</h2>
+
+                <h3>17.1 GROUP BY</h3>
+
+                <p>
+                    GROUP BY regroupe les lignes qui possèdent la même valeur
+                    pour une ou plusieurs colonnes.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · GROUP BY</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT ville, COUNT(*) AS nombre
+FROM Etudiant
+GROUP BY ville;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Les étudiants sont regroupés selon leur ville.
+                    COUNT(*) calcule le nombre d'étudiants dans chaque groupe.
+                </div>
+
+                <h3>17.2 HAVING</h3>
+
+                <p>
+                    HAVING permet de filtrer les groupes obtenus après GROUP BY.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · HAVING</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT ville, COUNT(*) AS nombre
+FROM Etudiant
+GROUP BY ville
+HAVING COUNT(*) >= 3;</code></pre>
+                </div>
+
+                <p>
+                    Cette requête affiche uniquement les villes qui possèdent
+                    au moins trois étudiants.
+                </p>
+
+                <h3>17.3 Différence entre WHERE et HAVING</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>WHERE</th><th>HAVING</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Filtre les lignes avant le regroupement.</td>
+                                <td>Filtre les groupes après le regroupement.</td>
+                            </tr>
+                            <tr>
+                                <td>Utilisé avec les conditions sur les lignes.</td>
+                                <td>Souvent utilisé avec les fonctions d'agrégation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>17.4 Exemple combiné</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · WHERE + GROUP BY + HAVING</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT ville, AVG(age) AS age_moyen
+FROM Etudiant
+WHERE age >= 18
+GROUP BY ville
+HAVING AVG(age) > 20;</code></pre>
+                </div>
+
+                <p>
+                    La requête sélectionne d'abord les étudiants âgés d'au moins
+                    18 ans, regroupe les résultats par ville, puis conserve
+                    les groupes dont l'âge moyen dépasse 20 ans.
+                </p>
+            </section>
+
+            <!-- CHAPITRE 18 -->
+
+            <section class="chapter" id="chapitre18">
+                <span class="chapter-number">CHAPITRE 18</span>
+                <h2>Les jointures SQL (JOIN)</h2>
+
+                <h3>18.1 Pourquoi utiliser une jointure ?</h3>
+
+                <p>
+                    Une jointure permet de récupérer des informations provenant
+                    de plusieurs tables en utilisant une condition de relation.
+                </p>
+
+                <h3>18.2 INNER JOIN</h3>
+
+                <p>
+                    INNER JOIN retourne les lignes qui possèdent une correspondance
+                    dans les deux tables.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · INNER JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    Etudiant.nom,
+    Classe.nom_classe
+FROM Etudiant
+INNER JOIN Classe
+ON Etudiant.id_classe = Classe.id_classe;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La table Etudiant est associée à la table Classe.
+                    La condition ON compare les identifiants des classes.
+                    Seules les lignes ayant une correspondance sont retournées.
+                </div>
+
+                <h3>18.3 LEFT JOIN</h3>
+
+                <p>
+                    LEFT JOIN retourne toutes les lignes de la table située à gauche,
+                    même si aucune correspondance n'existe dans la table de droite.
+                    Les colonnes de droite prennent alors la valeur NULL.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · LEFT JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    Etudiant.nom,
+    Classe.nom_classe
+FROM Etudiant
+LEFT JOIN Classe
+ON Etudiant.id_classe = Classe.id_classe;</code></pre>
+                </div>
+
+                <h3>18.4 RIGHT JOIN</h3>
+
+                <p>
+                    RIGHT JOIN retourne toutes les lignes de la table située à droite
+                    et les correspondances disponibles dans la table de gauche.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · RIGHT JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    Etudiant.nom,
+    Classe.nom_classe
+FROM Etudiant
+RIGHT JOIN Classe
+ON Etudiant.id_classe = Classe.id_classe;</code></pre>
+                </div>
+
+                <h3>18.5 FULL OUTER JOIN</h3>
+
+                <p>
+                    FULL OUTER JOIN retourne les correspondances ainsi que les lignes
+                    sans correspondance des deux côtés.
+                </p>
+
+                <div class="warning-box">
+                    FULL OUTER JOIN est disponible directement dans PostgreSQL
+                    et SQL Server, mais pas dans toutes les versions de MySQL.
+                    Dans MySQL, on peut généralement combiner LEFT JOIN et RIGHT JOIN
+                    avec UNION.
+                </div>
+
+                <h3>18.6 CROSS JOIN</h3>
+
+                <p>
+                    CROSS JOIN produit toutes les combinaisons possibles entre
+                    les lignes des deux tables.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CROSS JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Couleur
+CROSS JOIN Taille;</code></pre>
+                </div>
+
+                <h3>18.7 SELF JOIN</h3>
+
+                <p>
+                    SELF JOIN consiste à joindre une table avec elle-même.
+                    Exemple : associer chaque employé à son responsable.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · SELF JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    E.nom AS employe,
+    R.nom AS responsable
+FROM Employe E
+LEFT JOIN Employe R
+ON E.id_responsable = R.id_employe;</code></pre>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 19 -->
+
+            <section class="chapter" id="chapitre19">
+                <span class="chapter-number">CHAPITRE 19</span>
+                <h2>Les sous-requêtes SQL</h2>
+
+                <h3>19.1 Définition</h3>
+
+                <p>
+                    Une sous-requête est une requête SQL placée à l'intérieur
+                    d'une autre requête.
+                </p>
+
+                <h3>19.2 Sous-requête avec IN</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Sous-requête IN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT nom
+FROM Etudiant
+WHERE id_classe IN (
+    SELECT id_classe
+    FROM Classe
+    WHERE nom_classe = 'TI1'
+);</code></pre>
+                </div>
+
+                <p>
+                    La sous-requête récupère les identifiants des classes nommées TI1.
+                    La requête principale sélectionne les étudiants appartenant
+                    à ces classes.
+                </p>
+
+                <h3>19.3 Sous-requête avec AVG</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Comparaison à une moyenne</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT nom, note
+FROM Etudiant
+WHERE note > (
+    SELECT AVG(note)
+    FROM Etudiant
+);</code></pre>
+                </div>
+
+                <p>
+                    Cette requête affiche les étudiants ayant une note supérieure
+                    à la moyenne générale.
+                </p>
+
+                <h3>19.4 EXISTS</h3>
+
+                <p>
+                    EXISTS vérifie si une sous-requête retourne au moins une ligne.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · EXISTS</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiant E
+WHERE EXISTS (
+    SELECT 1
+    FROM Inscription I
+    WHERE I.etudiant_id = E.id_etudiant
+);</code></pre>
+                </div>
+
+                <p>
+                    La requête affiche les étudiants qui possèdent au moins
+                    une inscription.
+                </p>
+
+                <h3>19.5 ANY et ALL</h3>
+
+                <ul>
+                    <li><strong>ANY :</strong> la comparaison doit être vraie pour au moins une valeur retournée.</li>
+                    <li><strong>ALL :</strong> la comparaison doit être vraie pour toutes les valeurs retournées.</li>
+                </ul>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · ANY et ALL</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Produit
+WHERE prix > ANY (
+    SELECT prix
+    FROM Produit
+    WHERE categorie = 'Informatique'
+);
+
+SELECT *
+FROM Produit
+WHERE prix > ALL (
+    SELECT prix
+    FROM Produit
+    WHERE categorie = 'Informatique'
+);</code></pre>
+                </div>
+            </section>
+
+            <!-- CHAPITRE 20 -->
+
+            <section class="chapter" id="chapitre20">
+                <span class="chapter-number">CHAPITRE 20</span>
+                <h2>Les vues et les index</h2>
+
+                <h3>20.1 Les vues (VIEW)</h3>
+
+                <p>
+                    Une vue est une requête enregistrée qui se comporte comme
+                    une table virtuelle. Elle permet de simplifier certaines
+                    consultations et de présenter un ensemble de données précis.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CREATE VIEW</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE VIEW Etudiants_Mahdia AS
+SELECT nom, prenom
+FROM Etudiant
+WHERE ville = 'Mahdia';</code></pre>
+                </div>
+
+                <p>Pour consulter la vue :</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Consulter une vue</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT *
+FROM Etudiants_Mahdia;</code></pre>
+                </div>
+
+                <p>Pour supprimer la vue :</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DROP VIEW</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>DROP VIEW Etudiants_Mahdia;</code></pre>
+                </div>
+
+                <h3>20.2 Les index</h3>
+
+                <p>
+                    Un index est une structure qui peut accélérer la recherche
+                    de certaines données. Il est particulièrement utile sur
+                    les colonnes souvent utilisées dans les conditions de recherche
+                    ou les jointures.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · CREATE INDEX</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE INDEX idx_etudiant_nom
+ON Etudiant(nom);</code></pre>
+                </div>
+
+                <p>Pour supprimer un index, la syntaxe dépend du SGBD.</p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · DROP INDEX (MySQL)</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>DROP INDEX idx_etudiant_nom
+ON Etudiant;</code></pre>
+                </div>
+
+                <div class="warning-box">
+                    Les index améliorent certaines lectures, mais occupent de
+                    l'espace et peuvent ralentir les opérations d'écriture.
+                    Il ne faut pas créer un index sur chaque colonne sans réflexion.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 21 -->
+
+            <section class="chapter" id="chapitre21">
+                <span class="chapter-number">CHAPITRE 21</span>
+                <h2>Les transactions SQL</h2>
+
+                <h3>21.1 Qu'est-ce qu'une transaction ?</h3>
+
+                <p>
+                    Une transaction est un ensemble d'opérations qui doivent être
+                    exécutées comme une unité logique.
+                </p>
+
+                <h3>21.2 Les propriétés ACID</h3>
+
+                <div class="two-columns">
+                    <div class="mini-card">
+                        <h4>Atomicité</h4>
+                        <p>La transaction est entièrement validée ou annulée.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>Cohérence</h4>
+                        <p>Les règles d'intégrité doivent être respectées.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>Isolation</h4>
+                        <p>Les transactions concurrentes doivent être gérées correctement.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <h4>Durabilité</h4>
+                        <p>Les modifications validées doivent être conservées.</p>
+                    </div>
+                </div>
+
+                <h3>21.3 COMMIT</h3>
+
+                <p>
+                    COMMIT valide les modifications réalisées dans une transaction.
+                </p>
+
+                <h3>21.4 ROLLBACK</h3>
+
+                <p>
+                    ROLLBACK annule les modifications non validées de la transaction.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Transaction</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>START TRANSACTION;
+
+UPDATE Compte
+SET solde = solde - 100
+WHERE id_compte = 1;
+
+UPDATE Compte
+SET solde = solde + 100
+WHERE id_compte = 2;
+
+COMMIT;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    Dans cet exemple de transfert, on retire 100 du premier compte
+                    et on ajoute 100 au deuxième. COMMIT valide les deux opérations.
+                    Dans un véritable système, il faut également vérifier les soldes,
+                    les comptes concernés et gérer les erreurs avant la validation.
+                </div>
+
+                <div class="warning-box">
+                    Les commandes exactes pour démarrer une transaction et certains
+                    comportements dépendent du SGBD et du moteur de stockage.
+                </div>
+            </section>
+
+            <!-- CHAPITRE 22 -->
+
+            <section class="chapter" id="chapitre22">
+                <span class="chapter-number">CHAPITRE 22</span>
+                <h2>Sécurité et bonnes pratiques</h2>
+
+                <h3>22.1 Gestion des utilisateurs</h3>
+
+                <p>
+                    Une base de données peut contenir des informations sensibles.
+                    Il faut limiter les accès aux utilisateurs qui en ont besoin.
+                </p>
+
+                <h3>22.2 GRANT</h3>
+
+                <p>
+                    GRANT permet d'accorder des privilèges à un utilisateur.
+                    La syntaxe dépend du SGBD.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Exemple MySQL</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>GRANT SELECT
+ON universite.*
+TO 'lecteur'@'localhost';</code></pre>
+                </div>
+
+                <p>
+                    Cet exemple accorde le droit de lecture sur les tables de
+                    la base universite à un compte MySQL nommé lecteur.
+                </p>
+
+                <h3>22.3 REVOKE</h3>
+
+                <p>
+                    REVOKE permet de retirer certains privilèges.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · REVOKE</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>REVOKE SELECT
+ON universite.*
+FROM 'lecteur'@'localhost';</code></pre>
+                </div>
+
+                <h3>22.4 Prévenir les injections SQL</h3>
+
+                <p>
+                    Une injection SQL est une attaque dans laquelle des données
+                    saisies par un utilisateur sont interprétées comme une partie
+                    de la commande SQL.
+                </p>
+
+                <div class="warning-box">
+                    Ne construisez pas une requête SQL en concaténant directement
+                    des données saisies par un utilisateur.
+                </div>
+
+                <p>
+                    Utilisez des requêtes préparées avec des paramètres.
+                    Exemple avec PHP et PDO :
+                </p>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>PHP · Requête préparée</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>&lt;?php
+
+$pdo = new PDO(
+    "mysql:host=localhost;dbname=universite;charset=utf8mb4",
+    "root",
+    ""
+);
+
+$sql = "SELECT * FROM Etudiant WHERE id = :id";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    "id" => $id
+]);
+
+$resultat = $stmt->fetch();
+
+?&gt;</code></pre>
+                </div>
+
+                <div class="code-explanation">
+                    <strong>Explication :</strong>
+                    La requête est préparée séparément des valeurs.
+                    Le paramètre <code>:id</code> reçoit sa valeur via execute().
+                    Cette méthode évite d'insérer directement les données utilisateur
+                    dans le texte SQL.
+                </div>
+
+                <h3>22.5 Les sauvegardes</h3>
+
+                <p>
+                    Une sauvegarde permet de restaurer les données après une erreur,
+                    une panne ou une suppression accidentelle.
+                </p>
+
+                <h3>22.6 Bonnes pratiques</h3>
+
+                <ul>
+                    <li>Choisir des noms de tables et de colonnes clairs.</li>
+                    <li>Définir correctement les clés primaires et étrangères.</li>
+                    <li>Utiliser les types de données adaptés.</li>
+                    <li>Éviter les répétitions inutiles.</li>
+                    <li>Vérifier les requêtes UPDATE et DELETE.</li>
+                    <li>Utiliser les requêtes préparées dans les applications.</li>
+                    <li>Limiter les permissions des utilisateurs.</li>
+                    <li>Effectuer régulièrement des sauvegardes.</li>
+                    <li>Tester les modifications avant leur mise en production.</li>
+                </ul>
+            </section>
+
+            <!-- CHAPITRE 23 -->
+
+            <section class="chapter" id="chapitre23">
+                <span class="chapter-number">CHAPITRE 23</span>
+                <h2>Exemple pratique : construire une base de données universitaire</h2>
+
+                <p>
+                    Nous allons construire progressivement une petite base de données
+                    permettant de gérer des étudiants, des classes, des matières
+                    et des inscriptions.
+                </p>
+
+                <h3>Étape 1 : créer la base</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Base universitaire</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE DATABASE IF NOT EXISTS universite;
+
+USE universite;</code></pre>
+                </div>
+
+                <h3>Étape 2 : créer la table Classe</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Table Classe</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Classe (
+    id_classe INT PRIMARY KEY AUTO_INCREMENT,
+    nom_classe VARCHAR(30) NOT NULL,
+    niveau VARCHAR(20)
+);</code></pre>
+                </div>
+
+                <h3>Étape 3 : créer la table Etudiant</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Table Etudiant</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Etudiant (
+    id_etudiant INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    date_naissance DATE,
+    id_classe INT,
+    FOREIGN KEY (id_classe)
+        REFERENCES Classe(id_classe)
+);</code></pre>
+                </div>
+
+                <h3>Étape 4 : créer la table Matiere</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Table Matiere</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Matiere (
+    id_matiere INT PRIMARY KEY AUTO_INCREMENT,
+    nom_matiere VARCHAR(60) NOT NULL,
+    coefficient DECIMAL(4,2) DEFAULT 1
+);</code></pre>
+                </div>
+
+                <h3>Étape 5 : créer la table Inscription</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Table Inscription</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>CREATE TABLE Inscription (
+    id_etudiant INT,
+    id_matiere INT,
+    date_inscription DATE,
+    PRIMARY KEY (id_etudiant, id_matiere),
+    FOREIGN KEY (id_etudiant)
+        REFERENCES Etudiant(id_etudiant),
+    FOREIGN KEY (id_matiere)
+        REFERENCES Matiere(id_matiere)
+);</code></pre>
+                </div>
+
+                <h3>Étape 6 : ajouter des classes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · INSERT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Classe (nom_classe, niveau)
+VALUES
+('TI1', 'Première année'),
+('TI2', 'Deuxième année'),
+('TI3', 'Troisième année');</code></pre>
+                </div>
+
+                <h3>Étape 7 : ajouter des étudiants</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · INSERT</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Etudiant
+(nom, prenom, email, date_naissance, id_classe)
+VALUES
+('Ali', 'Mohamed', 'mohamed@example.com', '2006-05-12', 1),
+('Ben Salah', 'Amira', 'amira@example.com', '2007-02-20', 1),
+('Trabelsi', 'Youssef', 'youssef@example.com', '2005-09-15', 2);</code></pre>
+                </div>
+
+                <h3>Étape 8 : ajouter les matières</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Matières</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Matiere
+(nom_matiere, coefficient)
+VALUES
+('Bases de données', 2),
+('Programmation', 3),
+('Système exploitation', 2);</code></pre>
+                </div>
+
+                <h3>Étape 9 : inscrire les étudiants</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Inscriptions</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>INSERT INTO Inscription
+(id_etudiant, id_matiere, date_inscription)
+VALUES
+(1, 1, '2026-09-15'),
+(1, 2, '2026-09-15'),
+(2, 1, '2026-09-15'),
+(3, 3, '2026-09-15');</code></pre>
+                </div>
+
+                <h3>Étape 10 : consulter les étudiants et leurs classes</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · JOIN</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    E.nom,
+    E.prenom,
+    C.nom_classe
+FROM Etudiant E
+INNER JOIN Classe C
+ON E.id_classe = C.id_classe;</code></pre>
+                </div>
+
+                <h3>Étape 11 : consulter les matières suivies</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · Plusieurs jointures</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    E.nom,
+    E.prenom,
+    M.nom_matiere
+FROM Etudiant E
+INNER JOIN Inscription I
+    ON E.id_etudiant = I.id_etudiant
+INNER JOIN Matiere M
+    ON I.id_matiere = M.id_matiere;</code></pre>
+                </div>
+
+                <h3>Étape 12 : compter les étudiants par classe</h3>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <span>SQL · GROUP BY</span>
+                        <button class="copy-btn">Copier</button>
+                    </div>
+                    <pre><code>SELECT
+    C.nom_classe,
+    COUNT(E.id_etudiant) AS nombre_etudiants
+FROM Classe C
+LEFT JOIN Etudiant E
+    ON C.id_classe = E.id_classe
+GROUP BY C.id_classe, C.nom_classe;</code></pre>
+                </div>
+
+                <div class="info-box">
+                    <strong>Résultat :</strong>
+                    Vous disposez maintenant d'une structure relationnelle
+                    comprenant quatre tables, des clés primaires, des clés étrangères,
+                    des données et plusieurs requêtes de consultation.
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- PROJETS -->
+
+    <section class="page-section" id="projets">
+        <div class="page-heading">
+            <div class="section-kicker">Mise en pratique</div>
+            <h2>Projets progressifs</h2>
+            <p>
+                Chaque projet vous permet d'appliquer les notions du cours.
+                Commencez par les projets simples avant de passer aux plus complexes.
+            </p>
+        </div>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <span class="project-level">Niveau 01 · Débutant</span>
+                <h3>Projet 01 — Gestion des étudiants</h3>
+                <p>
+                    Créer une base de données simple pour enregistrer les informations
+                    des étudiants.
+                </p>
+
+                <ul>
+                    <li>Créer une base de données.</li>
+                    <li>Créer la table Etudiant.</li>
+                    <li>Insérer au moins 10 étudiants.</li>
+                    <li>Afficher tous les étudiants.</li>
+                    <li>Rechercher un étudiant par son nom.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Afficher les étudiants âgés de plus de 20 ans.</li>
+                        <li>Trier les étudiants par ordre alphabétique.</li>
+                        <li>Modifier l'adresse email d'un étudiant.</li>
+                        <li>Supprimer un étudiant identifié par son ID.</li>
+                        <li>Compter le nombre total d'étudiants.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>CREATE DATABASE, CREATE TABLE, INSERT, SELECT, WHERE, ORDER BY, UPDATE, DELETE, COUNT.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="project-level">Niveau 02 · Débutant avancé</span>
+                <h3>Projet 02 — Gestion d'une bibliothèque</h3>
+                <p>
+                    Construire une base de données pour gérer les livres,
+                    les adhérents et les emprunts.
+                </p>
+
+                <ul>
+                    <li>Créer les tables Livre et Adherent.</li>
+                    <li>Créer la table Emprunt.</li>
+                    <li>Définir les clés primaires et étrangères.</li>
+                    <li>Enregistrer les emprunts.</li>
+                    <li>Afficher les livres empruntés.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Afficher les livres qui ne sont jamais empruntés.</li>
+                        <li>Afficher les emprunts d'un adhérent.</li>
+                        <li>Compter les emprunts par adhérent.</li>
+                        <li>Afficher les emprunts dont la date de retour est dépassée.</li>
+                        <li>Afficher le nombre d'emprunts par livre.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>Clés étrangères, relations, JOIN, LEFT JOIN, GROUP BY, COUNT, WHERE.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="project-level">Niveau 03 · Intermédiaire</span>
+                <h3>Projet 03 — Gestion d'une boutique</h3>
+                <p>
+                    Développer une base de données pour une boutique qui vend
+                    différents produits à plusieurs clients.
+                </p>
+
+                <ul>
+                    <li>Créer les tables Client et Produit.</li>
+                    <li>Créer les tables Commande et DetailCommande.</li>
+                    <li>Gérer les prix et les quantités.</li>
+                    <li>Associer chaque commande à un client.</li>
+                    <li>Calculer le montant des commandes.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Afficher les commandes d'un client précis.</li>
+                        <li>Calculer le chiffre d'affaires total.</li>
+                        <li>Afficher les cinq produits les plus chers.</li>
+                        <li>Calculer le nombre de commandes par client.</li>
+                        <li>Afficher les produits dont le stock est inférieur à 5.</li>
+                        <li>Afficher le montant total de chaque commande.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>JOIN, GROUP BY, SUM, AVG, ORDER BY, sous-requêtes et contraintes.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="project-level">Niveau 04 · Intermédiaire avancé</span>
+                <h3>Projet 04 — Gestion universitaire</h3>
+                <p>
+                    Concevoir une base de données pour gérer les étudiants,
+                    les enseignants, les classes, les matières et les notes.
+                </p>
+
+                <ul>
+                    <li>Créer toutes les tables nécessaires.</li>
+                    <li>Modéliser les relations entre les entités.</li>
+                    <li>Gérer les inscriptions aux matières.</li>
+                    <li>Enregistrer les notes des étudiants.</li>
+                    <li>Calculer les moyennes.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Afficher les notes de chaque étudiant.</li>
+                        <li>Calculer la moyenne par étudiant.</li>
+                        <li>Afficher les étudiants ayant une moyenne supérieure à 10.</li>
+                        <li>Afficher la meilleure note de chaque matière.</li>
+                        <li>Afficher le classement des étudiants.</li>
+                        <li>Créer une vue contenant les moyennes.</li>
+                        <li>Identifier les étudiants sans inscription.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>Modélisation, normalisation, relations N:N, jointures, agrégations, vues et sous-requêtes.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="project-level">Niveau 05 · Avancé</span>
+                <h3>Projet 05 — Gestion d'un hôpital</h3>
+                <p>
+                    Concevoir une base de données permettant de gérer les patients,
+                    les médecins, les rendez-vous et les consultations.
+                </p>
+
+                <ul>
+                    <li>Créer les tables Patient et Medecin.</li>
+                    <li>Créer les tables RendezVous et Consultation.</li>
+                    <li>Gérer les spécialités médicales.</li>
+                    <li>Enregistrer les consultations.</li>
+                    <li>Gérer les rendez-vous.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Afficher les rendez-vous d'un médecin.</li>
+                        <li>Afficher l'historique d'un patient.</li>
+                        <li>Compter les consultations par spécialité.</li>
+                        <li>Identifier les médecins sans rendez-vous.</li>
+                        <li>Créer des vues pour les rendez-vous du jour.</li>
+                        <li>Gérer les transactions lors de la prise de rendez-vous.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>Relations, jointures multiples, sous-requêtes, vues, transactions et contraintes.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="project-level">Niveau 06 · Expert</span>
+                <h3>Projet 06 — Plateforme e-commerce</h3>
+                <p>
+                    Concevoir une base de données complète pour une plateforme
+                    de vente en ligne.
+                </p>
+
+                <ul>
+                    <li>Gérer les utilisateurs et les adresses.</li>
+                    <li>Gérer les catégories et les produits.</li>
+                    <li>Gérer les paniers et les commandes.</li>
+                    <li>Gérer les paiements et les livraisons.</li>
+                    <li>Produire des statistiques commerciales.</li>
+                </ul>
+
+                <button class="project-toggle">Voir les consignes supplémentaires</button>
+
+                <div class="project-details">
+                    <h4>Travail supplémentaire</h4>
+                    <ol>
+                        <li>Calculer le chiffre d'affaires mensuel.</li>
+                        <li>Identifier les clients les plus actifs.</li>
+                        <li>Afficher les produits les plus vendus.</li>
+                        <li>Afficher les commandes non livrées.</li>
+                        <li>Créer des vues statistiques.</li>
+                        <li>Ajouter des index adaptés aux recherches.</li>
+                        <li>Utiliser des transactions pour valider les commandes.</li>
+                        <li>Définir des permissions différentes selon les utilisateurs.</li>
+                    </ol>
+
+                    <h4>Notions à utiliser</h4>
+                    <p>Conception complète, normalisation, SQL avancé, index, transactions et sécurité.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+
+    <section class="page-section" id="quiz">
+        <div class="page-heading">
+            <div class="section-kicker">Évaluation</div>
+            <h2>Quiz SQL interactif</h2>
+            <p>
+                Testez vos connaissances avec des questions aléatoires.
+                Chaque question possède une correction et une explication.
+            </p>
+        </div>
+
+        <div class="quiz-container">
+
+            <div id="quizSettings">
+                <h3>Configurer votre quiz</h3>
+
+                <div class="quiz-settings">
+                    <div class="field">
+                        <label for="questionCount">Nombre de questions</label>
+                        <select id="questionCount">
+                            <option value="20">20 questions</option>
+                            <option value="25">25 questions</option>
+                            <option value="30" selected>30 questions</option>
+                            <option value="35">35 questions</option>
+                            <option value="40">40 questions</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="quizLevel">Niveau</label>
+                        <select id="quizLevel">
+                            <option value="all">Tous les niveaux</option>
+                            <option value="facile">Facile</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="difficile">Difficile</option>
+                        </select>
+                    </div>
+
+                    <button class="primary-btn" id="startQuiz">Commencer le quiz</button>
+                </div>
+
+                <div class="info-box">
+                    Le quiz sélectionne aléatoirement les questions dans une banque
+                    de 200 questions. Les questions déjà utilisées ne sont pas
+                    répétées au cours d'une même session.
+                </div>
+            </div>
+
+            <div class="quiz-progress" id="quizProgress">
+                <div class="progress-info">
+                    <span id="questionCounter">Question 1 / 30</span>
+                    <span id="scoreCounter">Score : 0</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="question-card" id="questionCard">
+                <span class="question-category" id="questionCategory"></span>
+                <h3 id="questionText"></h3>
+
+                <div class="answers" id="answers"></div>
+
+                <div class="feedback" id="feedback"></div>
+
+                <div class="quiz-actions">
+                    <button class="secondary-btn" id="quitQuiz">Quitter le quiz</button>
+                    <button class="primary-btn" id="validateAnswer" disabled>Vérifier</button>
+                </div>
+            </div>
+
+            <div class="quiz-result" id="quizResult">
+                <div class="score-card">
+                    <p>Votre résultat final</p>
+                    <div class="score-number" id="finalScore">0 / 30</div>
+                    <p id="finalMessage"></p>
+                </div>
+
+                <h3>Correction détaillée</h3>
+                <div id="reviewList"></div>
+
+                <button class="primary-btn" id="restartQuiz">Recommencer</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">STUDY<span>NET</span></div>
+        <p>Apprendre, pratiquer et progresser en informatique.</p>
+        <p>Créé avec passion par <strong>Mohamed Ali</strong></p>
+    </footer>
+
+       <script src="script.js" defer></script>
+
+
+</body>
+</html>

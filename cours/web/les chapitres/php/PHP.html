@@ -1,0 +1,4097 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet PHP : programmation, formulaires HTML, MySQLi, bases de données, projets et quiz interactif.">
+<title>PHP — Cours, Projets & Quiz</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">DEV<span>.</span>PHP</div>
+    <div class="top-info">FORMATION COMPLÈTE · PROGRAMMATION WEB</div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">Formation complète · PHP & MySQLi</div>
+        <h1>Maîtriser <span>PHP.</span><br>De zéro à professionnel.</h1>
+        <p>
+            Apprends à créer des applications web dynamiques, à traiter
+            les formulaires HTML, à communiquer avec les bases de données
+            et à construire des projets PHP complets.
+        </p>
+        <div class="hero-tags">
+            <span>PHP</span>
+            <span>HTML Forms</span>
+            <span>MySQLi</span>
+            <span>CRUD</span>
+            <span>Sécurité</span>
+            <span>Projets pratiques</span>
+        </div>
+    </div>
+</section>
+
+<nav class="main-nav">
+    <button class="nav-btn active" onclick="showSection('course',this)">01 · Cours</button>
+    <button class="nav-btn" onclick="showSection('projects',this)">02 · Projets</button>
+    <button class="nav-btn" onclick="showSection('quiz',this)">03 · Quiz</button>
+</nav>
+
+<main class="container">
+
+<!-- =====================================================
+     PARTIE 1 : COURS
+===================================================== -->
+
+<section id="course" class="section-view active">
+
+<div class="section-heading">
+    <div class="number">PARTIE 01</div>
+    <h2>Le cours complet PHP</h2>
+    <p>
+        Des bases de la programmation PHP jusqu'à la création
+        d'applications complètes connectées à une base de données.
+    </p>
+</div>
+
+<div class="stats">
+    <div class="stat"><strong>20+</strong><span>Chapitres détaillés</span></div>
+    <div class="stat"><strong>PHP</strong><span>Programmation serveur</span></div>
+    <div class="stat"><strong>CRUD</strong><span>Gestion des données</span></div>
+    <div class="stat"><strong>SQLi</strong><span>Connexion sécurisée</span></div>
+</div>
+
+<div class="lesson-progress">
+    <div class="progress-track"><div class="progress-fill" id="courseProgress"></div></div>
+    <span id="progressText">0 / 20 chapitres consultés</span>
+</div>
+
+<div class="course-layout">
+
+<aside class="sidebar">
+    <h3>TABLE DES MATIÈRES</h3>
+    <a href="#c1">01. Introduction à PHP</a>
+    <a href="#c2">02. Environnement de travail</a>
+    <a href="#c3">03. Syntaxe PHP</a>
+    <a href="#c4">04. Variables et constantes</a>
+    <a href="#c5">05. Types de données</a>
+    <a href="#c6">06. Opérateurs</a>
+    <a href="#c7">07. Conditions</a>
+    <a href="#c8">08. Boucles</a>
+    <a href="#c9">09. Tableaux</a>
+    <a href="#c10">10. Fonctions</a>
+    <a href="#c11">11. Chaînes de caractères</a>
+    <a href="#c12">12. Formulaires HTML</a>
+    <a href="#c13">13. GET et POST</a>
+    <a href="#c14">14. Validation des données</a>
+    <a href="#c15">15. Introduction SQL</a>
+    <a href="#c16">16. Connexion MySQLi</a>
+    <a href="#c17">17. CRUD avec MySQLi</a>
+    <a href="#c18">18. Sessions et cookies</a>
+    <a href="#c19">19. Sécurité PHP</a>
+    <a href="#c20">20. Projet complet</a>
+</aside>
+
+<div class="course-content">
+
+<!-- CHAPITRE 1 -->
+
+<article class="lesson" id="c1">
+<div class="lesson-label">CHAPITRE 01 · INTRODUCTION</div>
+<h2>Comprendre PHP</h2>
+
+<div class="definition">
+<strong>Définition :</strong>
+PHP (Hypertext Preprocessor) est un langage de programmation
+exécuté côté serveur. Il permet de créer des pages web dynamiques,
+de traiter les données des utilisateurs et de communiquer avec une
+base de données.
+</div>
+
+<h3>1.1. Pourquoi utiliser PHP ?</h3>
+
+<p>
+HTML permet de structurer une page web, CSS permet de la mettre en forme
+et JavaScript permet d'ajouter des interactions côté navigateur.
+Mais pour traiter les données sur un serveur, PHP est particulièrement utile.
+</p>
+
+<div class="two-columns">
+<div class="info-card">
+<h4>HTML / CSS / JavaScript</h4>
+<p>Exécutés principalement dans le navigateur de l'utilisateur.</p>
+</div>
+<div class="info-card">
+<h4>PHP</h4>
+<p>Exécuté sur le serveur avant l'envoi du résultat au navigateur.</p>
+</div>
+</div>
+
+<h3>1.2. Comment fonctionne PHP ?</h3>
+
+<ol class="steps">
+<li>L'utilisateur demande une page PHP.</li>
+<li>Le serveur reçoit la demande.</li>
+<li>Le serveur exécute le code PHP.</li>
+<li>PHP peut consulter ou modifier une base de données.</li>
+<li>Le serveur renvoie le résultat HTML au navigateur.</li>
+</ol>
+
+<h3>1.3. Premier programme PHP</h3>
+
+<div class="code-window">
+<div class="code-header">
+<span>premier.php</span>
+<button class="copy-btn" onclick="copyCode(this)">Copier</button>
+</div>
+<pre><code>&lt;?php
+echo "Bonjour tout le monde !";
+?&gt;</code></pre>
+</div>
+
+<h4>Explication de chaque instruction</h4>
+
+<ul>
+<li><strong>&lt;?php :</strong> indique le début du code PHP.</li>
+<li><strong>echo :</strong> affiche un contenu dans le résultat HTML.</li>
+<li><strong>"Bonjour tout le monde !" :</strong> texte à afficher.</li>
+<li><strong>;</strong> termine l'instruction PHP.</li>
+<li><strong>?&gt; :</strong> marque la fin du bloc PHP dans ce fichier.</li>
+</ul>
+
+<div class="example-result">
+<h4>RÉSULTAT DANS LE NAVIGATEUR</h4>
+<p>Bonjour tout le monde !</p>
+</div>
+
+<div class="note">
+Dans un fichier PHP contenant uniquement du code PHP,
+il est recommandé de ne pas écrire la balise de fermeture
+<code>?&gt;</code>. Cela évite certains problèmes liés aux espaces
+ou aux retours à la ligne envoyés accidentellement.
+</div>
+
+<h3>1.4. PHP statique et PHP dynamique</h3>
+
+<div class="code-window">
+<div class="code-header">
+<span>exemple.php</span>
+<button class="copy-btn" onclick="copyCode(this)">Copier</button>
+</div>
+<pre><code>&lt;?php
+$nom = "Mohamed";
+
+echo "Bienvenue " . $nom;
+?&gt;</code></pre>
+</div>
+
+<p>
+PHP construit ici le message à partir d'une variable.
+Si la valeur de <code>$nom</code> change, le résultat change également.
+</p>
+
+<div class="example-result">
+<h4>RÉSULTAT</h4>
+<p>Bienvenue Mohamed</p>
+</div>
+</article>
+
+<!-- CHAPITRE 2 -->
+
+<article class="lesson" id="c2">
+<div class="lesson-label">CHAPITRE 02 · ENVIRONNEMENT</div>
+<h2>Préparer son environnement de travail</h2>
+
+<p>
+PHP nécessite un environnement capable d'exécuter du code côté serveur.
+Un simple double-clic sur un fichier PHP ne suffit donc pas.
+</p>
+
+<h3>2.1. Les outils nécessaires</h3>
+
+<div class="two-columns">
+<div class="info-card">
+<h4>Apache</h4>
+<p>Serveur web qui reçoit les requêtes HTTP et permet de servir les pages.</p>
+</div>
+<div class="info-card">
+<h4>PHP</h4>
+<p>Interpréteur qui exécute le code PHP sur le serveur.</p>
+</div>
+<div class="info-card">
+<h4>MySQL / MariaDB</h4>
+<p>Système de gestion de bases de données relationnelles.</p>
+</div>
+<div class="info-card">
+<h4>VS Code</h4>
+<p>Éditeur de code permettant d'écrire et organiser les fichiers du projet.</p>
+</div>
+</div>
+
+<h3>2.2. Installer un environnement local</h3>
+
+<p>
+XAMPP est une solution qui regroupe notamment Apache, PHP,
+MariaDB et des outils d'administration.
+</p>
+
+<ol class="steps">
+<li>Installer XAMPP.</li>
+<li>Ouvrir XAMPP Control Panel.</li>
+<li>Démarrer Apache.</li>
+<li>Démarrer MySQL.</li>
+<li>Créer un dossier dans <code>htdocs</code>.</li>
+<li>Créer un fichier <code>index.php</code>.</li>
+<li>Accéder au projet depuis le navigateur.</li>
+</ol>
+
+<div class="code-window">
+<div class="code-header">
+<span>Organisation du projet</span>
+<button class="copy-btn" onclick="copyCode(this)">Copier</button>
+</div>
+<pre><code>htdocs/
+│
+└── mon_projet/
+    │
+    ├── index.php
+    ├── connexion.php
+    ├── ajouter.php
+    ├── modifier.php
+    ├── supprimer.php
+    ├── liste.php
+    │
+    ├── css/
+    │   └── style.css
+    │
+    └── images/</code></pre>
+</div>
+
+<h3>2.3. Accéder à son projet</h3>
+
+<div class="code-window">
+<div class="code-header"><span>Adresse locale</span></div>
+<pre><code>http://localhost/mon_projet/</code></pre>
+</div>
+
+<div class="warning">
+Attention : un fichier PHP ne doit pas être ouvert directement
+avec une adresse de type <code>file:///C:/...</code>.
+Il doit être exécuté par un serveur PHP.
+</div>
+</article>
+
+<!-- CHAPITRE 3 -->
+
+<article class="lesson" id="c3">
+<div class="lesson-label">CHAPITRE 03 · SYNTAXE</div>
+<h2>La syntaxe PHP</h2>
+
+<h3>3.1. Les balises PHP</h3>
+
+<div class="code-window">
+<div class="code-header"><span>exemple.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+    echo "Premier bloc PHP";
+?&gt;
+
+&lt;h1&gt;Titre HTML&lt;/h1&gt;
+
+&lt;?php
+    echo "Deuxième bloc PHP";
+?&gt;</code></pre>
+</div>
+
+<p>
+Un fichier PHP peut contenir du HTML et plusieurs blocs PHP.
+Le serveur exécute les parties PHP et conserve le HTML dans le résultat.
+</p>
+
+<h3>3.2. Les commentaires</h3>
+
+<div class="code-window">
+<div class="code-header"><span>commentaires.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+// Commentaire sur une seule ligne
+
+# Autre commentaire sur une seule ligne
+
+/*
+    Commentaire
+    sur plusieurs lignes
+*/
+
+echo "PHP";
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>//</code> : commentaire sur une ligne.</li>
+<li><code>#</code> : autre syntaxe de commentaire sur une ligne.</li>
+<li><code>/* */</code> : commentaire sur plusieurs lignes.</li>
+</ul>
+
+<h3>3.3. L'instruction echo et print</h3>
+
+<div class="code-window">
+<div class="code-header"><span>affichage.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+echo "Bonjour";
+echo "PHP", " est un langage web";
+
+print "Bienvenue";
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<strong>echo</strong> et <strong>print</strong> servent à produire
+une sortie. <code>echo</code> accepte plusieurs arguments séparés
+par des virgules, contrairement à <code>print</code>.
+</p>
+
+<h3>3.4. Le point-virgule</h3>
+
+<p>
+Chaque instruction PHP doit normalement se terminer par un point-virgule.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>correct.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+$nom = "Ali";
+$age = 20;
+
+echo $nom;
+echo $age;
+?&gt;</code></pre>
+</div>
+</article>
+
+<!-- CHAPITRE 4 -->
+
+<article class="lesson" id="c4">
+<div class="lesson-label">CHAPITRE 04 · VARIABLES</div>
+<h2>Les variables et les constantes</h2>
+
+<h3>4.1. Qu'est-ce qu'une variable ?</h3>
+
+<div class="definition">
+Une variable est un espace nommé qui permet de stocker une valeur
+utilisée ou modifiée pendant l'exécution du programme.
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>variables.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = "Mohamed";
+$age = 20;
+$moyenne = 15.5;
+$inscrit = true;
+
+echo $nom;
+echo $age;
+
+?&gt;</code></pre>
+</div>
+
+<h4>Explication</h4>
+<ul>
+<li><code>$nom</code> : nom de la variable.</li>
+<li><code>=</code> : opérateur d'affectation.</li>
+<li><code>"Mohamed"</code> : valeur stockée.</li>
+<li><code>;</code> : fin de l'instruction.</li>
+</ul>
+
+<h3>4.2. Les règles de nommage</h3>
+
+<ul>
+<li>Une variable commence obligatoirement par <code>$</code>.</li>
+<li>Le nom commence par une lettre ou un underscore.</li>
+<li>Il peut contenir des lettres, des chiffres et des underscores.</li>
+<li>Les noms sont sensibles à la casse.</li>
+</ul>
+
+<div class="code-window">
+<div class="code-header"><span>noms.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = "Ali";
+$Nom = "Ahmed";
+$age_etudiant = 20;
+
+echo $nom;
+echo $Nom;
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<strong>Résultat :</strong> Ali et Ahmed sont deux valeurs différentes
+car <code>$nom</code> et <code>$Nom</code> sont deux variables distinctes.
+</p>
+
+<h3>4.3. Modifier une variable</h3>
+
+<div class="code-window">
+<div class="code-header"><span>modification.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$prix = 100;
+
+$prix = 150;
+
+echo $prix;
+
+?&gt;</code></pre>
+</div>
+
+<div class="example-result">
+<h4>RÉSULTAT</h4>
+<p>150</p>
+</div>
+
+<h3>4.4. Les constantes</h3>
+
+<p>
+Une constante est une valeur nommée qui ne change pas pendant
+l'exécution normale du programme.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>constantes.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+define("SITE_NAME", "StudyNet");
+
+const TVA = 0.19;
+
+echo SITE_NAME;
+echo TVA;
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>define()</code> permet de définir une constante à partir de
+son nom et de sa valeur. Le mot-clé <code>const</code> permet
+également de déclarer une constante.
+</p>
+</article>
+
+<!-- CHAPITRE 5 -->
+
+<article class="lesson" id="c5">
+<div class="lesson-label">CHAPITRE 05 · TYPES</div>
+<h2>Les types de données</h2>
+
+<p>
+Une variable PHP peut contenir différents types de valeurs.
+Connaître le type permet de savoir quelles opérations effectuer.
+</p>
+
+<table class="mini-table">
+<tr><th>Type</th><th>Rôle</th><th>Exemple</th></tr>
+<tr><td>String</td><td>Texte</td><td>"Bonjour"</td></tr>
+<tr><td>Integer</td><td>Nombre entier</td><td>25</td></tr>
+<tr><td>Float</td><td>Nombre décimal</td><td>15.75</td></tr>
+<tr><td>Boolean</td><td>Vrai ou faux</td><td>true</td></tr>
+<tr><td>Array</td><td>Collection de valeurs</td><td>[10,20,30]</td></tr>
+<tr><td>NULL</td><td>Absence de valeur</td><td>null</td></tr>
+<tr><td>Object</td><td>Instance d'une classe</td><td>new Etudiant()</td></tr>
+</table>
+
+<h3>5.1. String</h3>
+
+<div class="code-window">
+<div class="code-header"><span>string.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$prenom = "Mohamed";
+
+echo $prenom;
+
+?&gt;</code></pre>
+</div>
+
+<p>Utilisé pour stocker les noms, prénoms, adresses et messages.</p>
+
+<h3>5.2. Integer et Float</h3>
+
+<div class="code-window">
+<div class="code-header"><span>nombres.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = 20;
+$prix = 12.5;
+
+echo $age + 5;
+echo $prix * 2;
+
+?&gt;</code></pre>
+</div>
+
+<p>Résultats : 25 et 25.</p>
+
+<h3>5.3. Boolean</h3>
+
+<div class="code-window">
+<div class="code-header"><span>boolean.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$connecte = true;
+
+if ($connecte) {
+    echo "Bienvenue";
+} else {
+    echo "Veuillez vous connecter";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Le type Boolean est utilisé notamment dans les conditions,
+les autorisations et les vérifications.
+</p>
+
+<h3>5.4. NULL</h3>
+
+<div class="code-window">
+<div class="code-header"><span>null.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$email = null;
+
+var_dump($email);
+
+?&gt;</code></pre>
+</div>
+
+<p>Résultat : <code>NULL</code>.</p>
+
+<h3>5.5. Vérifier le type d'une variable</h3>
+
+<div class="code-window">
+<div class="code-header"><span>type.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = 20;
+
+var_dump($age);
+
+echo gettype($age);
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>var_dump()</code> affiche la valeur et son type.</li>
+<li><code>gettype()</code> retourne le nom du type.</li>
+<li><code>is_string()</code> vérifie si une valeur est une chaîne.</li>
+<li><code>is_int()</code> vérifie si une valeur est un entier.</li>
+<li><code>is_float()</code> vérifie si une valeur est décimale.</li>
+<li><code>is_numeric()</code> vérifie si une valeur est numérique.</li>
+</ul>
+</article>
+
+<!-- CHAPITRE 6 -->
+
+<article class="lesson" id="c6">
+<div class="lesson-label">CHAPITRE 06 · OPÉRATEURS</div>
+<h2>Les opérateurs PHP</h2>
+
+<h3>6.1. Opérateurs arithmétiques</h3>
+
+<table class="mini-table">
+<tr><th>Opérateur</th><th>Fonction</th><th>Exemple</th></tr>
+<tr><td>+</td><td>Addition</td><td>10 + 5 = 15</td></tr>
+<tr><td>-</td><td>Soustraction</td><td>10 - 5 = 5</td></tr>
+<tr><td>*</td><td>Multiplication</td><td>10 * 5 = 50</td></tr>
+<tr><td>/</td><td>Division</td><td>10 / 5 = 2</td></tr>
+<tr><td>%</td><td>Modulo</td><td>10 % 3 = 1</td></tr>
+<tr><td>**</td><td>Puissance</td><td>2 ** 3 = 8</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>calcul.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$a = 10;
+$b = 3;
+
+echo $a + $b;
+echo $a - $b;
+echo $a * $b;
+echo $a / $b;
+echo $a % $b;
+
+?&gt;</code></pre>
+</div>
+
+<h3>6.2. Opérateurs de comparaison</h3>
+
+<table class="mini-table">
+<tr><th>Opérateur</th><th>Signification</th></tr>
+<tr><td>==</td><td>Égalité après comparaison des valeurs</td></tr>
+<tr><td>===</td><td>Valeur et type identiques</td></tr>
+<tr><td>!=</td><td>Différent</td></tr>
+<tr><td>!==</td><td>Valeur ou type différent</td></tr>
+<tr><td>&gt;</td><td>Supérieur</td></tr>
+<tr><td>&lt;</td><td>Inférieur</td></tr>
+<tr><td>&gt;=</td><td>Supérieur ou égal</td></tr>
+<tr><td>&lt;=</td><td>Inférieur ou égal</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>comparaison.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$a = 10;
+$b = "10";
+
+var_dump($a == $b);
+var_dump($a === $b);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Premier résultat : <code>true</code>. Deuxième résultat :
+<code>false</code>. La comparaison stricte vérifie également le type.
+</p>
+
+<h3>6.3. Opérateurs logiques</h3>
+
+<table class="mini-table">
+<tr><th>Opérateur</th><th>Fonction</th></tr>
+<tr><td>&amp;&amp;</td><td>ET : les deux conditions doivent être vraies.</td></tr>
+<tr><td>||</td><td>OU : au moins une condition doit être vraie.</td></tr>
+<tr><td>!</td><td>NON : inverse le résultat.</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>logique.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = 20;
+$autorisation = true;
+
+if ($age >= 18 &amp;&amp; $autorisation) {
+    echo "Accès autorisé";
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>6.4. Concaténation</h3>
+
+<p>Le point <code>.</code> permet de réunir plusieurs chaînes.</p>
+
+<div class="code-window">
+<div class="code-header"><span>concat.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$prenom = "Mohamed";
+$nom = "Ali";
+
+$nom_complet = $prenom . " " . $nom;
+
+echo $nom_complet;
+
+?&gt;</code></pre>
+</div>
+
+<p>Résultat : Mohamed Ali.</p>
+
+<h3>6.5. Opérateurs d'affectation</h3>
+
+<div class="code-window">
+<div class="code-header"><span>affectation.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$x = 10;
+
+$x += 5;  // $x = $x + 5
+$x -= 2;  // $x = $x - 2
+$x *= 2;  // $x = $x * 2
+
+echo $x;  // 26
+
+?&gt;</code></pre>
+</div>
+</article>
+
+<!-- CHAPITRE 7 -->
+
+<article class="lesson" id="c7">
+<div class="lesson-label">CHAPITRE 07 · CONDITIONS</div>
+<h2>Les structures conditionnelles</h2>
+
+<div class="definition">
+Une condition permet d'exécuter différentes instructions selon
+qu'une expression est vraie ou fausse.
+</div>
+
+<h3>7.1. La condition if</h3>
+
+<div class="code-window">
+<div class="code-header"><span>if.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = 20;
+
+if ($age >= 18) {
+    echo "Majeur";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+PHP vérifie si l'âge est supérieur ou égal à 18.
+Si la condition est vraie, le message est affiché.
+</p>
+
+<h3>7.2. if / else</h3>
+
+<div class="code-window">
+<div class="code-header"><span>if_else.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$note = 12;
+
+if ($note >= 10) {
+    echo "Admis";
+} else {
+    echo "Non admis";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Si la note est supérieure ou égale à 10, PHP affiche « Admis ».
+Sinon, il affiche « Non admis ».
+</p>
+
+<h3>7.3. if / elseif / else</h3>
+
+<div class="code-window">
+<div class="code-header"><span>elseif.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$note = 15;
+
+if ($note >= 16) {
+    echo "Très bien";
+} elseif ($note >= 14) {
+    echo "Bien";
+} elseif ($note >= 10) {
+    echo "Passable";
+} else {
+    echo "Insuffisant";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Les conditions sont testées dans l'ordre.
+Dès qu'une condition est vraie, son bloc est exécuté et
+les autres branches ne sont pas examinées.
+</p>
+
+<h3>7.4. switch</h3>
+
+<div class="code-window">
+<div class="code-header"><span>switch.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$jour = 2;
+
+switch ($jour) {
+    case 1:
+        echo "Lundi";
+        break;
+
+    case 2:
+        echo "Mardi";
+        break;
+
+    case 3:
+        echo "Mercredi";
+        break;
+
+    default:
+        echo "Jour inconnu";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>switch</code> compare une expression à plusieurs valeurs.
+<code>break</code> permet de sortir du switch.
+<code>default</code> est exécuté si aucun cas ne correspond.
+</p>
+
+<h3>7.5. L'opérateur ternaire</h3>
+
+<div class="code-window">
+<div class="code-header"><span>ternaire.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = 20;
+
+$message = ($age >= 18)
+    ? "Majeur"
+    : "Mineur";
+
+echo $message;
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Le ternaire permet d'écrire une condition simple sous une forme courte.
+</p>
+</article>
+
+<!-- CHAPITRE 8 -->
+
+<article class="lesson" id="c8">
+<div class="lesson-label">CHAPITRE 08 · BOUCLES</div>
+<h2>Les boucles</h2>
+
+<p>
+Une boucle permet de répéter plusieurs fois un ensemble d'instructions
+sans écrire le même code manuellement.
+</p>
+
+<h3>8.1. La boucle for</h3>
+
+<div class="code-window">
+<div class="code-header"><span>for.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+for ($i = 1; $i <= 5; $i++) {
+    echo $i . "&lt;br&gt;";
+}
+
+?&gt;</code></pre>
+</div>
+
+<h4>Les trois éléments de for</h4>
+<ul>
+<li><code>$i = 1</code> : initialisation du compteur.</li>
+<li><code>$i &lt;= 5</code> : condition de continuation.</li>
+<li><code>$i++</code> : augmentation du compteur après chaque tour.</li>
+</ul>
+
+<div class="example-result">
+<h4>RÉSULTAT</h4>
+<p>1<br>2<br>3<br>4<br>5</p>
+</div>
+
+<h3>8.2. La boucle while</h3>
+
+<div class="code-window">
+<div class="code-header"><span>while.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$i = 1;
+
+while ($i <= 5) {
+    echo $i . "&lt;br&gt;";
+    $i++;
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+La boucle while continue tant que sa condition est vraie.
+Le compteur doit être modifié pour éviter une boucle infinie.
+</p>
+
+<h3>8.3. La boucle do while</h3>
+
+<div class="code-window">
+<div class="code-header"><span>do_while.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$i = 1;
+
+do {
+    echo $i;
+    $i++;
+} while ($i <= 5);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Contrairement à while, do while exécute le bloc au moins une fois
+avant de vérifier la condition.
+</p>
+
+<h3>8.4. break et continue</h3>
+
+<div class="code-window">
+<div class="code-header"><span>break_continue.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+for ($i = 1; $i <= 10; $i++) {
+
+    if ($i == 5) {
+        continue;
+    }
+
+    if ($i == 8) {
+        break;
+    }
+
+    echo $i . "&lt;br&gt;";
+}
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>continue</code> saute le reste du tour actuel.</li>
+<li><code>break</code> arrête complètement la boucle.</li>
+</ul>
+
+<h3>8.5. Boucles imbriquées</h3>
+
+<div class="code-window">
+<div class="code-header"><span>imbriquees.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+for ($i = 1; $i <= 3; $i++) {
+
+    for ($j = 1; $j <= 3; $j++) {
+        echo "$i - $j &lt;br&gt;";
+    }
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Une boucle imbriquée est une boucle placée à l'intérieur d'une autre.
+Elle est utile pour parcourir des tableaux multidimensionnels
+et construire des tableaux HTML.
+</p>
+</article>
+
+<!-- CHAPITRE 9 -->
+
+<article class="lesson" id="c9">
+<div class="lesson-label">CHAPITRE 09 · TABLEAUX</div>
+<h2>Les tableaux PHP</h2>
+
+<div class="definition">
+Un tableau est une structure qui permet de stocker plusieurs valeurs
+dans une seule variable.
+</div>
+
+<h3>9.1. Tableau indexé</h3>
+
+<div class="code-window">
+<div class="code-header"><span>tableau.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$fruits = ["Pomme", "Banane", "Orange"];
+
+echo $fruits[0];
+echo $fruits[1];
+echo $fruits[2];
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Les indices commencent par zéro.
+Ainsi, <code>$fruits[0]</code> contient Pomme.
+</p>
+
+<h3>9.2. Ajouter et modifier une valeur</h3>
+
+<div class="code-window">
+<div class="code-header"><span>modifier_tableau.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$fruits = ["Pomme", "Banane"];
+
+$fruits[] = "Orange";
+
+$fruits[0] = "Fraise";
+
+print_r($fruits);
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>[]</code> ajoute une valeur à la fin.</li>
+<li><code>$fruits[0] = ...</code> modifie une valeur existante.</li>
+<li><code>print_r()</code> affiche la structure du tableau.</li>
+</ul>
+
+<h3>9.3. Tableau associatif</h3>
+
+<p>
+Un tableau associatif utilise des clés nommées au lieu d'indices numériques.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>associatif.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$etudiant = [
+    "nom" => "Ali",
+    "prenom" => "Mohamed",
+    "age" => 20,
+    "moyenne" => 15.5
+];
+
+echo $etudiant["nom"];
+echo $etudiant["moyenne"];
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>=&gt;</code> associe une clé à une valeur.
+Pour accéder à une valeur, on utilise sa clé entre crochets.
+</p>
+
+<h3>9.4. Parcourir un tableau avec foreach</h3>
+
+<div class="code-window">
+<div class="code-header"><span>foreach.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$fruits = ["Pomme", "Banane", "Orange"];
+
+foreach ($fruits as $fruit) {
+    echo $fruit . "&lt;br&gt;";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+À chaque tour, la variable <code>$fruit</code> reçoit une valeur du tableau.
+</p>
+
+<h3>9.5. Parcourir un tableau associatif</h3>
+
+<div class="code-window">
+<div class="code-header"><span>foreach_associatif.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$etudiant = [
+    "nom" => "Ali",
+    "age" => 20,
+    "note" => 15
+];
+
+foreach ($etudiant as $cle => $valeur) {
+    echo $cle . " : " . $valeur . "&lt;br&gt;";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+La variable <code>$cle</code> reçoit la clé et
+<code>$valeur</code> reçoit la valeur correspondante.
+</p>
+
+<h3>9.6. Fonctions utiles des tableaux</h3>
+
+<table class="mini-table">
+<tr><th>Fonction</th><th>Utilité</th></tr>
+<tr><td>count()</td><td>Nombre d'éléments</td></tr>
+<tr><td>array_push()</td><td>Ajouter un ou plusieurs éléments à la fin</td></tr>
+<tr><td>array_pop()</td><td>Retirer le dernier élément</td></tr>
+<tr><td>sort()</td><td>Trier par ordre croissant</td></tr>
+<tr><td>rsort()</td><td>Trier par ordre décroissant</td></tr>
+<tr><td>in_array()</td><td>Vérifier si une valeur existe</td></tr>
+<tr><td>array_merge()</td><td>Fusionner plusieurs tableaux</td></tr>
+<tr><td>array_key_exists()</td><td>Vérifier si une clé existe</td></tr>
+<tr><td>unset()</td><td>Supprimer une variable ou un élément</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>fonctions_tableau.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$notes = [12, 15, 8, 17];
+
+echo count($notes);
+
+array_push($notes, 19);
+
+sort($notes);
+
+var_dump($notes);
+
+?&gt;</code></pre>
+</div>
+
+<h3>9.7. Tableaux multidimensionnels</h3>
+
+<div class="code-window">
+<div class="code-header"><span>multidimensionnel.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$etudiants = [
+    [
+        "nom" => "Ali",
+        "note" => 15
+    ],
+    [
+        "nom" => "Ahmed",
+        "note" => 12
+    ],
+    [
+        "nom" => "Sami",
+        "note" => 17
+    ]
+];
+
+foreach ($etudiants as $etudiant) {
+    echo $etudiant["nom"] . " : ";
+    echo $etudiant["note"] . "&lt;br&gt;";
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Ce type de tableau permet de représenter plusieurs étudiants
+avec plusieurs informations pour chacun.
+</p>
+</article>
+
+<!-- CHAPITRE 10 -->
+
+<article class="lesson" id="c10">
+<div class="lesson-label">CHAPITRE 10 · FONCTIONS</div>
+<h2>Les fonctions PHP</h2>
+
+<div class="definition">
+Une fonction est un bloc de code réutilisable qui effectue
+une tâche précise. Elle permet d'éviter les répétitions et
+d'organiser le programme.
+</div>
+
+<h3>10.1. Déclarer une fonction</h3>
+
+<div class="code-window">
+<div class="code-header"><span>fonction.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+function bonjour() {
+    echo "Bonjour tout le monde";
+}
+
+bonjour();
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>function</code> : mot-clé de déclaration.</li>
+<li><code>bonjour</code> : nom de la fonction.</li>
+<li><code>()</code> : emplacement des paramètres.</li>
+<li><code>{ }</code> : bloc d'instructions.</li>
+<li><code>bonjour()</code> : appel de la fonction.</li>
+</ul>
+
+<h3>10.2. Les paramètres</h3>
+
+<div class="code-window">
+<div class="code-header"><span>parametres.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+function saluer($nom) {
+    echo "Bonjour " . $nom;
+}
+
+saluer("Mohamed");
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Le paramètre <code>$nom</code> reçoit la valeur transmise
+lors de l'appel de la fonction.
+</p>
+
+<h3>10.3. return</h3>
+
+<div class="code-window">
+<div class="code-header"><span>return.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+function addition($a, $b) {
+    return $a + $b;
+}
+
+$resultat = addition(10, 5);
+
+echo $resultat;
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>return</code> renvoie un résultat à l'endroit où la fonction
+a été appelée et termine son exécution.
+</p>
+
+<h3>10.4. Les paramètres par défaut</h3>
+
+<div class="code-window">
+<div class="code-header"><span>defaut.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+function saluer($nom = "visiteur") {
+    echo "Bonjour " . $nom;
+}
+
+saluer();
+saluer("Ali");
+
+?&gt;</code></pre>
+</div>
+
+<h3>10.5. Les types des paramètres et du retour</h3>
+
+<div class="code-window">
+<div class="code-header"><span>types_fonction.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+function multiplier(int $a, int $b): int {
+    return $a * $b;
+}
+
+echo multiplier(4, 5);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Ici, les paramètres sont déclarés comme des entiers et la fonction
+annonce un retour de type entier.
+</p>
+
+<h3>10.6. Portée des variables</h3>
+
+<div class="code-window">
+<div class="code-header"><span>portee.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = "Mohamed";
+
+function afficher() {
+    $message = "Bonjour";
+    echo $message;
+}
+
+afficher();
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Une variable définie dans une fonction est locale à cette fonction.
+Une variable extérieure n'est pas automatiquement disponible
+à l'intérieur de la fonction.
+</p>
+</article>
+
+<!-- CHAPITRE 11 -->
+
+<article class="lesson" id="c11">
+<div class="lesson-label">CHAPITRE 11 · CHAÎNES</div>
+<h2>Manipulation des chaînes de caractères</h2>
+
+<p>
+PHP possède de nombreuses fonctions pour manipuler les textes,
+chercher des caractères, compter leur longueur et remplacer des éléments.
+</p>
+
+<table class="mini-table">
+<tr><th>Fonction</th><th>Utilité</th></tr>
+<tr><td>strlen()</td><td>Longueur en octets d'une chaîne</td></tr>
+<tr><td>strtoupper()</td><td>Convertir en majuscules</td></tr>
+<tr><td>strtolower()</td><td>Convertir en minuscules</td></tr>
+<tr><td>ucfirst()</td><td>Mettre la première lettre en majuscule</td></tr>
+<tr><td>trim()</td><td>Supprimer les espaces aux extrémités</td></tr>
+<tr><td>str_replace()</td><td>Remplacer une partie du texte</td></tr>
+<tr><td>substr()</td><td>Extraire une partie de la chaîne</td></tr>
+<tr><td>strpos()</td><td>Rechercher la position d'une sous-chaîne</td></tr>
+<tr><td>explode()</td><td>Transformer une chaîne en tableau</td></tr>
+<tr><td>implode()</td><td>Transformer un tableau en chaîne</td></tr>
+</table>
+
+<h3>11.1. Exemple d'utilisation</h3>
+
+<div class="code-window">
+<div class="code-header"><span>chaines.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$texte = "bonjour php";
+
+echo strtoupper($texte);
+
+echo "&lt;br&gt;";
+
+echo strtolower("BONJOUR");
+
+echo "&lt;br&gt;";
+
+echo strlen("PHP");
+
+?&gt;</code></pre>
+</div>
+
+<h3>11.2. Remplacer un texte</h3>
+
+<div class="code-window">
+<div class="code-header"><span>remplacement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$texte = "J'apprends Java";
+
+$resultat = str_replace(
+    "Java",
+    "PHP",
+    $texte
+);
+
+echo $resultat;
+
+?&gt;</code></pre>
+</div>
+
+<p>Résultat : J'apprends PHP.</p>
+
+<h3>11.3. Transformer une chaîne en tableau</h3>
+
+<div class="code-window">
+<div class="code-header"><span>explode.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$texte = "PHP,HTML,CSS,SQL";
+
+$langages = explode(",", $texte);
+
+print_r($langages);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>explode()</code> sépare le texte à chaque virgule et
+retourne un tableau.
+</p>
+
+<div class="note">
+Pour les textes contenant des caractères accentués ou UTF-8,
+attention : <code>strlen()</code> mesure les octets et non toujours
+le nombre de caractères visibles. Utiliser <code>mb_strlen()</code>
+pour compter les caractères avec une extension multibyte disponible.
+</div>
+</article>
+
+<!-- CHAPITRE 12 -->
+
+<article class="lesson" id="c12">
+<div class="lesson-label">CHAPITRE 12 · FORMULAIRES HTML</div>
+<h2>Les formulaires HTML et PHP</h2>
+
+<badge-placeholder></badge-placeholder>
+
+<div class="definition">
+<strong>Notion fondamentale :</strong>
+Un formulaire HTML permet à l'utilisateur de saisir des informations.
+PHP récupère ensuite les données envoyées pour les vérifier,
+les traiter et éventuellement les enregistrer dans une base de données.
+</div>
+
+<h3>12.1. Pourquoi les formulaires sont-ils importants ?</h3>
+
+<p>
+Dans une application réelle, les utilisateurs doivent pouvoir
+envoyer des informations au serveur.
+Par exemple :
+</p>
+
+<ul>
+<li>Créer un compte.</li>
+<li>Se connecter.</li>
+<li>Ajouter un étudiant.</li>
+<li>Modifier un produit.</li>
+<li>Envoyer un message.</li>
+<li>Effectuer une recherche.</li>
+</ul>
+
+<h3>12.2. Structure d'un formulaire HTML</h3>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="traitement.php" method="POST"&gt;
+
+    &lt;label&gt;Nom :&lt;/label&gt;
+    &lt;input type="text" name="nom"&gt;
+
+    &lt;label&gt;Email :&lt;/label&gt;
+    &lt;input type="email" name="email"&gt;
+
+    &lt;button type="submit"&gt;
+        Envoyer
+    &lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<h4>Explication de chaque élément</h4>
+
+<table class="mini-table">
+<tr><th>Élément</th><th>Rôle</th></tr>
+<tr><td>form</td><td>Délimite le formulaire.</td></tr>
+<tr><td>action</td><td>Détermine le fichier qui reçoit les données.</td></tr>
+<tr><td>method</td><td>Détermine la méthode d'envoi.</td></tr>
+<tr><td>label</td><td>Décrit un champ.</td></tr>
+<tr><td>input</td><td>Permet de saisir une information.</td></tr>
+<tr><td>name</td><td>Définit le nom utilisé pour récupérer la donnée en PHP.</td></tr>
+<tr><td>submit</td><td>Envoie le formulaire.</td></tr>
+</table>
+
+<div class="warning">
+Le point le plus important : l'attribut <code>name</code>.
+Sans cet attribut, un champ classique n'est pas envoyé comme donnée
+de formulaire. PHP utilise ce nom pour retrouver sa valeur.
+</div>
+
+<h3>12.3. Comprendre action et method</h3>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="traitement.php" method="POST"&gt;
+
+    &lt;input type="text" name="nom"&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>action="traitement.php"</code> : le navigateur envoie les données vers ce fichier.</li>
+<li><code>method="POST"</code> : les données sont envoyées dans le corps de la requête HTTP.</li>
+<li><code>name="nom"</code> : PHP pourra récupérer la valeur avec <code>$_POST['nom']</code>.</li>
+</ul>
+
+<h3>12.4. Les différents types de champs</h3>
+
+<div class="code-window">
+<div class="code-header"><span>champs.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="traitement.php" method="POST"&gt;
+
+    &lt;input type="text" name="nom"&gt;
+
+    &lt;input type="email" name="email"&gt;
+
+    &lt;input type="password" name="mot_de_passe"&gt;
+
+    &lt;input type="number" name="age"&gt;
+
+    &lt;input type="date" name="date_naissance"&gt;
+
+    &lt;input type="radio" name="sexe" value="Homme"&gt;
+    Homme
+
+    &lt;input type="radio" name="sexe" value="Femme"&gt;
+    Femme
+
+    &lt;input type="checkbox" name="conditions" value="oui"&gt;
+    J'accepte
+
+    &lt;select name="ville"&gt;
+        &lt;option value="Tunis"&gt;Tunis&lt;/option&gt;
+        &lt;option value="Sousse"&gt;Sousse&lt;/option&gt;
+        &lt;option value="Mahdia"&gt;Mahdia&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;textarea name="message"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<p>
+Chaque type de champ possède une fonction précise.
+Le type email facilite la saisie d'une adresse email,
+password masque visuellement le texte et textarea permet
+d'écrire un message plus long.
+</p>
+
+<h3>12.5. Les attributs importants</h3>
+
+<table class="mini-table">
+<tr><th>Attribut</th><th>Utilité</th></tr>
+<tr><td>name</td><td>Nom transmis au serveur</td></tr>
+<tr><td>value</td><td>Valeur envoyée</td></tr>
+<tr><td>required</td><td>Champ obligatoire côté navigateur</td></tr>
+<tr><td>placeholder</td><td>Indication dans le champ</td></tr>
+<tr><td>min / max</td><td>Limites d'une valeur numérique</td></tr>
+<tr><td>maxlength</td><td>Longueur maximale d'un texte</td></tr>
+<tr><td>checked</td><td>Case ou option cochée par défaut</td></tr>
+<tr><td>selected</td><td>Option sélectionnée par défaut</td></tr>
+<tr><td>multiple</td><td>Autorise plusieurs valeurs pour certains champs</td></tr>
+</table>
+
+<h3>12.6. Récupérer un formulaire dans PHP</h3>
+
+<p>
+Nous allons maintenant créer deux fichiers :
+un fichier HTML qui contient le formulaire et un fichier PHP
+qui récupère les données.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Formulaire étudiant&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Inscription&lt;/h1&gt;
+
+    &lt;form action="traitement.php" method="POST"&gt;
+
+        &lt;label&gt;Nom :&lt;/label&gt;
+        &lt;input type="text" name="nom" required&gt;
+
+        &lt;label&gt;Prénom :&lt;/label&gt;
+        &lt;input type="text" name="prenom" required&gt;
+
+        &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+    &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>traitement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = $_POST["nom"];
+$prenom = $_POST["prenom"];
+
+echo "Nom : " . htmlspecialchars($nom);
+echo "&lt;br&gt;";
+echo "Prénom : " . htmlspecialchars($prenom);
+
+?&gt;</code></pre>
+</div>
+
+<h4>Explication du traitement</h4>
+
+<ul>
+<li><code>$_POST</code> : tableau contenant les données envoyées par POST.</li>
+<li><code>$_POST["nom"]</code> : récupère la valeur du champ dont le name est nom.</li>
+<li><code>htmlspecialchars()</code> : transforme les caractères HTML spéciaux pour éviter leur interprétation comme balises.</li>
+<li><code>echo</code> : affiche le résultat.</li>
+</ul>
+
+<div class="example-result">
+<h4>EXEMPLE DE RÉSULTAT</h4>
+<p>Nom : Ali</p>
+<p>Prénom : Mohamed</p>
+</div>
+
+<h3>12.7. Tester si un formulaire a été envoyé</h3>
+
+<div class="code-window">
+<div class="code-header"><span>traitement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nom = $_POST["nom"] ?? "";
+
+    echo htmlspecialchars($nom);
+
+} else {
+
+    echo "Aucun formulaire envoyé.";
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>$_SERVER["REQUEST_METHOD"]</code> indique la méthode HTTP utilisée.
+Cette vérification permet de distinguer une requête POST d'une simple
+ouverture de page.
+</p>
+
+<p>
+L'opérateur <code>??</code> fournit une valeur de remplacement
+lorsque la variable ou la clé n'existe pas.
+</p>
+
+<h3>12.8. Récupérer plusieurs valeurs</h3>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="traitement.php" method="POST"&gt;
+
+    &lt;input type="text" name="nom"&gt;
+
+    &lt;input type="email" name="email"&gt;
+
+    &lt;input type="number" name="age"&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>traitement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nom = trim($_POST["nom"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $age = $_POST["age"] ?? "";
+
+    echo "Nom : " . htmlspecialchars($nom);
+    echo "&lt;br&gt;";
+    echo "Email : " . htmlspecialchars($email);
+    echo "&lt;br&gt;";
+    echo "Age : " . htmlspecialchars($age);
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>12.9. Checkbox et plusieurs valeurs</h3>
+
+<p>
+Pour récupérer plusieurs cases à cocher, on utilise généralement
+un tableau grâce à <code>[]</code> dans l'attribut name.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="traitement.php" method="POST"&gt;
+
+    &lt;input type="checkbox" name="langages[]" value="PHP"&gt;
+    PHP
+
+    &lt;input type="checkbox" name="langages[]" value="Python"&gt;
+    Python
+
+    &lt;input type="checkbox" name="langages[]" value="Java"&gt;
+    Java
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>traitement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$langages = $_POST["langages"] ?? [];
+
+if (is_array($langages)) {
+
+    foreach ($langages as $langage) {
+        echo htmlspecialchars($langage) . "&lt;br&gt;";
+    }
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Le tableau <code>$_POST["langages"]</code> contient uniquement
+les valeurs des cases sélectionnées.
+</p>
+
+<h3>12.10. Envoyer un fichier</h3>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="upload.php"
+      method="POST"
+      enctype="multipart/form-data"&gt;
+
+    &lt;input type="file" name="document"&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<p>
+Pour transmettre un fichier, l'attribut
+<code>enctype="multipart/form-data"</code> est nécessaire.
+PHP reçoit les informations du fichier dans <code>$_FILES</code>.
+</p>
+
+<div class="warning">
+Ne jamais considérer un fichier comme sûr simplement parce que son
+extension est correcte. Il faut contrôler son type réel, sa taille,
+son nom et utiliser un nom de stockage généré par le serveur.
+</div>
+</article>
+
+<!-- CHAPITRE 13 -->
+
+<article class="lesson" id="c13">
+<div class="lesson-label">CHAPITRE 13 · GET ET POST</div>
+<h2>Les méthodes GET et POST</h2>
+
+<h3>13.1. GET</h3>
+
+<p>
+GET transmet les paramètres dans l'URL.
+Cette méthode est particulièrement adaptée aux recherches et aux filtres.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>recherche.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="recherche.php" method="GET"&gt;
+
+    &lt;input type="text" name="q"&gt;
+
+    &lt;button type="submit"&gt;Rechercher&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>recherche.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$recherche = $_GET["q"] ?? "";
+
+echo "Recherche : ";
+echo htmlspecialchars($recherche);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Exemple d'URL : <code>recherche.php?q=PHP</code>.
+</p>
+
+<h3>13.2. POST</h3>
+
+<p>
+POST transmet les données dans le corps de la requête HTTP.
+Il est utilisé notamment pour les inscriptions, les connexions,
+les créations et les modifications.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>inscription.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="inscription.php" method="POST"&gt;
+
+    &lt;input type="text" name="nom"&gt;
+
+    &lt;input type="email" name="email"&gt;
+
+    &lt;button type="submit"&gt;S'inscrire&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<h3>13.3. Comparaison</h3>
+
+<table class="mini-table">
+<tr><th>GET</th><th>POST</th></tr>
+<tr><td>Données dans l'URL</td><td>Données dans le corps de la requête</td></tr>
+<tr><td>Adapté aux recherches</td><td>Adapté aux formulaires de modification</td></tr>
+<tr><td>Paramètres partageables par URL</td><td>Pas directement dans l'URL</td></tr>
+<tr><td>Longueur limitée selon les navigateurs et serveurs</td><td>Limites dépendant de la configuration serveur</td></tr>
+<tr><td>Ne doit pas servir à modifier des données</td><td>Peut servir à modifier des données</td></tr>
+</table>
+
+<div class="warning">
+POST ne chiffre pas les informations. Pour protéger les échanges,
+il faut utiliser HTTPS. Une méthode POST ne rend pas automatiquement
+un mot de passe sécurisé.
+</div>
+
+<h3>13.4. Les superglobales</h3>
+
+<table class="mini-table">
+<tr><th>Superglobale</th><th>Utilité</th></tr>
+<tr><td>$_GET</td><td>Récupérer les paramètres GET</td></tr>
+<tr><td>$_POST</td><td>Récupérer les paramètres POST</td></tr>
+<tr><td>$_FILES</td><td>Récupérer les informations des fichiers</td></tr>
+<tr><td>$_SERVER</td><td>Informations sur la requête et le serveur</td></tr>
+<tr><td>$_SESSION</td><td>Données de session</td></tr>
+<tr><td>$_COOKIE</td><td>Cookies reçus du navigateur</td></tr>
+<tr><td>$_REQUEST</td><td>Regroupe certaines données de requête selon la configuration</td></tr>
+</table>
+</article>
+
+<!-- CHAPITRE 14 -->
+
+<article class="lesson" id="c14">
+<div class="lesson-label">CHAPITRE 14 · VALIDATION</div>
+<h2>Validation et contrôle des données</h2>
+
+<div class="definition">
+La validation consiste à vérifier si une donnée respecte les règles
+attendues avant de l'utiliser ou de l'enregistrer.
+</div>
+
+<h3>14.1. Pourquoi valider ?</h3>
+
+<p>
+Un utilisateur peut envoyer une donnée vide, un email incorrect,
+un âge négatif ou une valeur inattendue. Il faut donc vérifier
+les informations côté serveur.
+</p>
+
+<h3>14.2. Vérifier un champ obligatoire</h3>
+
+<div class="code-window">
+<div class="code-header"><span>validation.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = trim($_POST["nom"] ?? "");
+
+if ($nom === "") {
+
+    echo "Le nom est obligatoire.";
+
+} else {
+
+    echo "Nom valide : " . htmlspecialchars($nom);
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>trim()</code> supprime les espaces au début et à la fin.
+Cela évite de considérer une chaîne contenant uniquement des espaces
+comme un nom valide.
+</p>
+
+<h3>14.3. Vérifier un email</h3>
+
+<div class="code-window">
+<div class="code-header"><span>email.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$email = trim($_POST["email"] ?? "");
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    echo "Email invalide.";
+
+} else {
+
+    echo "Email valide.";
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>14.4. Vérifier un nombre</h3>
+
+<div class="code-window">
+<div class="code-header"><span>age.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$age = filter_input(
+    INPUT_POST,
+    "age",
+    FILTER_VALIDATE_INT
+);
+
+if ($age === false || $age === null || $age < 0) {
+
+    echo "Age invalide.";
+
+} else {
+
+    echo "Age accepté : " . $age;
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>14.5. Vérifier plusieurs champs</h3>
+
+<div class="code-window">
+<div class="code-header"><span>validation_complete.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$erreurs = [];
+
+$nom = trim($_POST["nom"] ?? "");
+$email = trim($_POST["email"] ?? "");
+$ageBrut = $_POST["age"] ?? "";
+
+if ($nom === "") {
+    $erreurs[] = "Le nom est obligatoire.";
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $erreurs[] = "Email incorrect.";
+}
+
+$age = filter_var($ageBrut, FILTER_VALIDATE_INT);
+
+if ($age === false || $age === null || $age < 1) {
+    $erreurs[] = "Age invalide.";
+}
+
+if (empty($erreurs)) {
+
+    echo "Toutes les données sont valides.";
+
+} else {
+
+    foreach ($erreurs as $erreur) {
+        echo htmlspecialchars($erreur) . "&lt;br&gt;";
+    }
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>$erreurs</code> est un tableau qui stocke les messages.
+<code>empty()</code> permet de vérifier s'il est vide.
+</p>
+
+<div class="note">
+La validation HTML avec required, type="email" et min/max améliore
+l'expérience utilisateur, mais elle ne remplace jamais la validation
+côté serveur.
+</div>
+</article>
+
+<!-- CHAPITRE 15 -->
+
+<article class="lesson" id="c15">
+<div class="lesson-label">CHAPITRE 15 · BASES DE DONNÉES</div>
+<h2>Introduction aux bases de données SQL</h2>
+
+<div class="definition">
+Une base de données est un système organisé permettant de stocker,
+retrouver, modifier et supprimer des informations.
+PHP peut communiquer avec une base de données pour construire
+des applications web dynamiques.
+</div>
+
+<h3>15.1. Comprendre les relations entre HTML, PHP et MySQLi</h3>
+
+<div class="code-window">
+<div class="code-header"><span>Fonctionnement général</span></div>
+<pre><code>UTILISATEUR
+     |
+     v
+FORMULAIRE HTML
+     |
+     |  POST / GET
+     v
+FICHIER PHP
+     |
+     |  Validation
+     v
+MYSQLI
+     |
+     |  Requête SQL
+     v
+BASE DE DONNÉES
+     |
+     |  Résultat
+     v
+PHP
+     |
+     v
+PAGE HTML</code></pre>
+</div>
+
+<p>
+Cette organisation est la base de presque toutes les applications web
+qui utilisent PHP et une base de données.
+</p>
+
+<h3>15.2. Les éléments d'une base de données</h3>
+
+<ul>
+<li><strong>Base de données :</strong> contient plusieurs tables.</li>
+<li><strong>Table :</strong> organise les informations d'un même sujet.</li>
+<li><strong>Colonne :</strong> définit une propriété.</li>
+<li><strong>Ligne :</strong> représente un enregistrement.</li>
+<li><strong>Clé primaire :</strong> identifie chaque enregistrement.</li>
+<li><strong>Clé étrangère :</strong> relie une table à une autre.</li>
+</ul>
+
+<h3>15.3. Exemple d'une table étudiants</h3>
+
+<table class="mini-table">
+<tr><th>id</th><th>nom</th><th>prenom</th><th>age</th></tr>
+<tr><td>1</td><td>Ali</td><td>Mohamed</td><td>20</td></tr>
+<tr><td>2</td><td>Ahmed</td><td>Sami</td><td>21</td></tr>
+<tr><td>3</td><td>Ben</td><td>Amine</td><td>19</td></tr>
+</table>
+
+<p>
+Chaque ligne représente un étudiant et chaque colonne contient
+une information précise.
+</p>
+
+<h3>15.4. Créer une base de données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · Création de la base</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>CREATE DATABASE gestion_etudiants;
+
+USE gestion_etudiants;</code></pre>
+</div>
+
+<h3>15.5. Créer une table</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · Table étudiants</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>CREATE TABLE etudiants (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nom VARCHAR(100) NOT NULL,
+
+    prenom VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) NOT NULL UNIQUE,
+
+    age INT,
+
+    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);</code></pre>
+</div>
+
+<h4>Explication des instructions</h4>
+
+<ul>
+<li><code>CREATE TABLE</code> : crée une nouvelle table.</li>
+<li><code>INT</code> : stocke un nombre entier.</li>
+<li><code>AUTO_INCREMENT</code> : génère automatiquement un identifiant.</li>
+<li><code>PRIMARY KEY</code> : définit la clé primaire.</li>
+<li><code>VARCHAR(100)</code> : stocke une chaîne de longueur variable, limitée ici à 100 caractères.</li>
+<li><code>NOT NULL</code> : interdit une valeur NULL.</li>
+<li><code>UNIQUE</code> : empêche les doublons sur cette colonne.</li>
+<li><code>TIMESTAMP</code> : stocke une date et une heure.</li>
+<li><code>DEFAULT</code> : définit une valeur par défaut.</li>
+</ul>
+
+<h3>15.6. Les quatre opérations CRUD</h3>
+
+<div class="two-columns">
+<div class="info-card">
+<h4>CREATE</h4>
+<p>Ajouter un nouvel enregistrement avec INSERT.</p>
+</div>
+<div class="info-card">
+<h4>READ</h4>
+<p>Lire des informations avec SELECT.</p>
+</div>
+<div class="info-card">
+<h4>UPDATE</h4>
+<p>Modifier des informations avec UPDATE.</p>
+</div>
+<div class="info-card">
+<h4>DELETE</h4>
+<p>Supprimer un enregistrement avec DELETE.</p>
+</div>
+</div>
+
+<h3>15.7. INSERT : ajouter des données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · INSERT</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>INSERT INTO etudiants
+(nom, prenom, email, age)
+
+VALUES
+('Ali', 'Mohamed', 'ali@example.com', 20);</code></pre>
+</div>
+
+<h3>15.8. SELECT : récupérer des données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · SELECT</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>SELECT * FROM etudiants;
+
+SELECT nom, prenom
+FROM etudiants;
+
+SELECT *
+FROM etudiants
+WHERE age >= 20;
+
+SELECT *
+FROM etudiants
+ORDER BY nom ASC;</code></pre>
+</div>
+
+<ul>
+<li><code>SELECT *</code> : récupère toutes les colonnes.</li>
+<li><code>WHERE</code> : filtre les résultats.</li>
+<li><code>ORDER BY</code> : trie les résultats.</li>
+<li><code>ASC</code> : ordre croissant.</li>
+<li><code>DESC</code> : ordre décroissant.</li>
+</ul>
+
+<h3>15.9. UPDATE : modifier des données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · UPDATE</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>UPDATE etudiants
+
+SET age = 21
+
+WHERE id = 1;</code></pre>
+</div>
+
+<div class="warning">
+Attention : UPDATE sans WHERE peut modifier toutes les lignes de la table.
+Il faut toujours vérifier la condition avant d'exécuter la requête.
+</div>
+
+<h3>15.10. DELETE : supprimer des données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · DELETE</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>DELETE FROM etudiants
+WHERE id = 1;</code></pre>
+</div>
+
+<h3>15.11. Relations entre les tables</h3>
+
+<p>
+Une base de données relationnelle permet de relier différentes tables.
+Par exemple, un étudiant peut être inscrit dans plusieurs cours.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · Deux tables liées</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>CREATE TABLE cours (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    titre VARCHAR(150) NOT NULL
+
+);
+
+CREATE TABLE inscriptions (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    etudiant_id INT NOT NULL,
+
+    cours_id INT NOT NULL,
+
+    FOREIGN KEY (etudiant_id)
+        REFERENCES etudiants(id),
+
+    FOREIGN KEY (cours_id)
+        REFERENCES cours(id)
+
+);</code></pre>
+</div>
+
+<p>
+La table inscriptions relie les étudiants aux cours.
+Les clés étrangères garantissent que les références pointent
+vers des enregistrements existants, selon les contraintes définies.
+</p>
+
+<h3>15.12. JOIN : récupérer des informations liées</h3>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · INNER JOIN</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>SELECT
+    etudiants.nom,
+    etudiants.prenom,
+    cours.titre
+
+FROM inscriptions
+
+INNER JOIN etudiants
+ON inscriptions.etudiant_id = etudiants.id
+
+INNER JOIN cours
+ON inscriptions.cours_id = cours.id;</code></pre>
+</div>
+
+<p>
+INNER JOIN permet de réunir les informations de plusieurs tables
+lorsque leurs conditions de relation sont satisfaites.
+</p>
+
+<h3>15.13. Fonctions SQL importantes</h3>
+
+<table class="mini-table">
+<tr><th>Fonction</th><th>Utilité</th></tr>
+<tr><td>COUNT()</td><td>Compter les lignes</td></tr>
+<tr><td>SUM()</td><td>Calculer une somme</td></tr>
+<tr><td>AVG()</td><td>Calculer une moyenne</td></tr>
+<tr><td>MIN()</td><td>Obtenir la valeur minimale</td></tr>
+<tr><td>MAX()</td><td>Obtenir la valeur maximale</td></tr>
+<tr><td>GROUP BY</td><td>Regrouper des résultats</td></tr>
+<tr><td>HAVING</td><td>Filtrer les groupes</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>SQL · Agrégation</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>SELECT COUNT(*) AS total
+FROM etudiants;
+
+SELECT AVG(age) AS age_moyen
+FROM etudiants;
+
+SELECT MAX(age) AS age_maximum
+FROM etudiants;</code></pre>
+</div>
+</article>
+
+<!-- CHAPITRE 16 -->
+
+<article class="lesson" id="c16">
+<div class="lesson-label">CHAPITRE 16 · MYSQLI</div>
+<h2>Connexion PHP avec MySQLi</h2>
+
+<badge color="success">Chapitre essentiel</badge>
+
+<div class="definition">
+MySQLi signifie MySQL Improved. C'est une extension PHP permettant
+de communiquer avec MySQL et MariaDB à travers une interface orientée
+objet ou procédurale.
+</div>
+
+<p>
+Dans cette formation, nous allons utiliser principalement
+<strong>MySQLi en programmation orientée objet</strong>.
+</p>
+
+<h3>16.1. Pourquoi utiliser MySQLi ?</h3>
+
+<ul>
+<li>Se connecter à un serveur de base de données.</li>
+<li>Exécuter des requêtes SQL.</li>
+<li>Ajouter des informations.</li>
+<li>Récupérer des informations.</li>
+<li>Modifier et supprimer des données.</li>
+<li>Utiliser des requêtes préparées.</li>
+<li>Gérer les erreurs de connexion et d'exécution.</li>
+</ul>
+
+<h3>16.2. Comprendre la connexion</h3>
+
+<p>
+Pour connecter PHP à une base de données, il faut généralement :
+</p>
+
+<ol class="steps">
+<li>Le nom du serveur.</li>
+<li>Le nom d'utilisateur.</li>
+<li>Le mot de passe.</li>
+<li>Le nom de la base de données.</li>
+</ol>
+
+<div class="code-window">
+<div class="code-header"><span>connexion.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$serveur = "localhost";
+$utilisateur = "root";
+$mot_de_passe = "";
+$base = "gestion_etudiants";
+
+$conn = new mysqli(
+    $serveur,
+    $utilisateur,
+    $mot_de_passe,
+    $base
+);
+
+if ($conn-&gt;connect_error) {
+
+    die("Erreur de connexion : " .
+        $conn-&gt;connect_error);
+
+}
+
+$conn-&gt;set_charset("utf8mb4");
+
+?&gt;</code></pre>
+</div>
+
+<h4>Explication ligne par ligne</h4>
+
+<ul>
+<li><code>$serveur</code> : adresse du serveur de base de données.</li>
+<li><code>$utilisateur</code> : compte utilisé pour se connecter.</li>
+<li><code>$mot_de_passe</code> : mot de passe du compte.</li>
+<li><code>$base</code> : nom de la base à utiliser.</li>
+<li><code>new mysqli()</code> : crée une connexion.</li>
+<li><code>connect_error</code> : contient l'erreur éventuelle de connexion.</li>
+<li><code>die()</code> : arrête le script et affiche le message.</li>
+<li><code>set_charset("utf8mb4")</code> : définit l'encodage de communication.</li>
+</ul>
+
+<div class="note">
+Dans un environnement XAMPP local, root avec un mot de passe vide
+peut être la configuration par défaut. En production, il faut utiliser
+un compte dédié avec un mot de passe fort et des permissions limitées.
+</div>
+
+<h3>16.3. Organiser les fichiers</h3>
+
+<div class="code-window">
+<div class="code-header"><span>Structure du projet</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>gestion_etudiants/
+│
+├── connexion.php
+├── index.php
+├── ajouter.php
+├── modifier.php
+├── supprimer.php
+├── liste.php
+│
+└── style.css</code></pre>
+</div>
+
+<h3>16.4. Inclure le fichier de connexion</h3>
+
+<p>
+Il est inutile de répéter le code de connexion dans tous les fichiers.
+On peut le placer dans connexion.php puis le réutiliser.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>ajouter.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+// Le fichier connexion.php
+// est chargé ici.
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>include</code> : inclut un fichier et génère un avertissement si celui-ci est introuvable.</li>
+<li><code>require</code> : inclut un fichier et arrête le script en cas d'échec.</li>
+<li><code>require_once</code> : évite de charger plusieurs fois le même fichier.</li>
+</ul>
+
+<h3>16.5. Exécuter une requête SQL avec query()</h3>
+
+<div class="code-window">
+<div class="code-header"><span>liste.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+$sql = "SELECT * FROM etudiants";
+
+$resultat = $conn-&gt;query($sql);
+
+if ($resultat) {
+
+    while ($etudiant = $resultat-&gt;fetch_assoc()) {
+
+        echo htmlspecialchars($etudiant["nom"]);
+        echo "&lt;br&gt;";
+
+    }
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h4>Explication</h4>
+
+<ul>
+<li><code>query()</code> : exécute une requête SQL.</li>
+<li><code>$resultat</code> : contient le résultat de la requête SELECT.</li>
+<li><code>fetch_assoc()</code> : récupère une ligne sous forme de tableau associatif.</li>
+<li><code>while</code> : répète l'opération jusqu'à ce qu'il n'y ait plus de lignes.</li>
+</ul>
+
+<h3>16.6. Comprendre fetch_assoc()</h3>
+
+<p>
+Supposons que la base contient les informations suivantes :
+</p>
+
+<table class="mini-table">
+<tr><th>id</th><th>nom</th><th>age</th></tr>
+<tr><td>1</td><td>Ali</td><td>20</td></tr>
+<tr><td>2</td><td>Sami</td><td>21</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>fetch_assoc.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>$etudiant = $resultat-&gt;fetch_assoc();
+
+echo $etudiant["nom"];
+echo $etudiant["age"];</code></pre>
+</div>
+
+<p>
+Le premier appel récupère une ligne. Le tableau retourné possède
+des clés correspondant aux noms des colonnes.
+</p>
+
+<h3>16.7. Les différentes méthodes de récupération</h3>
+
+<table class="mini-table">
+<tr><th>Méthode</th><th>Fonction</th></tr>
+<tr><td>fetch_assoc()</td><td>Retourne une ligne sous forme associative.</td></tr>
+<tr><td>fetch_row()</td><td>Retourne une ligne sous forme numérique.</td></tr>
+<tr><td>fetch_object()</td><td>Retourne une ligne sous forme d'objet.</td></tr>
+<tr><td>fetch_all()</td><td>Récupère toutes les lignes dans un tableau.</td></tr>
+<tr><td>num_rows</td><td>Nombre de lignes d'un résultat SELECT.</td></tr>
+</table>
+
+<h3>16.8. Les requêtes préparées : prepare et bind_param</h3>
+
+<badge color="success">Indispensable pour la sécurité</badge>
+
+<div class="definition">
+Une requête préparée sépare la structure SQL des valeurs fournies
+par l'utilisateur. Elle permet notamment de prévenir les injections SQL.
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>recherche.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+$nom = "Ali";
+
+$sql = "SELECT * FROM etudiants WHERE nom = ?";
+
+$stmt = $conn-&gt;prepare($sql);
+
+$stmt-&gt;bind_param("s", $nom);
+
+$stmt-&gt;execute();
+
+$resultat = $stmt-&gt;get_result();
+
+while ($etudiant = $resultat-&gt;fetch_assoc()) {
+
+    echo htmlspecialchars($etudiant["nom"]);
+
+}
+
+$stmt-&gt;close();
+
+?&gt;</code></pre>
+</div>
+
+<h4>Comprendre chaque instruction</h4>
+
+<ul>
+<li><code>prepare()</code> : prépare la requête SQL.</li>
+<li><code>?</code> : représente un paramètre à fournir.</li>
+<li><code>bind_param()</code> : associe une variable au paramètre.</li>
+<li><code>"s"</code> : indique que la variable est une chaîne.</li>
+<li><code>execute()</code> : exécute la requête.</li>
+<li><code>get_result()</code> : récupère un résultat exploitable lorsque le pilote mysqlnd est disponible.</li>
+<li><code>close()</code> : libère la requête préparée.</li>
+</ul>
+
+<h3>16.9. Les types de bind_param()</h3>
+
+<table class="mini-table">
+<tr><th>Lettre</th><th>Type</th></tr>
+<tr><td>s</td><td>String : chaîne de caractères</td></tr>
+<tr><td>i</td><td>Integer : nombre entier</td></tr>
+<tr><td>d</td><td>Double : nombre décimal</td></tr>
+<tr><td>b</td><td>Blob : données binaires</td></tr>
+</table>
+
+<div class="code-window">
+<div class="code-header"><span>bind_param.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>$nom = "Ali";
+$age = 20;
+$moyenne = 15.5;
+
+$sql = "INSERT INTO notes (nom, age, moyenne)
+        VALUES (?, ?, ?)";
+
+$stmt = $conn-&gt;prepare($sql);
+
+$stmt-&gt;bind_param(
+    "sid",
+    $nom,
+    $age,
+    $moyenne
+);
+
+$stmt-&gt;execute();</code></pre>
+</div>
+
+<p>
+La chaîne <code>"sid"</code> indique successivement :
+string, integer et double.
+</p>
+
+<h3>16.10. Gérer les erreurs</h3>
+
+<div class="code-window">
+<div class="code-header"><span>gestion_erreur.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+try {
+
+    $conn = new mysqli(
+        "localhost",
+        "root",
+        "",
+        "gestion_etudiants"
+    );
+
+    $conn-&gt;set_charset("utf8mb4");
+
+} catch (mysqli_sql_exception $e) {
+
+    error_log($e-&gt;getMessage());
+
+    die("Une erreur est survenue.");
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Cette approche utilise les exceptions MySQLi.
+Elle permet de séparer le message destiné à l'utilisateur
+des détails techniques conservés dans les journaux.
+</p>
+</article>
+
+<!-- CHAPITRE 17 -->
+
+<article class="lesson" id="c17">
+<div class="lesson-label">CHAPITRE 17 · CRUD</div>
+<h2>Créer une application CRUD complète</h2>
+
+<div class="definition">
+CRUD signifie Create, Read, Update et Delete.
+Ce sont les quatre opérations fondamentales de gestion des données.
+</div>
+
+<p>
+Nous allons maintenant réunir les notions précédentes pour créer
+une petite application de gestion des étudiants.
+</p>
+
+<h3>17.1. Préparer la base de données</h3>
+
+<div class="code-window">
+<div class="code-header"><span>database.sql</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>CREATE DATABASE gestion_etudiants
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE gestion_etudiants;
+
+CREATE TABLE etudiants (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nom VARCHAR(100) NOT NULL,
+
+    prenom VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) NOT NULL UNIQUE,
+
+    age INT NOT NULL
+
+);</code></pre>
+</div>
+
+<h3>17.2. connexion.php</h3>
+
+<div class="code-window">
+<div class="code-header"><span>connexion.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+try {
+
+    $conn = new mysqli(
+        "localhost",
+        "root",
+        "",
+        "gestion_etudiants"
+    );
+
+    $conn-&gt;set_charset("utf8mb4");
+
+} catch (mysqli_sql_exception $e) {
+
+    error_log($e-&gt;getMessage());
+
+    die("Impossible de se connecter à la base.");
+
+}</code></pre>
+</div>
+
+<h3>17.3. Ajouter un étudiant : ajouter.php</h3>
+
+<div class="code-window">
+<div class="code-header"><span>ajouter.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+$erreur = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nom = trim($_POST["nom"] ?? "");
+    $prenom = trim($_POST["prenom"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $age = filter_var(
+        $_POST["age"] ?? "",
+        FILTER_VALIDATE_INT
+    );
+
+    if ($nom === "" || $prenom === "") {
+
+        $erreur = "Nom et prénom obligatoires.";
+
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        $erreur = "Email invalide.";
+
+    } elseif ($age === false || $age === null || $age < 1) {
+
+        $erreur = "Age invalide.";
+
+    } else {
+
+        $sql = "INSERT INTO etudiants
+                (nom, prenom, email, age)
+                VALUES (?, ?, ?, ?)";
+
+        $stmt = $conn-&gt;prepare($sql);
+
+        $stmt-&gt;bind_param(
+            "sssi",
+            $nom,
+            $prenom,
+            $email,
+            $age
+        );
+
+        try {
+
+            $stmt-&gt;execute();
+
+            header("Location: liste.php");
+            exit;
+
+        } catch (mysqli_sql_exception $e) {
+
+            if ($e-&gt;getCode() === 1062) {
+                $erreur = "Cet email existe déjà.";
+            } else {
+                throw $e;
+            }
+
+        }
+
+        $stmt-&gt;close();
+
+    }
+
+}
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ajouter étudiant&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Ajouter un étudiant&lt;/h1&gt;
+
+&lt;?php if ($erreur !== ""): ?&gt;
+    &lt;p&gt;&lt;?= htmlspecialchars($erreur) ?&gt;&lt;/p&gt;
+&lt;?php endif; ?&gt;
+
+&lt;form method="POST"&gt;
+
+    &lt;label&gt;Nom&lt;/label&gt;
+    &lt;input type="text" name="nom" required&gt;
+
+    &lt;label&gt;Prénom&lt;/label&gt;
+    &lt;input type="text" name="prenom" required&gt;
+
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" name="email" required&gt;
+
+    &lt;label&gt;Age&lt;/label&gt;
+    &lt;input type="number" name="age" min="1" required&gt;
+
+    &lt;button type="submit"&gt;Ajouter&lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;a href="liste.php"&gt;Retour à la liste&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<h4>Comprendre le fonctionnement</h4>
+
+<ol class="steps">
+<li>Le formulaire récupère les informations de l'étudiant.</li>
+<li>POST transmet les valeurs au fichier ajouter.php.</li>
+<li>PHP récupère les données avec $_POST.</li>
+<li>trim() supprime les espaces inutiles.</li>
+<li>Les validations contrôlent les informations.</li>
+<li>prepare() prépare la requête INSERT.</li>
+<li>bind_param() transmet les valeurs.</li>
+<li>execute() ajoute l'étudiant dans la base.</li>
+<li>header() redirige vers la liste.</li>
+</ol>
+
+<h3>17.4. Afficher les étudiants : liste.php</h3>
+
+<div class="code-window">
+<div class="code-header"><span>liste.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+$sql = "SELECT * FROM etudiants ORDER BY id DESC";
+
+$resultat = $conn-&gt;query($sql);
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Liste étudiants&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Liste des étudiants&lt;/h1&gt;
+
+&lt;a href="ajouter.php"&gt;Ajouter étudiant&lt;/a&gt;
+
+&lt;table border="1" cellpadding="10"&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Nom&lt;/th&gt;
+        &lt;th&gt;Prénom&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;Actions&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;?php while ($etudiant = $resultat-&gt;fetch_assoc()): ?&gt;
+
+    &lt;tr&gt;
+
+        &lt;td&gt;
+            &lt;?= (int)$etudiant["id"] ?&gt;
+        &lt;/td&gt;
+
+        &lt;td&gt;
+            &lt;?= htmlspecialchars($etudiant["nom"]) ?&gt;
+        &lt;/td&gt;
+
+        &lt;td&gt;
+            &lt;?= htmlspecialchars($etudiant["prenom"]) ?&gt;
+        &lt;/td&gt;
+
+        &lt;td&gt;
+            &lt;?= htmlspecialchars($etudiant["email"]) ?&gt;
+        &lt;/td&gt;
+
+        &lt;td&gt;
+            &lt;?= (int)$etudiant["age"] ?&gt;
+        &lt;/td&gt;
+
+        &lt;td&gt;
+
+            &lt;a href="modifier.php?id=&lt;?=
+                (int)$etudiant["id"] ?&gt;"&gt;
+                Modifier
+            &lt;/a&gt;
+
+            &lt;form action="supprimer.php"
+                  method="POST"
+                  style="display:inline"&gt;
+
+                &lt;input type="hidden"
+                       name="id"
+                       value="&lt;?= (int)$etudiant["id"] ?&gt;"&gt;
+
+                &lt;button type="submit"&gt;
+                    Supprimer
+                &lt;/button&gt;
+
+            &lt;/form&gt;
+
+        &lt;/td&gt;
+
+    &lt;/tr&gt;
+
+    &lt;?php endwhile; ?&gt;
+
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<h4>Les nouvelles notions utilisées</h4>
+
+<ul>
+<li><code>ORDER BY id DESC</code> : trie les étudiants par identifiant décroissant.</li>
+<li><code>while</code> : parcourt les lignes retournées.</li>
+<li><code>fetch_assoc()</code> : récupère chaque étudiant.</li>
+<li><code>htmlspecialchars()</code> : protège l'affichage HTML des textes.</li>
+<li><code>(int)</code> : convertit une valeur en entier.</li>
+<li><code>input type="hidden"</code> : transmet un identifiant sans champ visible.</li>
+</ul>
+
+<h3>17.5. Modifier un étudiant : modifier.php</h3>
+
+<div class="code-window">
+<div class="code-header"><span>modifier.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+
+if (!$id || $id &lt; 1) {
+    die("Identifiant invalide.");
+}
+
+$stmt = $conn-&gt;prepare(
+    "SELECT * FROM etudiants WHERE id = ?"
+);
+
+$stmt-&gt;bind_param("i", $id);
+$stmt-&gt;execute();
+
+$etudiant = $stmt-&gt;get_result()-&gt;fetch_assoc();
+
+$stmt-&gt;close();
+
+if (!$etudiant) {
+    die("Etudiant introuvable.");
+}
+
+$erreur = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nom = trim($_POST["nom"] ?? "");
+    $prenom = trim($_POST["prenom"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $age = filter_var(
+        $_POST["age"] ?? "",
+        FILTER_VALIDATE_INT
+    );
+
+    if ($nom === "" || $prenom === "") {
+
+        $erreur = "Nom et prénom obligatoires.";
+
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        $erreur = "Email invalide.";
+
+    } elseif ($age === false || $age === null || $age &lt; 1) {
+
+        $erreur = "Age invalide.";
+
+    } else {
+
+        $sql = "UPDATE etudiants
+                SET nom = ?,
+                    prenom = ?,
+                    email = ?,
+                    age = ?
+                WHERE id = ?";
+
+        $stmt = $conn-&gt;prepare($sql);
+
+        $stmt-&gt;bind_param(
+            "sssii",
+            $nom,
+            $prenom,
+            $email,
+            $age,
+            $id
+        );
+
+        try {
+
+            $stmt-&gt;execute();
+
+            header("Location: liste.php");
+            exit;
+
+        } catch (mysqli_sql_exception $e) {
+
+            if ($e-&gt;getCode() === 1062) {
+                $erreur = "Cet email est déjà utilisé.";
+            } else {
+                throw $e;
+            }
+
+        }
+
+        $stmt-&gt;close();
+
+    }
+
+}
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Modifier étudiant&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Modifier étudiant&lt;/h1&gt;
+
+&lt;p&gt;&lt;?= htmlspecialchars($erreur) ?&gt;&lt;/p&gt;
+
+&lt;form method="POST"&gt;
+
+    &lt;input type="text" name="nom"
+        value="&lt;?= htmlspecialchars($etudiant["nom"]) ?&gt;"
+        required&gt;
+
+    &lt;input type="text" name="prenom"
+        value="&lt;?= htmlspecialchars($etudiant["prenom"]) ?&gt;"
+        required&gt;
+
+    &lt;input type="email" name="email"
+        value="&lt;?= htmlspecialchars($etudiant["email"]) ?&gt;"
+        required&gt;
+
+    &lt;input type="number" name="age"
+        value="&lt;?= (int)$etudiant["age"] ?&gt;"
+        required&gt;
+
+    &lt;button type="submit"&gt;Enregistrer&lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<h4>Le principe de modification</h4>
+
+<ol class="steps">
+<li>Récupérer l'identifiant dans l'URL.</li>
+<li>Vérifier que l'identifiant est valide.</li>
+<li>Récupérer l'étudiant avec SELECT.</li>
+<li>Afficher les anciennes informations dans le formulaire.</li>
+<li>Récupérer les nouvelles valeurs avec POST.</li>
+<li>Valider les nouvelles informations.</li>
+<li>Exécuter UPDATE avec une requête préparée.</li>
+<li>Rediriger vers la liste.</li>
+</ol>
+
+<h3>17.6. Supprimer un étudiant : supprimer.php</h3>
+
+<div class="code-window">
+<div class="code-header"><span>supprimer.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405);
+    exit("Méthode non autorisée.");
+}
+
+$id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+
+if (!$id || $id &lt; 1) {
+    die("Identifiant invalide.");
+}
+
+$stmt = $conn-&gt;prepare(
+    "DELETE FROM etudiants WHERE id = ?"
+);
+
+$stmt-&gt;bind_param("i", $id);
+
+$stmt-&gt;execute();
+
+$stmt-&gt;close();
+
+header("Location: liste.php");
+exit;
+
+?&gt;</code></pre>
+</div>
+
+<div class="warning">
+Dans une véritable application, une suppression doit également être
+protégée contre les requêtes non autorisées avec un contrôle d'accès
+et un jeton CSRF. Une confirmation JavaScript seule ne constitue pas
+une protection de sécurité.
+</div>
+
+<h3>17.7. Résumé des opérations CRUD</h3>
+
+<table class="mini-table">
+<tr><th>Action</th><th>SQL</th><th>MySQLi</th></tr>
+<tr><td>Ajouter</td><td>INSERT</td><td>prepare() + execute()</td></tr>
+<tr><td>Afficher</td><td>SELECT</td><td>query() ou prepare()</td></tr>
+<tr><td>Modifier</td><td>UPDATE</td><td>prepare() + execute()</td></tr>
+<tr><td>Supprimer</td><td>DELETE</td><td>prepare() + execute()</td></tr>
+</table>
+</article>
+
+<!-- CHAPITRE 18 -->
+
+<article class="lesson" id="c18">
+<div class="lesson-label">CHAPITRE 18 · SESSIONS</div>
+<h2>Les sessions et les cookies</h2>
+
+<h3>18.1. Comprendre une session</h3>
+
+<div class="definition">
+Une session permet de conserver des informations associées
+à un utilisateur entre plusieurs requêtes HTTP.
+Elle est souvent utilisée pour gérer une connexion.
+</div>
+
+<h3>18.2. Démarrer une session</h3>
+
+<div class="code-window">
+<div class="code-header"><span>session.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+$_SESSION["nom"] = "Mohamed";
+$_SESSION["role"] = "etudiant";
+
+echo $_SESSION["nom"];
+
+?&gt;</code></pre>
+</div>
+
+<ul>
+<li><code>session_start()</code> : démarre ou reprend une session.</li>
+<li><code>$_SESSION</code> : tableau qui contient les données de session.</li>
+</ul>
+
+<div class="warning">
+session_start() doit être appelé avant toute sortie HTML,
+pour permettre l'envoi des en-têtes HTTP nécessaires.
+</div>
+
+<h3>18.3. Lire les informations de session</h3>
+
+<div class="code-window">
+<div class="code-header"><span>profil.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+if (isset($_SESSION["nom"])) {
+
+    echo "Bienvenue " .
+        htmlspecialchars($_SESSION["nom"]);
+
+} else {
+
+    echo "Vous n'êtes pas connecté.";
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>isset()</code> vérifie si une variable existe et n'est pas NULL.
+</p>
+
+<h3>18.4. Détruire une session</h3>
+
+<div class="code-window">
+<div class="code-header"><span>deconnexion.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+$_SESSION = [];
+
+session_destroy();
+
+header("Location: connexion.html");
+exit;
+
+?&gt;</code></pre>
+</div>
+
+<h3>18.5. Comprendre les cookies</h3>
+
+<p>
+Un cookie est une petite information enregistrée dans le navigateur.
+Il peut être utilisé pour mémoriser certaines préférences.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>cookie.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+setcookie(
+    "langue",
+    "fr",
+    [
+        "expires" => time() + 3600,
+        "path" => "/",
+        "httponly" => true,
+        "secure" => true,
+        "samesite" => "Lax"
+    ]
+);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Ce cookie est valable une heure. L'option secure nécessite HTTPS
+pour que le navigateur l'envoie.
+</p>
+
+<h3>18.6. Différence entre session et cookie</h3>
+
+<table class="mini-table">
+<tr><th>Session</th><th>Cookie</th></tr>
+<tr><td>Données conservées côté serveur.</td><td>Données conservées côté navigateur.</td></tr>
+<tr><td>Identifiée généralement par un identifiant de session.</td><td>Transmis dans les requêtes HTTP selon ses règles.</td></tr>
+<tr><td>Adaptée à l'état de connexion.</td><td>Adapté aux préférences simples.</td></tr>
+</table>
+</article>
+
+<!-- CHAPITRE 19 -->
+
+<article class="lesson" id="c19">
+<div class="lesson-label">CHAPITRE 19 · SÉCURITÉ</div>
+<h2>Sécuriser une application PHP</h2>
+
+<div class="definition">
+La sécurité consiste à protéger les informations, les comptes
+et les opérations de l'application contre les utilisations
+malveillantes ou non autorisées.
+</div>
+
+<h3>19.1. Prévenir les injections SQL</h3>
+
+<p>
+Une injection SQL peut se produire lorsqu'une donnée utilisateur
+est directement intégrée dans une requête SQL sans protection.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>MAUVAISE PRATIQUE</span></div>
+<pre><code>$nom = $_POST["nom"];
+
+$sql = "SELECT * FROM etudiants
+        WHERE nom = '$nom'";
+
+$resultat = $conn-&gt;query($sql);</code></pre>
+</div>
+
+<div class="warning">
+Ne construis pas une requête SQL en concaténant directement
+les données reçues d'un formulaire.
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>BONNE PRATIQUE</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>$nom = $_POST["nom"] ?? "";
+
+$sql = "SELECT * FROM etudiants WHERE nom = ?";
+
+$stmt = $conn-&gt;prepare($sql);
+
+$stmt-&gt;bind_param("s", $nom);
+
+$stmt-&gt;execute();</code></pre>
+</div>
+
+<h3>19.2. Protéger l'affichage HTML</h3>
+
+<div class="code-window">
+<div class="code-header"><span>echappement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$nom = $_POST["nom"] ?? "";
+
+echo htmlspecialchars(
+    $nom,
+    ENT_QUOTES,
+    "UTF-8"
+);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+Cette fonction transforme les caractères spéciaux pour empêcher
+leur interprétation comme du HTML dans le contexte d'affichage.
+</p>
+
+<h3>19.3. Protéger les mots de passe</h3>
+
+<div class="code-window">
+<div class="code-header"><span>inscription.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$mot_de_passe = $_POST["password"] ?? "";
+
+$hash = password_hash(
+    $mot_de_passe,
+    PASSWORD_DEFAULT
+);
+
+?&gt;</code></pre>
+</div>
+
+<p>
+<code>password_hash()</code> produit un hachage adapté au stockage
+des mots de passe. On ne stocke pas le mot de passe en clair.
+</p>
+
+<h3>19.4. Vérifier un mot de passe</h3>
+
+<div class="code-window">
+<div class="code-header"><span>connexion.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+$mot_de_passe_saisi = $_POST["password"] ?? "";
+
+// $hash doit être récupéré depuis la base de données.
+
+if (password_verify(
+    $mot_de_passe_saisi,
+    $hash
+)) {
+
+    echo "Mot de passe correct.";
+
+} else {
+
+    echo "Identifiants incorrects.";
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>19.5. Protection CSRF</h3>
+
+<p>
+Une attaque CSRF tente de faire exécuter une action à un utilisateur
+authentifié sans son intention.
+Un jeton CSRF permet de vérifier que la requête provient d'un formulaire
+autorisé de l'application.
+</p>
+
+<div class="code-window">
+<div class="code-header"><span>formulaire.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+if (empty($_SESSION["csrf_token"])) {
+
+    $_SESSION["csrf_token"] = bin2hex(
+        random_bytes(32)
+    );
+
+}
+
+?&gt;
+
+&lt;form method="POST" action="traitement.php"&gt;
+
+    &lt;input type="hidden"
+           name="csrf_token"
+           value="&lt;?= htmlspecialchars(
+               $_SESSION["csrf_token"],
+               ENT_QUOTES,
+               "UTF-8"
+           ) ?&gt;"&gt;
+
+    &lt;button type="submit"&gt;Valider&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<div class="code-window">
+<div class="code-header"><span>traitement.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+$token = $_POST["csrf_token"] ?? "";
+
+if (
+    !is_string($token) ||
+    !isset($_SESSION["csrf_token"]) ||
+    !hash_equals($_SESSION["csrf_token"], $token)
+) {
+
+    http_response_code(403);
+    exit("Requête refusée.");
+
+}
+
+// Continuer le traitement autorisé ici.
+
+?&gt;</code></pre>
+</div>
+
+<h3>19.6. Autres règles importantes</h3>
+
+<ul>
+<li>Utiliser HTTPS.</li>
+<li>Valider les données côté serveur.</li>
+<li>Utiliser les requêtes préparées MySQLi.</li>
+<li>Ne jamais afficher les erreurs techniques aux utilisateurs en production.</li>
+<li>Limiter les permissions du compte SQL.</li>
+<li>Protéger les pages réservées aux utilisateurs connectés.</li>
+<li>Contrôler les fichiers téléversés.</li>
+<li>Utiliser des jetons CSRF pour les opérations sensibles.</li>
+<li>Éviter de stocker des secrets dans des fichiers accessibles publiquement.</li>
+</ul>
+</article>
+
+<!-- CHAPITRE 20 -->
+
+<article class="lesson" id="c20">
+<div class="lesson-label">CHAPITRE 20 · APPLICATION COMPLÈTE</div>
+<h2>Construire un système d'inscription et de connexion</h2>
+
+<p>
+Ce chapitre rassemble plusieurs notions :
+formulaires HTML, validation PHP, MySQLi, requêtes préparées,
+hachage des mots de passe et sessions.
+</p>
+
+<h3>20.1. Créer la table utilisateurs</h3>
+
+<div class="code-window">
+<div class="code-header"><span>database.sql</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>CREATE TABLE utilisateurs (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nom VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) NOT NULL UNIQUE,
+
+    mot_de_passe VARCHAR(255) NOT NULL,
+
+    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);</code></pre>
+</div>
+
+<h3>20.2. Formulaire d'inscription</h3>
+
+<div class="code-window">
+<div class="code-header"><span>inscription.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="inscription.php" method="POST"&gt;
+
+    &lt;label&gt;Nom&lt;/label&gt;
+    &lt;input type="text" name="nom" required&gt;
+
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" name="email" required&gt;
+
+    &lt;label&gt;Mot de passe&lt;/label&gt;
+    &lt;input type="password"
+           name="password"
+           required
+           minlength="8"&gt;
+
+    &lt;button type="submit"&gt;Créer un compte&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<h3>20.3. Traitement de l'inscription</h3>
+
+<div class="code-window">
+<div class="code-header"><span>inscription.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+require_once "connexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405);
+    exit("Méthode non autorisée.");
+}
+
+$nom = trim($_POST["nom"] ?? "");
+$email = trim($_POST["email"] ?? "");
+$password = $_POST["password"] ?? "";
+
+if ($nom === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    exit("Informations invalides.");
+}
+
+if (!is_string($password) || strlen($password) < 8) {
+    exit("Mot de passe trop court.");
+}
+
+$hash = password_hash(
+    $password,
+    PASSWORD_DEFAULT
+);
+
+$stmt = $conn-&gt;prepare(
+    "INSERT INTO utilisateurs
+     (nom, email, mot_de_passe)
+     VALUES (?, ?, ?)"
+);
+
+$stmt-&gt;bind_param("sss", $nom, $email, $hash);
+
+try {
+
+    $stmt-&gt;execute();
+
+    echo "Compte créé avec succès.";
+
+} catch (mysqli_sql_exception $e) {
+
+    if ($e-&gt;getCode() === 1062) {
+        echo "Cet email existe déjà.";
+    } else {
+        error_log($e-&gt;getMessage());
+        echo "Une erreur est survenue.";
+    }
+
+}
+
+$stmt-&gt;close();
+
+?&gt;</code></pre>
+</div>
+
+<h3>20.4. Formulaire de connexion</h3>
+
+<div class="code-window">
+<div class="code-header"><span>connexion.html</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;form action="login.php" method="POST"&gt;
+
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" name="email" required&gt;
+
+    &lt;label&gt;Mot de passe&lt;/label&gt;
+    &lt;input type="password" name="password" required&gt;
+
+    &lt;button type="submit"&gt;Se connecter&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+</div>
+
+<h3>20.5. Traitement de connexion</h3>
+
+<div class="code-window">
+<div class="code-header"><span>login.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+require_once "connexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405);
+    exit("Méthode non autorisée.");
+}
+
+$email = trim($_POST["email"] ?? "");
+$password = $_POST["password"] ?? "";
+
+$stmt = $conn-&gt;prepare(
+    "SELECT id, nom, mot_de_passe
+     FROM utilisateurs
+     WHERE email = ?"
+);
+
+$stmt-&gt;bind_param("s", $email);
+
+$stmt-&gt;execute();
+
+$utilisateur = $stmt-&gt;get_result()-&gt;fetch_assoc();
+
+$stmt-&gt;close();
+
+if (
+    $utilisateur &&
+    password_verify($password, $utilisateur["mot_de_passe"])
+) {
+
+    session_regenerate_id(true);
+
+    $_SESSION["user_id"] = $utilisateur["id"];
+    $_SESSION["nom"] = $utilisateur["nom"];
+
+    header("Location: profil.php");
+    exit;
+
+} else {
+
+    echo "Email ou mot de passe incorrect.";
+
+}
+
+?&gt;</code></pre>
+</div>
+
+<h3>20.6. Protéger la page de profil</h3>
+
+<div class="code-window">
+<div class="code-header"><span>profil.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+
+    header("Location: connexion.html");
+    exit;
+
+}
+
+?&gt;
+
+&lt;h1&gt;
+    Bienvenue
+    &lt;?= htmlspecialchars($_SESSION["nom"]) ?&gt;
+&lt;/h1&gt;
+
+&lt;a href="deconnexion.php"&gt;Déconnexion&lt;/a&gt;</code></pre>
+</div>
+
+<h3>20.7. Déconnexion</h3>
+
+<div class="code-window">
+<div class="code-header"><span>deconnexion.php</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+<pre><code>&lt;?php
+
+session_start();
+
+$_SESSION = [];
+
+session_destroy();
+
+header("Location: connexion.html");
+exit;
+
+?&gt;</code></pre>
+</div>
+
+<h3>20.8. Comprendre toute l'application</h3>
+
+<div class="code-window">
+<div class="code-header"><span>Architecture générale</span></div>
+<pre><code>INSCRIPTION
+    |
+    v
+FORMULAIRE HTML
+    |
+    v
+INSCRIPTION.PHP
+    |
+    v
+VALIDATION
+    |
+    v
+PASSWORD_HASH()
+    |
+    v
+MYSQLI PREPARED STATEMENT
+    |
+    v
+BASE DE DONNEES
+    |
+    v
+CONNEXION.HTML
+    |
+    v
+LOGIN.PHP
+    |
+    v
+PASSWORD_VERIFY()
+    |
+    v
+SESSION PHP
+    |
+    v
+PROFIL.PHP
+    |
+    v
+DECONNEXION.PHP</code></pre>
+</div>
+
+<div class="note">
+Tu connais maintenant les éléments fondamentaux nécessaires
+pour construire une application PHP connectée à une base de données.
+Pour aller vers des applications professionnelles, il faudra aussi
+maîtriser l'organisation du code, la gestion des erreurs,
+les autorisations, la sécurité et les tests.
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+     PARTIE 2 : PROJETS
+===================================================== -->
+
+<section id="projects" class="section-view">
+
+<div class="section-heading">
+<div class="number">PARTIE 02</div>
+<h2>Projets académiques PHP</h2>
+<p>
+Mets en pratique les connaissances du cours à travers des projets
+progressifs. Chaque projet représente une situation réelle
+de développement d'une application web.
+</p>
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<div class="project-number">PROJET 01</div>
+<h3>Calculatrice PHP</h3>
+<span class="level">DÉBUTANT</span>
+<p>Créer une calculatrice capable d'effectuer des opérations mathématiques.</p>
+<ul>
+<li>Formulaires HTML</li>
+<li>POST</li>
+<li>Conditions</li>
+<li>Opérateurs arithmétiques</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer deux champs numériques.</li>
+<li>Proposer addition, soustraction, multiplication et division.</li>
+<li>Récupérer les données avec POST.</li>
+<li>Vérifier que les données sont numériques.</li>
+<li>Empêcher la division par zéro.</li>
+<li>Afficher le résultat.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Ajouter modulo et puissance.</li>
+<li>Créer un historique des calculs.</li>
+<li>Utiliser des fonctions PHP.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 02</div>
+<h3>Gestion des notes</h3>
+<span class="level">DÉBUTANT · INTERMÉDIAIRE</span>
+<p>Créer une application qui permet de calculer et gérer les notes des étudiants.</p>
+<ul>
+<li>Variables et tableaux</li>
+<li>Conditions et boucles</li>
+<li>Fonctions PHP</li>
+<li>Formulaires</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Saisir le nom d'un étudiant.</li>
+<li>Saisir plusieurs notes.</li>
+<li>Calculer la moyenne.</li>
+<li>Déterminer si l'étudiant est admis.</li>
+<li>Afficher la note minimale et maximale.</li>
+<li>Classer les résultats.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Gérer plusieurs étudiants.</li>
+<li>Afficher un classement général.</li>
+<li>Enregistrer les données dans MySQL.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 03</div>
+<h3>Formulaire d'inscription</h3>
+<span class="level">INTERMÉDIAIRE</span>
+<p>Créer une page d'inscription avec contrôle des données envoyées.</p>
+<ul>
+<li>HTML Forms</li>
+<li>POST</li>
+<li>Validation</li>
+<li>Superglobales</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer les champs nom, prénom, email et âge.</li>
+<li>Vérifier les champs obligatoires.</li>
+<li>Valider le format de l'email.</li>
+<li>Contrôler l'âge.</li>
+<li>Afficher les erreurs.</li>
+<li>Afficher un récapitulatif des informations.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Ajouter une validation des mots de passe.</li>
+<li>Ajouter une sélection de ville.</li>
+<li>Enregistrer les utilisateurs en base de données.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 04</div>
+<h3>Gestion des produits</h3>
+<span class="level">INTERMÉDIAIRE</span>
+<p>Créer une application permettant de gérer les produits d'un magasin.</p>
+<ul>
+<li>MySQLi</li>
+<li>INSERT et SELECT</li>
+<li>UPDATE et DELETE</li>
+<li>CRUD</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer la table produits.</li>
+<li>Ajouter un produit.</li>
+<li>Afficher tous les produits.</li>
+<li>Modifier le prix et le stock.</li>
+<li>Supprimer un produit.</li>
+<li>Rechercher un produit par son nom.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Ajouter les catégories.</li>
+<li>Calculer la valeur totale du stock.</li>
+<li>Afficher les produits dont le stock est faible.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 05</div>
+<h3>Gestion des étudiants</h3>
+<span class="level">INTERMÉDIAIRE</span>
+<p>Développer une application complète de gestion d'une liste d'étudiants.</p>
+<ul>
+<li>PHP + MySQLi</li>
+<li>Formulaires HTML</li>
+<li>CRUD complet</li>
+<li>Validation</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer une base gestion_etudiants.</li>
+<li>Créer la table etudiants.</li>
+<li>Ajouter des étudiants.</li>
+<li>Afficher une liste dynamique.</li>
+<li>Modifier les informations.</li>
+<li>Supprimer un étudiant.</li>
+<li>Rechercher par nom ou prénom.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Ajouter les notes et les classes.</li>
+<li>Calculer les moyennes.</li>
+<li>Créer une pagination.</li>
+<li>Ajouter un système de connexion administrateur.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 06</div>
+<h3>Système de connexion</h3>
+<span class="level">INTERMÉDIAIRE · AVANCÉ</span>
+<p>Développer un système complet d'inscription, de connexion et de déconnexion.</p>
+<ul>
+<li>MySQLi</li>
+<li>Sessions</li>
+<li>password_hash()</li>
+<li>password_verify()</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer un formulaire d'inscription.</li>
+<li>Vérifier l'unicité de l'email.</li>
+<li>Hacher les mots de passe.</li>
+<li>Créer un formulaire de connexion.</li>
+<li>Vérifier les identifiants.</li>
+<li>Gérer les sessions.</li>
+<li>Protéger les pages privées.</li>
+<li>Créer une déconnexion.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Créer les rôles administrateur et utilisateur.</li>
+<li>Ajouter un changement de mot de passe.</li>
+<li>Ajouter une protection CSRF.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 07</div>
+<h3>Bibliothèque numérique</h3>
+<span class="level">AVANCÉ</span>
+<p>Créer une application de gestion de livres et d'emprunts.</p>
+<ul>
+<li>Relations SQL</li>
+<li>JOIN</li>
+<li>CRUD</li>
+<li>Sessions</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer les tables livres, utilisateurs et emprunts.</li>
+<li>Ajouter des livres.</li>
+<li>Afficher les livres disponibles.</li>
+<li>Enregistrer les emprunts.</li>
+<li>Enregistrer les retours.</li>
+<li>Afficher l'historique des emprunts.</li>
+<li>Relier les tables avec des clés étrangères.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Calculer les retards.</li>
+<li>Créer une recherche multicritère.</li>
+<li>Ajouter une gestion des rôles.</li>
+</ul>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-number">PROJET 08</div>
+<h3>Plateforme de vente</h3>
+<span class="level">AVANCÉ · COMPLEXE</span>
+<p>Développer une application e-commerce avec produits, clients et commandes.</p>
+<ul>
+<li>MySQLi</li>
+<li>Relations entre tables</li>
+<li>Sessions</li>
+<li>Transactions SQL</li>
+</ul>
+<button class="project-btn" onclick="toggleProject(this)">Voir les consignes</button>
+<div class="project-details">
+<h4>Objectifs</h4>
+<ul>
+<li>Créer un catalogue de produits.</li>
+<li>Gérer les utilisateurs.</li>
+<li>Créer un panier.</li>
+<li>Gérer les commandes.</li>
+<li>Calculer le total d'une commande.</li>
+<li>Mettre à jour le stock.</li>
+<li>Créer un espace administrateur.</li>
+</ul>
+<h4>Extensions</h4>
+<ul>
+<li>Ajouter des catégories et des images.</li>
+<li>Créer un historique des commandes.</li>
+<li>Utiliser les transactions SQL.</li>
+<li>Gérer les permissions.</li>
+</ul>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- =====================================================
+     PARTIE 3 : QUIZ
+===================================================== -->
+
+<section id="quiz" class="section-view">
+
+<div class="section-heading">
+<div class="number">PARTIE 03</div>
+<h2>Évaluation PHP</h2>
+<p>
+Teste tes connaissances sur l'ensemble du cours grâce à une banque
+de 200 questions avec correction et explication.
+</p>
+</div>
+
+<div class="quiz-intro">
+<h2>Es-tu prêt à tester ton niveau ?</h2>
+<p>
+Les questions sont sélectionnées aléatoirement.
+Après chaque réponse, tu peux vérifier si elle est correcte
+et découvrir une explication.
+</p>
+
+<div class="quiz-config">
+<label for="questionCount">Nombre de questions :</label>
+<select id="questionCount">
+<option value="20">20 questions</option>
+<option value="25">25 questions</option>
+<option value="30" selected>30 questions</option>
+<option value="35">35 questions</option>
+<option value="40">40 questions</option>
+</select>
+
+<button class="primary-btn" onclick="startQuiz()">Commencer le quiz →</button>
+</div>
+</div>
+
+<div class="quiz-box" id="quizBox">
+
+<div class="quiz-top">
+<strong id="questionNumber">Question 1 / 30</strong>
+<span id="quizScore">Score : 0</span>
+</div>
+
+<div class="progress-track">
+<div class="progress-fill" id="quizProgress"></div>
+</div>
+
+<div class="quiz-question" id="questionText"></div>
+
+<div class="answers" id="answersContainer"></div>
+
+<div class="quiz-feedback" id="quizFeedback"></div>
+
+<div class="quiz-actions">
+<button class="primary-btn" id="verifyBtn" onclick="verifyAnswer()">Vérifier la réponse</button>
+<button class="primary-btn" id="nextBtn" onclick="nextQuestion()" style="display:none">Next →</button>
+</div>
+
+</div>
+
+<div class="result-box" id="resultBox">
+<h2>Résultat du quiz</h2>
+<div class="result-score" id="finalScore">0 / 30</div>
+<p id="resultMessage"></p>
+
+<h3 style="margin-top:25px">Correction des questions incorrectes</h3>
+<div id="reviewContainer"></div>
+
+<button class="primary-btn" onclick="restartQuiz()">Recommencer le quiz</button>
+</div>
+
+</section>
+
+</main>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

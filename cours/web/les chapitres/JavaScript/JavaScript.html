@@ -1,0 +1,2835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet JavaScript, projets académiques et quiz interactif.">
+<title>JavaScript — Cours, Projets & Quiz</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">LEARN<span>.</span>JAVASCRIPT</div>
+    <nav class="topnav">
+        <a href="#cours">Cours</a>
+        <a href="#projets">Projets</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">Formation complète · Développement Web</div>
+        <h1>Maîtriser <span>JavaScript.</span></h1>
+        <p>
+            Apprenez JavaScript depuis les fondamentaux jusqu'aux concepts
+            avancés. Comprenez la logique, manipulez les pages HTML, contrôlez
+            les formulaires, communiquez avec les serveurs et réalisez
+            des projets complets.
+        </p>
+        <div class="hero-buttons">
+            <a href="#cours" class="btn btn-orange">Commencer le cours</a>
+            <a href="#projets" class="btn btn-outline">Voir les projets</a>
+        </div>
+    </div>
+</section>
+
+<div class="stats">
+    <div class="stat"><strong>01</strong><span>Cours complet</span></div>
+    <div class="stat"><strong>08</strong><span>Projets académiques</span></div>
+    <div class="stat"><strong>200</strong><span>Questions dans la banque</span></div>
+    <div class="stat"><strong>03</strong><span>Grandes parties</span></div>
+</div>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <h3>Sommaire du cours</h3>
+
+    <a class="group" href="#cours">PARTIE 01 — COURS</a>
+    <a href="#introduction">1. Introduction</a>
+    <a href="#fonctionnement">2. Fonctionnement JS</a>
+    <a href="#syntaxe">3. Syntaxe et commentaires</a>
+    <a href="#variables">4. Variables et constantes</a>
+    <a href="#types">5. Types de données</a>
+    <a href="#operateurs">6. Opérateurs</a>
+    <a href="#conditions">7. Conditions</a>
+    <a href="#boucles">8. Boucles</a>
+    <a href="#fonctions">9. Fonctions</a>
+    <a href="#tableaux">10. Tableaux</a>
+    <a href="#objets">11. Objets</a>
+    <a href="#strings">12. Chaînes de caractères</a>
+    <a href="#dom">13. DOM</a>
+    <a href="#evenements">14. Événements</a>
+    <a href="#formulaires">15. Formulaires</a>
+    <a href="#validation">16. Validation des inputs</a>
+    <a href="#htmlcss">17. Contrôler HTML et CSS</a>
+    <a href="#dates">18. Dates et Math</a>
+    <a href="#json">19. JSON</a>
+    <a href="#storage">20. LocalStorage</a>
+    <a href="#es6">21. JavaScript moderne</a>
+    <a href="#async">22. Asynchrone</a>
+    <a href="#fetch">23. Fetch API</a>
+    <a href="#erreurs">24. Gestion des erreurs</a>
+    <a href="#modules">25. Modules</a>
+    <a href="#securite">26. Sécurité</a>
+    <a href="#bonnespratiques">27. Bonnes pratiques</a>
+    <a href="#architecture">28. Architecture d'un projet</a>
+
+    <a class="group" href="#projets">PARTIE 02 — PROJETS</a>
+    <a href="#projet1">1. Calculatrice</a>
+    <a href="#projet2">2. Gestionnaire de notes</a>
+    <a href="#projet3">3. Gestion des étudiants</a>
+    <a href="#projet4">4. Formulaire complet</a>
+    <a href="#projet5">5. To-do List</a>
+    <a href="#projet6">6. Quiz interactif</a>
+    <a href="#projet7">7. Gestion de stock</a>
+    <a href="#projet8">8. Application météo</a>
+
+    <a class="group" href="#quiz">PARTIE 03 — QUIZ</a>
+    <a href="#quiz">Quiz JavaScript</a>
+    <a href="#quiz-result">Résultats et corrections</a>
+</aside>
+
+<main class="content">
+
+<!-- ======================================================
+     PARTIE 1 : COURS
+====================================================== -->
+
+<section class="section" id="cours">
+    <div class="section-heading">
+        <div class="section-number">PARTIE 01</div>
+        <h2>Cours complet JavaScript</h2>
+        <p>Des bases jusqu'au développement d'applications interactives.</p>
+    </div>
+
+    <div class="note">
+        <strong>Objectif pédagogique :</strong>
+        à la fin de ce cours, vous devez pouvoir analyser un problème,
+        construire son algorithme, écrire le code JavaScript nécessaire,
+        manipuler une page HTML, vérifier les données saisies et réaliser
+        un projet complet.
+    </div>
+
+    <h3 class="subheading" id="introduction">1. Introduction à JavaScript</h3>
+
+    <p>
+        JavaScript est un langage de programmation principalement utilisé
+        pour rendre les pages Web interactives et dynamiques.
+        Il travaille généralement avec HTML et CSS.
+    </p>
+
+    <div class="grid-3">
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Structure et contenu d'une page.</p>
+            <span class="tag">Structure</span>
+        </div>
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Apparence, couleurs, tailles et disposition.</p>
+            <span class="tag">Design</span>
+        </div>
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>Comportement, logique et interactions.</p>
+            <span class="tag">Interaction</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Exemple : les trois technologies</h3>
+        <p>HTML crée le bouton, CSS lui donne son apparence et JavaScript définit son comportement.</p>
+
+        <div class="codebox">
+            <div class="code-header"><span>HTML + CSS + JS</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;button id="monBouton"&gt;Cliquez ici&lt;/button&gt;
+
+&lt;style&gt;
+button {
+    background: orange;
+    color: white;
+    padding: 12px;
+    border: none;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+document.getElementById("monBouton")
+    .addEventListener("click", function() {
+        alert("Bonjour !");
+    });
+&lt;/script&gt;</pre>
+        </div>
+        <div class="output">
+            <strong>Fonction de chaque partie :</strong>
+            <ul>
+                <li>HTML : crée un bouton.</li>
+                <li>CSS : change sa couleur et son apparence.</li>
+                <li>JavaScript : affiche un message lorsque l'utilisateur clique.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="subheading" id="fonctionnement">2. Comment fonctionne JavaScript ?</h3>
+
+    <p>
+        Le navigateur contient un moteur JavaScript qui interprète et exécute
+        le code. JavaScript peut accéder à la structure HTML à travers le DOM,
+        réagir aux actions de l'utilisateur et communiquer avec des serveurs.
+    </p>
+
+    <h4>Les différentes manières d'intégrer JavaScript</h4>
+
+    <div class="card">
+        <h4>Méthode 1 : JavaScript interne</h4>
+        <div class="codebox">
+            <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;script&gt;
+    console.log("Bonjour JavaScript");
+&lt;/script&gt;</pre>
+        </div>
+        <p>Fonction : écrire directement le code JavaScript dans la page HTML.</p>
+    </div>
+
+    <div class="card">
+        <h4>Méthode 2 : JavaScript externe</h4>
+        <div class="codebox">
+            <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;script src="script.js" defer&gt;&lt;/script&gt;</pre>
+        </div>
+        <p>
+            Fonction : charger un fichier JavaScript séparé. L'attribut
+            <code>defer</code> permet de l'exécuter après l'analyse du HTML.
+            C'est une méthode recommandée pour organiser les projets.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4>Méthode 3 : Console du navigateur</h4>
+        <p>
+            Ouvrez les outils de développement avec F12, puis choisissez
+            Console. Vous pouvez y tester des instructions JavaScript.
+        </p>
+        <div class="codebox">
+            <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>console.log("Test JavaScript");
+alert("Bonjour");
+2 + 3</pre>
+        </div>
+        <p>Fonction : tester rapidement une instruction sans modifier un fichier.</p>
+    </div>
+
+    <h3 class="subheading" id="syntaxe">3. Syntaxe et commentaires</h3>
+
+    <p>
+        La syntaxe représente les règles à respecter pour écrire correctement
+        un programme JavaScript.
+    </p>
+
+    <div class="card">
+        <h4>Instructions</h4>
+        <div class="codebox">
+            <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = "Mohamed";
+let age = 20;
+
+console.log(nom);
+console.log(age);</pre>
+        </div>
+        <p>
+            <code>let nom = "Mohamed";</code> déclare une variable nom
+            et lui attribue une valeur.
+        </p>
+    </div>
+
+    <h4>Commentaires</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>// Commentaire sur une seule ligne
+
+/*
+Commentaire
+sur plusieurs lignes
+*/</pre>
+    </div>
+    <p>Fonction : expliquer le code sans que le navigateur exécute le commentaire.</p>
+
+    <h4>Respect de la casse</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = "Ali";
+let Nom = "Ahmed";
+
+console.log(nom); // Ali
+console.log(Nom); // Ahmed</pre>
+    </div>
+    <p>JavaScript distingue les majuscules des minuscules.</p>
+
+    <h3 class="subheading" id="variables">4. Variables et constantes</h3>
+
+    <p>
+        Une variable est un espace logique qui permet de conserver une valeur
+        pendant l'exécution du programme.
+    </p>
+
+    <div class="grid-3">
+        <div class="card">
+            <h3>let</h3>
+            <p>Déclare une variable dont la valeur peut changer.</p>
+        </div>
+        <div class="card">
+            <h3>const</h3>
+            <p>Déclare une variable dont la réaffectation est interdite.</p>
+        </div>
+        <div class="card">
+            <h3>var</h3>
+            <p>Ancienne déclaration, avec une portée différente de let et const.</p>
+        </div>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let age = 20;
+age = 21;
+
+const pays = "Tunisie";
+
+// pays = "France"; // Erreur : réaffectation interdite
+
+var ancienneVariable = "Exemple";</pre>
+    </div>
+
+    <p>
+        <strong>Fonction de let :</strong> conserver une valeur qui peut évoluer.
+        Exemple : le score d'un joueur.
+    </p>
+    <p>
+        <strong>Fonction de const :</strong> conserver une référence qui ne
+        doit pas être réaffectée. Exemple : une configuration.
+    </p>
+    <p>
+        <strong>Fonction de var :</strong> déclarer une variable avec une portée
+        de fonction ou globale. Elle est généralement évitée dans le nouveau code.
+    </p>
+
+    <div class="note">
+        <strong>Règle :</strong> privilégiez const par défaut. Utilisez let
+        lorsqu'une réaffectation est nécessaire.
+        Un objet déclaré avec const peut néanmoins voir ses propriétés modifiées.
+    </div>
+
+    <h4>Les règles de nommage</h4>
+    <ul>
+        <li>Un nom ne commence pas par un chiffre.</li>
+        <li>Les espaces sont interdits.</li>
+        <li>Les mots réservés ne doivent pas être utilisés.</li>
+        <li>Privilégiez des noms compréhensibles.</li>
+        <li>La convention camelCase est courante : <code>nombreEtudiants</code>.</li>
+    </ul>
+
+    <h3 class="subheading" id="types">5. Les types de données</h3>
+
+    <p>Un type de données définit la nature d'une valeur manipulée par JavaScript.</p>
+
+    <table class="comparison">
+        <tr><th>Type</th><th>Exemple</th><th>Fonction</th></tr>
+        <tr><td>String</td><td>"Bonjour"</td><td>Texte</td></tr>
+        <tr><td>Number</td><td>25 ou 3.14</td><td>Nombre</td></tr>
+        <tr><td>Boolean</td><td>true / false</td><td>Vrai ou faux</td></tr>
+        <tr><td>Undefined</td><td>undefined</td><td>Valeur non définie</td></tr>
+        <tr><td>Null</td><td>null</td><td>Absence intentionnelle de valeur</td></tr>
+        <tr><td>Object</td><td>{'{nom:"Ali"}'}</td><td>Ensemble de propriétés</td></tr>
+        <tr><td>Array</td><td>[10,20,30]</td><td>Liste ordonnée</td></tr>
+        <tr><td>BigInt</td><td>123n</td><td>Grands entiers</td></tr>
+        <tr><td>Symbol</td><td>Symbol("id")</td><td>Identifiant unique</td></tr>
+    </table>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = "Ali";
+let age = 20;
+let moyenne = 14.5;
+let inscrit = true;
+let resultat;
+let adresse = null;
+
+console.log(typeof nom);      // string
+console.log(typeof age);      // number
+console.log(typeof inscrit);  // boolean
+console.log(typeof resultat); // undefined</pre>
+    </div>
+
+    <h4>Conversion de types</h4>
+
+    <p>Il est parfois nécessaire de convertir une valeur d'un type à un autre.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let texte = "25";
+
+let nombre = Number(texte);
+let texte2 = String(nombre);
+let booleen = Boolean(nombre);
+
+console.log(nombre + 5); // 30
+console.log(texte2);     // "25"
+console.log(booleen);    // true
+
+console.log(parseInt("15.8"));   // 15
+console.log(parseFloat("15.8")); // 15.8</pre>
+    </div>
+
+    <p>
+        <code>Number()</code> convertit en nombre, <code>String()</code>
+        convertit en texte et <code>Boolean()</code> convertit en booléen.
+    </p>
+
+    <div class="warning">
+        Attention : <code>Number("abc")</code> retourne <code>NaN</code>.
+        NaN signifie que la valeur n'est pas un nombre valide.
+    </div>
+
+    <h3 class="subheading" id="operateurs">6. Les opérateurs</h3>
+
+    <h4>Opérateurs arithmétiques</h4>
+
+    <table class="comparison">
+        <tr><th>Opérateur</th><th>Nom</th><th>Exemple</th><th>Résultat</th></tr>
+        <tr><td>+</td><td>Addition</td><td>10 + 5</td><td>15</td></tr>
+        <tr><td>-</td><td>Soustraction</td><td>10 - 5</td><td>5</td></tr>
+        <tr><td>*</td><td>Multiplication</td><td>10 * 5</td><td>50</td></tr>
+        <tr><td>/</td><td>Division</td><td>10 / 5</td><td>2</td></tr>
+        <tr><td>%</td><td>Modulo</td><td>10 % 3</td><td>1</td></tr>
+        <tr><td>**</td><td>Puissance</td><td>2 ** 3</td><td>8</td></tr>
+        <tr><td>++</td><td>Incrémentation</td><td>x++</td><td>Ajoute 1</td></tr>
+        <tr><td>--</td><td>Décrémentation</td><td>x--</td><td>Retire 1</td></tr>
+    </table>
+
+    <h4>Opérateurs de comparaison</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>console.log(10 == "10");  // true
+console.log(10 === "10"); // false
+console.log(10 != 5);     // true
+console.log(10 !== "10"); // true
+console.log(10 > 5);      // true
+console.log(10 < 5);      // false
+console.log(10 >= 10);    // true
+console.log(10 <= 5);     // false</pre>
+    </div>
+
+    <p>
+        <code>==</code> compare avec conversion éventuelle des types.
+        <code>===</code> compare la valeur et le type.
+        Il est recommandé d'utiliser <code>===</code> et <code>!==</code>.
+    </p>
+
+    <h4>Opérateurs logiques</h4>
+
+    <table class="comparison">
+        <tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr>
+        <tr><td>&&</td><td>ET : toutes les conditions doivent être vraies</td><td>x > 5 && x < 20</td></tr>
+        <tr><td>||</td><td>OU : au moins une condition vraie</td><td>x < 5 || x > 20</td></tr>
+        <tr><td>!</td><td>NON : inverse le résultat logique</td><td>!true</td></tr>
+    </table>
+
+    <div class="codebox">
+        <div class="code-header"><span>Exemple</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let age = 20;
+let autorisation = true;
+
+if (age >= 18 && autorisation) {
+    console.log("Accès autorisé");
+}</pre>
+    </div>
+
+    <p>Fonction : vérifier simultanément l'âge et l'autorisation.</p>
+
+    <h4>Opérateur ternaire</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let age = 20;
+
+let message = age >= 18
+    ? "Majeur"
+    : "Mineur";
+
+console.log(message);</pre>
+    </div>
+    <p>Fonction : écrire une condition simple en une expression.</p>
+
+    <h4>Opérateur nullish et optional chaining</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = null;
+
+let resultat = nom ?? "Inconnu";
+
+let utilisateur = {
+    profil: {
+        ville: "Mahdia"
+    }
+};
+
+console.log(utilisateur.profil?.ville); // Mahdia
+console.log(utilisateur.contact?.email); // undefined</pre>
+    </div>
+    <p>
+        <code>??</code> fournit une valeur de remplacement uniquement si
+        la valeur est null ou undefined.
+        <code>?.</code> évite une erreur lorsque l'accès à une propriété
+        intermédiaire est impossible.
+    </p>
+
+    <h3 class="subheading" id="conditions">7. Les conditions</h3>
+
+    <p>
+        Une condition permet d'exécuter différentes instructions selon
+        qu'une expression est vraie ou fausse.
+    </p>
+
+    <h4>if</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let moyenne = 15;
+
+if (moyenne >= 10) {
+    console.log("Admis");
+}</pre>
+    </div>
+    <p>Fonction : vérifier si la moyenne est supérieure ou égale à 10.</p>
+
+    <h4>if / else</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let age = 16;
+
+if (age >= 18) {
+    console.log("Majeur");
+} else {
+    console.log("Mineur");
+}</pre>
+    </div>
+    <p>Fonction : choisir entre deux possibilités.</p>
+
+    <h4>if / else if / else</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let moyenne = 15;
+
+if (moyenne >= 16) {
+    console.log("Très bien");
+} else if (moyenne >= 14) {
+    console.log("Bien");
+} else if (moyenne >= 10) {
+    console.log("Passable");
+} else {
+    console.log("Non admis");
+}</pre>
+    </div>
+    <p>Fonction : sélectionner une catégorie parmi plusieurs intervalles.</p>
+
+    <h4>switch</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let jour = 2;
+
+switch (jour) {
+    case 1:
+        console.log("Lundi");
+        break;
+
+    case 2:
+        console.log("Mardi");
+        break;
+
+    case 3:
+        console.log("Mercredi");
+        break;
+
+    default:
+        console.log("Jour inconnu");
+}</pre>
+    </div>
+    <p>
+        Fonction : comparer une expression à plusieurs valeurs possibles.
+        <code>break</code> arrête le switch après le cas correspondant.
+    </p>
+
+    <h3 class="subheading" id="boucles">8. Les boucles</h3>
+
+    <p>
+        Une boucle permet de répéter des instructions plusieurs fois
+        sans devoir les écrire à nouveau.
+    </p>
+
+    <h4>Boucle for</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}</pre>
+    </div>
+    <p>
+        Fonction : répéter cinq fois. Initialisation : <code>i = 1</code>.
+        Condition : <code>i <= 5</code>. Mise à jour : <code>i++</code>.
+    </p>
+
+    <h4>Boucle while</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}</pre>
+    </div>
+    <p>Fonction : répéter tant que la condition reste vraie.</p>
+
+    <h4>Boucle do...while</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);</pre>
+    </div>
+    <p>Fonction : exécuter le bloc au moins une fois avant de tester la condition.</p>
+
+    <h4>for...of</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let fruits = ["Pomme", "Banane", "Orange"];
+
+for (let fruit of fruits) {
+    console.log(fruit);
+}</pre>
+    </div>
+    <p>Fonction : parcourir directement les valeurs d'un tableau.</p>
+
+    <h4>for...in</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let personne = {
+    nom: "Ali",
+    age: 20
+};
+
+for (let propriete in personne) {
+    console.log(propriete, personne[propriete]);
+}</pre>
+    </div>
+    <p>Fonction : parcourir les clés énumérables d'un objet.</p>
+
+    <h4>break et continue</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>for (let i = 1; i <= 10; i++) {
+
+    if (i === 3) {
+        continue;
+    }
+
+    if (i === 7) {
+        break;
+    }
+
+    console.log(i);
+}</pre>
+    </div>
+    <p>
+        <code>continue</code> passe à l'itération suivante.
+        <code>break</code> arrête complètement la boucle.
+    </p>
+
+    <h3 class="subheading" id="fonctions">9. Les fonctions</h3>
+
+    <p>
+        Une fonction est un bloc de code réutilisable qui réalise une tâche
+        précise. Elle peut recevoir des paramètres et retourner un résultat.
+    </p>
+
+    <h4>Déclaration d'une fonction</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function addition(a, b) {
+    return a + b;
+}
+
+let resultat = addition(10, 5);
+
+console.log(resultat); // 15</pre>
+    </div>
+    <p>
+        <code>function</code> crée la fonction.
+        <code>a</code> et <code>b</code> sont les paramètres.
+        <code>return</code> renvoie le résultat.
+        <code>addition(10, 5)</code> appelle la fonction.
+    </p>
+
+    <h4>Fonction sans paramètre</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function saluer() {
+    console.log("Bonjour !");
+}
+
+saluer();</pre>
+    </div>
+    <p>Fonction : exécuter une tâche qui ne nécessite aucune donnée extérieure.</p>
+
+    <h4>Paramètres par défaut</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function saluer(nom = "Utilisateur") {
+    return "Bonjour " + nom;
+}
+
+console.log(saluer());
+console.log(saluer("Ali"));</pre>
+    </div>
+    <p>Fonction : utiliser une valeur de remplacement si aucun argument n'est fourni.</p>
+
+    <h4>Fonction anonyme</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const calculer = function(a, b) {
+    return a * b;
+};
+
+console.log(calculer(4, 5));</pre>
+    </div>
+    <p>Fonction : stocker une fonction dans une variable.</p>
+
+    <h4>Fonction fléchée (Arrow Function)</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const addition = (a, b) => {
+    return a + b;
+};
+
+const carre = x => x * x;
+
+console.log(addition(3, 4));
+console.log(carre(5));</pre>
+    </div>
+    <p>Fonction : écrire des fonctions avec une syntaxe plus concise.</p>
+
+    <h4>Portée des variables (Scope)</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let global = "Accessible dans le bloc externe";
+
+function exemple() {
+    let local = "Accessible dans cette fonction";
+    console.log(global);
+    console.log(local);
+}
+
+exemple();</pre>
+    </div>
+    <p>
+        La portée détermine où une variable est accessible.
+        <code>let</code> et <code>const</code> ont une portée de bloc.
+    </p>
+
+    <h4>Closure (fermeture)</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function creerCompteur() {
+    let compteur = 0;
+
+    return function() {
+        compteur++;
+        return compteur;
+    };
+}
+
+const compteur = creerCompteur();
+
+console.log(compteur()); // 1
+console.log(compteur()); // 2
+console.log(compteur()); // 3</pre>
+    </div>
+    <p>
+        Une closure permet à une fonction interne de conserver l'accès
+        aux variables de son environnement même après l'exécution
+        de la fonction externe.
+    </p>
+
+    <h3 class="subheading" id="tableaux">10. Les tableaux (Arrays)</h3>
+
+    <p>
+        Un tableau permet de stocker plusieurs valeurs dans une seule variable.
+        Chaque élément possède un indice qui commence à zéro.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let notes = [12, 15, 18, 10];
+
+console.log(notes[0]); // 12
+console.log(notes[2]); // 18
+console.log(notes.length); // 4</pre>
+    </div>
+
+    <h4>Les principales méthodes des tableaux</h4>
+
+    <table class="comparison">
+        <tr><th>Méthode</th><th>Fonction</th></tr>
+        <tr><td>push()</td><td>Ajouter à la fin</td></tr>
+        <tr><td>pop()</td><td>Supprimer le dernier élément</td></tr>
+        <tr><td>unshift()</td><td>Ajouter au début</td></tr>
+        <tr><td>shift()</td><td>Supprimer le premier élément</td></tr>
+        <tr><td>includes()</td><td>Vérifier si une valeur existe</td></tr>
+        <tr><td>indexOf()</td><td>Rechercher l'indice d'une valeur</td></tr>
+        <tr><td>slice()</td><td>Extraire une portion sans modifier l'original</td></tr>
+        <tr><td>splice()</td><td>Ajouter, remplacer ou supprimer des éléments</td></tr>
+        <tr><td>join()</td><td>Transformer le tableau en chaîne</td></tr>
+        <tr><td>reverse()</td><td>Inverser l'ordre des éléments</td></tr>
+        <tr><td>sort()</td><td>Trier les éléments</td></tr>
+        <tr><td>concat()</td><td>Fusionner des tableaux</td></tr>
+    </table>
+
+    <div class="codebox">
+        <div class="code-header"><span>Exemple complet</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let fruits = ["Pomme", "Banane"];
+
+fruits.push("Orange");
+console.log(fruits);
+
+fruits.pop();
+console.log(fruits);
+
+console.log(fruits.includes("Pomme"));
+
+let nombres = [5, 2, 10, 1];
+
+nombres.sort((a, b) => a - b);
+
+console.log(nombres); // [1, 2, 5, 10]</pre>
+    </div>
+
+    <h4>map()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nombres = [1, 2, 3, 4];
+
+let doubles = nombres.map(function(n) {
+    return n * 2;
+});
+
+console.log(doubles); // [2, 4, 6, 8]</pre>
+    </div>
+    <p>Fonction : créer un nouveau tableau en transformant chaque élément.</p>
+
+    <h4>filter()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let notes = [8, 12, 16, 9, 18];
+
+let admis = notes.filter(note => note >= 10);
+
+console.log(admis); // [12, 16, 18]</pre>
+    </div>
+    <p>Fonction : créer un tableau contenant uniquement les éléments qui satisfont une condition.</p>
+
+    <h4>reduce()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nombres = [10, 20, 30];
+
+let somme = nombres.reduce((total, n) => {
+    return total + n;
+}, 0);
+
+console.log(somme); // 60</pre>
+    </div>
+    <p>Fonction : accumuler les valeurs du tableau pour produire un seul résultat.</p>
+
+    <h4>find() et findIndex()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let notes = [8, 12, 16, 18];
+
+let resultat = notes.find(n => n > 15);
+let indice = notes.findIndex(n => n > 15);
+
+console.log(resultat); // 16
+console.log(indice);   // 2</pre>
+    </div>
+    <p>Fonction : trouver le premier élément ou l'indice du premier élément correspondant.</p>
+
+    <h4>some() et every()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let notes = [12, 14, 16];
+
+console.log(notes.some(n => n < 10)); // false
+console.log(notes.every(n => n >= 10)); // true</pre>
+    </div>
+    <p>
+        <code>some()</code> vérifie si au moins un élément satisfait une condition.
+        <code>every()</code> vérifie si tous les éléments la satisfont.
+    </p>
+
+    <h3 class="subheading" id="objets">11. Les objets</h3>
+
+    <p>
+        Un objet regroupe plusieurs informations sous forme de propriétés
+        et de valeurs. Il peut aussi contenir des fonctions appelées méthodes.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let etudiant = {
+    nom: "Mohamed",
+    age: 20,
+    moyenne: 15,
+
+    afficher: function() {
+        return this.nom + " - " + this.moyenne;
+    }
+};
+
+console.log(etudiant.nom);
+console.log(etudiant.age);
+console.log(etudiant.afficher());</pre>
+    </div>
+    <p>
+        <code>etudiant.nom</code> accède à une propriété.
+        <code>this</code> fait ici référence à l'objet qui appelle la méthode.
+    </p>
+
+    <h4>Modifier un objet</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let personne = {
+    nom: "Ali",
+    age: 20
+};
+
+personne.age = 21;
+personne.ville = "Mahdia";
+
+delete personne.age;
+
+console.log(personne);</pre>
+    </div>
+    <p>Fonction : modifier, ajouter ou supprimer les propriétés d'un objet.</p>
+
+    <h4>Destructuring</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const personne = {
+    nom: "Ali",
+    age: 20
+};
+
+const { nom, age } = personne;
+
+console.log(nom, age);
+
+const nombres = [10, 20];
+
+const [a, b] = nombres;
+
+console.log(a, b);</pre>
+    </div>
+    <p>Fonction : extraire facilement des valeurs d'un objet ou d'un tableau.</p>
+
+    <h4>Spread operator</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const a = [1, 2, 3];
+const b = [...a, 4, 5];
+
+console.log(b);
+
+const personne = {nom: "Ali", age: 20};
+const copie = {...personne, ville: "Mahdia"};
+
+console.log(copie);</pre>
+    </div>
+    <p>Fonction : étendre ou copier les éléments d'un tableau ou les propriétés d'un objet.</p>
+
+    <h4>Classes et objets</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>class Etudiant {
+    constructor(nom, moyenne) {
+        this.nom = nom;
+        this.moyenne = moyenne;
+    }
+
+    afficher() {
+        console.log(this.nom, this.moyenne);
+    }
+}
+
+const e1 = new Etudiant("Ali", 15);
+const e2 = new Etudiant("Ahmed", 12);
+
+e1.afficher();
+e2.afficher();</pre>
+    </div>
+    <p>
+        <code>class</code> définit une classe.
+        <code>constructor</code> initialise les objets.
+        <code>new</code> crée une nouvelle instance.
+    </p>
+
+    <h4>Héritage</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>class Personne {
+    constructor(nom) {
+        this.nom = nom;
+    }
+
+    saluer() {
+        return "Bonjour " + this.nom;
+    }
+}
+
+class Etudiant extends Personne {
+    constructor(nom, filiere) {
+        super(nom);
+        this.filiere = filiere;
+    }
+}
+
+const e = new Etudiant("Ali", "Informatique");
+
+console.log(e.saluer());</pre>
+    </div>
+    <p>
+        <code>extends</code> permet à une classe d'hériter d'une autre.
+        <code>super()</code> appelle le constructeur de la classe parent.
+    </p>
+
+    <h3 class="subheading" id="strings">12. Les chaînes de caractères</h3>
+
+    <p>Une chaîne de caractères permet de représenter du texte.</p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let texte = "JavaScript est intéressant";
+
+console.log(texte.length);
+console.log(texte.toUpperCase());
+console.log(texte.toLowerCase());
+console.log(texte.includes("JavaScript"));
+console.log(texte.startsWith("Java"));
+console.log(texte.replace("intéressant", "puissant"));
+console.log(texte.substring(0, 10));
+console.log(texte.trim());</pre>
+    </div>
+
+    <p>
+        <code>length</code> compte les unités de code UTF-16 de la chaîne.
+        <code>toUpperCase()</code> met en majuscules.
+        <code>toLowerCase()</code> met en minuscules.
+        <code>includes()</code> recherche un texte.
+        <code>replace()</code> remplace une partie.
+        <code>trim()</code> retire les espaces aux extrémités.
+    </p>
+
+    <h4>Template literals</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = "Mohamed";
+let age = 20;
+
+let message = `Je m'appelle ${nom} et j'ai ${age} ans.`;
+
+console.log(message);</pre>
+    </div>
+    <p>Fonction : insérer facilement des variables dans une chaîne avec les accents graves.</p>
+
+    <h3 class="subheading" id="dom">13. Le DOM (Document Object Model)</h3>
+
+    <p>
+        Le DOM est une représentation structurée de la page HTML sous forme
+        d'objets. JavaScript peut utiliser le DOM pour lire et modifier
+        les éléments HTML.
+    </p>
+
+    <div class="note">
+        <strong>Notion essentielle :</strong>
+        le DOM établit le lien entre JavaScript et HTML.
+        Il permet de changer le contenu, les attributs, les classes,
+        les styles et les éléments d'une page.
+    </div>
+
+    <h4>Sélectionner les éléments</h4>
+
+    <table class="comparison">
+        <tr><th>Méthode</th><th>Fonction</th></tr>
+        <tr><td>getElementById()</td><td>Sélectionner un élément par son ID</td></tr>
+        <tr><td>getElementsByClassName()</td><td>Sélectionner par classe</td></tr>
+        <tr><td>getElementsByTagName()</td><td>Sélectionner par balise</td></tr>
+        <tr><td>querySelector()</td><td>Sélectionner le premier élément correspondant</td></tr>
+        <tr><td>querySelectorAll()</td><td>Sélectionner tous les éléments correspondants</td></tr>
+    </table>
+
+    <div class="codebox">
+        <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;h1 id="titre"&gt;Ancien titre&lt;/h1&gt;
+&lt;p class="description"&gt;Texte&lt;/p&gt;</pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const titre = document.getElementById("titre");
+const description = document.querySelector(".description");
+
+console.log(titre);
+console.log(description);</pre>
+    </div>
+
+    <h4>Modifier le contenu</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const titre = document.getElementById("titre");
+
+titre.textContent = "Nouveau titre";</pre>
+    </div>
+    <p>
+        <code>textContent</code> modifie le texte d'un élément sans interpréter
+        les balises HTML.
+    </p>
+
+    <h4>innerHTML</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const zone = document.getElementById("zone");
+
+zone.innerHTML = "&lt;strong&gt;Texte important&lt;/strong&gt;";</pre>
+    </div>
+    <p>
+        Fonction : lire ou remplacer le contenu HTML d'un élément.
+        Attention : ne placez jamais directement du contenu utilisateur
+        non fiable dans innerHTML.
+    </p>
+
+    <h4>Modifier les attributs</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const image = document.querySelector("img");
+
+image.setAttribute("alt", "Photo descriptive");
+image.setAttribute("title", "Mon image");
+
+console.log(image.getAttribute("alt"));
+
+image.removeAttribute("title");</pre>
+    </div>
+    <p>
+        <code>setAttribute()</code> ajoute ou modifie un attribut.
+        <code>getAttribute()</code> lit un attribut.
+        <code>removeAttribute()</code> le supprime.
+    </p>
+
+    <h4>Créer et supprimer des éléments</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const liste = document.getElementById("liste");
+
+const element = document.createElement("li");
+
+element.textContent = "Nouvel élément";
+
+liste.appendChild(element);
+
+// Supprimer l'élément
+element.remove();</pre>
+    </div>
+    <p>
+        <code>createElement()</code> crée un élément HTML.
+        <code>appendChild()</code> l'ajoute à un parent.
+        <code>remove()</code> supprime l'élément.
+    </p>
+
+    <h3 class="subheading" id="evenements">14. Les événements JavaScript</h3>
+
+    <p>
+        Un événement est une action ou un changement détecté par le navigateur :
+        clic, saisie, déplacement de souris, validation d'un formulaire, etc.
+    </p>
+
+    <table class="comparison">
+        <tr><th>Événement</th><th>Fonction</th></tr>
+        <tr><td>click</td><td>Détecter un clic</td></tr>
+        <tr><td>dblclick</td><td>Détecter un double clic</td></tr>
+        <tr><td>input</td><td>Détecter une modification immédiate d'une saisie</td></tr>
+        <tr><td>change</td><td>Détecter un changement validé</td></tr>
+        <tr><td>submit</td><td>Détecter la soumission d'un formulaire</td></tr>
+        <tr><td>focus</td><td>Détecter le focus</td></tr>
+        <tr><td>blur</td><td>Détecter la perte de focus</td></tr>
+        <tr><td>keydown</td><td>Détecter l'appui sur une touche</td></tr>
+        <tr><td>keyup</td><td>Détecter le relâchement d'une touche</td></tr>
+        <tr><td>mouseover</td><td>Détecter le passage de la souris</td></tr>
+        <tr><td>load</td><td>Détecter le chargement</td></tr>
+    </table>
+
+    <h4>addEventListener()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;button id="btn"&gt;Cliquez&lt;/button&gt;
+&lt;p id="message"&gt;&lt;/p&gt;</pre>
+    </div>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const bouton = document.getElementById("btn");
+const message = document.getElementById("message");
+
+bouton.addEventListener("click", function() {
+    message.textContent = "Vous avez cliqué !";
+});</pre>
+    </div>
+    <p>
+        Fonction : associer une fonction à un événement sans mélanger
+        le comportement et le HTML.
+    </p>
+
+    <h4>L'objet event</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>document.addEventListener("click", function(event) {
+    console.log(event.target);
+});</pre>
+    </div>
+    <p>
+        <code>event</code> représente les informations relatives à l'événement.
+        <code>event.target</code> désigne l'élément qui a déclenché l'événement.
+    </p>
+
+    <h4>preventDefault()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    console.log("Soumission contrôlée par JavaScript");
+});</pre>
+    </div>
+    <p>
+        Fonction : empêcher le comportement par défaut d'une action,
+        par exemple l'envoi automatique d'un formulaire.
+    </p>
+
+    <h4>Propagation des événements</h4>
+    <div class="card">
+        <p>
+            Lorsqu'un événement se produit sur un élément imbriqué,
+            il peut se propager vers ses éléments parents.
+            Ce mécanisme est appelé propagation.
+        </p>
+        <ul>
+            <li><strong>Capturing :</strong> propagation de l'extérieur vers l'intérieur.</li>
+            <li><strong>Target :</strong> élément qui reçoit l'événement.</li>
+            <li><strong>Bubbling :</strong> propagation de l'intérieur vers l'extérieur.</li>
+        </ul>
+        <div class="codebox">
+            <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>parent.addEventListener("click", function() {
+    console.log("Parent");
+});
+
+enfant.addEventListener("click", function(event) {
+    console.log("Enfant");
+    event.stopPropagation();
+});</pre>
+        </div>
+        <p><code>stopPropagation()</code> arrête la propagation de l'événement.</p>
+    </div>
+
+    <h3 class="subheading" id="formulaires">15. Manipulation des formulaires HTML</h3>
+
+    <p>
+        JavaScript est particulièrement important pour gérer les formulaires.
+        Il permet de récupérer les valeurs, vérifier les informations
+        et afficher des messages sans recharger la page.
+    </p>
+
+    <div class="card">
+        <h4>Exemple : formulaire HTML</h4>
+        <div class="codebox">
+            <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;form id="monFormulaire"&gt;
+
+    &lt;label for="nom"&gt;Nom&lt;/label&gt;
+    &lt;input type="text" id="nom"&gt;
+
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email"&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;</pre>
+        </div>
+        <p>
+            <code>id</code> permet de retrouver un élément.
+            <code>type</code> définit la nature du champ.
+            <code>submit</code> déclenche la soumission du formulaire.
+        </p>
+    </div>
+
+    <h4>Récupérer la valeur d'un input</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const nom = document.getElementById("nom");
+
+console.log(nom.value);</pre>
+    </div>
+    <p>
+        <code>value</code> permet de lire ou modifier la valeur d'un champ.
+        Pour un champ texte, la valeur récupérée est une chaîne de caractères.
+    </p>
+
+    <h4>Modifier un champ</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>document.getElementById("nom").value = "Mohamed";</pre>
+    </div>
+    <p>Fonction : remplir automatiquement un champ.</p>
+
+    <h4>Récupérer une valeur numérique</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const age = Number(document.getElementById("age").value);
+
+console.log(age + 5);</pre>
+    </div>
+    <p>
+        Fonction : convertir une valeur de formulaire en nombre
+        avant de réaliser des calculs.
+    </p>
+
+    <h4>Checkbox et radio</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const accepter = document.getElementById("accepter");
+
+console.log(accepter.checked);
+
+const choix = document.querySelector(
+    'input[name="sexe"]:checked'
+);
+
+if (choix) {
+    console.log(choix.value);
+}</pre>
+    </div>
+    <p>
+        <code>checked</code> permet de vérifier si une case est cochée.
+        <code>:checked</code> sélectionne un bouton radio sélectionné.
+    </p>
+
+    <h4>Récupérer une sélection</h4>
+    <div class="codebox">
+        <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;select id="filiere"&gt;
+    &lt;option value=""&gt;Choisir&lt;/option&gt;
+    &lt;option value="TI"&gt;Technologies de l'informatique&lt;/option&gt;
+    &lt;option value="GE"&gt;Génie électrique&lt;/option&gt;
+&lt;/select&gt;</pre>
+        </div>
+        <div class="codebox">
+            <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const filiere = document.getElementById("filiere");
+
+console.log(filiere.value);</pre>
+        </div>
+        <p>Fonction : récupérer la valeur de l'option sélectionnée.</p>
+
+    <h3 class="subheading" id="validation">16. Validation des inputs : un point essentiel</h3>
+
+    <p>
+        La validation consiste à vérifier que les données saisies par
+        l'utilisateur respectent les règles attendues avant de les utiliser.
+    </p>
+
+    <div class="note">
+        <strong>Exemple concret :</strong>
+        un formulaire d'inscription demande un nom, un email, un mot de passe
+        et un âge. JavaScript vérifie chaque champ et informe l'utilisateur
+        si une donnée est incorrecte.
+    </div>
+
+    <h4>Les différentes vérifications</h4>
+
+    <table class="comparison">
+        <tr><th>Vérification</th><th>Fonction</th><th>Exemple</th></tr>
+        <tr><td>Champ vide</td><td>Vérifier la présence d'une valeur</td><td>nom.trim() !== ""</td></tr>
+        <tr><td>Longueur</td><td>Vérifier le nombre de caractères</td><td>nom.length >= 3</td></tr>
+        <tr><td>Nombre</td><td>Vérifier la validité numérique</td><td>Number.isFinite(age)</td></tr>
+        <tr><td>Email</td><td>Vérifier le format</td><td>input type=email</td></tr>
+        <tr><td>Mot de passe</td><td>Vérifier les règles définies</td><td>password.length >= 8</td></tr>
+        <tr><td>Correspondance</td><td>Comparer deux valeurs</td><td>mdp === confirmation</td></tr>
+        <tr><td>Intervalle</td><td>Vérifier une limite</td><td>age >= 18 && age <= 100</td></tr>
+    </table>
+
+    <h4>Exemple 1 : vérifier un champ vide</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const nom = document.getElementById("nom").value;
+
+if (nom.trim() === "") {
+    console.log("Le nom est obligatoire");
+} else {
+    console.log("Nom valide");
+}</pre>
+    </div>
+
+    <p>
+        <code>trim()</code> supprime les espaces au début et à la fin.
+        Ainsi, un champ contenant uniquement des espaces est considéré vide.
+    </p>
+
+    <h4>Exemple 2 : vérifier la longueur</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = "Ali";
+
+if (nom.length < 3) {
+    console.log("Nom trop court");
+} else {
+    console.log("Nom accepté");
+}</pre>
+    </div>
+
+    <p><code>length</code> permet de compter la longueur d'une chaîne.</p>
+
+    <h4>Exemple 3 : vérifier un email</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const email = document.getElementById("email");
+
+if (!email.validity.valid) {
+    console.log("Email invalide");
+} else {
+    console.log("Format valide");
+}</pre>
+    </div>
+
+    <p>
+        Le navigateur vérifie le format de base d'un champ
+        <code>type="email"</code>. Cela ne garantit pas que l'adresse
+        existe réellement.
+    </p>
+
+    <h4>Exemple 4 : vérifier un mot de passe</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let motDePasse = "JavaScript2026";
+
+if (motDePasse.length < 8) {
+    console.log("Mot de passe trop court");
+} else {
+    console.log("Longueur acceptable");
+}</pre>
+    </div>
+
+    <p>Fonction : vérifier que le mot de passe respecte une longueur minimale.</p>
+
+    <h4>Exemple 5 : comparer deux mots de passe</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let password = "abc12345";
+let confirmation = "abc12345";
+
+if (password !== confirmation) {
+    console.log("Les mots de passe sont différents");
+} else {
+    console.log("Confirmation correcte");
+}</pre>
+    </div>
+
+    <h4>Exemple 6 : vérifier un nombre</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let age = Number("20");
+
+if (!Number.isFinite(age)) {
+    console.log("Valeur numérique invalide");
+} else if (age < 18 || age > 100) {
+    console.log("Âge hors limites");
+} else {
+    console.log("Âge valide");
+}</pre>
+    </div>
+
+    <h4>Exemple 7 : utiliser une expression régulière</h4>
+
+    <p>
+        Une expression régulière (RegExp) permet de rechercher ou vérifier
+        un motif dans une chaîne de caractères.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const codePostal = "1234";
+
+const regex = /^[0-9]{4}$/;
+
+if (regex.test(codePostal)) {
+    console.log("Format correct");
+} else {
+    console.log("Format incorrect");
+}</pre>
+    </div>
+
+    <p>
+        <code>^</code> indique le début, <code>$</code> indique la fin,
+        <code>[0-9]</code> accepte un chiffre et <code>{4}</code>
+        exige exactement quatre chiffres.
+    </p>
+
+    <h4>Exemple complet : validation d'un formulaire</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;form id="inscription"&gt;
+
+    &lt;input type="text" id="nom" placeholder="Nom"&gt;
+
+    &lt;input type="email" id="email" placeholder="Email"&gt;
+
+    &lt;input type="password" id="password"
+           placeholder="Mot de passe"&gt;
+
+    &lt;input type="password" id="confirmation"
+           placeholder="Confirmer le mot de passe"&gt;
+
+    &lt;button type="submit"&gt;S'inscrire&lt;/button&gt;
+
+    &lt;p id="erreur"&gt;&lt;/p&gt;
+    &lt;p id="succes"&gt;&lt;/p&gt;
+
+&lt;/form&gt;</pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const formulaire = document.getElementById("inscription");
+
+formulaire.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("email");
+    const password = document.getElementById("password").value;
+    const confirmation = document.getElementById("confirmation").value;
+
+    const erreur = document.getElementById("erreur");
+    const succes = document.getElementById("succes");
+
+    erreur.textContent = "";
+    succes.textContent = "";
+
+    if (nom.length < 3) {
+        erreur.textContent = "Le nom doit contenir au moins 3 caractères.";
+        return;
+    }
+
+    if (!email.validity.valid || email.value.trim() === "") {
+        erreur.textContent = "Adresse email invalide.";
+        return;
+    }
+
+    if (password.length < 8) {
+        erreur.textContent = "Le mot de passe doit contenir 8 caractères minimum.";
+        return;
+    }
+
+    if (password !== confirmation) {
+        erreur.textContent = "Les mots de passe ne correspondent pas.";
+        return;
+    }
+
+    succes.textContent = "Inscription validée !";
+});</pre>
+    </div>
+
+    <div class="success">
+        <strong>À comprendre :</strong>
+        <ul>
+            <li><code>submit</code> détecte l'envoi du formulaire.</li>
+            <li><code>preventDefault()</code> empêche le rechargement automatique.</li>
+            <li><code>value</code> récupère les informations saisies.</li>
+            <li><code>trim()</code> élimine les espaces inutiles.</li>
+            <li><code>return</code> arrête la fonction si une vérification échoue.</li>
+            <li><code>textContent</code> affiche un message.</li>
+        </ul>
+    </div>
+
+    <h4>La validation HTML et JavaScript</h4>
+
+    <p>
+        HTML possède déjà plusieurs outils de validation :
+        <code>required</code>, <code>minlength</code>, <code>maxlength</code>,
+        <code>min</code>, <code>max</code>, <code>pattern</code> et les types
+        de champs.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>HTML</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;input
+    type="text"
+    required
+    minlength="3"
+    maxlength="30"
+    pattern="[A-Za-zÀ-ÿ ]+"
+    placeholder="Votre nom"&gt;
+
+&lt;input
+    type="number"
+    min="18"
+    max="100"
+    required&gt;
+
+&lt;input
+    type="email"
+    required&gt;</pre>
+    </div>
+
+    <p>
+        <code>checkValidity()</code> vérifie la validité d'un formulaire
+        ou d'un champ. <code>reportValidity()</code> affiche également
+        les messages natifs du navigateur.
+    </p>
+
+    <div class="warning">
+        La validation JavaScript côté navigateur améliore l'expérience utilisateur,
+        mais elle ne garantit jamais la sécurité des données.
+        Un serveur doit également vérifier les informations reçues.
+    </div>
+
+    <h3 class="subheading" id="htmlcss">17. Contrôler HTML et CSS avec JavaScript</h3>
+
+    <p>
+        JavaScript peut modifier directement les propriétés CSS,
+        ajouter des classes, cacher des éléments et créer des interactions.
+    </p>
+
+    <h4>Modifier une propriété CSS</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const titre = document.getElementById("titre");
+
+titre.style.color = "red";
+titre.style.backgroundColor = "black";
+titre.style.fontSize = "30px";
+titre.style.padding = "20px";</pre>
+    </div>
+
+    <p>
+        Fonction : changer directement les propriétés CSS d'un élément.
+        En JavaScript, les propriétés composées utilisent généralement
+        le camelCase : <code>backgroundColor</code> au lieu de
+        <code>background-color</code>.
+    </p>
+
+    <h4>classList.add()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>element.classList.add("active");</pre>
+    </div>
+    <p>Fonction : ajouter une classe CSS.</p>
+
+    <h4>classList.remove()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>element.classList.remove("active");</pre>
+    </div>
+    <p>Fonction : supprimer une classe CSS.</p>
+
+    <h4>classList.toggle()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>element.classList.toggle("active");</pre>
+    </div>
+    <p>Fonction : ajouter une classe si elle est absente, sinon la supprimer.</p>
+
+    <h4>classList.contains()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>if (element.classList.contains("active")) {
+    console.log("La classe existe");
+}</pre>
+    </div>
+    <p>Fonction : vérifier si une classe est présente.</p>
+
+    <h4>Afficher et cacher un élément</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>element.style.display = "none";  // Cacher
+element.style.display = "block"; // Afficher</pre>
+    </div>
+
+    <h4>Exemple pratique : bouton mode sombre</h4>
+
+    <div class="codebox">
+        <div class="code-header"><span>HTML + CSS</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;button id="theme"&gt;Changer le thème&lt;/button&gt;
+
+&lt;style&gt;
+.dark {
+    background: #191919;
+    color: white;
+}
+&lt;/style&gt;</pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>document.getElementById("theme")
+.addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+});</pre>
+    </div>
+    <p>
+        Fonction : ajouter ou retirer une classe sur le body pour
+        modifier l'apparence de toute la page.
+    </p>
+
+    <h4>Créer une interaction complète</h4>
+
+    <div class="card">
+        <p>Testez le contrôle de HTML et CSS avec ce bouton :</p>
+        <h3 id="demoTitre">Bonjour JavaScript</h3>
+        <button class="btn btn-orange" onclick="demoChanger()">Changer le style</button>
+        <button class="btn btn-dark" onclick="demoReset()">Réinitialiser</button>
+    </div>
+
+    <h3 class="subheading" id="dates">18. Dates et Math</h3>
+
+    <h4>Objet Date</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const maintenant = new Date();
+
+console.log(maintenant);
+console.log(maintenant.getFullYear());
+console.log(maintenant.getMonth()); // 0 à 11
+console.log(maintenant.getDate());
+console.log(maintenant.getDay());   // 0 à 6
+console.log(maintenant.getHours());
+console.log(maintenant.getMinutes());</pre>
+    </div>
+    <p>
+        <code>new Date()</code> crée un objet date.
+        <code>getMonth()</code> retourne un mois compris entre 0 et 11.
+        <code>getDay()</code> retourne le jour de la semaine.
+    </p>
+
+    <h4>Objet Math</h4>
+    <table class="comparison">
+        <tr><th>Méthode</th><th>Fonction</th></tr>
+        <tr><td>Math.round()</td><td>Arrondir</td></tr>
+        <tr><td>Math.floor()</td><td>Arrondir vers le bas</td></tr>
+        <tr><td>Math.ceil()</td><td>Arrondir vers le haut</td></tr>
+        <tr><td>Math.random()</td><td>Nombre aléatoire entre 0 inclus et 1 exclu</td></tr>
+        <tr><td>Math.max()</td><td>Maximum</td></tr>
+        <tr><td>Math.min()</td><td>Minimum</td></tr>
+        <tr><td>Math.sqrt()</td><td>Racine carrée</td></tr>
+        <tr><td>Math.pow()</td><td>Puissance</td></tr>
+        <tr><td>Math.abs()</td><td>Valeur absolue</td></tr>
+    </table>
+
+    <div class="codebox">
+        <div class="code-header"><span>Exemple</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>console.log(Math.round(4.7)); // 5
+console.log(Math.floor(4.7)); // 4
+console.log(Math.ceil(4.2));  // 5
+console.log(Math.sqrt(25));   // 5
+console.log(Math.max(10, 20, 5)); // 20
+
+// Nombre entier aléatoire de 1 à 10
+let nombre = Math.floor(Math.random() * 10) + 1;
+
+console.log(nombre);</pre>
+    </div>
+
+    <h3 class="subheading" id="json">19. JSON</h3>
+
+    <p>
+        JSON (JavaScript Object Notation) est un format léger utilisé
+        pour échanger des données entre applications et serveurs.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JSON</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>{
+    "nom": "Mohamed",
+    "age": 20,
+    "filiere": "Informatique"
+}</pre>
+    </div>
+
+    <h4>JSON.stringify()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const etudiant = {
+    nom: "Ali",
+    age: 20
+};
+
+const texte = JSON.stringify(etudiant);
+
+console.log(texte);</pre>
+    </div>
+    <p>Fonction : convertir une valeur JavaScript compatible en texte JSON.</p>
+
+    <h4>JSON.parse()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const texte = '{"nom":"Ali","age":20}';
+
+const objet = JSON.parse(texte);
+
+console.log(objet.nom);</pre>
+    </div>
+    <p>Fonction : transformer une chaîne JSON valide en valeur JavaScript.</p>
+
+    <h3 class="subheading" id="storage">20. LocalStorage et SessionStorage</h3>
+
+    <p>
+        Le navigateur permet de conserver certaines informations localement
+        grâce au Web Storage.
+    </p>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3>LocalStorage</h3>
+            <p>Conserve les données après la fermeture du navigateur, jusqu'à leur suppression.</p>
+        </div>
+        <div class="card">
+            <h3>SessionStorage</h3>
+            <p>Conserve les données pendant la session de navigation de l'onglet.</p>
+        </div>
+    </div>
+
+    <h4>Enregistrer une valeur</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>localStorage.setItem("nom", "Mohamed");
+
+sessionStorage.setItem("theme", "dark");</pre>
+    </div>
+    <p>Fonction : enregistrer une information sous forme de chaîne.</p>
+
+    <h4>Récupérer une valeur</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let nom = localStorage.getItem("nom");
+
+console.log(nom);</pre>
+    </div>
+    <p>Fonction : lire une valeur précédemment enregistrée.</p>
+
+    <h4>Supprimer une valeur ou tout le stockage</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>localStorage.removeItem("nom");
+
+// Supprimer toutes les données
+localStorage.clear();</pre>
+    </div>
+
+    <h4>Enregistrer un tableau d'étudiants</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const etudiants = [
+    {nom: "Ali", moyenne: 15},
+    {nom: "Ahmed", moyenne: 12}
+];
+
+localStorage.setItem(
+    "etudiants",
+    JSON.stringify(etudiants)
+);
+
+const donnees = JSON.parse(
+    localStorage.getItem("etudiants") || "[]"
+);
+
+console.log(donnees);</pre>
+    </div>
+    <p>Fonction : conserver une collection d'objets en la convertissant en JSON.</p>
+
+    <div class="warning">
+        Ne stockez jamais de mots de passe, de secrets ou de données sensibles
+        dans LocalStorage. Les scripts exécutés sur la page peuvent accéder
+        à ces données.
+    </div>
+
+    <h3 class="subheading" id="es6">21. JavaScript moderne (ES6+)</h3>
+
+    <p>
+        ES6, également appelé ECMAScript 2015, a introduit plusieurs
+        fonctionnalités importantes dans le langage.
+    </p>
+
+    <h4>let et const</h4>
+    <p>Déclarations modernes avec portée de bloc.</p>
+
+    <h4>Template literals</h4>
+    <p>Écriture de chaînes avec interpolation grâce à <code>${'{variable}'}</code>.</p>
+
+    <h4>Destructuring et Spread</h4>
+    <p>Extraction et copie de valeurs.</p>
+
+    <h4>Classes</h4>
+    <p>Organisation du code autour de classes et d'instances.</p>
+
+    <h4>Modules import/export</h4>
+    <div class="codebox">
+        <div class="code-header"><span>math.js</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>export function addition(a, b) {
+    return a + b;
+}
+
+export const PI = 3.14159;</pre>
+    </div>
+    <div class="codebox">
+        <div class="code-header"><span>main.js</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>import { addition, PI } from "./math.js";
+
+console.log(addition(5, 3));
+console.log(PI);</pre>
+    </div>
+    <p>
+        <code>export</code> rend une valeur disponible dans un autre module.
+        <code>import</code> permet de l'utiliser.
+        Les modules ES doivent être chargés avec
+        <code>type="module"</code>.
+    </p>
+
+    <h4>Set</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const nombres = [1, 2, 2, 3, 3, 4];
+
+const uniques = [...new Set(nombres)];
+
+console.log(uniques); // [1, 2, 3, 4]</pre>
+    </div>
+    <p>Fonction : stocker des valeurs uniques, sans doublons.</p>
+
+    <h4>Map</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const utilisateurs = new Map();
+
+utilisateurs.set("id1", "Ali");
+utilisateurs.set("id2", "Ahmed");
+
+console.log(utilisateurs.get("id1"));
+console.log(utilisateurs.has("id2"));
+
+utilisateurs.delete("id1");</pre>
+    </div>
+    <p>Fonction : stocker des associations clé-valeur avec des clés de différents types.</p>
+
+    <h3 class="subheading" id="async">22. Programmation asynchrone</h3>
+
+    <p>
+        Une opération asynchrone permet de lancer un traitement qui peut
+        prendre du temps sans bloquer inutilement le déroulement du programme.
+        Par exemple : récupérer des données depuis un serveur.
+    </p>
+
+    <h4>setTimeout()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>console.log("Début");
+
+setTimeout(function() {
+    console.log("Message après 2 secondes");
+}, 2000);
+
+console.log("Fin");</pre>
+    </div>
+    <p>Fonction : programmer l'exécution d'une fonction après un délai minimal.</p>
+
+    <h4>setInterval()</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let compteur = 0;
+
+const intervalle = setInterval(function() {
+
+    compteur++;
+
+    console.log(compteur);
+
+    if (compteur === 5) {
+        clearInterval(intervalle);
+    }
+
+}, 1000);</pre>
+    </div>
+    <p>
+        Fonction : répéter une opération à intervalles réguliers.
+        <code>clearInterval()</code> arrête la répétition.
+    </p>
+
+    <h4>Les Promises</h4>
+    <p>
+        Une Promise représente le résultat futur d'une opération asynchrone.
+        Elle peut être en attente, réussie ou rejetée.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const operation = new Promise(function(resolve, reject) {
+
+    let succes = true;
+
+    if (succes) {
+        resolve("Opération réussie");
+    } else {
+        reject("Opération échouée");
+    }
+
+});
+
+operation
+    .then(resultat => {
+        console.log(resultat);
+    })
+    .catch(erreur => {
+        console.log(erreur);
+    });</pre>
+    </div>
+
+    <p>
+        <code>resolve()</code> valide l'opération.
+        <code>reject()</code> signale un échec.
+        <code>then()</code> traite le résultat.
+        <code>catch()</code> traite le rejet.
+    </p>
+
+    <h4>async et await</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function attendre() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Terminé");
+        }, 1000);
+    });
+}
+
+async function executer() {
+
+    console.log("Début");
+
+    const resultat = await attendre();
+
+    console.log(resultat);
+}
+
+executer();</pre>
+    </div>
+    <p>
+        <code>async</code> déclare une fonction asynchrone.
+        <code>await</code> attend le résultat d'une Promise dans un contexte
+        autorisé, sans bloquer le navigateur.
+    </p>
+
+    <h3 class="subheading" id="fetch">23. Fetch API et communication avec un serveur</h3>
+
+    <p>
+        Fetch permet d'effectuer des requêtes HTTP pour envoyer ou récupérer
+        des données depuis une API.
+    </p>
+
+    <h4>Récupérer des données</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>async function chargerUtilisateurs() {
+
+    try {
+
+        const reponse = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+        );
+
+        if (!reponse.ok) {
+            throw new Error("Erreur HTTP : " + reponse.status);
+        }
+
+        const utilisateurs = await reponse.json();
+
+        console.log(utilisateurs);
+
+    } catch (erreur) {
+
+        console.error(erreur.message);
+
+    }
+}
+
+chargerUtilisateurs();</pre>
+    </div>
+
+    <p>
+        <code>fetch()</code> envoie une requête.
+        <code>response.ok</code> indique si la réponse HTTP est dans
+        la plage de succès.
+        <code>response.json()</code> lit et transforme le corps JSON.
+    </p>
+
+    <h4>Envoyer des données avec POST</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>async function ajouterUtilisateur() {
+
+    const utilisateur = {
+        nom: "Mohamed",
+        age: 20
+    };
+
+    try {
+
+        const reponse = await fetch(
+            "https://jsonplaceholder.typicode.com/users",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(utilisateur)
+            }
+        );
+
+        if (!reponse.ok) {
+            throw new Error("Erreur d'envoi");
+        }
+
+        const resultat = await reponse.json();
+
+        console.log(resultat);
+
+    } catch (erreur) {
+
+        console.error(erreur);
+
+    }
+}</pre>
+    </div>
+    <p>
+        <code>method</code> définit la méthode HTTP.
+        <code>headers</code> définit les informations de la requête.
+        <code>body</code> contient les données envoyées.
+        <code>JSON.stringify()</code> transforme l'objet en JSON.
+    </p>
+
+    <h4>Les principales méthodes HTTP</h4>
+    <table class="comparison">
+        <tr><th>Méthode</th><th>Utilisation</th></tr>
+        <tr><td>GET</td><td>Récupérer des données</td></tr>
+        <tr><td>POST</td><td>Créer une ressource</td></tr>
+        <tr><td>PUT</td><td>Remplacer une ressource</td></tr>
+        <tr><td>PATCH</td><td>Modifier partiellement une ressource</td></tr>
+        <tr><td>DELETE</td><td>Supprimer une ressource</td></tr>
+    </table>
+
+    <h3 class="subheading" id="erreurs">24. Gestion des erreurs</h3>
+
+    <p>
+        Une erreur peut apparaître lorsqu'une instruction est incorrecte,
+        lorsqu'une donnée manque ou lorsqu'une opération échoue.
+    </p>
+
+    <h4>try / catch / finally</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>try {
+
+    let resultat = JSON.parse("texte invalide");
+
+    console.log(resultat);
+
+} catch (erreur) {
+
+    console.log("Une erreur est apparue");
+    console.log(erreur.message);
+
+} finally {
+
+    console.log("Fin du traitement");
+
+}</pre>
+    </div>
+
+    <p>
+        <code>try</code> contient le code à tester.
+        <code>catch</code> récupère une exception.
+        <code>finally</code> s'exécute à la fin, qu'il y ait une erreur ou non.
+    </p>
+
+    <h4>throw</h4>
+    <div class="codebox">
+        <div class="code-header"><span>JavaScript</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>function verifierAge(age) {
+
+    if (age < 0) {
+        throw new Error("Âge invalide");
+    }
+
+    return "Âge accepté";
+}
+
+try {
+
+    console.log(verifierAge(-5));
+
+} catch (erreur) {
+
+    console.log(erreur.message);
+
+}</pre>
+    </div>
+    <p>Fonction : déclencher volontairement une erreur lorsque les données ne respectent pas une règle.</p>
+
+    <h3 class="subheading" id="modules">25. Les modules JavaScript</h3>
+
+    <p>
+        Les modules permettent de séparer un grand programme en plusieurs
+        fichiers spécialisés. Cela facilite la maintenance et la réutilisation.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>calculs.js</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>export function addition(a, b) {
+    return a + b;
+}
+
+export function multiplication(a, b) {
+    return a * b;
+}
+
+export default function soustraction(a, b) {
+    return a - b;
+}</pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>app.js</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>import soustraction, {
+    addition,
+    multiplication
+} from "./calculs.js";
+
+console.log(addition(5, 3));
+console.log(multiplication(5, 3));
+console.log(soustraction(5, 3));</pre>
+    </div>
+
+    <div class="codebox">
+        <div class="code-header"><span>index.html</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>&lt;script type="module" src="app.js"&gt;&lt;/script&gt;</pre>
+    </div>
+
+    <p>
+        Les modules utilisent leur propre portée et fonctionnent avec
+        <code>import</code> et <code>export</code>.
+        Pour les tester correctement dans un navigateur, utilisez un serveur
+        de développement local plutôt que d'ouvrir simplement le fichier.
+    </p>
+
+    <h3 class="subheading" id="securite">26. Sécurité JavaScript</h3>
+
+    <p>
+        La sécurité est indispensable dans les applications Web,
+        particulièrement lorsque les utilisateurs saisissent des informations.
+    </p>
+
+    <div class="card">
+        <h4>1. Éviter les injections HTML</h4>
+        <div class="codebox">
+            <div class="code-header"><span>Bonne pratique</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const message = document.getElementById("message");
+
+message.textContent = valeurUtilisateur;</pre>
+        </div>
+        <p>
+            Utilisez <code>textContent</code> pour afficher du texte non fiable
+            plutôt que de l'interpréter comme du HTML.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4>2. Ne pas faire confiance aux données reçues</h4>
+        <p>
+            Une donnée envoyée par un formulaire peut être modifiée par
+            l'utilisateur. Le serveur doit toujours vérifier les valeurs.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4>3. Protéger les informations sensibles</h4>
+        <p>
+            Ne mettez pas de clés secrètes, mots de passe ou jetons privés
+            directement dans le code JavaScript exécuté dans le navigateur.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4>4. Utiliser des méthodes sûres</h4>
+        <ul>
+            <li>Privilégier textContent pour le texte utilisateur.</li>
+            <li>Valider les données côté serveur.</li>
+            <li>Éviter eval() avec des données externes.</li>
+            <li>Utiliser HTTPS pour les communications sensibles.</li>
+            <li>Contrôler les autorisations sur le serveur.</li>
+        </ul>
+    </div>
+
+    <h3 class="subheading" id="bonnespratiques">27. Bonnes pratiques de programmation</h3>
+
+    <div class="card">
+        <h4>Écrire du code lisible</h4>
+        <div class="codebox">
+            <div class="code-header"><span>À éviter</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>let x=10;let y=20;let z=x+y;</pre>
+        </div>
+        <div class="codebox">
+            <div class="code-header"><span>Recommandé</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>const premierNombre = 10;
+const deuxiemeNombre = 20;
+
+const somme = premierNombre + deuxiemeNombre;</pre>
+        </div>
+    </div>
+
+    <ul>
+        <li>Utiliser des noms de variables explicites.</li>
+        <li>Éviter les répétitions inutiles.</li>
+        <li>Découper les problèmes en fonctions.</li>
+        <li>Utiliser const et let plutôt que var.</li>
+        <li>Éviter les fonctions trop longues.</li>
+        <li>Gérer les erreurs.</li>
+        <li>Tester les différents cas possibles.</li>
+        <li>Commenter les parties complexes.</li>
+        <li>Vérifier les données utilisateur.</li>
+        <li>Séparer HTML, CSS et JavaScript dans les projets importants.</li>
+    </ul>
+
+    <h3 class="subheading" id="architecture">28. Architecture d'un projet JavaScript</h3>
+
+    <p>
+        Un projet professionnel doit être organisé pour que les fichiers
+        soient faciles à retrouver et à modifier.
+    </p>
+
+    <div class="codebox">
+        <div class="code-header"><span>Organisation recommandée</span><button onclick="copyCode(this)">Copier</button></div>
+<pre>mon-projet/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── app.js
+│   ├── fonctions.js
+│   ├── validation.js
+│   └── storage.js
+│
+└── images/
+    └── logo.png</pre>
+    </div>
+
+    <h4>Rôle de chaque fichier</h4>
+    <ul>
+        <li><code>index.html</code> : structure de la page.</li>
+        <li><code>style.css</code> : apparence et mise en page.</li>
+        <li><code>app.js</code> : point d'entrée du programme.</li>
+        <li><code>fonctions.js</code> : fonctions réutilisables.</li>
+        <li><code>validation.js</code> : vérification des formulaires.</li>
+        <li><code>storage.js</code> : gestion des données locales.</li>
+    </ul>
+
+    <div class="success">
+        <strong>Fin du cours :</strong>
+        vous connaissez maintenant les principales notions nécessaires
+        pour développer des applications JavaScript, depuis les variables
+        et les conditions jusqu'aux API, au DOM et à la programmation asynchrone.
+    </div>
+</section>
+
+<!-- ======================================================
+     PARTIE 2 : PROJETS
+====================================================== -->
+
+<section class="section" id="projets">
+    <div class="section-heading">
+        <div class="section-number">PARTIE 02</div>
+        <h2>Projets académiques</h2>
+        <p>Appliquer les notions du cours dans des situations concrètes.</p>
+    </div>
+
+    <div class="note">
+        Les projets sont classés progressivement. L'objectif n'est pas
+        simplement de copier un code, mais de savoir analyser le problème,
+        identifier les notions nécessaires et réaliser chaque fonctionnalité.
+    </div>
+
+    <article class="project" id="projet1">
+        <div class="project-header">
+            <span class="tag">Niveau 01</span>
+            <h3>Projet 01 — Calculatrice scientifique simple</h3>
+            <p>Variables · Conditions · Fonctions · Événements · DOM</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Débutant</span>
+            <p><strong>Objectif :</strong> créer une calculatrice qui réalise des opérations mathématiques.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Créer deux champs pour saisir les nombres.</li>
+                    <li>Créer les boutons addition, soustraction, multiplication et division.</li>
+                    <li>Récupérer les valeurs des champs.</li>
+                    <li>Convertir les valeurs en nombres.</li>
+                    <li>Vérifier que les valeurs sont valides.</li>
+                    <li>Empêcher la division par zéro.</li>
+                    <li>Afficher le résultat dans la page.</li>
+                    <li>Ajouter un bouton pour effacer les champs.</li>
+                </ol>
+            </div>
+            <strong>Contraintes :</strong>
+            <ul>
+                <li>Utiliser des fonctions séparées pour chaque opération.</li>
+                <li>Utiliser addEventListener.</li>
+                <li>Ne pas utiliser eval().</li>
+            </ul>
+            <p><strong>Notions :</strong> variables, Number(), if/else, fonctions, DOM, click.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet2">
+        <div class="project-header">
+            <span class="tag">Niveau 02</span>
+            <h3>Projet 02 — Gestionnaire de notes</h3>
+            <p>Tableaux · Objets · Fonctions · Boucles · DOM</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Débutant / Intermédiaire</span>
+            <p><strong>Objectif :</strong> créer une application permettant de gérer les notes des étudiants.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Saisir le nom d'un étudiant.</li>
+                    <li>Saisir ses notes dans différentes matières.</li>
+                    <li>Enregistrer les étudiants dans un tableau d'objets.</li>
+                    <li>Calculer la moyenne de chaque étudiant.</li>
+                    <li>Afficher la liste des étudiants.</li>
+                    <li>Déterminer si l'étudiant est admis.</li>
+                    <li>Calculer la meilleure et la plus faible moyenne.</li>
+                    <li>Classer les étudiants par moyenne.</li>
+                    <li>Supprimer un étudiant.</li>
+                    <li>Modifier ses notes.</li>
+                </ol>
+            </div>
+            <strong>Contraintes :</strong>
+            <ul>
+                <li>Créer une fonction calculerMoyenne().</li>
+                <li>Utiliser map(), filter() et reduce().</li>
+                <li>Utiliser des objets pour représenter les étudiants.</li>
+            </ul>
+            <p><strong>Notions :</strong> Arrays, objets, boucles, fonctions, sort(), reduce(), DOM.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet3">
+        <div class="project-header">
+            <span class="tag">Niveau 03</span>
+            <h3>Projet 03 — Système de gestion des étudiants</h3>
+            <p>Objets · CRUD · DOM · Tableaux · LocalStorage</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Intermédiaire</span>
+            <p><strong>Objectif :</strong> développer une application complète de gestion administrative des étudiants.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Créer un formulaire d'ajout d'étudiant.</li>
+                    <li>Ajouter un identifiant unique.</li>
+                    <li>Enregistrer nom, prénom, email, âge et filière.</li>
+                    <li>Afficher tous les étudiants dans un tableau HTML.</li>
+                    <li>Modifier les informations d'un étudiant.</li>
+                    <li>Supprimer un étudiant.</li>
+                    <li>Rechercher un étudiant par son nom.</li>
+                    <li>Filtrer les étudiants par filière.</li>
+                    <li>Afficher le nombre total d'étudiants.</li>
+                    <li>Enregistrer les données dans LocalStorage.</li>
+                    <li>Recharger automatiquement les données au démarrage.</li>
+                </ol>
+            </div>
+            <strong>Contraintes :</strong>
+            <ul>
+                <li>Utiliser les opérations CRUD : Create, Read, Update, Delete.</li>
+                <li>Séparer les fonctions de gestion et d'affichage.</li>
+                <li>Valider toutes les informations.</li>
+                <li>Ne pas perdre les données après actualisation.</li>
+            </ul>
+            <p><strong>Notions :</strong> objets, tableaux, DOM, événements, JSON, LocalStorage.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet4">
+        <div class="project-header">
+            <span class="tag">Niveau 04</span>
+            <h3>Projet 04 — Formulaire d'inscription professionnel</h3>
+            <p>Validation · Regex · Événements · DOM · Sécurité</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Intermédiaire</span>
+            <p><strong>Objectif :</strong> créer un formulaire complet avec des vérifications précises.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Créer les champs nom et prénom.</li>
+                    <li>Créer un champ email.</li>
+                    <li>Créer un champ téléphone.</li>
+                    <li>Créer un champ date de naissance.</li>
+                    <li>Créer un champ mot de passe.</li>
+                    <li>Ajouter un champ de confirmation.</li>
+                    <li>Ajouter une liste de filières.</li>
+                    <li>Vérifier les champs obligatoires.</li>
+                    <li>Vérifier les formats et longueurs.</li>
+                    <li>Afficher des messages sous chaque champ.</li>
+                    <li>Afficher un récapitulatif si tout est valide.</li>
+                </ol>
+            </div>
+            <strong>Contraintes :</strong>
+            <ul>
+                <li>Créer une fonction indépendante pour chaque validation.</li>
+                <li>Utiliser les événements input et submit.</li>
+                <li>Utiliser les propriétés validity et les expressions régulières lorsque nécessaire.</li>
+                <li>Afficher les erreurs sans recharger la page.</li>
+            </ul>
+            <p><strong>Notions :</strong> DOM, Regex, événements, fonctions, validation HTML et JS.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet5">
+        <div class="project-header">
+            <span class="tag">Niveau 05</span>
+            <h3>Projet 05 — To-do List intelligente</h3>
+            <p>DOM · Événements · Arrays · LocalStorage · Dates</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Intermédiaire</span>
+            <p><strong>Objectif :</strong> développer une application de gestion des tâches quotidiennes.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Ajouter une tâche.</li>
+                    <li>Modifier une tâche existante.</li>
+                    <li>Supprimer une tâche.</li>
+                    <li>Marquer une tâche comme terminée.</li>
+                    <li>Ajouter une priorité : faible, moyenne, élevée.</li>
+                    <li>Ajouter une date limite.</li>
+                    <li>Filtrer les tâches terminées et non terminées.</li>
+                    <li>Rechercher une tâche.</li>
+                    <li>Afficher les tâches en retard.</li>
+                    <li>Sauvegarder les données.</li>
+                </ol>
+            </div>
+            <p><strong>Notions :</strong> tableaux d'objets, DOM, événements, Date, LocalStorage, filter().</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet6">
+        <div class="project-header">
+            <span class="tag">Niveau 06</span>
+            <h3>Projet 06 — Application de quiz interactif</h3>
+            <p>Arrays · Objets · Random · Conditions · DOM</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Intermédiaire / Avancé</span>
+            <p><strong>Objectif :</strong> construire un système de quiz qui permet de tester les connaissances.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Créer une banque de questions.</li>
+                    <li>Associer plusieurs propositions à chaque question.</li>
+                    <li>Sélectionner des questions aléatoirement.</li>
+                    <li>Permettre de choisir une réponse.</li>
+                    <li>Vérifier la réponse.</li>
+                    <li>Afficher la correction.</li>
+                    <li>Calculer le score final.</li>
+                    <li>Afficher les erreurs commises.</li>
+                    <li>Afficher les explications.</li>
+                    <li>Permettre de recommencer le quiz.</li>
+                </ol>
+            </div>
+            <p><strong>Notions :</strong> tableaux, objets, Math.random(), DOM, fonctions, événements.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet7">
+        <div class="project-header">
+            <span class="tag">Niveau 07</span>
+            <h3>Projet 07 — Système de gestion de stock</h3>
+            <p>CRUD · Objets · Arrays · Calculs · LocalStorage</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Avancé</span>
+            <p><strong>Objectif :</strong> réaliser une application de gestion de produits pour une entreprise.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Ajouter un produit avec identifiant unique.</li>
+                    <li>Définir son nom, sa catégorie et son prix.</li>
+                    <li>Définir la quantité disponible.</li>
+                    <li>Modifier les informations.</li>
+                    <li>Supprimer un produit.</li>
+                    <li>Enregistrer une entrée de stock.</li>
+                    <li>Enregistrer une sortie de stock.</li>
+                    <li>Empêcher une quantité négative.</li>
+                    <li>Calculer la valeur totale du stock.</li>
+                    <li>Afficher les produits en rupture.</li>
+                    <li>Rechercher et filtrer les produits.</li>
+                    <li>Conserver les données localement.</li>
+                </ol>
+            </div>
+            <p><strong>Notions :</strong> objets, tableaux, reduce(), filter(), validation, LocalStorage.</p>
+        </div>
+    </article>
+
+    <article class="project" id="projet8">
+        <div class="project-header">
+            <span class="tag">Niveau 08</span>
+            <h3>Projet 08 — Application météo avec API</h3>
+            <p>Fetch · API · Async/Await · JSON · Gestion des erreurs</p>
+        </div>
+        <div class="project-body">
+            <span class="project-level">Avancé</span>
+            <p><strong>Objectif :</strong> créer une application capable de récupérer les données météorologiques d'une ville.</p>
+            <div class="project-task">
+                <strong>Travail demandé :</strong>
+                <ol>
+                    <li>Créer un champ de recherche de ville.</li>
+                    <li>Vérifier que le champ n'est pas vide.</li>
+                    <li>Utiliser une API météo adaptée.</li>
+                    <li>Envoyer une requête HTTP.</li>
+                    <li>Récupérer la réponse JSON.</li>
+                    <li>Afficher la température.</li>
+                    <li>Afficher la vitesse du vent.</li>
+                    <li>Afficher la description météo.</li>
+                    <li>Afficher un message si la ville est introuvable.</li>
+                    <li>Gérer les erreurs réseau.</li>
+                    <li>Afficher un indicateur de chargement.</li>
+                </ol>
+            </div>
+            <p><strong>Notions :</strong> Fetch, API, async/await, JSON, try/catch, DOM.</p>
+            <div class="warning">
+                Une API météo nécessite généralement une clé personnelle.
+                Ne placez pas une clé secrète dans le code public du navigateur.
+                Utilisez un serveur intermédiaire lorsque la clé doit rester confidentielle.
+            </div>
+        </div>
+    </article>
+
+    <h3 class="subheading">Atelier de programmation — Éditeur JavaScript</h3>
+
+    <div class="card">
+        <p>
+            Cet éditeur vous permet de modifier un exemple JavaScript,
+            de l'exécuter et d'observer le résultat dans la console.
+        </p>
+
+        <textarea class="editor" id="codeEditor" spellcheck="false">let nom = "Mohamed";
+let age = 20;
+
+function presenter(nom, age) {
+    return `Je m'appelle ${nom} et j'ai ${age} ans.`;
+}
+
+console.log(presenter(nom, age));
+
+let notes = [12, 15, 18];
+
+let moyenne = notes.reduce((a, b) => a + b, 0) / notes.length;
+
+console.log("Moyenne :", moyenne);</textarea>
+
+        <div class="editor-actions">
+            <button class="btn btn-orange" onclick="executerCode()">▶ Exécuter</button>
+            <button class="btn btn-dark" onclick="copierEditeur()">Copier le code</button>
+            <button class="btn btn-outline" style="color:var(--ink);border-color:var(--line)" onclick="reinitialiserEditeur()">Réinitialiser</button>
+        </div>
+
+        <h4>Console de résultat</h4>
+        <div class="output" id="consoleOutput" style="min-height:100px;white-space:pre-wrap">Le résultat apparaîtra ici...</div>
+        <div class="warning">
+            Cet éditeur est destiné à l'apprentissage. Le code est exécuté
+            localement dans la page. N'y exécutez pas de code non fiable.
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     PARTIE 3 : QUIZ
+====================================================== -->
+
+<section class="section" id="quiz">
+    <div class="section-heading">
+        <div class="section-number">PARTIE 03</div>
+        <h2>Quiz JavaScript</h2>
+        <p>Évaluez vos connaissances avec des questions aléatoires.</p>
+    </div>
+
+    <div class="note">
+        <strong>Fonctionnement :</strong>
+        choisissez le nombre de questions entre 20 et 40.
+        Les questions sont tirées aléatoirement de la banque.
+        Chaque réponse est corrigée immédiatement et accompagnée
+        d'une explication.
+    </div>
+
+    <div class="quiz-panel" id="quizStart">
+        <h3>Préparation du quiz</h3>
+        <p>La banque contient 200 questions et couvre les principales notions du cours.</p>
+
+        <div class="quiz-settings">
+            <div>
+                <label for="questionCount">Nombre de questions</label>
+                <select id="questionCount">
+                    <option value="20">20 questions</option>
+                    <option value="25">25 questions</option>
+                    <option value="30" selected>30 questions</option>
+                    <option value="35">35 questions</option>
+                    <option value="40">40 questions</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="quizLevel">Niveau</label>
+                <select id="quizLevel">
+                    <option value="all">Tous les niveaux</option>
+                    <option value="1">Débutant</option>
+                    <option value="2">Intermédiaire</option>
+                    <option value="3">Avancé</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="quizCategory">Catégorie</label>
+                <select id="quizCategory">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="Bases">Bases et syntaxe</option>
+                    <option value="Logique">Logique et conditions</option>
+                    <option value="Fonctions">Fonctions</option>
+                    <option value="Tableaux">Tableaux et objets</option>
+                    <option value="DOM">DOM et événements</option>
+                    <option value="Formulaires">Formulaires</option>
+                    <option value="Moderne">JavaScript moderne</option>
+                    <option value="Avancé">Asynchrone et API</option>
+                    <option value="Sécurité">Sécurité et stockage</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn btn-orange" onclick="demarrerQuiz()">Commencer le quiz →</button>
+    </div>
+
+    <div class="quiz-panel" id="quizGame" style="display:none">
+        <div class="quiz-top">
+            <span id="questionCounter">Question 1 / 30</span>
+            <span id="quizPoints">Score : 0</span>
+            <span id="quizCategoryLabel">Bases</span>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+
+        <div class="question" id="questionText"></div>
+
+        <div class="options" id="questionOptions"></div>
+
+        <div class="feedback" id="questionFeedback"></div>
+
+        <div class="quiz-controls">
+            <button class="btn btn-orange" id="verifyButton" onclick="verifierReponse()" disabled>Vérifier</button>
+            <button class="btn btn-dark" id="nextButton" onclick="questionSuivante()" style="display:none">Next →</button>
+        </div>
+    </div>
+
+    <div class="quiz-panel" id="quiz-result" style="display:none">
+        <div class="result-card">
+            <div class="section-number">RÉSULTAT FINAL</div>
+            <h2>Quiz terminé !</h2>
+            <div class="result-score" id="finalScore">0/30</div>
+            <h3 id="resultMessage"></h3>
+            <p id="resultDetails"></p>
+            <div class="grid-3" style="margin:25px 0">
+                <div class="card">
+                    <strong id="correctCount" style="font-size:25px;color:var(--green)">0</strong>
+                    <p>Bonnes réponses</p>
+                </div>
+                <div class="card">
+                    <strong id="wrongCount" style="font-size:25px;color:var(--red)">0</strong>
+                    <p>Mauvaises réponses</p>
+                </div>
+                <div class="card">
+                    <strong id="percentage" style="font-size:25px;color:var(--orange)">0%</strong>
+                    <p>Pourcentage</p>
+                </div>
+            </div>
+            <button class="btn btn-orange" onclick="demarrerQuiz()">Recommencer le quiz</button>
+        </div>
+
+        <h3 class="subheading">Correction détaillée des erreurs</h3>
+        <div id="wrongAnswers"></div>
+
+        <div class="success">
+            <strong>Conseil :</strong>
+            relisez les explications des questions incorrectes,
+            puis reprenez les chapitres correspondants dans le cours.
+        </div>
+    </div>
+</section>
+
+</main>
+</div>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

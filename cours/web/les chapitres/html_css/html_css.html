@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML & CSS — Atelier de développement web</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">WEB<span>LAB</span> / STI</div>
+    <p>HTML & CSS — Atelier d'apprentissage et de pratique</p>
+</header>
+
+<section class="hero">
+    <div class="hero-label">Formation développement web</div>
+    <h1>Apprendre à construire<br>le <span>Web.</span></h1>
+    <p>
+        Un espace pédagogique pour comprendre HTML et CSS,
+        pratiquer avec des exemples interactifs, réaliser des projets
+        et évaluer ses connaissances.
+    </p>
+</section>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<nav class="navigation">
+    <button class="nav-btn active" data-section="course">
+        01 — COURS
+    </button>
+    <button class="nav-btn" data-section="projects">
+        02 — PROJETS
+    </button>
+    <button class="nav-btn" data-section="quiz">
+        03 — QUIZ
+    </button>
+</nav>
+
+<main>
+
+<!-- =====================================================
+     PARTIE 1 : COURS
+===================================================== -->
+
+<section class="section active" id="course">
+
+    <div class="section-heading">
+        <small>PARTIE 01 / APPRENTISSAGE</small>
+        <h2>Le cours HTML & CSS</h2>
+        <p>
+            Des bases jusqu'à la création d'une page web complète.
+            Chaque exemple peut être modifié et exécuté.
+        </p>
+    </div>
+
+    <div class="subnav">
+        <button class="active" data-category="html">HTML</button>
+        <button data-category="css">CSS</button>
+        <button data-category="selectors">Sélecteurs CSS</button>
+        <button data-category="layout">Mise en page</button>
+        <button data-category="responsive">Responsive</button>
+    </div>
+
+    <div class="course-category active" id="html">
+
+        <div class="category-title">
+            HTML — HyperText Markup Language
+        </div>
+
+        <div class="info-box">
+            <h3>1. Introduction à HTML</h3>
+
+            <p>
+                HTML est un langage de balisage qui permet de structurer
+                le contenu d'une page web.
+            </p>
+
+            <p>
+                Une balise HTML est généralement composée d'une balise
+                ouvrante, d'un contenu et d'une balise fermante.
+            </p>
+
+            <pre><code>&lt;p&gt;Bonjour le monde&lt;/p&gt;</code></pre>
+
+            <p>
+                Certaines balises sont vides, comme
+                <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>,
+                <code>&lt;img&gt;</code> et <code>&lt;input&gt;</code>.
+            </p>
+        </div>
+
+        <div class="category-title">
+            2. Structure de base d'une page HTML
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Structure HTML complète</h3>
+                    <p>Les éléments indispensables</p>
+                </div>
+
+                <div class="lesson-content">
+                    <p>
+                        <code>&lt;!DOCTYPE html&gt;</code> indique
+                        au navigateur que le document utilise HTML5.
+                    </p>
+
+                    <ul>
+                        <li><code>&lt;html&gt;</code> : racine du document.</li>
+                        <li><code>&lt;head&gt;</code> : métadonnées.</li>
+                        <li><code>&lt;title&gt;</code> : titre de l'onglet.</li>
+                        <li><code>&lt;meta&gt;</code> : informations du document.</li>
+                        <li><code>&lt;body&gt;</code> : contenu visible.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <label>EXEMPLE INTERACTIF</label>
+
+                        <textarea class="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ma première page</title>
+</head>
+<body>
+  <h1>Bienvenue</h1>
+  <p>Ma première page HTML.</p>
+</body>
+</html></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">
+                                ▶ Exécuter
+                            </button>
+                            <button class="btn btn-light reset-code">
+                                ↺ Réinitialiser
+                            </button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+
+                        <iframe class="preview-frame" title="Aperçu HTML"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Les commentaires</h3>
+                    <p>Écrire des remarques dans le code</p>
+                </div>
+
+                <div class="lesson-content">
+                    <p>
+                        Un commentaire n'est pas affiché par le navigateur.
+                    </p>
+
+                    <pre><code>&lt;!-- Ceci est un commentaire --&gt;</code></pre>
+
+                    <p>Utilité :</p>
+
+                    <ul>
+                        <li>Expliquer une partie du code.</li>
+                        <li>Organiser les sections.</li>
+                        <li>Faciliter la maintenance.</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            3. Les balises de texte
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Titres et paragraphes</h3>
+                    <p>Structurer le texte</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr>
+                                <th>Balise</th>
+                                <th>Fonction</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><code>h1</code></td>
+                                <td>Titre principal</td>
+                                <td>Un seul titre principal recommandé</td>
+                            </tr>
+                            <tr>
+                                <td><code>h2</code></td>
+                                <td>Sous-titre</td>
+                                <td>Section</td>
+                            </tr>
+                            <tr>
+                                <td><code>h3</code></td>
+                                <td>Titre secondaire</td>
+                                <td>Sous-section</td>
+                            </tr>
+                            <tr>
+                                <td><code>h4</code> à <code>h6</code></td>
+                                <td>Autres niveaux</td>
+                                <td>Hiérarchie du contenu</td>
+                            </tr>
+                            <tr>
+                                <td><code>p</code></td>
+                                <td>Paragraphe</td>
+                                <td>Texte normal</td>
+                            </tr>
+                            <tr>
+                                <td><code>br</code></td>
+                                <td>Saut de ligne</td>
+                                <td>Nouvelle ligne</td>
+                            </tr>
+                            <tr>
+                                <td><code>hr</code></td>
+                                <td>Séparation</td>
+                                <td>Ligne horizontale</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><h1>HTML</h1>
+<h2>Les paragraphes</h2>
+<p>Apprendre HTML.</p>
+<p>Apprendre CSS.</p>
+<hr>
+<p>Première ligne<br>Deuxième ligne</p></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu texte"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Formatage du texte</h3>
+                    <p>Mettre en valeur des informations</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr>
+                                <th>Balise</th>
+                                <th>Fonction</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>strong</code></td><td>Importance forte</td></tr>
+                            <tr><td><code>b</code></td><td>Gras visuel</td></tr>
+                            <tr><td><code>em</code></td><td>Emphase</td></tr>
+                            <tr><td><code>i</code></td><td>Texte en italique</td></tr>
+                            <tr><td><code>u</code></td><td>Soulignement</td></tr>
+                            <tr><td><code>mark</code></td><td>Texte surligné</td></tr>
+                            <tr><td><code>del</code></td><td>Texte supprimé</td></tr>
+                            <tr><td><code>ins</code></td><td>Texte ajouté</td></tr>
+                            <tr><td><code>sub</code></td><td>Indice</td></tr>
+                            <tr><td><code>sup</code></td><td>Exposant</td></tr>
+                            <tr><td><code>small</code></td><td>Petit texte</td></tr>
+                            <tr><td><code>blockquote</code></td><td>Citation longue</td></tr>
+                            <tr><td><code>q</code></td><td>Citation courte</td></tr>
+                            <tr><td><code>code</code></td><td>Code informatique</td></tr>
+                            <tr><td><code>pre</code></td><td>Texte préformaté</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><p><strong>Important</strong></p>
+<p><em>Texte en italique</em></p>
+<p><mark>Texte surligné</mark></p>
+<p>H<sub>2</sub>O</p>
+<p>2<sup>3</sup> = 8</p>
+<p><del>Ancien prix</del></p>
+<p><ins>Nouveau prix</ins></p></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu formatage"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            4. Les liens et les images
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>La balise &lt;a&gt;</h3>
+                    <p>Créer des liens hypertextes</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <p>
+                        L'attribut <code>href</code> indique la destination
+                        du lien.
+                    </p>
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Attribut</th><th>Fonction</th><th>Valeurs</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>href</code></td><td>Destination</td><td>URL, fichier, #id</td></tr>
+                            <tr><td><code>target</code></td><td>Ouverture</td><td>_self, _blank</td></tr>
+                            <tr><td><code>title</code></td><td>Information</td><td>Texte</td></tr>
+                            <tr><td><code>download</code></td><td>Téléchargement</td><td>Nom du fichier, vide</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><a href="https://www.google.com"
+   target="_blank"
+   rel="noopener">
+  Visiter Google
+</a>
+
+<br>
+
+<a href="#contact">Aller au contact</a>
+
+<h2 id="contact">Contact</h2></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu liens"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>La balise &lt;img&gt;</h3>
+                    <p>Afficher des images</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Attribut</th><th>Fonction</th><th>Valeurs</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>src</code></td><td>Chemin de l'image</td><td>URL ou fichier</td></tr>
+                            <tr><td><code>alt</code></td><td>Description</td><td>Texte</td></tr>
+                            <tr><td><code>width</code></td><td>Largeur</td><td>Pixels</td></tr>
+                            <tr><td><code>height</code></td><td>Hauteur</td><td>Pixels</td></tr>
+                            <tr><td><code>title</code></td><td>Information</td><td>Texte</td></tr>
+                            <tr><td><code>loading</code></td><td>Chargement</td><td>lazy, eager</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><img
+  src="https://picsum.photos/300/180"
+  alt="Une image"
+  width="300"
+  height="180"
+  title="Mon image"
+  loading="lazy"></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu image"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            5. Les listes
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Listes HTML</h3>
+                    <p>Organiser des éléments</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Balise</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>ul</code></td><td>Liste non ordonnée</td></tr>
+                            <tr><td><code>ol</code></td><td>Liste ordonnée</td></tr>
+                            <tr><td><code>li</code></td><td>Élément de liste</td></tr>
+                            <tr><td><code>dl</code></td><td>Liste de définitions</td></tr>
+                            <tr><td><code>dt</code></td><td>Terme</td></tr>
+                            <tr><td><code>dd</code></td><td>Définition</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>Attributs de <code>ol</code> :</p>
+
+                    <ul>
+                        <li><code>type</code> : 1, A, a, I, i.</li>
+                        <li><code>start</code> : nombre de départ.</li>
+                        <li><code>reversed</code> : ordre décroissant.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><h2>Langages</h2>
+
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+<ol type="A" start="2">
+  <li>Première étape</li>
+  <li>Deuxième étape</li>
+</ol>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>Langage de balisage.</dd>
+</dl></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu listes"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            6. Les tableaux
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Créer un tableau</h3>
+                    <p>Afficher des données structurées</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Balise</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>table</code></td><td>Tableau</td></tr>
+                            <tr><td><code>caption</code></td><td>Titre</td></tr>
+                            <tr><td><code>thead</code></td><td>En-tête</td></tr>
+                            <tr><td><code>tbody</code></td><td>Corps</td></tr>
+                            <tr><td><code>tfoot</code></td><td>Pied</td></tr>
+                            <tr><td><code>tr</code></td><td>Ligne</td></tr>
+                            <tr><td><code>th</code></td><td>Cellule d'en-tête</td></tr>
+                            <tr><td><code>td</code></td><td>Cellule de données</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>Attributs de cellule :</p>
+
+                    <ul>
+                        <li><code>colspan</code> : fusion horizontale.</li>
+                        <li><code>rowspan</code> : fusion verticale.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><table border="1">
+  <caption>Liste des étudiants</caption>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ali</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Sara</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu tableau"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            7. Les formulaires
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Formulaire HTML</h3>
+                    <p>Récupérer des informations</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Balise</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>form</code></td><td>Formulaire</td></tr>
+                            <tr><td><code>label</code></td><td>Libellé</td></tr>
+                            <tr><td><code>input</code></td><td>Champ de saisie</td></tr>
+                            <tr><td><code>textarea</code></td><td>Texte multiligne</td></tr>
+                            <tr><td><code>select</code></td><td>Liste déroulante</td></tr>
+                            <tr><td><code>option</code></td><td>Option</td></tr>
+                            <tr><td><code>button</code></td><td>Bouton</td></tr>
+                            <tr><td><code>fieldset</code></td><td>Groupe de champs</td></tr>
+                            <tr><td><code>legend</code></td><td>Titre du groupe</td></tr>
+                            <tr><td><code>datalist</code></td><td>Suggestions</td></tr>
+                            <tr><td><code>output</code></td><td>Résultat</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>Attributs de <code>input</code> :</p>
+
+                    <ul>
+                        <li><code>type</code> : text, password, email, number, date, time, radio, checkbox, file, submit, reset, button, tel, url, color, range, hidden.</li>
+                        <li><code>name</code> : nom de la donnée.</li>
+                        <li><code>id</code> : identifiant.</li>
+                        <li><code>value</code> : valeur.</li>
+                        <li><code>placeholder</code> : indication.</li>
+                        <li><code>required</code> : obligatoire.</li>
+                        <li><code>readonly</code> : lecture seule.</li>
+                        <li><code>disabled</code> : désactivé.</li>
+                        <li><code>min</code>, <code>max</code>, <code>step</code> : limites numériques.</li>
+                        <li><code>minlength</code>, <code>maxlength</code> : longueur du texte.</li>
+                        <li><code>checked</code> : sélectionné.</li>
+                        <li><code>multiple</code> : plusieurs valeurs.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><form>
+  <fieldset>
+    <legend>Inscription</legend>
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom"
+           name="nom" required>
+
+    <br><br>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email"
+           name="email" required>
+
+    <br><br>
+
+    <label for="niveau">Niveau :</label>
+    <select id="niveau" name="niveau">
+      <option value="1">1ère année</option>
+      <option value="2">2ème année</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Envoyer</button>
+    <button type="reset">Effacer</button>
+  </fieldset>
+</form></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu formulaire"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            8. Les balises sémantiques HTML5
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Organisation d'une page</h3>
+                    <p>Structurer le contenu</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Balise</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>header</code></td><td>En-tête</td></tr>
+                            <tr><td><code>nav</code></td><td>Navigation</td></tr>
+                            <tr><td><code>main</code></td><td>Contenu principal</td></tr>
+                            <tr><td><code>section</code></td><td>Section thématique</td></tr>
+                            <tr><td><code>article</code></td><td>Contenu indépendant</td></tr>
+                            <tr><td><code>aside</code></td><td>Contenu secondaire</td></tr>
+                            <tr><td><code>footer</code></td><td>Pied de page</td></tr>
+                            <tr><td><code>div</code></td><td>Conteneur générique</td></tr>
+                            <tr><td><code>span</code></td><td>Conteneur en ligne</td></tr>
+                            <tr><td><code>figure</code></td><td>Contenu illustratif</td></tr>
+                            <tr><td><code>figcaption</code></td><td>Légende</td></tr>
+                            <tr><td><code>details</code></td><td>Contenu dépliable</td></tr>
+                            <tr><td><code>summary</code></td><td>Titre dépliable</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><header>
+  <h1>Mon site</h1>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section id="accueil">
+    <h2>Accueil</h2>
+    <article>
+      <h3>Mon article</h3>
+      <p>Contenu de l'article.</p>
+    </article>
+  </section>
+
+  <aside>Informations complémentaires.</aside>
+</main>
+
+<footer>
+  <p>© 2026 Mon site</p>
+</footer></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu structure"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            9. Les médias HTML
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Audio et vidéo</h3>
+                    <p>Intégrer du contenu multimédia</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Balise</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>audio</code></td><td>Audio</td></tr>
+                            <tr><td><code>video</code></td><td>Vidéo</td></tr>
+                            <tr><td><code>source</code></td><td>Source du média</td></tr>
+                            <tr><td><code>track</code></td><td>Sous-titres</td></tr>
+                            <tr><td><code>iframe</code></td><td>Document intégré</td></tr>
+                            <tr><td><code>embed</code></td><td>Contenu externe</td></tr>
+                            <tr><td><code>object</code></td><td>Ressource externe</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Attributs importants :
+                        <code>controls</code>, <code>autoplay</code>,
+                        <code>muted</code>, <code>loop</code>,
+                        <code>poster</code>, <code>width</code>,
+                        <code>height</code>.
+                    </p>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><video controls width="320"
+       poster="image.jpg">
+  <source src="video.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu média"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            10. Attributs globaux et autres balises
+        </div>
+
+        <div class="info-box">
+            <h3>Attributs globaux HTML</h3>
+
+            <table class="property-table">
+                <thead>
+                    <tr><th>Attribut</th><th>Fonction</th><th>Exemple</th></tr>
+                </thead>
+
+                <tbody>
+                    <tr><td><code>id</code></td><td>Identifiant unique</td><td>id="menu"</td></tr>
+                    <tr><td><code>class</code></td><td>Groupe d'éléments</td><td>class="titre"</td></tr>
+                    <tr><td><code>style</code></td><td>CSS en ligne</td><td>style="color:red"</td></tr>
+                    <tr><td><code>title</code></td><td>Information</td><td>title="Information"</td></tr>
+                    <tr><td><code>lang</code></td><td>Langue</td><td>lang="fr"</td></tr>
+                    <tr><td><code>hidden</code></td><td>Masquer</td><td>hidden</td></tr>
+                    <tr><td><code>tabindex</code></td><td>Ordre de navigation</td><td>tabindex="0"</td></tr>
+                    <tr><td><code>contenteditable</code></td><td>Modifier le contenu</td><td>true, false</td></tr>
+                    <tr><td><code>data-*</code></td><td>Données personnalisées</td><td>data-id="10"</td></tr>
+                    <tr><td><code>dir</code></td><td>Direction</td><td>ltr, rtl, auto</td></tr>
+                    <tr><td><code>draggable</code></td><td>Glisser-déposer</td><td>true, false</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Autres balises utiles</h3>
+
+            <table class="property-table">
+                <thead>
+                    <tr><th>Balise</th><th>Fonction</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>meta</code></td><td>Métadonnées</td></tr>
+                    <tr><td><code>link</code></td><td>Relier une ressource</td></tr>
+                    <tr><td><code>style</code></td><td>CSS interne</td></tr>
+                    <tr><td><code>script</code></td><td>JavaScript</td></tr>
+                    <tr><td><code>noscript</code></td><td>Contenu sans JavaScript</td></tr>
+                    <tr><td><code>base</code></td><td>URL de base</td></tr>
+                    <tr><td><code>address</code></td><td>Informations de contact</td></tr>
+                    <tr><td><code>abbr</code></td><td>Abréviation</td></tr>
+                    <tr><td><code>time</code></td><td>Date ou heure</td></tr>
+                    <tr><td><code>progress</code></td><td>Progression</td></tr>
+                    <tr><td><code>meter</code></td><td>Mesure</td></tr>
+                    <tr><td><code>dialog</code></td><td>Fenêtre de dialogue</td></tr>
+                    <tr><td><code>canvas</code></td><td>Dessin programmable</td></tr>
+                    <tr><td><code>template</code></td><td>Modèle HTML</td></tr>
+                    <tr><td><code>svg</code></td><td>Graphiques vectoriels</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- COURS CSS -->
+
+    <div class="course-category" id="css">
+
+        <div class="category-title">
+            CSS — Cascading Style Sheets
+        </div>
+
+        <div class="info-box">
+            <h3>1. Introduction à CSS</h3>
+
+            <p>
+                CSS permet de définir l'apparence des éléments HTML :
+                couleurs, tailles, espacements, positionnement et mise en page.
+            </p>
+
+            <pre><code>p {
+    color: red;
+    font-size: 20px;
+}</code></pre>
+
+            <ul>
+                <li><code>p</code> : sélecteur.</li>
+                <li><code>color</code> : propriété.</li>
+                <li><code>red</code> : valeur.</li>
+                <li><code>;</code> : termine une déclaration.</li>
+            </ul>
+        </div>
+
+        <div class="category-title">
+            2. Les propriétés de texte
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Texte et typographie</h3>
+                    <p>Modifier l'apparence du texte</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs possibles</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>color</code></td><td>red, #hex, rgb(), rgba(), hsl()</td></tr>
+                            <tr><td><code>font-family</code></td><td>Arial, serif, sans-serif, monospace</td></tr>
+                            <tr><td><code>font-size</code></td><td>px, em, rem, %, vw</td></tr>
+                            <tr><td><code>font-weight</code></td><td>normal, bold, 100 à 900</td></tr>
+                            <tr><td><code>font-style</code></td><td>normal, italic, oblique</td></tr>
+                            <tr><td><code>text-align</code></td><td>left, right, center, justify, start, end</td></tr>
+                            <tr><td><code>text-decoration</code></td><td>none, underline, overline, line-through</td></tr>
+                            <tr><td><code>text-transform</code></td><td>uppercase, lowercase, capitalize, none</td></tr>
+                            <tr><td><code>text-indent</code></td><td>px, em, rem, %</td></tr>
+                            <tr><td><code>text-shadow</code></td><td>offset, blur, color</td></tr>
+                            <tr><td><code>letter-spacing</code></td><td>px, em, normal</td></tr>
+                            <tr><td><code>word-spacing</code></td><td>px, em, normal</td></tr>
+                            <tr><td><code>line-height</code></td><td>normal, nombre, px, em, %</td></tr>
+                            <tr><td><code>white-space</code></td><td>normal, nowrap, pre, pre-wrap</td></tr>
+                            <tr><td><code>overflow-wrap</code></td><td>normal, break-word, anywhere</td></tr>
+                            <tr><td><code>direction</code></td><td>ltr, rtl</td></tr>
+                            <tr><td><code>vertical-align</code></td><td>baseline, middle, top, bottom, sub, super</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE INTERACTIF</label>
+
+                        <textarea class="code-editor" spellcheck="false"><h1 class="titre">HTML & CSS</h1>
+<p class="texte">
+  Apprendre le développement web.
+</p>
+
+<style>
+.titre {
+  color: #e87532;
+  font-size: 35px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.texte {
+  color: #191919;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu CSS texte"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            3. Les couleurs et les arrière-plans
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Background et couleurs</h3>
+                    <p>Personnaliser les surfaces</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>background-color</code></td><td>Nom, HEX, RGB, HSL, transparent</td></tr>
+                            <tr><td><code>background-image</code></td><td>url(), linear-gradient(), radial-gradient(), none</td></tr>
+                            <tr><td><code>background-repeat</code></td><td>repeat, no-repeat, repeat-x, repeat-y</td></tr>
+                            <tr><td><code>background-position</code></td><td>center, top, bottom, left, right, %</td></tr>
+                            <tr><td><code>background-size</code></td><td>cover, contain, auto, px, %</td></tr>
+                            <tr><td><code>background-attachment</code></td><td>scroll, fixed, local</td></tr>
+                            <tr><td><code>background</code></td><td>Valeurs combinées</td></tr>
+                            <tr><td><code>opacity</code></td><td>0 à 1</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="carte">
+  <h2>Bienvenue</h2>
+  <p>Ma carte personnalisée.</p>
+</div>
+
+<style>
+.carte {
+  background-color: #fff0e5;
+  background-image:
+    linear-gradient(135deg,
+    #fff0e5, #e87532);
+  background-size: cover;
+  background-position: center;
+  color: #191919;
+  padding: 30px;
+  opacity: 1;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu background"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            4. Les dimensions et les espacements
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Box Model</h3>
+                    <p>Dimensions et marges</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>width</code></td><td>px, %, vw, auto, min-content</td></tr>
+                            <tr><td><code>height</code></td><td>px, %, vh, auto</td></tr>
+                            <tr><td><code>min-width</code></td><td>px, %, auto</td></tr>
+                            <tr><td><code>max-width</code></td><td>px, %, none</td></tr>
+                            <tr><td><code>min-height</code></td><td>px, %, auto</td></tr>
+                            <tr><td><code>max-height</code></td><td>px, %, none</td></tr>
+                            <tr><td><code>margin</code></td><td>px, %, auto</td></tr>
+                            <tr><td><code>padding</code></td><td>px, %, em, rem</td></tr>
+                            <tr><td><code>box-sizing</code></td><td>content-box, border-box</td></tr>
+                            <tr><td><code>overflow</code></td><td>visible, hidden, scroll, auto, clip</td></tr>
+                            <tr><td><code>aspect-ratio</code></td><td>1 / 1, 16 / 9, auto</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Le modèle de boîte comprend :
+                        contenu → padding → border → margin.
+                    </p>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="box">
+  Ma boîte CSS
+</div>
+
+<style>
+.box {
+  width: 250px;
+  min-height: 100px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 3px solid #e87532;
+  box-sizing: border-box;
+  background-color: #fff0e5;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu dimensions"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            5. Les bordures et les ombres
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Border et Shadow</h3>
+                    <p>Décorer les éléments</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>border</code></td><td>width, style, color</td></tr>
+                            <tr><td><code>border-width</code></td><td>px, thin, medium, thick</td></tr>
+                            <tr><td><code>border-style</code></td><td>solid, dashed, dotted, double, none</td></tr>
+                            <tr><td><code>border-color</code></td><td>Nom, HEX, RGB</td></tr>
+                            <tr><td><code>border-radius</code></td><td>px, %, em</td></tr>
+                            <tr><td><code>border-top</code></td><td>width, style, color</td></tr>
+                            <tr><td><code>border-bottom</code></td><td>width, style, color</td></tr>
+                            <tr><td><code>border-left</code></td><td>width, style, color</td></tr>
+                            <tr><td><code>border-right</code></td><td>width, style, color</td></tr>
+                            <tr><td><code>box-shadow</code></td><td>x, y, blur, spread, color, inset</td></tr>
+                            <tr><td><code>outline</code></td><td>width, style, color</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="carte">
+  <h2>Ma carte</h2>
+  <p>Une carte élégante.</p>
+</div>
+
+<style>
+.carte {
+  padding: 25px;
+  border: 2px solid #e87532;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px
+    rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu bordures"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            6. Les listes, les tableaux et les images en CSS
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Propriétés spécifiques</h3>
+                    <p>Styliser les éléments HTML</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>list-style-type</code></td><td>disc, circle, square, decimal, lower-alpha, none</td></tr>
+                            <tr><td><code>list-style-position</code></td><td>inside, outside</td></tr>
+                            <tr><td><code>list-style-image</code></td><td>url(), none</td></tr>
+                            <tr><td><code>border-collapse</code></td><td>collapse, separate</td></tr>
+                            <tr><td><code>border-spacing</code></td><td>px, em</td></tr>
+                            <tr><td><code>table-layout</code></td><td>auto, fixed</td></tr>
+                            <tr><td><code>object-fit</code></td><td>fill, contain, cover, none, scale-down</td></tr>
+                            <tr><td><code>object-position</code></td><td>center, top, bottom, left, right, %</td></tr>
+                            <tr><td><code>caption-side</code></td><td>top, bottom</td></tr>
+                            <tr><td><code>empty-cells</code></td><td>show, hide</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><ul class="liste">
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+
+<table class="tableau">
+  <tr>
+    <th>Nom</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td>Ali</td>
+    <td>15</td>
+  </tr>
+</table>
+
+<style>
+.liste {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.tableau {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableau th,
+.tableau td {
+  border: 1px solid #dedbd5;
+  padding: 10px;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu liste tableau"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            7. Les propriétés de Flexbox
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Flexbox</h3>
+                    <p>Disposition horizontale et verticale</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>display</code></td><td>flex, inline-flex</td></tr>
+                            <tr><td><code>flex-direction</code></td><td>row, row-reverse, column, column-reverse</td></tr>
+                            <tr><td><code>flex-wrap</code></td><td>nowrap, wrap, wrap-reverse</td></tr>
+                            <tr><td><code>justify-content</code></td><td>flex-start, center, flex-end, space-between, space-around, space-evenly</td></tr>
+                            <tr><td><code>align-items</code></td><td>stretch, center, flex-start, flex-end, baseline</td></tr>
+                            <tr><td><code>align-content</code></td><td>stretch, center, space-between, space-around</td></tr>
+                            <tr><td><code>gap</code></td><td>px, rem, em</td></tr>
+                            <tr><td><code>row-gap</code></td><td>px, rem</td></tr>
+                            <tr><td><code>column-gap</code></td><td>px, rem</td></tr>
+                            <tr><td><code>flex</code></td><td>grow, shrink, basis</td></tr>
+                            <tr><td><code>flex-grow</code></td><td>nombre</td></tr>
+                            <tr><td><code>flex-shrink</code></td><td>nombre</td></tr>
+                            <tr><td><code>flex-basis</code></td><td>auto, px, %</td></tr>
+                            <tr><td><code>align-self</code></td><td>auto, center, flex-start, flex-end, stretch</td></tr>
+                            <tr><td><code>order</code></td><td>nombre entier</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="conteneur">
+  <div>HTML</div>
+  <div>CSS</div>
+  <div>Web</div>
+</div>
+
+<style>
+.conteneur {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.conteneur div {
+  background: #fff0e5;
+  padding: 20px;
+  border: 1px solid #e87532;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu Flexbox"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="category-title">
+            8. Les propriétés de Grid
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>CSS Grid</h3>
+                    <p>Créer des mises en page en grille</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <table class="property-table">
+                        <thead>
+                            <tr><th>Propriété</th><th>Valeurs</th></tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td><code>display</code></td><td>grid, inline-grid</td></tr>
+                            <tr><td><code>grid-template-columns</code></td><td>px, %, fr, repeat(), auto</td></tr>
+                            <tr><td><code>grid-template-rows</code></td><td>px, %, fr, auto</td></tr>
+                            <tr><td><code>grid-template-areas</code></td><td>Noms de zones</td></tr>
+                            <tr><td><code>grid-column</code></td><td>start / end, span</td></tr>
+                            <tr><td><code>grid-row</code></td><td>start / end, span</td></tr>
+                            <tr><td><code>grid-area</code></td><td>Nom de zone ou lignes</td></tr>
+                            <tr><td><code>grid-auto-flow</code></td><td>row, column, dense</td></tr>
+                            <tr><td><code>grid-auto-columns</code></td><td>px, fr, auto</td></tr>
+                            <tr><td><code>grid-auto-rows</code></td><td>px, fr, auto</td></tr>
+                            <tr><td><code>gap</code></td><td>px, rem</td></tr>
+                            <tr><td><code>justify-items</code></td><td>start, center, end, stretch</td></tr>
+                            <tr><td><code>align-items</code></td><td>start, center, end, stretch</td></tr>
+                            <tr><td><code>place-items</code></td><td>align / justify</td></tr>
+                            <tr><td><code>justify-content</code></td><td>start, center, space-between</td></tr>
+                            <tr><td><code>align-content</code></td><td>start, center, stretch</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="grille">
+  <div>HTML</div>
+  <div>CSS</div>
+  <div>Web</div>
+  <div>STI</div>
+</div>
+
+<style>
+.grille {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+  gap: 15px;
+}
+
+.grille div {
+  background: #fff0e5;
+  border: 1px solid #e87532;
+  padding: 25px;
+  text-align: center;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu Grid"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- SELECTEURS CSS -->
+
+    <div class="course-category" id="selectors">
+
+        <div class="category-title">
+            9. Les sélecteurs CSS
+        </div>
+
+        <div class="info-box">
+            <h3>Les différents types de sélecteurs</h3>
+
+            <table class="property-table">
+                <thead>
+                    <tr><th>Sélecteur</th><th>Exemple</th><th>Fonction</th></tr>
+                </thead>
+
+                <tbody>
+                    <tr><td>Universel</td><td><code>*</code></td><td>Tous les éléments</td></tr>
+                    <tr><td>Balise</td><td><code>p</code></td><td>Tous les paragraphes</td></tr>
+                    <tr><td>Classe</td><td><code>.titre</code></td><td>Classe titre</td></tr>
+                    <tr><td>ID</td><td><code>#menu</code></td><td>Élément menu</td></tr>
+                    <tr><td>Descendant</td><td><code>div p</code></td><td>Paragraphes dans div</td></tr>
+                    <tr><td>Enfant direct</td><td><code>div &gt; p</code></td><td>Enfants directs</td></tr>
+                    <tr><td>Adjacent</td><td><code>h1 + p</code></td><td>Premier p suivant h1</td></tr>
+                    <tr><td>Frères suivants</td><td><code>h1 ~ p</code></td><td>Paragraphes frères après h1</td></tr>
+                    <tr><td>Groupe</td><td><code>h1, h2, p</code></td><td>Plusieurs sélecteurs</td></tr>
+                    <tr><td>Attribut</td><td><code>input[type="text"]</code></td><td>Attribut précis</td></tr>
+                    <tr><td>Attribut présent</td><td><code>[required]</code></td><td>Attribut existant</td></tr>
+                    <tr><td>Attribut commence</td><td><code>[href^="https"]</code></td><td>Commence par</td></tr>
+                    <tr><td>Attribut termine</td><td><code>[href$=".pdf"]</code></td><td>Termine par</td></tr>
+                    <tr><td>Attribut contient</td><td><code>[class*="box"]</code></td><td>Contient</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:hover</code></td><td>Survol</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:focus</code></td><td>Focus</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:active</code></td><td>Activation</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:visited</code></td><td>Lien visité</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:first-child</code></td><td>Premier enfant</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:last-child</code></td><td>Dernier enfant</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:nth-child(2)</code></td><td>Enfant numéro 2</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:not(.active)</code></td><td>Exclusion</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:checked</code></td><td>Champ coché</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:disabled</code></td><td>Champ désactivé</td></tr>
+                    <tr><td>Pseudo-classe</td><td><code>:empty</code></td><td>Élément vide</td></tr>
+                    <tr><td>Pseudo-élément</td><td><code>::before</code></td><td>Avant le contenu</td></tr>
+                    <tr><td>Pseudo-élément</td><td><code>::after</code></td><td>Après le contenu</td></tr>
+                    <tr><td>Pseudo-élément</td><td><code>::first-letter</code></td><td>Première lettre</td></tr>
+                    <tr><td>Pseudo-élément</td><td><code>::first-line</code></td><td>Première ligne</td></tr>
+                    <tr><td>Pseudo-élément</td><td><code>::selection</code></td><td>Texte sélectionné</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Exemple des sélecteurs</h3>
+                    <p>Tester les sélecteurs</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="example-box">
+                        <label>EXEMPLE INTERACTIF</label>
+
+                        <textarea class="code-editor" spellcheck="false"><h1>Les sélecteurs CSS</h1>
+
+<p class="important">Paragraphe important.</p>
+<p>Paragraphe normal.</p>
+
+<div>
+  <p>Paragraphe dans div.</p>
+</div>
+
+<button>Survole-moi</button>
+
+<style>
+* {
+  font-family: Arial;
+}
+
+h1 {
+  color: #e87532;
+}
+
+.important {
+  font-weight: bold;
+}
+
+div p {
+  color: green;
+}
+
+button:hover {
+  background: #e87532;
+  color: white;
+}
+
+p:first-child {
+  text-decoration: underline;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu sélecteurs"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- MISE EN PAGE -->
+
+    <div class="course-category" id="layout">
+
+        <div class="category-title">
+            10. Positionnement et affichage
+        </div>
+
+        <div class="info-box">
+
+            <table class="property-table">
+                <thead>
+                    <tr><th>Propriété</th><th>Valeurs possibles</th></tr>
+                </thead>
+
+                <tbody>
+                    <tr><td><code>display</code></td><td>block, inline, inline-block, flex, grid, none, table</td></tr>
+                    <tr><td><code>position</code></td><td>static, relative, absolute, fixed, sticky</td></tr>
+                    <tr><td><code>top</code></td><td>px, %, auto</td></tr>
+                    <tr><td><code>right</code></td><td>px, %, auto</td></tr>
+                    <tr><td><code>bottom</code></td><td>px, %, auto</td></tr>
+                    <tr><td><code>left</code></td><td>px, %, auto</td></tr>
+                    <tr><td><code>z-index</code></td><td>nombre entier, auto</td></tr>
+                    <tr><td><code>float</code></td><td>left, right, none</td></tr>
+                    <tr><td><code>clear</code></td><td>left, right, both, none</td></tr>
+                    <tr><td><code>visibility</code></td><td>visible, hidden, collapse</td></tr>
+                    <tr><td><code>cursor</code></td><td>pointer, default, move, not-allowed, text, wait, grab</td></tr>
+                    <tr><td><code>transform</code></td><td>translate(), rotate(), scale(), skew()</td></tr>
+                    <tr><td><code>transition</code></td><td>property, duration, timing-function, delay</td></tr>
+                    <tr><td><code>animation</code></td><td>name, duration, timing-function, iteration-count</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Position</h3>
+                    <p>Déplacer les éléments</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="parent">
+  <div class="enfant">
+    Position absolute
+  </div>
+</div>
+
+<style>
+.parent {
+  position: relative;
+  height: 180px;
+  border: 2px solid #191919;
+}
+
+.enfant {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #e87532;
+  color: white;
+  padding: 15px;
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu position"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- RESPONSIVE -->
+
+    <div class="course-category" id="responsive">
+
+        <div class="category-title">
+            11. Responsive Design
+        </div>
+
+        <div class="info-box">
+
+            <h3>Media Queries</h3>
+
+            <p>
+                Les media queries permettent d'adapter une page web
+                aux différentes tailles d'écran.
+            </p>
+
+            <pre><code>@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}</code></pre>
+
+            <table class="property-table">
+                <thead>
+                    <tr><th>Expression</th><th>Fonction</th></tr>
+                </thead>
+
+                <tbody>
+                    <tr><td><code>max-width</code></td><td>Largeur maximale</td></tr>
+                    <tr><td><code>min-width</code></td><td>Largeur minimale</td></tr>
+                    <tr><td><code>orientation</code></td><td>portrait, landscape</td></tr>
+                    <tr><td><code>hover</code></td><td>hover, none</td></tr>
+                    <tr><td><code>prefers-color-scheme</code></td><td>light, dark</td></tr>
+                    <tr><td><code>prefers-reduced-motion</code></td><td>reduce, no-preference</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="lesson-grid">
+
+            <article class="lesson-card">
+                <div class="lesson-card-header">
+                    <h3>Exemple responsive</h3>
+                    <p>Adapter une grille</p>
+                </div>
+
+                <div class="lesson-content">
+
+                    <div class="example-box">
+                        <label>EXEMPLE</label>
+
+                        <textarea class="code-editor" spellcheck="false"><div class="grille">
+  <div>Carte 1</div>
+  <div>Carte 2</div>
+  <div>Carte 3</div>
+</div>
+
+<style>
+.grille {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grille div {
+  background: #fff0e5;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .grille {
+    grid-template-columns: 1fr;
+  }
+}
+</style></textarea>
+
+                        <div class="code-actions">
+                            <button class="btn btn-orange run-code">▶ Exécuter</button>
+                            <button class="btn btn-light reset-code">↺ Réinitialiser</button>
+                        </div>
+
+                        <div class="preview-title">RÉSULTAT</div>
+                        <iframe class="preview-frame" title="Aperçu responsive"
+                        sandbox="allow-scripts"></iframe>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PARTIE 2 : PROJETS
+===================================================== -->
+
+<section class="section" id="projects">
+
+    <div class="section-heading">
+        <small>PARTIE 02 / APPLICATION</small>
+        <h2>Les projets pratiques</h2>
+        <p>
+            Réaliser des pages web complètes à partir d'un cahier des charges.
+            Le corrigé détaillé est disponible après chaque projet.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        <!-- PROJET 1 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                <iframe title="Maquette projet portfolio"
+                sandbox="allow-scripts"
+                srcdoc="<!DOCTYPE html><html><body style='font-family:Arial;margin:0;background:#f5f5f5'><header style='background:#242321;color:white;padding:20px;text-align:center'><h2>MON PORTFOLIO</h2><p>Développeur web</p></header><nav style='padding:15px;text-align:center;background:#fff'><a href='#'>Accueil</a> | <a href='#'>Projets</a> | <a href='#'>Contact</a></nav><main style='padding:20px;text-align:center'><h2>Bienvenue</h2><p>Je suis étudiant en développement web.</p><div style='background:#e87532;color:white;padding:20px;margin:10px'>Mon projet HTML</div><div style='background:#ddd;padding:20px;margin:10px'>Mon projet CSS</div></main><footer style='background:#242321;color:white;padding:15px;text-align:center'>© 2026</footer></body></html>"></iframe>
+            </div>
+
+            <div class="project-details">
+                <h3>Projet 01 — Portfolio personnel</h3>
+
+                <p>
+                    Créer un site personnel pour présenter un étudiant,
+                    ses compétences et ses projets.
+                </p>
+
+                <strong>Pages à réaliser :</strong>
+
+                <ul>
+                    <li>Page d'accueil.</li>
+                    <li>Page de présentation.</li>
+                    <li>Page des projets.</li>
+                    <li>Page de contact.</li>
+                </ul>
+
+                <strong>Travail demandé :</strong>
+
+                <ul>
+                    <li>Utiliser header, nav, main, section et footer.</li>
+                    <li>Créer une navigation entre les sections.</li>
+                    <li>Utiliser des images et des liens.</li>
+                    <li>Créer une mise en page CSS responsive.</li>
+                </ul>
+
+                <button class="btn btn-orange correction-btn">
+                    Voir le corrigé détaillé
+                </button>
+            </div>
+
+            <div class="project-correction">
+
+                <h3>Corrigé — Portfolio personnel</h3>
+
+                <p>
+                    La page contient une structure sémantique,
+                    un menu, une présentation et un pied de page.
+                </p>
+
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;Mon Portfolio&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#accueil"&gt;Accueil&lt;/a&gt;
+    &lt;a href="#projets"&gt;Projets&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section id="accueil"&gt;
+    &lt;h2&gt;Bienvenue&lt;/h2&gt;
+    &lt;p&gt;Je suis étudiant en STI.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section id="projets"&gt;
+    &lt;h2&gt;Mes projets&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Projet HTML&lt;/h3&gt;
+      &lt;p&gt;Création d'une page web.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;section id="contact"&gt;
+    &lt;h2&gt;Contact&lt;/h2&gt;
+    &lt;p&gt;contact@example.com&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2026 Mon Portfolio&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+                <h4>CSS :</h4>
+
+                <pre><code>* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f6f5f2;
+}
+
+header, footer {
+  background: #242321;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #e87532;
+  text-decoration: none;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+article {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}</code></pre>
+
+                <p>
+                    <strong>Explication :</strong>
+                    header contient le titre et la navigation.
+                    main contient les sections principales.
+                    footer contient les informations de fin.
+                    CSS gère la mise en page, les couleurs et les espacements.
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- PROJET 2 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                <iframe title="Maquette projet restaurant"
+                sandbox="allow-scripts"
+                srcdoc="<!DOCTYPE html><html><body style='margin:0;font-family:Georgia;background:#fff8ee;color:#36281c'><header style='text-align:center;padding:25px;background:#36281c;color:white'><h1>LE BON GOÛT</h1><p>Restaurant traditionnel</p></header><section style='padding:25px;text-align:center'><h2>Notre Menu</h2><div style='background:white;padding:15px;margin:10px;border:1px solid #ddd'><h3>Couscous</h3><p>Plat traditionnel tunisien</p><strong>18 DT</strong></div><div style='background:white;padding:15px;margin:10px;border:1px solid #ddd'><h3>Pâtes</h3><p>Pâtes fraîches</p><strong>12 DT</strong></div><div style='background:#e87532;color:white;padding:15px'>Réserver une table</div></section></body></html>"></iframe>
+            </div>
+
+            <div class="project-details">
+                <h3>Projet 02 — Site restaurant</h3>
+
+                <p>
+                    Créer un site web pour un restaurant présentant
+                    son menu, ses prix et un formulaire de réservation.
+                </p>
+
+                <strong>Pages à réaliser :</strong>
+
+                <ul>
+                    <li>Accueil.</li>
+                    <li>Menu du restaurant.</li>
+                    <li>Réservation.</li>
+                    <li>Contact et localisation.</li>
+                </ul>
+
+                <strong>Travail demandé :</strong>
+
+                <ul>
+                    <li>Créer un tableau pour le menu.</li>
+                    <li>Ajouter des images des plats.</li>
+                    <li>Créer un formulaire de réservation.</li>
+                    <li>Styliser les boutons et les champs.</li>
+                </ul>
+
+                <button class="btn btn-orange correction-btn">
+                    Voir le corrigé détaillé
+                </button>
+            </div>
+
+            <div class="project-correction">
+
+                <h3>Corrigé — Restaurant</h3>
+
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;Le Bon Goût&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#menu"&gt;Menu&lt;/a&gt;
+    &lt;a href="#reservation"&gt;Réservation&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section id="menu"&gt;
+    &lt;h2&gt;Notre menu&lt;/h2&gt;
+
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Plat&lt;/th&gt;
+        &lt;th&gt;Prix&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Couscous&lt;/td&gt;
+        &lt;td&gt;18 DT&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Pâtes&lt;/td&gt;
+        &lt;td&gt;12 DT&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;section id="reservation"&gt;
+    &lt;h2&gt;Réserver&lt;/h2&gt;
+
+    &lt;form&gt;
+      &lt;label for="nom"&gt;Nom&lt;/label&gt;
+      &lt;input type="text" id="nom"
+             required&gt;
+
+      &lt;label for="date"&gt;Date&lt;/label&gt;
+      &lt;input type="date" id="date"
+             required&gt;
+
+      &lt;label for="personnes"&gt;Personnes&lt;/label&gt;
+      &lt;input type="number" id="personnes"
+             min="1" max="10"&gt;
+
+      &lt;button type="submit"&gt;
+        Réserver
+      &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+                <h4>CSS :</h4>
+
+                <pre><code>body {
+  margin: 0;
+  background: #fff8ee;
+  font-family: Georgia;
+  color: #36281c;
+}
+
+header {
+  background: #36281c;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+section {
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+button {
+  background: #e87532;
+  color: white;
+  border: none;
+}</code></pre>
+
+                <p>
+                    Le tableau présente les plats et les prix.
+                    Le formulaire récupère les informations du client.
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- PROJET 3 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                <iframe title="Maquette projet école"
+                sandbox="allow-scripts"
+                srcdoc="<!DOCTYPE html><html><body style='margin:0;font-family:Arial;background:#f1f5f9'><header style='background:#287a52;color:white;padding:25px;text-align:center'><h1>ÉCOLE STI</h1><p>Établissement scolaire</p></header><nav style='padding:15px;background:white;text-align:center'>Accueil | Formations | Étudiants | Contact</nav><main style='padding:20px'><h2>Nos formations</h2><div style='background:white;padding:20px;margin:10px;border-left:4px solid #287a52'><h3>Développement Web</h3><p>HTML, CSS et JavaScript</p></div><div style='background:white;padding:20px;margin:10px;border-left:4px solid #287a52'><h3>Informatique</h3><p>Systèmes et réseaux</p></div></main></body></html>"></iframe>
+            </div>
+
+            <div class="project-details">
+                <h3>Projet 03 — Site établissement scolaire</h3>
+
+                <p>
+                    Réaliser un site web pour un établissement scolaire
+                    qui présente les formations et les étudiants.
+                </p>
+
+                <strong>Pages à réaliser :</strong>
+
+                <ul>
+                    <li>Accueil.</li>
+                    <li>Formations.</li>
+                    <li>Liste des étudiants.</li>
+                    <li>Contact.</li>
+                </ul>
+
+                <strong>Travail demandé :</strong>
+
+                <ul>
+                    <li>Créer un menu de navigation.</li>
+                    <li>Afficher les étudiants dans un tableau.</li>
+                    <li>Créer des cartes de formation.</li>
+                    <li>Ajouter un formulaire d'inscription.</li>
+                </ul>
+
+                <button class="btn btn-orange correction-btn">
+                    Voir le corrigé détaillé
+                </button>
+            </div>
+
+            <div class="project-correction">
+
+                <h3>Corrigé — Établissement scolaire</h3>
+
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;École STI&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="#formations"&gt;Formations&lt;/a&gt;
+  &lt;a href="#etudiants"&gt;Étudiants&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section id="formations"&gt;
+    &lt;h2&gt;Nos formations&lt;/h2&gt;
+
+    &lt;article&gt;
+      &lt;h3&gt;Développement Web&lt;/h3&gt;
+      &lt;p&gt;HTML et CSS&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;article&gt;
+      &lt;h3&gt;Informatique&lt;/h3&gt;
+      &lt;p&gt;Systèmes et réseaux&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;section id="etudiants"&gt;
+    &lt;h2&gt;Étudiants&lt;/h2&gt;
+
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nom&lt;/th&gt;
+        &lt;th&gt;Classe&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;STI 1&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+                <h4>CSS :</h4>
+
+                <pre><code>body {
+  font-family: Arial;
+  background: #f1f5f9;
+  margin: 0;
+}
+
+header {
+  background: #287a52;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+nav {
+  background: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #287a52;
+}
+
+section {
+  padding: 25px;
+}
+
+article {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid #287a52;
+}</code></pre>
+
+                <p>
+                    La structure permet d'organiser les formations
+                    et les étudiants dans des sections distinctes.
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- PROJET 4 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                <iframe title="Maquette projet boutique"
+                sandbox="allow-scripts"
+                srcdoc="<!DOCTYPE html><html><body style='margin:0;font-family:Arial;background:#f6f5f2'><header style='background:#242321;color:white;padding:25px;text-align:center'><h1>SHOP WEB</h1><p>Votre boutique en ligne</p></header><main style='padding:20px'><h2>Nos produits</h2><div style='display:grid;grid-template-columns:1fr 1fr;gap:10px'><div style='background:white;padding:20px'><div style='height:80px;background:#e87532'></div><h3>Produit 1</h3><p>25 DT</p></div><div style='background:white;padding:20px'><div style='height:80px;background:#287a52'></div><h3>Produit 2</h3><p>40 DT</p></div></div></main></body></html>"></iframe>
+            </div>
+
+            <div class="project-details">
+                <h3>Projet 04 — Boutique en ligne</h3>
+
+                <p>
+                    Créer une page présentant des produits
+                    avec leurs prix et une fiche de commande.
+                </p>
+
+                <strong>Pages à réaliser :</strong>
+
+                <ul>
+                    <li>Accueil.</li>
+                    <li>Produits.</li>
+                    <li>Commande.</li>
+                    <li>Contact.</li>
+                </ul>
+
+                <strong>Travail demandé :</strong>
+
+                <ul>
+                    <li>Utiliser Grid ou Flexbox.</li>
+                    <li>Créer des cartes produits.</li>
+                    <li>Ajouter des images.</li>
+                    <li>Créer un formulaire de commande.</li>
+                </ul>
+
+                <button class="btn btn-orange correction-btn">
+                    Voir le corrigé détaillé
+                </button>
+            </div>
+
+            <div class="project-correction">
+
+                <h3>Corrigé — Boutique</h3>
+
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;Shop Web&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Nos produits&lt;/h2&gt;
+
+    &lt;div class="produits"&gt;
+      &lt;article class="produit"&gt;
+        &lt;img src="produit1.jpg"
+             alt="Produit 1"&gt;
+        &lt;h3&gt;Produit 1&lt;/h3&gt;
+        &lt;p&gt;25 DT&lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="produit"&gt;
+        &lt;img src="produit2.jpg"
+             alt="Produit 2"&gt;
+        &lt;h3&gt;Produit 2&lt;/h3&gt;
+        &lt;p&gt;40 DT&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Commander&lt;/h2&gt;
+
+    &lt;form&gt;
+      &lt;input type="text"
+             placeholder="Nom"
+             required&gt;
+
+      &lt;input type="email"
+             placeholder="Email"
+             required&gt;
+
+      &lt;select name="produit"&gt;
+        &lt;option&gt;Produit 1&lt;/option&gt;
+        &lt;option&gt;Produit 2&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;button type="submit"&gt;
+        Commander
+      &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+                <h4>CSS :</h4>
+
+                <pre><code>.produits {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+  gap: 20px;
+}
+
+.produit {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.produit img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .produits {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+
+                <p>
+                    Les cartes sont organisées par Grid.
+                    La media query adapte la boutique aux petits écrans.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PARTIE 3 : QUIZ
+===================================================== -->
+
+<section class="section" id="quiz">
+
+    <div class="section-heading">
+        <small>PARTIE 03 / ÉVALUATION</small>
+        <h2>Quiz HTML & CSS</h2>
+        <p>
+            Évalue tes connaissances avec des questions
+            sélectionnées aléatoirement.
+        </p>
+    </div>
+
+    <div class="quiz-config" id="quizConfig">
+
+        <h3>Configuration du quiz</h3>
+
+        <label for="questionCount">
+            Nombre de questions
+        </label>
+
+        <select id="questionCount">
+            <option value="20">20 questions</option>
+            <option value="25">25 questions</option>
+            <option value="30">30 questions</option>
+            <option value="35">35 questions</option>
+            <option value="40">40 questions</option>
+        </select>
+
+        <label for="quizCategory">
+            Catégorie
+        </label>
+
+        <select id="quizCategory">
+            <option value="all">HTML + CSS</option>
+            <option value="html">HTML seulement</option>
+            <option value="css">CSS seulement</option>
+            <option value="selectors">Sélecteurs CSS</option>
+            <option value="layout">Mise en page</option>
+        </select>
+
+        <div class="note">
+            Les questions sont choisies aléatoirement.
+            Chaque quiz contient des questions différentes selon
+            le nombre de questions sélectionné.
+        </div>
+
+        <button class="btn btn-orange" id="startQuiz">
+            Commencer le quiz →
+        </button>
+
+    </div>
+
+    <div class="quiz-window" id="quizWindow">
+
+        <div class="quiz-header">
+            <h3>Quiz HTML & CSS</h3>
+            <span id="quizCounter">Question 1 / 20</span>
+        </div>
+
+        <div class="quiz-progress">
+            <div id="quizProgressBar" style="width:0%"></div>
+        </div>
+
+        <div class="quiz-body">
+
+            <div class="question-number" id="questionNumber">
+                QUESTION 01
+            </div>
+
+            <div class="question-title" id="questionTitle"></div>
+
+            <div class="answers" id="answers"></div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="quiz-footer">
+
+                <button class="btn btn-light" id="quitQuiz">
+                    Quitter
+                </button>
+
+                <button class="btn btn-orange" id="verifyAnswer">
+                    Vérifier
+                </button>
+
+                <button class="btn btn-dark" id="nextQuestion"
+                style="display:none">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+
+        <h2>Résultat final</h2>
+
+        <div class="score-circle">
+            <strong id="scoreValue">0%</strong>
+            <span>Score</span>
+        </div>
+
+        <p id="scoreMessage" style="text-align:center"></p>
+
+        <h3>Questions incorrectes et corrections</h3>
+
+        <div id="wrongAnswers"></div>
+
+        <button class="btn btn-orange" id="restartQuiz">
+            Recommencer le quiz
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer><div class="container footer-content"><div class="logo" href="../index.html">Study<span>Net</span></div><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

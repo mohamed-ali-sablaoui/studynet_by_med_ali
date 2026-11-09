@@ -1,0 +1,1635 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet sur les fonctions trigonométriques et leurs fonctions réciproques : sinus, cosinus, tangente, cotangente, arcsinus, arccosinus, arctangente, limites, dérivées et exercices corrigés.">
+<title>Fonctions trigonométriques | StudyNet</title>
+
+
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">Study<span>Net.</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#cours">Cours complet</a>
+      <a href="#exercices">Exercices</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#formules">Formulaire</a>
+    </div>
+    <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')">Menu ☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Mathématiques · Chapitre 03</div>
+    <h1>Les fonctions <span>trigonométriques</span></h1>
+    <p>
+      Un cours approfondi pour comprendre, calculer et étudier les fonctions
+      trigonométriques et leurs fonctions réciproques : domaines, images,
+      courbes, limites, asymptotes, dérivées, variations et fonctions inverses.
+    </p>
+    <div class="hero-meta">
+      <span>📚 Cours détaillé</span>
+      <span>✏️ Exercices corrigés</span>
+      <span>🎯 200 questions de quiz</span>
+    </div>
+  </div>
+</section>
+
+<div class="quick-nav">
+  <a class="quick-card" href="#cours">
+    <div class="quick-icon">01</div>
+    <div><strong>Le cours</strong><small>Définitions et propriétés</small></div>
+  </a>
+  <a class="quick-card" href="#exercices">
+    <div class="quick-icon">02</div>
+    <div><strong>Exercices et problèmes</strong><small>Application et corrections</small></div>
+  </a>
+  <a class="quick-card" href="#quiz">
+    <div class="quick-icon">03</div>
+    <div><strong>Quiz interactif</strong><small>Tester ses connaissances</small></div>
+  </a>
+</div>
+
+<main class="container">
+
+<!-- =====================================================
+     PARTIE 1 : COURS
+===================================================== -->
+
+<section class="section" id="cours">
+  <div class="section-head">
+    <div class="kicker">Partie 01 · Apprendre</div>
+    <h2>Cours complet : fonctions trigonométriques</h2>
+    <p>Les notions fondamentales, les propriétés avancées et les méthodes de résolution.</p>
+  </div>
+
+  <div class="toc">
+    <h3>Sommaire du cours</h3>
+    <div class="toc-grid">
+      <a href="#angles">1. Angles et radians</a>
+      <a href="#cercle">2. Cercle trigonométrique</a>
+      <a href="#sinus">3. Fonction sinus</a>
+      <a href="#cosinus">4. Fonction cosinus</a>
+      <a href="#tangente">5. Fonction tangente</a>
+      <a href="#cotangente">6. Fonction cotangente</a>
+      <a href="#secantes">7. Sécante et cosécante</a>
+      <a href="#identites">8. Identités trigonométriques</a>
+      <a href="#equations">9. Équations trigonométriques</a>
+      <a href="#transformations">10. Transformations</a>
+      <a href="#inverse-trigo">11. Fonctions réciproques</a>
+      <a href="#arcsin">12. Arcsinus</a>
+      <a href="#arccos">13. Arccosinus</a>
+      <a href="#arctan">14. Arctangente</a>
+      <a href="#arccot">15. Arccotangente</a>
+      <a href="#arcsec">16. Arcsecante et arccosécante</a>
+      <a href="#limites">17. Limites</a>
+      <a href="#derivees">18. Dérivées</a>
+      <a href="#variations">19. Variations et courbes</a>
+      <a href="#asymptotes">20. Asymptotes</a>
+      <a href="#fonction-inverse">21. Fonction inverse f⁻¹</a>
+      <a href="#compositions">22. Fonctions composées</a>
+      <a href="#methodes">23. Méthodes d'étude</a>
+    </div>
+  </div>
+
+  <!-- ANGLES -->
+
+  <div class="card" id="angles">
+    <h3>1. Mesure des angles : degrés et radians</h3>
+    <p>Un angle peut être exprimé en degrés ou en radians. En analyse mathématique, les radians sont indispensables pour les formules de limites et de dérivation.</p>
+
+    <div class="formula center">180° = π radians &nbsp;&nbsp; et &nbsp;&nbsp; 360° = 2π radians</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Degrés</th><th>Radians</th><th>Valeur décimale</th></tr>
+        <tr><td>0°</td><td>0</td><td>0</td></tr>
+        <tr><td>30°</td><td>π/6</td><td>0,524</td></tr>
+        <tr><td>45°</td><td>π/4</td><td>0,785</td></tr>
+        <tr><td>60°</td><td>π/3</td><td>1,047</td></tr>
+        <tr><td>90°</td><td>π/2</td><td>1,571</td></tr>
+        <tr><td>120°</td><td>2π/3</td><td>2,094</td></tr>
+        <tr><td>180°</td><td>π</td><td>3,142</td></tr>
+        <tr><td>270°</td><td>3π/2</td><td>4,712</td></tr>
+        <tr><td>360°</td><td>2π</td><td>6,283</td></tr>
+      </table>
+    </div>
+
+    <h4>Conversion des degrés en radians</h4>
+    <div class="formula">Angle en radians = Angle en degrés × π / 180</div>
+    <p>Exemple : 60° = 60 × π/180 = π/3.</p>
+
+    <h4>Conversion des radians en degrés</h4>
+    <div class="formula">Angle en degrés = Angle en radians × 180 / π</div>
+    <p>Exemple : 3π/4 = 3 × 180/4 = 135°.</p>
+  </div>
+
+  <!-- CERCLE -->
+
+  <div class="card" id="cercle">
+    <h3>2. Le cercle trigonométrique</h3>
+    <p>Le cercle trigonométrique est un cercle de centre O et de rayon 1. Un point M associé à un angle x possède les coordonnées :</p>
+    <div class="formula center">M(cos x ; sin x)</div>
+
+    <div class="graph-box">
+      <svg viewBox="0 0 520 360" role="img" aria-label="Cercle trigonométrique avec les axes et les angles remarquables">
+        <circle cx="250" cy="175" r="125" fill="#f7faf6" stroke="#205b49" stroke-width="2.5"/>
+        <line x1="75" y1="175" x2="425" y2="175" class="axis"/>
+        <line x1="250" y1="25" x2="250" y2="325" class="axis"/>
+        <path d="M250 175 L338.4 86.6" stroke="#e58b35" stroke-width="3"/>
+        <circle cx="338.4" cy="86.6" r="5" fill="#e58b35"/>
+        <path d="M290 175 A40 40 0 0 0 278.3 146.7" fill="none" stroke="#e58b35" stroke-width="2"/>
+        <text x="300" y="153" class="graph-label">x</text>
+        <text x="340" y="72" class="graph-label">M(cos x, sin x)</text>
+        <text x="432" y="180" class="graph-label">x</text>
+        <text x="260" y="22" class="graph-label">y</text>
+        <text x="235" y="192" class="graph-label">O</text>
+        <text x="375" y="191" class="graph-label">1</text>
+        <text x="112" y="191" class="graph-label">-1</text>
+        <text x="258" y="57" class="graph-label">1</text>
+        <text x="258" y="302" class="graph-label">-1</text>
+        <text x="335" y="230" class="graph-label">π/4</text>
+        <text x="100" y="70" class="graph-label">π</text>
+        <text x="265" y="48" class="graph-label">π/2</text>
+        <text x="260" y="312" class="graph-label">-π/2</text>
+      </svg>
+      <div class="graph-caption">Coordonnées du point M : cosinus sur l'axe horizontal et sinus sur l'axe vertical.</div>
+    </div>
+
+    <div class="formula center">cos²(x) + sin²(x) = 1</div>
+    <p>Cette relation fondamentale découle directement de l'équation du cercle unité : X² + Y² = 1.</p>
+  </div>
+
+  <!-- SINUS -->
+
+  <div class="card" id="sinus">
+    <h3>3. Fonction sinus : f(x) = sin(x)</h3>
+    <p>La fonction sinus associe à chaque réel x le sinus de l'angle x.</p>
+
+    <div class="formula center">f(x) = sin(x)</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Propriété</th><th>Résultat</th></tr>
+        <tr><td>Domaine de définition</td><td>ℝ</td></tr>
+        <tr><td>Ensemble image</td><td>[-1 ; 1]</td></tr>
+        <tr><td>Parité</td><td>Impaire : sin(-x) = -sin(x)</td></tr>
+        <tr><td>Période fondamentale</td><td>2π</td></tr>
+        <tr><td>Continuité</td><td>Continue sur ℝ</td></tr>
+        <tr><td>Dérivabilité</td><td>Dérivable sur ℝ</td></tr>
+        <tr><td>Dérivée</td><td>f'(x) = cos(x)</td></tr>
+        <tr><td>Zéros</td><td>x = kπ, k ∈ ℤ</td></tr>
+        <tr><td>Maximum</td><td>1 pour x = π/2 + 2kπ</td></tr>
+        <tr><td>Minimum</td><td>-1 pour x = -π/2 + 2kπ</td></tr>
+      </table>
+    </div>
+
+    <h4>Valeurs remarquables</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>x</th><th>0</th><th>π/6</th><th>π/4</th><th>π/3</th><th>π/2</th><th>π</th><th>3π/2</th><th>2π</th></tr>
+        <tr><th>sin(x)</th><td>0</td><td>1/2</td><td>√2/2</td><td>√3/2</td><td>1</td><td>0</td><td>-1</td><td>0</td></tr>
+      </table>
+    </div>
+
+    <h4>Courbe représentative</h4>
+    <div class="graph-box">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Courbe de la fonction sinus">
+        <g>
+          <line x1="35" y1="130" x2="610" y2="130" class="axis"/>
+          <line x1="320" y1="15" x2="320" y2="240" class="axis"/>
+          <line x1="35" y1="65" x2="610" y2="65" class="gridline"/>
+          <line x1="35" y1="195" x2="610" y2="195" class="gridline"/>
+          <path class="curve" d="M35 130 C75 130 100 65 160 65 S245 130 320 130 S405 195 480 195 S560 130 610 130"/>
+          <text x="300" y="20" class="graph-label">y</text>
+          <text x="615" y="134" class="graph-label">x</text>
+          <text x="326" y="61" class="graph-label">1</text>
+          <text x="326" y="201" class="graph-label">-1</text>
+          <text x="310" y="145" class="graph-label">0</text>
+          <text x="145" y="148" class="graph-label">-π</text>
+          <text x="470" y="148" class="graph-label">π</text>
+        </g>
+      </svg>
+      <div class="graph-caption">Représentation schématique de la sinusoïde.</div>
+    </div>
+
+    <h4>Variations du sinus</h4>
+    <p>La dérivée est cos(x). Son signe permet de déterminer les intervalles de croissance et de décroissance.</p>
+    <div class="formula">
+      sin est croissante sur [-π/2 + 2kπ ; π/2 + 2kπ].<br>
+      sin est décroissante sur [π/2 + 2kπ ; 3π/2 + 2kπ].
+    </div>
+
+    <h4>Limites</h4>
+    <ul>
+      <li>lim(x→a) sin(x) = sin(a), pour tout a réel.</li>
+      <li>lim(x→+∞) sin(x) n'existe pas.</li>
+      <li>lim(x→-∞) sin(x) n'existe pas.</li>
+      <li>sin(x) est bornée entre -1 et 1.</li>
+    </ul>
+
+    <div class="note">Attention : le sinus n'a pas de limite à l'infini car il oscille indéfiniment entre -1 et 1.</div>
+  </div>
+
+  <!-- COSINUS -->
+
+  <div class="card" id="cosinus">
+    <h3>4. Fonction cosinus : f(x) = cos(x)</h3>
+    <div class="formula center">f(x) = cos(x)</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Propriété</th><th>Résultat</th></tr>
+        <tr><td>Domaine</td><td>ℝ</td></tr>
+        <tr><td>Image</td><td>[-1 ; 1]</td></tr>
+        <tr><td>Parité</td><td>Paire : cos(-x) = cos(x)</td></tr>
+        <tr><td>Période</td><td>2π</td></tr>
+        <tr><td>Continuité</td><td>Sur ℝ</td></tr>
+        <tr><td>Dérivée</td><td>-sin(x)</td></tr>
+        <tr><td>Zéros</td><td>x = π/2 + kπ</td></tr>
+        <tr><td>Maximum</td><td>1 pour x = 2kπ</td></tr>
+        <tr><td>Minimum</td><td>-1 pour x = π + 2kπ</td></tr>
+      </table>
+    </div>
+
+    <h4>Valeurs remarquables</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>x</th><th>0</th><th>π/6</th><th>π/4</th><th>π/3</th><th>π/2</th><th>π</th></tr>
+        <tr><th>cos(x)</th><td>1</td><td>√3/2</td><td>√2/2</td><td>1/2</td><td>0</td><td>-1</td></tr>
+      </table>
+    </div>
+
+    <h4>Courbe représentative</h4>
+    <div class="graph-box">
+      <svg viewBox="0 0 640 250" role="img" aria-label="Courbe du cosinus">
+        <line x1="35" y1="125" x2="610" y2="125" class="axis"/>
+        <line x1="320" y1="15" x2="320" y2="230" class="axis"/>
+        <line x1="35" y1="55" x2="610" y2="55" class="gridline"/>
+        <line x1="35" y1="195" x2="610" y2="195" class="gridline"/>
+        <path class="curve2" d="M35 195 C95 195 115 55 180 55 S250 195 320 195 S390 55 460 55 S530 195 610 195"/>
+        <text x="326" y="49" class="graph-label">1</text>
+        <text x="326" y="207" class="graph-label">-1</text>
+        <text x="615" y="129" class="graph-label">x</text>
+      </svg>
+      <div class="graph-caption">Courbe du cosinus : une fonction paire.</div>
+    </div>
+
+    <h4>Variations</h4>
+    <div class="formula">
+      cos est décroissante sur [2kπ ; (2k+1)π].<br>
+      cos est croissante sur [(2k-1)π ; 2kπ].
+    </div>
+
+    <h4>Limites</h4>
+    <p>Pour tout réel a, lim(x→a) cos(x) = cos(a). Aux deux infinis, la limite n'existe pas.</p>
+  </div>
+
+  <!-- TANGENTE -->
+
+  <div class="card" id="tangente">
+    <h3>5. Fonction tangente : f(x) = tan(x)</h3>
+    <div class="formula center">tan(x) = sin(x) / cos(x)</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Propriété</th><th>Résultat</th></tr>
+        <tr><td>Domaine</td><td>ℝ \ {π/2 + kπ}</td></tr>
+        <tr><td>Image</td><td>ℝ</td></tr>
+        <tr><td>Parité</td><td>Impaire</td></tr>
+        <tr><td>Période</td><td>π</td></tr>
+        <tr><td>Dérivée</td><td>1/cos²(x) = 1 + tan²(x)</td></tr>
+        <tr><td>Zéros</td><td>kπ</td></tr>
+        <tr><td>Continuité</td><td>Sur chaque intervalle de son domaine</td></tr>
+      </table>
+    </div>
+
+    <h4>Pourquoi la tangente n'est-elle pas définie partout ?</h4>
+    <p>Parce que son dénominateur cos(x) doit être différent de zéro.</p>
+    <div class="formula">cos(x) ≠ 0 ⇔ x ≠ π/2 + kπ</div>
+
+    <h4>Variations</h4>
+    <p>Sa dérivée est strictement positive sur chaque intervalle de définition. La tangente est donc strictement croissante sur :</p>
+    <div class="formula">]-π/2 + kπ ; π/2 + kπ[</div>
+
+    <h4>Limites et asymptotes</h4>
+    <div class="formula">
+      lim(x→π/2⁻) tan(x) = +∞<br>
+      lim(x→π/2⁺) tan(x) = -∞
+    </div>
+    <p>Les droites x = π/2 + kπ sont des asymptotes verticales.</p>
+
+    <div class="graph-box">
+      <svg viewBox="0 0 620 280" role="img" aria-label="Courbe de la tangente et ses asymptotes">
+        <line x1="20" y1="140" x2="600" y2="140" class="axis"/>
+        <line x1="310" y1="10" x2="310" y2="270" class="axis"/>
+        <line x1="165" y1="10" x2="165" y2="270" stroke="#c54b43" class="dashed"/>
+        <line x1="455" y1="10" x2="455" y2="270" stroke="#c54b43" class="dashed"/>
+        <path d="M20 12 C100 100 130 130 160 10" class="curve"/>
+        <path d="M170 270 C220 160 260 140 310 140 C360 140 400 120 450 10" class="curve"/>
+        <path d="M460 270 C500 170 550 140 600 138" class="curve"/>
+        <text x="145" y="25" class="graph-label">Asymptote</text>
+        <text x="440" y="25" class="graph-label">Asymptote</text>
+      </svg>
+      <div class="graph-caption">Courbe schématique : les lignes rouges représentent les asymptotes verticales.</div>
+    </div>
+  </div>
+
+  <!-- COTANGENTE -->
+
+  <div class="card" id="cotangente">
+    <h3>6. Fonction cotangente : f(x) = cot(x)</h3>
+    <div class="formula center">cot(x) = cos(x) / sin(x) = 1/tan(x)</div>
+
+    <table>
+      <tr><th>Propriété</th><th>Résultat</th></tr>
+      <tr><td>Domaine</td><td>ℝ \ {kπ}</td></tr>
+      <tr><td>Image</td><td>ℝ</td></tr>
+      <tr><td>Parité</td><td>Impaire</td></tr>
+      <tr><td>Période</td><td>π</td></tr>
+      <tr><td>Dérivée</td><td>-1/sin²(x) = -(1+cot²(x))</td></tr>
+      <tr><td>Zéros</td><td>π/2 + kπ</td></tr>
+    </table>
+
+    <h4>Variations et limites</h4>
+    <p>La dérivée est toujours négative sur chaque intervalle de définition. La cotangente est donc strictement décroissante sur ]kπ ; (k+1)π[.</p>
+    <div class="formula">
+      lim(x→0⁺) cot(x) = +∞<br>
+      lim(x→0⁻) cot(x) = -∞
+    </div>
+    <p>Les droites x = kπ sont des asymptotes verticales.</p>
+  </div>
+
+  <!-- SEC ET CSC -->
+
+  <div class="card" id="secantes">
+    <h3>7. Fonctions sécante et cosécante</h3>
+    <div class="grid2">
+      <div>
+        <div class="formula center">sec(x) = 1/cos(x)</div>
+        <p>Domaine : ℝ \ {π/2 + kπ}.</p>
+        <p>Image : ]-∞ ; -1] ∪ [1 ; +∞[.</p>
+        <p>Dérivée : sec(x)tan(x).</p>
+        <p>Période : 2π.</p>
+      </div>
+      <div>
+        <div class="formula center">csc(x) = 1/sin(x)</div>
+        <p>Domaine : ℝ \ {kπ}.</p>
+        <p>Image : ]-∞ ; -1] ∪ [1 ; +∞[.</p>
+        <p>Dérivée : -csc(x)cot(x).</p>
+        <p>Période : 2π.</p>
+      </div>
+    </div>
+    <div class="note">Les notations sec et csc sont parfois remplacées par 1/cos et 1/sin dans les exercices.</div>
+  </div>
+
+  <!-- IDENTITES -->
+
+  <div class="card" id="identites">
+    <h3>8. Identités trigonométriques fondamentales</h3>
+
+    <h4>A. Identité fondamentale</h4>
+    <div class="formula center">sin²(x) + cos²(x) = 1</div>
+    <p>En divisant par cos²(x), lorsque cos(x) ≠ 0 :</p>
+    <div class="formula">1 + tan²(x) = 1/cos²(x) = sec²(x)</div>
+    <p>En divisant par sin²(x), lorsque sin(x) ≠ 0 :</p>
+    <div class="formula">1 + cot²(x) = 1/sin²(x) = csc²(x)</div>
+
+    <h4>B. Formules de symétrie</h4>
+    <div class="formula">
+      sin(-x) = -sin(x)<br>
+      cos(-x) = cos(x)<br>
+      tan(-x) = -tan(x)<br>
+      cot(-x) = -cot(x)
+    </div>
+
+    <h4>C. Angles complémentaires et supplémentaires</h4>
+    <div class="formula">
+      sin(π/2 - x) = cos(x)<br>
+      cos(π/2 - x) = sin(x)<br>
+      sin(π - x) = sin(x)<br>
+      cos(π - x) = -cos(x)<br>
+      tan(π - x) = -tan(x)
+    </div>
+
+    <h4>D. Formules d'addition</h4>
+    <div class="formula">
+      sin(a+b) = sin(a)cos(b) + cos(a)sin(b)<br>
+      sin(a-b) = sin(a)cos(b) - cos(a)sin(b)<br><br>
+      cos(a+b) = cos(a)cos(b) - sin(a)sin(b)<br>
+      cos(a-b) = cos(a)cos(b) + sin(a)sin(b)<br><br>
+      tan(a+b) = (tan(a)+tan(b))/(1-tan(a)tan(b))
+    </div>
+
+    <h4>E. Formules d'angles doubles</h4>
+    <div class="formula">
+      sin(2x) = 2sin(x)cos(x)<br>
+      cos(2x) = cos²(x)-sin²(x)<br>
+      cos(2x) = 1-2sin²(x)<br>
+      cos(2x) = 2cos²(x)-1<br>
+      tan(2x) = 2tan(x)/(1-tan²(x))
+    </div>
+
+    <h4>F. Formules de réduction de puissance</h4>
+    <div class="formula">
+      sin²(x) = (1-cos(2x))/2<br>
+      cos²(x) = (1+cos(2x))/2
+    </div>
+
+    <h4>G. Somme et différence de deux sinus ou cosinus</h4>
+    <div class="formula">
+      sin(a)+sin(b) = 2sin((a+b)/2)cos((a-b)/2)<br>
+      sin(a)-sin(b) = 2cos((a+b)/2)sin((a-b)/2)<br>
+      cos(a)+cos(b) = 2cos((a+b)/2)cos((a-b)/2)<br>
+      cos(a)-cos(b) = -2sin((a+b)/2)sin((a-b)/2)
+    </div>
+  </div>
+
+  <!-- EQUATIONS -->
+
+  <div class="card" id="equations">
+    <h3>9. Résolution des équations trigonométriques</h3>
+
+    <h4>A. Équation sin(x) = a</h4>
+    <p>Elle possède des solutions réelles uniquement si -1 ≤ a ≤ 1.</p>
+    <div class="formula">
+      x = arcsin(a) + 2kπ<br>
+      ou x = π - arcsin(a) + 2kπ
+    </div>
+
+    <h4>B. Équation cos(x) = a</h4>
+    <p>Elle possède des solutions réelles uniquement si -1 ≤ a ≤ 1.</p>
+    <div class="formula">
+      x = arccos(a) + 2kπ<br>
+      ou x = -arccos(a) + 2kπ
+    </div>
+
+    <h4>C. Équation tan(x) = a</h4>
+    <div class="formula">x = arctan(a) + kπ</div>
+
+    <h4>D. Équation cot(x) = a</h4>
+    <div class="formula">x = arccot(a) + kπ</div>
+
+    <p>Dans toutes ces formules, k ∈ ℤ.</p>
+    <div class="note">Si l'énoncé demande les solutions dans un intervalle précis, il faut garder uniquement les solutions appartenant à cet intervalle.</div>
+
+    <h4>Exemple</h4>
+    <p>Résoudre sin(x) = 1/2 sur [0 ; 2π].</p>
+    <div class="formula">
+      arcsin(1/2) = π/6<br>
+      x = π/6 ou x = π - π/6 = 5π/6
+    </div>
+    <div class="success">Ensemble des solutions : {π/6 ; 5π/6}.</div>
+  </div>
+
+  <!-- TRANSFORMATIONS -->
+
+  <div class="card" id="transformations">
+    <h3>10. Fonctions trigonométriques transformées</h3>
+    <p>Une fonction trigonométrique peut être modifiée par des paramètres qui changent son amplitude, sa période et sa position.</p>
+
+    <div class="formula center">f(x) = A sin(Bx+C)+D</div>
+
+    <table>
+      <tr><th>Paramètre</th><th>Effet</th></tr>
+      <tr><td>A</td><td>Amplitude = |A|</td></tr>
+      <tr><td>B</td><td>Période = 2π/|B|</td></tr>
+      <tr><td>C</td><td>Décalage horizontal = -C/B</td></tr>
+      <tr><td>D</td><td>Décalage vertical</td></tr>
+    </table>
+
+    <div class="formula">
+      Maximum = D + |A|<br>
+      Minimum = D - |A|<br>
+      Image = [D-|A| ; D+|A|]
+    </div>
+
+    <h4>Exemple</h4>
+    <p>f(x) = 3sin(2x - π) + 1.</p>
+    <ul>
+      <li>Amplitude : 3.</li>
+      <li>Période : 2π/2 = π.</li>
+      <li>Décalage horizontal : π/2 vers la droite.</li>
+      <li>Décalage vertical : 1 vers le haut.</li>
+      <li>Maximum : 4.</li>
+      <li>Minimum : -2.</li>
+    </ul>
+
+    <div class="note">Pour A cos(Bx+C)+D, les mêmes règles d'amplitude, de période et de translation s'appliquent.</div>
+  </div>
+
+  <!-- INVERSE TRIGO -->
+
+  <div class="card" id="inverse-trigo">
+    <h3>11. Comprendre les fonctions trigonométriques réciproques</h3>
+    <p>Les fonctions sinus, cosinus et tangente ne sont pas toutes injectives sur ℝ. Pour construire leurs fonctions réciproques, on restreint leurs domaines à des intervalles où elles sont bijectives sur leur image.</p>
+
+    <div class="note">
+      Attention : sin⁻¹(x) désigne arcsin(x), et non 1/sin(x).
+      De même, cos⁻¹(x) signifie arccos(x), et non 1/cos(x).
+    </div>
+
+    <h4>Tableau général des fonctions réciproques</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Fonction</th><th>Domaine</th><th>Image principale</th></tr>
+        <tr><td>arcsin(x)</td><td>[-1 ; 1]</td><td>[-π/2 ; π/2]</td></tr>
+        <tr><td>arccos(x)</td><td>[-1 ; 1]</td><td>[0 ; π]</td></tr>
+        <tr><td>arctan(x)</td><td>ℝ</td><td>]-π/2 ; π/2[</td></tr>
+        <tr><td>arccot(x)</td><td>ℝ</td><td>]0 ; π[</td></tr>
+        <tr><td>arcsec(x)</td><td>]-∞ ; -1] ∪ [1 ; +∞[</td><td>[0 ; π], π/2 exclu</td></tr>
+        <tr><td>arccsc(x)</td><td>]-∞ ; -1] ∪ [1 ; +∞[</td><td>[-π/2 ; π/2], 0 exclu</td></tr>
+      </table>
+    </div>
+
+    <h4>Propriétés fondamentales</h4>
+    <div class="formula">
+      sin(arcsin(x)) = x<br>
+      cos(arccos(x)) = x<br>
+      tan(arctan(x)) = x
+    </div>
+
+    <p>Les compositions dans l'autre sens demandent de respecter les intervalles principaux :</p>
+    <div class="formula">
+      arcsin(sin(x)) = x si x ∈ [-π/2 ; π/2]<br>
+      arccos(cos(x)) = x si x ∈ [0 ; π]<br>
+      arctan(tan(x)) = x si x ∈ ]-π/2 ; π/2[
+    </div>
+
+    <div class="warning">
+      Il est faux d'écrire arcsin(sin(x)) = x pour tout réel x.
+      Par exemple, arcsin(sin(3π/4)) = π/4 et non 3π/4.
+    </div>
+  </div>
+
+  <!-- ARCSIN -->
+
+  <div class="card" id="arcsin">
+    <h3>12. Fonction arcsinus : f(x) = arcsin(x)</h3>
+    <div class="formula center">y = arcsin(x) ⇔ sin(y) = x</div>
+
+    <p>Arcsin(x) est l'unique angle y appartenant à [-π/2 ; π/2] dont le sinus est égal à x.</p>
+
+    <table>
+      <tr><th>Propriété</th><th>Résultat</th></tr>
+      <tr><td>Domaine</td><td>[-1 ; 1]</td></tr>
+      <tr><td>Image</td><td>[-π/2 ; π/2]</td></tr>
+      <tr><td>Parité</td><td>Impaire</td></tr>
+      <tr><td>Continuité</td><td>Sur [-1 ; 1]</td></tr>
+      <tr><td>Monotonie</td><td>Strictement croissante</td></tr>
+      <tr><td>Valeur en 0</td><td>0</td></tr>
+      <tr><td>Valeur en 1</td><td>π/2</td></tr>
+      <tr><td>Valeur en -1</td><td>-π/2</td></tr>
+    </table>
+
+    <h4>Valeurs remarquables</h4>
+    <table>
+      <tr><th>x</th><th>-1</th><th>-√3/2</th><th>-√2/2</th><th>-1/2</th><th>0</th><th>1/2</th><th>√2/2</th><th>√3/2</th><th>1</th></tr>
+      <tr><th>arcsin(x)</th><td>-π/2</td><td>-π/3</td><td>-π/4</td><td>-π/6</td><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td></tr>
+    </table>
+
+    <h4>Dérivée</h4>
+    <div class="formula center">arcsin'(x) = 1/√(1-x²)</div>
+    <p>Cette formule est valable pour -1 &lt; x &lt; 1. La fonction n'a pas de dérivée finie aux extrémités -1 et 1.</p>
+
+    <h4>Dérivée d'une fonction composée</h4>
+    <div class="formula">
+      [arcsin(u(x))]' = u'(x)/√(1-u²(x))
+    </div>
+    <p>Il faut que u(x) appartienne à ]-1 ; 1[ pour appliquer la formule de dérivation.</p>
+
+    <h4>Exemple détaillé</h4>
+    <p>Calculer la dérivée de f(x) = arcsin(2x).</p>
+    <div class="formula">
+      u(x) = 2x<br>
+      u'(x) = 2<br>
+      f'(x) = 2/√(1-4x²)
+    </div>
+    <p>Domaine de f : [-1/2 ; 1/2]. Domaine de dérivabilité : ]-1/2 ; 1/2[.</p>
+
+    <h4>Limites</h4>
+    <div class="formula">
+      lim(x→1⁻) arcsin(x) = π/2<br>
+      lim(x→-1⁺) arcsin(x) = -π/2
+    </div>
+
+    <h4>Courbe</h4>
+    <div class="graph-box">
+      <svg viewBox="0 0 540 250" role="img" aria-label="Courbe croissante de arcsin">
+        <line x1="45" y1="125" x2="500" y2="125" class="axis"/>
+        <line x1="270" y1="15" x2="270" y2="235" class="axis"/>
+        <path d="M95 220 C140 190 185 155 270 125 C355 95 400 60 445 30" class="curve"/>
+        <text x="83" y="235" class="graph-label">-1</text>
+        <text x="440" y="20" class="graph-label">1</text>
+        <text x="490" y="140" class="graph-label">x</text>
+      </svg>
+      <div class="graph-caption">La fonction arcsin est strictement croissante et impaire.</div>
+    </div>
+  </div>
+
+  <!-- ARCCOS -->
+
+  <div class="card" id="arccos">
+    <h3>13. Fonction arccosinus : f(x) = arccos(x)</h3>
+    <div class="formula center">y = arccos(x) ⇔ cos(y) = x</div>
+
+    <p>Arccos(x) est l'unique angle y appartenant à [0 ; π] dont le cosinus vaut x.</p>
+
+    <table>
+      <tr><th>Propriété</th><th>Résultat</th></tr>
+      <tr><td>Domaine</td><td>[-1 ; 1]</td></tr>
+      <tr><td>Image</td><td>[0 ; π]</td></tr>
+      <tr><td>Parité</td><td>Ni paire ni impaire</td></tr>
+      <tr><td>Continuité</td><td>Sur [-1 ; 1]</td></tr>
+      <tr><td>Monotonie</td><td>Strictement décroissante</td></tr>
+      <tr><td>arccos(-1)</td><td>π</td></tr>
+      <tr><td>arccos(0)</td><td>π/2</td></tr>
+      <tr><td>arccos(1)</td><td>0</td></tr>
+    </table>
+
+    <h4>Relation importante</h4>
+    <div class="formula center">arcsin(x) + arccos(x) = π/2</div>
+    <p>Elle est valable pour tout x ∈ [-1 ; 1].</p>
+
+    <h4>Dérivée</h4>
+    <div class="formula center">arccos'(x) = -1/√(1-x²)</div>
+    <div class="formula">[arccos(u(x))]' = -u'(x)/√(1-u²(x))</div>
+
+    <h4>Exemple</h4>
+    <p>f(x) = arccos(3x).</p>
+    <div class="formula">
+      u'(x) = 3<br>
+      f'(x) = -3/√(1-9x²)
+    </div>
+    <p>Domaine : [-1/3 ; 1/3]. Dérivabilité : ]-1/3 ; 1/3[.</p>
+
+    <h4>Limites aux bornes</h4>
+    <div class="formula">
+      lim(x→-1⁺) arccos(x) = π<br>
+      lim(x→1⁻) arccos(x) = 0
+    </div>
+
+    <h4>Courbe</h4>
+    <div class="graph-box">
+      <svg viewBox="0 0 540 250" role="img" aria-label="Courbe décroissante de arccos">
+        <line x1="45" y1="125" x2="500" y2="125" class="axis"/>
+        <line x1="270" y1="15" x2="270" y2="235" class="axis"/>
+        <path d="M95 25 C160 65 205 95 270 125 C335 155 380 185 445 220" class="curve2"/>
+        <text x="83" y="238" class="graph-label">-1</text>
+        <text x="440" y="238" class="graph-label">1</text>
+        <text x="490" y="140" class="graph-label">x</text>
+      </svg>
+      <div class="graph-caption">Arccos est strictement décroissante.</div>
+    </div>
+  </div>
+
+  <!-- ARCTAN -->
+
+  <div class="card" id="arctan">
+    <h3>14. Fonction arctangente : f(x) = arctan(x)</h3>
+    <div class="formula center">y = arctan(x) ⇔ tan(y) = x</div>
+
+    <p>Arctan(x) est l'unique angle y appartenant à ]-π/2 ; π/2[ dont la tangente vaut x.</p>
+
+    <table>
+      <tr><th>Propriété</th><th>Résultat</th></tr>
+      <tr><td>Domaine</td><td>ℝ</td></tr>
+      <tr><td>Image</td><td>]-π/2 ; π/2[</td></tr>
+      <tr><td>Parité</td><td>Impaire</td></tr>
+      <tr><td>Continuité</td><td>Sur ℝ</td></tr>
+      <tr><td>Monotonie</td><td>Strictement croissante</td></tr>
+      <tr><td>Valeur en 0</td><td>0</td></tr>
+    </table>
+
+    <h4>Dérivée</h4>
+    <div class="formula center">arctan'(x) = 1/(1+x²)</div>
+    <div class="formula">[arctan(u(x))]' = u'(x)/(1+u²(x))</div>
+
+    <h4>Exemple</h4>
+    <p>f(x) = arctan(2x+1).</p>
+    <div class="formula">
+      u'(x) = 2<br>
+      f'(x) = 2/[1+(2x+1)²]
+    </div>
+
+    <h4>Limites et asymptotes</h4>
+    <div class="formula">
+      lim(x→+∞) arctan(x) = π/2<br>
+      lim(x→-∞) arctan(x) = -π/2
+    </div>
+    <p>Les droites y = π/2 et y = -π/2 sont des asymptotes horizontales.</p>
+
+    <div class="graph-box">
+      <svg viewBox="0 0 540 250" role="img" aria-label="Courbe de la fonction arctangente avec asymptotes horizontales">
+        <line x1="30" y1="50" x2="510" y2="50" stroke="#c54b43" class="dashed"/>
+        <line x1="30" y1="200" x2="510" y2="200" stroke="#c54b43" class="dashed"/>
+        <line x1="30" y1="125" x2="510" y2="125" class="axis"/>
+        <line x1="270" y1="15" x2="270" y2="235" class="axis"/>
+        <path d="M35 195 C100 193 140 175 190 145 S250 125 270 125 S350 75 390 60 S470 55 505 55" class="curve"/>
+        <text x="470" y="42" class="graph-label">π/2</text>
+        <text x="470" y="216" class="graph-label">-π/2</text>
+        <text x="500" y="140" class="graph-label">x</text>
+      </svg>
+      <div class="graph-caption">Deux asymptotes horizontales, sans intersection avec la courbe.</div>
+    </div>
+  </div>
+
+  <!-- ARCCOT -->
+
+  <div class="card" id="arccot">
+    <h3>15. Fonction arccotangente : f(x) = arccot(x)</h3>
+    <div class="formula center">y = arccot(x) ⇔ cot(y) = x</div>
+    <p>On choisit la branche principale y ∈ ]0 ; π[.</p>
+
+    <table>
+      <tr><th>Propriété</th><th>Résultat</th></tr>
+      <tr><td>Domaine</td><td>ℝ</td></tr>
+      <tr><td>Image</td><td>]0 ; π[</td></tr>
+      <tr><td>Monotonie</td><td>Strictement décroissante</td></tr>
+      <tr><td>Continuité</td><td>Sur ℝ</td></tr>
+      <tr><td>Dérivée</td><td>-1/(1+x²)</td></tr>
+    </table>
+
+    <h4>Relations fondamentales</h4>
+    <div class="formula">
+      arccot(x) = π/2 - arctan(x)<br>
+      arccot(x) + arctan(x) = π/2
+    </div>
+
+    <h4>Limites</h4>
+    <div class="formula">
+      lim(x→+∞) arccot(x) = 0<br>
+      lim(x→-∞) arccot(x) = π
+    </div>
+    <p>Les droites y = 0 et y = π sont des asymptotes horizontales.</p>
+
+    <div class="note">La convention de la branche principale de arccot peut varier selon les cours et les ouvrages. Ici, on utilise la convention (0 ; π).</div>
+  </div>
+
+  <!-- ARCSEC -->
+
+  <div class="card" id="arcsec">
+    <h3>16. Arcsecante et arccosécante</h3>
+
+    <h4>A. Arcsecante</h4>
+    <div class="formula center">arcsec(x) = arccos(1/x)</div>
+    <ul>
+      <li>Domaine : |x| ≥ 1.</li>
+      <li>Image : [0 ; π] privé de π/2.</li>
+      <li>Dérivée : 1/(|x|√(x²-1)) pour |x| &gt; 1.</li>
+      <li>Continue sur chacun des intervalles de son domaine.</li>
+    </ul>
+
+    <h4>B. Arccosécante</h4>
+    <div class="formula center">arccsc(x) = arcsin(1/x)</div>
+    <ul>
+      <li>Domaine : |x| ≥ 1.</li>
+      <li>Image : [-π/2 ; 0[ ∪ ]0 ; π/2].</li>
+      <li>Dérivée : -1/(|x|√(x²-1)) pour |x| &gt; 1.</li>
+    </ul>
+    <div class="note">Ces deux fonctions sont moins fréquentes dans certains programmes, mais leurs domaines, images et dérivées sont importants à connaître.</div>
+  </div>
+
+  <!-- LIMITES -->
+
+  <div class="card" id="limites">
+    <h3>17. Limites trigonométriques : méthodes et résultats</h3>
+
+    <h4>A. Limites fondamentales</h4>
+    <div class="formula center">
+      lim(x→0) sin(x)/x = 1
+    </div>
+    <div class="formula center">
+      lim(x→0) tan(x)/x = 1
+    </div>
+    <div class="formula center">
+      lim(x→0) (1-cos(x))/x² = 1/2
+    </div>
+
+    <h4>B. Formules avec un coefficient</h4>
+    <div class="formula">
+      lim(x→0) sin(ax)/x = a<br>
+      lim(x→0) tan(ax)/x = a<br>
+      lim(x→0) (1-cos(ax))/x² = a²/2
+    </div>
+
+    <h4>C. Limites des fonctions réciproques</h4>
+    <div class="formula">
+      lim(x→0) arcsin(x)/x = 1<br>
+      lim(x→0) arctan(x)/x = 1<br>
+      lim(x→0) arccos(x) = π/2
+    </div>
+
+    <h4>D. Comportement à l'infini</h4>
+    <div class="formula">
+      lim(x→+∞) arctan(x) = π/2<br>
+      lim(x→-∞) arctan(x) = -π/2<br>
+      lim(x→+∞) arccot(x) = 0
+    </div>
+
+    <h4>E. Limites de compositions</h4>
+    <p>Si u(x) → 0, alors :</p>
+    <div class="formula">
+      sin(u(x))/u(x) → 1<br>
+      tan(u(x))/u(x) → 1<br>
+      (1-cos(u(x)))/u²(x) → 1/2
+    </div>
+
+    <h4>F. Équivalents usuels au voisinage de zéro</h4>
+    <div class="formula">
+      sin(x) ~ x<br>
+      tan(x) ~ x<br>
+      arcsin(x) ~ x<br>
+      arctan(x) ~ x<br>
+      1-cos(x) ~ x²/2
+    </div>
+
+    <h4>Exemple 1</h4>
+    <p>Calculer lim(x→0) sin(5x)/3x.</p>
+    <div class="formula">
+      = 5/3 × sin(5x)/(5x)<br>
+      = 5/3 × 1<br>
+      = 5/3
+    </div>
+
+    <h4>Exemple 2</h4>
+    <p>Calculer lim(x→0) (1-cos(4x))/x².</p>
+    <div class="formula">
+      = 16 × (1-cos(4x))/(16x²)<br>
+      = 16 × 1/2<br>
+      = 8
+    </div>
+
+    <h4>Exemple 3</h4>
+    <p>Calculer lim(x→0) arcsin(3x)/x.</p>
+    <div class="formula">
+      = 3 × arcsin(3x)/(3x)<br>
+      = 3
+    </div>
+
+    <div class="warning">Les limites fondamentales avec sin(x)/x et tan(x)/x supposent que les angles sont exprimés en radians.</div>
+  </div>
+
+  <!-- DERIVEES -->
+
+  <div class="card" id="derivees">
+    <h3>18. Dérivées : tableau général et règles de calcul</h3>
+
+    <h4>A. Dérivées des fonctions trigonométriques</h4>
+    <table>
+      <tr><th>Fonction</th><th>Dérivée</th><th>Condition</th></tr>
+      <tr><td>sin(x)</td><td>cos(x)</td><td>Tout réel</td></tr>
+      <tr><td>cos(x)</td><td>-sin(x)</td><td>Tout réel</td></tr>
+      <tr><td>tan(x)</td><td>1/cos²(x)</td><td>cos(x) ≠ 0</td></tr>
+      <tr><td>cot(x)</td><td>-1/sin²(x)</td><td>sin(x) ≠ 0</td></tr>
+      <tr><td>sec(x)</td><td>sec(x)tan(x)</td><td>cos(x) ≠ 0</td></tr>
+      <tr><td>csc(x)</td><td>-csc(x)cot(x)</td><td>sin(x) ≠ 0</td></tr>
+    </table>
+
+    <h4>B. Dérivées des fonctions réciproques</h4>
+    <table>
+      <tr><th>Fonction</th><th>Dérivée</th><th>Intervalle</th></tr>
+      <tr><td>arcsin(x)</td><td>1/√(1-x²)</td><td>]-1 ; 1[</td></tr>
+      <tr><td>arccos(x)</td><td>-1/√(1-x²)</td><td>]-1 ; 1[</td></tr>
+      <tr><td>arctan(x)</td><td>1/(1+x²)</td><td>ℝ</td></tr>
+      <tr><td>arccot(x)</td><td>-1/(1+x²)</td><td>ℝ</td></tr>
+      <tr><td>arcsec(x)</td><td>1/(|x|√(x²-1))</td><td>|x| &gt; 1</td></tr>
+      <tr><td>arccsc(x)</td><td>-1/(|x|√(x²-1))</td><td>|x| &gt; 1</td></tr>
+    </table>
+
+    <h4>C. Dérivation d'une fonction composée</h4>
+    <div class="formula center">[f(u(x))]' = f'(u(x)) × u'(x)</div>
+    <p>On dérive d'abord la fonction extérieure, puis on multiplie par la dérivée de la fonction intérieure.</p>
+
+    <table>
+      <tr><th>Fonction composée</th><th>Dérivée</th></tr>
+      <tr><td>sin(u)</td><td>u'cos(u)</td></tr>
+      <tr><td>cos(u)</td><td>-u'sin(u)</td></tr>
+      <tr><td>tan(u)</td><td>u'/cos²(u)</td></tr>
+      <tr><td>cot(u)</td><td>-u'/sin²(u)</td></tr>
+      <tr><td>arcsin(u)</td><td>u'/√(1-u²)</td></tr>
+      <tr><td>arccos(u)</td><td>-u'/√(1-u²)</td></tr>
+      <tr><td>arctan(u)</td><td>u'/(1+u²)</td></tr>
+      <tr><td>arccot(u)</td><td>-u'/(1+u²)</td></tr>
+    </table>
+
+    <h4>D. Exemples détaillés</h4>
+
+    <details>
+      <summary>Exemple 1 : f(x) = sin(3x+2)</summary>
+      <div class="detail-body">
+        <p>u(x) = 3x+2 et u'(x) = 3.</p>
+        <div class="formula">f'(x) = 3cos(3x+2)</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Exemple 2 : f(x) = cos(x²)</summary>
+      <div class="detail-body">
+        <p>u(x) = x² et u'(x) = 2x.</p>
+        <div class="formula">f'(x) = -2x sin(x²)</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Exemple 3 : f(x) = tan(5x)</summary>
+      <div class="detail-body">
+        <div class="formula">f'(x) = 5/cos²(5x)</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Exemple 4 : f(x) = arcsin(x²)</summary>
+      <div class="detail-body">
+        <div class="formula">f'(x) = 2x/√(1-x⁴)</div>
+        <p>La dérivée existe lorsque |x| &lt; 1.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Exemple 5 : f(x) = arccos(2x+1)</summary>
+      <div class="detail-body">
+        <div class="formula">f'(x) = -2/√(1-(2x+1)²)</div>
+        <p>Domaine de dérivabilité : -1 &lt; x &lt; 0.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Exemple 6 : f(x) = arctan(x²+3)</summary>
+      <div class="detail-body">
+        <div class="formula">f'(x) = 2x/[1+(x²+3)²]</div>
+      </div>
+    </details>
+  </div>
+
+  <!-- VARIATIONS -->
+
+  <div class="card" id="variations">
+    <h3>19. Variations et étude des courbes</h3>
+    <p>Pour étudier les variations d'une fonction, on suit une méthode systématique :</p>
+    <ol>
+      <li>Déterminer le domaine de définition.</li>
+      <li>Calculer la dérivée.</li>
+      <li>Déterminer les points où la dérivée est nulle ou n'existe pas.</li>
+      <li>Étudier le signe de la dérivée.</li>
+      <li>Construire le tableau de variations.</li>
+      <li>Calculer les limites aux bornes du domaine.</li>
+      <li>Identifier les asymptotes et tracer la courbe.</li>
+    </ol>
+
+    <h4>Tableaux de variations types</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Fonction</th><th>Comportement</th></tr>
+        <tr><td>sin(x)</td><td>Croissante puis décroissante périodiquement.</td></tr>
+        <tr><td>cos(x)</td><td>Décroissante puis croissante périodiquement.</td></tr>
+        <tr><td>tan(x)</td><td>Strictement croissante sur chaque branche.</td></tr>
+        <tr><td>cot(x)</td><td>Strictement décroissante sur chaque branche.</td></tr>
+        <tr><td>arcsin(x)</td><td>Strictement croissante.</td></tr>
+        <tr><td>arccos(x)</td><td>Strictement décroissante.</td></tr>
+        <tr><td>arctan(x)</td><td>Strictement croissante.</td></tr>
+        <tr><td>arccot(x)</td><td>Strictement décroissante.</td></tr>
+      </table>
+    </div>
+
+    <h4>Comment trouver une tangente à une courbe ?</h4>
+    <p>Pour une fonction f dérivable en a, l'équation de la tangente au point d'abscisse a est :</p>
+    <div class="formula center">y = f(a) + f'(a)(x-a)</div>
+    <p>Exemple : f(x)=sin(x), au point a=0.</p>
+    <div class="formula">
+      f(0)=0<br>
+      f'(0)=cos(0)=1<br>
+      Tangente : y=x
+    </div>
+  </div>
+
+  <!-- ASYMPTOTES -->
+
+  <div class="card" id="asymptotes">
+    <h3>20. Asymptotes et branches infinies</h3>
+
+    <h4>A. Asymptote verticale</h4>
+    <p>La droite x = a est une asymptote verticale si au moins une limite latérale de f(x) en a est infinie.</p>
+    <div class="formula">lim(x→a⁺) f(x) = ±∞ ou lim(x→a⁻) f(x) = ±∞</div>
+    <p>Exemples :</p>
+    <ul>
+      <li>tan(x) : x = π/2 + kπ.</li>
+      <li>cot(x) : x = kπ.</li>
+    </ul>
+
+    <h4>B. Asymptote horizontale</h4>
+    <p>La droite y = L est une asymptote horizontale si :</p>
+    <div class="formula">lim(x→+∞) f(x) = L</div>
+    <p>ou si la limite vaut L lorsque x tend vers -∞.</p>
+    <p>Exemple : arctan(x) possède deux asymptotes horizontales : y=π/2 et y=-π/2.</p>
+
+    <h4>C. Asymptote oblique</h4>
+    <p>Une droite y=ax+b est une asymptote oblique lorsque :</p>
+    <div class="formula">
+      lim(x→∞) [f(x)-(ax+b)] = 0
+    </div>
+    <p>Pour la déterminer, lorsque les limites existent :</p>
+    <div class="formula">
+      a = lim(x→∞) f(x)/x<br>
+      b = lim(x→∞) [f(x)-ax]
+    </div>
+
+    <h4>Résumé</h4>
+    <table>
+      <tr><th>Fonction</th><th>Asymptotes</th></tr>
+      <tr><td>sin(x)</td><td>Aucune</td></tr>
+      <tr><td>cos(x)</td><td>Aucune</td></tr>
+      <tr><td>tan(x)</td><td>x=π/2+kπ</td></tr>
+      <tr><td>cot(x)</td><td>x=kπ</td></tr>
+      <tr><td>arctan(x)</td><td>y=±π/2</td></tr>
+      <tr><td>arccot(x)</td><td>y=0 et y=π</td></tr>
+      <tr><td>arcsin(x)</td><td>Aucune asymptote</td></tr>
+      <tr><td>arccos(x)</td><td>Aucune asymptote</td></tr>
+    </table>
+  </div>
+
+  <!-- F INVERSE -->
+
+  <div class="card" id="fonction-inverse">
+    <h3>21. Fonction réciproque f⁻¹ : définition et méthode</h3>
+
+    <p>Une fonction f admet une fonction réciproque f⁻¹ lorsque f est bijective de son ensemble de départ vers son ensemble d'arrivée.</p>
+
+    <div class="formula center">f⁻¹(f(x)) = x</div>
+    <div class="formula center">f(f⁻¹(x)) = x</div>
+
+    <h4>A. Condition d'existence</h4>
+    <p>Sur un intervalle I, une fonction continue et strictement monotone est bijective de I sur son image f(I). Elle admet donc une réciproque sur cet ensemble image.</p>
+
+    <h4>B. Comment calculer f⁻¹ ?</h4>
+    <ol>
+      <li>Écrire y = f(x).</li>
+      <li>Résoudre cette équation en x en fonction de y.</li>
+      <li>Échanger les lettres x et y.</li>
+      <li>Déterminer le domaine de la réciproque.</li>
+    </ol>
+
+    <h4>Exemple 1</h4>
+    <p>f(x)=2x+3, définie sur ℝ.</p>
+    <div class="formula">
+      y = 2x+3<br>
+      x = (y-3)/2<br>
+      f⁻¹(x) = (x-3)/2
+    </div>
+
+    <h4>Exemple 2 : fonction sinus restreinte</h4>
+    <p>f(x)=sin(x), avec x ∈ [-π/2 ; π/2].</p>
+    <div class="formula">f⁻¹(x)=arcsin(x)</div>
+
+    <h4>Exemple 3 : fonction cosinus restreinte</h4>
+    <p>f(x)=cos(x), avec x ∈ [0 ; π].</p>
+    <div class="formula">f⁻¹(x)=arccos(x)</div>
+
+    <h4>Exemple 4 : fonction tangente restreinte</h4>
+    <p>f(x)=tan(x), avec x ∈ ]-π/2 ; π/2[.</p>
+    <div class="formula">f⁻¹(x)=arctan(x)</div>
+
+    <h4>C. Relation entre les courbes</h4>
+    <p>La courbe de f⁻¹ est le symétrique de la courbe de f par rapport à la droite y=x.</p>
+
+    <div class="graph-box">
+      <svg viewBox="0 0 540 280" role="img" aria-label="Deux courbes symétriques par rapport à la droite y égale x">
+        <line x1="35" y1="240" x2="500" y2="240" class="axis"/>
+        <line x1="70" y1="250" x2="70" y2="15" class="axis"/>
+        <line x1="70" y1="240" x2="460" y2="25" stroke="#e58b35" stroke-width="2" class="dashed"/>
+        <path d="M70 230 C150 220 210 175 280 140 S390 70 450 30" class="curve"/>
+        <path d="M70 30 C140 80 210 110 280 140 S390 210 450 230" class="curve2"/>
+        <text x="450" y="18" class="graph-label">y=x</text>
+        <text x="400" y="55" class="graph-label">f(x)</text>
+        <text x="400" y="225" class="graph-label">f⁻¹(x)</text>
+      </svg>
+      <div class="graph-caption">Les deux courbes sont symétriques par rapport à y=x.</div>
+    </div>
+
+    <h4>D. Dérivée de la fonction réciproque</h4>
+    <p>Si f est dérivable et f'(f⁻¹(x)) ≠ 0, alors :</p>
+    <div class="formula center">(f⁻¹)'(x) = 1 / f'(f⁻¹(x))</div>
+
+    <p>Exemple : si f(x)=sin(x) sur [-π/2 ; π/2], alors f⁻¹(x)=arcsin(x).</p>
+    <div class="formula">
+      (f⁻¹)'(x) = 1/cos(arcsin(x))<br>
+      = 1/√(1-x²)
+    </div>
+
+    <div class="warning">La fonction f doit être injective sur l'intervalle choisi. On ne peut pas inverser directement le sinus sur tout ℝ.</div>
+  </div>
+
+  <!-- COMPOSITIONS -->
+
+  <div class="card" id="compositions">
+    <h3>22. Fonctions composées et mélanges trigonométriques</h3>
+
+    <h4>A. Relations entre les fonctions réciproques</h4>
+    <div class="formula">
+      arcsin(x)+arccos(x)=π/2<br>
+      arctan(x)+arccot(x)=π/2<br>
+      arcsec(x)=arccos(1/x)<br>
+      arccsc(x)=arcsin(1/x)
+    </div>
+
+    <h4>B. Formules de complémentarité</h4>
+    <div class="formula">
+      sin(arccos(x)) = √(1-x²)<br>
+      cos(arcsin(x)) = √(1-x²)<br>
+      tan(arcsin(x)) = x/√(1-x²)<br>
+      tan(arccos(x)) = √(1-x²)/x
+    </div>
+    <p>Attention aux conditions de définition : dans les deux dernières formules, le dénominateur doit être non nul.</p>
+
+    <h4>C. Formules de composition avec arctan</h4>
+    <div class="formula">
+      sin(arctan(x)) = x/√(1+x²)<br>
+      cos(arctan(x)) = 1/√(1+x²)
+    </div>
+
+    <h4>D. Formules de somme de deux arctangentes</h4>
+    <p>Sous réserve de tenir compte de la branche principale :</p>
+    <div class="formula">
+      tan(arctan(a)+arctan(b)) = (a+b)/(1-ab)
+    </div>
+    <p>Cette identité est valable lorsque 1-ab ≠ 0, mais elle ne suffit pas à déterminer la valeur principale de la somme : il faut éventuellement ajouter ou retrancher π.</p>
+
+    <h4>E. Exemple de simplification</h4>
+    <p>Simplifier A = arcsin(x)+arccos(x).</p>
+    <div class="formula">
+      A = π/2
+    </div>
+    <p>Condition : x ∈ [-1 ; 1].</p>
+
+    <h4>F. Dérivées des compositions complexes</h4>
+    <div class="formula">
+      f(x)=arcsin(sin(2x))<br>
+      f'(x) = 2cos(2x)/√(1-sin²(2x))
+    </div>
+    <p>Cette expression se simplifie sur les intervalles où cos(2x) garde un signe constant. Il faut toutefois respecter les points où la fonction composée change de branche.</p>
+  </div>
+
+  <!-- METHODE -->
+
+  <div class="card" id="methodes">
+    <h3>23. Méthode générale pour étudier une fonction trigonométrique</h3>
+
+    <div class="formula">
+      Exemple : f(x) = arctan(2x-1)
+    </div>
+
+    <ol>
+      <li><strong>Domaine :</strong> arctan accepte tous les réels, donc Df=ℝ.</li>
+      <li><strong>Continuité :</strong> f est continue sur ℝ.</li>
+      <li><strong>Dérivée :</strong> f'(x)=2/[1+(2x-1)²].</li>
+      <li><strong>Signe :</strong> le dénominateur est strictement positif, donc f'(x)>0.</li>
+      <li><strong>Variations :</strong> f est strictement croissante sur ℝ.</li>
+      <li><strong>Limite en +∞ :</strong> π/2.</li>
+      <li><strong>Limite en -∞ :</strong> -π/2.</li>
+      <li><strong>Asymptotes :</strong> y=π/2 et y=-π/2.</li>
+    </ol>
+
+    <div class="success">
+      Conclusion : f est continue et strictement croissante sur ℝ, son image est ]-π/2 ; π/2[ et elle possède deux asymptotes horizontales.
+    </div>
+  </div>
+
+  <div class="card" id="formules">
+    <h3>24. Formulaire récapitulatif</h3>
+    <table>
+      <tr><th>Fonction</th><th>Domaine</th><th>Dérivée</th></tr>
+      <tr><td>sin(x)</td><td>ℝ</td><td>cos(x)</td></tr>
+      <tr><td>cos(x)</td><td>ℝ</td><td>-sin(x)</td></tr>
+      <tr><td>tan(x)</td><td>cos(x)≠0</td><td>1/cos²(x)</td></tr>
+      <tr><td>cot(x)</td><td>sin(x)≠0</td><td>-1/sin²(x)</td></tr>
+      <tr><td>arcsin(x)</td><td>[-1 ; 1]</td><td>1/√(1-x²)</td></tr>
+      <tr><td>arccos(x)</td><td>[-1 ; 1]</td><td>-1/√(1-x²)</td></tr>
+      <tr><td>arctan(x)</td><td>ℝ</td><td>1/(1+x²)</td></tr>
+      <tr><td>arccot(x)</td><td>ℝ</td><td>-1/(1+x²)</td></tr>
+    </table>
+
+    <div class="formula">
+      sin²(x)+cos²(x)=1<br>
+      tan(x)=sin(x)/cos(x)<br>
+      cot(x)=cos(x)/sin(x)<br>
+      sin(x)~x<br>
+      tan(x)~x<br>
+      1-cos(x)~x²/2<br>
+      arcsin(x)~x<br>
+      arctan(x)~x
+    </div>
+    <button class="btn btn-orange" onclick="window.print()">Imprimer le cours</button>
+  </div>
+
+</section>
+
+<!-- =====================================================
+     PARTIE 2 : EXERCICES
+===================================================== -->
+
+<section class="section" id="exercices">
+  <div class="section-head">
+    <div class="kicker">Partie 02 · S'entraîner</div>
+    <h2>Exercices et problèmes corrigés</h2>
+    <p>Des exercices progressifs qui couvrent les propriétés, les fonctions réciproques, les limites, les dérivées et les études complètes.</p>
+  </div>
+
+  <div class="note">
+    Essaie de résoudre chaque exercice avant d'ouvrir sa correction. Les solutions détaillent les étapes essentielles du raisonnement.
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 01 — Valeurs remarquables</h3><span class="level">Facile</span></div>
+    <p>Calculer exactement :</p>
+    <ol>
+      <li>sin(π/6)</li>
+      <li>cos(π/3)</li>
+      <li>tan(π/4)</li>
+      <li>arcsin(√2/2)</li>
+      <li>arccos(-1/2)</li>
+      <li>arctan(√3)</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s1')">Voir la correction</button>
+    <div class="solution" id="s1">
+      <strong>Correction :</strong>
+      <ol>
+        <li>sin(π/6)=1/2.</li>
+        <li>cos(π/3)=1/2.</li>
+        <li>tan(π/4)=1.</li>
+        <li>arcsin(√2/2)=π/4.</li>
+        <li>arccos(-1/2)=2π/3.</li>
+        <li>arctan(√3)=π/3.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 02 — Domaine de définition</h3><span class="level">Facile</span></div>
+    <p>Déterminer le domaine de définition des fonctions :</p>
+    <ol>
+      <li>f(x)=tan(x)</li>
+      <li>g(x)=cot(x)</li>
+      <li>h(x)=arcsin(2x-1)</li>
+      <li>p(x)=arccos(3x)</li>
+      <li>q(x)=arctan(1/(x-2))</li>
+      <li>r(x)=arcsec(x+1)</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s2')">Voir la correction</button>
+    <div class="solution" id="s2">
+      <strong>Correction :</strong>
+      <ol>
+        <li>D=ℝ \ {π/2+kπ}.</li>
+        <li>D=ℝ \ {kπ}.</li>
+        <li>-1≤2x-1≤1, donc D=[0 ; 1].</li>
+        <li>-1≤3x≤1, donc D=[-1/3 ; 1/3].</li>
+        <li>x≠2, donc D=ℝ\{2}.</li>
+        <li>|x+1|≥1, donc x≤-2 ou x≥0.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 03 — Identités trigonométriques</h3><span class="level">Moyen</span></div>
+    <p>Démontrer les égalités suivantes en précisant les conditions de définition :</p>
+    <ol>
+      <li>1+tan²(x)=1/cos²(x).</li>
+      <li>1+cot²(x)=1/sin²(x).</li>
+      <li>sin(2x)=2sin(x)cos(x).</li>
+      <li>cos(2x)=1-2sin²(x).</li>
+      <li>sin²(x)+cos²(x)=1.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s3')">Voir la correction</button>
+    <div class="solution" id="s3">
+      <strong>Correction :</strong>
+      <p>1. En divisant sin²(x)+cos²(x)=1 par cos²(x), on obtient tan²(x)+1=1/cos²(x), pour cos(x)≠0.</p>
+      <p>2. En divisant par sin²(x), on obtient cot²(x)+1=1/sin²(x), pour sin(x)≠0.</p>
+      <p>3. Formule d'addition avec a=b=x.</p>
+      <p>4. cos(2x)=cos²(x)-sin²(x), puis cos²(x)=1-sin²(x).</p>
+      <p>5. C'est l'identité fondamentale du cercle trigonométrique.</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 04 — Équations trigonométriques</h3><span class="level">Moyen</span></div>
+    <p>Résoudre dans ℝ :</p>
+    <ol>
+      <li>sin(x)=√3/2.</li>
+      <li>cos(x)=1/2.</li>
+      <li>tan(x)=1.</li>
+      <li>cot(x)=√3.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s4')">Voir la correction</button>
+    <div class="solution" id="s4">
+      <strong>Correction :</strong>
+      <ol>
+        <li>x=π/3+2kπ ou x=2π/3+2kπ.</li>
+        <li>x=π/3+2kπ ou x=-π/3+2kπ.</li>
+        <li>x=π/4+kπ.</li>
+        <li>x=π/6+kπ.</li>
+      </ol>
+      <p>Dans tous les cas k∈ℤ.</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 05 — Limites fondamentales</h3><span class="level">Moyen</span></div>
+    <p>Calculer les limites suivantes :</p>
+    <ol>
+      <li>lim(x→0) sin(7x)/2x.</li>
+      <li>lim(x→0) tan(4x)/3x.</li>
+      <li>lim(x→0) (1-cos(5x))/x².</li>
+      <li>lim(x→0) arcsin(6x)/2x.</li>
+      <li>lim(x→0) arctan(3x)/x.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s5')">Voir la correction</button>
+    <div class="solution" id="s5">
+      <strong>Correction :</strong>
+      <ol>
+        <li>7/2.</li>
+        <li>4/3.</li>
+        <li>25/2.</li>
+        <li>3.</li>
+        <li>3.</li>
+      </ol>
+      <p>On ramène chaque expression à une limite fondamentale équivalente à 1.</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 06 — Dérivées directes</h3><span class="level">Moyen</span></div>
+    <p>Calculer les dérivées :</p>
+    <ol>
+      <li>f(x)=sin(4x+1).</li>
+      <li>g(x)=cos(x²).</li>
+      <li>h(x)=tan(3x).</li>
+      <li>p(x)=arcsin(2x).</li>
+      <li>q(x)=arccos(x/2).</li>
+      <li>r(x)=arctan(5x-1).</li>
+      <li>s(x)=arccot(x²).</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s6')">Voir la correction</button>
+    <div class="solution" id="s6">
+      <strong>Correction :</strong>
+      <ol>
+        <li>f'(x)=4cos(4x+1).</li>
+        <li>g'(x)=-2x sin(x²).</li>
+        <li>h'(x)=3/cos²(3x).</li>
+        <li>p'(x)=2/√(1-4x²), pour |x|&lt;1/2.</li>
+        <li>q'(x)=-1/√(4-x²), pour |x|&lt;2.</li>
+        <li>r'(x)=5/[1+(5x-1)²].</li>
+        <li>s'(x)=-2x/(1+x⁴).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 07 — Fonctions réciproques</h3><span class="level">Moyen</span></div>
+    <p>Déterminer les fonctions réciproques :</p>
+    <ol>
+      <li>f(x)=3x-4 sur ℝ.</li>
+      <li>g(x)=sin(x) sur [-π/2 ; π/2].</li>
+      <li>h(x)=cos(x) sur [0 ; π].</li>
+      <li>p(x)=tan(x) sur ]-π/2 ; π/2[.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s7')">Voir la correction</button>
+    <div class="solution" id="s7">
+      <strong>Correction :</strong>
+      <ol>
+        <li>y=3x-4 ⇒ x=(y+4)/3, donc f⁻¹(x)=(x+4)/3.</li>
+        <li>g⁻¹(x)=arcsin(x).</li>
+        <li>h⁻¹(x)=arccos(x).</li>
+        <li>p⁻¹(x)=arctan(x).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 08 — Identités avec arcsin et arccos</h3><span class="level">Difficile</span></div>
+    <p>Soit x∈[-1 ; 1]. Simplifier :</p>
+    <ol>
+      <li>A=arcsin(x)+arccos(x).</li>
+      <li>B=sin(arccos(x)).</li>
+      <li>C=cos(arcsin(x)).</li>
+      <li>D=tan(arcsin(x)).</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s8')">Voir la correction</button>
+    <div class="solution" id="s8">
+      <strong>Correction :</strong>
+      <ol>
+        <li>A=π/2.</li>
+        <li>B=√(1-x²), car arccos(x)∈[0 ; π].</li>
+        <li>C=√(1-x²), car arcsin(x)∈[-π/2 ; π/2] et son cosinus est positif.</li>
+        <li>D=x/√(1-x²), pour -1&lt;x&lt;1.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 09 — Étude complète</h3><span class="level">Difficile</span></div>
+    <p>Étudier la fonction :</p>
+    <div class="formula">f(x)=arctan(2x)</div>
+    <ol>
+      <li>Déterminer son domaine.</li>
+      <li>Étudier sa continuité.</li>
+      <li>Calculer sa dérivée.</li>
+      <li>Étudier le sens de variation.</li>
+      <li>Calculer les limites aux deux infinis.</li>
+      <li>Déterminer les asymptotes.</li>
+      <li>Déterminer son image.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s9')">Voir la correction</button>
+    <div class="solution" id="s9">
+      <strong>Correction :</strong>
+      <ol>
+        <li>D=ℝ.</li>
+        <li>La fonction est continue sur ℝ.</li>
+        <li>f'(x)=2/(1+4x²).</li>
+        <li>f'(x)&gt;0, donc f est strictement croissante.</li>
+        <li>En +∞ : π/2 ; en -∞ : -π/2.</li>
+        <li>Asymptotes horizontales : y=π/2 et y=-π/2.</li>
+        <li>Image : ]-π/2 ; π/2[.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 10 — Étude de la tangente</h3><span class="level">Difficile</span></div>
+    <p>Soit f(x)=tan(x).</p>
+    <ol>
+      <li>Déterminer le domaine de définition.</li>
+      <li>Calculer la dérivée.</li>
+      <li>Étudier les variations sur ]-π/2 ; π/2[.</li>
+      <li>Calculer les limites aux extrémités.</li>
+      <li>Déterminer les asymptotes.</li>
+      <li>Calculer l'équation de la tangente en x=π/4.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s10')">Voir la correction</button>
+    <div class="solution" id="s10">
+      <strong>Correction :</strong>
+      <ol>
+        <li>D=ℝ\{π/2+kπ}.</li>
+        <li>f'(x)=1/cos²(x).</li>
+        <li>La dérivée est positive : f est strictement croissante.</li>
+        <li>Limites : -∞ à gauche et +∞ à droite.</li>
+        <li>x=π/2+kπ.</li>
+        <li>f(π/4)=1 et f'(π/4)=2. La tangente est y=2(x-π/4)+1.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 11 — Dérivée de la fonction réciproque</h3><span class="level">Difficile</span></div>
+    <p>Soit f(x)=sin(x) sur I=[-π/2 ; π/2].</p>
+    <ol>
+      <li>Montrer que f est bijective de I sur [-1 ; 1].</li>
+      <li>Déterminer f⁻¹.</li>
+      <li>Calculer (f⁻¹)'(x).</li>
+      <li>Préciser le domaine de dérivabilité.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s11')">Voir la correction</button>
+    <div class="solution" id="s11">
+      <strong>Correction :</strong>
+      <p>La fonction sin est continue et strictement croissante sur I, et son image est [-1 ; 1]. Elle est donc bijective.</p>
+      <div class="formula">
+        f⁻¹(x)=arcsin(x)<br>
+        (f⁻¹)'(x)=1/√(1-x²)
+      </div>
+      <p>Cette dérivée existe pour x∈]-1 ; 1[.</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-top"><h3>Exercice 12 — Problème de synthèse</h3><span class="level">Très difficile</span></div>
+    <p>On considère :</p>
+    <div class="formula">f(x)=2sin(3x)+1</div>
+    <ol>
+      <li>Déterminer son domaine.</li>
+      <li>Déterminer sa période.</li>
+      <li>Déterminer son amplitude et son image.</li>
+      <li>Calculer sa dérivée.</li>
+      <li>Résoudre f(x)=1.</li>
+      <li>Étudier les extrema.</li>
+    </ol>
+    <button class="btn btn-primary" onclick="toggleSolution('s12')">Voir la correction</button>
+    <div class="solution" id="s12">
+      <strong>Correction :</strong>
+      <ol>
+        <li>D=ℝ.</li>
+        <li>T=2π/3.</li>
+        <li>Amplitude=2 ; image=[-1 ; 3].</li>
+        <li>f'(x)=6cos(3x).</li>
+        <li>sin(3x)=0, donc x=kπ/3.</li>
+        <li>Maximum 3 lorsque 3x=π/2+2kπ ; minimum -1 lorsque 3x=3π/2+2kπ.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PARTIE 3 : QUIZ
+===================================================== -->
+
+<section class="section" id="quiz">
+  <div class="section-head">
+    <div class="kicker">Partie 03 · Évaluation</div>
+    <h2>Quiz interactif</h2>
+    <p>Un test personnalisé avec des questions aléatoires, une correction immédiate et un bilan détaillé.</p>
+  </div>
+
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <div class="math-symbol">200</div>
+        <h4>Questions disponibles</h4>
+        <p>Un ensemble de questions sur toutes les notions du chapitre.</p>
+      </div>
+      <div>
+        <div class="math-symbol">20–40</div>
+        <h4>Questions par test</h4>
+        <p>Tu choisis le nombre de questions avant de commencer.</p>
+      </div>
+    </div>
+    <button class="btn btn-orange" onclick="openQuiz()">Commencer le quiz →</button>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+<button class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+<button id="quiz-launcher" onclick="openQuiz()">🎯 Lancer le quiz</button>
+
+<!-- FENÊTRE QUIZ -->
+
+<div id="quiz-overlay">
+  <div class="quiz-window">
+    <div class="quiz-header">
+      <h2>Évaluation StudyNet</h2>
+      <button class="close-quiz" onclick="closeQuiz()" aria-label="Fermer">×</button>
+    </div>
+    <div class="quiz-content">
+
+      <div class="quiz-setup" id="quiz-setup">
+        <div class="math-symbol">∿</div>
+        <h3>Prépare ton évaluation</h3>
+        <p>Choisis le nombre de questions. Elles seront sélectionnées aléatoirement parmi les 200 questions disponibles.</p>
+        <label for="question-count">Nombre de questions :</label><br>
+        <select id="question-count">
+          <option value="20">20 questions</option>
+          <option value="25">25 questions</option>
+          <option value="30" selected>30 questions</option>
+          <option value="35">35 questions</option>
+          <option value="40">40 questions</option>
+        </select>
+        <br>
+        <button class="btn btn-primary" onclick="startQuiz()">Commencer</button>
+      </div>
+
+      <div id="quiz-game" style="display:none">
+        <div class="quiz-meta">
+          <span id="question-number">Question 1/30</span>
+          <span id="quiz-score">Score : 0</span>
+        </div>
+        <div class="quiz-progress"><div id="progress-bar"></div></div>
+        <div class="question" id="question-text"></div>
+        <div class="answers" id="answer-list"></div>
+        <div class="feedback" id="quiz-feedback"></div>
+        <div class="quiz-actions">
+          <button class="btn btn-outline" onclick="closeQuiz()">Quitter</button>
+          <button class="btn btn-primary" id="verify-btn" onclick="verifyAnswer()">Vérifier</button>
+          <button class="btn btn-orange" id="next-btn" onclick="nextQuestion()" style="display:none">Next →</button>
+        </div>
+      </div>
+
+      <div id="quiz-result" class="quiz-result" style="display:none">
+        <h3>Évaluation terminée !</h3>
+        <div class="score-circle"><span id="final-score">0/20</span></div>
+        <h3 id="result-message"></h3>
+        <p id="result-details"></p>
+        <div id="wrong-review"></div>
+        <button class="btn btn-primary" onclick="startQuiz()">Recommencer</button>
+        <button class="btn btn-outline" onclick="closeQuiz()">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

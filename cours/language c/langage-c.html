@@ -1,0 +1,3951 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Formation complète au langage C : cours détaillé, programmation, algorithmique, exercices corrigés et quiz interactif.">
+<title>Langage C | StudyNet</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<nav class="nav">
+    <div class="logo">Study<span>Net</span>.</div>
+    <div class="nav-links">
+        <a href="#cours">COURS</a>
+        <a href="#exercices">EXERCICES</a>
+        <a href="#quiz">QUIZ</a>
+    </div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+    <div class="eyebrow">Formation complète · Programmation</div>
+    <h1>Mastering<br><span>Language C.</span></h1>
+    <p>
+        Une formation approfondie en langage C, depuis les premiers programmes
+        jusqu'à la gestion de la mémoire, aux pointeurs, aux structures de données
+        et aux techniques de programmation avancées.
+    </p>
+    <div class="hero-stats">
+        <div class="stat"><strong>25</strong><small>Modules de formation</small></div>
+        <div class="stat"><strong>30</strong><small>Exercices corrigés</small></div>
+        <div class="stat"><strong>200</strong><small>Questions de quiz</small></div>
+        <div class="stat"><strong>3</strong><small>Parties principales</small></div>
+    </div>
+</div>
+</section>
+
+<div class="container layout">
+
+<aside class="sidebar">
+    <h3>PROGRAMME DE FORMATION</h3>
+    <a href="#cours">01 — Cours complet</a>
+    <a href="#m1">Introduction au C</a>
+    <a href="#m2">Structure d'un programme</a>
+    <a href="#m3">Variables et types</a>
+    <a href="#m4">Entrées et sorties</a>
+    <a href="#m5">Opérateurs</a>
+    <a href="#m6">Conditions</a>
+    <a href="#m7">Boucles</a>
+    <a href="#m8">Fonctions</a>
+    <a href="#m9">Tableaux</a>
+    <a href="#m10">Chaînes de caractères</a>
+    <a href="#m11">Pointeurs</a>
+    <a href="#m12">Allocation dynamique</a>
+    <a href="#m13">Structures</a>
+    <a href="#m14">Unions et énumérations</a>
+    <a href="#m15">Fichiers</a>
+    <a href="#m16">Préprocesseur</a>
+    <a href="#m17">Bibliothèque standard</a>
+    <a href="#m18">Opérations binaires</a>
+    <a href="#m19">Récursivité</a>
+    <a href="#m20">Algorithmes de recherche</a>
+    <a href="#m21">Algorithmes de tri</a>
+    <a href="#m22">Structures de données</a>
+    <a href="#m23">Pointeurs de fonctions</a>
+    <a href="#m24">Programmation modulaire</a>
+    <a href="#m25">Débogage et bonnes pratiques</a>
+    <hr style="margin:15px 0;border:0;border-top:1px solid #ddd">
+    <a href="#exercices">02 — Exercices</a>
+    <a href="#quiz">03 — Quiz interactif</a>
+</aside>
+
+<main>
+
+<section id="cours">
+<div class="section-label">Partie 01 / Formation</div>
+<h2 class="section-title">Cours complet de langage C</h2>
+<p class="intro">
+    Cette formation explique les notions essentielles et avancées du C.
+    L'objectif est d'apprendre à analyser un problème, construire un algorithme,
+    écrire un programme correct, comprendre son fonctionnement en mémoire,
+    détecter les erreurs et développer des solutions efficaces.
+</p>
+
+<div class="note">
+<strong>Méthode de travail :</strong>
+Lis chaque notion, comprends les exemples, recopie-les dans un fichier
+<code>.c</code>, compile-les et exécute-les. Modifie ensuite les valeurs
+pour observer les résultats. Ne te contente pas de mémoriser le code.
+</div>
+
+<!-- MODULE 1 -->
+<article class="module" id="m1">
+<div class="module-number">MODULE 01</div>
+<h3>Introduction au langage C</h3>
+
+<h4>1. Qu'est-ce que la programmation ?</h4>
+<p>
+La programmation consiste à écrire des instructions précises afin qu'un
+ordinateur réalise une tâche. Un programme reçoit éventuellement des données,
+les traite selon un algorithme et produit un résultat.
+</p>
+
+<h4>2. Qu'est-ce que le langage C ?</h4>
+<p>
+Le C est un langage de programmation généraliste, compilé, procédural et
+proche du fonctionnement matériel. Il permet de contrôler précisément les
+types de données, les opérations et la mémoire.
+</p>
+<p>Il est utilisé notamment dans :</p>
+<ul>
+<li>Les systèmes d'exploitation et les noyaux.</li>
+<li>Les pilotes et logiciels proches du matériel.</li>
+<li>Les systèmes embarqués et les microcontrôleurs.</li>
+<li>Les compilateurs et interpréteurs.</li>
+<li>Les bibliothèques performantes et les outils système.</li>
+<li>Les applications nécessitant un contrôle précis des ressources.</li>
+</ul>
+
+<h4>3. Pourquoi apprendre le C ?</h4>
+<ul>
+<li>Comprendre comment les données sont représentées en mémoire.</li>
+<li>Maîtriser les pointeurs et les adresses.</li>
+<li>Comprendre la compilation et l'édition de liens.</li>
+<li>Apprendre les bases de l'algorithmique.</li>
+<li>Développer une discipline de programmation rigoureuse.</li>
+</ul>
+
+<h4>4. Langage compilé : comment fonctionne le C ?</h4>
+<p>
+Contrairement à un langage interprété de manière classique, le programme C
+est généralement transformé en programme exécutable par une chaîne de compilation.
+</p>
+<ol>
+<li><strong>Édition :</strong> écrire le code source dans un fichier <code>.c</code>.</li>
+<li><strong>Prétraitement :</strong> traiter les directives comme <code>#include</code> et <code>#define</code>.</li>
+<li><strong>Compilation :</strong> traduire le code C en code assembleur ou en représentation intermédiaire.</li>
+<li><strong>Assemblage :</strong> produire des fichiers objets.</li>
+<li><strong>Édition de liens :</strong> relier les fichiers objets et les bibliothèques.</li>
+<li><strong>Exécution :</strong> lancer le programme produit.</li>
+</ol>
+
+<h4>5. Installer un compilateur</h4>
+<p>
+Sur Windows, GCC peut être installé avec MSYS2. Dans le terminal UCRT64,
+la commande de compilation est :
+</p>
+<pre><code>gcc --version</code></pre>
+<p>Pour compiler un fichier :</p>
+<pre><code>gcc programme.c -o programme.exe</code></pre>
+<p>Pour exécuter :</p>
+<pre><code>./programme.exe</code></pre>
+<p>Sur Linux :</p>
+<pre><code>gcc programme.c -o programme
+./programme</code></pre>
+
+<h4>6. Options utiles du compilateur GCC</h4>
+<pre><code>gcc -Wall -Wextra programme.c -o programme
+gcc -std=c11 -Wall -Wextra programme.c -o programme
+gcc -std=c17 -Wall -Wextra -Wpedantic programme.c -o programme
+gcc -g programme.c -o programme</code></pre>
+<table>
+<tr><th>Option</th><th>Rôle</th></tr>
+<tr><td>-Wall</td><td>Activer un ensemble important d'avertissements.</td></tr>
+<tr><td>-Wextra</td><td>Ajouter des avertissements supplémentaires.</td></tr>
+<tr><td>-Wpedantic</td><td>Signaler certaines extensions non conformes au standard demandé.</td></tr>
+<tr><td>-std=c11</td><td>Utiliser le standard C11.</td></tr>
+<tr><td>-std=c17</td><td>Utiliser le standard C17.</td></tr>
+<tr><td>-g</td><td>Ajouter des informations utiles au débogage.</td></tr>
+</table>
+
+<h4>7. Les catégories d'erreurs</h4>
+<table>
+<tr><th>Erreur</th><th>Explication</th></tr>
+<tr><td>Syntaxe</td><td>Le code ne respecte pas la grammaire du langage.</td></tr>
+<tr><td>Compilation</td><td>Le compilateur ne peut pas traduire le programme.</td></tr>
+<tr><td>Édition de liens</td><td>Une fonction ou un symbole nécessaire est introuvable.</td></tr>
+<tr><td>Exécution</td><td>Une erreur survient pendant l'exécution.</td></tr>
+<tr><td>Logique</td><td>Le programme s'exécute mais produit un résultat incorrect.</td></tr>
+<tr><td>Comportement indéfini</td><td>Le standard C ne définit pas le résultat de l'opération.</td></tr>
+</table>
+<div class="warning">
+Un programme qui compile sans erreur n'est pas nécessairement correct.
+Il faut aussi vérifier son algorithme, ses entrées, ses limites et sa mémoire.
+</div>
+</article>
+
+<!-- MODULE 2 -->
+<article class="module" id="m2">
+<div class="module-number">MODULE 02</div>
+<h3>Structure générale d'un programme C</h3>
+
+<h4>1. Premier programme</h4>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("Bonjour tout le monde !\n");
+    return 0;
+}</code></pre>
+
+<h4>2. Explication ligne par ligne</h4>
+<ul>
+<li><code>#include &lt;stdio.h&gt;</code> : inclut les déclarations des fonctions d'entrée et de sortie standard.</li>
+<li><code>int main(void)</code> : définit le point d'entrée habituel du programme hébergé.</li>
+<li><code>{ }</code> : délimitent un bloc d'instructions.</li>
+<li><code>printf()</code> : affiche un texte ou des valeurs formatées.</li>
+<li><code>\n</code> : représente un saut de ligne.</li>
+<li><code>return 0;</code> : indique une fin normale du programme.</li>
+</ul>
+
+<h4>3. La fonction main</h4>
+<p>
+La fonction <code>main</code> est le point de départ d'un programme C hébergé.
+Une forme courante est <code>int main(void)</code>. Une autre forme standard
+permet de recevoir les arguments de la ligne de commande :
+</p>
+<pre><code>int main(int argc, char *argv[])
+{
+    return 0;
+}</code></pre>
+
+<h4>4. Les instructions et le point-virgule</h4>
+<p>
+La plupart des instructions simples se terminent par un point-virgule.
+Oublier ce caractère provoque souvent une erreur de compilation.
+</p>
+<pre><code>int age = 20;
+age = age + 1;
+printf("%d\n", age);</code></pre>
+
+<h4>5. Les commentaires</h4>
+<pre><code>// Commentaire sur une ligne
+
+/*
+   Commentaire
+   sur plusieurs lignes
+*/
+
+int main(void)
+{
+    // Affichage
+    printf("Bonjour\n");
+    return 0;
+}</code></pre>
+
+<h4>6. Identificateurs et mots réservés</h4>
+<p>
+Un identificateur est un nom donné à une variable, une fonction, un type
+ou un autre élément du programme.
+</p>
+<ul>
+<li>Il peut contenir des lettres, des chiffres et le caractère underscore.</li>
+<li>Il ne peut pas commencer par un chiffre.</li>
+<li>Il ne peut pas contenir d'espace.</li>
+<li>Il ne doit pas être un mot réservé du langage.</li>
+<li>Le C distingue les majuscules et les minuscules.</li>
+</ul>
+<pre><code>int age;
+int age_etudiant;
+int note1;
+int totalPrix;
+
+// Identificateurs invalides :
+// int 2age;
+// int prix total;</code></pre>
+
+<h4>7. Les mots-clés du C</h4>
+<p>
+Le langage C possède des mots réservés comme :
+<code>int</code>, <code>char</code>, <code>float</code>,
+<code>double</code>, <code>if</code>, <code>else</code>,
+<code>switch</code>, <code>case</code>, <code>for</code>,
+<code>while</code>, <code>do</code>, <code>break</code>,
+<code>continue</code>, <code>return</code>, <code>void</code>,
+<code>struct</code>, <code>union</code>, <code>enum</code>,
+<code>typedef</code>, <code>static</code>, <code>extern</code>,
+<code>const</code>, <code>sizeof</code> et <code>volatile</code>.
+</p>
+
+<h4>8. Sensibilité à la casse</h4>
+<pre><code>int age = 20;
+int Age = 30;
+
+printf("%d\n", age);  // 20
+printf("%d\n", Age);  // 30</code></pre>
+</article>
+
+<!-- MODULE 3 -->
+<article class="module" id="m3">
+<div class="module-number">MODULE 03</div>
+<h3>Variables, constantes et types de données</h3>
+
+<h4>1. Qu'est-ce qu'une variable ?</h4>
+<p>
+Une variable est un objet nommé qui permet de stocker une valeur en mémoire.
+En C, une variable possède un type qui détermine la nature des valeurs
+qu'elle peut représenter et les opérations possibles.
+</p>
+<pre><code>int age = 20;
+float moyenne = 14.5f;
+char lettre = 'A';
+double distance = 125.75;</code></pre>
+
+<h4>2. Déclaration, initialisation et affectation</h4>
+<pre><code>int nombre;       // Déclaration
+nombre = 10;      // Affectation
+
+int age = 20;     // Déclaration + initialisation
+
+age = 25;         // Nouvelle affectation</code></pre>
+<div class="warning">
+Une variable locale automatique non initialisée possède une valeur indéterminée.
+Ne l'utilise pas avant de lui avoir attribué une valeur.
+</div>
+
+<h4>3. Types entiers</h4>
+<table>
+<tr><th>Type</th><th>Rôle</th></tr>
+<tr><td>char</td><td>Type entier minimal utilisé notamment pour les caractères.</td></tr>
+<tr><td>short</td><td>Type entier court.</td></tr>
+<tr><td>int</td><td>Type entier usuel.</td></tr>
+<tr><td>long</td><td>Type entier long.</td></tr>
+<tr><td>long long</td><td>Type entier long long.</td></tr>
+</table>
+<p>
+Les types entiers peuvent être signés (<code>signed</code>) ou non signés
+(<code>unsigned</code>). Les tailles exactes dépendent de l'implémentation,
+à l'exception de certaines garanties du standard.
+</p>
+<pre><code>short age = 20;
+int population = 120000;
+long distance = 500000L;
+long long grand_nombre = 9000000000LL;
+
+unsigned int compteur = 100U;
+signed int temperature = -5;</code></pre>
+
+<h4>4. Types réels</h4>
+<table>
+<tr><th>Type</th><th>Utilisation</th></tr>
+<tr><td>float</td><td>Nombre réel en précision simple.</td></tr>
+<tr><td>double</td><td>Nombre réel en précision double.</td></tr>
+<tr><td>long double</td><td>Type réel à précision étendue selon l'implémentation.</td></tr>
+</table>
+<pre><code>float prix = 12.5f;
+double pi = 3.141592653589793;
+long double valeur = 123.456L;</code></pre>
+
+<h4>5. Le type char</h4>
+<p>
+Le type <code>char</code> permet de représenter un caractère de l'ensemble
+d'exécution de base. Les caractères sont écrits entre apostrophes.
+</p>
+<pre><code>char lettre = 'A';
+char chiffre = '7';
+char symbole = '#';
+
+printf("%c\n", lettre);
+printf("%d\n", lettre);</code></pre>
+<p>
+Le format <code>%c</code> affiche le caractère. Le format <code>%d</code>
+affiche sa valeur entière après promotion.
+</p>
+
+<h4>6. Le type booléen</h4>
+<p>
+En C traditionnel, les expressions de condition utilisent une valeur entière :
+zéro signifie faux et une valeur non nulle signifie vrai.
+Depuis C99, on peut utiliser <code>_Bool</code> ou inclure
+<code>&lt;stdbool.h&gt;</code> pour disposer des noms <code>bool</code>,
+<code>true</code> et <code>false</code>.
+</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main(void)
+{
+    bool est_admis = true;
+
+    if (est_admis)
+        printf("Admis\n");
+
+    return 0;
+}</code></pre>
+
+<h4>7. Le type void</h4>
+<p>
+<code>void</code> indique notamment qu'une fonction ne retourne aucune valeur
+ou qu'un pointeur ne possède pas de type d'objet spécifique.
+</p>
+<pre><code>void afficherBonjour(void)
+{
+    printf("Bonjour\n");
+}</code></pre>
+
+<h4>8. Le type size_t et sizeof</h4>
+<p>
+<code>sizeof</code> donne la taille en octets d'un type ou d'un objet.
+Son résultat possède le type <code>size_t</code>.
+</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stddef.h&gt;
+
+int main(void)
+{
+    int nombre = 10;
+
+    printf("int : %zu octets\n", sizeof(int));
+    printf("nombre : %zu octets\n", sizeof nombre);
+
+    return 0;
+}</code></pre>
+<p>
+Il ne faut pas supposer que <code>int</code> occupe toujours quatre octets
+sur toutes les plateformes.
+</p>
+
+<h4>9. Constantes avec const</h4>
+<pre><code>const double PI = 3.141592653589793;
+const int MAX_ETUDIANTS = 50;</code></pre>
+<p>
+Une variable déclarée <code>const</code> ne peut pas être modifiée à travers
+ce nom après son initialisation.
+</p>
+
+<h4>10. Les constantes symboliques avec #define</h4>
+<pre><code>#define MAX 100
+#define TAUX_TVA 0.19
+
+int notes[MAX];</code></pre>
+<p>
+Contrairement à une variable <code>const</code>, une macro est remplacée
+par le préprocesseur avant la compilation.
+</p>
+
+<h4>11. Conversion de types</h4>
+<pre><code>int a = 5;
+int b = 2;
+
+float resultat1 = a / b;          // 2.0
+float resultat2 = (float)a / b;   // 2.5
+
+double x = 12.75;
+int y = (int)x;                   // 12</code></pre>
+<p>
+Lorsqu'une expression utilise des types différents, le langage applique
+des conversions arithmétiques usuelles. Une conversion explicite s'écrit
+avec un cast : <code>(type)expression</code>.
+</p>
+
+<h4>12. Débordement des entiers</h4>
+<div class="warning">
+Le débordement d'un entier signé entraîne un comportement indéfini en C.
+Les calculs doivent être conçus pour rester dans les limites du type.
+Les entiers non signés suivent des règles arithmétiques modulo leur plage.
+</div>
+
+<h4>13. Types de largeur fixe</h4>
+<p>
+L'en-tête <code>&lt;stdint.h&gt;</code> fournit des types comme
+<code>int8_t</code>, <code>uint32_t</code> et <code>int64_t</code>
+lorsque l'implémentation les prend en charge.
+</p>
+<pre><code>#include &lt;stdint.h&gt;
+
+int32_t temperature = -10;
+uint32_t compteur = 100;
+int64_t population = 8000000000LL;</code></pre>
+</article>
+
+<!-- MODULE 4 -->
+<article class="module" id="m4">
+<div class="module-number">MODULE 04</div>
+<h3>Entrées, sorties et formatage</h3>
+
+<h4>1. Afficher avec printf()</h4>
+<p>
+La fonction <code>printf</code>, déclarée dans <code>&lt;stdio.h&gt;</code>,
+affiche des données selon une chaîne de format.
+</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("Bonjour !\n");
+    printf("Age : %d\n", 20);
+    return 0;
+}</code></pre>
+
+<h4>2. Les principaux spécificateurs de format</h4>
+<table>
+<tr><th>Format</th><th>Type attendu courant</th><th>Exemple</th></tr>
+<tr><td>%d</td><td>int</td><td>25</td></tr>
+<tr><td>%i</td><td>int</td><td>25</td></tr>
+<tr><td>%u</td><td>unsigned int</td><td>25</td></tr>
+<tr><td>%ld</td><td>long</td><td>25000L</td></tr>
+<tr><td>%lld</td><td>long long</td><td>25000LL</td></tr>
+<tr><td>%f</td><td>double dans printf</td><td>12.5</td></tr>
+<tr><td>%e</td><td>double en notation scientifique</td><td>1.2e+03</td></tr>
+<tr><td>%c</td><td>int représentant un caractère</td><td>'A'</td></tr>
+<tr><td>%s</td><td>char *</td><td>"Bonjour"</td></tr>
+<tr><td>%p</td><td>void * pour une adresse</td><td>(void *)&amp;x</td></tr>
+<tr><td>%zu</td><td>size_t</td><td>sizeof x</td></tr>
+</table>
+
+<h4>3. Contrôler la précision</h4>
+<pre><code>double prix = 123.456789;
+
+printf("%.2f\n", prix);   // 123.46
+printf("%.3f\n", prix);   // 123.457
+printf("%10.2f\n", prix); // Largeur minimale de 10</code></pre>
+
+<h4>4. Lire une valeur avec scanf()</h4>
+<p>
+La fonction <code>scanf</code> lit des données formatées.
+Pour modifier une variable, on transmet généralement son adresse avec
+l'opérateur <code>&amp;</code>.
+</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int age;
+
+    printf("Donner votre age : ");
+
+    if (scanf("%d", &amp;age) != 1) {
+        printf("Saisie invalide.\n");
+        return 1;
+    }
+
+    printf("Vous avez %d ans.\n", age);
+    return 0;
+}</code></pre>
+
+<h4>5. Pourquoi utilise-t-on &amp; avec scanf ?</h4>
+<pre><code>int nombre = 0;
+
+scanf("%d", &amp;nombre);</code></pre>
+<p>
+<code>nombre</code> représente sa valeur. <code>&amp;nombre</code> représente
+son adresse mémoire. <code>scanf</code> doit recevoir cette adresse afin
+d'écrire la valeur saisie dans la variable.
+</p>
+
+<h4>6. Lire plusieurs valeurs</h4>
+<pre><code>int age;
+float moyenne;
+
+printf("Age et moyenne : ");
+
+if (scanf("%d %f", &amp;age, &amp;moyenne) == 2) {
+    printf("Age = %d, moyenne = %.2f\n", age, moyenne);
+}</code></pre>
+
+<h4>7. Lire un caractère</h4>
+<pre><code>char lettre;
+
+scanf(" %c", &amp;lettre);</code></pre>
+<p>
+L'espace placé avant <code>%c</code> permet d'ignorer les caractères blancs
+précédents, notamment un retour à la ligne restant dans le flux d'entrée.
+</p>
+
+<h4>8. Lire une chaîne avec scanf</h4>
+<pre><code>char nom[30];
+
+scanf("%29s", nom);
+printf("Nom : %s\n", nom);</code></pre>
+<p>
+Le nombre 29 limite la lecture pour laisser une place au caractère nul
+de fin de chaîne. Cette forme ne lit pas les espaces dans le nom.
+</p>
+
+<h4>9. Lire une ligne avec fgets</h4>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(void)
+{
+    char nom[100];
+
+    printf("Donner votre nom complet : ");
+
+    if (fgets(nom, sizeof nom, stdin) != NULL) {
+        nom[strcspn(nom, "\n")] = '\0';
+        printf("Bonjour %s\n", nom);
+    }
+
+    return 0;
+}</code></pre>
+<p>
+<code>fgets</code> lit au maximum la taille indiquée moins une place
+pour le caractère nul. Elle conserve éventuellement le retour à la ligne
+si celui-ci a été lu.
+</p>
+
+<h4>10. getchar, putchar et puts</h4>
+<pre><code>int c;
+
+c = getchar();       // Lire un caractère
+putchar(c);          // Afficher un caractère
+
+puts("Bonjour");     // Afficher une chaîne avec retour à la ligne</code></pre>
+
+<div class="warning">
+N'utilise jamais <code>gets()</code> : cette fonction a été supprimée
+du standard C parce qu'elle ne permet pas de limiter correctement
+la taille de la saisie. Préfère <code>fgets()</code>.
+</div>
+</article>
+
+<!-- MODULE 5 -->
+<article class="module" id="m5">
+<div class="module-number">MODULE 05</div>
+<h3>Opérateurs et expressions</h3>
+
+<h4>1. Opérateurs arithmétiques</h4>
+<table>
+<tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr>
+<tr><td>+</td><td>Addition</td><td>5 + 2 = 7</td></tr>
+<tr><td>-</td><td>Soustraction</td><td>5 - 2 = 3</td></tr>
+<tr><td>*</td><td>Multiplication</td><td>5 * 2 = 10</td></tr>
+<tr><td>/</td><td>Division</td><td>5 / 2 = 2 en division entière</td></tr>
+<tr><td>%</td><td>Reste de division entière</td><td>5 % 2 = 1</td></tr>
+</table>
+
+<h4>2. Division entière et division réelle</h4>
+<pre><code>int a = 5;
+int b = 2;
+
+printf("%d\n", a / b);           // 2
+
+printf("%.2f\n", (double)a / b); // 2.50</code></pre>
+<p>
+Lorsque les deux opérandes sont entiers, la division donne un quotient entier
+tronqué vers zéro. Pour obtenir un résultat réel, au moins un opérande
+doit être converti en type réel.
+</p>
+
+<h4>3. Modulo (%)</h4>
+<pre><code>int nombre = 17;
+
+printf("%d\n", nombre % 5); // 2
+
+if (nombre % 2 == 0)
+    printf("Pair\n");
+else
+    printf("Impair\n");</code></pre>
+<p>
+Le modulo sert notamment à tester la parité, extraire des chiffres,
+vérifier une divisibilité et construire des cycles.
+</p>
+
+<h4>4. Opérateurs relationnels</h4>
+<table>
+<tr><th>Opérateur</th><th>Signification</th></tr>
+<tr><td>==</td><td>Égal à</td></tr>
+<tr><td>!=</td><td>Différent de</td></tr>
+<tr><td>&gt;</td><td>Supérieur à</td></tr>
+<tr><td>&lt;</td><td>Inférieur à</td></tr>
+<tr><td>&gt;=</td><td>Supérieur ou égal</td></tr>
+<tr><td>&lt;=</td><td>Inférieur ou égal</td></tr>
+</table>
+<div class="warning">
+Ne confonds jamais <code>=</code>, qui affecte une valeur, et
+<code>==</code>, qui compare deux valeurs.
+</div>
+
+<h4>5. Opérateurs logiques</h4>
+<table>
+<tr><th>Opérateur</th><th>Signification</th></tr>
+<tr><td>&amp;&amp;</td><td>ET logique</td></tr>
+<tr><td>||</td><td>OU logique</td></tr>
+<tr><td>!</td><td>NON logique</td></tr>
+</table>
+<pre><code>int age = 20;
+int permis = 1;
+
+if (age >= 18 &amp;&amp; permis == 1)
+    printf("Conduite autorisee\n");
+
+if (age &lt; 18 || permis == 0)
+    printf("Conditions non remplies\n");</code></pre>
+
+<h4>6. Tables de vérité</h4>
+<table>
+<tr><th>A</th><th>B</th><th>A &amp;&amp; B</th><th>A || B</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+
+<h4>7. Affectations composées</h4>
+<pre><code>int x = 10;
+
+x += 5;  // x = x + 5
+x -= 2;  // x = x - 2
+x *= 3;  // x = x * 3
+x /= 2;  // x = x / 2
+x %= 4;  // x = x % 4</code></pre>
+
+<h4>8. Incrémentation et décrémentation</h4>
+<pre><code>int x = 5;
+
+x++;  // x devient 6
+x--;  // x redevient 5
+
+++x;  // Pré-incrémentation
+x++;  // Post-incrémentation</code></pre>
+<p>
+La pré-incrémentation modifie la variable avant de produire sa valeur.
+La post-incrémentation produit d'abord l'ancienne valeur, puis incrémente.
+</p>
+<pre><code>int a = 5;
+int b = a++;  // b = 5, a = 6
+
+int c = 5;
+int d = ++c;  // c = 6, d = 6</code></pre>
+
+<h4>9. Opérateur ternaire</h4>
+<pre><code>int age = 20;
+
+int statut = (age >= 18) ? 1 : 0;
+
+printf("%d\n", statut);</code></pre>
+<p>
+La forme générale est <code>condition ? valeur_si_vrai : valeur_si_faux</code>.
+</p>
+
+<h4>10. Priorité des opérateurs</h4>
+<p>
+Les parenthèses permettent de contrôler clairement l'ordre des calculs.
+Voici quelques niveaux importants, du plus prioritaire au moins prioritaire :
+</p>
+<ol>
+<li>Parenthèses et opérateurs postfixés.</li>
+<li>Opérateurs unaires, préfixés et casts.</li>
+<li>Multiplication, division et modulo.</li>
+<li>Addition et soustraction.</li>
+<li>Comparaisons.</li>
+<li>Égalité et différence.</li>
+<li>ET logique.</li>
+<li>OU logique.</li>
+<li>Opérateur ternaire.</li>
+<li>Affectations.</li>
+<li>Virgule.</li>
+</ol>
+<pre><code>int resultat = 2 + 3 * 4;     // 14
+int autre = (2 + 3) * 4;     // 20</code></pre>
+
+<h4>11. Évaluation à court-circuit</h4>
+<pre><code>int x = 0;
+
+if (x != 0 &amp;&amp; 10 / x > 2) {
+    printf("Condition vraie\n");
+}</code></pre>
+<p>
+Avec <code>&amp;&amp;</code>, si la première condition est fausse,
+la seconde n'est pas évaluée. Avec <code>||</code>, si la première
+condition est vraie, la seconde n'est pas évaluée.
+Cela permet notamment d'éviter certaines divisions par zéro.
+</p>
+</article>
+
+<!-- MODULE 6 -->
+<article class="module" id="m6">
+<div class="module-number">MODULE 06</div>
+<h3>Structures conditionnelles</h3>
+
+<h4>1. Instruction if</h4>
+<pre><code>int age = 20;
+
+if (age >= 18) {
+    printf("Majeur\n");
+}</code></pre>
+
+<h4>2. Structure if / else</h4>
+<pre><code>int nombre;
+
+printf("Donner un nombre : ");
+scanf("%d", &amp;nombre);
+
+if (nombre % 2 == 0) {
+    printf("Nombre pair\n");
+} else {
+    printf("Nombre impair\n");
+}</code></pre>
+
+<h4>3. Structure if / else if / else</h4>
+<pre><code>float note;
+
+printf("Donner la note : ");
+scanf("%f", &amp;note);
+
+if (note &lt; 0 || note > 20) {
+    printf("Note invalide\n");
+}
+else if (note >= 16) {
+    printf("Tres bien\n");
+}
+else if (note >= 14) {
+    printf("Bien\n");
+}
+else if (note >= 10) {
+    printf("Admis\n");
+}
+else {
+    printf("Non admis\n");
+}</code></pre>
+
+<h4>4. Conditions imbriquées</h4>
+<pre><code>int age = 20;
+int permis = 1;
+
+if (age >= 18) {
+    if (permis == 1) {
+        printf("Vous pouvez conduire\n");
+    } else {
+        printf("Vous devez obtenir le permis\n");
+    }
+} else {
+    printf("Age insuffisant\n");
+}</code></pre>
+
+<h4>5. Plusieurs conditions</h4>
+<pre><code>int note = 15;
+int absences = 2;
+
+if (note >= 10 &amp;&amp; note &lt;= 20 &amp;&amp; absences &lt;= 5) {
+    printf("Validation possible\n");
+}</code></pre>
+
+<h4>6. switch / case</h4>
+<p>
+La structure <code>switch</code> permet de choisir un bloc selon la valeur
+d'une expression entière ou énumérée. Les chaînes de caractères ne sont
+pas directement utilisables comme expression de switch en C standard.
+</p>
+<pre><code>int choix;
+
+printf("1. Ajouter\n");
+printf("2. Modifier\n");
+printf("3. Supprimer\n");
+scanf("%d", &amp;choix);
+
+switch (choix) {
+    case 1:
+        printf("Ajout\n");
+        break;
+
+    case 2:
+        printf("Modification\n");
+        break;
+
+    case 3:
+        printf("Suppression\n");
+        break;
+
+    default:
+        printf("Choix invalide\n");
+}</code></pre>
+<p>
+<code>break</code> termine le switch. Sans lui, l'exécution peut continuer
+dans les cases suivantes : ce comportement s'appelle le fall-through.
+</p>
+
+<h4>7. Regrouper plusieurs cases</h4>
+<pre><code>char lettre = 'a';
+
+switch (lettre) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'y':
+        printf("Voyelle\n");
+        break;
+
+    default:
+        printf("Autre caractere\n");
+}</code></pre>
+
+<h4>8. Vérifier un intervalle</h4>
+<pre><code>int note = 15;
+
+if (note >= 0 &amp;&amp; note &lt;= 20) {
+    printf("Note valide\n");
+} else {
+    printf("Note invalide\n");
+}</code></pre>
+<div class="warning">
+En C, écris deux comparaisons reliées par <code>&amp;&amp;</code>.
+L'expression mathématique <code>0 &lt;= note &lt;= 20</code>
+ne fonctionne pas comme en mathématiques.
+</div>
+</article>
+
+<!-- MODULE 7 -->
+<article class="module" id="m7">
+<div class="module-number">MODULE 07</div>
+<h3>Structures répétitives : les boucles</h3>
+
+<h4>1. Pourquoi utiliser une boucle ?</h4>
+<p>
+Une boucle permet de répéter un ensemble d'instructions sans recopier
+le même code plusieurs fois. Elle est utilisée pour parcourir des tableaux,
+calculer des sommes, effectuer des recherches et répéter des saisies.
+</p>
+
+<h4>2. La boucle for</h4>
+<p>La boucle for est particulièrement adaptée lorsque le nombre de répétitions est connu.</p>
+<pre><code>for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", i);
+}</code></pre>
+<p>Les trois parties sont :</p>
+<ul>
+<li>Initialisation : <code>int i = 0</code>.</li>
+<li>Condition : <code>i &lt; 5</code>.</li>
+<li>Modification : <code>i++</code>.</li>
+</ul>
+<p>Exemple : afficher les nombres de 1 à 10.</p>
+<pre><code>for (int i = 1; i &lt;= 10; i++) {
+    printf("%d ", i);
+}</code></pre>
+
+<h4>3. La boucle while</h4>
+<p>
+La boucle while répète ses instructions tant que la condition reste vraie.
+La condition est vérifiée avant chaque itération.
+</p>
+<pre><code>int i = 1;
+
+while (i &lt;= 5) {
+    printf("%d\n", i);
+    i++;
+}</code></pre>
+
+<h4>4. La boucle do while</h4>
+<p>
+La boucle do while exécute son bloc au moins une fois, car la condition
+est testée après l'exécution.
+</p>
+<pre><code>int choix;
+
+do {
+    printf("1. Continuer\n");
+    printf("0. Quitter\n");
+    scanf("%d", &amp;choix);
+} while (choix != 0);</code></pre>
+
+<h4>5. Différence entre for, while et do while</h4>
+<table>
+<tr><th>Boucle</th><th>Quand l'utiliser ?</th></tr>
+<tr><td>for</td><td>Nombre de répétitions connu ou parcours indexé.</td></tr>
+<tr><td>while</td><td>Répéter tant qu'une condition est vraie.</td></tr>
+<tr><td>do while</td><td>Exécuter au moins une fois avant de tester.</td></tr>
+</table>
+
+<h4>6. Boucles imbriquées</h4>
+<pre><code>for (int i = 1; i &lt;= 3; i++) {
+    for (int j = 1; j &lt;= 4; j++) {
+        printf("* ");
+    }
+    printf("\n");
+}</code></pre>
+<p>Résultat :</p>
+<pre><code>* * * *
+* * * *
+* * * *</code></pre>
+
+<h4>7. break</h4>
+<p>
+L'instruction <code>break</code> arrête immédiatement la boucle la plus
+proche ou le switch courant.
+</p>
+<pre><code>for (int i = 1; i &lt;= 10; i++) {
+    if (i == 5) {
+        break;
+    }
+
+    printf("%d ", i);
+}</code></pre>
+
+<h4>8. continue</h4>
+<p>
+L'instruction <code>continue</code> saute le reste du corps de l'itération
+actuelle et passe à l'itération suivante.
+</p>
+<pre><code>for (int i = 1; i &lt;= 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+
+    printf("%d ", i);
+}</code></pre>
+
+<h4>9. Boucle infinie</h4>
+<pre><code>while (1) {
+    printf("Boucle infinie\n");
+    break;
+}</code></pre>
+<p>
+Une boucle infinie peut être volontaire, notamment dans un programme
+embarqué ou un serveur, mais elle doit disposer d'une stratégie de sortie
+ou de contrôle adaptée.
+</p>
+
+<h4>10. Compteur et accumulateur</h4>
+<pre><code>int compteur = 0;
+int somme = 0;
+
+for (int i = 1; i &lt;= 10; i++) {
+    compteur++;
+    somme += i;
+}
+
+printf("Compteur = %d\n", compteur);
+printf("Somme = %d\n", somme);</code></pre>
+
+<h4>11. Boucle avec sentinelle</h4>
+<p>
+Une sentinelle est une valeur spéciale qui indique la fin de la saisie.
+</p>
+<pre><code>int nombre;
+int somme = 0;
+
+printf("Donner un nombre (0 pour terminer) : ");
+scanf("%d", &amp;nombre);
+
+while (nombre != 0) {
+    somme += nombre;
+
+    printf("Donner un nombre (0 pour terminer) : ");
+    scanf("%d", &amp;nombre);
+}
+
+printf("Somme = %d\n", somme);</code></pre>
+
+<h4>12. Parcourir les chiffres d'un entier</h4>
+<pre><code>int nombre = 5382;
+
+while (nombre > 0) {
+    int chiffre = nombre % 10;
+    printf("%d\n", chiffre);
+    nombre /= 10;
+}</code></pre>
+<p>
+Le modulo extrait le dernier chiffre. La division entière supprime
+ce dernier chiffre.
+</p>
+</article>
+
+<!-- MODULE 8 -->
+<article class="module" id="m8">
+<div class="module-number">MODULE 08</div>
+<h3>Fonctions et modularité</h3>
+
+<h4>1. Qu'est-ce qu'une fonction ?</h4>
+<p>
+Une fonction est un bloc de code qui réalise une tâche précise.
+Elle permet de découper un problème en sous-problèmes, de réutiliser
+du code et d'améliorer la lisibilité.
+</p>
+
+<h4>2. Déclaration, définition et appel</h4>
+<pre><code>#include &lt;stdio.h&gt;
+
+// Prototype
+int addition(int a, int b);
+
+// Définition
+int addition(int a, int b)
+{
+    return a + b;
+}
+
+int main(void)
+{
+    int resultat = addition(5, 3);
+    printf("%d\n", resultat);
+    return 0;
+}</code></pre>
+<ul>
+<li>Le prototype annonce la fonction.</li>
+<li>La définition contient son code.</li>
+<li>L'appel demande son exécution.</li>
+</ul>
+
+<h4>3. Paramètres et arguments</h4>
+<pre><code>int carre(int nombre)
+{
+    return nombre * nombre;
+}
+
+int main(void)
+{
+    int resultat = carre(5);
+    return 0;
+}</code></pre>
+<p>
+Dans la définition, <code>nombre</code> est un paramètre.
+Dans l'appel, <code>5</code> est un argument.
+</p>
+
+<h4>4. Fonction sans paramètre</h4>
+<pre><code>void afficherBonjour(void)
+{
+    printf("Bonjour\n");
+}</code></pre>
+<p>
+En C, écrire <code>void</code> entre parenthèses signifie explicitement
+que la fonction ne reçoit aucun paramètre.
+</p>
+
+<h4>5. Fonction avec retour</h4>
+<pre><code>int maximum(int a, int b)
+{
+    if (a > b)
+        return a;
+
+    return b;
+}</code></pre>
+
+<h4>6. Fonction sans valeur de retour</h4>
+<pre><code>void afficherCarre(int n)
+{
+    printf("%d\n", n * n);
+}</code></pre>
+
+<h4>7. Passage par valeur</h4>
+<p>
+En C, les arguments sont transmis par valeur. La fonction reçoit une copie
+de la valeur de l'argument.
+</p>
+<pre><code>void modifier(int x)
+{
+    x = 100;
+}
+
+int main(void)
+{
+    int nombre = 10;
+
+    modifier(nombre);
+
+    printf("%d\n", nombre); // 10
+    return 0;
+}</code></pre>
+
+<h4>8. Modifier une variable avec un pointeur</h4>
+<pre><code>void modifier(int *x)
+{
+    *x = 100;
+}
+
+int main(void)
+{
+    int nombre = 10;
+
+    modifier(&amp;nombre);
+
+    printf("%d\n", nombre); // 100
+    return 0;
+}</code></pre>
+
+<h4>9. Retourner plusieurs résultats</h4>
+<p>
+Une fonction ne retourne directement qu'une seule valeur.
+Pour produire plusieurs résultats, on peut utiliser des pointeurs de sortie
+ou retourner une structure.
+</p>
+<pre><code>void quotientReste(int a, int b, int *q, int *r)
+{
+    if (b == 0)
+        return;
+
+    *q = a / b;
+    *r = a % b;
+}
+
+int main(void)
+{
+    int q, r;
+
+    quotientReste(17, 5, &amp;q, &amp;r);
+
+    printf("Q = %d, R = %d\n", q, r);
+    return 0;
+}</code></pre>
+
+<h4>10. Portée des variables</h4>
+<ul>
+<li>Variable locale : déclarée dans un bloc, accessible dans ce bloc et ses blocs imbriqués.</li>
+<li>Variable globale : déclarée en dehors des fonctions, avec une portée déterminée par sa déclaration.</li>
+<li>Paramètre : variable locale à la fonction.</li>
+</ul>
+<pre><code>int globale = 10;
+
+void exemple(void)
+{
+    int locale = 5;
+    printf("%d\n", globale + locale);
+}</code></pre>
+
+<h4>11. Durée de vie et static local</h4>
+<pre><code>void compteur(void)
+{
+    static int nombre = 0;
+
+    nombre++;
+    printf("%d\n", nombre);
+}
+
+int main(void)
+{
+    compteur(); // 1
+    compteur(); // 2
+    compteur(); // 3
+    return 0;
+}</code></pre>
+<p>
+Une variable locale static conserve sa valeur entre les appels de la fonction.
+Son initialisation statique est réalisée une seule fois.
+</p>
+
+<h4>12. Récapitulatif des prototypes</h4>
+<pre><code>int somme(int a, int b);
+float moyenne(float a, float b);
+void afficher(void);
+double puissance(double x, int n);
+int estPair(int n);</code></pre>
+</article>
+
+<!-- MODULE 9 -->
+<article class="module" id="m9">
+<div class="module-number">MODULE 09</div>
+<h3>Tableaux à une et plusieurs dimensions</h3>
+
+<h4>1. Définition d'un tableau</h4>
+<p>
+Un tableau est un ensemble d'éléments de même type stockés de manière
+contiguë en mémoire. Les éléments sont accessibles par un indice.
+En C, le premier indice est zéro.
+</p>
+<pre><code>int notes[5] = {12, 15, 14, 18, 10};
+
+printf("%d\n", notes[0]); // 12
+printf("%d\n", notes[4]); // 10</code></pre>
+
+<h4>2. Déclaration et initialisation</h4>
+<pre><code>int nombres[5];
+int valeurs[5] = {1, 2, 3, 4, 5};
+int autres[] = {10, 20, 30};
+int zeros[5] = {0};</code></pre>
+
+<h4>3. Accéder aux éléments</h4>
+<pre><code>int t[4] = {10, 20, 30, 40};
+
+t[0] = 100;
+t[2] = 300;
+
+printf("%d\n", t[0]);</code></pre>
+
+<h4>4. Parcourir un tableau</h4>
+<pre><code>int t[5] = {10, 20, 30, 40, 50};
+
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d ", t[i]);
+}</code></pre>
+
+<h4>5. Saisir un tableau</h4>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int t[5];
+
+    for (int i = 0; i &lt; 5; i++) {
+        printf("t[%d] = ", i);
+
+        if (scanf("%d", &amp;t[i]) != 1)
+            return 1;
+    }
+
+    for (int i = 0; i &lt; 5; i++)
+        printf("%d ", t[i]);
+
+    return 0;
+}</code></pre>
+
+<h4>6. Somme et moyenne</h4>
+<pre><code>int t[5] = {10, 12, 15, 17, 16};
+int somme = 0;
+
+for (int i = 0; i &lt; 5; i++) {
+    somme += t[i];
+}
+
+double moyenne = (double)somme / 5;
+
+printf("Somme = %d\n", somme);
+printf("Moyenne = %.2f\n", moyenne);</code></pre>
+
+<h4>7. Minimum et maximum</h4>
+<pre><code>int t[5] = {12, 4, 19, 7, 10};
+
+int minimum = t[0];
+int maximum = t[0];
+
+for (int i = 1; i &lt; 5; i++) {
+    if (t[i] &lt; minimum)
+        minimum = t[i];
+
+    if (t[i] > maximum)
+        maximum = t[i];
+}
+
+printf("Min = %d\n", minimum);
+printf("Max = %d\n", maximum);</code></pre>
+
+<h4>8. Rechercher une valeur</h4>
+<pre><code>int t[5] = {3, 8, 12, 6, 9};
+int valeur = 12;
+int position = -1;
+
+for (int i = 0; i &lt; 5; i++) {
+    if (t[i] == valeur) {
+        position = i;
+        break;
+    }
+}
+
+printf("%d\n", position);</code></pre>
+
+<h4>9. Inverser un tableau</h4>
+<pre><code>int t[5] = {1, 2, 3, 4, 5};
+
+for (int i = 0; i &lt; 5 / 2; i++) {
+    int temp = t[i];
+    t[i] = t[4 - i];
+    t[4 - i] = temp;
+}</code></pre>
+
+<h4>10. Tableaux à deux dimensions</h4>
+<p>
+Un tableau à deux dimensions est souvent utilisé pour représenter une matrice.
+</p>
+<pre><code>int matrice[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+printf("%d\n", matrice[0][1]); // 2</code></pre>
+
+<h4>11. Parcourir une matrice</h4>
+<pre><code>for (int i = 0; i &lt; 2; i++) {
+    for (int j = 0; j &lt; 3; j++) {
+        printf("%d ", matrice[i][j]);
+    }
+    printf("\n");
+}</code></pre>
+
+<h4>12. Addition de deux matrices</h4>
+<pre><code>int A[2][2] = {{1, 2}, {3, 4}};
+int B[2][2] = {{5, 6}, {7, 8}};
+int C[2][2];
+
+for (int i = 0; i &lt; 2; i++) {
+    for (int j = 0; j &lt; 2; j++) {
+        C[i][j] = A[i][j] + B[i][j];
+    }
+}</code></pre>
+
+<h4>13. Passage d'un tableau à une fonction</h4>
+<pre><code>int sommeTableau(const int t[], int taille)
+{
+    int somme = 0;
+
+    for (int i = 0; i &lt; taille; i++)
+        somme += t[i];
+
+    return somme;
+}</code></pre>
+<p>
+Lorsqu'un tableau est transmis comme argument à une fonction, le paramètre
+est ajusté en pointeur vers son premier élément. La fonction ne connaît
+donc pas automatiquement la taille du tableau : il faut la transmettre.
+</p>
+
+<h4>14. Dépassement des limites</h4>
+<div class="warning">
+Si un tableau contient cinq éléments, les indices valides sont 0, 1, 2, 3 et 4.
+Accéder à <code>t[5]</code> ou à un indice négatif provoque un comportement
+indéfini. Le langage C ne garantit pas la vérification automatique des limites.
+</div>
+</article>
+
+<!-- MODULE 10 -->
+<article class="module" id="m10">
+<div class="module-number">MODULE 10</div>
+<h3>Chaînes de caractères</h3>
+
+<h4>1. Représentation d'une chaîne en C</h4>
+<p>
+Le C ne possède pas un type chaîne natif comparable à celui de nombreux
+autres langages. Une chaîne est généralement représentée par un tableau
+de caractères terminé par le caractère nul <code>'\0'</code>.
+</p>
+<pre><code>char nom[] = "Ali";
+
+// Mémoire conceptuelle :
+// 'A' 'l' 'i' '\0'</code></pre>
+
+<h4>2. Déclarer une chaîne</h4>
+<pre><code>char nom[20];
+char prenom[] = "Mohamed";
+char ville[30] = "Mahdia";</code></pre>
+<p>
+Il faut toujours prévoir une place pour le caractère nul final.
+La chaîne <code>"Ali"</code> occupe donc quatre caractères en mémoire.
+</p>
+
+<h4>3. Lire une chaîne</h4>
+<pre><code>char nom[50];
+
+printf("Nom : ");
+scanf("%49s", nom);</code></pre>
+<p>
+Pour lire une phrase avec espaces, utilise <code>fgets</code> :
+</p>
+<pre><code>char phrase[100];
+
+if (fgets(phrase, sizeof phrase, stdin) != NULL) {
+    printf("%s", phrase);
+}</code></pre>
+
+<h4>4. Bibliothèque string.h</h4>
+<p>
+Les fonctions classiques de manipulation des chaînes sont déclarées
+dans <code>&lt;string.h&gt;</code>.
+</p>
+<table>
+<tr><th>Fonction</th><th>Rôle</th></tr>
+<tr><td>strlen(s)</td><td>Longueur de la chaîne, sans le caractère nul.</td></tr>
+<tr><td>strcpy(d,s)</td><td>Copier une chaîne dans une destination suffisamment grande.</td></tr>
+<tr><td>strncpy(d,s,n)</td><td>Copier au maximum n caractères, sans garantir toujours le terminateur.</td></tr>
+<tr><td>strcat(d,s)</td><td>Ajouter une chaîne à la fin d'une destination assez grande.</td></tr>
+<tr><td>strcmp(a,b)</td><td>Comparer deux chaînes.</td></tr>
+<tr><td>strchr(s,c)</td><td>Rechercher un caractère.</td></tr>
+<tr><td>strstr(s,t)</td><td>Rechercher une sous-chaîne.</td></tr>
+</table>
+
+<h4>5. strlen()</h4>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(void)
+{
+    char texte[] = "Bonjour";
+
+    printf("Longueur = %zu\n", strlen(texte));
+    return 0;
+}</code></pre>
+
+<h4>6. strcmp()</h4>
+<pre><code>char a[] = "Ali";
+char b[] = "Ali";
+
+if (strcmp(a, b) == 0)
+    printf("Identiques\n");
+else
+    printf("Differentes\n");</code></pre>
+<p>
+<code>strcmp</code> retourne zéro lorsque les chaînes sont égales.
+Une valeur négative ou positive indique leur ordre lexicographique.
+Ne compare pas deux chaînes avec l'opérateur <code>==</code>.
+</p>
+
+<h4>7. strcpy() et strcat()</h4>
+<pre><code>char destination[50] = "Bonjour ";
+char source[] = "Ali";
+
+strcat(destination, source);
+
+printf("%s\n", destination);</code></pre>
+<div class="warning">
+La destination doit disposer d'une capacité suffisante. Les fonctions
+<code>strcpy</code> et <code>strcat</code> ne vérifient pas automatiquement
+la taille du tableau. Une mauvaise utilisation peut provoquer un dépassement
+de tampon.
+</div>
+
+<h4>8. Parcourir une chaîne</h4>
+<pre><code>char mot[] = "Bonjour";
+
+for (int i = 0; mot[i] != '\0'; i++) {
+    printf("%c\n", mot[i]);
+}</code></pre>
+
+<h4>9. Compter les voyelles</h4>
+<pre><code>int compterVoyelles(const char s[])
+{
+    int compteur = 0;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        char c = s[i];
+
+        if (c == 'a' || c == 'e' || c == 'i' ||
+            c == 'o' || c == 'u' || c == 'y' ||
+            c == 'A' || c == 'E' || c == 'I' ||
+            c == 'O' || c == 'U' || c == 'Y') {
+            compteur++;
+        }
+    }
+
+    return compteur;
+}</code></pre>
+
+<h4>10. Convertir la casse</h4>
+<pre><code>#include &lt;ctype.h&gt;
+
+char c = 'a';
+
+printf("%c\n", toupper((unsigned char)c));
+printf("%c\n", tolower((unsigned char)'B'));</code></pre>
+<p>
+Les fonctions de <code>&lt;ctype.h&gt;</code> doivent recevoir EOF
+ou une valeur représentable comme unsigned char.
+</p>
+
+<h4>11. Supprimer le retour à la ligne</h4>
+<pre><code>#include &lt;string.h&gt;
+
+char texte[100];
+
+if (fgets(texte, sizeof texte, stdin) != NULL) {
+    texte[strcspn(texte, "\n")] = '\0';
+}</code></pre>
+</article>
+
+<!-- MODULE 11 -->
+<article class="module" id="m11">
+<div class="module-number">MODULE 11</div>
+<h3>Pointeurs et adresses mémoire</h3>
+
+<h4>1. Qu'est-ce qu'un pointeur ?</h4>
+<p>
+Un pointeur est une variable qui stocke l'adresse d'un objet ou d'une fonction.
+Les pointeurs sont essentiels en C pour manipuler les tableaux, transmettre
+des objets aux fonctions, gérer la mémoire dynamique et construire
+des structures de données.
+</p>
+
+<h4>2. Comprendre les adresses</h4>
+<pre><code>int nombre = 10;
+
+printf("Valeur : %d\n", nombre);
+printf("Adresse : %p\n", (void *)&amp;nombre);</code></pre>
+<p>
+L'opérateur <code>&amp;</code> fournit l'adresse d'un objet.
+L'opérateur <code>*</code>, lorsqu'il est appliqué à un pointeur valide,
+permet d'accéder à l'objet pointé.
+</p>
+
+<h4>3. Déclaration d'un pointeur</h4>
+<pre><code>int nombre = 10;
+int *p = &amp;nombre;
+
+printf("%d\n", *p);</code></pre>
+<p>
+<code>int *p</code> signifie que p est un pointeur vers un entier.
+<code>*p</code> désigne l'entier situé à l'adresse contenue dans p.
+</p>
+
+<h4>4. Modifier une variable avec un pointeur</h4>
+<pre><code>int nombre = 10;
+int *p = &amp;nombre;
+
+*p = 50;
+
+printf("%d\n", nombre); // 50</code></pre>
+
+<h4>5. Pointeur NULL</h4>
+<pre><code>int *p = NULL;
+
+if (p == NULL) {
+    printf("Aucune adresse valide associee\n");
+}</code></pre>
+<p>
+Un pointeur NULL ne désigne aucun objet. Il ne faut pas le déréférencer.
+</p>
+
+<h4>6. Pointeurs et fonctions</h4>
+<pre><code>void echanger(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main(void)
+{
+    int x = 10;
+    int y = 20;
+
+    echanger(&amp;x, &amp;y);
+
+    printf("%d %d\n", x, y);
+    return 0;
+}</code></pre>
+
+<h4>7. Pointeurs et tableaux</h4>
+<pre><code>int t[4] = {10, 20, 30, 40};
+
+int *p = t;
+
+printf("%d\n", *p);       // 10
+printf("%d\n", *(p + 1)); // 20
+printf("%d\n", p[2]);     // 30</code></pre>
+<p>
+Dans la plupart des expressions, le nom d'un tableau est converti en
+pointeur vers son premier élément. Cette conversion ne signifie pas
+qu'un tableau et un pointeur sont le même type.
+</p>
+
+<h4>8. Arithmétique des pointeurs</h4>
+<pre><code>int t[4] = {10, 20, 30, 40};
+int *p = t;
+
+p++;  // Pointe vers t[1]
+p--;  // Pointe vers t[0]</code></pre>
+<p>
+Ajouter 1 à un pointeur vers int avance vers l'entier suivant, donc de
+<code>sizeof(int)</code> octets. L'arithmétique des pointeurs n'est définie
+que dans les limites du même tableau et jusqu'à sa position juste après
+le dernier élément.
+</p>
+
+<h4>9. Pointeur et tableau : différence</h4>
+<pre><code>int t[5];
+int *p = t;
+
+printf("%zu\n", sizeof t); // Taille totale du tableau
+printf("%zu\n", sizeof p); // Taille du pointeur</code></pre>
+<p>
+Dans cette fonction, le tableau est ajusté en pointeur :
+</p>
+<pre><code>void afficher(int t[], int taille)
+{
+    for (int i = 0; i &lt; taille; i++)
+        printf("%d ", t[i]);
+}</code></pre>
+
+<h4>10. Pointeur vers pointeur</h4>
+<pre><code>int nombre = 10;
+int *p = &amp;nombre;
+int **pp = &amp;p;
+
+printf("%d\n", **pp);</code></pre>
+<p>
+Un pointeur vers pointeur contient l'adresse d'un autre pointeur.
+</p>
+
+<h4>11. Pointeur void *</h4>
+<p>
+<code>void *</code> est un pointeur générique vers un objet.
+Il peut recevoir un pointeur d'objet de différents types.
+Avant de déréférencer un tel pointeur, il faut le convertir vers
+un type d'objet approprié.
+</p>
+<pre><code>int nombre = 10;
+void *p = &amp;nombre;
+
+printf("%d\n", *(int *)p);</code></pre>
+
+<h4>12. const et pointeurs</h4>
+<pre><code>int a = 10;
+int b = 20;
+
+const int *p1 = &amp;a; // Valeur non modifiable via p1
+int *const p2 = &amp;a; // Adresse de p2 non modifiable
+const int *const p3 = &amp;a; // Les deux sont fixes</code></pre>
+
+<h4>13. Pointeur non initialisé et pointeur pendant</h4>
+<div class="warning">
+Ne déréférence jamais un pointeur non initialisé, libéré, pendant ou invalide.
+Un pointeur doit désigner un objet vivant et accessible avant tout accès
+à l'objet pointé.
+</div>
+</article>
+
+<!-- MODULE 12 -->
+<article class="module" id="m12">
+<div class="module-number">MODULE 12</div>
+<h3>Allocation dynamique de mémoire</h3>
+
+<h4>1. Pourquoi allouer dynamiquement ?</h4>
+<p>
+Les tableaux classiques possèdent une taille déterminée selon leur déclaration.
+L'allocation dynamique permet de réserver de la mémoire pendant l'exécution,
+par exemple lorsque la taille dépend d'une saisie.
+</p>
+
+<h4>2. malloc()</h4>
+<p>
+La fonction <code>malloc</code>, déclarée dans <code>&lt;stdlib.h&gt;</code>,
+réserve un bloc de mémoire non initialisé et retourne un pointeur vers ce bloc,
+ou NULL en cas d'échec.
+</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void)
+{
+    int n = 5;
+    int *t = malloc((size_t)n * sizeof *t);
+
+    if (t == NULL) {
+        printf("Allocation impossible\n");
+        return 1;
+    }
+
+    for (int i = 0; i &lt; n; i++)
+        t[i] = i * 10;
+
+    for (int i = 0; i &lt; n; i++)
+        printf("%d ", t[i]);
+
+    free(t);
+    return 0;
+}</code></pre>
+
+<h4>3. calloc()</h4>
+<p>
+<code>calloc</code> réserve un tableau de blocs et initialise tous les bits
+du bloc alloué à zéro.
+</p>
+<pre><code>int n = 10;
+
+int *t = calloc((size_t)n, sizeof *t);
+
+if (t == NULL) {
+    return 1;
+}
+
+free(t);</code></pre>
+
+<h4>4. realloc()</h4>
+<p>
+<code>realloc</code> tente de modifier la taille d'un bloc alloué.
+Le bloc peut être déplacé. En cas d'échec, l'ancien bloc reste valide.
+</p>
+<pre><code>int *temp = realloc(t, nouvelle_taille * sizeof *t);
+
+if (temp != NULL) {
+    t = temp;
+} else {
+    // t reste valide : ne pas perdre son adresse
+}</code></pre>
+<p>Il faut vérifier les dépassements possibles lors du calcul de la taille.</p>
+
+<h4>5. free()</h4>
+<pre><code>int *p = malloc(sizeof *p);
+
+if (p != NULL) {
+    *p = 100;
+    free(p);
+    p = NULL;
+}</code></pre>
+<p>
+<code>free</code> libère un bloc alloué dynamiquement. Après libération,
+il ne faut plus accéder à ce bloc.
+</p>
+
+<h4>6. Les erreurs de gestion mémoire</h4>
+<table>
+<tr><th>Erreur</th><th>Description</th></tr>
+<tr><td>Memory leak</td><td>Bloc alloué qui n'est jamais libéré.</td></tr>
+<tr><td>Double free</td><td>Libérer deux fois le même bloc.</td></tr>
+<tr><td>Use after free</td><td>Accéder à un bloc après sa libération.</td></tr>
+<tr><td>Buffer overflow</td><td>Écrire au-delà de la zone réservée.</td></tr>
+<tr><td>NULL dereference</td><td>Déréférencer un pointeur NULL.</td></tr>
+</table>
+
+<h4>7. Bonnes habitudes</h4>
+<ul>
+<li>Vérifier chaque allocation.</li>
+<li>Libérer chaque bloc lorsque son utilisation est terminée.</li>
+<li>Ne pas perdre le pointeur original en cas d'échec de realloc.</li>
+<li>Vérifier les calculs de taille avant l'allocation.</li>
+<li>Ne jamais utiliser un pointeur après free.</li>
+</ul>
+</article>
+
+<!-- MODULE 13 -->
+<article class="module" id="m13">
+<div class="module-number">MODULE 13</div>
+<h3>Structures : struct et typedef</h3>
+
+<h4>1. Pourquoi utiliser une structure ?</h4>
+<p>
+Une structure permet de regrouper plusieurs champs de types différents
+dans un même objet. Elle est utile pour représenter un étudiant, un produit,
+un point géométrique ou un enregistrement.
+</p>
+
+<h4>2. Déclarer une structure</h4>
+<pre><code>struct Etudiant {
+    int id;
+    char nom[50];
+    float moyenne;
+};</code></pre>
+
+<h4>3. Créer et initialiser une variable</h4>
+<pre><code>struct Etudiant e1 = {
+    1,
+    "Ali",
+    15.5f
+};</code></pre>
+
+<h4>4. Accéder aux champs avec le point</h4>
+<pre><code>printf("%d\n", e1.id);
+printf("%s\n", e1.nom);
+
+e1.moyenne = 17.0f;</code></pre>
+
+<h4>5. typedef</h4>
+<pre><code>typedef struct {
+    int jour;
+    int mois;
+    int annee;
+} Date;
+
+int main(void)
+{
+    Date naissance = {10, 5, 2005};
+    return 0;
+}</code></pre>
+
+<h4>6. Tableau de structures</h4>
+<pre><code>typedef struct {
+    int id;
+    char nom[30];
+    float moyenne;
+} Etudiant;
+
+Etudiant classe[3] = {
+    {1, "Ali", 14.5f},
+    {2, "Sara", 16.0f},
+    {3, "Amine", 12.0f}
+};
+
+for (int i = 0; i &lt; 3; i++) {
+    printf("%s : %.2f\n",
+           classe[i].nom,
+           classe[i].moyenne);
+}</code></pre>
+
+<h4>7. Pointeur vers une structure</h4>
+<pre><code>Etudiant e = {1, "Ali", 15.0f};
+Etudiant *p = &amp;e;
+
+printf("%s\n", p->nom);
+p->moyenne = 18.0f;</code></pre>
+<p>
+L'opérateur <code>-&gt;</code> permet d'accéder à un champ à travers
+un pointeur vers une structure. Il est équivalent à
+<code>(*p).nom</code>.
+</p>
+
+<h4>8. Passer une structure à une fonction</h4>
+<pre><code>void afficherEtudiant(Etudiant e)
+{
+    printf("%d %s %.2f\n", e.id, e.nom, e.moyenne);
+}</code></pre>
+
+<h4>9. Passer un pointeur vers une structure</h4>
+<pre><code>void augmenterMoyenne(Etudiant *e)
+{
+    e->moyenne += 1.0f;
+}</code></pre>
+<p>
+Cette forme évite de copier toute la structure et permet de modifier
+l'objet original.
+</p>
+
+<h4>10. Structures imbriquées</h4>
+<pre><code>typedef struct {
+    int jour, mois, annee;
+} Date;
+
+typedef struct {
+    char nom[30];
+    Date naissance;
+} Personne;</code></pre>
+
+<h4>11. Padding et alignement</h4>
+<p>
+Le compilateur peut ajouter des octets de remplissage entre les champs
+d'une structure afin de respecter les contraintes d'alignement de la plateforme.
+Ainsi, la taille d'une structure n'est pas nécessairement la somme simple
+des tailles de ses champs.
+</p>
+<pre><code>printf("%zu\n", sizeof(Etudiant));</code></pre>
+</article>
+
+<!-- MODULE 14 -->
+<article class="module" id="m14">
+<div class="module-number">MODULE 14</div>
+<h3>Unions, énumérations et types définis</h3>
+
+<h4>1. enum</h4>
+<p>
+Une énumération définit un ensemble de constantes entières nommées.
+</p>
+<pre><code>enum Jour {
+    LUNDI,
+    MARDI,
+    MERCREDI,
+    JEUDI,
+    VENDREDI
+};
+
+enum Jour aujourd_hui = MARDI;</code></pre>
+<p>
+Par défaut, les premières valeurs commencent à zéro et augmentent de un.
+On peut aussi attribuer explicitement des valeurs.
+</p>
+<pre><code>enum Etat {
+    INACTIF = 0,
+    ACTIF = 1,
+    ERREUR = -1
+};</code></pre>
+
+<h4>2. switch avec enum</h4>
+<pre><code>enum Etat etat = ACTIF;
+
+switch (etat) {
+    case INACTIF:
+        printf("Inactif\n");
+        break;
+
+    case ACTIF:
+        printf("Actif\n");
+        break;
+
+    case ERREUR:
+        printf("Erreur\n");
+        break;
+}</code></pre>
+
+<h4>3. union</h4>
+<p>
+Une union permet à plusieurs membres de partager la même zone mémoire.
+Elle est utile lorsque plusieurs représentations sont alternatives.
+</p>
+<pre><code>union Donnee {
+    int entier;
+    float reel;
+    char caractere;
+};
+
+union Donnee d;
+
+d.entier = 10;
+printf("%d\n", d.entier);</code></pre>
+<p>
+La taille d'une union est suffisante pour son membre le plus grand,
+avec les exigences d'alignement nécessaires.
+</p>
+
+<h4>4. Différence entre struct et union</h4>
+<table>
+<tr><th>struct</th><th>union</th></tr>
+<tr><td>Chaque champ possède son espace dans l'objet.</td><td>Les membres partagent la même zone mémoire.</td></tr>
+<tr><td>Plusieurs champs peuvent contenir simultanément leurs valeurs.</td><td>Un membre est généralement utilisé à la fois.</td></tr>
+<tr><td>La taille tient compte de tous les champs et du padding.</td><td>La taille dépend du membre le plus grand et de l'alignement.</td></tr>
+</table>
+
+<h4>5. typedef</h4>
+<pre><code>typedef unsigned int Compteur;
+typedef float Prix;
+
+Compteur nombre = 100;
+Prix montant = 25.5f;</code></pre>
+
+<h4>6. Bit-fields</h4>
+<p>
+Les champs de bits permettent de spécifier une largeur en bits pour certains
+membres entiers d'une structure. Leur disposition dépend de l'implémentation.
+</p>
+<pre><code>struct Drapeaux {
+    unsigned int actif : 1;
+    unsigned int mode : 2;
+    unsigned int niveau : 3;
+};</code></pre>
+</article>
+
+<!-- MODULE 15 -->
+<article class="module" id="m15">
+<div class="module-number">MODULE 15</div>
+<h3>Manipulation des fichiers</h3>
+
+<h4>1. Pourquoi utiliser les fichiers ?</h4>
+<p>
+Les variables et tableaux en mémoire ne conservent généralement pas leurs
+données après la fin du programme. Les fichiers permettent d'enregistrer
+et de récupérer des informations durablement.
+</p>
+
+<h4>2. Ouvrir un fichier avec fopen</h4>
+<pre><code>FILE *f = fopen("donnees.txt", "w");
+
+if (f == NULL) {
+    perror("Erreur ouverture");
+    return 1;
+}</code></pre>
+
+<h4>3. Les modes d'ouverture</h4>
+<table>
+<tr><th>Mode</th><th>Signification</th></tr>
+<tr><td>r</td><td>Lecture, fichier existant nécessaire.</td></tr>
+<tr><td>w</td><td>Écriture, création ou remplacement du contenu.</td></tr>
+<tr><td>a</td><td>Ajout à la fin, création si nécessaire.</td></tr>
+<tr><td>r+</td><td>Lecture et écriture, fichier existant.</td></tr>
+<tr><td>w+</td><td>Lecture et écriture, contenu remplacé.</td></tr>
+<tr><td>a+</td><td>Lecture et ajout à la fin.</td></tr>
+<tr><td>rb / wb</td><td>Modes binaires.</td></tr>
+</table>
+
+<h4>4. Écrire avec fprintf</h4>
+<pre><code>FILE *f = fopen("etudiant.txt", "w");
+
+if (f == NULL)
+    return 1;
+
+fprintf(f, "Ali\n");
+fprintf(f, "15.5\n");
+
+if (fclose(f) == EOF)
+    return 1;</code></pre>
+
+<h4>5. Lire avec fscanf</h4>
+<pre><code>FILE *f = fopen("etudiant.txt", "r");
+
+if (f == NULL)
+    return 1;
+
+char nom[50];
+float moyenne;
+
+if (fscanf(f, "%49s %f", nom, &amp;moyenne) == 2) {
+    printf("%s %.2f\n", nom, moyenne);
+}
+
+fclose(f);</code></pre>
+
+<h4>6. Lire ligne par ligne avec fgets</h4>
+<pre><code>char ligne[256];
+
+while (fgets(ligne, sizeof ligne, f) != NULL) {
+    printf("%s", ligne);
+}</code></pre>
+
+<h4>7. Écrire un caractère</h4>
+<pre><code>fputc('A', f);</code></pre>
+
+<h4>8. Lire un caractère</h4>
+<pre><code>int c;
+
+while ((c = fgetc(f)) != EOF) {
+    putchar(c);
+}</code></pre>
+<p>
+On utilise un int pour recevoir le résultat de fgetc afin de pouvoir
+distinguer toutes les valeurs de caractères de la valeur spéciale EOF.
+</p>
+
+<h4>9. Lecture et écriture binaires</h4>
+<pre><code>fwrite(&amp;nombre, sizeof nombre, 1, f);
+
+fread(&amp;nombre, sizeof nombre, 1, f);</code></pre>
+<p>
+Les fonctions <code>fread</code> et <code>fwrite</code> permettent de
+lire et d'écrire des blocs d'objets en mode binaire.
+Les fichiers binaires ne sont pas nécessairement portables entre des
+machines différentes si leur représentation diffère.
+</p>
+
+<h4>10. Position dans un fichier</h4>
+<pre><code>fseek(f, 0, SEEK_SET); // Début
+fseek(f, 0, SEEK_END); // Fin
+rewind(f);             // Retour au début
+
+long position = ftell(f);</code></pre>
+
+<h4>11. Fermer un fichier</h4>
+<pre><code>if (fclose(f) == EOF) {
+    perror("Erreur fermeture");
+}</code></pre>
+
+<h4>12. Supprimer et renommer</h4>
+<pre><code>remove("ancien.txt");
+rename("ancien.txt", "nouveau.txt");</code></pre>
+<p>
+Ces fonctions sont déclarées dans <code>&lt;stdio.h&gt;</code>.
+Il faut vérifier leurs valeurs de retour.
+</p>
+</article>
+
+<!-- MODULE 16 -->
+<article class="module" id="m16">
+<div class="module-number">MODULE 16</div>
+<h3>Préprocesseur et macros</h3>
+
+<h4>1. Rôle du préprocesseur</h4>
+<p>
+Le préprocesseur traite les directives commençant par <code>#</code>
+avant la compilation proprement dite.
+</p>
+
+<h4>2. #include</h4>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "mes_fonctions.h"</code></pre>
+<p>
+Les chevrons sont habituellement utilisés pour les en-têtes de bibliothèque.
+Les guillemets sont habituellement utilisés pour les en-têtes du projet.
+</p>
+
+<h4>3. #define</h4>
+<pre><code>#define MAX 100
+#define PI 3.14159</code></pre>
+
+<h4>4. Macros avec paramètres</h4>
+<pre><code>#define CARRE(x) ((x) * (x))
+
+int resultat = CARRE(5);</code></pre>
+<p>
+Il faut parenthéser les paramètres et l'expression pour éviter les problèmes
+de priorité. Attention : une macro peut évaluer plusieurs fois son argument.
+</p>
+
+<h4>5. #ifdef et #ifndef</h4>
+<pre><code>#ifndef MON_HEADER_H
+#define MON_HEADER_H
+
+void afficher(void);
+
+#endif</code></pre>
+<p>
+Cette technique protège un fichier d'en-tête contre les inclusions multiples.
+</p>
+
+<h4>6. Compilation conditionnelle</h4>
+<pre><code>#ifdef DEBUG
+    printf("Mode debug actif\n");
+#endif
+
+#if VERSION >= 2
+    printf("Version recente\n");
+#else
+    printf("Ancienne version\n");
+#endif</code></pre>
+
+<h4>7. Opérateurs du préprocesseur</h4>
+<p>
+Dans les macros, <code>#</code> transforme un argument en chaîne de caractères
+et <code>##</code> assemble deux éléments de préprocesseur.
+</p>
+<pre><code>#define TEXTE(x) #x
+
+printf("%s\n", TEXTE(Bonjour));</code></pre>
+</article>
+
+<!-- MODULE 17 -->
+<article class="module" id="m17">
+<div class="module-number">MODULE 17</div>
+<h3>Bibliothèque standard du C</h3>
+
+<table>
+<tr><th>En-tête</th><th>Utilité</th></tr>
+<tr><td>stdio.h</td><td>Entrées/sorties, fichiers, printf, scanf.</td></tr>
+<tr><td>stdlib.h</td><td>Allocation, conversions, tri, recherche, terminaison.</td></tr>
+<tr><td>string.h</td><td>Manipulation des chaînes et mémoire.</td></tr>
+<tr><td>math.h</td><td>Fonctions mathématiques.</td></tr>
+<tr><td>ctype.h</td><td>Classification et conversion de caractères.</td></tr>
+<tr><td>time.h</td><td>Gestion du temps et des dates.</td></tr>
+<tr><td>stdbool.h</td><td>Noms bool, true et false depuis C99.</td></tr>
+<tr><td>stdint.h</td><td>Types entiers de largeur spécifiée.</td></tr>
+<tr><td>stddef.h</td><td>Types et macros comme size_t et NULL.</td></tr>
+<tr><td>limits.h</td><td>Limites des types entiers.</td></tr>
+<tr><td>float.h</td><td>Caractéristiques des types réels.</td></tr>
+<tr><td>assert.h</td><td>Vérifications avec assert.</td></tr>
+<tr><td>errno.h</td><td>Codes d'erreur de certaines fonctions.</td></tr>
+<tr><td>inttypes.h</td><td>Macros de format pour les types entiers définis.</td></tr>
+<tr><td>signal.h</td><td>Gestion de certains signaux.</td></tr>
+<tr><td>setjmp.h</td><td>Sauts non locaux contrôlés.</td></tr>
+<tr><td>locale.h</td><td>Paramètres régionaux.</td></tr>
+<tr><td>wchar.h</td><td>Caractères larges et chaînes associées.</td></tr>
+</table>
+
+<h4>1. Fonctions mathématiques</h4>
+<pre><code>#include &lt;math.h&gt;
+
+double x = 25.0;
+
+printf("%.2f\n", sqrt(x));
+printf("%.2f\n", pow(2.0, 3.0));
+printf("%.2f\n", sin(1.0));
+printf("%.2f\n", cos(1.0));
+printf("%.2f\n", log(10.0));
+printf("%.2f\n", fabs(-5.5));</code></pre>
+<p>
+Selon le compilateur et la plateforme, il peut être nécessaire de lier
+la bibliothèque mathématique avec l'option <code>-lm</code>.
+</p>
+
+<h4>2. Fonctions de caractères</h4>
+<pre><code>#include &lt;ctype.h&gt;
+
+char c = 'A';
+
+if (isalpha((unsigned char)c))
+    printf("Lettre\n");
+
+if (isdigit((unsigned char)'5'))
+    printf("Chiffre\n");
+
+printf("%c\n", tolower((unsigned char)c));</code></pre>
+
+<h4>3. Fonctions de conversion</h4>
+<pre><code>#include &lt;stdlib.h&gt;
+
+char texte[] = "123";
+
+int valeur = atoi(texte);</code></pre>
+<p>
+Pour une conversion robuste, préfère <code>strtol</code> ou
+<code>strtod</code> afin de pouvoir détecter les erreurs et contrôler
+la partie non convertie.
+</p>
+<pre><code>#include &lt;stdlib.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;stdio.h&gt;
+
+char texte[] = "12345";
+char *fin;
+
+errno = 0;
+long valeur = strtol(texte, &amp;fin, 10);
+
+if (errno == 0 &amp;&amp; fin != texte &amp;&amp; *fin == '\0') {
+    printf("%ld\n", valeur);
+} else {
+    printf("Conversion invalide\n");
+}</code></pre>
+</article>
+
+<!-- MODULE 18 -->
+<article class="module" id="m18">
+<div class="module-number">MODULE 18</div>
+<h3>Opérateurs binaires et manipulation des bits</h3>
+
+<h4>1. Représentation binaire</h4>
+<p>
+Un bit est une unité d'information qui prend la valeur 0 ou 1.
+Les opérateurs binaires permettent de manipuler les bits d'un entier.
+</p>
+
+<h4>2. Les opérateurs bit à bit</h4>
+<table>
+<tr><th>Opérateur</th><th>Nom</th></tr>
+<tr><td>&amp;</td><td>ET bit à bit</td></tr>
+<tr><td>|</td><td>OU bit à bit</td></tr>
+<tr><td>^</td><td>OU exclusif</td></tr>
+<tr><td>~</td><td>Complément bit à bit</td></tr>
+<tr><td>&lt;&lt;</td><td>Décalage à gauche</td></tr>
+<tr><td>&gt;&gt;</td><td>Décalage à droite</td></tr>
+</table>
+
+<h4>3. ET bit à bit</h4>
+<pre><code>unsigned int a = 12; // 1100
+unsigned int b = 10; // 1010
+
+printf("%u\n", a &amp; b); // 8 : 1000</code></pre>
+
+<h4>4. OU bit à bit</h4>
+<pre><code>unsigned int a = 12;
+unsigned int b = 10;
+
+printf("%u\n", a | b); // 14</code></pre>
+
+<h4>5. XOR</h4>
+<pre><code>unsigned int a = 12;
+unsigned int b = 10;
+
+printf("%u\n", a ^ b); // 6</code></pre>
+
+<h4>6. Décalages</h4>
+<pre><code>unsigned int x = 5;
+
+printf("%u\n", x &lt;&lt; 1); // 10
+printf("%u\n", x &lt;&lt; 2); // 20</code></pre>
+<p>
+Les décalages doivent être utilisés avec des valeurs et des quantités
+valides. Les décalages hors plage et certains décalages sur des entiers
+signés peuvent produire un comportement indéfini ou dépendant des règles
+du standard et de l'implémentation.
+</p>
+
+<h4>7. Vérifier un bit</h4>
+<pre><code>unsigned int nombre = 10;
+unsigned int masque = 1u &lt;&lt; 1;
+
+if ((nombre &amp; masque) != 0)
+    printf("Bit actif\n");</code></pre>
+
+<h4>8. Activer, désactiver et inverser un bit</h4>
+<pre><code>unsigned int flags = 0;
+
+flags |= (1u &lt;&lt; 2);   // Activer le bit 2
+flags &amp;= ~(1u &lt;&lt; 2);  // Désactiver le bit 2
+flags ^= (1u &lt;&lt; 1);   // Inverser le bit 1</code></pre>
+
+<h4>9. Applications</h4>
+<ul>
+<li>Gestion de drapeaux et d'options.</li>
+<li>Communication avec des périphériques.</li>
+<li>Protocoles réseau et formats binaires.</li>
+<li>Compression et représentation compacte.</li>
+<li>Programmation embarquée.</li>
+</ul>
+</article>
+
+<!-- MODULE 19 -->
+<article class="module" id="m19">
+<div class="module-number">MODULE 19</div>
+<h3>Récursivité</h3>
+
+<h4>1. Définition</h4>
+<p>
+Une fonction récursive est une fonction qui s'appelle elle-même.
+Elle permet de résoudre certains problèmes en les décomposant en
+sous-problèmes de même nature.
+</p>
+
+<h4>2. Les deux éléments obligatoires</h4>
+<ul>
+<li><strong>Cas de base :</strong> condition qui arrête les appels récursifs.</li>
+<li><strong>Cas récursif :</strong> appel avec un problème plus petit.</li>
+</ul>
+
+<h4>3. Factorielle</h4>
+<pre><code>long long factorielle(int n)
+{
+    if (n &lt; 0)
+        return -1;
+
+    if (n == 0 || n == 1)
+        return 1;
+
+    return n * factorielle(n - 1);
+}</code></pre>
+<p>Mathématiquement :</p>
+<div class="note">
+n! = n × (n - 1) × ... × 2 × 1 et 0! = 1.
+</div>
+
+<h4>4. Somme de 1 à n</h4>
+<pre><code>int somme(int n)
+{
+    if (n &lt;= 0)
+        return 0;
+
+    return n + somme(n - 1);
+}</code></pre>
+
+<h4>5. Fibonacci</h4>
+<pre><code>int fibonacci(int n)
+{
+    if (n &lt;= 1)
+        return n;
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}</code></pre>
+<div class="warning">
+Cette version récursive simple est très coûteuse pour les grandes valeurs
+de n. Une solution itérative ou une mémorisation des résultats est
+beaucoup plus efficace.
+</div>
+
+<h4>6. PGCD récursif</h4>
+<pre><code>int pgcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+
+    return pgcd(b, a % b);
+}</code></pre>
+
+<h4>7. Tour de Hanoï</h4>
+<pre><code>void hanoi(int n, char depart, char arrivee, char auxiliaire)
+{
+    if (n == 1) {
+        printf("%c -> %c\n", depart, arrivee);
+        return;
+    }
+
+    hanoi(n - 1, depart, auxiliaire, arrivee);
+    printf("%c -> %c\n", depart, arrivee);
+    hanoi(n - 1, auxiliaire, arrivee, depart);
+}</code></pre>
+
+<h4>8. Avantages et limites</h4>
+<ul>
+<li>Le code peut être plus naturel pour les arbres et les problèmes récursifs.</li>
+<li>La pile d'appels consomme de la mémoire.</li>
+<li>Une profondeur trop importante peut provoquer un débordement de pile.</li>
+<li>Une mauvaise condition d'arrêt peut provoquer une récursion infinie.</li>
+</ul>
+</article>
+
+<!-- MODULE 20 -->
+<article class="module" id="m20">
+<div class="module-number">MODULE 20</div>
+<h3>Algorithmes de recherche</h3>
+
+<h4>1. Recherche séquentielle</h4>
+<p>
+La recherche séquentielle examine les éléments un par un jusqu'à trouver
+la valeur recherchée ou atteindre la fin du tableau.
+</p>
+<pre><code>int rechercheLineaire(const int t[], int n, int valeur)
+{
+    for (int i = 0; i &lt; n; i++) {
+        if (t[i] == valeur)
+            return i;
+    }
+
+    return -1;
+}</code></pre>
+<p>Complexité temporelle : O(n) dans le pire cas.</p>
+
+<h4>2. Recherche dichotomique</h4>
+<p>
+La recherche dichotomique divise à chaque étape la zone de recherche
+en deux. Le tableau doit être trié.
+</p>
+<pre><code>int rechercheDichotomique(const int t[], int n, int valeur)
+{
+    int gauche = 0;
+    int droite = n - 1;
+
+    while (gauche &lt;= droite) {
+        int milieu = gauche + (droite - gauche) / 2;
+
+        if (t[milieu] == valeur)
+            return milieu;
+
+        if (t[milieu] &lt; valeur)
+            gauche = milieu + 1;
+        else
+            droite = milieu - 1;
+    }
+
+    return -1;
+}</code></pre>
+<p>Complexité temporelle : O(log n).</p>
+
+<h4>3. Comparaison</h4>
+<table>
+<tr><th>Algorithme</th><th>Tableau trié nécessaire ?</th><th>Complexité moyenne</th></tr>
+<tr><td>Séquentielle</td><td>Non</td><td>O(n)</td></tr>
+<tr><td>Dichotomique</td><td>Oui</td><td>O(log n)</td></tr>
+</table>
+</article>
+
+<!-- MODULE 21 -->
+<article class="module" id="m21">
+<div class="module-number">MODULE 21</div>
+<h3>Algorithmes de tri</h3>
+
+<h4>1. Pourquoi trier ?</h4>
+<p>
+Le tri consiste à organiser les éléments selon un ordre croissant,
+décroissant ou selon un critère particulier.
+</p>
+
+<h4>2. Tri à bulles (Bubble Sort)</h4>
+<p>
+Le tri à bulles compare des éléments voisins et les échange lorsqu'ils
+sont dans le mauvais ordre.
+</p>
+<pre><code>void triBulles(int t[], int n)
+{
+    for (int i = 0; i &lt; n - 1; i++) {
+        int echange = 0;
+
+        for (int j = 0; j &lt; n - 1 - i; j++) {
+            if (t[j] > t[j + 1]) {
+                int temp = t[j];
+                t[j] = t[j + 1];
+                t[j + 1] = temp;
+                echange = 1;
+            }
+        }
+
+        if (!echange)
+            break;
+    }
+}</code></pre>
+<p>Complexité moyenne et pire cas : O(n²).</p>
+
+<h4>3. Tri par sélection</h4>
+<p>
+Le tri par sélection recherche le plus petit élément de la partie non triée
+et le place à sa position définitive.
+</p>
+<pre><code>void triSelection(int t[], int n)
+{
+    for (int i = 0; i &lt; n - 1; i++) {
+        int min = i;
+
+        for (int j = i + 1; j &lt; n; j++) {
+            if (t[j] &lt; t[min])
+                min = j;
+        }
+
+        int temp = t[i];
+        t[i] = t[min];
+        t[min] = temp;
+    }
+}</code></pre>
+
+<h4>4. Tri par insertion</h4>
+<pre><code>void triInsertion(int t[], int n)
+{
+    for (int i = 1; i &lt; n; i++) {
+        int cle = t[i];
+        int j = i - 1;
+
+        while (j >= 0 &amp;&amp; t[j] > cle) {
+            t[j + 1] = t[j];
+            j--;
+        }
+
+        t[j + 1] = cle;
+    }
+}</code></pre>
+
+<h4>5. Comparaison des tris</h4>
+<table>
+<tr><th>Tri</th><th>Meilleur cas</th><th>Pire cas</th></tr>
+<tr><td>Bubble Sort optimisé</td><td>O(n)</td><td>O(n²)</td></tr>
+<tr><td>Selection Sort</td><td>O(n²)</td><td>O(n²)</td></tr>
+<tr><td>Insertion Sort</td><td>O(n)</td><td>O(n²)</td></tr>
+<tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n log n)</td></tr>
+<tr><td>Quick Sort</td><td>O(n log n) moyen</td><td>O(n²)</td></tr>
+</table>
+
+<h4>6. qsort de la bibliothèque standard</h4>
+<pre><code>#include &lt;stdlib.h&gt;
+
+int comparerEntiers(const void *a, const void *b)
+{
+    int x = *(const int *)a;
+    int y = *(const int *)b;
+
+    return (x > y) - (x &lt; y);
+}
+
+int main(void)
+{
+    int t[] = {5, 2, 8, 1, 3};
+    int n = (int)(sizeof t / sizeof t[0]);
+
+    qsort(t, (size_t)n, sizeof t[0], comparerEntiers);
+
+    return 0;
+}</code></pre>
+<p>
+La fonction de comparaison doit respecter le contrat de qsort.
+Évite de retourner simplement <code>x - y</code>, car cette soustraction
+peut déborder.
+</p>
+</article>
+
+<!-- MODULE 22 -->
+<article class="module" id="m22">
+<div class="module-number">MODULE 22</div>
+<h3>Structures de données fondamentales</h3>
+
+<h4>1. Liste chaînée</h4>
+<p>
+Une liste chaînée est constituée de nœuds. Chaque nœud contient une donnée
+et un pointeur vers le nœud suivant.
+</p>
+<pre><code>typedef struct Noeud {
+    int valeur;
+    struct Noeud *suivant;
+} Noeud;</code></pre>
+
+<h4>2. Créer un nœud</h4>
+<pre><code>#include &lt;stdlib.h&gt;
+
+Noeud *creerNoeud(int valeur)
+{
+    Noeud *n = malloc(sizeof *n);
+
+    if (n == NULL)
+        return NULL;
+
+    n->valeur = valeur;
+    n->suivant = NULL;
+
+    return n;
+}</code></pre>
+
+<h4>3. Ajouter au début</h4>
+<pre><code>void ajouterDebut(Noeud **tete, int valeur)
+{
+    Noeud *n = creerNoeud(valeur);
+
+    if (n == NULL)
+        return;
+
+    n->suivant = *tete;
+    *tete = n;
+}</code></pre>
+
+<h4>4. Parcourir une liste</h4>
+<pre><code>void afficherListe(const Noeud *tete)
+{
+    while (tete != NULL) {
+        printf("%d -> ", tete->valeur);
+        tete = tete->suivant;
+    }
+
+    printf("NULL\n");
+}</code></pre>
+
+<h4>5. Libérer une liste</h4>
+<pre><code>void libererListe(Noeud **tete)
+{
+    Noeud *courant = *tete;
+
+    while (courant != NULL) {
+        Noeud *suivant = courant->suivant;
+        free(courant);
+        courant = suivant;
+    }
+
+    *tete = NULL;
+}</code></pre>
+
+<h4>6. Pile (Stack)</h4>
+<p>
+Une pile suit le principe LIFO : le dernier élément ajouté est le premier retiré.
+Les opérations classiques sont push, pop et peek.
+</p>
+
+<h4>7. File (Queue)</h4>
+<p>
+Une file suit le principe FIFO : le premier élément ajouté est le premier retiré.
+Les opérations classiques sont enqueue et dequeue.
+</p>
+
+<h4>8. Arbre binaire</h4>
+<pre><code>typedef struct NoeudArbre {
+    int valeur;
+    struct NoeudArbre *gauche;
+    struct NoeudArbre *droite;
+} NoeudArbre;</code></pre>
+<p>
+Un arbre binaire possède au maximum deux enfants par nœud.
+Les parcours classiques sont préfixe, infixe et postfixe.
+</p>
+</article>
+
+<!-- MODULE 23 -->
+<article class="module" id="m23">
+<div class="module-number">MODULE 23</div>
+<h3>Pointeurs de fonctions</h3>
+
+<h4>1. Qu'est-ce qu'un pointeur de fonction ?</h4>
+<p>
+Un pointeur de fonction stocke l'adresse d'une fonction.
+Il permet de transmettre une fonction comme argument, de créer
+des callbacks et de choisir un traitement pendant l'exécution.
+</p>
+
+<h4>2. Déclaration</h4>
+<pre><code>int addition(int a, int b)
+{
+    return a + b;
+}
+
+int (*operation)(int, int) = addition;
+
+int resultat = operation(5, 3);</code></pre>
+
+<h4>3. Passer une fonction en argument</h4>
+<pre><code>int appliquer(int a, int b, int (*f)(int, int))
+{
+    return f(a, b);
+}
+
+int multiplier(int a, int b)
+{
+    return a * b;
+}
+
+int main(void)
+{
+    int r = appliquer(4, 5, multiplier);
+    printf("%d\n", r);
+    return 0;
+}</code></pre>
+
+<h4>4. Tableau de pointeurs de fonctions</h4>
+<pre><code>int addition(int a, int b) { return a + b; }
+int soustraction(int a, int b) { return a - b; }
+
+int (*operations[2])(int, int) = {
+    addition,
+    soustraction
+};</code></pre>
+</article>
+
+<!-- MODULE 24 -->
+<article class="module" id="m24">
+<div class="module-number">MODULE 24</div>
+<h3>Programmation modulaire et compilation de plusieurs fichiers</h3>
+
+<h4>1. Pourquoi séparer un programme ?</h4>
+<p>
+Un grand programme doit être organisé en plusieurs fichiers afin de séparer
+les déclarations, les définitions et les responsabilités.
+</p>
+
+<h4>2. Exemple d'organisation</h4>
+<pre><code>projet/
+│
+├── main.c
+├── calcul.c
+└── calcul.h</code></pre>
+
+<h4>3. Fichier calcul.h</h4>
+<pre><code>#ifndef CALCUL_H
+#define CALCUL_H
+
+int addition(int a, int b);
+int multiplication(int a, int b);
+
+#endif</code></pre>
+
+<h4>4. Fichier calcul.c</h4>
+<pre><code>#include "calcul.h"
+
+int addition(int a, int b)
+{
+    return a + b;
+}
+
+int multiplication(int a, int b)
+{
+    return a * b;
+}</code></pre>
+
+<h4>5. Fichier main.c</h4>
+<pre><code>#include &lt;stdio.h&gt;
+#include "calcul.h"
+
+int main(void)
+{
+    printf("%d\n", addition(5, 3));
+    printf("%d\n", multiplication(5, 3));
+
+    return 0;
+}</code></pre>
+
+<h4>6. Compiler les fichiers ensemble</h4>
+<pre><code>gcc -Wall -Wextra main.c calcul.c -o application</code></pre>
+
+<h4>7. Compiler séparément</h4>
+<pre><code>gcc -c main.c -o main.o
+gcc -c calcul.c -o calcul.o
+gcc main.o calcul.o -o application</code></pre>
+
+<h4>8. static et extern</h4>
+<p>
+Au niveau fichier, <code>static</code> donne une liaison interne à un nom
+de fonction ou d'objet. <code>extern</code> permet notamment de déclarer
+un objet ou une fonction défini ailleurs.
+</p>
+<pre><code>// fichier.c
+static int compteurInterne = 0;
+
+int calculer(void)
+{
+    compteurInterne++;
+    return compteurInterne;
+}</code></pre>
+
+<h4>9. Arguments de ligne de commande</h4>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[])
+{
+    printf("Nombre d'arguments : %d\n", argc);
+
+    for (int i = 0; i &lt; argc; i++) {
+        printf("%s\n", argv[i]);
+    }
+
+    return 0;
+}</code></pre>
+<p>
+<code>argc</code> représente le nombre d'arguments et
+<code>argv</code> est un tableau de chaînes.
+</p>
+</article>
+
+<!-- MODULE 25 -->
+<article class="module" id="m25">
+<div class="module-number">MODULE 25</div>
+<h3>Débogage, tests et bonnes pratiques avancées</h3>
+
+<h4>1. Les avertissements du compilateur</h4>
+<pre><code>gcc -std=c11 -Wall -Wextra -Wpedantic -g programme.c -o programme</code></pre>
+<p>
+Les avertissements signalent des constructions suspectes. Il est conseillé
+de les comprendre et de les corriger plutôt que de les ignorer.
+</p>
+
+<h4>2. Débogage avec des affichages</h4>
+<pre><code>printf("DEBUG : i = %d\n", i);
+printf("DEBUG : somme = %d\n", somme);</code></pre>
+
+<h4>3. Débogueur GDB</h4>
+<pre><code>gcc -g programme.c -o programme
+gdb ./programme</code></pre>
+<p>Commandes de base :</p>
+<table>
+<tr><th>Commande</th><th>Rôle</th></tr>
+<tr><td>break main</td><td>Placer un point d'arrêt dans main.</td></tr>
+<tr><td>run</td><td>Lancer le programme.</td></tr>
+<tr><td>next</td><td>Exécuter la ligne suivante sans entrer dans la fonction.</td></tr>
+<tr><td>step</td><td>Entrer dans la fonction appelée.</td></tr>
+<tr><td>print x</td><td>Afficher la valeur de x.</td></tr>
+<tr><td>continue</td><td>Continuer l'exécution.</td></tr>
+<tr><td>backtrace</td><td>Afficher la pile des appels.</td></tr>
+<tr><td>quit</td><td>Quitter GDB.</td></tr>
+</table>
+
+<h4>4. AddressSanitizer et UndefinedBehaviorSanitizer</h4>
+<p>
+Avec GCC ou Clang sur les plateformes compatibles :
+</p>
+<pre><code>gcc -g -O1 -fsanitize=address,undefined \
+    -fno-omit-frame-pointer programme.c -o programme</code></pre>
+<p>
+Ces outils peuvent détecter plusieurs erreurs mémoire et comportements
+indéfinis à l'exécution. Ils ne remplacent pas une analyse complète.
+</p>
+
+<h4>5. assert</h4>
+<pre><code>#include &lt;assert.h&gt;
+
+int diviser(int a, int b)
+{
+    assert(b != 0);
+    return a / b;
+}</code></pre>
+<p>
+<code>assert</code> vérifie une condition pendant le développement.
+Elle peut être désactivée avec la macro NDEBUG.
+Ne l'utilise pas pour valider les données non fiables de l'utilisateur.
+</p>
+
+<h4>6. Undefined Behavior</h4>
+<p>
+Un comportement indéfini signifie que le standard C n'impose aucun résultat
+pour une opération. Le compilateur peut optimiser le programme en supposant
+que ces situations ne se produisent pas.
+</p>
+<p>Exemples à éviter :</p>
+<ul>
+<li>Lire une variable locale non initialisée.</li>
+<li>Dépasser les limites d'un tableau.</li>
+<li>Déréférencer un pointeur invalide.</li>
+<li>Diviser un entier par zéro.</li>
+<li>Déborder un entier signé.</li>
+<li>Utiliser une zone mémoire après sa libération.</li>
+<li>Écrire dans une chaîne littérale.</li>
+<li>Utiliser des spécificateurs printf/scanf incompatibles avec les types.</li>
+</ul>
+
+<h4>7. const, volatile et restrict</h4>
+<ul>
+<li><code>const</code> limite les modifications à travers un identificateur.</li>
+<li><code>volatile</code> indique que les accès à l'objet doivent respecter les règles particulières d'accès observables, notamment pour certains registres matériels.</li>
+<li><code>restrict</code> est une promesse concernant l'accès à un objet par certains pointeurs pendant la durée de leur association.</li>
+</ul>
+<pre><code>void copier(size_t n,
+            int * restrict destination,
+            const int * restrict source)
+{
+    for (size_t i = 0; i &lt; n; i++)
+        destination[i] = source[i];
+}</code></pre>
+<p>
+Ne déclare pas une variable volatile simplement pour rendre un programme
+multithread sûr. La synchronisation entre threads nécessite des mécanismes
+adaptés, notamment ceux de C11.
+</p>
+
+<h4>8. Tests unitaires et cas limites</h4>
+<p>
+Pour tester une fonction, vérifie au minimum :
+</p>
+<ul>
+<li>Les valeurs ordinaires.</li>
+<li>La valeur minimale et maximale autorisées.</li>
+<li>Les entrées nulles.</li>
+<li>Les tableaux vides ou de taille minimale lorsque cela est permis.</li>
+<li>Les données invalides.</li>
+<li>Les cas particuliers et les erreurs d'allocation.</li>
+</ul>
+
+<h4>9. Méthode pour résoudre un problème en C</h4>
+<ol>
+<li>Lire l'énoncé et identifier exactement le problème.</li>
+<li>Déterminer les données d'entrée.</li>
+<li>Déterminer les résultats attendus.</li>
+<li>Identifier les contraintes et les cas limites.</li>
+<li>Écrire l'algorithme en langage naturel ou en pseudo-code.</li>
+<li>Choisir les variables et les types adaptés.</li>
+<li>Découper le programme en fonctions si nécessaire.</li>
+<li>Écrire le code C.</li>
+<li>Compiler avec les avertissements activés.</li>
+<li>Tester plusieurs jeux de données.</li>
+<li>Corriger les erreurs et vérifier la gestion mémoire.</li>
+</ol>
+
+<h4>10. Complexité algorithmique</h4>
+<table>
+<tr><th>Complexité</th><th>Signification</th><th>Exemple</th></tr>
+<tr><td>O(1)</td><td>Temps constant</td><td>Accès à un élément de tableau.</td></tr>
+<tr><td>O(log n)</td><td>Logarithmique</td><td>Recherche dichotomique.</td></tr>
+<tr><td>O(n)</td><td>Linéaire</td><td>Parcours d'un tableau.</td></tr>
+<tr><td>O(n log n)</td><td>Quasi linéaire</td><td>Tri fusion.</td></tr>
+<tr><td>O(n²)</td><td>Quadratique</td><td>Deux boucles imbriquées sur n.</td></tr>
+<tr><td>O(2ⁿ)</td><td>Exponentielle</td><td>Certains algorithmes récursifs naïfs.</td></tr>
+</table>
+<p>
+La complexité temporelle décrit l'évolution du nombre d'opérations
+en fonction de la taille des données. La complexité spatiale décrit
+l'évolution de la mémoire supplémentaire utilisée.
+</p>
+
+<h4>11. Règles de programmation sécurisée</h4>
+<ul>
+<li>Vérifier les valeurs de retour des fonctions importantes.</li>
+<li>Vérifier les tailles avant les copies et les allocations.</li>
+<li>Éviter les accès hors limites.</li>
+<li>Éviter les conversions non contrôlées.</li>
+<li>Ne jamais faire confiance directement aux données saisies.</li>
+<li>Éviter les fonctions dangereuses ou obsolètes.</li>
+<li>Libérer correctement la mémoire.</li>
+<li>Documenter les préconditions et les postconditions des fonctions.</li>
+</ul>
+
+<h4>12. Les standards du langage C</h4>
+<table>
+<tr><th>Standard</th><th>Repère</th></tr>
+<tr><td>C90 / C89</td><td>Premier standard ISO majeur du langage.</td></tr>
+<tr><td>C99</td><td>Ajout de nombreuses fonctionnalités comme les déclarations mélangées et les types entiers de largeur fixe.</td></tr>
+<tr><td>C11</td><td>Ajout notamment de fonctionnalités pour les threads et les atomiques.</td></tr>
+<tr><td>C17 / C18</td><td>Révision principalement consacrée aux corrections et clarifications.</td></tr>
+<tr><td>C23</td><td>Nouvelle révision du langage avec plusieurs évolutions.</td></tr>
+</table>
+<p>
+Pour apprendre, C11 ou C17 constituent de bons choix pédagogiques.
+Les fonctionnalités disponibles dépendent du compilateur et de sa version.
+</p>
+
+<h4>13. Ressources de référence</h4>
+<ul>
+<li><a href="https://en.cppreference.com/w/c" target="_blank" rel="noopener">cppreference — Référence du langage C</a></li>
+<li><a href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html" target="_blank" rel="noopener">GNU C Reference Manual</a></li>
+<li><a href="https://www.learn-c.org/" target="_blank" rel="noopener">Learn-C — Exercices interactifs</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/" target="_blank" rel="noopener">Documentation officielle GCC</a></li>
+</ul>
+</article>
+
+</section>
+
+<!-- PARTIE EXERCICES -->
+<section id="exercices">
+<div class="part-heading">
+    <div class="section-label">Partie 02 / Entraînement</div>
+    <h2>Exercices de programmation C</h2>
+    <p>Des exercices progressifs pour maîtriser les notions du cours.</p>
+</div>
+
+<div class="note">
+<strong>Conseil :</strong> essaie de résoudre chaque problème sans consulter
+la correction. Écris ton algorithme, puis programme-le en C et teste plusieurs cas.
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 01 — Affichage et variables</strong><span class="level">FACILE</span></div>
+<div class="exercise-body">
+<p>Écrire un programme qui déclare un nom, un âge et une moyenne, puis affiche ces informations.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    char nom[] = "Ali";
+    int age = 20;
+    float moyenne = 15.5f;
+
+    printf("Nom : %s\n", nom);
+    printf("Age : %d\n", age);
+    printf("Moyenne : %.2f\n", moyenne);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 02 — Pair ou impair</strong><span class="level">FACILE</span></div>
+<div class="exercise-body">
+<p>Lire un entier et déterminer s'il est pair ou impair.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n;
+
+    printf("Nombre : ");
+    if (scanf("%d", &amp;n) != 1)
+        return 1;
+
+    if (n % 2 == 0)
+        printf("Pair\n");
+    else
+        printf("Impair\n");
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 03 — Maximum de trois nombres</strong><span class="level">FACILE</span></div>
+<div class="exercise-body">
+<p>Lire trois entiers et afficher le plus grand.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int a, b, c, max;
+
+    if (scanf("%d%d%d", &amp;a, &amp;b, &amp;c) != 3)
+        return 1;
+
+    max = a;
+
+    if (b > max)
+        max = b;
+
+    if (c > max)
+        max = c;
+
+    printf("Maximum = %d\n", max);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 04 — Table de multiplication</strong><span class="level">FACILE</span></div>
+<div class="exercise-body">
+<p>Lire un entier et afficher sa table de multiplication de 1 à 10.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n;
+
+    scanf("%d", &amp;n);
+
+    for (int i = 1; i &lt;= 10; i++)
+        printf("%d x %d = %d\n", n, i, n * i);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 05 — Somme de 1 à N</strong><span class="level">FACILE</span></div>
+<div class="exercise-body">
+<p>Lire un entier positif N et calculer 1 + 2 + ... + N.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n;
+    long long somme = 0;
+
+    if (scanf("%d", &amp;n) != 1 || n &lt; 0)
+        return 1;
+
+    for (int i = 1; i &lt;= n; i++)
+        somme += i;
+
+    printf("Somme = %lld\n", somme);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 06 — Factorielle</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Calculer N! pour un entier positif ou nul, en vérifiant que le résultat reste dans le type utilisé.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;limits.h&gt;
+
+int main(void)
+{
+    int n;
+    unsigned long long f = 1;
+
+    if (scanf("%d", &amp;n) != 1 || n &lt; 0)
+        return 1;
+
+    for (int i = 2; i &lt;= n; i++) {
+        if (f > ULLONG_MAX / (unsigned long long)i) {
+            printf("Depassement\n");
+            return 1;
+        }
+
+        f *= (unsigned long long)i;
+    }
+
+    printf("%llu\n", f);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 07 — Nombre premier</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Déterminer si un entier est premier.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n;
+    int premier = 1;
+
+    scanf("%d", &amp;n);
+
+    if (n &lt; 2)
+        premier = 0;
+
+    for (int i = 2; premier &amp;&amp; i &lt;= n / i; i++) {
+        if (n % i == 0)
+            premier = 0;
+    }
+
+    printf("%s\n", premier ? "Premier" : "Non premier");
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 08 — PGCD et PPCM</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Calculer le PGCD de deux entiers positifs, puis leur PPCM.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int pgcd(int a, int b)
+{
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+
+    return a;
+}
+
+int main(void)
+{
+    int a, b;
+
+    if (scanf("%d%d", &amp;a, &amp;b) != 2 || a &lt; 0 || b &lt; 0)
+        return 1;
+
+    int g = pgcd(a, b);
+
+    if (a == 0 || b == 0)
+        printf("PPCM = 0\n");
+    else
+        printf("PPCM = %d\n", (a / g) * b);
+
+    printf("PGCD = %d\n", g);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 09 — Inverser les chiffres</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Lire un entier positif et afficher ses chiffres dans l'ordre inverse.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    unsigned int n;
+    unsigned int inverse = 0;
+
+    scanf("%u", &amp;n);
+
+    do {
+        inverse = inverse * 10 + n % 10;
+        n /= 10;
+    } while (n > 0);
+
+    printf("%u\n", inverse);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 10 — Suite de Fibonacci</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Afficher les N premiers termes de la suite de Fibonacci.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int n;
+    unsigned long long a = 0, b = 1;
+
+    scanf("%d", &amp;n);
+
+    if (n &lt; 0)
+        return 1;
+
+    for (int i = 0; i &lt; n; i++) {
+        printf("%llu ", a);
+
+        if (i &lt; n - 1) {
+            unsigned long long temp = a + b;
+            a = b;
+            b = temp;
+        }
+    }
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 11 — Somme des chiffres</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Calculer la somme des chiffres d'un entier non négatif.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    unsigned int n;
+    int somme = 0;
+
+    scanf("%u", &amp;n);
+
+    while (n > 0) {
+        somme += (int)(n % 10);
+        n /= 10;
+    }
+
+    printf("%d\n", somme);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 12 — Tableau : somme et moyenne</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Lire N éléments d'un tableau, calculer la somme et la moyenne.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int t[100];
+    int n;
+    long long somme = 0;
+
+    if (scanf("%d", &amp;n) != 1 || n &lt; 1 || n > 100)
+        return 1;
+
+    for (int i = 0; i &lt; n; i++) {
+        if (scanf("%d", &amp;t[i]) != 1)
+            return 1;
+
+        somme += t[i];
+    }
+
+    printf("Somme = %lld\n", somme);
+    printf("Moyenne = %.2f\n", (double)somme / n);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 13 — Minimum et maximum d'un tableau</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Lire un tableau et afficher son minimum et son maximum.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int t[100], n;
+
+    scanf("%d", &amp;n);
+
+    if (n &lt; 1 || n > 100)
+        return 1;
+
+    for (int i = 0; i &lt; n; i++)
+        scanf("%d", &amp;t[i]);
+
+    int min = t[0];
+    int max = t[0];
+
+    for (int i = 1; i &lt; n; i++) {
+        if (t[i] &lt; min) min = t[i];
+        if (t[i] > max) max = t[i];
+    }
+
+    printf("Min = %d\nMax = %d\n", min, max);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 14 — Recherche dans un tableau</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Rechercher une valeur et afficher sa première position ou -1 si elle est absente.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>int rechercher(const int t[], int n, int x)
+{
+    for (int i = 0; i &lt; n; i++) {
+        if (t[i] == x)
+            return i;
+    }
+
+    return -1;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 15 — Inverser un tableau</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Inverser les éléments d'un tableau sans utiliser un deuxième tableau.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>void inverser(int t[], int n)
+{
+    for (int i = 0; i &lt; n / 2; i++) {
+        int temp = t[i];
+        t[i] = t[n - 1 - i];
+        t[n - 1 - i] = temp;
+    }
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 16 — Tri par insertion</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Trier un tableau d'entiers par ordre croissant avec le tri par insertion.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>void triInsertion(int t[], int n)
+{
+    for (int i = 1; i &lt; n; i++) {
+        int valeur = t[i];
+        int j = i - 1;
+
+        while (j >= 0 &amp;&amp; t[j] > valeur) {
+            t[j + 1] = t[j];
+            j--;
+        }
+
+        t[j + 1] = valeur;
+    }
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 17 — Matrice : diagonale principale</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Lire une matrice carrée et calculer la somme de sa diagonale principale.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int a[10][10];
+    int n;
+    int somme = 0;
+
+    scanf("%d", &amp;n);
+
+    if (n &lt; 1 || n > 10)
+        return 1;
+
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            scanf("%d", &amp;a[i][j]);
+
+            if (i == j)
+                somme += a[i][j];
+        }
+    }
+
+    printf("Somme diagonale = %d\n", somme);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 18 — Palindrome d'une chaîne</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Déterminer si une chaîne est un palindrome, sans tenir compte du retour à la ligne.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(void)
+{
+    char s[100];
+
+    if (fgets(s, sizeof s, stdin) == NULL)
+        return 1;
+
+    s[strcspn(s, "\n")] = '\0';
+
+    int gauche = 0;
+    int droite = (int)strlen(s) - 1;
+    int palindrome = 1;
+
+    while (gauche &lt; droite) {
+        if (s[gauche] != s[droite]) {
+            palindrome = 0;
+            break;
+        }
+
+        gauche++;
+        droite--;
+    }
+
+    printf("%s\n", palindrome ? "Palindrome" : "Non palindrome");
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 19 — Compter les voyelles</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Lire une ligne et compter les voyelles minuscules et majuscules.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main(void)
+{
+    char s[200];
+    int compteur = 0;
+
+    if (fgets(s, sizeof s, stdin) == NULL)
+        return 1;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        char c = (char)tolower((unsigned char)s[i]);
+
+        if (c == 'a' || c == 'e' || c == 'i' ||
+            c == 'o' || c == 'u' || c == 'y')
+            compteur++;
+    }
+
+    printf("%d\n", compteur);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 20 — Structure étudiant</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Créer une structure Etudiant et afficher les informations d'un étudiant.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+typedef struct {
+    int id;
+    char nom[50];
+    float moyenne;
+} Etudiant;
+
+int main(void)
+{
+    Etudiant e = {1, "Mohamed", 15.5f};
+
+    printf("ID : %d\n", e.id);
+    printf("Nom : %s\n", e.nom);
+    printf("Moyenne : %.2f\n", e.moyenne);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 21 — Échanger deux valeurs avec pointeurs</strong><span class="level">MOYEN</span></div>
+<div class="exercise-body">
+<p>Écrire une fonction qui échange deux entiers en utilisant leurs adresses.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>void echanger(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 22 — Allocation dynamique</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Lire N entiers dans un tableau alloué dynamiquement, calculer leur somme et libérer la mémoire.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdint.h&gt;
+
+int main(void)
+{
+    size_t n;
+
+    if (scanf("%zu", &amp;n) != 1 || n == 0)
+        return 1;
+
+    if (n > SIZE_MAX / sizeof(int))
+        return 1;
+
+    int *t = malloc(n * sizeof *t);
+
+    if (t == NULL)
+        return 1;
+
+    long long somme = 0;
+
+    for (size_t i = 0; i &lt; n; i++) {
+        if (scanf("%d", &amp;t[i]) != 1) {
+            free(t);
+            return 1;
+        }
+
+        somme += t[i];
+    }
+
+    printf("Somme = %lld\n", somme);
+
+    free(t);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 23 — Écrire dans un fichier</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Enregistrer un nom et une moyenne dans un fichier texte.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    FILE *f = fopen("etudiant.txt", "w");
+
+    if (f == NULL) {
+        perror("fopen");
+        return 1;
+    }
+
+    fprintf(f, "Ali 15.5\n");
+
+    if (fclose(f) == EOF) {
+        perror("fclose");
+        return 1;
+    }
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 24 — Lire un fichier ligne par ligne</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Ouvrir un fichier texte et afficher son contenu ligne par ligne.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    FILE *f = fopen("etudiant.txt", "r");
+
+    if (f == NULL) {
+        perror("fopen");
+        return 1;
+    }
+
+    char ligne[256];
+
+    while (fgets(ligne, sizeof ligne, f) != NULL)
+        printf("%s", ligne);
+
+    if (ferror(f))
+        perror("Lecture");
+
+    fclose(f);
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 25 — Liste chaînée</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Créer une liste chaînée, ajouter trois valeurs au début et afficher la liste.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Noeud {
+    int valeur;
+    struct Noeud *suivant;
+} Noeud;
+
+void ajouter(Noeud **tete, int valeur)
+{
+    Noeud *n = malloc(sizeof *n);
+
+    if (n == NULL)
+        return;
+
+    n->valeur = valeur;
+    n->suivant = *tete;
+    *tete = n;
+}
+
+void afficher(const Noeud *tete)
+{
+    while (tete != NULL) {
+        printf("%d ", tete->valeur);
+        tete = tete->suivant;
+    }
+}
+
+void liberer(Noeud **tete)
+{
+    while (*tete != NULL) {
+        Noeud *tmp = *tete;
+        *tete = (*tete)->suivant;
+        free(tmp);
+    }
+}
+
+int main(void)
+{
+    Noeud *liste = NULL;
+
+    ajouter(&amp;liste, 10);
+    ajouter(&amp;liste, 20);
+    ajouter(&amp;liste, 30);
+
+    afficher(liste);
+    liberer(&amp;liste);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 26 — Recherche dichotomique</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Rechercher un élément dans un tableau trié en utilisant la recherche dichotomique.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>int rechercheDichotomique(const int t[], int n, int x)
+{
+    int gauche = 0;
+    int droite = n - 1;
+
+    while (gauche &lt;= droite) {
+        int milieu = gauche + (droite - gauche) / 2;
+
+        if (t[milieu] == x)
+            return milieu;
+
+        if (t[milieu] &lt; x)
+            gauche = milieu + 1;
+        else
+            droite = milieu - 1;
+    }
+
+    return -1;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 27 — Matrice : transposée</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Calculer la transposée d'une matrice carrée.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>void transposer(int a[10][10], int n)
+{
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = i + 1; j &lt; n; j++) {
+            int temp = a[i][j];
+            a[i][j] = a[j][i];
+            a[j][i] = temp;
+        }
+    }
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 28 — Fonction récursive PGCD</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Calculer le PGCD de deux entiers en utilisant la récursivité.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>int pgcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+
+    return pgcd(b, a % b);
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 29 — Gestion d'un tableau de structures</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Enregistrer les étudiants dans un tableau de structures et afficher celui qui possède la meilleure moyenne.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution"><pre><code>#include &lt;stdio.h&gt;
+
+typedef struct {
+    char nom[40];
+    float moyenne;
+} Etudiant;
+
+int main(void)
+{
+    Etudiant t[3] = {
+        {"Ali", 12.5f},
+        {"Sara", 17.0f},
+        {"Amine", 15.0f}
+    };
+
+    int meilleur = 0;
+
+    for (int i = 1; i &lt; 3; i++) {
+        if (t[i].moyenne > t[meilleur].moyenne)
+            meilleur = i;
+    }
+
+    printf("%s : %.2f\n",
+           t[meilleur].nom,
+           t[meilleur].moyenne);
+
+    return 0;
+}</code></pre></div>
+</div>
+</div>
+
+<div class="exercise">
+<div class="exercise-head"><strong>Exercice 30 — Programme modulaire</strong><span class="level">DIFFICILE</span></div>
+<div class="exercise-body">
+<p>Créer un programme organisé en fichiers séparés avec un fichier d'en-tête et deux fonctions mathématiques.</p>
+<button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+<div class="solution">
+<p><strong>calcul.h</strong></p>
+<pre><code>#ifndef CALCUL_H
+#define CALCUL_H
+
+int addition(int a, int b);
+int carre(int n);
+
+#endif</code></pre>
+<p><strong>calcul.c</strong></p>
+<pre><code>#include "calcul.h"
+
+int addition(int a, int b)
+{
+    return a + b;
+}
+
+int carre(int n)
+{
+    return n * n;
+}</code></pre>
+<p><strong>main.c</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+#include "calcul.h"
+
+int main(void)
+{
+    printf("%d\n", addition(5, 3));
+    printf("%d\n", carre(4));
+
+    return 0;
+}</code></pre>
+<p>Compilation :</p>
+<pre><code>gcc main.c calcul.c -o programme</code></pre>
+</div>
+</div>
+</div>
+
+</section>
+</main>
+</div>
+
+<!-- PARTIE QUIZ -->
+<section class="quiz-section" id="quiz">
+<div class="quiz-container">
+    <div class="section-label">Partie 03 / Évaluation</div>
+    <h2 class="section-title" style="color:white">Quiz de programmation C</h2>
+    <p style="color:#ccc">
+        Une banque de 200 questions générées à partir de notions du cours.
+        Choisis le nombre de questions et teste tes connaissances.
+    </p>
+
+    <div class="quiz-box" id="quizConfig">
+        <h3>Configuration du quiz</h3>
+        <p>Choisis le nombre de questions :</p>
+        <div class="quiz-config" style="margin-top:20px">
+            <label>
+                <strong>Nombre de questions</strong><br>
+                <select id="questionCount">
+                    <option value="20">20 questions</option>
+                    <option value="25">25 questions</option>
+                    <option value="30">30 questions</option>
+                    <option value="35">35 questions</option>
+                    <option value="40">40 questions</option>
+                </select>
+            </label>
+            <button class="primary-btn" onclick="startQuiz()">Commencer le quiz</button>
+        </div>
+        <div class="note" style="margin-top:20px">
+            Chaque question possède quatre propositions.
+            Après validation, tu découvriras si ta réponse est correcte
+            et tu pourras consulter une explication.
+        </div>
+    </div>
+
+    <div class="quiz-box" id="quizGame" style="display:none">
+        <div class="quiz-top">
+            <strong id="questionCounter">Question 1 / 20</strong>
+            <span id="scoreCounter">Score : 0</span>
+        </div>
+        <div class="quiz-progress"><div id="quizProgressBar" style="width:0%"></div></div>
+        <div id="questionText" class="question"></div>
+        <div id="optionsContainer"></div>
+        <div id="feedback" class="feedback"></div>
+        <div class="quiz-actions">
+            <button class="secondary-btn" onclick="quitQuiz()">Quitter</button>
+            <button class="primary-btn" id="validateBtn" onclick="validateAnswer()" disabled>Vérifier</button>
+        </div>
+    </div>
+
+    <div class="quiz-box" id="quizResult" style="display:none">
+        <h3 style="text-align:center">Résultat final</h3>
+        <div class="result-score" id="finalScore">0%</div>
+        <div class="result-summary" id="resultSummary"></div>
+        <h3>Correction des erreurs</h3>
+        <div id="reviewContainer"></div>
+        <div style="text-align:center;margin-top:25px">
+            <button class="primary-btn" onclick="restartQuiz()">Recommencer</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

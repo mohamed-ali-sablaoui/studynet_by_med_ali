@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet sur les limites et la continuité, exercices corrigés et quiz interactif.">
+<title>Limites & Continuité | StudyNet</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="../../index.html" class="logo">Study<span>Net.</span></a>
+    <div class="nav-links">
+      <a href="#cours" onclick="showTab('cours')">Cours</a>
+      <a href="#exercices" onclick="showTab('exercices')">Exercices</a>
+      <a href="#quiz" onclick="showTab('quiz')">Quiz</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Mathématiques · Analyse</div>
+    <h1>Limites &<br><span>Continuité.</span></h1>
+    <p>
+      Un cours complet et progressif pour comprendre les limites,
+      étudier la continuité, analyser les courbes et maîtriser les
+      techniques de calcul à travers des exemples et des exercices corrigés.
+    </p>
+    <div class="hero-meta">
+      <span>◷ Cours complet</span>
+      <span>✎ Exercices corrigés</span>
+      <span>✓ Quiz interactif</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('cours')">01 · Cours</button>
+  <button class="tab" onclick="showTab('exercices')">02 · Exercices & Problèmes</button>
+  <button class="tab" onclick="showTab('quiz')">03 · Quiz interactif</button>
+</div>
+
+<!-- ==================== COURS ==================== -->
+
+<section class="section active" id="cours">
+
+<div class="section-heading">
+  <small>Partie 01</small>
+  <h2>Cours : Limites et continuité</h2>
+  <p>Définitions, propriétés, méthodes, tableaux et interprétations graphiques.</p>
+</div>
+
+<div class="card">
+  <h3>Sommaire du cours</h3>
+  <div class="two-columns">
+    <ol>
+      <li><a href="#notion">Notion de limite</a></li>
+      <li><a href="#limite-point">Limite en un point</a></li>
+      <li><a href="#calcul">Calcul des limites</a></li>
+      <li><a href="#formes">Formes indéterminées</a></li>
+      <li><a href="#infini">Limites à l'infini</a></li>
+      <li><a href="#fonctions">Limites des fonctions usuelles</a></li>
+      <li><a href="#asymptotes">Asymptotes</a></li>
+    </ol>
+    <ol start="8">
+      <li><a href="#courbes">Lecture graphique</a></li>
+      <li><a href="#continuite">Continuité</a></li>
+      <li><a href="#proprietes">Propriétés de continuité</a></li>
+      <li><a href="#theoremes">Théorèmes importants</a></li>
+      <li><a href="#etude">Méthode d'étude complète</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 1 -->
+<div class="card" id="notion">
+  <span class="chapter-number">Chapitre 01</span>
+  <h3>1. Notion de limite</h3>
+  <p>
+    La limite permet de décrire le comportement d'une fonction lorsque
+    la variable x se rapproche d'une valeur ou devient très grande.
+  </p>
+
+  <div class="formula">
+    lim f(x) = L lorsque x → a
+  </div>
+
+  <p>
+    Cela signifie que les valeurs de f(x) se rapprochent de L
+    lorsque x se rapproche de a, même si f(a) n'existe pas.
+  </p>
+
+  <div class="note">
+    <strong>Attention :</strong> La limite en a ne dépend pas obligatoirement
+    de la valeur f(a). Une fonction peut ne pas être définie en a et
+    pourtant admettre une limite en a.
+  </div>
+
+  <h4>Exemple simple</h4>
+  <p>Soit f(x) = x + 2. Calculons sa limite lorsque x tend vers 3.</p>
+  <div class="formula">
+    lim (x + 2) = 3 + 2 = 5
+    <br> x → 3
+  </div>
+
+  <div class="graph">
+    <svg viewBox="0 0 500 250" role="img" aria-label="Courbe de la fonction y égale x plus deux">
+      <defs><pattern id="grid1" width="35" height="30" patternUnits="userSpaceOnUse"><path d="M35 0H0V30" fill="none" stroke="#e9e9e9"/></pattern></defs>
+      <rect x="35" y="10" width="440" height="210" fill="url(#grid1)"/>
+      <path d="M35 190H480 M75 220V10" stroke="#333" stroke-width="1.5"/>
+      <path d="M35 190 L475 10" fill="none" stroke="#e87535" stroke-width="3"/>
+      <circle cx="215" cy="115" r="5" fill="#e87535"/>
+      <path d="M215 115V190 M75 115H215" stroke="#888" stroke-dasharray="5 4"/>
+      <text x="221" y="108" class="graph-label">A(3,5)</text>
+      <text x="465" y="207" class="graph-label">x</text>
+      <text x="84" y="18" class="graph-label">y</text>
+    </svg>
+    <div class="graph-caption">Exemple graphique : la courbe se rapproche du point de coordonnées (3,5).</div>
+  </div>
+
+  <h4>Limite et valeur de la fonction</h4>
+  <table>
+    <tr><th>Situation</th><th>Limite</th><th>f(a)</th></tr>
+    <tr><td>Fonction continue</td><td>Existe</td><td>Existe et égale à la limite</td></tr>
+    <tr><td>Trou dans la courbe</td><td>Peut exister</td><td>Non définie ou différente</td></tr>
+    <tr><td>Discontinuité par saut</td><td>N'existe pas</td><td>Peut exister</td></tr>
+  </table>
+</div>
+
+<!-- 2 -->
+<div class="card" id="limite-point">
+  <span class="chapter-number">Chapitre 02</span>
+  <h3>2. Limites en un point</h3>
+
+  <h4>2.1 Limite à gauche</h4>
+  <div class="formula">lim f(x) = L lorsque x → a⁻</div>
+  <p>On approche a par des valeurs inférieures à a.</p>
+
+  <h4>2.2 Limite à droite</h4>
+  <div class="formula">lim f(x) = L lorsque x → a⁺</div>
+  <p>On approche a par des valeurs supérieures à a.</p>
+
+  <h4>2.3 Condition d'existence d'une limite</h4>
+  <div class="formula">
+    lim f(x) = L existe si et seulement si :
+    <br>lim f(x) = lim f(x) = L
+    <br>x→a⁻ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x→a⁺
+  </div>
+
+  <div class="graph">
+    <svg viewBox="0 0 500 255" role="img" aria-label="Limites à gauche et à droite différentes">
+      <path d="M30 205H480 M250 230V15" stroke="#333" stroke-width="1.5"/>
+      <path d="M35 155 L248 155" stroke="#e87535" stroke-width="3"/>
+      <path d="M252 65 L465 65" stroke="#21845b" stroke-width="3"/>
+      <circle cx="250" cy="155" r="6" fill="white" stroke="#e87535" stroke-width="2"/>
+      <circle cx="250" cy="65" r="6" fill="white" stroke="#21845b" stroke-width="2"/>
+      <path d="M250 15V205" stroke="#999" stroke-dasharray="4 4"/>
+      <text x="265" y="155" class="graph-label">L₁</text>
+      <text x="265" y="65" class="graph-label">L₂</text>
+      <text x="235" y="222" class="graph-label">a</text>
+      <text x="90" y="140" class="graph-label">À gauche</text>
+      <text x="355" y="48" class="graph-label">À droite</text>
+    </svg>
+    <div class="graph-caption">Si L₁ ≠ L₂, la limite en a n'existe pas.</div>
+  </div>
+
+  <div class="note">
+    <strong>Exemple :</strong> f(x) = -1 si x &lt; 2 et f(x) = 3 si x ≥ 2.
+    <br>À gauche de 2 : limite = -1.
+    <br>À droite de 2 : limite = 3.
+    <br>Donc la limite en 2 n'existe pas.
+  </div>
+
+  <h4>2.4 Limites infinies en un point</h4>
+  <p>La fonction peut devenir arbitrairement grande ou petite près de a.</p>
+  <div class="formula">
+    lim 1/(x-a) = +∞ lorsque x → a⁺
+    <br>lim 1/(x-a) = -∞ lorsque x → a⁻
+  </div>
+  <p>La droite x = a est alors une asymptote verticale dans cet exemple.</p>
+</div>
+
+<!-- 3 -->
+<div class="card" id="calcul">
+  <span class="chapter-number">Chapitre 03</span>
+  <h3>3. Techniques de calcul des limites</h3>
+
+  <h4>Méthode 1 : Remplacement direct</h4>
+  <p>On remplace x par la valeur vers laquelle il tend.</p>
+  <div class="formula">
+    lim (x² + 3x - 1)
+    <br>x→2
+    <br>= 2² + 3(2) - 1 = 9
+  </div>
+  <p>Cette méthode fonctionne notamment pour les polynômes et les fonctions continues en ce point.</p>
+
+  <h4>Méthode 2 : Factorisation et simplification</h4>
+  <p>Lorsqu'on obtient 0/0, on essaie de factoriser.</p>
+  <div class="formula">
+    lim (x² - 4)/(x - 2)
+    <br>x→2
+    <br>= lim [(x - 2)(x + 2)]/(x - 2)
+    <br>= lim (x + 2) = 4
+  </div>
+
+  <div class="steps">
+    <div class="step">Remplacer x par la valeur demandée.</div>
+    <div class="step">Vérifier si on obtient une forme indéterminée.</div>
+    <div class="step">Factoriser le numérateur et le dénominateur.</div>
+    <div class="step">Simplifier les facteurs communs pour x différent du point.</div>
+    <div class="step">Calculer la nouvelle limite.</div>
+  </div>
+
+  <h4>Méthode 3 : Utilisation du conjugué</h4>
+  <p>On utilise cette méthode lorsqu'une expression contient des racines.</p>
+  <div class="formula">
+    lim (√(x+5) - √5)/x
+    <br>x→0
+  </div>
+  <p>On multiplie par le conjugué :</p>
+  <div class="formula">
+    = lim [(√(x+5)-√5)(√(x+5)+√5)]
+    <br> / [x(√(x+5)+√5)]
+    <br>= lim 1/(√(x+5)+√5)
+    <br>= 1/(2√5)
+  </div>
+
+  <h4>Méthode 4 : Mise au même dénominateur</h4>
+  <p>Utile lorsque plusieurs fractions sont additionnées ou soustraites.</p>
+  <div class="formula">
+    1/x - 1/(x+1)
+    <br>= [(x+1)-x]/[x(x+1)]
+    <br>= 1/[x(x+1)]
+  </div>
+
+  <h4>Méthode 5 : Utilisation des limites usuelles</h4>
+  <p>On transforme l'expression pour faire apparaître une limite connue.</p>
+  <div class="formula">
+    lim sin(x)/x = 1
+    <br>x→0
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card" id="formes">
+  <span class="chapter-number">Chapitre 04</span>
+  <h3>4. Les formes indéterminées</h3>
+  <p>Une forme indéterminée signifie que le calcul direct ne permet pas de conclure.</p>
+
+  <table>
+    <tr><th>Forme</th><th>Symbole</th><th>Techniques possibles</th></tr>
+    <tr><td>Zéro sur zéro</td><td>0/0</td><td>Factorisation, conjugué</td></tr>
+    <tr><td>Infini sur infini</td><td>∞/∞</td><td>Diviser par la puissance dominante</td></tr>
+    <tr><td>Infini moins infini</td><td>∞ - ∞</td><td>Mise au même dénominateur, conjugué</td></tr>
+    <tr><td>Zéro fois infini</td><td>0 × ∞</td><td>Transformer en quotient</td></tr>
+    <tr><td>Puissance</td><td>1<sup>∞</sup></td><td>Techniques logarithmiques</td></tr>
+    <tr><td>Puissance</td><td>0<sup>0</sup></td><td>Transformation logarithmique</td></tr>
+    <tr><td>Puissance</td><td>∞<sup>0</sup></td><td>Transformation logarithmique</td></tr>
+  </table>
+
+  <div class="danger-note">
+    <strong>Erreur fréquente :</strong> 0/0 n'est pas égal à zéro.
+    C'est une forme indéterminée qui nécessite un travail supplémentaire.
+  </div>
+
+  <h4>Exemple : forme ∞/∞</h4>
+  <div class="formula">
+    lim (3x² + 2x + 1)/(5x² - x + 4)
+    <br>x→+∞
+  </div>
+  <p>On divise chaque terme par x² :</p>
+  <div class="formula">
+    = lim (3 + 2/x + 1/x²)/(5 - 1/x + 4/x²)
+    <br>= 3/5
+  </div>
+
+  <h4>Exemple : forme ∞ - ∞</h4>
+  <div class="formula">
+    lim [√(x²+x) - x], x→+∞
+    <br>= lim [(x²+x)-x²]/[√(x²+x)+x]
+    <br>= lim x/[√(x²+x)+x]
+    <br>= 1/2
+  </div>
+
+  <h4>Exemple : forme 0 × ∞</h4>
+  <div class="formula">
+    lim x × (1/x²), x→+∞
+    <br>= lim 1/x = 0
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card" id="infini">
+  <span class="chapter-number">Chapitre 05</span>
+  <h3>5. Limites à l'infini</h3>
+
+  <p>Étudier une limite à l'infini consiste à observer le comportement de f(x) lorsque x devient très grand positivement ou négativement.</p>
+
+  <h4>5.1 Puissances de x</h4>
+  <table>
+    <tr><th>Expression</th><th>x → +∞</th><th>x → -∞</th></tr>
+    <tr><td>x</td><td>+∞</td><td>-∞</td></tr>
+    <tr><td>x²</td><td>+∞</td><td>+∞</td></tr>
+    <tr><td>x³</td><td>+∞</td><td>-∞</td></tr>
+    <tr><td>1/x</td><td>0⁺</td><td>0⁻</td></tr>
+    <tr><td>1/x²</td><td>0⁺</td><td>0⁺</td></tr>
+  </table>
+
+  <h4>5.2 Comparaison des puissances</h4>
+  <div class="formula">
+    Si n &gt; 0 : lim 1/xⁿ = 0 lorsque x → +∞
+  </div>
+  <p>À l'infini, une puissance positive de x domine les puissances plus faibles.</p>
+
+  <h4>5.3 Limite d'une fonction rationnelle</h4>
+  <p>Soit :</p>
+  <div class="formula">f(x) = (aₙxⁿ + ...)/(bₘxᵐ + ...)</div>
+  <table>
+    <tr><th>Degrés</th><th>Limite à +∞</th></tr>
+    <tr><td>n &lt; m</td><td>0</td></tr>
+    <tr><td>n = m</td><td>aₙ / bₘ</td></tr>
+    <tr><td>n &gt; m</td><td>Comportement du terme dominant</td></tr>
+  </table>
+
+  <div class="note">
+    <strong>Exemple :</strong>
+    <br>lim (2x³ + x)/(4x³ - 5) = 2/4 = 1/2.
+  </div>
+
+  <h4>5.4 Comparaison des fonctions usuelles</h4>
+  <p>Lorsque x tend vers +∞, on retient généralement :</p>
+  <div class="formula">
+    ln(x) ≪ xᵃ ≪ eˣ, pour a &gt; 0
+  </div>
+  <p>La fonction exponentielle domine les puissances positives, qui dominent le logarithme.</p>
+</div>
+
+<!-- 6 -->
+<div class="card" id="fonctions">
+  <span class="chapter-number">Chapitre 06</span>
+  <h3>6. Limites des fonctions usuelles</h3>
+
+  <h4>6.1 Fonction polynomiale</h4>
+  <p>Les polynômes sont continus sur ℝ. On peut donc utiliser le remplacement direct en tout réel.</p>
+  <div class="formula">lim P(x) = P(a), lorsque x → a</div>
+
+  <h4>6.2 Fonction rationnelle</h4>
+  <p>Une fonction rationnelle est un quotient de deux polynômes.</p>
+  <div class="formula">f(x) = P(x)/Q(x)</div>
+  <p>Elle est continue sur son domaine de définition, c'est-à-dire lorsque Q(x) ≠ 0.</p>
+  <p>En un point où Q(a) = 0, il faut étudier la limite et les éventuelles simplifications.</p>
+
+  <h4>6.3 Fonction racine carrée</h4>
+  <div class="formula">
+    lim √x = √a lorsque x → a, avec a ≥ 0
+  </div>
+  <p>Son domaine de définition est [0,+∞[.</p>
+
+  <h4>6.4 Fonctions trigonométriques</h4>
+  <table>
+    <tr><th>Limite</th><th>Résultat</th></tr>
+    <tr><td>sin(x), x→0</td><td>0</td></tr>
+    <tr><td>cos(x), x→0</td><td>1</td></tr>
+    <tr><td>sin(x)/x, x→0</td><td>1</td></tr>
+    <tr><td>tan(x)/x, x→0</td><td>1</td></tr>
+    <tr><td>(1-cos(x))/x², x→0</td><td>1/2</td></tr>
+  </table>
+
+  <div class="note">
+    <strong>Important :</strong> Les angles des limites trigonométriques usuelles
+    sont exprimés en radians.
+  </div>
+
+  <h4>6.5 Fonction exponentielle</h4>
+  <table>
+    <tr><th>Limite</th><th>Résultat</th></tr>
+    <tr><td>eˣ, x→+∞</td><td>+∞</td></tr>
+    <tr><td>eˣ, x→-∞</td><td>0</td></tr>
+    <tr><td>(eˣ-1)/x, x→0</td><td>1</td></tr>
+  </table>
+
+  <h4>6.6 Fonction logarithme népérien</h4>
+  <table>
+    <tr><th>Limite</th><th>Résultat</th></tr>
+    <tr><td>ln(x), x→0⁺</td><td>-∞</td></tr>
+    <tr><td>ln(x), x→+∞</td><td>+∞</td></tr>
+    <tr><td>ln(1+x)/x, x→0</td><td>1</td></tr>
+  </table>
+  <p>Le logarithme népérien est défini uniquement pour x &gt; 0.</p>
+
+  <h4>6.7 Fonctions puissances</h4>
+  <div class="formula">
+    lim xᵅ = +∞ lorsque x→+∞ et α&gt;0
+    <br>lim 1/xᵅ = 0 lorsque x→+∞ et α&gt;0
+  </div>
+
+  <h4>6.8 Tableau récapitulatif</h4>
+  <table>
+    <tr><th>Fonction</th><th>En 0</th><th>En +∞</th></tr>
+    <tr><td>x²</td><td>0</td><td>+∞</td></tr>
+    <tr><td>1/x</td><td>Limites latérales infinies</td><td>0</td></tr>
+    <tr><td>√x</td><td>0⁺</td><td>+∞</td></tr>
+    <tr><td>eˣ</td><td>1</td><td>+∞</td></tr>
+    <tr><td>ln(x)</td><td>-∞ à droite</td><td>+∞</td></tr>
+    <tr><td>sin(x)</td><td>0</td><td>Pas de limite</td></tr>
+    <tr><td>cos(x)</td><td>1</td><td>Pas de limite</td></tr>
+  </table>
+</div>
+
+<!-- 7 -->
+<div class="card" id="asymptotes">
+  <span class="chapter-number">Chapitre 07</span>
+  <h3>7. Asymptotes et comportement des courbes</h3>
+
+  <h4>7.1 Asymptote verticale</h4>
+  <p>La droite x = a est une asymptote verticale si au moins une limite latérale de f en a est infinie.</p>
+  <div class="formula">
+    lim f(x) = ±∞
+    <br>x→a⁺ ou x→a⁻
+  </div>
+
+  <div class="graph">
+    <svg viewBox="0 0 500 270" role="img" aria-label="Asymptote verticale">
+      <path d="M30 220H480 M250 245V15" stroke="#333" stroke-width="1.5"/>
+      <path d="M250 15V235" stroke="#e87535" stroke-width="2" stroke-dasharray="6 5"/>
+      <path d="M45 30 Q160 180 235 215 M265 215 Q340 180 455 30" fill="none" stroke="#21845b" stroke-width="3"/>
+      <text x="260" y="28" class="graph-label">x = a</text>
+      <text x="460" y="239" class="graph-label">x</text>
+    </svg>
+    <div class="graph-caption">La courbe se rapproche de la droite x = a.</div>
+  </div>
+
+  <h4>7.2 Asymptote horizontale</h4>
+  <p>La droite y = L est une asymptote horizontale si :</p>
+  <div class="formula">
+    lim f(x) = L lorsque x→+∞ ou x→-∞
+  </div>
+  <div class="graph">
+    <svg viewBox="0 0 500 260" role="img" aria-label="Asymptote horizontale">
+      <path d="M25 205H480 M40 235V15" stroke="#333" stroke-width="1.5"/>
+      <path d="M25 105H480" stroke="#e87535" stroke-width="2" stroke-dasharray="6 5"/>
+      <path d="M40 25 Q95 40 140 105 T260 105 T470 105" fill="none" stroke="#21845b" stroke-width="3"/>
+      <text x="430" y="94" class="graph-label">y = L</text>
+      <text x="460" y="224" class="graph-label">x</text>
+    </svg>
+    <div class="graph-caption">La courbe se rapproche de la droite y = L à l'infini.</div>
+  </div>
+
+  <h4>7.3 Asymptote oblique</h4>
+  <p>La droite y = ax + b est une asymptote oblique si :</p>
+  <div class="formula">
+    lim [f(x) - (ax+b)] = 0
+    <br>x→+∞ ou x→-∞
+  </div>
+  <p>On peut calculer :</p>
+  <div class="formula">
+    a = lim f(x)/x
+    <br>b = lim [f(x)-ax]
+  </div>
+  <p>Ces formules s'utilisent lorsque les limites existent et sont finies, avec a ≠ 0.</p>
+
+  <div class="note">
+    <strong>Exemple :</strong> f(x) = (x²+1)/x = x + 1/x.
+    <br>Donc f(x)-x = 1/x → 0.
+    <br>L'asymptote oblique est y = x.
+  </div>
+
+  <h4>7.4 Position de la courbe par rapport à l'asymptote</h4>
+  <ul>
+    <li>Si f(x) - (ax+b) &gt; 0 : la courbe est au-dessus.</li>
+    <li>Si f(x) - (ax+b) &lt; 0 : la courbe est au-dessous.</li>
+    <li>Si f(x) - (ax+b) = 0 : la courbe coupe la droite.</li>
+  </ul>
+
+  <h4>7.5 Autres situations graphiques</h4>
+  <ul>
+    <li><strong>Point de discontinuité :</strong> la courbe présente une interruption.</li>
+    <li><strong>Tangente verticale :</strong> la direction de la tangente devient verticale.</li>
+    <li><strong>Branche parabolique :</strong> la courbe possède une croissance plus rapide qu'une droite dans une direction.</li>
+    <li><strong>Point d'intersection :</strong> deux branches de la courbe peuvent se rencontrer.</li>
+  </ul>
+</div>
+
+<!-- 8 -->
+<div class="card" id="courbes">
+  <span class="chapter-number">Chapitre 08</span>
+  <h3>8. Lire une limite sur un graphique</h3>
+  <p>Pour déterminer une limite graphiquement, il faut observer la courbe lorsqu'on approche la valeur demandée.</p>
+
+  <h4>Les situations à reconnaître</h4>
+  <div class="two-columns">
+    <div class="mini-card">
+      <strong>Situation A : Limite finie</strong>
+      <p>La courbe se rapproche d'une hauteur précise L.</p>
+      <div class="formula">lim f(x) = L</div>
+    </div>
+    <div class="mini-card">
+      <strong>Situation B : Limite infinie</strong>
+      <p>La courbe monte ou descend sans borne.</p>
+      <div class="formula">lim f(x) = ±∞</div>
+    </div>
+    <div class="mini-card">
+      <strong>Situation C : Saut</strong>
+      <p>Les limites à gauche et à droite sont différentes.</p>
+      <div class="formula">L₁ ≠ L₂</div>
+    </div>
+    <div class="mini-card">
+      <strong>Situation D : Oscillation</strong>
+      <p>La fonction oscille sans se rapprocher d'une valeur unique.</p>
+      <div class="formula">La limite n'existe pas.</div>
+    </div>
+  </div>
+
+  <h4>Exemple : tableau de limites latérales</h4>
+  <table>
+    <tr><th>x</th><th>1,9</th><th>1,99</th><th>2</th><th>2,01</th><th>2,1</th></tr>
+    <tr><td>f(x)</td><td>4,9</td><td>4,99</td><td>Non définie</td><td>5,01</td><td>5,1</td></tr>
+  </table>
+  <p>Les valeurs se rapprochent de 5 des deux côtés. Donc la limite en 2 est 5.</p>
+</div>
+
+<!-- 9 -->
+<div class="card" id="continuite">
+  <span class="chapter-number">Chapitre 09</span>
+  <h3>9. Continuité d'une fonction</h3>
+
+  <h4>9.1 Définition</h4>
+  <p>Une fonction f est continue en a si les trois conditions suivantes sont vérifiées :</p>
+  <div class="formula">
+    1. f(a) existe
+    <br>2. lim f(x) existe
+    <br>3. lim f(x) = f(a)
+    <br> x→a
+  </div>
+
+  <div class="success-note">
+    <strong>Règle essentielle :</strong>
+    Une fonction est continue en a lorsque sa limite en a est égale à sa valeur en a.
+  </div>
+
+  <h4>9.2 Interprétation graphique</h4>
+  <p>Une fonction continue sur un intervalle possède une courbe sans interruption sur cet intervalle.</p>
+  <div class="graph">
+    <svg viewBox="0 0 500 235" role="img" aria-label="Fonction continue">
+      <path d="M30 190H475 M45 215V15" stroke="#333" stroke-width="1.5"/>
+      <path d="M50 160 C120 160 120 35 230 90 S350 200 460 40" fill="none" stroke="#21845b" stroke-width="3"/>
+      <text x="450" y="210" class="graph-label">x</text>
+      <text x="50" y="20" class="graph-label">y</text>
+      <text x="310" y="25" class="graph-label">Courbe continue</text>
+    </svg>
+  </div>
+
+  <h4>9.3 Continuité à droite et à gauche</h4>
+  <p>Continuité à gauche en a :</p>
+  <div class="formula">lim f(x) = f(a), lorsque x→a⁻</div>
+  <p>Continuité à droite en a :</p>
+  <div class="formula">lim f(x) = f(a), lorsque x→a⁺</div>
+  <p>La continuité en a nécessite les deux conditions.</p>
+
+  <h4>9.4 Comment montrer qu'une fonction est continue ?</h4>
+  <div class="steps">
+    <div class="step">Vérifier que a appartient au domaine de définition.</div>
+    <div class="step">Calculer f(a).</div>
+    <div class="step">Calculer la limite de f(x) lorsque x tend vers a.</div>
+    <div class="step">Comparer la limite à f(a).</div>
+    <div class="step">Conclure par une phrase mathématique.</div>
+  </div>
+
+  <div class="note">
+    <strong>Exemple :</strong> f(x) = x² + 1.
+    <br>f(2) = 5.
+    <br>lim f(x) = 5.
+    <br>Donc lim f(x) = f(2), et f est continue en 2.
+  </div>
+
+  <h4>9.5 Continuité d'une fonction définie par morceaux</h4>
+  <p>Soit :</p>
+  <div class="formula">
+    f(x) = x + 1 si x &lt; 2
+    <br>f(x) = ax - 1 si x ≥ 2
+  </div>
+  <p>Pour que f soit continue en 2, on doit avoir :</p>
+  <div class="formula">
+    lim f(x) = f(2)
+    <br>2 + 1 = 2a - 1
+    <br>3 = 2a - 1
+    <br>a = 2
+  </div>
+
+  <h4>9.6 Types de discontinuité</h4>
+  <table>
+    <tr><th>Type</th><th>Caractéristique</th></tr>
+    <tr><td>Amovible</td><td>La limite existe mais la fonction n'est pas égale à cette limite.</td></tr>
+    <tr><td>Par saut</td><td>Les limites à gauche et à droite sont finies mais différentes.</td></tr>
+    <tr><td>Infinie</td><td>Au moins une limite latérale est infinie.</td></tr>
+    <tr><td>Oscillante</td><td>La fonction ne possède pas de limite à cause de ses oscillations.</td></tr>
+  </table>
+</div>
+
+<!-- 10 -->
+<div class="card" id="proprietes">
+  <span class="chapter-number">Chapitre 10</span>
+  <h3>10. Opérations et propriétés de continuité</h3>
+
+  <h4>Somme et différence</h4>
+  <p>Si f et g sont continues en a, alors :</p>
+  <div class="formula">
+    f + g et f - g sont continues en a.
+  </div>
+
+  <h4>Produit</h4>
+  <div class="formula">f × g est continue en a.</div>
+
+  <h4>Quotient</h4>
+  <div class="formula">
+    f/g est continue en a si g(a) ≠ 0.
+  </div>
+
+  <h4>Composition</h4>
+  <p>Si g est continue en a et f est continue en g(a), alors f∘g est continue en a.</p>
+
+  <h4>Fonctions usuelles continues</h4>
+  <table>
+    <tr><th>Fonction</th><th>Intervalle de continuité</th></tr>
+    <tr><td>Polynôme</td><td>ℝ</td></tr>
+    <tr><td>Fraction rationnelle</td><td>Là où le dénominateur est non nul</td></tr>
+    <tr><td>√x</td><td>[0,+∞[</td></tr>
+    <tr><td>sin(x), cos(x)</td><td>ℝ</td></tr>
+    <tr><td>eˣ</td><td>ℝ</td></tr>
+    <tr><td>ln(x)</td><td>]0,+∞[</td></tr>
+  </table>
+</div>
+
+<!-- 11 -->
+<div class="card" id="theoremes">
+  <span class="chapter-number">Chapitre 11</span>
+  <h3>11. Théorèmes fondamentaux</h3>
+
+  <h4>11.1 Théorème des valeurs intermédiaires (TVI)</h4>
+  <p>
+    Soit f une fonction continue sur [a,b]. Pour tout nombre k compris
+    entre f(a) et f(b), il existe au moins un c appartenant à [a,b] tel que :
+  </p>
+  <div class="formula">f(c) = k</div>
+
+  <div class="note">
+    <strong>Interprétation :</strong> Une courbe continue ne peut pas passer
+    d'une hauteur à une autre sans prendre toutes les hauteurs intermédiaires.
+  </div>
+
+  <h4>11.2 Corollaire : existence d'une racine</h4>
+  <p>Si f est continue sur [a,b] et si f(a) × f(b) &lt; 0, alors il existe au moins un c dans ]a,b[ tel que :</p>
+  <div class="formula">f(c) = 0</div>
+
+  <h4>11.3 Unicité d'une solution</h4>
+  <p>Pour montrer qu'une équation f(x)=0 possède une unique solution :</p>
+  <ol>
+    <li>Montrer que f est continue sur l'intervalle.</li>
+    <li>Montrer que les valeurs aux extrémités sont de signes opposés pour l'existence.</li>
+    <li>Montrer que f est strictement monotone pour l'unicité.</li>
+  </ol>
+
+  <h4>11.4 Théorème des bornes atteintes</h4>
+  <p>Une fonction continue sur un intervalle fermé et borné [a,b] est bornée et atteint ses valeurs minimale et maximale.</p>
+
+  <h4>11.5 Théorème de composition des limites</h4>
+  <p>Si lim g(x)=L et si f est continue en L, alors :</p>
+  <div class="formula">lim f(g(x)) = f(L)</div>
+
+  <h4>11.6 Théorème de comparaison</h4>
+  <p>Si f(x) ≤ g(x) au voisinage de a et si les deux limites existent, alors :</p>
+  <div class="formula">lim f(x) ≤ lim g(x)</div>
+
+  <h4>11.7 Théorème des gendarmes</h4>
+  <p>Si f(x) ≤ g(x) ≤ h(x) et si :</p>
+  <div class="formula">
+    lim f(x) = lim h(x) = L
+    <br>Alors lim g(x) = L.
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="card" id="etude">
+  <span class="chapter-number">Chapitre 12</span>
+  <h3>12. Méthode générale pour étudier une fonction</h3>
+  <p>Voici une méthode organisée pour résoudre un exercice complet d'analyse.</p>
+  <div class="steps">
+    <div class="step">
+      <strong>Déterminer le domaine de définition.</strong>
+      <p>Étudier les dénominateurs, les racines et les logarithmes.</p>
+    </div>
+    <div class="step">
+      <strong>Calculer les limites aux bornes du domaine.</strong>
+      <p>Étudier les limites finies et infinies, à gauche et à droite.</p>
+    </div>
+    <div class="step">
+      <strong>Déterminer les asymptotes.</strong>
+      <p>Verticales, horizontales et obliques.</p>
+    </div>
+    <div class="step">
+      <strong>Étudier la continuité.</strong>
+      <p>Identifier les points de discontinuité et les intervalles de continuité.</p>
+    </div>
+    <div class="step">
+      <strong>Étudier les variations.</strong>
+      <p>Calculer la dérivée et dresser le tableau de variation.</p>
+    </div>
+    <div class="step">
+      <strong>Tracer la courbe.</strong>
+      <p>Utiliser les limites, les asymptotes et les points remarquables.</p>
+    </div>
+  </div>
+  <div class="success-note">
+    <strong>Conseil :</strong> Dans une rédaction mathématique,
+    chaque calcul doit être suivi d'une conclusion claire.
+  </div>
+</div>
+
+</section>
+
+<!-- ==================== EXERCICES ==================== -->
+
+<section class="section" id="exercices">
+
+<div class="section-heading">
+  <small>Partie 02</small>
+  <h2>Exercices & Problèmes</h2>
+  <p>Entraîne-toi avant de consulter les solutions détaillées.</p>
+</div>
+
+<div class="note">
+  <strong>Conseil :</strong> Essaie de résoudre chaque exercice sur une feuille
+  avant de cliquer sur « Voir la correction ».
+</div>
+
+<div id="exercise-list">
+
+<!-- EXERCICE 1 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 01 · Niveau facile</span>
+    <h3>Calcul direct des limites</h3>
+    <p>Calculer les limites suivantes :</p>
+    <ol>
+      <li>lim (x² + 3x - 2), x→2</li>
+      <li>lim (2x³ - x + 1), x→-1</li>
+      <li>lim (√(x+7)), x→2</li>
+      <li>lim (eˣ + x), x→0</li>
+      <li>lim ln(x), x→1</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(1)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution1">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> Remplacement direct : 2² + 3(2) - 2 = 8.</p>
+    <p><strong>2.</strong> 2(-1)³ - (-1) + 1 = 0.</p>
+    <p><strong>3.</strong> √(2+7) = 3.</p>
+    <p><strong>4.</strong> e⁰ + 0 = 1.</p>
+    <p><strong>5.</strong> ln(1) = 0.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 2 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 02 · Niveau moyen</span>
+    <h3>Factorisation et formes indéterminées</h3>
+    <p>Calculer :</p>
+    <ol>
+      <li>lim (x² - 9)/(x - 3), x→3</li>
+      <li>lim (x² - 5x + 6)/(x - 2), x→2</li>
+      <li>lim (x³ - 8)/(x - 2), x→2</li>
+      <li>lim (x² - 1)/(x² - 3x + 2), x→1</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(2)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution2">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> x²-9 = (x-3)(x+3). Après simplification, la limite vaut 6.</p>
+    <p><strong>2.</strong> x²-5x+6 = (x-2)(x-3). La limite vaut -1.</p>
+    <p><strong>3.</strong> x³-8 = (x-2)(x²+2x+4). La limite vaut 4+4+4 = 12.</p>
+    <p><strong>4.</strong> Numérateur = (x-1)(x+1), dénominateur = (x-1)(x-2). La limite vaut 2/(-1) = -2.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 3 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 03 · Niveau moyen</span>
+    <h3>Utilisation du conjugué</h3>
+    <p>Calculer :</p>
+    <ol>
+      <li>lim (√(x+4)-2)/x, x→0</li>
+      <li>lim (√(x+9)-3)/x, x→0</li>
+      <li>lim x/(√(x+1)-1), x→0</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(3)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution3">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> On multiplie par le conjugué. La limite devient 1/(√(x+4)+2), donc 1/4.</p>
+    <p><strong>2.</strong> La limite devient 1/(√(x+9)+3), donc 1/6.</p>
+    <p><strong>3.</strong> En multipliant par le conjugué, on obtient √(x+1)+1. La limite vaut 2.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 4 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 04 · Niveau moyen</span>
+    <h3>Limites à l'infini</h3>
+    <p>Calculer les limites :</p>
+    <ol>
+      <li>lim (3x²+2x+1)/(5x²-x+3), x→+∞</li>
+      <li>lim (2x³+x)/(x²+1), x→+∞</li>
+      <li>lim (x+1)/(x²+3), x→+∞</li>
+      <li>lim (4x²-1)/(2x²+5), x→-∞</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(4)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution4">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> Les degrés sont égaux. Limite = 3/5.</p>
+    <p><strong>2.</strong> Le degré du numérateur est supérieur. Le terme dominant est 2x, donc la limite est +∞.</p>
+    <p><strong>3.</strong> Le degré du dénominateur est supérieur. La limite est 0.</p>
+    <p><strong>4.</strong> Les degrés sont égaux. La limite vaut 4/2 = 2.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 5 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 05 · Niveau moyen</span>
+    <h3>Limites trigonométriques</h3>
+    <p>Calculer :</p>
+    <ol>
+      <li>lim sin(3x)/x, x→0</li>
+      <li>lim sin(5x)/(2x), x→0</li>
+      <li>lim (1-cos(2x))/x², x→0</li>
+      <li>lim tan(4x)/x, x→0</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(5)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution5">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> sin(3x)/x = 3 × sin(3x)/(3x), donc 3.</p>
+    <p><strong>2.</strong> = (5/2) × sin(5x)/(5x), donc 5/2.</p>
+    <p><strong>3.</strong> 1-cos(2x) = 2sin²(x), donc la limite vaut 2.</p>
+    <p><strong>4.</strong> tan(4x)/x = 4 × tan(4x)/(4x), donc 4.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 6 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 06 · Niveau moyen</span>
+    <h3>Limites exponentielles et logarithmiques</h3>
+    <p>Calculer :</p>
+    <ol>
+      <li>lim (e^(2x)-1)/x, x→0</li>
+      <li>lim (e^(3x)-1)/(2x), x→0</li>
+      <li>lim ln(1+4x)/x, x→0</li>
+      <li>lim ln(1+2x)/(3x), x→0</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(6)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution6">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> 2 × (e^(2x)-1)/(2x) = 2.</p>
+    <p><strong>2.</strong> 3/2 × (e^(3x)-1)/(3x) = 3/2.</p>
+    <p><strong>3.</strong> 4 × ln(1+4x)/(4x) = 4.</p>
+    <p><strong>4.</strong> 2/3 × ln(1+2x)/(2x) = 2/3.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 7 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 07 · Niveau avancé</span>
+    <h3>Continuité et paramètre</h3>
+    <p>Soit la fonction :</p>
+    <div class="formula">
+      f(x) = (x²-4)/(x-2) si x ≠ 2
+      <br>f(2) = a
+    </div>
+    <ol>
+      <li>Calculer la limite en 2.</li>
+      <li>Déterminer a pour que f soit continue en 2.</li>
+      <li>Étudier la continuité pour cette valeur.</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(7)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution7">
+    <h4>Correction détaillée</h4>
+    <p>Pour x ≠ 2 : f(x) = (x-2)(x+2)/(x-2) = x+2.</p>
+    <p>Donc lim f(x) = 4 lorsque x→2.</p>
+    <p>Pour la continuité, il faut f(2)=4. Donc a=4.</p>
+    <p>Avec a=4, la limite et la valeur de la fonction sont égales. La fonction est continue en 2.</p>
+  </div>
+</div>
+
+<!-- EXERCICE 8 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Exercice 08 · Niveau avancé</span>
+    <h3>Continuité d'une fonction par morceaux</h3>
+    <p>Soit :</p>
+    <div class="formula">
+      f(x) = x² + ax si x &lt; 1
+      <br>f(x) = 3x + b si x ≥ 1
+    </div>
+    <ol>
+      <li>Déterminer les limites à gauche et à droite en 1.</li>
+      <li>Déterminer a et b pour que f soit continue en 1, sachant que b=1.</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(8)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution8">
+    <h4>Correction détaillée</h4>
+    <p>À gauche : lim f(x) = 1+a.</p>
+    <p>À droite : lim f(x) = 3+b.</p>
+    <p>Comme b=1, la limite à droite vaut 4.</p>
+    <p>Pour la continuité : 1+a=4, donc a=3.</p>
+    <p>Les deux limites valent 4 et f(1)=4. Donc la fonction est continue en 1.</p>
+  </div>
+</div>
+
+<!-- PROBLEME 1 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Problème 01 · Devoir surveillé</span>
+    <h3>Étude complète d'une fonction rationnelle</h3>
+    <p>Soit :</p>
+    <div class="formula">f(x) = (x² + 1)/(x - 1)</div>
+    <ol>
+      <li>Déterminer le domaine de définition.</li>
+      <li>Calculer les limites en 1 à gauche et à droite.</li>
+      <li>Calculer les limites en +∞ et -∞.</li>
+      <li>Déterminer les asymptotes.</li>
+      <li>Étudier la continuité.</li>
+      <li>Étudier la position de la courbe par rapport à l'asymptote oblique.</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(9)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution9">
+    <h4>Correction détaillée</h4>
+    <p><strong>1. Domaine :</strong> Df = ℝ \\ {1}.</p>
+    <p><strong>2. En 1 :</strong> Le numérateur tend vers 2 et le dénominateur vers 0. À gauche : -∞. À droite : +∞.</p>
+    <p><strong>3. À l'infini :</strong> f(x) = x + 1 + 2/(x-1). Donc les limites sont +∞ et -∞ respectivement.</p>
+    <p><strong>4. Asymptotes :</strong> x=1 est verticale et y=x+1 est oblique.</p>
+    <p><strong>5. Continuité :</strong> f est continue sur ]-∞,1[ et ]1,+∞[.</p>
+    <p><strong>6. Position :</strong> f(x)-(x+1)=2/(x-1). La courbe est en dessous pour x&lt;1 et au-dessus pour x&gt;1.</p>
+  </div>
+</div>
+
+<!-- PROBLEME 2 -->
+<div class="exercise">
+  <div class="exercise-head">
+    <span class="chapter-number">Problème 02 · Devoir surveillé</span>
+    <h3>Continuité et théorème des valeurs intermédiaires</h3>
+    <p>Soit f définie sur ℝ par :</p>
+    <div class="formula">f(x) = x³ + x - 1</div>
+    <ol>
+      <li>Montrer que f est continue sur ℝ.</li>
+      <li>Calculer f(0) et f(1).</li>
+      <li>Montrer que l'équation f(x)=0 possède une solution dans ]0,1[.</li>
+      <li>Montrer que cette solution est unique.</li>
+    </ol>
+  </div>
+  <div class="exercise-footer">
+    <button class="btn" onclick="toggleSolution(10)">Voir la correction</button>
+  </div>
+  <div class="solution" id="solution10">
+    <h4>Correction détaillée</h4>
+    <p><strong>1.</strong> f est un polynôme, donc continue sur ℝ.</p>
+    <p><strong>2.</strong> f(0)=-1 et f(1)=1.</p>
+    <p><strong>3.</strong> f(0)×f(1)=-1&lt;0. D'après le TVI, il existe au moins une solution dans ]0,1[.</p>
+    <p><strong>4.</strong> f'(x)=3x²+1&gt;0 sur ℝ. La fonction est strictement croissante. Elle ne peut donc avoir qu'une seule racine.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- ==================== QUIZ ==================== -->
+
+<section class="section" id="quiz">
+
+<div class="section-heading">
+  <small>Partie 03</small>
+  <h2>Quiz interactif</h2>
+  <p>Teste tes connaissances avec des questions choisies aléatoirement.</p>
+</div>
+
+<div class="quiz-window">
+
+  <div class="quiz-top">
+    <h3>StudyNet · Math Challenge</h3>
+    <p>Limites & Continuité · Banque de 200 questions</p>
+  </div>
+
+  <div class="quiz-config" id="quiz-config">
+    <h3>Prépare ton test</h3>
+    <p style="color:#777;margin:7px 0 20px">Choisis le nombre de questions de ton évaluation.</p>
+    <label for="question-count">Nombre de questions</label>
+    <select id="question-count">
+      <option value="20">20 questions</option>
+      <option value="25">25 questions</option>
+      <option value="30" selected>30 questions</option>
+      <option value="35">35 questions</option>
+      <option value="40">40 questions</option>
+    </select>
+    <p style="font-size:12px;color:#888;margin:12px 0 20px">Les questions sont sélectionnées aléatoirement et sans répétition.</p>
+    <button class="btn" onclick="startQuiz()">Commencer le quiz →</button>
+  </div>
+
+  <div class="quiz-area" id="quiz-area">
+    <div class="quiz-info">
+      <span id="question-number">Question 1 / 30</span>
+      <span id="score-live">Score : 0</span>
+    </div>
+    <div class="quiz-progress"><div id="progress-bar"></div></div>
+    <div class="question" id="question-text"></div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="quiz-actions">
+      <button class="btn btn-outline" onclick="quitQuiz()">Quitter</button>
+      <button class="btn" id="verify-btn" onclick="verifyAnswer()" disabled>Vérifier</button>
+      <button class="btn" id="next-btn" onclick="nextQuestion()" style="display:none">Next →</button>
+    </div>
+  </div>
+
+  <div class="quiz-result" id="quiz-result">
+    <div class="section-heading" style="text-align:center">
+      <small>Résultat final</small>
+      <h2>Quiz terminé !</h2>
+      <p>Voici le bilan de ton évaluation.</p>
+    </div>
+    <div class="score-circle">
+      <div>
+        <strong id="final-score">0/30</strong>
+        <span id="percentage">0%</span>
+      </div>
+    </div>
+    <h3 id="result-message" style="text-align:center"></h3>
+    <div class="three-columns" style="margin:25px 0">
+      <div class="mini-card">
+        <strong>Réponses justes</strong>
+        <h2 id="correct-count">0</h2>
+      </div>
+      <div class="mini-card">
+        <strong>Réponses fausses</strong>
+        <h2 id="wrong-count">0</h2>
+      </div>
+      <div class="mini-card">
+        <strong>Non répondues</strong>
+        <h2 id="unanswered-count">0</h2>
+      </div>
+    </div>
+    <h3 style="margin-top:30px">Correction de tes erreurs</h3>
+    <div id="review-list"></div>
+    <button class="btn" onclick="resetQuiz()" style="margin-top:20px">Recommencer un quiz ↻</button>
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

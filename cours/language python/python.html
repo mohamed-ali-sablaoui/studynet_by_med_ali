@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Formation complète Python : cours détaillé, programmation, algorithmique, exercices universitaires et quiz interactif.">
+<title>Python Programming | StudyNet</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+        <div class="logo">Study<span>Net</span>.</div>
+        <div class="nav-links">
+            <a href="#cours">COURS</a>
+            <a href="#exercices">EXERCICES</a>
+            <a href="#quiz">QUIZ</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="eyebrow">Formation complète · Programmation</div>
+        <h1>Mastering<br><span>Python.</span></h1>
+        <p>
+            Une formation progressive et approfondie pour apprendre à programmer
+            en Python, comprendre les concepts fondamentaux de l'informatique,
+            résoudre des problèmes algorithmiques et développer des applications
+            structurées.
+        </p>
+        <div class="hero-stats">
+            <div class="stat"><strong>20+</strong><small>Modules de formation</small></div>
+            <div class="stat"><strong>40</strong><small>Exercices académiques</small></div>
+            <div class="stat"><strong>200</strong><small>Questions de quiz</small></div>
+            <div class="stat"><strong>3</strong><small>Parties principales</small></div>
+        </div>
+    </div>
+</section>
+
+<div class="container layout">
+
+<aside class="sidebar">
+    <h3>PROGRAMME DE FORMATION</h3>
+    <a href="#cours">01 — Cours complet</a>
+    <a href="#m1">Introduction à Python</a>
+    <a href="#m2">Variables et types</a>
+    <a href="#m3">Entrées et sorties</a>
+    <a href="#m4">Opérateurs</a>
+    <a href="#m5">Conditions</a>
+    <a href="#m6">Boucles</a>
+    <a href="#m7">Chaînes de caractères</a>
+    <a href="#m8">Listes</a>
+    <a href="#m9">Tuples</a>
+    <a href="#m10">Dictionnaires</a>
+    <a href="#m11">Ensembles</a>
+    <a href="#m12">Fonctions</a>
+    <a href="#m13">Récursivité</a>
+    <a href="#m14">Algorithmes</a>
+    <a href="#m15">Tri et recherche</a>
+    <a href="#m16">Fichiers</a>
+    <a href="#m17">Exceptions</a>
+    <a href="#m18">Modules et bibliothèques</a>
+    <a href="#m19">Programmation orientée objet</a>
+    <a href="#m20">Compréhensions</a>
+    <a href="#m21">Itérateurs et générateurs</a>
+    <a href="#m22">Expressions régulières</a>
+    <a href="#m23">Dates et temps</a>
+    <a href="#m24">JSON et CSV</a>
+    <a href="#m25">Bases de données SQLite</a>
+    <a href="#m26">Tests et débogage</a>
+    <a href="#m27">Complexité algorithmique</a>
+    <a href="#m28">Bonnes pratiques</a>
+    <a href="#m29">Projets pratiques</a>
+    <hr style="margin:15px 0;border:0;border-top:1px solid #ddd">
+    <a href="#exercices">02 — Exercices</a>
+    <a href="#quiz">03 — Quiz interactif</a>
+</aside>
+
+<main>
+
+<section id="cours">
+    <div class="section-label">Partie 01 / Formation</div>
+    <h2 class="section-title">Cours complet de Python</h2>
+    <p class="intro">
+        L'objectif est de comprendre non seulement comment écrire du code,
+        mais aussi pourquoi on utilise chaque instruction, comment construire
+        une solution algorithmique et comment transformer un problème réel
+        en programme informatique.
+    </p>
+
+    <div class="note">
+        <strong>Conseil pédagogique :</strong>
+        Pour chaque chapitre, commence par comprendre le concept,
+        observe les exemples, exécute le code sur ton ordinateur,
+        puis essaie de le réécrire sans regarder la solution.
+    </div>
+
+    <!-- MODULE 1 -->
+    <article class="module" id="m1">
+        <div class="module-number">MODULE 01</div>
+        <h3>Introduction à Python et à la programmation</h3>
+
+        <h4>1. Qu'est-ce que la programmation ?</h4>
+        <p>
+            La programmation consiste à donner à un ordinateur une suite
+            d'instructions précises pour réaliser une tâche.
+            Un programme est donc un ensemble d'instructions écrites
+            dans un langage compréhensible par un interpréteur ou un compilateur.
+        </p>
+
+        <p>Exemple : calculer la moyenne de trois notes.</p>
+        <pre><code>note1 = 14
+note2 = 16
+note3 = 12
+
+moyenne = (note1 + note2 + note3) / 3
+
+print(moyenne)</code></pre>
+
+        <h4>2. Qu'est-ce que Python ?</h4>
+        <p>
+            Python est un langage de programmation de haut niveau,
+            interprété, à typage dynamique et multiparadigme.
+            Il est utilisé dans le développement web, l'automatisation,
+            l'intelligence artificielle, la science des données,
+            la cybersécurité, les applications et les calculs scientifiques.
+        </p>
+
+        <h4>3. Comment Python exécute-t-il un programme ?</h4>
+        <ol>
+            <li>Le programmeur écrit un fichier source portant généralement l'extension <code>.py</code>.</li>
+            <li>L'interpréteur Python analyse le code.</li>
+            <li>Le code est compilé en bytecode dans l'implémentation CPython.</li>
+            <li>La machine virtuelle Python exécute ce bytecode.</li>
+            <li>Le programme produit un résultat ou signale une erreur.</li>
+        </ol>
+
+        <h4>4. Installer et exécuter Python</h4>
+        <p>
+            Télécharger Python depuis le site officiel :
+            <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>.
+        </p>
+        <p>Vérifier l'installation dans le terminal :</p>
+        <pre><code>python --version
+python -V</code></pre>
+        <p>Sur Windows, il est également possible d'utiliser :</p>
+        <pre><code>py --version
+py programme.py</code></pre>
+        <p>Pour ouvrir le mode interactif :</p>
+        <pre><code>python</code></pre>
+        <p>Pour quitter :</p>
+        <pre><code>exit()</code></pre>
+
+        <h4>5. Premier programme</h4>
+        <pre><code>print("Bonjour tout le monde !")
+print("Bienvenue dans Python")</code></pre>
+
+        <h4>6. Les commentaires</h4>
+        <p>Un commentaire explique le code et n'est pas exécuté.</p>
+        <pre><code># Ceci est un commentaire sur une ligne
+
+"""
+Ceci est une chaîne multilignes.
+Elle peut servir de documentation.
+"""
+
+print("Python")</code></pre>
+
+        <h4>7. L'indentation</h4>
+        <p>
+            L'indentation représente les espaces placés au début d'une ligne.
+            En Python, elle détermine les blocs d'instructions.
+            On utilise généralement quatre espaces.
+        </p>
+        <pre><code>age = 20
+
+if age >= 18:
+    print("Majeur")
+    print("Accès autorisé")
+
+print("Fin du programme")</code></pre>
+        <div class="warning">
+            Attention : une indentation incorrecte peut provoquer
+            une erreur <code>IndentationError</code>.
+            Python ne fonctionne pas comme C ou Java où les accolades
+            délimitent habituellement les blocs.
+        </div>
+
+        <h4>8. Sensibilité à la casse</h4>
+        <pre><code>nom = "Ali"
+Nom = "Ahmed"
+
+print(nom)
+print(Nom)</code></pre>
+        <p><code>nom</code> et <code>Nom</code> sont deux variables différentes.</p>
+    </article>
+
+    <!-- MODULE 2 -->
+    <article class="module" id="m2">
+        <div class="module-number">MODULE 02</div>
+        <h3>Variables, constantes et types de données</h3>
+
+        <h4>1. Les variables</h4>
+        <p>
+            Une variable est un nom associé à une valeur.
+            Elle permet de stocker une information et de la réutiliser
+            pendant l'exécution du programme.
+        </p>
+        <pre><code>nom = "Mohamed"
+age = 20
+moyenne = 14.5
+est_admis = True</code></pre>
+
+        <h4>2. Règles de nommage</h4>
+        <ul>
+            <li>Un nom peut contenir des lettres, chiffres et underscores.</li>
+            <li>Il ne peut pas commencer par un chiffre.</li>
+            <li>Il ne peut pas contenir d'espaces.</li>
+            <li>Il ne doit pas être un mot réservé Python.</li>
+            <li>Les noms sont sensibles à la casse.</li>
+        </ul>
+        <pre><code>age_etudiant = 20
+note1 = 15
+prix_total = 120.5
+
+# Incorrect :
+# 2note = 15
+# prix total = 20</code></pre>
+
+        <h4>3. Les types fondamentaux</h4>
+        <table>
+            <tr><th>Type</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>int</td><td>Nombre entier</td><td>25</td></tr>
+            <tr><td>float</td><td>Nombre décimal</td><td>12.75</td></tr>
+            <tr><td>complex</td><td>Nombre complexe</td><td>3 + 2j</td></tr>
+            <tr><td>str</td><td>Chaîne de caractères</td><td>"Python"</td></tr>
+            <tr><td>bool</td><td>Valeur logique</td><td>True / False</td></tr>
+            <tr><td>NoneType</td><td>Absence de valeur</td><td>None</td></tr>
+        </table>
+
+        <h4>4. Vérifier le type avec type()</h4>
+        <pre><code>x = 15
+y = 15.5
+z = "Bonjour"
+
+print(type(x))
+print(type(y))
+print(type(z))</code></pre>
+
+        <h4>5. Conversion de types</h4>
+        <p>
+            La conversion permet de transformer une valeur d'un type
+            vers un autre lorsque cette conversion est valide.
+        </p>
+        <pre><code>a = int("25")
+b = float("12.5")
+c = str(100)
+d = bool(1)
+
+print(a, type(a))
+print(b, type(b))
+print(c, type(c))
+print(d, type(d))</code></pre>
+
+        <table>
+            <tr><th>Fonction</th><th>Rôle</th></tr>
+            <tr><td>int(x)</td><td>Convertir en entier</td></tr>
+            <tr><td>float(x)</td><td>Convertir en décimal</td></tr>
+            <tr><td>str(x)</td><td>Convertir en chaîne</td></tr>
+            <tr><td>bool(x)</td><td>Convertir en booléen</td></tr>
+            <tr><td>complex(x)</td><td>Convertir en complexe</td></tr>
+        </table>
+
+        <h4>6. Les constantes</h4>
+        <p>
+            Python ne possède pas de mot-clé imposant une constante.
+            Par convention, on utilise des noms en majuscules.
+        </p>
+        <pre><code>PI = 3.141592653589793
+TAUX_TVA = 0.19
+
+rayon = 5
+surface = PI * rayon ** 2
+
+print(surface)</code></pre>
+
+        <h4>7. Affectation multiple et déballage</h4>
+        <pre><code>a, b, c = 10, 20, 30
+
+x = y = 0
+
+a, b = b, a  # Échanger deux variables</code></pre>
+
+        <h4>8. Valeurs vraies et fausses</h4>
+        <p>
+            Les valeurs suivantes sont notamment considérées comme fausses :
+            <code>False</code>, <code>None</code>, <code>0</code>,
+            <code>0.0</code>, <code>""</code>, <code>[]</code>,
+            <code>{}</code> et <code>set()</code>.
+        </p>
+        <pre><code>nom = ""
+
+if nom:
+    print("Nom renseigné")
+else:
+    print("Nom vide")</code></pre>
+    </article>
+
+    <!-- MODULE 3 -->
+    <article class="module" id="m3">
+        <div class="module-number">MODULE 03</div>
+        <h3>Entrées, sorties et formatage</h3>
+
+        <h4>1. Afficher avec print()</h4>
+        <pre><code>print("Bonjour")
+print(10)
+print("Somme :", 10 + 5)</code></pre>
+
+        <h4>2. Les paramètres sep et end</h4>
+        <pre><code>print("Python", "Java", "C", sep=" | ")
+
+print("Bonjour", end=" ")
+print("Ali")</code></pre>
+        <p>
+            <code>sep</code> définit le séparateur entre les valeurs.
+            <code>end</code> définit ce qui termine l'affichage.
+            Par défaut, <code>end</code> vaut un retour à la ligne.
+        </p>
+
+        <h4>3. Lire avec input()</h4>
+        <p>
+            <code>input()</code> attend une saisie de l'utilisateur
+            et retourne toujours une chaîne de caractères.
+        </p>
+        <pre><code>nom = input("Donner votre nom : ")
+print("Bienvenue", nom)</code></pre>
+
+        <h4>4. Conversion des saisies</h4>
+        <pre><code>age = int(input("Donner votre âge : "))
+taille = float(input("Donner votre taille : "))
+
+print("Âge :", age)
+print("Taille :", taille)</code></pre>
+
+        <h4>5. f-strings</h4>
+        <p>
+            Les f-strings sont une méthode moderne et lisible
+            pour insérer des expressions dans une chaîne.
+        </p>
+        <pre><code>nom = "Ali"
+age = 20
+moyenne = 15.678
+
+print(f"Nom : {nom}")
+print(f"Âge : {age}")
+print(f"Moyenne : {moyenne:.2f}")</code></pre>
+
+        <h4>6. Autres méthodes de formatage</h4>
+        <pre><code>nom = "Ahmed"
+
+print("Bonjour {}".format(nom))
+print("Bonjour %s" % nom)</code></pre>
+
+        <h4>7. Contrôler les saisies</h4>
+        <pre><code>while True:
+    try:
+        age = int(input("Âge : "))
+        if age > 0:
+            break
+        print("L'âge doit être positif.")
+    except ValueError:
+        print("Veuillez saisir un entier.")
+
+print("Âge enregistré :", age)</code></pre>
+    </article>
+
+    <!-- MODULE 4 -->
+    <article class="module" id="m4">
+        <div class="module-number">MODULE 04</div>
+        <h3>Opérateurs et expressions</h3>
+
+        <h4>1. Opérateurs arithmétiques</h4>
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>+</td><td>Addition</td><td>5 + 2 = 7</td></tr>
+            <tr><td>-</td><td>Soustraction</td><td>5 - 2 = 3</td></tr>
+            <tr><td>*</td><td>Multiplication</td><td>5 * 2 = 10</td></tr>
+            <tr><td>/</td><td>Division réelle</td><td>5 / 2 = 2.5</td></tr>
+            <tr><td>//</td><td>Division entière</td><td>5 // 2 = 2</td></tr>
+            <tr><td>%</td><td>Modulo</td><td>5 % 2 = 1</td></tr>
+            <tr><td>**</td><td>Puissance</td><td>5 ** 2 = 25</td></tr>
+        </table>
+
+        <h4>2. Division entière et modulo</h4>
+        <p>
+            Pour deux entiers a et b avec b non nul :
+        </p>
+        <pre><code>a = 17
+b = 5
+
+quotient = a // b
+reste = a % b
+
+print(quotient)  # 3
+print(reste)     # 2</code></pre>
+        <p>On a la relation :</p>
+        <div class="note">a = b × (a // b) + (a % b)</div>
+
+        <h4>3. Opérateurs de comparaison</h4>
+        <pre><code>==   # Égal
+!=   # Différent
+>    # Supérieur
+<    # Inférieur
+>=   # Supérieur ou égal
+<=   # Inférieur ou égal</code></pre>
+
+        <h4>4. Opérateurs logiques</h4>
+        <table>
+            <tr><th>Opérateur</th><th>Signification</th></tr>
+            <tr><td>and</td><td>Vrai si toutes les conditions sont vraies</td></tr>
+            <tr><td>or</td><td>Vrai si au moins une condition est vraie</td></tr>
+            <tr><td>not</td><td>Inverse une valeur logique</td></tr>
+        </table>
+        <pre><code>age = 20
+a_un_carte = True
+
+if age >= 18 and a_un_carte:
+    print("Accès autorisé")</code></pre>
+
+        <h4>5. Opérateurs d'appartenance</h4>
+        <pre><code>langages = ["Python", "Java", "C"]
+
+print("Python" in langages)
+print("PHP" not in langages)</code></pre>
+
+        <h4>6. Opérateurs d'identité</h4>
+        <pre><code>a = None
+
+print(a is None)
+print(a is not None)</code></pre>
+        <p>
+            <code>==</code> compare les valeurs.
+            <code>is</code> vérifie si deux références désignent le même objet.
+            Ne remplace pas systématiquement l'un par l'autre.
+        </p>
+
+        <h4>7. Affectations composées</h4>
+        <pre><code>x = 10
+x += 5
+x -= 2
+x *= 3
+x /= 2
+x //= 2
+x %= 3
+x **= 2</code></pre>
+
+        <h4>8. Priorité des opérateurs</h4>
+        <p>
+            Les parenthèses permettent de rendre les expressions plus claires.
+            Les puissances sont évaluées avant les multiplications,
+            puis les additions. Les comparaisons précèdent les opérations
+            logiques.
+        </p>
+        <pre><code>resultat = (5 + 3) * 2
+print(resultat)  # 16</code></pre>
+    </article>
+
+    <!-- MODULE 5 -->
+    <article class="module" id="m5">
+        <div class="module-number">MODULE 05</div>
+        <h3>Structures conditionnelles</h3>
+
+        <h4>1. Instruction if</h4>
+        <pre><code>age = 20
+
+if age >= 18:
+    print("Majeur")</code></pre>
+
+        <h4>2. if / else</h4>
+        <pre><code>nombre = int(input("Nombre : "))
+
+if nombre % 2 == 0:
+    print("Pair")
+else:
+    print("Impair")</code></pre>
+
+        <h4>3. if / elif / else</h4>
+        <pre><code>note = float(input("Note : "))
+
+if note < 0 or note > 20:
+    print("Note invalide")
+elif note >= 16:
+    print("Très bien")
+elif note >= 14:
+    print("Bien")
+elif note >= 10:
+    print("Admis")
+else:
+    print("Non admis")</code></pre>
+
+        <h4>4. Conditions imbriquées</h4>
+        <pre><code>age = 20
+permis = True
+
+if age >= 18:
+    if permis:
+        print("Peut conduire")
+    else:
+        print("Permis nécessaire")
+else:
+    print("Trop jeune")</code></pre>
+
+        <h4>5. Conditions multiples</h4>
+        <pre><code>note = 15
+absence = 2
+
+if 10 <= note <= 20 and absence <= 5:
+    print("Validation possible")</code></pre>
+
+        <h4>6. Expression conditionnelle</h4>
+        <pre><code>age = 20
+statut = "Majeur" if age >= 18 else "Mineur"
+print(statut)</code></pre>
+
+        <h4>7. match / case</h4>
+        <p>
+            Disponible depuis Python 3.10, cette structure permet
+            de comparer une valeur à différents motifs.
+        </p>
+        <pre><code>jour = 3
+
+match jour:
+    case 1:
+        print("Lundi")
+    case 2:
+        print("Mardi")
+    case 3:
+        print("Mercredi")
+    case _:
+        print("Autre jour")</code></pre>
+
+        <h4>8. Validation d'un intervalle</h4>
+        <pre><code>note = float(input("Note : "))
+
+if not 0 <= note <= 20:
+    print("Erreur : note invalide")
+else:
+    print("Note valide")</code></pre>
+    </article>
+
+    <!-- MODULE 6 -->
+    <article class="module" id="m6">
+        <div class="module-number">MODULE 06</div>
+        <h3>Boucles : for et while</h3>
+
+        <h4>1. La boucle for</h4>
+        <p>
+            Elle permet de parcourir les éléments d'une séquence
+            ou d'un objet itérable.
+        </p>
+        <pre><code>for i in range(5):
+    print(i)</code></pre>
+
+        <h4>2. La fonction range()</h4>
+        <pre><code>range(5)       # 0, 1, 2, 3, 4
+range(2, 7)    # 2, 3, 4, 5, 6
+range(0, 10, 2)# 0, 2, 4, 6, 8
+range(10, 0, -1)</code></pre>
+        <p>
+            La borne finale n'est jamais incluse.
+            Le pas peut être positif ou négatif, mais pas nul.
+        </p>
+
+        <h4>3. La boucle while</h4>
+        <pre><code>i = 1
+
+while i <= 5:
+    print(i)
+    i += 1</code></pre>
+
+        <h4>4. break</h4>
+        <p>Interrompt immédiatement la boucle.</p>
+        <pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)</code></pre>
+
+        <h4>5. continue</h4>
+        <p>Ignore le reste de l'itération actuelle.</p>
+        <pre><code>for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)</code></pre>
+
+        <h4>6. pass</h4>
+        <p>Instruction vide utilisée comme emplacement provisoire.</p>
+        <pre><code>if True:
+    pass</code></pre>
+
+        <h4>7. Boucles imbriquées</h4>
+        <pre><code>for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)</code></pre>
+
+        <h4>8. else avec les boucles</h4>
+        <p>
+            Le bloc else d'une boucle s'exécute si celle-ci se termine
+            normalement, sans être interrompue par break.
+        </p>
+        <pre><code>for n in range(2, 10):
+    if n == 5:
+        break
+else:
+    print("Boucle terminée normalement")</code></pre>
+
+        <h4>9. Compteurs et accumulateurs</h4>
+        <pre><code>somme = 0
+
+for i in range(1, 6):
+    somme += i
+
+print(somme)  # 15</code></pre>
+
+        <h4>10. Calculer une factorielle</h4>
+        <pre><code>n = 5
+fact = 1
+
+for i in range(1, n + 1):
+    fact *= i
+
+print(fact)  # 120</code></pre>
+
+        <h4>11. Boucles infinies</h4>
+        <pre><code>while True:
+    commande = input("Commande (q pour quitter) : ")
+
+    if commande == "q":
+        break</code></pre>
+        <div class="warning">
+            Une boucle while doit généralement posséder une condition
+            d'arrêt atteignable. Sinon, elle peut tourner indéfiniment.
+        </div>
+    </article>
+
+    <!-- MODULE 7 -->
+    <article class="module" id="m7">
+        <div class="module-number">MODULE 07</div>
+        <h3>Chaînes de caractères (str)</h3>
+
+        <h4>1. Création des chaînes</h4>
+        <pre><code>nom = "Mohamed"
+texte1 = 'Python'
+texte2 = """Une chaîne
+sur plusieurs lignes."""</code></pre>
+
+        <h4>2. Indexation</h4>
+        <pre><code>mot = "PYTHON"
+
+print(mot[0])   # P
+print(mot[1])   # Y
+print(mot[-1])  # N
+print(mot[-2])  # O</code></pre>
+
+        <h4>3. Découpage : slicing</h4>
+        <pre><code>mot = "PROGRAMMATION"
+
+print(mot[0:4])
+print(mot[4:])
+print(mot[:5])
+print(mot[::2])
+print(mot[::-1])</code></pre>
+        <p>La syntaxe est <code>sequence[debut:fin:pas]</code>.</p>
+
+        <h4>4. Longueur</h4>
+        <pre><code>texte = "Python"
+print(len(texte))</code></pre>
+
+        <h4>5. Méthodes essentielles</h4>
+        <table>
+            <tr><th>Méthode</th><th>Rôle</th></tr>
+            <tr><td>lower()</td><td>Minuscules</td></tr>
+            <tr><td>upper()</td><td>Majuscules</td></tr>
+            <tr><td>capitalize()</td><td>Première lettre en majuscule</td></tr>
+            <tr><td>title()</td><td>Première lettre de chaque mot</td></tr>
+            <tr><td>strip()</td><td>Supprimer les espaces aux extrémités</td></tr>
+            <tr><td>lstrip()</td><td>Supprimer à gauche</td></tr>
+            <tr><td>rstrip()</td><td>Supprimer à droite</td></tr>
+            <tr><td>replace(a,b)</td><td>Remplacer une partie</td></tr>
+            <tr><td>split()</td><td>Découper en liste</td></tr>
+            <tr><td>join()</td><td>Assembler des chaînes</td></tr>
+            <tr><td>find()</td><td>Rechercher une sous-chaîne</td></tr>
+            <tr><td>count()</td><td>Compter les occurrences</td></tr>
+            <tr><td>startswith()</td><td>Tester le début</td></tr>
+            <tr><td>endswith()</td><td>Tester la fin</td></tr>
+            <tr><td>isalpha()</td><td>Vérifier les lettres</td></tr>
+            <tr><td>isdigit()</td><td>Vérifier les chiffres</td></tr>
+            <tr><td>isalnum()</td><td>Vérifier lettres ou chiffres</td></tr>
+        </table>
+
+        <h4>6. Exemples</h4>
+        <pre><code>texte = "  Bonjour Python  "
+
+print(texte.strip())
+print(texte.upper())
+print(texte.replace("Python", "Java"))
+
+phrase = "Ali aime Python"
+mots = phrase.split()
+
+print(mots)
+
+resultat = "-".join(mots)
+print(resultat)</code></pre>
+
+        <h4>7. Les chaînes sont immuables</h4>
+        <p>
+            Une chaîne ne peut pas être modifiée directement.
+            Les méthodes produisent généralement une nouvelle chaîne.
+        </p>
+        <pre><code>mot = "Python"
+mot = mot.upper()
+
+print(mot)</code></pre>
+
+        <h4>8. Parcourir une chaîne</h4>
+        <pre><code>mot = "Python"
+
+for caractere in mot:
+    print(caractere)</code></pre>
+
+        <h4>9. Compter les voyelles</h4>
+        <pre><code>texte = "Programmation Python"
+voyelles = "aeiouy"
+compteur = 0
+
+for c in texte.lower():
+    if c in voyelles:
+        compteur += 1
+
+print(compteur)</code></pre>
+
+        <h4>10. Encodage Unicode</h4>
+        <p>
+            Les chaînes Python représentent du texte Unicode.
+            <code>ord()</code> retourne le point de code d'un caractère
+            et <code>chr()</code> effectue l'opération inverse.
+        </p>
+        <pre><code>print(ord("A"))
+print(chr(65))
+
+texte = "Bonjour"
+octets = texte.encode("utf-8")
+print(octets)
+print(octets.decode("utf-8"))</code></pre>
+    </article>
+
+    <!-- MODULE 8 -->
+    <article class="module" id="m8">
+        <div class="module-number">MODULE 08</div>
+        <h3>Les listes (list)</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Une liste est une collection ordonnée et modifiable.
+            Elle accepte les doublons et peut contenir différents types.
+        </p>
+        <pre><code>notes = [12, 15, 18, 10]
+mixte = [10, "Python", True, 12.5]
+vide = []</code></pre>
+
+        <h4>2. Accès aux éléments</h4>
+        <pre><code>notes = [12, 15, 18, 10]
+
+print(notes[0])
+print(notes[-1])</code></pre>
+
+        <h4>3. Modification</h4>
+        <pre><code>notes = [12, 15, 18]
+notes[0] = 14
+
+print(notes)</code></pre>
+
+        <h4>4. Ajouter des éléments</h4>
+        <pre><code>liste = [1, 2, 3]
+
+liste.append(4)
+liste.extend([5, 6])
+liste.insert(1, 100)
+
+print(liste)</code></pre>
+        <p>
+            <code>append()</code> ajoute un élément,
+            <code>extend()</code> ajoute plusieurs éléments
+            et <code>insert()</code> insère à une position donnée.
+        </p>
+
+        <h4>5. Supprimer</h4>
+        <pre><code>nombres = [10, 20, 30, 40]
+
+nombres.remove(20)
+element = nombres.pop()
+del nombres[0]
+
+print(nombres)</code></pre>
+
+        <h4>6. Autres méthodes</h4>
+        <table>
+            <tr><th>Méthode</th><th>Description</th></tr>
+            <tr><td>index(x)</td><td>Position de la première occurrence</td></tr>
+            <tr><td>count(x)</td><td>Nombre d'occurrences</td></tr>
+            <tr><td>sort()</td><td>Tri sur place</td></tr>
+            <tr><td>reverse()</td><td>Inverser sur place</td></tr>
+            <tr><td>copy()</td><td>Copie superficielle</td></tr>
+            <tr><td>clear()</td><td>Vider la liste</td></tr>
+        </table>
+
+        <h4>7. Tri d'une liste</h4>
+        <pre><code>nombres = [8, 2, 9, 1, 5]
+
+nombres.sort()
+print(nombres)
+
+nombres.sort(reverse=True)
+print(nombres)
+
+nouvelle_liste = sorted(nombres)</code></pre>
+        <p>
+            <code>sort()</code> modifie la liste.
+            <code>sorted()</code> crée une nouvelle liste triée.
+        </p>
+
+        <h4>8. Parcours avec for</h4>
+        <pre><code>notes = [12, 15, 18]
+
+for note in notes:
+    print(note)</code></pre>
+
+        <h4>9. enumerate()</h4>
+        <pre><code>notes = [12, 15, 18]
+
+for indice, note in enumerate(notes):
+    print(indice, note)</code></pre>
+
+        <h4>10. zip()</h4>
+        <pre><code>noms = ["Ali", "Sara", "Amine"]
+notes = [15, 17, 12]
+
+for nom, note in zip(noms, notes):
+    print(nom, note)</code></pre>
+
+        <h4>11. Slicing</h4>
+        <pre><code>L = [0, 1, 2, 3, 4, 5]
+
+print(L[1:4])
+print(L[:3])
+print(L[3:])
+print(L[::-1])</code></pre>
+
+        <h4>12. Copie et références</h4>
+        <pre><code>A = [1, 2, 3]
+B = A
+
+B.append(4)
+
+print(A)  # [1, 2, 3, 4]</code></pre>
+        <p>
+            Ici, A et B référencent le même objet.
+            Pour créer une copie superficielle :
+        </p>
+        <pre><code>A = [1, 2, 3]
+B = A.copy()
+
+B.append(4)
+
+print(A)
+print(B)</code></pre>
+
+        <h4>13. Listes imbriquées et matrices</h4>
+        <pre><code>matrice = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrice[0][1])</code></pre>
+
+        <h4>14. Calculer la somme et la moyenne</h4>
+        <pre><code>notes = [12, 14, 16, 18]
+
+somme = sum(notes)
+maximum = max(notes)
+minimum = min(notes)
+moyenne = sum(notes) / len(notes)
+
+print(somme, maximum, minimum, moyenne)</code></pre>
+    </article>
+
+    <!-- MODULE 9 -->
+    <article class="module" id="m9">
+        <div class="module-number">MODULE 09</div>
+        <h3>Les tuples</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Un tuple est une collection ordonnée et immuable.
+            Il peut contenir des doublons et différents types.
+        </p>
+        <pre><code>coordonnees = (10, 20)
+personne = ("Ali", 20, "Informatique")
+
+vide = ()
+un_element = (5,)</code></pre>
+
+        <h4>2. Accéder aux éléments</h4>
+        <pre><code>T = (10, 20, 30)
+
+print(T[0])
+print(T[-1])
+print(T[1:])</code></pre>
+
+        <h4>3. Déballage</h4>
+        <pre><code>personne = ("Ali", 20, "Mahdia")
+
+nom, age, ville = personne
+
+print(nom)
+print(age)
+print(ville)</code></pre>
+
+        <h4>4. Méthodes</h4>
+        <pre><code>T = (1, 2, 2, 3)
+
+print(T.count(2))
+print(T.index(3))</code></pre>
+
+        <h4>5. Pourquoi utiliser un tuple ?</h4>
+        <ul>
+            <li>Représenter des données qui ne doivent pas être modifiées.</li>
+            <li>Retourner plusieurs valeurs depuis une fonction.</li>
+            <li>Utiliser des séquences immuables comme clés de dictionnaire si leurs éléments sont hachables.</li>
+        </ul>
+
+        <pre><code>def calculer(a, b):
+    return a + b, a * b
+
+somme, produit = calculer(4, 5)
+
+print(somme, produit)</code></pre>
+    </article>
+
+    <!-- MODULE 10 -->
+    <article class="module" id="m10">
+        <div class="module-number">MODULE 10</div>
+        <h3>Les dictionnaires (dict)</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Un dictionnaire associe des clés à des valeurs.
+            Les clés doivent être uniques et hachables.
+            Les valeurs peuvent être de différents types.
+        </p>
+        <pre><code>etudiant = {
+    "nom": "Ali",
+    "age": 20,
+    "moyenne": 15.5
+}</code></pre>
+
+        <h4>2. Accéder aux valeurs</h4>
+        <pre><code>print(etudiant["nom"])
+print(etudiant.get("age"))
+print(etudiant.get("ville", "Inconnue"))</code></pre>
+        <p>
+            Une clé inexistante avec les crochets provoque une KeyError.
+            <code>get()</code> permet de fournir une valeur par défaut.
+        </p>
+
+        <h4>3. Ajouter et modifier</h4>
+        <pre><code>etudiant["ville"] = "Mahdia"
+etudiant["age"] = 21
+
+etudiant.update({
+    "moyenne": 16,
+    "niveau": "Licence"
+})</code></pre>
+
+        <h4>4. Supprimer</h4>
+        <pre><code>etudiant.pop("age")
+del etudiant["ville"]
+etudiant.clear()</code></pre>
+
+        <h4>5. Parcourir un dictionnaire</h4>
+        <pre><code>etudiant = {
+    "nom": "Ali",
+    "age": 20,
+    "moyenne": 15
+}
+
+for cle in etudiant:
+    print(cle, etudiant[cle])
+
+for valeur in etudiant.values():
+    print(valeur)
+
+for cle, valeur in etudiant.items():
+    print(cle, valeur)</code></pre>
+
+        <h4>6. Méthodes importantes</h4>
+        <table>
+            <tr><th>Méthode</th><th>Fonction</th></tr>
+            <tr><td>keys()</td><td>Retourne les clés</td></tr>
+            <tr><td>values()</td><td>Retourne les valeurs</td></tr>
+            <tr><td>items()</td><td>Retourne les couples clé-valeur</td></tr>
+            <tr><td>get()</td><td>Récupère une valeur</td></tr>
+            <tr><td>update()</td><td>Met à jour</td></tr>
+            <tr><td>pop()</td><td>Supprime et retourne une valeur</td></tr>
+            <tr><td>popitem()</td><td>Supprime le dernier couple</td></tr>
+            <tr><td>setdefault()</td><td>Récupère ou crée une clé</td></tr>
+            <tr><td>copy()</td><td>Copie superficielle</td></tr>
+            <tr><td>clear()</td><td>Vide le dictionnaire</td></tr>
+        </table>
+
+        <h4>7. Dictionnaires imbriqués</h4>
+        <pre><code>etudiants = {
+    1: {"nom": "Ali", "note": 15},
+    2: {"nom": "Sara", "note": 18},
+    3: {"nom": "Amine", "note": 12}
+}
+
+print(etudiants[2]["nom"])</code></pre>
+
+        <h4>8. Compter les occurrences</h4>
+        <pre><code>texte = "python programmation python"
+frequences = {}
+
+for mot in texte.split():
+    frequences[mot] = frequences.get(mot, 0) + 1
+
+print(frequences)</code></pre>
+
+        <h4>9. Fusion de dictionnaires</h4>
+        <pre><code>A = {"a": 1, "b": 2}
+B = {"b": 3, "c": 4}
+
+C = A | B
+print(C)
+
+D = {**A, **B}</code></pre>
+    </article>
+
+    <!-- MODULE 11 -->
+    <article class="module" id="m11">
+        <div class="module-number">MODULE 11</div>
+        <h3>Les ensembles (set et frozenset)</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Un ensemble est une collection non ordonnée d'éléments uniques.
+            Il est particulièrement utile pour éliminer les doublons
+            et réaliser des opérations mathématiques.
+        </p>
+        <pre><code>A = {1, 2, 3, 3, 4}
+print(A)
+
+vide = set()</code></pre>
+
+        <h4>2. Ajouter et supprimer</h4>
+        <pre><code>A = {1, 2, 3}
+
+A.add(4)
+A.update([5, 6])
+A.remove(2)
+A.discard(100)</code></pre>
+
+        <h4>3. Opérations ensemblistes</h4>
+        <pre><code>A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A | B)  # Union
+print(A & B)  # Intersection
+print(A - B)  # Différence
+print(A ^ B)  # Différence symétrique</code></pre>
+
+        <h4>4. Relations</h4>
+        <pre><code>A = {1, 2}
+B = {1, 2, 3, 4}
+
+print(A.issubset(B))
+print(B.issuperset(A))
+print(A.isdisjoint({5, 6}))</code></pre>
+
+        <h4>5. Frozenset</h4>
+        <pre><code>A = frozenset([1, 2, 3])
+
+# A.add(4)  # Impossible
+
+print(A)</code></pre>
+        <p>
+            Un frozenset est un ensemble immuable.
+            Il peut être utilisé comme clé d'un dictionnaire.
+        </p>
+    </article>
+
+    <!-- MODULE 12 -->
+    <article class="module" id="m12">
+        <div class="module-number">MODULE 12</div>
+        <h3>Fonctions : programmation modulaire</h3>
+
+        <h4>1. Pourquoi utiliser les fonctions ?</h4>
+        <ul>
+            <li>Éviter la répétition du code.</li>
+            <li>Diviser un grand problème en sous-problèmes.</li>
+            <li>Faciliter la lecture et les tests.</li>
+            <li>Réutiliser une solution dans plusieurs programmes.</li>
+        </ul>
+
+        <h4>2. Déclaration et appel</h4>
+        <pre><code>def saluer():
+    print("Bonjour")
+
+saluer()</code></pre>
+
+        <h4>3. Paramètres et arguments</h4>
+        <pre><code>def saluer(nom):
+    print("Bonjour", nom)
+
+saluer("Ali")</code></pre>
+
+        <h4>4. return</h4>
+        <p>
+            <code>return</code> renvoie une valeur à l'endroit où la fonction
+            a été appelée et termine son exécution.
+        </p>
+        <pre><code>def addition(a, b):
+    return a + b
+
+resultat = addition(10, 5)
+print(resultat)</code></pre>
+
+        <h4>5. print et return : différence</h4>
+        <pre><code>def f1():
+    print(10)
+
+def f2():
+    return 10
+
+x = f1()
+y = f2()
+
+print(x)  # None
+print(y)  # 10</code></pre>
+
+        <h4>6. Plusieurs paramètres</h4>
+        <pre><code>def calculer(a, b, c):
+    return a + b + c
+
+print(calculer(2, 3, 4))</code></pre>
+
+        <h4>7. Paramètres par défaut</h4>
+        <pre><code>def saluer(nom, message="Bonjour"):
+    print(message, nom)
+
+saluer("Ali")
+saluer("Sara", "Bienvenue")</code></pre>
+
+        <h4>8. Arguments nommés</h4>
+        <pre><code>def afficher(nom, age, ville):
+    print(nom, age, ville)
+
+afficher(age=20, ville="Mahdia", nom="Ali")</code></pre>
+
+        <h4>9. *args</h4>
+        <p>Permet de recevoir un nombre variable d'arguments positionnels.</p>
+        <pre><code>def somme(*nombres):
+    total = 0
+
+    for n in nombres:
+        total += n
+
+    return total
+
+print(somme(1, 2, 3, 4, 5))</code></pre>
+
+        <h4>10. **kwargs</h4>
+        <p>Permet de recevoir des arguments nommés sous forme de dictionnaire.</p>
+        <pre><code>def afficher_infos(**infos):
+    for cle, valeur in infos.items():
+        print(cle, valeur)
+
+afficher_infos(nom="Ali", age=20, ville="Mahdia")</code></pre>
+
+        <h4>11. Portée des variables</h4>
+        <p>
+            Une variable locale existe dans la fonction où elle est définie.
+            Une variable globale est définie au niveau du module.
+        </p>
+        <pre><code>x = 10
+
+def fonction():
+    x = 20
+    print(x)
+
+fonction()
+print(x)</code></pre>
+
+        <h4>12. global et nonlocal</h4>
+        <pre><code>x = 10
+
+def modifier():
+    global x
+    x = 20
+
+modifier()
+print(x)</code></pre>
+        <pre><code>def externe():
+    x = 10
+
+    def interne():
+        nonlocal x
+        x = 20
+
+    interne()
+    print(x)
+
+externe()</code></pre>
+
+        <h4>13. Lambda</h4>
+        <p>Une fonction anonyme constituée d'une seule expression.</p>
+        <pre><code>carre = lambda x: x ** 2
+
+print(carre(5))</code></pre>
+
+        <h4>14. map()</h4>
+        <pre><code>nombres = [1, 2, 3, 4]
+
+carres = list(map(lambda x: x ** 2, nombres))
+print(carres)</code></pre>
+
+        <h4>15. filter()</h4>
+        <pre><code>nombres = [1, 2, 3, 4, 5, 6]
+
+pairs = list(filter(lambda x: x % 2 == 0, nombres))
+print(pairs)</code></pre>
+
+        <h4>16. reduce()</h4>
+        <pre><code>from functools import reduce
+
+nombres = [1, 2, 3, 4]
+
+produit = reduce(lambda a, b: a * b, nombres)
+print(produit)</code></pre>
+
+        <h4>17. Documentation des fonctions</h4>
+        <pre><code>def carre(n):
+    """
+    Calcule le carré d'un nombre.
+
+    Paramètre :
+        n : nombre
+
+    Retour :
+        Le carré de n.
+    """
+    return n ** 2
+
+help(carre)</code></pre>
+
+        <h4>18. Annotations de types</h4>
+        <pre><code>def addition(a: int, b: int) -> int:
+    return a + b</code></pre>
+        <p>
+            Les annotations documentent les types attendus mais ne forcent
+            pas automatiquement Python à vérifier les types à l'exécution.
+        </p>
+    </article>
+
+    <!-- MODULE 13 -->
+    <article class="module" id="m13">
+        <div class="module-number">MODULE 13</div>
+        <h3>La récursivité</h3>
+
+        <h4>1. Définition</h4>
+        <p>
+            Une fonction récursive est une fonction qui s'appelle elle-même
+            pour résoudre une version plus petite du même problème.
+        </p>
+
+        <h4>2. Les deux éléments obligatoires</h4>
+        <ul>
+            <li><strong>Cas de base :</strong> condition qui arrête les appels récursifs.</li>
+            <li><strong>Cas récursif :</strong> appel sur un problème plus petit.</li>
+        </ul>
+
+        <h4>3. Factorielle récursive</h4>
+        <pre><code>def factorielle(n):
+    if n < 0:
+        raise ValueError("n doit être positif")
+
+    if n == 0 or n == 1:
+        return 1
+
+    return n * factorielle(n - 1)
+
+print(factorielle(5))</code></pre>
+
+        <h4>4. Suite de Fibonacci</h4>
+        <pre><code>def fibonacci(n):
+    if n < 0:
+        raise ValueError("n doit être positif")
+
+    if n <= 1:
+        return n
+
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(7))</code></pre>
+
+        <div class="warning">
+            La version récursive simple de Fibonacci est coûteuse :
+            elle recalcule plusieurs fois les mêmes valeurs.
+            Une approche itérative ou avec mémoïsation est préférable
+            pour les grandes valeurs.
+        </div>
+
+        <h4>5. Récursivité sur une liste</h4>
+        <pre><code>def somme_liste(L):
+    if len(L) == 0:
+        return 0
+
+    return L[0] + somme_liste(L[1:])
+
+print(somme_liste([1, 2, 3, 4]))</code></pre>
+
+        <h4>6. Mémoïsation</h4>
+        <pre><code>from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fib(n):
+    if n <= 1:
+        return n
+
+    return fib(n-1) + fib(n-2)
+
+print(fib(40))</code></pre>
+    </article>
+
+    <!-- MODULE 14 -->
+    <article class="module" id="m14">
+        <div class="module-number">MODULE 14</div>
+        <h3>Résolution de problèmes et algorithmique</h3>
+
+        <h4>1. Qu'est-ce qu'un algorithme ?</h4>
+        <p>
+            Un algorithme est une suite finie et ordonnée d'étapes
+            permettant de résoudre un problème.
+            Il doit définir les données d'entrée, les traitements
+            et les résultats attendus.
+        </p>
+
+        <h4>2. Les étapes pour résoudre un problème</h4>
+        <ol>
+            <li>Comprendre précisément l'énoncé.</li>
+            <li>Identifier les données d'entrée.</li>
+            <li>Déterminer les résultats attendus.</li>
+            <li>Identifier les contraintes et cas particuliers.</li>
+            <li>Décomposer le problème en sous-problèmes.</li>
+            <li>Élaborer l'algorithme.</li>
+            <li>Traduire l'algorithme en Python.</li>
+            <li>Tester avec plusieurs jeux de données.</li>
+            <li>Corriger et améliorer la solution.</li>
+        </ol>
+
+        <h4>3. Entrées, traitements, sorties</h4>
+        <p>Exemple : calculer l'aire d'un rectangle.</p>
+        <ul>
+            <li>Entrées : longueur et largeur.</li>
+            <li>Traitement : aire = longueur × largeur.</li>
+            <li>Sortie : aire du rectangle.</li>
+        </ul>
+        <pre><code>longueur = float(input("Longueur : "))
+largeur = float(input("Largeur : "))
+
+aire = longueur * largeur
+
+print("Aire :", aire)</code></pre>
+
+        <h4>4. Tester les cas limites</h4>
+        <p>
+            Un bon programme doit considérer les valeurs habituelles,
+            les valeurs extrêmes et les entrées invalides.
+        </p>
+        <p>Pour une division, il faut notamment traiter le diviseur nul.</p>
+        <pre><code>a = float(input("a : "))
+b = float(input("b : "))
+
+if b == 0:
+    print("Division impossible")
+else:
+    print(a / b)</code></pre>
+
+        <h4>5. Décomposer en fonctions</h4>
+        <pre><code>def lire_nombre(message):
+    return float(input(message))
+
+def calculer_aire(L, l):
+    return L * l
+
+def afficher_resultat(a):
+    print(f"Aire = {a:.2f}")
+
+longueur = lire_nombre("Longueur : ")
+largeur = lire_nombre("Largeur : ")
+
+aire = calculer_aire(longueur, largeur)
+afficher_resultat(aire)</code></pre>
+
+        <h4>6. Invariants de boucle</h4>
+        <p>
+            Un invariant est une propriété qui reste vraie à chaque étape
+            d'une boucle. Il permet de justifier la correction d'un algorithme.
+        </p>
+        <p>Exemple : somme des n premiers entiers.</p>
+        <pre><code>n = 5
+somme = 0
+
+for i in range(1, n + 1):
+    somme += i
+
+print(somme)</code></pre>
+        <p>
+            Après chaque itération i, la variable somme contient
+            la somme des entiers de 1 à i.
+        </p>
+
+        <h4>7. Types de problèmes classiques</h4>
+        <ul>
+            <li>Calcul numérique et arithmétique.</li>
+            <li>Tests de propriétés : pair, premier, palindrome.</li>
+            <li>Recherche d'un minimum ou maximum.</li>
+            <li>Comptage et calcul de fréquences.</li>
+            <li>Traitement de chaînes.</li>
+            <li>Traitement de tableaux et matrices.</li>
+            <li>Tri et recherche.</li>
+            <li>Manipulation de fichiers.</li>
+            <li>Simulation et génération de données.</li>
+            <li>Optimisation et analyse de complexité.</li>
+        </ul>
+    </article>
+
+    <!-- MODULE 15 -->
+    <article class="module" id="m15">
+        <div class="module-number">MODULE 15</div>
+        <h3>Algorithmes de recherche et de tri</h3>
+
+        <h4>1. Recherche linéaire</h4>
+        <p>
+            Parcourt les éléments un par un jusqu'à trouver la valeur
+            ou atteindre la fin de la liste.
+        </p>
+        <pre><code>def recherche_lineaire(L, valeur):
+    for i in range(len(L)):
+        if L[i] == valeur:
+            return i
+
+    return -1
+
+print(recherche_lineaire([4, 8, 2, 9], 2))</code></pre>
+        <p>Complexité temporelle : O(n).</p>
+
+        <h4>2. Recherche binaire</h4>
+        <p>
+            Fonctionne sur une liste triée.
+            Elle élimine la moitié de la zone de recherche à chaque étape.
+        </p>
+        <pre><code>def recherche_binaire(L, valeur):
+    gauche = 0
+    droite = len(L) - 1
+
+    while gauche <= droite:
+        milieu = (gauche + droite) // 2
+
+        if L[milieu] == valeur:
+            return milieu
+
+        elif L[milieu] < valeur:
+            gauche = milieu + 1
+
+        else:
+            droite = milieu - 1
+
+    return -1
+
+L = [1, 3, 5, 7, 9, 11]
+print(recherche_binaire(L, 7))</code></pre>
+        <p>Complexité : O(log n).</p>
+
+        <h4>3. Tri à bulles</h4>
+        <pre><code>def tri_bulles(L):
+    L = L.copy()
+    n = len(L)
+
+    for i in range(n):
+        echange = False
+
+        for j in range(0, n-i-1):
+            if L[j] > L[j+1]:
+                L[j], L[j+1] = L[j+1], L[j]
+                echange = True
+
+        if not echange:
+            break
+
+    return L
+
+print(tri_bulles([5, 2, 8, 1, 3]))</code></pre>
+        <p>Complexité moyenne et pire cas : O(n²).</p>
+
+        <h4>4. Tri par sélection</h4>
+        <pre><code>def tri_selection(L):
+    L = L.copy()
+    n = len(L)
+
+    for i in range(n):
+        minimum = i
+
+        for j in range(i+1, n):
+            if L[j] < L[minimum]:
+                minimum = j
+
+        L[i], L[minimum] = L[minimum], L[i]
+
+    return L</code></pre>
+
+        <h4>5. Tri par insertion</h4>
+        <pre><code>def tri_insertion(L):
+    L = L.copy()
+
+    for i in range(1, len(L)):
+        valeur = L[i]
+        j = i - 1
+
+        while j >= 0 and L[j] > valeur:
+            L[j+1] = L[j]
+            j -= 1
+
+        L[j+1] = valeur
+
+    return L</code></pre>
+
+        <h4>6. Tri fusion</h4>
+        <pre><code>def fusionner(gauche, droite):
+    resultat = []
+    i = j = 0
+
+    while i < len(gauche) and j < len(droite):
+        if gauche[i] <= droite[j]:
+            resultat.append(gauche[i])
+            i += 1
+        else:
+            resultat.append(droite[j])
+            j += 1
+
+    resultat.extend(gauche[i:])
+    resultat.extend(droite[j:])
+
+    return resultat
+
+def tri_fusion(L):
+    if len(L) <= 1:
+        return L
+
+    milieu = len(L) // 2
+
+    gauche = tri_fusion(L[:milieu])
+    droite = tri_fusion(L[milieu:])
+
+    return fusionner(gauche, droite)</code></pre>
+        <p>Complexité : O(n log n).</p>
+
+        <h4>7. Tri rapide : Quick Sort</h4>
+        <pre><code>def quick_sort(L):
+    if len(L) <= 1:
+        return L
+
+    pivot = L[len(L)//2]
+
+    gauche = [x for x in L if x < pivot]
+    egal = [x for x in L if x == pivot]
+    droite = [x for x in L if x > pivot]
+
+    return quick_sort(gauche) + egal + quick_sort(droite)</code></pre>
+        <p>
+            Cette version pédagogique utilise des listes supplémentaires.
+            Sa complexité moyenne est O(n log n), mais son pire cas est O(n²).
+        </p>
+
+        <h4>8. Comparaison</h4>
+        <table>
+            <tr><th>Algorithme</th><th>Complexité habituelle</th></tr>
+            <tr><td>Recherche linéaire</td><td>O(n)</td></tr>
+            <tr><td>Recherche binaire</td><td>O(log n)</td></tr>
+            <tr><td>Tri à bulles</td><td>O(n²)</td></tr>
+            <tr><td>Tri sélection</td><td>O(n²)</td></tr>
+            <tr><td>Tri insertion</td><td>O(n²), O(n) sur liste déjà triée</td></tr>
+            <tr><td>Tri fusion</td><td>O(n log n)</td></tr>
+            <tr><td>Tri rapide</td><td>O(n log n) moyen</td></tr>
+            <tr><td>sorted()</td><td>O(n log n) garanti en temps de comparaison</td></tr>
+        </table>
+    </article>
+
+    <!-- MODULE 16 -->
+    <article class="module" id="m16">
+        <div class="module-number">MODULE 16</div>
+        <h3>Gestion des fichiers et dossiers</h3>
+
+        <h4>1. Pourquoi utiliser les fichiers ?</h4>
+        <p>
+            Les variables disparaissent généralement à la fin du programme.
+            Les fichiers permettent de conserver les informations
+            pour les réutiliser lors d'une prochaine exécution.
+        </p>
+
+        <h4>2. Ouvrir un fichier</h4>
+        <pre><code>fichier = open("donnees.txt", "r", encoding="utf-8")
+contenu = fichier.read()
+fichier.close()</code></pre>
+
+        <h4>3. Les modes d'ouverture</h4>
+        <table>
+            <tr><th>Mode</th><th>Signification</th></tr>
+            <tr><td>r</td><td>Lecture, fichier existant</td></tr>
+            <tr><td>w</td><td>Écriture, remplace le contenu</td></tr>
+            <tr><td>a</td><td>Ajout à la fin</td></tr>
+            <tr><td>x</td><td>Création exclusive</td></tr>
+            <tr><td>b</td><td>Mode binaire</td></tr>
+            <tr><td>t</td><td>Mode texte</td></tr>
+            <tr><td>+</td><td>Lecture et écriture</td></tr>
+        </table>
+
+        <h4>4. with : gestion automatique</h4>
+        <pre><code>with open("donnees.txt", "r", encoding="utf-8") as fichier:
+    contenu = fichier.read()
+
+print(contenu)</code></pre>
+        <p>
+            Le fichier est fermé automatiquement à la fin du bloc,
+            même si une exception survient.
+        </p>
+
+        <h4>5. Lire un fichier</h4>
+        <pre><code>with open("donnees.txt", "r", encoding="utf-8") as f:
+    print(f.read())</code></pre>
+        <pre><code>with open("donnees.txt", "r", encoding="utf-8") as f:
+    print(f.readline())</code></pre>
+        <pre><code>with open("donnees.txt", "r", encoding="utf-8") as f:
+    lignes = f.readlines()
+
+print(lignes)</code></pre>
+
+        <h4>6. Parcourir ligne par ligne</h4>
+        <pre><code>with open("donnees.txt", encoding="utf-8") as f:
+    for ligne in f:
+        print(ligne.rstrip())</code></pre>
+
+        <h4>7. Écrire dans un fichier</h4>
+        <pre><code>with open("resultat.txt", "w", encoding="utf-8") as f:
+    f.write("Bonjour Python\n")
+    f.write("Deuxième ligne\n")</code></pre>
+
+        <h4>8. Ajouter du contenu</h4>
+        <pre><code>with open("resultat.txt", "a", encoding="utf-8") as f:
+    f.write("Nouvelle information\n")</code></pre>
+
+        <h4>9. Fichiers binaires</h4>
+        <pre><code>with open("image.png", "rb") as f:
+    contenu = f.read()
+
+print(len(contenu))</code></pre>
+
+        <h4>10. Chemins avec pathlib</h4>
+        <pre><code>from pathlib import Path
+
+chemin = Path("documents") / "notes.txt"
+
+print(chemin.exists())
+print(chemin.name)
+print(chemin.suffix)
+print(chemin.parent)
+
+chemin.parent.mkdir(parents=True, exist_ok=True)
+
+chemin.write_text("Bonjour", encoding="utf-8")
+print(chemin.read_text(encoding="utf-8"))</code></pre>
+    </article>
+
+    <!-- MODULE 17 -->
+    <article class="module" id="m17">
+        <div class="module-number">MODULE 17</div>
+        <h3>Exceptions et gestion des erreurs</h3>
+
+        <h4>1. Différence entre erreur de syntaxe et exception</h4>
+        <ul>
+            <li>SyntaxError : code qui ne respecte pas la syntaxe.</li>
+            <li>NameError : nom non défini.</li>
+            <li>TypeError : opération incompatible entre types.</li>
+            <li>ValueError : valeur incorrecte pour une opération.</li>
+            <li>IndexError : indice inexistant.</li>
+            <li>KeyError : clé absente.</li>
+            <li>ZeroDivisionError : division par zéro.</li>
+            <li>FileNotFoundError : fichier introuvable.</li>
+            <li>ImportError : problème d'importation.</li>
+            <li>AttributeError : attribut inexistant.</li>
+        </ul>
+
+        <h4>2. try et except</h4>
+        <pre><code>try:
+    a = int(input("a : "))
+    b = int(input("b : "))
+
+    resultat = a / b
+
+    print(resultat)
+
+except ValueError:
+    print("Saisir des nombres entiers.")
+
+except ZeroDivisionError:
+    print("Division par zéro impossible.")</code></pre>
+
+        <h4>3. else</h4>
+        <p>Le bloc else s'exécute lorsqu'aucune exception n'a été levée.</p>
+        <pre><code>try:
+    n = int(input("Nombre : "))
+except ValueError:
+    print("Entrée invalide")
+else:
+    print("Nombre valide :", n)</code></pre>
+
+        <h4>4. finally</h4>
+        <p>Le bloc finally est exécuté à la fin, qu'il y ait une exception ou non.</p>
+        <pre><code>try:
+    f = open("data.txt", encoding="utf-8")
+    print(f.read())
+except FileNotFoundError:
+    print("Fichier introuvable")
+finally:
+    print("Fin de l'opération")</code></pre>
+
+        <h4>5. Lever une exception avec raise</h4>
+        <pre><code>def verifier_age(age):
+    if age < 0:
+        raise ValueError("L'âge ne peut pas être négatif")
+
+    return True</code></pre>
+
+        <h4>6. Exceptions personnalisées</h4>
+        <pre><code>class SoldeInsuffisantError(Exception):
+    pass
+
+def retirer(solde, montant):
+    if montant > solde:
+        raise SoldeInsuffisantError("Solde insuffisant")
+
+    return solde - montant</code></pre>
+
+        <h4>7. Bonnes pratiques</h4>
+        <ul>
+            <li>Intercepter les exceptions les plus précises possible.</li>
+            <li>Ne pas utiliser un except vide sans raison.</li>
+            <li>Afficher des messages compréhensibles.</li>
+            <li>Ne pas masquer silencieusement les erreurs.</li>
+            <li>Utiliser with pour les fichiers.</li>
+        </ul>
+    </article>
+
+    <!-- MODULE 18 -->
+    <article class="module" id="m18">
+        <div class="module-number">MODULE 18</div>
+        <h3>Modules, packages et bibliothèques</h3>
+
+        <h4>1. Qu'est-ce qu'un module ?</h4>
+        <p>
+            Un module est un fichier Python contenant des fonctions,
+            variables et classes pouvant être importées dans un autre fichier.
+        </p>
+
+        <h4>2. Importer un module</h4>
+        <pre><code>import math
+
+print(math.sqrt(25))
+print(math.pi)</code></pre>
+
+        <h4>3. Importation ciblée</h4>
+        <pre><code>from math import sqrt, pi
+
+print(sqrt(36))
+print(pi)</code></pre>
+
+        <h4>4. Alias</h4>
+        <pre><code>import math as m
+
+print(m.sqrt(49))</code></pre>
+
+        <h4>5. Bibliothèque math</h4>
+        <table>
+            <tr><th>Fonction</th><th>Utilité</th></tr>
+            <tr><td>sqrt(x)</td><td>Racine carrée</td></tr>
+            <tr><td>pow(x,y)</td><td>Puissance</td></tr>
+            <tr><td>factorial(n)</td><td>Factorielle</td></tr>
+            <tr><td>ceil(x)</td><td>Arrondi supérieur</td></tr>
+            <tr><td>floor(x)</td><td>Partie entière inférieure</td></tr>
+            <tr><td>trunc(x)</td><td>Troncature</td></tr>
+            <tr><td>fabs(x)</td><td>Valeur absolue réelle</td></tr>
+            <tr><td>gcd(a,b)</td><td>PGCD</td></tr>
+            <tr><td>lcm(a,b)</td><td>PPCM</td></tr>
+            <tr><td>sin(x)</td><td>Sinus en radians</td></tr>
+            <tr><td>cos(x)</td><td>Cosinus en radians</td></tr>
+            <tr><td>tan(x)</td><td>Tangente en radians</td></tr>
+            <tr><td>log(x)</td><td>Logarithme népérien</td></tr>
+            <tr><td>log10(x)</td><td>Logarithme décimal</td></tr>
+        </table>
+        <pre><code>import math
+
+print(math.sqrt(81))
+print(math.factorial(5))
+print(math.gcd(24, 36))
+print(math.degrees(math.pi))
+print(math.radians(180))</code></pre>
+
+        <h4>6. Module random</h4>
+        <pre><code>import random
+
+print(random.random())
+print(random.randint(1, 10))
+print(random.choice(["A", "B", "C"]))
+
+nombres = [1, 2, 3, 4, 5]
+random.shuffle(nombres)
+
+print(nombres)</code></pre>
+
+        <h4>7. Module statistics</h4>
+        <pre><code>import statistics
+
+notes = [12, 14, 15, 18, 18]
+
+print(statistics.mean(notes))
+print(statistics.median(notes))
+print(statistics.mode(notes))
+print(statistics.stdev(notes))</code></pre>
+
+        <h4>8. Module collections</h4>
+        <pre><code>from collections import Counter, defaultdict, deque
+
+notes = [12, 15, 12, 18, 15, 12]
+
+print(Counter(notes))
+
+file = defaultdict(list)
+file["math"].append("Exercice 1")
+
+file_attente = deque([1, 2, 3])
+file_attente.append(4)
+file_attente.popleft()</code></pre>
+
+        <h4>9. Créer son propre module</h4>
+        <p>Fichier <code>calculs.py</code> :</p>
+        <pre><code>def addition(a, b):
+    return a + b
+
+def multiplication(a, b):
+    return a * b</code></pre>
+
+        <p>Fichier <code>main.py</code> :</p>
+        <pre><code>import calculs
+
+print(calculs.addition(5, 3))</code></pre>
+
+        <h4>10. Point d'entrée principal</h4>
+        <pre><code>def main():
+    print("Application démarrée")
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+        <h4>11. Packages</h4>
+        <p>
+            Un package permet d'organiser plusieurs modules
+            dans une structure de dossiers.
+        </p>
+        <pre><code>mon_projet/
+    main.py
+    outils/
+        __init__.py
+        calculs.py
+        affichage.py</code></pre>
+
+        <h4>12. pip et environnement virtuel</h4>
+        <pre><code>python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+
+# Linux / macOS
+source .venv/bin/activate
+
+python -m pip install requests
+python -m pip list
+python -m pip freeze
+
+python -m pip uninstall requests</code></pre>
+        <p>
+            Un environnement virtuel isole les dépendances d'un projet
+            de celles des autres projets.
+        </p>
+    </article>
+
+    <!-- MODULE 19 -->
+    <article class="module" id="m19">
+        <div class="module-number">MODULE 19</div>
+        <h3>Programmation orientée objet (POO)</h3>
+
+        <h4>1. Principes</h4>
+        <p>
+            La programmation orientée objet organise le code autour
+            d'objets qui regroupent des données et des comportements.
+        </p>
+        <ul>
+            <li>Classe : modèle de création des objets.</li>
+            <li>Objet : instance d'une classe.</li>
+            <li>Attribut : donnée associée à un objet ou à une classe.</li>
+            <li>Méthode : fonction définie dans une classe.</li>
+            <li>Constructeur : initialisation d'un objet avec __init__.</li>
+        </ul>
+
+        <h4>2. Première classe</h4>
+        <pre><code>class Etudiant:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def afficher(self):
+        print(self.nom, self.age)
+
+e1 = Etudiant("Ali", 20)
+e1.afficher()</code></pre>
+
+        <h4>3. self</h4>
+        <p>
+            self désigne l'instance actuelle dans les méthodes d'instance.
+            Il permet d'accéder aux attributs et méthodes de cet objet.
+        </p>
+
+        <h4>4. Attributs de classe et d'instance</h4>
+        <pre><code>class Etudiant:
+    universite = "ISET"
+
+    def __init__(self, nom):
+        self.nom = nom
+
+a = Etudiant("Ali")
+b = Etudiant("Sara")
+
+print(a.universite)
+print(b.nom)</code></pre>
+
+        <h4>5. Méthodes d'instance</h4>
+        <pre><code>class Rectangle:
+    def __init__(self, longueur, largeur):
+        self.longueur = longueur
+        self.largeur = largeur
+
+    def aire(self):
+        return self.longueur * self.largeur
+
+r = Rectangle(5, 3)
+print(r.aire())</code></pre>
+
+        <h4>6. Méthodes de classe</h4>
+        <pre><code>class Etudiant:
+    nombre = 0
+
+    def __init__(self, nom):
+        self.nom = nom
+        Etudiant.nombre += 1
+
+    @classmethod
+    def compter(cls):
+        return cls.nombre
+
+a = Etudiant("Ali")
+b = Etudiant("Sara")
+
+print(Etudiant.compter())</code></pre>
+
+        <h4>7. Méthodes statiques</h4>
+        <pre><code>class Calcul:
+    @staticmethod
+    def addition(a, b):
+        return a + b
+
+print(Calcul.addition(2, 3))</code></pre>
+
+        <h4>8. Encapsulation et propriétés</h4>
+        <pre><code>class Compte:
+    def __init__(self, solde):
+        self._solde = solde
+
+    @property
+    def solde(self):
+        return self._solde
+
+    @solde.setter
+    def solde(self, valeur):
+        if valeur < 0:
+            raise ValueError("Solde négatif interdit")
+        self._solde = valeur
+
+c = Compte(100)
+c.solde = 200</code></pre>
+
+        <h4>9. Héritage</h4>
+        <pre><code>class Personne:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def afficher(self):
+        print(self.nom)
+
+class Etudiant(Personne):
+    def __init__(self, nom, niveau):
+        super().__init__(nom)
+        self.niveau = niveau
+
+e = Etudiant("Ali", "L1")
+e.afficher()</code></pre>
+
+        <h4>10. Polymorphisme</h4>
+        <pre><code>class Chien:
+    def parler(self):
+        return "Wouf"
+
+class Chat:
+    def parler(self):
+        return "Miaou"
+
+animaux = [Chien(), Chat()]
+
+for animal in animaux:
+    print(animal.parler())</code></pre>
+
+        <h4>11. Composition</h4>
+        <pre><code>class Moteur:
+    def demarrer(self):
+        print("Moteur démarré")
+
+class Voiture:
+    def __init__(self):
+        self.moteur = Moteur()
+
+    def demarrer(self):
+        self.moteur.demarrer()
+
+v = Voiture()
+v.demarrer()</code></pre>
+
+        <h4>12. Méthodes spéciales</h4>
+        <pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
+
+    def __eq__(self, autre):
+        return self.x == autre.x and self.y == autre.y
+
+p = Point(2, 3)
+print(p)</code></pre>
+
+        <h4>13. Classes abstraites</h4>
+        <pre><code>from abc import ABC, abstractmethod
+
+class Forme(ABC):
+    @abstractmethod
+    def aire(self):
+        pass
+
+class Carre(Forme):
+    def __init__(self, cote):
+        self.cote = cote
+
+    def aire(self):
+        return self.cote ** 2</code></pre>
+
+        <h4>14. Dataclasses</h4>
+        <pre><code>from dataclasses import dataclass
+
+@dataclass
+class Produit:
+    nom: str
+    prix: float
+    quantite: int
+
+p = Produit("Clavier", 80.0, 3)
+print(p)</code></pre>
+    </article>
+
+    <!-- MODULE 20 -->
+    <article class="module" id="m20">
+        <div class="module-number">MODULE 20</div>
+        <h3>Compréhensions de listes, ensembles et dictionnaires</h3>
+
+        <h4>1. List comprehension</h4>
+        <pre><code>carres = [x**2 for x in range(1, 6)]
+print(carres)</code></pre>
+
+        <h4>2. Avec condition</h4>
+        <pre><code>pairs = [x for x in range(20) if x % 2 == 0]
+print(pairs)</code></pre>
+
+        <h4>3. Avec if / else</h4>
+        <pre><code>resultats = [
+    "Pair" if x % 2 == 0 else "Impair"
+    for x in range(10)
+]</code></pre>
+
+        <h4>4. Compréhension imbriquée</h4>
+        <pre><code>matrice = [[i*j for j in range(1, 4)]
+           for i in range(1, 4)]</code></pre>
+
+        <h4>5. Set comprehension</h4>
+        <pre><code>carres = {x*x for x in range(10)}</code></pre>
+
+        <h4>6. Dictionary comprehension</h4>
+        <pre><code>carres = {x: x*x for x in range(1, 6)}</code></pre>
+
+        <h4>7. Generator expression</h4>
+        <pre><code>carres = (x*x for x in range(1000000))
+
+print(next(carres))</code></pre>
+        <p>
+            Les compréhensions rendent souvent le code plus concis.
+            Il faut cependant éviter les expressions trop complexes
+            qui nuisent à la lisibilité.
+        </p>
+    </article>
+
+    <!-- MODULE 21 -->
+    <article class="module" id="m21">
+        <div class="module-number">MODULE 21</div>
+        <h3>Itérables, itérateurs et générateurs</h3>
+
+        <h4>1. Itérable</h4>
+        <p>
+            Un objet itérable peut fournir un itérateur.
+            Les listes, tuples, chaînes, dictionnaires et ensembles
+            sont des exemples d'objets itérables.
+        </p>
+
+        <h4>2. Fonction iter()</h4>
+        <pre><code>nombres = [10, 20, 30]
+
+it = iter(nombres)
+
+print(next(it))
+print(next(it))
+print(next(it))</code></pre>
+
+        <h4>3. StopIteration</h4>
+        <p>
+            Lorsqu'un itérateur n'a plus d'éléments,
+            <code>next()</code> déclenche StopIteration.
+        </p>
+
+        <h4>4. Créer un itérateur personnalisé</h4>
+        <pre><code>class Compteur:
+    def __init__(self, limite):
+        self.limite = limite
+        self.valeur = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.valeur >= self.limite:
+            raise StopIteration
+
+        self.valeur += 1
+        return self.valeur
+
+for n in Compteur(5):
+    print(n)</code></pre>
+
+        <h4>5. Générateurs avec yield</h4>
+        <pre><code>def compter(n):
+    for i in range(1, n+1):
+        yield i
+
+for x in compter(5):
+    print(x)</code></pre>
+
+        <h4>6. Avantages des générateurs</h4>
+        <ul>
+            <li>Production des valeurs à la demande.</li>
+            <li>Économie de mémoire pour de grandes séquences.</li>
+            <li>Possibilité de traiter des flux de données.</li>
+        </ul>
+
+        <h4>7. yield from</h4>
+        <pre><code>def nombres():
+    yield from [1, 2, 3]
+    yield from [4, 5, 6]
+
+print(list(nombres()))</code></pre>
+    </article>
+
+    <!-- MODULE 22 -->
+    <article class="module" id="m22">
+        <div class="module-number">MODULE 22</div>
+        <h3>Expressions régulières (Regular Expressions)</h3>
+
+        <h4>1. Introduction</h4>
+        <p>
+            Les expressions régulières permettent de rechercher,
+            reconnaître, extraire et remplacer des motifs dans un texte.
+        </p>
+
+        <h4>2. Le module re</h4>
+        <pre><code>import re
+
+texte = "Mon numéro est 12345678"
+
+resultat = re.search(r"\d+", texte)
+
+if resultat:
+    print(resultat.group())</code></pre>
+
+        <h4>3. Symboles importants</h4>
+        <table>
+            <tr><th>Motif</th><th>Signification</th></tr>
+            <tr><td>.</td><td>Un caractère quelconque sauf saut de ligne par défaut</td></tr>
+            <tr><td>\d</td><td>Chiffre décimal</td></tr>
+            <tr><td>\D</td><td>Caractère non décimal</td></tr>
+            <tr><td>\w</td><td>Caractère de mot Unicode</td></tr>
+            <tr><td>\s</td><td>Espace blanc</td></tr>
+            <tr><td>^</td><td>Début de chaîne ou de ligne selon le mode</td></tr>
+            <tr><td>$</td><td>Fin de chaîne ou de ligne selon le mode</td></tr>
+            <tr><td>*</td><td>0 ou plusieurs répétitions</td></tr>
+            <tr><td>+</td><td>1 ou plusieurs répétitions</td></tr>
+            <tr><td>?</td><td>0 ou 1 répétition</td></tr>
+            <tr><td>{n}</td><td>Exactement n répétitions</td></tr>
+            <tr><td>[abc]</td><td>Un caractère parmi a, b ou c</td></tr>
+            <tr><td>(...)</td><td>Groupe de capture</td></tr>
+        </table>
+
+        <h4>4. Fonctions principales</h4>
+        <pre><code>import re
+
+texte = "Ali 20 Sara 21 Amine 19"
+
+print(re.findall(r"\d+", texte))
+print(re.search(r"Sara", texte))
+print(re.sub(r"\d+", "XX", texte))
+print(re.split(r"\s+", texte))</code></pre>
+
+        <h4>5. Vérification d'une chaîne entière</h4>
+        <pre><code>import re
+
+code = "ABC123"
+
+if re.fullmatch(r"[A-Z]{3}\d{3}", code):
+    print("Format valide")</code></pre>
+
+        <div class="warning">
+            Une expression régulière ne remplace pas toutes les validations.
+            Pour les adresses e-mail, les numéros de téléphone et les données
+            métier, il faut aussi tenir compte des règles réelles du domaine.
+        </div>
+    </article>
+
+    <!-- MODULE 23 -->
+    <article class="module" id="m23">
+        <div class="module-number">MODULE 23</div>
+        <h3>Dates, heures et chronométrage</h3>
+
+        <h4>1. Module datetime</h4>
+        <pre><code>from datetime import date, datetime, time, timedelta
+
+aujourdhui = date.today()
+maintenant = datetime.now()
+
+print(aujourdhui)
+print(maintenant)</code></pre>
+
+        <h4>2. Créer une date</h4>
+        <pre><code>d = date(2026, 11, 8)
+print(d.day)
+print(d.month)
+print(d.year)</code></pre>
+
+        <h4>3. Formater les dates</h4>
+        <pre><code>from datetime import datetime
+
+maintenant = datetime.now()
+
+print(maintenant.strftime("%d/%m/%Y"))
+print(maintenant.strftime("%H:%M:%S"))</code></pre>
+
+        <h4>4. Convertir une chaîne en date</h4>
+        <pre><code>from datetime import datetime
+
+date_texte = "08/11/2026"
+
+d = datetime.strptime(date_texte, "%d/%m/%Y")
+
+print(d)</code></pre>
+
+        <h4>5. Calculer une différence</h4>
+        <pre><code>from datetime import date
+
+debut = date(2026, 1, 1)
+fin = date(2026, 12, 31)
+
+difference = fin - debut
+
+print(difference.days)</code></pre>
+
+        <h4>6. Ajouter une durée</h4>
+        <pre><code>from datetime import datetime, timedelta
+
+maintenant = datetime.now()
+demain = maintenant + timedelta(days=1)
+
+print(demain)</code></pre>
+
+        <h4>7. Mesurer la durée d'exécution</h4>
+        <pre><code>from time import perf_counter
+
+debut = perf_counter()
+
+somme = sum(range(1000000))
+
+fin = perf_counter()
+
+print("Durée :", fin - debut)</code></pre>
+    </article>
+
+    <!-- MODULE 24 -->
+    <article class="module" id="m24">
+        <div class="module-number">MODULE 24</div>
+        <h3>Formats JSON et CSV</h3>
+
+        <h4>1. JSON</h4>
+        <p>
+            JSON est un format textuel couramment utilisé pour échanger
+            des données entre applications.
+        </p>
+
+        <h4>2. Sérialisation avec json.dump()</h4>
+        <pre><code>import json
+
+etudiant = {
+    "nom": "Ali",
+    "age": 20,
+    "notes": [14, 16, 18]
+}
+
+with open("etudiant.json", "w", encoding="utf-8") as f:
+    json.dump(etudiant, f, ensure_ascii=False, indent=4)</code></pre>
+
+        <h4>3. Lire avec json.load()</h4>
+        <pre><code>import json
+
+with open("etudiant.json", encoding="utf-8") as f:
+    donnees = json.load(f)
+
+print(donnees["nom"])</code></pre>
+
+        <h4>4. Transformer en chaîne</h4>
+        <pre><code>texte = json.dumps({"nom": "Ali"}, ensure_ascii=False)
+objet = json.loads(texte)</code></pre>
+
+        <h4>5. CSV</h4>
+        <p>
+            CSV est un format tabulaire permettant de stocker
+            des données organisées en lignes et colonnes.
+        </p>
+        <pre><code>import csv
+
+with open("etudiants.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f, delimiter=";")
+
+    writer.writerow(["Nom", "Note"])
+    writer.writerow(["Ali", 15])
+    writer.writerow(["Sara", 18])</code></pre>
+
+        <h4>6. Lire un CSV</h4>
+        <pre><code>import csv
+
+with open("etudiants.csv", encoding="utf-8") as f:
+    reader = csv.reader(f, delimiter=";")
+
+    for ligne in reader:
+        print(ligne)</code></pre>
+
+        <h4>7. DictReader et DictWriter</h4>
+        <pre><code>import csv
+
+with open("etudiants.csv", encoding="utf-8") as f:
+    reader = csv.DictReader(f, delimiter=";")
+
+    for etudiant in reader:
+        print(etudiant["Nom"], etudiant["Note"])</code></pre>
+    </article>
+
+    <!-- MODULE 25 -->
+    <article class="module" id="m25">
+        <div class="module-number">MODULE 25</div>
+        <h3>Introduction aux bases de données SQLite</h3>
+
+        <h4>1. Qu'est-ce qu'une base de données ?</h4>
+        <p>
+            Une base de données permet de stocker, organiser,
+            rechercher et modifier des informations de manière structurée.
+            SQLite est un système relationnel léger intégré à la bibliothèque
+            standard Python.
+        </p>
+
+        <h4>2. Connexion</h4>
+        <pre><code>import sqlite3
+
+connexion = sqlite3.connect("ecole.db")
+curseur = connexion.cursor()</code></pre>
+
+        <h4>3. Créer une table</h4>
+        <pre><code>curseur.execute("""
+CREATE TABLE IF NOT EXISTS etudiants (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom TEXT NOT NULL,
+    age INTEGER,
+    moyenne REAL
+)
+""")
+
+connexion.commit()</code></pre>
+
+        <h4>4. Insérer des données</h4>
+        <pre><code>curseur.execute(
+    "INSERT INTO etudiants (nom, age, moyenne) VALUES (?, ?, ?)",
+    ("Ali", 20, 15.5)
+)
+
+connexion.commit()</code></pre>
+
+        <h4>5. Lire les données</h4>
+        <pre><code>curseur.execute("SELECT * FROM etudiants")
+
+etudiants = curseur.fetchall()
+
+for e in etudiants:
+    print(e)</code></pre>
+
+        <h4>6. Modifier</h4>
+        <pre><code>curseur.execute(
+    "UPDATE etudiants SET moyenne = ? WHERE nom = ?",
+    (17, "Ali")
+)
+
+connexion.commit()</code></pre>
+
+        <h4>7. Supprimer</h4>
+        <pre><code>curseur.execute(
+    "DELETE FROM etudiants WHERE nom = ?",
+    ("Ali",)
+)
+
+connexion.commit()</code></pre>
+
+        <h4>8. Fermer la connexion</h4>
+        <pre><code>connexion.close()</code></pre>
+
+        <div class="warning">
+            Utilise toujours les paramètres SQL avec ? au lieu de construire
+            les requêtes par concaténation de chaînes.
+            Cela évite notamment les injections SQL.
+        </div>
+    </article>
+
+    <!-- MODULE 26 -->
+    <article class="module" id="m26">
+        <div class="module-number">MODULE 26</div>
+        <h3>Tests, débogage et qualité du code</h3>
+
+        <h4>1. Débogage</h4>
+        <p>
+            Déboguer consiste à identifier la cause d'un comportement incorrect
+            et à corriger le problème.
+        </p>
+
+        <h4>2. print pour inspecter</h4>
+        <pre><code>def moyenne(notes):
+    print("Notes reçues :", notes)
+
+    resultat = sum(notes) / len(notes)
+
+    print("Résultat :", resultat)
+    return resultat</code></pre>
+
+        <h4>3. Le débogueur pdb</h4>
+        <pre><code>import pdb
+
+x = 10
+y = 20
+
+pdb.set_trace()
+
+resultat = x + y
+print(resultat)</code></pre>
+        <p>
+            Le débogueur permet d'examiner les variables,
+            avancer dans le programme et observer les appels de fonctions.
+        </p>
+
+        <h4>4. Assertions</h4>
+        <pre><code>def carre(n):
+    return n * n
+
+assert carre(3) == 9
+assert carre(0) == 0</code></pre>
+        <p>
+            Une assertion sert à vérifier une hypothèse pendant le développement.
+            Elle ne doit pas remplacer la validation des entrées utilisateur.
+        </p>
+
+        <h4>5. Tests unitaires avec unittest</h4>
+        <pre><code>import unittest
+
+def addition(a, b):
+    return a + b
+
+class TestAddition(unittest.TestCase):
+
+    def test_positifs(self):
+        self.assertEqual(addition(2, 3), 5)
+
+    def test_negatifs(self):
+        self.assertEqual(addition(-2, -3), -5)
+
+    def test_zero(self):
+        self.assertEqual(addition(0, 5), 5)
+
+if __name__ == "__main__":
+    unittest.main()</code></pre>
+
+        <h4>6. Tester les exceptions</h4>
+        <pre><code>import unittest
+
+def diviser(a, b):
+    if b == 0:
+        raise ValueError("Diviseur nul")
+    return a / b
+
+class TestDivision(unittest.TestCase):
+
+    def test_division(self):
+        self.assertEqual(diviser(10, 2), 5)
+
+    def test_zero(self):
+        with self.assertRaises(ValueError):
+            diviser(10, 0)</code></pre>
+
+        <h4>7. Couvrir les cas importants</h4>
+        <ul>
+            <li>Valeurs normales.</li>
+            <li>Valeurs nulles.</li>
+            <li>Valeurs négatives si elles sont autorisées.</li>
+            <li>Valeurs maximales et minimales.</li>
+            <li>Listes vides.</li>
+            <li>Entrées incorrectes.</li>
+            <li>Doublons et données répétées.</li>
+        </ul>
+
+        <h4>8. Logging</h4>
+        <pre><code>import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s : %(message)s"
+)
+
+logging.debug("Détail technique")
+logging.info("Application démarrée")
+logging.warning("Attention")
+logging.error("Une erreur est survenue")</code></pre>
+    </article>
+
+    <!-- MODULE 27 -->
+    <article class="module" id="m27">
+        <div class="module-number">MODULE 27</div>
+        <h3>Complexité algorithmique et efficacité</h3>
+
+        <h4>1. Pourquoi mesurer la complexité ?</h4>
+        <p>
+            Deux programmes peuvent produire le même résultat,
+            mais nécessiter des quantités de temps et de mémoire très différentes.
+            La complexité permet d'étudier leur comportement lorsque
+            la taille des données augmente.
+        </p>
+
+        <h4>2. Complexité temporelle</h4>
+        <table>
+            <tr><th>Notation</th><th>Signification</th><th>Exemple</th></tr>
+            <tr><td>O(1)</td><td>Constante</td><td>Accès à un indice</td></tr>
+            <tr><td>O(log n)</td><td>Logarithmique</td><td>Recherche binaire</td></tr>
+            <tr><td>O(n)</td><td>Linéaire</td><td>Parcours d'une liste</td></tr>
+            <tr><td>O(n log n)</td><td>Quasi linéaire</td><td>Tri fusion</td></tr>
+            <tr><td>O(n²)</td><td>Quadratique</td><td>Deux boucles imbriquées</td></tr>
+            <tr><td>O(2ⁿ)</td><td>Exponentielle</td><td>Certains algorithmes récursifs</td></tr>
+            <tr><td>O(n!)</td><td>Factorielle</td><td>Énumération de permutations</td></tr>
+        </table>
+
+        <h4>3. O(1)</h4>
+        <pre><code>def premier_element(L):
+    return L[0]</code></pre>
+
+        <h4>4. O(n)</h4>
+        <pre><code>def afficher(L):
+    for x in L:
+        print(x)</code></pre>
+
+        <h4>5. O(n²)</h4>
+        <pre><code>def afficher_paires(L):
+    for x in L:
+        for y in L:
+            print(x, y)</code></pre>
+
+        <h4>6. Complexité spatiale</h4>
+        <p>
+            Elle mesure la mémoire supplémentaire utilisée par un algorithme.
+            Une solution qui crée une nouvelle liste de taille n utilise
+            généralement un espace supplémentaire O(n).
+        </p>
+
+        <h4>7. Bonnes habitudes d'optimisation</h4>
+        <ul>
+            <li>Choisir une structure de données adaptée.</li>
+            <li>Éviter les calculs répétitifs inutiles.</li>
+            <li>Utiliser les fonctions intégrées efficaces.</li>
+            <li>Mesurer avant d'optimiser.</li>
+            <li>Préserver la lisibilité du code.</li>
+        </ul>
+    </article>
+
+    <!-- MODULE 28 -->
+    <article class="module" id="m28">
+        <div class="module-number">MODULE 28</div>
+        <h3>Bonnes pratiques et programmation professionnelle</h3>
+
+        <h4>1. Convention PEP 8</h4>
+        <p>
+            PEP 8 décrit des conventions de style pour rendre
+            les programmes Python plus homogènes et lisibles.
+        </p>
+        <pre><code># Bon
+def calculer_moyenne(notes):
+    return sum(notes) / len(notes)
+
+# Moins lisible
+def cm(n): return sum(n)/len(n)</code></pre>
+
+        <h4>2. Nommage</h4>
+        <table>
+            <tr><th>Élément</th><th>Convention courante</th></tr>
+            <tr><td>Variable</td><td>nom_etudiant</td></tr>
+            <tr><td>Fonction</td><td>calculer_moyenne()</td></tr>
+            <tr><td>Classe</td><td>Etudiant</td></tr>
+            <tr><td>Constante</td><td>TAUX_TVA</td></tr>
+            <tr><td>Module</td><td>calculs.py</td></tr>
+        </table>
+
+        <h4>3. Principe DRY</h4>
+        <p>
+            Don't Repeat Yourself : éviter de reproduire inutilement
+            le même code. Transformer les opérations répétées en fonctions
+            réutilisables.
+        </p>
+
+        <h4>4. Séparation des responsabilités</h4>
+        <pre><code>def lire_notes():
+    texte = input("Notes séparées par des espaces : ")
+    return [float(x) for x in texte.split()]
+
+def calculer_moyenne(notes):
+    if not notes:
+        raise ValueError("Liste vide")
+    return sum(notes) / len(notes)
+
+def afficher(moyenne):
+    print(f"Moyenne : {moyenne:.2f}")
+
+def main():
+    notes = lire_notes()
+    resultat = calculer_moyenne(notes)
+    afficher(resultat)
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+        <h4>5. Sécurité</h4>
+        <ul>
+            <li>Ne jamais stocker des mots de passe en clair.</li>
+            <li>Ne jamais publier une clé API ou un secret dans GitHub.</li>
+            <li>Valider les entrées provenant des utilisateurs.</li>
+            <li>Éviter eval() sur des données non fiables.</li>
+            <li>Utiliser des requêtes SQL paramétrées.</li>
+            <li>Contrôler les chemins des fichiers.</li>
+            <li>Mettre à jour les dépendances et limiter celles qui sont inutiles.</li>
+        </ul>
+
+        <h4>6. Gestion des dépendances</h4>
+        <pre><code>python -m venv .venv
+python -m pip install requests
+python -m pip freeze > requirements.txt
+python -m pip install -r requirements.txt</code></pre>
+
+        <h4>7. Organisation d'un projet</h4>
+        <pre><code>mon_application/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── src/
+│   ├── __init__.py
+│   ├── models.py
+│   └── services.py
+│
+├── tests/
+│   └── test_services.py
+│
+└── data/</code></pre>
+    </article>
+
+    <!-- MODULE 29 -->
+    <article class="module" id="m29">
+        <div class="module-number">MODULE 29</div>
+        <h3>Applications et domaines d'utilisation de Python</h3>
+
+        <h4>1. Développement web</h4>
+        <p>Frameworks et outils :</p>
+        <ul>
+            <li>Django : framework web complet.</li>
+            <li>Flask : framework léger.</li>
+            <li>FastAPI : création d'API modernes.</li>
+        </ul>
+        <pre><code># Exemple avec FastAPI
+# Installation : python -m pip install fastapi uvicorn
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def accueil():
+    return {"message": "Bienvenue"}</code></pre>
+
+        <h4>2. Analyse de données</h4>
+        <ul>
+            <li>NumPy : calcul numérique et tableaux multidimensionnels.</li>
+            <li>Pandas : manipulation de données tabulaires.</li>
+            <li>Matplotlib : visualisation graphique.</li>
+        </ul>
+        <pre><code># Installation : python -m pip install numpy
+
+import numpy as np
+
+notes = np.array([12, 14, 16, 18])
+
+print(np.mean(notes))
+print(np.max(notes))
+print(np.min(notes))</code></pre>
+
+        <h4>3. Intelligence artificielle</h4>
+        <ul>
+            <li>Scikit-learn : apprentissage automatique classique.</li>
+            <li>PyTorch : apprentissage profond.</li>
+            <li>TensorFlow : apprentissage automatique et profond.</li>
+        </ul>
+
+        <h4>4. Automatisation</h4>
+        <pre><code>from pathlib import Path
+
+dossier = Path("documents")
+
+for fichier in dossier.glob("*.txt"):
+    print(fichier.name)</code></pre>
+
+        <h4>5. Cybersécurité</h4>
+        <p>
+            Python peut être utilisé pour analyser des journaux,
+            automatiser des vérifications, traiter des fichiers
+            et développer des outils de sécurité dans un cadre autorisé.
+        </p>
+
+        <h4>6. Applications graphiques</h4>
+        <ul>
+            <li>Tkinter : interface graphique intégrée à Python.</li>
+            <li>PyQt : interfaces graphiques plus avancées.</li>
+            <li>Kivy : applications multiplateformes.</li>
+        </ul>
+
+        <h4>7. Développement de jeux</h4>
+        <p>
+            Pygame permet de créer des jeux 2D et d'apprendre
+            les événements, les animations, les collisions et les boucles de jeu.
+        </p>
+    </article>
+
+    <div class="module">
+        <div class="module-number">RÉFÉRENCE RAPIDE</div>
+        <h3>Les fonctions Python à connaître</h3>
+        <table>
+            <tr><th>Fonction</th><th>Utilité</th></tr>
+            <tr><td>print()</td><td>Afficher</td></tr>
+            <tr><td>input()</td><td>Saisir</td></tr>
+            <tr><td>type()</td><td>Type d'un objet</td></tr>
+            <tr><td>len()</td><td>Longueur</td></tr>
+            <tr><td>int()</td><td>Conversion en entier</td></tr>
+            <tr><td>float()</td><td>Conversion en décimal</td></tr>
+            <tr><td>str()</td><td>Conversion en chaîne</td></tr>
+            <tr><td>bool()</td><td>Conversion logique</td></tr>
+            <tr><td>abs()</td><td>Valeur absolue</td></tr>
+            <tr><td>round()</td><td>Arrondi</td></tr>
+            <tr><td>pow()</td><td>Puissance</td></tr>
+            <tr><td>min()</td><td>Minimum</td></tr>
+            <tr><td>max()</td><td>Maximum</td></tr>
+            <tr><td>sum()</td><td>Somme</td></tr>
+            <tr><td>sorted()</td><td>Tri</td></tr>
+            <tr><td>reversed()</td><td>Itération inversée</td></tr>
+            <tr><td>range()</td><td>Séquence d'entiers</td></tr>
+            <tr><td>enumerate()</td><td>Indice et élément</td></tr>
+            <tr><td>zip()</td><td>Parcours parallèle</td></tr>
+            <tr><td>all()</td><td>Vérifie si tous sont vrais</td></tr>
+            <tr><td>any()</td><td>Vérifie si au moins un est vrai</td></tr>
+            <tr><td>map()</td><td>Appliquer une fonction</td></tr>
+            <tr><td>filter()</td><td>Filtrer</td></tr>
+            <tr><td>iter()</td><td>Créer un itérateur</td></tr>
+            <tr><td>next()</td><td>Élément suivant</td></tr>
+            <tr><td>isinstance()</td><td>Tester le type</td></tr>
+            <tr><td>issubclass()</td><td>Tester l'héritage</td></tr>
+            <tr><td>id()</td><td>Identité d'un objet</td></tr>
+            <tr><td>dir()</td><td>Attributs disponibles</td></tr>
+            <tr><td>help()</td><td>Documentation</td></tr>
+            <tr><td>open()</td><td>Ouvrir un fichier</td></tr>
+            <tr><td>repr()</td><td>Représentation technique</td></tr>
+            <tr><td>format()</td><td>Formatage</td></tr>
+            <tr><td>callable()</td><td>Vérifier si appelable</td></tr>
+            <tr><td>getattr()</td><td>Lire un attribut</td></tr>
+            <tr><td>setattr()</td><td>Modifier un attribut</td></tr>
+            <tr><td>hasattr()</td><td>Vérifier un attribut</td></tr>
+            <tr><td>delattr()</td><td>Supprimer un attribut</td></tr>
+            <tr><td>vars()</td><td>Dictionnaire des attributs</td></tr>
+            <tr><td>globals()</td><td>Espace global</td></tr>
+            <tr><td>locals()</td><td>Espace local</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- PARTIE 2 -->
+<section id="exercices">
+    <div class="part-heading">
+        <div class="section-label">Partie 02 / Application</div>
+        <h2>Travaux pratiques et problèmes</h2>
+        <p>40 exercices progressifs de niveau universitaire.</p>
+    </div>
+
+    <p class="intro">
+        Chaque problème doit être résolu individuellement.
+        Il est recommandé de rédiger l'algorithme avant le programme Python,
+        puis de tester la solution sur plusieurs exemples.
+        Les solutions sont cachées jusqu'à ce que tu cliques sur le bouton.
+    </p>
+
+    <div class="note">
+        Pour les exercices de programmation, ne te contente pas de copier
+        la correction : essaie de comprendre la logique et de refaire
+        le problème sans aide.
+    </div>
+
+    <div id="exercise-list"></div>
+</section>
+
+</main>
+</div>
+
+<!-- PARTIE 3 -->
+<section class="quiz-section" id="quiz">
+    <div class="quiz-container">
+        <div class="section-label">Partie 03 / Évaluation</div>
+        <h2 class="section-title">Évaluation Python</h2>
+        <p style="color:#ccc">
+            Un examen interactif composé de questions aléatoires
+            sélectionnées dans une banque de 200 questions.
+        </p>
+
+        <div class="quiz-box" id="quiz-start">
+            <h3 style="font-size:23px;margin-bottom:12px">Préparer votre examen</h3>
+            <p style="color:#777;margin-bottom:25px">
+                Choisissez le nombre de questions. Chaque question possède
+                quatre propositions, une seule étant correcte.
+            </p>
+            <div class="quiz-config">
+                <div>
+                    <label for="question-count" style="display:block;font-weight:bold;font-size:13px;margin-bottom:7px">
+                        Nombre de questions
+                    </label>
+                    <select id="question-count">
+                        <option value="20">20 questions</option>
+                        <option value="25">25 questions</option>
+                        <option value="30" selected>30 questions</option>
+                        <option value="35">35 questions</option>
+                        <option value="40">40 questions</option>
+                    </select>
+                </div>
+                <button class="primary-btn" onclick="startQuiz()">Commencer l'examen</button>
+            </div>
+            <div class="progress-wrap"><div class="progress-bar" id="quiz-progress-preview"></div></div>
+        </div>
+
+        <div class="quiz-box" id="quiz-game" style="display:none">
+            <div class="quiz-top">
+                <strong id="question-number">Question 1 / 30</strong>
+                <span id="quiz-score-live">Score : 0</span>
+            </div>
+            <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
+
+            <div class="question" id="question-text"></div>
+            <div id="options-container"></div>
+            <div class="feedback" id="quiz-feedback"></div>
+
+            <div class="quiz-actions">
+                <span id="answer-status" style="font-size:12px;color:#777">Sélectionnez une réponse.</span>
+                <button class="primary-btn" id="verify-btn" onclick="verifyAnswer()">Vérifier</button>
+                <button class="primary-btn" id="next-btn" onclick="nextQuestion()" style="display:none">Next →</button>
+            </div>
+        </div>
+
+        <div class="quiz-box" id="quiz-result" style="display:none">
+            <div class="result-summary">
+                <div class="section-label">Résultat final</div>
+                <div class="result-score" id="final-score">0/30</div>
+                <h3 id="result-message">Résultat</h3>
+                <p id="result-description" style="color:#777"></p>
+            </div>
+            <div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin:25px 0">
+                <div><strong id="correct-count">0</strong><br><small>Réponses correctes</small></div>
+                <div><strong id="wrong-count">0</strong><br><small>Réponses incorrectes</small></div>
+                <div><strong id="success-rate">0%</strong><br><small>Réussite</small></div>
+            </div>
+
+            <h3 style="margin:25px 0 10px">Correction détaillée</h3>
+            <p style="color:#777;font-size:13px">
+                Voici les questions auxquelles tu as répondu incorrectement,
+                accompagnées de la bonne réponse et de son explication.
+            </p>
+            <div id="review-container"></div>
+
+            <div style="text-align:center;margin-top:25px">
+                <button class="primary-btn" onclick="restartQuiz()">Recommencer un examen</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

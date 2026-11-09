@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours complet sur les développements limités : formules, méthodes, démonstrations, exercices corrigés et quiz interactif.">
+<title>Développements limités | StudyNet</title>
+
+<script>
+MathJax = {
+  tex: {inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']]},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="../index.html" class="logo">Study<span>Net</span><small>LEARN · PRACTICE · SUCCEED</small></a>
+  <nav class="top-links" id="topLinks">
+    <a href="../index.html">Accueil</a>
+    <a href="index.html">Mathématiques</a>
+    <a href="#cours">Cours</a>
+    <a href="#exercices">Exercices</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+  <button class="menu-btn" onclick="document.getElementById('topLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">StudyNet · Mathématiques · Chapitre 04</div>
+    <h1>Développements<br><span>limités.</span></h1>
+    <p>
+      Comprendre le comportement d'une fonction au voisinage d'un point,
+      calculer ses développements limités et les utiliser pour résoudre
+      des limites, étudier les courbes et déterminer les asymptotes.
+    </p>
+    <div class="hero-meta">
+      <span>01 · Cours complet</span>
+      <span>02 · Exercices corrigés</span>
+      <span>03 · Quiz interactif</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+<div class="layout">
+
+<aside class="sidebar">
+  <h3>PROGRAMME DU CHAPITRE</h3>
+  <nav>
+    <a href="#cours"><span class="side-number">01</span> Le cours</a>
+    <a href="#definition">Définition</a>
+    <a href="#notations">Notation o(xⁿ)</a>
+    <a href="#taylor">Taylor-Young</a>
+    <a href="#usuels">DL usuels</a>
+    <a href="#operations">Opérations</a>
+    <a href="#methode">Méthodes de calcul</a>
+    <a href="#limites">Calcul des limites</a>
+    <a href="#equivalents">Équivalents</a>
+    <a href="#courbes">Étude des courbes</a>
+    <a href="#infini">DL en un point et à l'infini</a>
+    <a href="#erreurs">Erreurs à éviter</a>
+    <a href="#exercices">02 · Exercices</a>
+    <a href="#quiz">03 · Quiz interactif</a>
+  </nav>
+</aside>
+
+<main class="content">
+
+<section class="section" id="cours">
+  <div class="part-label">PARTIE 01 · APPRENDRE</div>
+  <h2 class="section-title">Cours complet : les développements limités</h2>
+  <p class="section-intro">
+    Des notions fondamentales jusqu'aux méthodes avancées, avec des exemples
+    détaillés, des tableaux et des représentations graphiques.
+  </p>
+
+  <div class="definition">
+    <strong>Objectif du chapitre</strong>
+    <p>
+      Savoir remplacer une fonction compliquée par un polynôme simple
+      au voisinage d'un point, afin de faciliter les calculs et de comprendre
+      précisément le comportement de cette fonction.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="definition">
+  <h2 class="section-title">1. Qu'est-ce qu'un développement limité ?</h2>
+
+  <p>
+    Un développement limité, souvent noté <strong>DL</strong>, consiste à
+    approcher une fonction par un polynôme lorsque la variable se rapproche
+    d'un point donné.
+  </p>
+
+  <p>
+    Par exemple, la fonction exponentielle est compliquée à manipuler dans
+    certains calculs. Mais près de zéro, elle ressemble beaucoup au polynôme
+    suivant :
+  </p>
+
+  <div class="math-box center">
+    \[
+      e^x \approx 1+x+\frac{x^2}{2}+\frac{x^3}{6}
+    \]
+  </div>
+
+  <p>
+    Plus \(x\) est proche de zéro, plus cette approximation est précise
+    lorsque l'on conserve suffisamment de termes.
+  </p>
+
+  <h3>Définition mathématique</h3>
+
+  <div class="definition">
+    Une fonction \(f\), définie au voisinage de zéro, admet un développement
+    limité à l'ordre \(n\) en zéro s'il existe des réels
+    \(a_0,a_1,\ldots,a_n\) tels que :
+    \[
+    \boxed{
+    f(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n+o(x^n)
+    }
+    \]
+    lorsque \(x\to0\).
+  </div>
+
+  <p>Chaque élément possède une signification :</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Élément</th><th>Signification</th></tr>
+    <tr><td>\(f(x)\)</td><td>La fonction que l'on veut étudier.</td></tr>
+    <tr><td>\(a_0\)</td><td>Le terme constant.</td></tr>
+    <tr><td>\(a_1x\)</td><td>Le terme de degré 1.</td></tr>
+    <tr><td>\(a_2x^2\)</td><td>Le terme de degré 2.</td></tr>
+    <tr><td>\(a_nx^n\)</td><td>Le terme de degré n.</td></tr>
+    <tr><td>\(o(x^n)\)</td><td>Le reste, négligeable devant \(x^n\).</td></tr>
+    <tr><td>\(x\to0\)</td><td>La variable se rapproche de zéro.</td></tr>
+  </table>
+  </div>
+
+  <h3>Exemple simple</h3>
+
+  <p>On considère la fonction :</p>
+  \[
+    f(x)=1+2x+3x^2+5x^3+x^4.
+  \]
+
+  <p>Son développement limité à l'ordre 2 est :</p>
+
+  <div class="math-box">
+    \[
+      \boxed{f(x)=1+2x+3x^2+o(x^2)}
+    \]
+    Les termes \(5x^3+x^4\) sont négligeables devant \(x^2\)
+    lorsque \(x\to0\).
+  </div>
+
+  <div class="note">
+    <strong>À retenir :</strong> l'ordre d'un DL indique le degré maximal
+    du polynôme que l'on conserve, et non le nombre de termes.
+  </div>
+
+  <h3>Pourquoi utilise-t-on les développements limités ?</h3>
+
+  <div class="cards">
+    <div class="info-card">
+      <h4>Calculer des limites</h4>
+      <p>Transformer des formes indéterminées en expressions plus simples.</p>
+    </div>
+    <div class="info-card">
+      <h4>Étudier les courbes</h4>
+      <p>Déterminer la position d'une courbe par rapport à sa tangente.</p>
+    </div>
+    <div class="info-card">
+      <h4>Calculer des équivalents</h4>
+      <p>Identifier le terme dominant d'une fonction près d'un point.</p>
+    </div>
+    <div class="info-card">
+      <h4>Étudier les asymptotes</h4>
+      <p>Comprendre le comportement d'une fonction à l'infini.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="notations">
+  <h2 class="section-title">2. Comprendre la notation o(xⁿ)</h2>
+
+  <p>
+    La notation \(o(x^n)\) est fondamentale. Elle représente une quantité
+    qui devient négligeable devant \(x^n\) lorsque \(x\) tend vers zéro.
+  </p>
+
+  <div class="definition">
+    <strong>Définition :</strong>
+    \[
+    f(x)=o(x^n)\quad (x\to0)
+    \]
+    signifie :
+    \[
+    \boxed{\lim_{x\to0}\frac{f(x)}{x^n}=0}
+    \]
+  </div>
+
+  <h3>Exemples</h3>
+
+  <div class="math-box">
+    \[
+    x^3=o(x^2)
+    \]
+    Car :
+    \[
+    \lim_{x\to0}\frac{x^3}{x^2}
+    =\lim_{x\to0}x=0.
+    \]
+  </div>
+
+  <div class="math-box">
+    \[
+    x^5=o(x^3)
+    \]
+    Car :
+    \[
+    \lim_{x\to0}\frac{x^5}{x^3}
+    =\lim_{x\to0}x^2=0.
+    \]
+  </div>
+
+  <div class="warning">
+    Attention :
+    \[
+    x^2\ne o(x^2)
+    \]
+    puisque :
+    \[
+    \lim_{x\to0}\frac{x^2}{x^2}=1\ne0.
+    \]
+  </div>
+
+  <h3>Ordre de négligence</h3>
+
+  <p>Au voisinage de zéro, les puissances les plus élevées sont les plus petites.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 600 245" role="img" aria-label="Comparaison des puissances près de zéro">
+      <line x1="50" y1="190" x2="555" y2="190" stroke="#555" stroke-width="1.5"/>
+      <line x1="70" y1="25" x2="70" y2="205" stroke="#555" stroke-width="1.5"/>
+      <path d="M70 190 Q180 110 280 65 Q380 25 520 8" fill="none" stroke="#e87936" stroke-width="3"/>
+      <path d="M70 190 Q180 170 280 125 Q380 75 520 30" fill="none" stroke="#287b55" stroke-width="3"/>
+      <path d="M70 190 Q180 188 280 170 Q380 125 520 60" fill="none" stroke="#777" stroke-width="3"/>
+      <text x="530" y="12" font-size="12" fill="#e87936">x</text>
+      <text x="530" y="34" font-size="12" fill="#287b55">x²</text>
+      <text x="530" y="64" font-size="12" fill="#777">x³</text>
+      <text x="270" y="225" font-size="12" fill="#555">Illustration qualitative</text>
+      <text x="38" y="205" font-size="11" fill="#555">0</text>
+      <text x="280" y="205" font-size="11" fill="#555">x → 0</text>
+    </svg>
+    <div class="diagram-caption">
+      Les puissances supérieures deviennent plus petites près de zéro.
+    </div>
+  </div>
+
+  <h3>Comparaison des ordres</h3>
+
+  <table>
+    <tr><th>Expression</th><th>Relation</th></tr>
+    <tr><td>\(x^2\)</td><td>Plus grand que \(x^3\) en ordre de grandeur près de 0.</td></tr>
+    <tr><td>\(x^3\)</td><td>\(o(x^2)\)</td></tr>
+    <tr><td>\(x^4\)</td><td>\(o(x^3)\)</td></tr>
+    <tr><td>\(x^5\)</td><td>\(o(x^4)\)</td></tr>
+  </table>
+
+  <h3>Ne pas confondre o et O</h3>
+
+  <p>
+    Dans les cours plus avancés, on rencontre également la notation
+    \(O(x^n)\).
+  </p>
+
+  <ul>
+    <li>\(o(x^n)\) : le quotient par \(x^n\) tend vers zéro.</li>
+    <li>\(O(x^n)\) : le quotient par \(x^n\) reste borné au voisinage de zéro.</li>
+  </ul>
+</section>
+
+<section class="section" id="taylor">
+  <h2 class="section-title">3. Formule de Taylor-Young</h2>
+
+  <p>
+    La formule de Taylor-Young permet de construire un développement limité
+    à partir des dérivées d'une fonction.
+  </p>
+
+  <p>
+    C'est une relation très importante entre le chapitre des dérivées et
+    celui des développements limités.
+  </p>
+
+  <div class="definition">
+    Si \(f\) est de classe \(C^n\) au voisinage de zéro, alors :
+    \[
+    \boxed{
+    f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k+o(x^n)
+    }
+    \]
+  </div>
+
+  <p>En développant les premiers termes :</p>
+
+  \[
+  f(x)=f(0)+f'(0)x+
+  \frac{f''(0)}{2!}x^2+
+  \frac{f'''(0)}{3!}x^3+\cdots
+  \]
+
+  <h3>Signification des symboles</h3>
+
+  <table>
+    <tr><th>Symbole</th><th>Signification</th></tr>
+    <tr><td>\(f(0)\)</td><td>Valeur de la fonction en zéro.</td></tr>
+    <tr><td>\(f'(0)\)</td><td>Dérivée première.</td></tr>
+    <tr><td>\(f''(0)\)</td><td>Dérivée seconde.</td></tr>
+    <tr><td>\(f'''(0)\)</td><td>Dérivée troisième.</td></tr>
+    <tr><td>\(k!\)</td><td>Factorielle de k.</td></tr>
+  </table>
+
+  <h3>Rappel : les factorielles</h3>
+
+  \[
+  0!=1,\quad 1!=1,\quad 2!=2,\quad
+  3!=6,\quad 4!=24,\quad 5!=120.
+  \]
+
+  <h3>Exemple détaillé : développer eˣ à l'ordre 3</h3>
+
+  <p>On considère :</p>
+  \[
+  f(x)=e^x.
+  \]
+
+  <p>On calcule les dérivées :</p>
+
+  <div class="math-box">
+    \[
+    \begin{aligned}
+    f(x)&=e^x\\
+    f'(x)&=e^x\\
+    f''(x)&=e^x\\
+    f'''(x)&=e^x
+    \end{aligned}
+    \]
+    En zéro :
+    \[
+    f(0)=f'(0)=f''(0)=f'''(0)=1.
+    \]
+  </div>
+
+  <p>On applique Taylor-Young :</p>
+
+  \[
+  \begin{aligned}
+  e^x
+  &=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3)\\
+  &=\boxed{1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)}.
+  \end{aligned}
+  \]
+
+  <div class="success">
+    <strong>Conclusion :</strong> pour obtenir un DL par Taylor-Young,
+    il faut calculer les dérivées jusqu'à l'ordre demandé, les évaluer
+    au point considéré, puis remplacer dans la formule.
+  </div>
+
+  <h3>Lien entre dérivabilité et DL</h3>
+
+  <div class="math-box">
+    Une fonction est dérivable en zéro si et seulement si elle admet
+    un développement limité d'ordre 1 en zéro :
+    \[
+    f(x)=f(0)+f'(0)x+o(x).
+    \]
+  </div>
+
+  <div class="warning">
+    Attention : l'existence d'un DL d'ordre 2 ne garantit pas à elle seule
+    que la fonction possède une dérivée seconde au point considéré.
+  </div>
+</section>
+
+<section class="section" id="usuels">
+  <h2 class="section-title">4. Les développements limités usuels</h2>
+
+  <p>
+    Les DL usuels sont les formules de base du chapitre. Il faut les connaître
+    car la majorité des exercices sont construits à partir d'elles.
+  </p>
+
+  <div class="note">
+    Toutes les formules de cette première partie sont écrites au voisinage
+    de zéro. Les formules sont à tronquer à l'ordre demandé.
+  </div>
+
+  <h3>4.1. Fonction exponentielle</h3>
+
+  \[
+  \boxed{
+  e^x=1+x+\frac{x^2}{2!}+
+  \frac{x^3}{3!}+\cdots+\frac{x^n}{n!}+o(x^n)
+  }
+  \]
+
+  <div class="math-box">
+    À l'ordre 4 :
+    \[
+    e^x=1+x+\frac{x^2}{2}+
+    \frac{x^3}{6}+\frac{x^4}{24}+o(x^4).
+    \]
+  </div>
+
+  <h3>4.2. Fonction logarithme</h3>
+
+  Pour \(|x|<1\) :
+  \[
+  \boxed{
+  \ln(1+x)=x-\frac{x^2}{2}+
+  \frac{x^3}{3}-\frac{x^4}{4}+\cdots+
+  (-1)^{n+1}\frac{x^n}{n}+o(x^n)
+  }
+  \]
+
+  Exemple à l'ordre 3 :
+  \[
+  \ln(1+x)=x-\frac{x^2}{2}+
+  \frac{x^3}{3}+o(x^3).
+  \]
+
+  <h3>4.3. Fonction sinus</h3>
+
+  \[
+  \boxed{
+  \sin x=x-\frac{x^3}{3!}+
+  \frac{x^5}{5!}-\frac{x^7}{7!}+\cdots
+  }
+  \]
+
+  À l'ordre 5 :
+  \[
+  \sin x=x-\frac{x^3}{6}+
+  \frac{x^5}{120}+o(x^5).
+  \]
+
+  <h3>4.4. Fonction cosinus</h3>
+
+  \[
+  \boxed{
+  \cos x=1-\frac{x^2}{2!}+
+  \frac{x^4}{4!}-\frac{x^6}{6!}+\cdots
+  }
+  \]
+
+  À l'ordre 4 :
+  \[
+  \cos x=1-\frac{x^2}{2}+
+  \frac{x^4}{24}+o(x^4).
+  \]
+
+  <h3>4.5. Inverse : 1/(1-x)</h3>
+
+  Pour \(|x|<1\) :
+  \[
+  \boxed{
+  \frac1{1-x}=1+x+x^2+x^3+\cdots+x^n+o(x^n)
+  }
+  \]
+
+  Exemple :
+  \[
+  \frac1{1-x}=1+x+x^2+x^3+o(x^3).
+  \]
+
+  <h3>4.6. Inverse : 1/(1+x)</h3>
+
+  \[
+  \boxed{
+  \frac1{1+x}=1-x+x^2-x^3+\cdots+(-1)^nx^n+o(x^n)
+  }
+  \]
+
+  <h3>4.7. Racine carrée</h3>
+
+  \[
+  \boxed{
+  \sqrt{1+x}
+  =1+\frac{x}{2}-\frac{x^2}{8}
+  +\frac{x^3}{16}-\frac{5x^4}{128}
+  +o(x^4)
+  }
+  \]
+
+  <h3>4.8. Puissance quelconque</h3>
+
+  Pour tout réel \(\alpha\) :
+  \[
+  \boxed{
+  (1+x)^\alpha
+  =1+\alpha x+
+  \frac{\alpha(\alpha-1)}{2!}x^2+
+  \frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3
+  +o(x^3)
+  }
+  \]
+
+  <h3>4.9. Fonction arctangente</h3>
+
+  \[
+  \boxed{
+  \arctan x=x-\frac{x^3}{3}+
+  \frac{x^5}{5}+o(x^5)
+  }
+  \]
+
+  <h3>4.10. Fonctions hyperboliques</h3>
+
+  \[
+  \operatorname{ch}x
+  =1+\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)
+  \]
+
+  \[
+  \operatorname{sh}x
+  =x+\frac{x^3}{6}+\frac{x^5}{120}+o(x^5)
+  \]
+
+  <h3>4.11. Tableau récapitulatif</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Fonction</th><th>Développement limité</th></tr>
+    <tr><td>\(e^x\)</td><td>\(1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)\)</td></tr>
+    <tr><td>\(\ln(1+x)\)</td><td>\(x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)\)</td></tr>
+    <tr><td>\(\sin x\)</td><td>\(x-\frac{x^3}{6}+\frac{x^5}{120}+o(x^5)\)</td></tr>
+    <tr><td>\(\cos x\)</td><td>\(1-\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)\)</td></tr>
+    <tr><td>\(\frac1{1-x}\)</td><td>\(1+x+x^2+x^3+o(x^3)\)</td></tr>
+    <tr><td>\(\frac1{1+x}\)</td><td>\(1-x+x^2-x^3+o(x^3)\)</td></tr>
+    <tr><td>\(\sqrt{1+x}\)</td><td>\(1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+o(x^3)\)</td></tr>
+    <tr><td>\(\arctan x\)</td><td>\(x-\frac{x^3}{3}+\frac{x^5}{5}+o(x^5)\)</td></tr>
+    <tr><td>\(\operatorname{ch}x\)</td><td>\(1+\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)\)</td></tr>
+    <tr><td>\(\operatorname{sh}x\)</td><td>\(x+\frac{x^3}{6}+\frac{x^5}{120}+o(x^5)\)</td></tr>
+  </table>
+  </div>
+
+  <h3>4.12. Propriétés de parité</h3>
+
+  <p>
+    Les fonctions paires et impaires possèdent une particularité :
+  </p>
+
+  <div class="cards">
+    <div class="info-card">
+      <h4>Fonction paire</h4>
+      <p>\(f(-x)=f(x)\). Son DL ne contient que des puissances paires, si le DL est unique.</p>
+      <p style="margin-top:10px">Exemple : cosinus.</p>
+    </div>
+    <div class="info-card">
+      <h4>Fonction impaire</h4>
+      <p>\(f(-x)=-f(x)\). Son DL ne contient que des puissances impaires, si le DL est unique.</p>
+      <p style="margin-top:10px">Exemple : sinus.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="operations">
+  <h2 class="section-title">5. Les opérations sur les DL</h2>
+
+  <p>
+    Une fois que l'on connaît les développements usuels, on peut construire
+    des développements plus complexes grâce à plusieurs opérations.
+  </p>
+
+  <h3>5.1. Addition et soustraction</h3>
+
+  <p>
+    Pour additionner ou soustraire deux développements limités, on additionne
+    ou soustrait les termes de même degré.
+  </p>
+
+  \[
+  f(x)=1+2x+x^2+o(x^2)
+  \]
+
+  \[
+  g(x)=3-x+4x^2+o(x^2)
+  \]
+
+  Alors :
+  \[
+  \begin{aligned}
+  f(x)+g(x)
+  &=4+x+5x^2+o(x^2).
+  \end{aligned}
+  \]
+
+  <div class="note">
+    On peut additionner deux DL du même ordre et conserver cet ordre.
+  </div>
+
+  <h3>5.2. Multiplication</h3>
+
+  <p>
+    Pour multiplier deux DL, on développe les produits puis on conserve
+    uniquement les termes dont le degré est inférieur ou égal à l'ordre
+    demandé.
+  </p>
+
+  <div class="math-box">
+    Exemple :
+    \[
+    f(x)=1+x+x^2+o(x^2)
+    \]
+    \[
+    g(x)=1+2x+o(x^2)
+    \]
+    Produit :
+    \[
+    \begin{aligned}
+    fg&=(1+x+x^2)(1+2x)+o(x^2)\\
+    &=1+3x+3x^2+2x^3+o(x^2)\\
+    &=\boxed{1+3x+3x^2+o(x^2)}.
+    \end{aligned}
+    \]
+  </div>
+
+  <div class="warning">
+    Ne conserve jamais les termes de degré supérieur à l'ordre demandé.
+    Ils ne sont pas nécessaires au résultat.
+  </div>
+
+  <h3>5.3. Division et quotient</h3>
+
+  <p>
+    Si le dénominateur possède une valeur non nulle en zéro, on peut utiliser
+    le développement de l'inverse.
+  </p>
+
+  <div class="definition">
+    Si \(g(0)\ne0\), alors :
+    \[
+    \frac{1}{g(x)}
+    \]
+    admet un DL au même ordre que celui de \(g\).
+  </div>
+
+  <p>Exemple :</p>
+
+  \[
+  f(x)=\frac1{2+x}.
+  \]
+
+  On factorise 2 :
+  \[
+  f(x)=\frac12\frac1{1+\frac{x}{2}}.
+  \]
+
+  On utilise :
+  \[
+  \frac1{1+u}=1-u+u^2-u^3+o(u^3).
+  \]
+
+  Avec \(u=\frac{x}{2}\) :
+  \[
+  \boxed{
+  f(x)=\frac12-\frac{x}{4}
+  +\frac{x^2}{8}-\frac{x^3}{16}+o(x^3)
+  }
+  \]
+
+  <h3>5.4. Composition</h3>
+
+  <p>
+    La composition consiste à remplacer la variable d'un DL par une autre
+    expression qui tend vers zéro.
+  </p>
+
+  <div class="definition">
+    Si \(f\) admet un DL en zéro et si \(u(x)\to0\), on peut remplacer
+    la variable par \(u(x)\), sous les conditions de composition des DL.
+  </div>
+
+  <p>Exemple :</p>
+
+  \[
+  \sin x=x-\frac{x^3}{6}+o(x^3).
+  \]
+
+  Pour calculer \(\sin(2x)\), on remplace \(x\) par \(2x\) :
+
+  \[
+  \begin{aligned}
+  \sin(2x)
+  &=2x-\frac{(2x)^3}{6}+o(x^3)\\
+  &=\boxed{2x-\frac43x^3+o(x^3)}.
+  \end{aligned}
+  \]
+
+  <h3>5.5. Changement de variable</h3>
+
+  <p>
+    Pour calculer un DL en un point \(a\), on peut se ramener à zéro
+    en posant :
+  </p>
+
+  \[
+  h=x-a.
+  \]
+
+  Ainsi :
+  \[
+  x=a+h,\quad h\to0.
+  \]
+
+  Exemple : calculer le DL de \(e^x\) au voisinage de 1.
+
+  \[
+  e^x=e^{1+h}=e\cdot e^h.
+  \]
+
+  Donc :
+  \[
+  \boxed{
+  e^x=e\left(1+h+\frac{h^2}{2}
+  +\frac{h^3}{6}+o(h^3)\right)
+  }
+  \]
+
+  En remplaçant \(h\) par \(x-1\) :
+  \[
+  e^x=e\left(1+(x-1)+
+  \frac{(x-1)^2}{2}+
+  \frac{(x-1)^3}{6}+o((x-1)^3)\right).
+  \]
+
+  <h3>5.6. Dérivation et intégration d'un DL</h3>
+
+  <p>
+    Sous les hypothèses de régularité nécessaires, la formule de Taylor
+    permet de retrouver les DL d'une dérivée ou d'une primitive.
+  </p>
+
+  <div class="math-box">
+    Si :
+    \[
+    f(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots
+    \]
+    alors le polynôme dérivé est :
+    \[
+    a_1+2a_2x+3a_3x^2+\cdots
+    \]
+    Pour une intégration :
+    \[
+    a_0x+\frac{a_1}{2}x^2+
+    \frac{a_2}{3}x^3+\cdots+C.
+    \]
+  </div>
+
+  <div class="warning">
+    Attention : on ne peut pas dériver automatiquement n'importe quel reste
+    \(o(x^n)\). La dérivation d'un DL nécessite des hypothèses supplémentaires.
+    De même, l'intégration d'un DL doit être justifiée par les propriétés
+    du reste et de la fonction considérée.
+  </div>
+</section>
+
+<section class="section" id="methode">
+  <h2 class="section-title">6. Méthodes pratiques de calcul</h2>
+
+  <h3>Méthode 1 : calculer avec Taylor-Young</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div><strong>Identifier la fonction</strong>Écrire clairement la fonction à développer et le point considéré.</div>
+    </div>
+    <div class="step">
+      <div><strong>Déterminer l'ordre</strong>Identifier l'ordre demandé : 1, 2, 3, 4...</div>
+    </div>
+    <div class="step">
+      <div><strong>Calculer les dérivées</strong>Calculer toutes les dérivées jusqu'à l'ordre demandé.</div>
+    </div>
+    <div class="step">
+      <div><strong>Calculer les valeurs au point</strong>Remplacer x par le point demandé dans les dérivées.</div>
+    </div>
+    <div class="step">
+      <div><strong>Appliquer Taylor-Young</strong>Remplacer chaque dérivée dans la formule.</div>
+    </div>
+  </div>
+
+  <h3>Méthode 2 : utiliser les DL usuels</h3>
+
+  <div class="steps">
+    <div class="step"><div><strong>Reconnaître une fonction usuelle</strong>Identifier sinus, cosinus, exponentielle, logarithme, racine...</div></div>
+    <div class="step"><div><strong>Choisir le bon ordre</strong>Déterminer le nombre de termes nécessaires.</div></div>
+    <div class="step"><div><strong>Remplacer la variable</strong>Faire le changement de variable si nécessaire.</div></div>
+    <div class="step"><div><strong>Effectuer les opérations</strong>Multiplier, diviser ou composer les développements.</div></div>
+    <div class="step"><div><strong>Tronquer</strong>Supprimer les termes de degré supérieur à l'ordre demandé.</div></div>
+  </div>
+
+  <h3>Exemple complet : développer eˣ × cos(x) à l'ordre 3</h3>
+
+  <p>On connaît :</p>
+  \[
+  e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)
+  \]
+
+  \[
+  \cos x=1-\frac{x^2}{2}+o(x^3)
+  \]
+
+  <p>On multiplie :</p>
+
+  \[
+  \begin{aligned}
+  e^x\cos x
+  &=(1+x+\frac{x^2}{2}+\frac{x^3}{6})
+  (1-\frac{x^2}{2})+o(x^3)\\
+  &=1+x+\frac{x^2}{2}+\frac{x^3}{6}
+  -\frac{x^2}{2}-\frac{x^3}{2}+o(x^3)\\
+  &=\boxed{1+x-\frac{x^3}{3}+o(x^3)}.
+  \end{aligned}
+  \]
+
+  <div class="success">
+    Résultat : le terme en \(x^2\) s'annule et le coefficient de \(x^3\)
+    devient \(\frac16-\frac12=-\frac13\).
+  </div>
+
+  <h3>Comment choisir le bon ordre ?</h3>
+
+  <p>
+    C'est l'une des compétences les plus importantes du chapitre.
+    On ne développe pas systématiquement toutes les fonctions à un ordre
+    très élevé.
+  </p>
+
+  <table>
+    <tr><th>Objectif</th><th>Ordre généralement nécessaire</th></tr>
+    <tr><td>Limite avec un dénominateur \(x\)</td><td>Jusqu'au premier terme non nul utile, au moins l'ordre 1.</td></tr>
+    <tr><td>Limite avec un dénominateur \(x^2\)</td><td>Au moins l'ordre 2.</td></tr>
+    <tr><td>Limite avec un dénominateur \(x^3\)</td><td>Au moins l'ordre 3.</td></tr>
+    <tr><td>Terme de courbure</td><td>Ordre 2 ou supérieur.</td></tr>
+    <tr><td>Position par rapport à une tangente</td><td>Jusqu'au premier terme non nul après le terme linéaire.</td></tr>
+  </table>
+
+  <div class="warning">
+    La règle du tableau est un point de départ. Si les premiers termes
+    s'annulent, il faut poursuivre le développement jusqu'au premier terme
+    non nul permettant de répondre à la question.
+  </div>
+</section>
+
+<section class="section" id="limites">
+  <h2 class="section-title">7. Calculer des limites avec les DL</h2>
+
+  <p>
+    L'une des applications les plus importantes des développements limités
+    est le calcul des limites présentant des formes indéterminées.
+  </p>
+
+  <h3>Principe général</h3>
+
+  <div class="definition">
+    On développe le numérateur et le dénominateur, puis on simplifie
+    les termes communs. On cherche le premier terme non nul.
+  </div>
+
+  <h3>Exemple 1 : limite simple</h3>
+
+  \[
+  \lim_{x\to0}\frac{e^x-1}{x}
+  \]
+
+  On utilise :
+  \[
+  e^x=1+x+\frac{x^2}{2}+o(x^2).
+  \]
+
+  Alors :
+  \[
+  \begin{aligned}
+  \frac{e^x-1}{x}
+  &=\frac{x+\frac{x^2}{2}+o(x^2)}{x}\\
+  &=1+\frac{x}{2}+o(x).
+  \end{aligned}
+  \]
+
+  Donc :
+  \[
+  \boxed{\lim_{x\to0}\frac{e^x-1}{x}=1}.
+  \]
+
+  <h3>Exemple 2 : termes qui s'annulent</h3>
+
+  \[
+  \lim_{x\to0}\frac{\sin x-x}{x^3}
+  \]
+
+  On sait que :
+  \[
+  \sin x=x-\frac{x^3}{6}+o(x^3).
+  \]
+
+  Donc :
+  \[
+  \begin{aligned}
+  \frac{\sin x-x}{x^3}
+  &=\frac{-\frac{x^3}{6}+o(x^3)}{x^3}\\
+  &=-\frac16+o(1).
+  \end{aligned}
+  \]
+
+  \[
+  \boxed{-\frac16}
+  \]
+
+  <h3>Exemple 3 : une limite avec un quotient</h3>
+
+  \[
+  \lim_{x\to0}\frac{\ln(1+x)-x}{x^2}
+  \]
+
+  On utilise :
+  \[
+  \ln(1+x)=x-\frac{x^2}{2}
+  +\frac{x^3}{3}+o(x^3).
+  \]
+
+  Alors :
+  \[
+  \frac{\ln(1+x)-x}{x^2}
+  =-\frac12+\frac{x}{3}+o(x).
+  \]
+
+  \[
+  \boxed{-\frac12}
+  \]
+
+  <h3>Exemple 4 : différence de deux fonctions</h3>
+
+  \[
+  \lim_{x\to0}\frac{e^x-\cos x-x}{x^2}
+  \]
+
+  On écrit :
+  \[
+  e^x=1+x+\frac{x^2}{2}+o(x^2)
+  \]
+
+  \[
+  \cos x=1-\frac{x^2}{2}+o(x^2).
+  \]
+
+  Donc :
+  \[
+  \begin{aligned}
+  e^x-\cos x-x
+  &=1+x+\frac{x^2}{2}
+  -1+\frac{x^2}{2}-x+o(x^2)\\
+  &=x^2+o(x^2).
+  \end{aligned}
+  \]
+
+  Résultat :
+  \[
+  \boxed{1}.
+  \]
+
+  <h3>Exemple 5 : une limite plus difficile</h3>
+
+  \[
+  \lim_{x\to0}\frac{\ln(1+x)-x+\frac{x^2}{2}}{x^3}
+  \]
+
+  On développe à l'ordre 3 :
+  \[
+  \ln(1+x)=x-\frac{x^2}{2}+
+  \frac{x^3}{3}+o(x^3).
+  \]
+
+  En remplaçant :
+  \[
+  \begin{aligned}
+  \frac{\ln(1+x)-x+\frac{x^2}{2}}{x^3}
+  &=\frac{\frac{x^3}{3}+o(x^3)}{x^3}\\
+  &=\frac13+o(1).
+  \end{aligned}
+  \]
+
+  \[
+  \boxed{\frac13}
+  \]
+
+  <div class="success">
+    <strong>Technique essentielle :</strong> les termes qui s'annulent
+    ne donnent aucune information sur la limite. Il faut développer
+    suffisamment loin pour trouver le premier terme non nul.
+  </div>
+</section>
+
+<section class="section" id="equivalents">
+  <h2 class="section-title">8. Équivalents et termes dominants</h2>
+
+  <p>
+    Un équivalent permet de remplacer une fonction par une autre fonction
+    qui possède le même comportement principal au voisinage d'un point.
+  </p>
+
+  <div class="definition">
+    On dit que \(f\) est équivalente à \(g\) lorsque :
+    \[
+    \boxed{f(x)\sim g(x)}
+    \]
+    si :
+    \[
+    \lim_{x\to0}\frac{f(x)}{g(x)}=1.
+    \]
+  </div>
+
+  <h3>Les équivalents fondamentaux</h3>
+
+  <table>
+    <tr><th>Fonction</th><th>Équivalent en zéro</th></tr>
+    <tr><td>\(e^x-1\)</td><td>\(\sim x\)</td></tr>
+    <tr><td>\(\ln(1+x)\)</td><td>\(\sim x\)</td></tr>
+    <tr><td>\(\sin x\)</td><td>\(\sim x\)</td></tr>
+    <tr><td>\(\tan x\)</td><td>\(\sim x\)</td></tr>
+    <tr><td>\(1-\cos x\)</td><td>\(\sim \frac{x^2}{2}\)</td></tr>
+    <tr><td>\((1+x)^\alpha-1\)</td><td>\(\sim \alpha x\), si \(\alpha\ne0\)</td></tr>
+    <tr><td>\(\arctan x\)</td><td>\(\sim x\)</td></tr>
+  </table>
+
+  <h3>Exemple</h3>
+
+  \[
+  \lim_{x\to0}\frac{\sin x}{e^x-1}
+  \]
+
+  On sait :
+  \[
+  \sin x\sim x,\qquad e^x-1\sim x.
+  \]
+
+  Donc :
+  \[
+  \frac{\sin x}{e^x-1}\sim\frac{x}{x}=1.
+  \]
+
+  <div class="success">
+    La limite est égale à 1.
+  </div>
+
+  <h3>Comment trouver un équivalent avec un DL ?</h3>
+
+  <p>
+    On recherche le premier terme non nul du développement limité.
+    Ce terme donne l'équivalent de la fonction, sous réserve des conditions
+    habituelles de définition.
+  </p>
+
+  Exemple :
+  \[
+  \sin x=x-\frac{x^3}{6}+o(x^3).
+  \]
+
+  Le premier terme non nul est \(x\). Donc :
+  \[
+  \boxed{\sin x\sim x}.
+  \]
+
+  <div class="warning">
+    Attention : on ne peut pas toujours additionner ou soustraire des
+    équivalents. En particulier, les soustractions peuvent provoquer
+    des annulations. Pour ce type de calcul, utiliser les DL complets.
+  </div>
+</section>
+
+<section class="section" id="courbes">
+  <h2 class="section-title">9. Développements limités et étude des courbes</h2>
+
+  <p>
+    Les développements limités permettent de connaître la position locale
+    d'une courbe par rapport à sa tangente.
+  </p>
+
+  <h3>9.1. Équation de la tangente</h3>
+
+  <p>
+    Si une fonction est dérivable en zéro, son DL d'ordre 1 est :
+  </p>
+
+  \[
+  f(x)=f(0)+f'(0)x+o(x).
+  \]
+
+  L'équation de la tangente à la courbe au point d'abscisse zéro est :
+  \[
+  \boxed{y=f(0)+f'(0)x}.
+  \]
+
+  <h3>9.2. Position de la courbe par rapport à la tangente</h3>
+
+  <p>
+    On utilise le premier terme non nul après le terme constant et le terme
+    de degré 1.
+  </p>
+
+  <div class="definition">
+    Si :
+    \[
+    f(x)=a+bx+cx^2+o(x^2)
+    \]
+    la tangente est :
+    \[
+    y=a+bx.
+    \]
+    Et la différence est :
+    \[
+    f(x)-(a+bx)=cx^2+o(x^2).
+    \]
+  </div>
+
+  <p>Lorsque \(c\ne0\), comme \(x^2\) est positif :</p>
+
+  <table>
+    <tr><th>Valeur de c</th><th>Position de la courbe</th></tr>
+    <tr><td>\(c>0\)</td><td>La courbe est au-dessus de la tangente près de zéro.</td></tr>
+    <tr><td>\(c<0\)</td><td>La courbe est au-dessous de la tangente près de zéro.</td></tr>
+  </table>
+
+  <div class="diagram">
+    <svg viewBox="0 0 600 280" role="img" aria-label="Courbe et tangente">
+      <line x1="45" y1="140" x2="555" y2="140" stroke="#aaa"/>
+      <line x1="300" y1="20" x2="300" y2="250" stroke="#aaa"/>
+      <line x1="100" y1="220" x2="500" y2="60" stroke="#777" stroke-width="2" stroke-dasharray="7 5"/>
+      <path d="M100 240 Q200 170 300 140 Q400 110 500 20" fill="none" stroke="#e87936" stroke-width="3"/>
+      <text x="390" y="48" fill="#e87936" font-size="13">Courbe</text>
+      <text x="400" y="100" fill="#777" font-size="13">Tangente</text>
+      <circle cx="300" cy="140" r="5" fill="#191919"/>
+      <text x="310" y="160" font-size="12">A</text>
+      <text x="280" y="270" font-size="11">Illustration</text>
+    </svg>
+    <div class="diagram-caption">
+      Exemple illustratif : la courbe se situe au-dessus de sa tangente.
+    </div>
+  </div>
+
+  <h3>9.3. Cas du terme de degré supérieur</h3>
+
+  <p>
+    Si le terme de degré 2 est nul, il faut continuer le DL jusqu'au premier
+    terme non nul.
+  </p>
+
+  \[
+  f(x)=a+bx+cx^3+o(x^3).
+  \]
+
+  Alors :
+  \[
+  f(x)-(a+bx)=cx^3+o(x^3).
+  \]
+
+  Comme \(x^3\) change de signe en zéro :
+  - Si \(c>0\), la courbe est au-dessus à droite et en dessous à gauche.
+  - Si \(c<0\), la courbe est en dessous à droite et au-dessus à gauche.
+
+  <div class="note">
+    Lorsque le premier terme non nul après la tangente est de degré pair,
+    son signe ne change pas de part et d'autre de zéro. Lorsqu'il est de
+    degré impair, son signe change.
+  </div>
+
+  <h3>9.4. Concavité et convexité</h3>
+
+  <p>
+    Si le DL d'ordre 2 existe et que la fonction est suffisamment régulière,
+    le coefficient du terme de degré 2 est :
+  </p>
+
+  \[
+  c=\frac{f''(0)}{2}.
+  \]
+
+  - Si \(c>0\), la fonction est localement convexe en zéro.
+  - Si \(c<0\), elle est localement concave en zéro.
+
+  Il s'agit d'une conclusion locale lorsque les hypothèses de régularité
+  nécessaires sont satisfaites.
+</section>
+
+<section class="section" id="infini">
+  <h2 class="section-title">10. DL en un point quelconque et à l'infini</h2>
+
+  <h3>10.1. Développement limité en un point a</h3>
+
+  <p>
+    Jusqu'ici, nous avons principalement travaillé au voisinage de zéro.
+    Mais on peut aussi calculer un développement limité au voisinage
+    d'un autre point \(a\).
+  </p>
+
+  <p>On pose :</p>
+
+  \[
+  h=x-a.
+  \]
+
+  Alors :
+  \[
+  x=a+h,\qquad h\to0.
+  \]
+
+  La formule générale de Taylor-Young devient :
+  \[
+  \boxed{
+  f(x)=\sum_{k=0}^{n}
+  \frac{f^{(k)}(a)}{k!}(x-a)^k
+  +o((x-a)^n)
+  }
+  \]
+
+  <h3>Exemple : DL de ln(x) en 1</h3>
+
+  On pose :
+  \[
+  h=x-1.
+  \]
+
+  Alors :
+  \[
+  \ln x=\ln(1+h).
+  \]
+
+  En utilisant le DL usuel :
+  \[
+  \boxed{
+  \ln x=(x-1)-\frac{(x-1)^2}{2}
+  +\frac{(x-1)^3}{3}+o((x-1)^3)
+  }
+  \]
+
+  <h3>10.2. Développement limité à l'infini</h3>
+
+  <p>
+    Pour étudier une fonction lorsque \(x\to+\infty\) ou
+    \(x\to-\infty\), on utilise souvent le changement de variable :
+  </p>
+
+  \[
+  t=\frac1x.
+  \]
+
+  Lorsque \(x\to+\infty\), on a \(t\to0^+\).
+
+  <div class="math-box">
+    Exemple :
+    \[
+    e^{1/x}
+    =1+\frac1x+\frac1{2x^2}
+    +\frac1{6x^3}+o\left(\frac1{x^3}\right).
+    \]
+  </div>
+
+  <h3>10.3. Asymptotes obliques</h3>
+
+  <p>
+    Le développement à l'infini peut servir à trouver une asymptote oblique.
+  </p>
+
+  <p>
+    Si :
+  </p>
+
+  \[
+  f(x)=ax+b+\frac{c}{x}+o\left(\frac1x\right)
+  \]
+
+  alors :
+  \[
+  \boxed{y=ax+b}
+  \]
+
+  est une asymptote oblique si la différence entre la fonction et cette
+  droite tend vers zéro.
+  </p>
+
+  <h3>Exemple</h3>
+
+  \[
+  f(x)=\sqrt{x^2+3x+1},\qquad x\to+\infty.
+  \]
+
+  On factorise \(x^2\) :
+  \[
+  f(x)=x\sqrt{1+\frac3x+\frac1{x^2}}.
+  \]
+
+  On utilise :
+  \[
+  \sqrt{1+u}=1+\frac u2-\frac{u^2}{8}+o(u^2).
+  \]
+
+  Avec :
+  \[
+  u=\frac3x+\frac1{x^2}.
+  \]
+
+  On obtient :
+  \[
+  f(x)=x+\frac32-\frac{5}{8x}
+  +o\left(\frac1x\right).
+  \]
+
+  Donc l'asymptote oblique en \(+\infty\) est :
+  \[
+  \boxed{y=x+\frac32}.
+  \]
+
+  <div class="note">
+    Pour \(x\to-\infty\), il faut faire attention à
+    \(\sqrt{x^2}=|x|=-x\). On ne peut donc pas remplacer systématiquement
+    \(\sqrt{x^2}\) par \(x\).
+  </div>
+</section>
+
+<section class="section" id="erreurs">
+  <h2 class="section-title">11. Erreurs fréquentes et conseils</h2>
+
+  <details>
+    <summary>Erreur 1 : développer à un ordre insuffisant</summary>
+    <div class="details-content">
+      Si les premiers termes s'annulent dans une limite, il faut continuer
+      le développement. Sinon, on ne peut pas trouver le résultat.
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 2 : oublier les factorielles</summary>
+    <div class="details-content">
+      Dans Taylor-Young, le coefficient du terme de degré 3 est
+      \(f'''(0)/3!\), et non simplement \(f'''(0)\).
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 3 : ne pas remplacer correctement la variable</summary>
+    <div class="details-content">
+      Pour \(\sin(3x)\), il faut remplacer chaque occurrence de x par 3x,
+      y compris dans les puissances :
+      \[
+      \sin(3x)=3x-\frac{27x^3}{6}+o(x^3).
+      \]
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 4 : oublier la condition du quotient</summary>
+    <div class="details-content">
+      Le dénominateur doit avoir une limite non nulle au point étudié
+      pour utiliser directement la méthode classique de l'inverse.
+      Si sa valeur est nulle, il faut analyser son propre DL.
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 5 : confondre équivalent et égalité</summary>
+    <div class="details-content">
+      \(f(x)\sim g(x)\) ne signifie pas que les deux fonctions sont égales.
+      Cela signifie que leur quotient tend vers 1.
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 6 : supprimer le mauvais terme</summary>
+    <div class="details-content">
+      Dans un DL d'ordre 3, on conserve les termes jusqu'à \(x^3\).
+      On supprime uniquement les termes de degré strictement supérieur à 3.
+    </div>
+  </details>
+
+  <details>
+    <summary>Erreur 7 : oublier le reste</summary>
+    <div class="details-content">
+      Le reste \(o(x^n)\) fait partie du DL. Il ne faut pas l'oublier
+      dans la rédaction finale.
+    </div>
+  </details>
+
+  <div class="success">
+    <strong>Conseil pour les devoirs :</strong> indique toujours l'ordre
+    choisi, écris la formule utilisée, effectue les calculs étape par étape
+    et termine par le DL avec son reste.
+  </div>
+</section>
+
+<section class="section" id="exercices">
+  <div class="part-label">PARTIE 02 · S'ENTRAÎNER</div>
+  <h2 class="section-title">Exercices et problèmes corrigés</h2>
+  <p class="section-intro">
+    Des exercices progressifs inspirés des formats classiques de devoirs
+    et de travaux dirigés. Essaie de résoudre chaque problème avant
+    d'afficher sa correction.
+  </p>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 01 — Comprendre la définition</strong>
+      <span class="level">FACILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>On considère :</p>
+      \[
+      f(x)=2+3x+4x^2+5x^3+7x^4.
+      \]
+      <ol>
+        <li>Donner le DL de f à l'ordre 1 en zéro.</li>
+        <li>Donner le DL de f à l'ordre 2 en zéro.</li>
+        <li>Donner le DL de f à l'ordre 3 en zéro.</li>
+        <li>Expliquer pourquoi \(x^4=o(x^3)\).</li>
+      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        <strong>Correction :</strong>
+        <p>À l'ordre 1 :</p>
+        \[
+        f(x)=2+3x+o(x).
+        \]
+        <p>À l'ordre 2 :</p>
+        \[
+        f(x)=2+3x+4x^2+o(x^2).
+        \]
+        <p>À l'ordre 3 :</p>
+        \[
+        f(x)=2+3x+4x^2+5x^3+o(x^3).
+        \]
+        Enfin :
+        \[
+        \lim_{x\to0}\frac{x^4}{x^3}
+        =\lim_{x\to0}x=0.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 02 — Formule de Taylor-Young</strong>
+      <span class="level">FACILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>Soit \(f(x)=e^{2x}\).</p>
+      <ol>
+        <li>Calculer les trois premières dérivées.</li>
+        <li>Calculer leurs valeurs en zéro.</li>
+        <li>Déterminer le DL à l'ordre 3.</li>
+      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        f'(x)=2e^{2x},\quad
+        f''(x)=4e^{2x},\quad
+        f'''(x)=8e^{2x}.
+        \]
+        En zéro : 1, 2, 4 et 8.
+        \[
+        \begin{aligned}
+        e^{2x}
+        &=1+2x+\frac{4x^2}{2}
+        +\frac{8x^3}{6}+o(x^3)\\
+        &=\boxed{1+2x+2x^2+\frac43x^3+o(x^3)}.
+        \end{aligned}
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 03 — DL du logarithme</strong>
+      <span class="level">FACILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>Déterminer le développement limité de :</p>
+      \[
+      f(x)=\ln(1+2x)
+      \]
+      <p>à l'ordre 3 en zéro.</p>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        On pose \(u=2x\).
+        \[
+        \ln(1+u)=u-\frac{u^2}{2}+\frac{u^3}{3}+o(u^3).
+        \]
+        On remplace :
+        \[
+        \boxed{
+        \ln(1+2x)=2x-2x^2+\frac83x^3+o(x^3)
+        }.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 04 — DL du sinus</strong>
+      <span class="level">FACILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>Déterminer le DL de \(\sin(3x)\) à l'ordre 5.</p>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        \sin u=u-\frac{u^3}{6}+\frac{u^5}{120}+o(u^5).
+        \]
+        En posant \(u=3x\) :
+        \[
+        \boxed{
+        3x-\frac92x^3+\frac{81}{40}x^5+o(x^5)
+        }.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 05 — Multiplication de DL</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Calculer le DL à l'ordre 3 de :</p>
+      \[
+      f(x)=e^x\sin x.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        On utilise :
+        \[
+        e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)
+        \]
+        \[
+        \sin x=x-\frac{x^3}{6}+o(x^3).
+        \]
+        Après multiplication :
+        \[
+        \begin{aligned}
+        f(x)
+        &=x+x^2+\frac{x^3}{2}-\frac{x^3}{6}+o(x^3)\\
+        &=\boxed{x+x^2+\frac{x^3}{3}+o(x^3)}.
+        \end{aligned}
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 06 — Division de DL</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Déterminer le DL à l'ordre 3 de :</p>
+      \[
+      f(x)=\frac1{3+x}.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        On factorise 3 :
+        \[
+        f(x)=\frac13\frac1{1+x/3}.
+        \]
+        On utilise la formule de l'inverse :
+        \[
+        \boxed{
+        f(x)=\frac13-\frac{x}{9}
+        +\frac{x^2}{27}-\frac{x^3}{81}+o(x^3)
+        }.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 07 — Composition</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Calculer le DL à l'ordre 3 de :</p>
+      \[
+      f(x)=\sqrt{1+2x}.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        On utilise :
+        \[
+        \sqrt{1+u}=1+\frac u2-\frac{u^2}{8}
+        +\frac{u^3}{16}+o(u^3).
+        \]
+        Avec \(u=2x\) :
+        \[
+        \boxed{
+        f(x)=1+x-\frac{x^2}{2}
+        +\frac{x^3}{2}+o(x^3)
+        }.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 08 — Calcul d'une limite</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Calculer :</p>
+      \[
+      \lim_{x\to0}\frac{e^x-1-x}{x^2}.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        e^x=1+x+\frac{x^2}{2}+o(x^2).
+        \]
+        Donc :
+        \[
+        \frac{e^x-1-x}{x^2}
+        =\frac12+o(1).
+        \]
+        \[
+        \boxed{\frac12}
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 09 — Limite avec annulation</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Calculer :</p>
+      \[
+      \lim_{x\to0}\frac{1-\cos x}{x^2}.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        \cos x=1-\frac{x^2}{2}+o(x^2).
+        \]
+        Donc :
+        \[
+        \frac{1-\cos x}{x^2}
+        =\frac12+o(1).
+        \]
+        \[
+        \boxed{\frac12}
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 10 — Limite avec logarithme</strong>
+      <span class="level">MOYEN</span>
+    </div>
+    <div class="exercise-body">
+      <p>Calculer :</p>
+      \[
+      \lim_{x\to0}\frac{\ln(1+x)-x+\frac{x^2}{2}}{x^3}.
+      \]
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        \ln(1+x)=x-\frac{x^2}{2}
+        +\frac{x^3}{3}+o(x^3).
+        \]
+        Ainsi :
+        \[
+        \boxed{\frac13}.
+        \]
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 11 — Tangente et position locale</strong>
+      <span class="level">DIFFICILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>Soit :</p>
+      \[
+      f(x)=e^x.
+      \]
+      <ol>
+        <li>Calculer le DL à l'ordre 2.</li>
+        <li>Déterminer l'équation de la tangente en zéro.</li>
+        <li>Déterminer la position de la courbe par rapport à sa tangente.</li>
+      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        \[
+        e^x=1+x+\frac{x^2}{2}+o(x^2).
+        \]
+        La tangente est :
+        \[
+        \boxed{y=1+x}.
+        \]
+        La différence vaut :
+        \[
+        e^x-(1+x)=\frac{x^2}{2}+o(x^2).
+        \]
+        Le coefficient est positif et \(x^2\) est positif.
+        La courbe est donc au-dessus de sa tangente au voisinage de zéro.
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-head">
+      <strong>Exercice 12 — Problème de synthèse</strong>
+      <span class="level">DIFFICILE</span>
+    </div>
+    <div class="exercise-body">
+      <p>On considère :</p>
+      \[
+      f(x)=\frac{e^x}{1+x}.
+      \]
+      <ol>
+        <li>Déterminer le DL de \(e^x\) à l'ordre 3.</li>
+        <li>Déterminer le DL de \(\frac1{1+x}\) à l'ordre 3.</li>
+        <li>Calculer le DL de f à l'ordre 3.</li>
+        <li>Calculer \(\displaystyle\lim_{x\to0}\frac{f(x)-1}{x^2}\).</li>
+      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Afficher la correction</button>
+      <div class="solution">
+        On utilise :
+        \[
+        e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)
+        \]
+        et :
+        \[
+        \frac1{1+x}=1-x+x^2-x^3+o(x^3).
+        \]
+        Après multiplication et troncature :
+        \[
+        \boxed{
+        f(x)=1+\frac{x^2}{2}-\frac{x^3}{3}+o(x^3)
+        }.
+        \]
+        Alors :
+        \[
+        \frac{f(x)-1}{x^2}
+        =\frac12-\frac{x}{3}+o(x).
+        \]
+        Donc :
+        \[
+        \boxed{\frac12}.
+        \]
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section" id="quiz">
+  <div class="part-label">PARTIE 03 · ÉVALUER SES CONNAISSANCES</div>
+  <h2 class="section-title">Quiz interactif : développements limités</h2>
+  <p class="section-intro">
+    Une banque de 200 questions générées à partir de plusieurs familles
+    d'exercices. Chaque tentative sélectionne aléatoirement les questions
+    et mélange les propositions.
+  </p>
+
+  <div class="quiz-window">
+    <div class="quiz-header">
+      <div>
+        <h3>StudyNet · Test de connaissances</h3>
+        <p>Développements limités · Mathématiques</p>
+      </div>
+      <span style="font-size:25px">✎</span>
+    </div>
+
+    <div class="quiz-config" id="quizConfig">
+      <h3>Prépare ton évaluation</h3>
+      <p style="font-size:13px;color:#777;margin-bottom:20px">
+        Choisis le nombre de questions que tu souhaites résoudre.
+        Les questions seront tirées au hasard parmi 200 questions.
+      </p>
+      <div class="config-row">
+        <label for="questionCount">Nombre de questions :</label>
+        <input type="number" id="questionCount" value="20" min="20" max="40" step="1">
+        <button class="primary-btn" onclick="startQuiz()">Commencer le quiz →</button>
+      </div>
+      <p id="configError" style="color:#bd4646;font-size:12px;margin-top:12px"></p>
+      <div class="note" style="margin-top:23px">
+        <strong>Fonctionnement :</strong>
+        <ul>
+          <li>Une seule réponse correcte par question.</li>
+          <li>Correction immédiate après chaque vérification.</li>
+          <li>Explication de la réponse correcte.</li>
+          <li>Note finale sur 20.</li>
+          <li>Récapitulatif des erreurs à la fin.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quiz-progress" id="progressContainer" style="display:none">
+      <div id="progressBar"></div>
+    </div>
+
+    <div class="quiz-main" id="quizMain">
+      <div class="quiz-meta">
+        <span id="questionNumber">Question 1 / 20</span>
+        <span id="scoreLive">Score : 0</span>
+      </div>
+      <div class="quiz-question" id="questionText"></div>
+      <div class="quiz-options" id="optionsContainer"></div>
+      <div class="quiz-feedback" id="feedback"></div>
+      <div class="quiz-controls">
+        <button class="secondary-btn" onclick="quitQuiz()">Quitter</button>
+        <button class="primary-btn" id="verifyBtn" onclick="verifyAnswer()" disabled>Vérifier</button>
+        <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" style="display:none">Next →</button>
+      </div>
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+      <div class="part-label">RÉSULTAT DE L'ÉVALUATION</div>
+      <h2>Évaluation terminée !</h2>
+      <div class="result-score" id="finalScore">0/20</div>
+      <div class="result-label" id="resultMessage"></div>
+      <div class="result-bar"><div id="resultBar"></div></div>
+      <div class="cards">
+        <div class="info-card">
+          <h4>Bonnes réponses</h4>
+          <p id="correctCount">0</p>
+        </div>
+        <div class="info-card">
+          <h4>Réponses incorrectes</h4>
+          <p id="wrongCount">0</p>
+        </div>
+      </div>
+      <h3 style="margin-top:28px">Correction détaillée</h3>
+      <p style="font-size:12px;color:#777">Retrouve ici toutes les questions ratées, leurs bonnes réponses et les explications.</p>
+      <div id="reviewList"></div>
+      <button class="primary-btn" onclick="restartQuiz()" style="margin-top:20px">Nouvelle tentative ↻</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">12. Fiche de révision finale</h2>
+
+  <p>Les formules et règles essentielles à maîtriser avant un devoir :</p>
+
+  <div class="math-box">
+    \[
+    \boxed{e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3)}
+    \]
+    \[
+    \boxed{\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)}
+    \]
+    \[
+    \boxed{\sin x=x-\frac{x^3}{6}+\frac{x^5}{120}+o(x^5)}
+    \]
+    \[
+    \boxed{\cos x=1-\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)}
+    \]
+    \[
+    \boxed{\frac1{1+x}=1-x+x^2-x^3+o(x^3)}
+    \]
+    \[
+    \boxed{\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+o(x^3)}
+    \]
+  </div>
+
+  <h3>Les méthodes à connaître</h3>
+
+  <table>
+    <tr><th>Compétence</th><th>Ce qu'il faut savoir faire</th></tr>
+    <tr><td>Définition</td><td>Reconnaître et écrire un DL.</td></tr>
+    <tr><td>Taylor-Young</td><td>Calculer les dérivées et construire un DL.</td></tr>
+    <tr><td>DL usuels</td><td>Connaître les principales formules.</td></tr>
+    <tr><td>Produit</td><td>Multiplier et tronquer.</td></tr>
+    <tr><td>Quotient</td><td>Factoriser et utiliser le DL de l'inverse.</td></tr>
+    <tr><td>Composition</td><td>Remplacer correctement la variable.</td></tr>
+    <tr><td>Limites</td><td>Trouver le premier terme non nul.</td></tr>
+    <tr><td>Équivalents</td><td>Identifier le terme dominant.</td></tr>
+    <tr><td>Courbes</td><td>Étudier la tangente et la position locale.</td></tr>
+    <tr><td>Infini</td><td>Utiliser le changement de variable \(1/x\).</td></tr>
+  </table>
+
+  <div class="success">
+    <strong>Objectif final :</strong> être capable de choisir la bonne formule,
+    le bon ordre et la bonne opération sans perdre de vue le résultat demandé.
+  </div>
+</section>
+
+<section class="section">
+  <div class="part-label">POUR APPROFONDIR</div>
+  <h2 class="section-title">Ressources complémentaires</h2>
+  <p class="section-intro">
+    Des supports pédagogiques pour consulter d'autres démonstrations,
+    exemples et exercices corrigés.
+  </p>
+
+  <div class="info-card" style="margin-bottom:12px">
+    <h4>1. Université en ligne — UNISCIEL</h4>
+    <p>Ressource universitaire sur les opérations et les propriétés des développements limités.</p>
+    <a href="https://www.enseignementsup-recherche.gouv.fr/ressources-pedagogiques/notice/view/UEL-Dev-limit-4ope-devlim" target="_blank" rel="noopener" style="color:#b75c28;font-weight:bold;font-size:12px">Consulter la ressource ↗</a>
+  </div>
+
+  <div class="info-card" style="margin-bottom:12px">
+    <h4>2. Gérard Lavau — Cours de développements limités</h4>
+    <p>Cours approfondi : Taylor-Young, opérations, limites, équivalents et exercices.</p>
+    <a href="https://gerardlavau.fr/licence/l1/Analyse/dltaylor.pdf" target="_blank" rel="noopener" style="color:#b75c28;font-weight:bold;font-size:12px">Consulter le cours PDF ↗</a>
+  </div>
+
+  <div class="info-card">
+    <h4>3. ParaMaths — Exercices corrigés</h4>
+    <p>Une série d'exercices de niveau universitaire sur les développements limités.</p>
+    <a href="https://paramaths.fr/ressources/licence-maths-l1/derivation-accroissements-finis-developpements-limites/exercices" target="_blank" rel="noopener" style="color:#b75c28;font-weight:bold;font-size:12px">Consulter les exercices ↗</a>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+
+<footer><div class="container footer-content"><a class="logo" href="../index.html">Study<span>Net</span></a><h4><u> Réalisé par le développeur Mohamed Ali Sablaoui.</u></h4><p>© 2026 StudyNet. Tous droits réservés.</p></div></footer>
+
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>
