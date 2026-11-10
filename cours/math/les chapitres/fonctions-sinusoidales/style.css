@@ -1580,3 +1580,394 @@ textarea:focus-visible{
     min-width:0;
   }
 }
+
+/* =========================================
+   FINAL RESPONSIVE FIX
+   NO PAGE OVERFLOW — NO CONTENT REMOVAL
+========================================= */
+
+/* 1. GLOBAL WIDTH CONTROL */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+html{
+    width:100%;
+    max-width:100%;
+    overflow-x:clip;
+}
+
+body{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    overflow-x:clip;
+}
+
+main,
+header,
+footer,
+section,
+article,
+.container,
+.hero-inner,
+.nav,
+.quick-nav{
+    max-width:100%;
+    min-width:0;
+}
+
+/* 2. ALL CONTENT MUST RESPECT ITS PARENT */
+
+.container,
+.card,
+.exercise,
+.toc,
+.graph-box,
+.detail-body,
+.solution,
+.quiz-content,
+.quiz-window,
+.section,
+.section-head{
+    min-width:0;
+    max-width:100%;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+strong,
+small,
+span,
+a,
+label{
+    overflow-wrap:anywhere;
+    word-wrap:break-word;
+}
+
+/* 3. RESPONSIVE GRIDS */
+
+.grid2,
+.grid3,
+.toc-grid,
+.quick-nav{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+}
+
+.grid2 > *,
+.grid3 > *,
+.toc-grid > *,
+.quick-nav > *,
+.quick-card > *{
+    min-width:0;
+    max-width:100%;
+}
+
+/* 4. TABLES — IMPORTANT FIX */
+
+.table-wrap{
+    display:block;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+}
+
+/* Tables inside wrappers */
+
+.table-wrap table{
+    width:100%;
+    min-width:450px;
+    max-width:none;
+    table-layout:auto;
+    margin:0;
+}
+
+/* Tables without wrappers */
+
+body table:not(.table-wrap table){
+    display:table;
+    width:100%;
+    max-width:100%;
+    min-width:0 !important;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+/* Cell content */
+
+th,
+td{
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    word-break:normal;
+    vertical-align:top;
+}
+
+/* Allow long text and formulas inside cells */
+
+td *,
+th *{
+    max-width:100%;
+}
+
+/* 5. FORMULAS AND CODE */
+
+.formula{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:normal;
+    overflow-wrap:anywhere;
+}
+
+pre{
+    display:block;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow-x:auto;
+    white-space:pre;
+}
+
+code{
+    overflow-wrap:anywhere;
+}
+
+.formula code,
+pre code{
+    overflow-wrap:normal;
+}
+
+/* 6. IMAGES AND GRAPHS */
+
+img,
+video,
+iframe{
+    max-width:100%;
+}
+
+.graph-box{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow:hidden;
+}
+
+.graph-box svg{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+}
+
+/* 7. FLEX ELEMENTS */
+
+.nav,
+.navlinks,
+.hero-meta,
+.card-title,
+.exercise-top,
+.quiz-header,
+.quiz-meta,
+.quiz-actions{
+    min-width:0;
+    max-width:100%;
+}
+
+.nav > *,
+.card-title > *,
+.exercise-top > *,
+.quiz-header > *{
+    min-width:0;
+}
+
+/* 8. BUTTONS */
+
+button,
+.btn{
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+}
+
+.quiz-actions .btn{
+    min-width:0;
+}
+
+/* 9. DETAILS */
+
+details{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+}
+
+summary{
+    overflow-wrap:anywhere;
+}
+
+details .detail-body{
+    min-width:0;
+    max-width:100%;
+}
+
+/* 10. QUIZ WINDOW */
+
+#quiz-overlay{
+    width:100%;
+    max-width:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.quiz-window{
+    width:min(720px,100%);
+    max-width:100%;
+    min-width:0;
+}
+
+.answer{
+    width:100%;
+    min-width:0;
+    white-space:normal;
+    overflow-wrap:anywhere;
+}
+
+/* 11. DESKTOP */
+
+@media(min-width:801px){
+
+    .container{
+        width:calc(100% - 40px);
+    }
+
+    .grid2{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .grid3{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
+/* 12. TABLETS */
+
+@media(max-width:800px){
+
+    .container{
+        width:calc(100% - 30px);
+    }
+
+    .grid2,
+    .grid3{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .quick-nav{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .toc-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .card,
+    .exercise{
+        width:100%;
+        min-width:0;
+    }
+
+    .table-wrap table{
+        min-width:450px;
+    }
+}
+
+/* 13. MOBILE */
+
+@media(max-width:480px){
+
+    .container{
+        width:calc(100% - 24px);
+    }
+
+    .quick-nav{
+        width:calc(100% - 24px);
+    }
+
+    .toc-grid{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .grid2,
+    .grid3{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .hero,
+    .card,
+    .exercise,
+    .toc,
+    .quiz-content{
+        min-width:0;
+        max-width:100%;
+    }
+
+    .hero h1{
+        max-width:100%;
+        overflow-wrap:anywhere;
+    }
+
+    .quiz-actions{
+        flex-wrap:wrap;
+    }
+
+    .quiz-actions .btn{
+        flex:1 1 100%;
+    }
+
+    .table-wrap table{
+        min-width:450px;
+    }
+}
+
+/* 14. VERY SMALL SCREENS */
+
+@media(max-width:350px){
+
+    .container{
+        width:calc(100% - 20px);
+    }
+
+    .quick-nav{
+        width:calc(100% - 20px);
+    }
+
+    .hero,
+    .card,
+    .exercise{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .card-title,
+    .exercise-top{
+        flex-wrap:wrap;
+    }
+}
